@@ -1,0 +1,150 @@
+/*-- scss:rules --*/
+
+/* Content-slide utilities — applied across all non-title slides.
+   Add new utility classes here as the deck grows.
+
+   Updated April 2026 to use --rl-* tokens directly (was hardcoded
+   #4B9CD3 / #13294B / #DEE2E6 / etc. literals). The deck-specific
+   tinted backgrounds for the Spectrum of Delegation traffic-light
+   palette are kept as literals because they're intentional
+   illustrative colors, not brand tokens.
+
+   Landing-line color convention (used inline in the qmd, not as classes):
+   - Carolina (var(--rl-carolina)) bold + center-aligned: practice or
+     section landing line — the takeaway of an individual slide.
+   - Navy (var(--rl-navy)) bold + center-aligned: major synthesis line —
+     the talk-thesis level beat (e.g., "The line moves over time. The
+     distinction does not.", "The friction isn't the problem AI solves.",
+     "Design matters more than the tool.", and the personal-calibration
+     close).
+   This is intentional hierarchy: practice landings use the accent color,
+   thesis-level lines use the primary color. */
+
+/* Two-box comparison layout (e.g., "AI executes / We decide" on the
+   What Stays Yours synthesis slide). Uses flexbox so the boxes are
+   guaranteed equal height regardless of text length. */
+.reveal .comparison-grid {
+  display: flex;
+  gap: 1.5em;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0.6em 0 1em;
+}
+
+.reveal .comparison-box {
+  flex: 1 1 0;
+  padding: 1.4em 1em;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 45%;
+}
+
+.reveal .comparison-box.neutral {
+  border: 1px solid var(--rl-mist);
+  background-color: var(--rl-paper, #FFFFFF);
+}
+
+.reveal .comparison-box.highlighted {
+  background-color: var(--rl-fog);
+  border-left: 3px solid var(--rl-carolina);
+}
+
+.reveal .comparison-label {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-mono);
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.7em;
+  font-weight: 500;
+}
+
+.reveal .comparison-box.highlighted .comparison-label {
+  color: var(--rl-carolina-deep);
+}
+
+.reveal .comparison-text {
+  font-size: 1.05em;
+  color: var(--rl-navy);
+  line-height: 1.4;
+}
+
+/* Spectrum of Delegation — three-column grid for the take-home slide.
+   Colors echo a traffic-light palette: green = safe, yellow = review,
+   pink = hands-on. Kept as illustrative literals (not --rl-* tokens)
+   because they encode meaning beyond brand identity. */
+.reveal .spectrum-grid {
+  display: flex;
+  gap: 0.8em;
+  align-items: stretch;
+  margin-top: 0.4em;
+}
+
+.reveal .spectrum-col {
+  flex: 1 1 0;
+  padding: 0.7em 0.7em 0.5em;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reveal .spectrum-col.safe {
+  background-color: #EFF7EF;
+  border-top: 3px solid #5CA77C;
+}
+
+.reveal .spectrum-col.review {
+  background-color: #FCF5DC;
+  border-top: 3px solid #D9B546;
+}
+
+.reveal .spectrum-col.handson {
+  background-color: #FCEAE7;
+  border-top: 3px solid #C95E55;
+}
+
+.reveal .spectrum-label {
+  color: var(--rl-navy);
+  font-family: var(--rl-font-mono);
+  font-size: 0.72em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: 0.6em;
+}
+
+.reveal .spectrum-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.7em;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.reveal .spectrum-col ul li {
+  padding: 0.22em 0;
+  border-bottom: 1px solid var(--rl-border);
+  color: var(--rl-ink);
+}
+
+.reveal .spectrum-col ul li:last-child {
+  border-bottom: none;
+}
+
+/* Closing slide — section-divider pattern with custom typography for the
+   final card. Inherits centering from `.center`; this just polishes the
+   H1 and ensures readability on the navy background. */
+.reveal section.closing-slide h1 {
+  color: #FFFFFF;
+  border-bottom: none;
+  font-size: 1.7em;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  letter-spacing: 0.01em;
+}

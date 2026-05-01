@@ -1,0 +1,130 @@
+/*-- scss:rules --*/
+
+/* Title slide — deck-local overrides for centered alignment.
+   Inherits color palette and typography from the lab's
+   presentation-template.css (which emits --rl-* tokens); this file
+   adjusts layout, spacing, and typographic hierarchy for the
+   StatsUp.AI webinar opening.
+
+   Updated April 2026 to use --rl-* tokens directly so colors stay
+   in sync if the lab palette ever changes again. The original deck
+   shipped with hardcoded #13294B / #4B9CD3 / #5B6670 / #007FAE
+   literals — those have been migrated.
+
+   Spacing principle: tight within groups, generous between groups.
+   The three groups are:
+     1. Title block (title + subtitle + decorative rule)
+     2. Author block (author + institute + date)
+     3. QR block (QR + URL caption) */
+
+#title-slide {
+  text-align: center;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+
+/* ── Title block ───────────────────────────────────────────────── */
+
+#title-slide .title {
+  color: var(--rl-navy);
+  font-family: var(--rl-font-serif);
+  font-size: 2.2em;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  margin-bottom: 0.25em;     /* tight — title and subtitle are one group */
+  white-space: nowrap;
+}
+
+#title-slide .subtitle {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-sans);
+  font-size: 1.15em;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+  margin-bottom: 1.5em;       /* generous — gap between title and author groups */
+}
+
+/* Decorative rule — sits inside the subtitle's box; tight to subtitle.
+   Retained from the original deck design for this specific talk's
+   visual identity. The new lab system generally avoids decorative
+   stripes; this is an intentional deck-local exception. */
+#title-slide .subtitle::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  background-color: var(--rl-carolina);
+  margin: 0.7em auto 0;
+}
+
+/* ── Author block ──────────────────────────────────────────────── */
+
+#title-slide .author {
+  color: var(--rl-navy);
+  font-family: var(--rl-font-sans);
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.15em;      /* tight — name and affiliation are one cluster */
+}
+
+#title-slide .institute {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-sans);
+  font-size: 0.78em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+/* Auto-generated date is hidden; we use an inline date instead. */
+#title-slide .date {
+  display: none;
+}
+
+#title-slide .title-date-inline {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-mono);
+  font-size: 0.7em;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  margin: 0.3em 0 0;          /* tight — date is part of author cluster */
+  text-transform: uppercase;
+}
+
+/* ── QR block ──────────────────────────────────────────────────── */
+
+#title-slide .title-qr-block {
+  margin-top: 1.8em;          /* generous — gap between author and QR groups */
+  text-align: center;
+}
+
+#title-slide .title-qr {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0.4em;
+  image-rendering: pixelated;
+  border: 3px solid #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+#title-slide .title-qr-caption {
+  color: var(--rl-carolina-deep);
+  font-family: var(--rl-font-mono);
+  font-size: 0.68em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Hide the global footer when the title slide is showing.
+   Triggered by `data-state: hide-footer` on the title slide, which
+   RevealJS converts into a `hide-footer` class on <body> while the
+   slide is active. !important needed to override Quarto's default
+   `.footer-default { display: block }` specificity. */
+body.hide-footer .footer,
+body.hide-footer .footer-default {
+  display: none !important;
+}
