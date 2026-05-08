@@ -1,6 +1,6 @@
 ---
 title: "Staying in the Driver's Seat"
-subtitle: "Maintaining Ownership of Our Work in the Age of AI"
+subtitle: "Calibrating AI Use in Statistical Research, Training, and Practice"
 author: "Naim Rashid, PhD"
 institute: |
   Department of Biostatistics · UNC Chapel Hill
@@ -1020,7 +1020,7 @@ The people who still have a sense of direction are the ones who glance at the ma
 # Stay in the Driver's Seat {.center .closing-slide background-color="#13294B"}
 
 ::: {style="color: #4B9CD3; font-size: 0.65em; font-style: italic; margin-top: 0.2em; margin-bottom: 1.2em;"}
-Maintaining Ownership of Our Work in the Age of AI
+Calibrating AI Use in Statistical Research, Training, and Practice
 :::
 
 ::: {style="color: #FFFFFF; font-size: 0.9em; line-height: 1.6; max-width: 80%; margin: 0 auto; font-style: italic; font-weight: 300;"}
