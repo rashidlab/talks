@@ -52,7 +52,7 @@ They have no answer. Not because they missed it, but because the AI never propos
 :::
 
 ::: {.fragment .fade-up style="color: #13294B; font-weight: 600; margin-top: 0.6em;"}
-Neither they nor the committee notices. The defense goes well.
+Neither side notices what's actually missing. The defense goes well.
 :::
 
 ::: {.fragment style="margin-top: 0.8em; text-align: center; color: #5B6670; font-size: 0.78em; font-style: italic;"}
@@ -68,7 +68,7 @@ Their dissertation defense goes well. Until a committee member asks why they did
 
 They have no answer. Not because they missed it — but because the AI never proposed it, and they had stopped generating alternatives of their own.
 
-Neither they nor the committee notices. The defense goes well.
+Neither side notices what's actually missing. The defense goes well.
 
 This is a composite scenario. Not a specific case. But it's the failure mode I want us to take seriously today — because it's not about careless AI use. It's about sophisticated AI use that quietly narrows the option space.
 
@@ -145,7 +145,7 @@ So what's new with AI? The scope. Not the mechanism.
 I use these tools extensively. This isn't a talk about abstinence — it's a talk about calibration.
 :::
 
-You already know the basics.
+By now, the surface concerns are familiar to most of us.
 
 ::: {.fragment}
 - LLMs hallucinate.
@@ -154,7 +154,7 @@ You already know the basics.
 :::
 
 ::: {.fragment style="font-style: italic; color: #5B6670; margin-top: 1em;"}
-I'm not here to repeat what you already discuss in the comments on Gelman's blog.
+I'm not here to repeat what you already discuss on stats Twitter, in the comments on Gelman's blog, or in your department hallways.
 :::
 
 ::: {.fragment style="margin-top: 1.5em;"}
@@ -170,9 +170,9 @@ Why does any of this matter for our community specifically?
 
 Before I go on — I use these tools extensively. This isn't a talk about abstinence; it's a talk about calibration. The productivity gains are real. AI reduces blank-page friction, helps me enter unfamiliar codebases, translates between languages, drafts scaffolding, and accelerates iteration. The question is what must remain practiced while those gains are captured.
 
-You already know the basics. LLMs hallucinate. LLM benchmarks rarely report uncertainty, dependence, or deployment shift. We've seen recent reports of fabricated citations surviving expert review.
+By now, the surface concerns are familiar to most of us. LLMs hallucinate. LLM benchmarks rarely report uncertainty, dependence, or deployment shift. We've seen recent reports of fabricated citations surviving expert review.
 
-I'm not here to repeat what you already discuss in the comments on Gelman's blog.
+I'm not here to repeat what you already discuss on stats Twitter, in the comments on Gelman's blog, or in your department hallways.
 
 Some of you will reasonably think: trainees who never learned the unplugged version still end up better statisticians, because they iterate faster and reach harder problems sooner. I take that seriously, and I don't think it's wrong for every learner. The argument I'm making is narrower — that the formation of judgment depends on private wrong turns that AI can short-circuit, and the bar for whether that's happening should be deliberate, not default.
 
@@ -222,7 +222,7 @@ The next three slides show what that part is in each.
 
 ## In your own research {.smaller}
 
-The part you don't outsource is the **chain of judgment**: framing the question; choosing methods (over alternatives the AI didn't suggest); interpreting what the result means *and what it does not*; defending the work to a hostile reader.
+The part you don't outsource is the **chain of judgment**: framing the question; choosing methods (over alternatives the AI didn't suggest); verifying that what was produced is what you actually intended; interpreting what the result means *and what it does not*; defending the work to a hostile reader.
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em;"}
 **A frequent failure mode is plausibly wrong output that survives casual inspection.**
@@ -243,7 +243,7 @@ Without your judgment, plausibly wrong passes.
 ::: {.notes}
 Start with our own research. The part you don't outsource is what I'd call the chain of judgment.
 
-Framing the question — what's worth asking. Choosing methods, including over alternatives the AI didn't suggest. Interpreting what the result means and, just as importantly, what it does not. Defending the work to a hostile reader.
+Framing the question — what's worth asking. Choosing methods, including over alternatives the AI didn't suggest. Verifying that what was produced is what you actually intended — that the code does what you described, that the output answers the question you asked. Interpreting what the result means and, just as importantly, what it does not. Defending the work to a hostile reader.
 
 What's the actual failure mode AI introduces here? It's not gross incompetence. It's plausibly wrong output that survives casual inspection.
 
@@ -265,6 +265,10 @@ The part you don't outsource is the **productive struggle.**
 "Conditions of instruction that make performance improve rapidly often fail to support long-term retention and transfer."
 
 *Bjork & Bjork, 2011. From research on conventional instruction; the extension to AI-assisted learning is an extrapolation, not a finding.*
+:::
+
+::: {.fragment style="margin-top: 0.8em; font-size: 0.92em;"}
+**Concretely:** working through a derivation by hand the first time. Manually debugging by staring at residuals before reaching for help. Building a small simulation from scratch before reaching for a library.
 :::
 
 ::: {.fragment style="margin-top: 1em;"}
@@ -325,6 +329,10 @@ A student who outsources the first encounter with confounding, likelihood, or si
 <div class="comparison-box neutral"><div class="comparison-label">What AI is excellent at</div><div class="comparison-text"><strong>Executing</strong> under decisions already made.</div></div>
 <div class="comparison-box highlighted"><div class="comparison-label">What stays ours</div><div class="comparison-text"><strong>Deciding</strong> — what's worth doing, what counts as done, what the result means.</div></div>
 </div>
+
+::: {.fragment style="margin-top: 1em; font-size: 0.92em; color: #5B6670; text-align: center;"}
+AI increasingly helps with deciding too — surfacing options, finding gaps in reasoning, stress-testing your plan. The responsibility for the decision stays with you.
+:::
 
 ::: {.fragment style="text-align: center; margin-top: 1.4em; font-size: 1.1em; color: #13294B; font-weight: 600;"}
 The line moves over time. The distinction does not.
@@ -421,13 +429,14 @@ If you wouldn't ship it from a student, don't ship it from an AI.
 > Before prompting: 2–5 minutes writing your own approach.
 
 ::: {.fragment style="margin-top: 1em;"}
-Answer three questions in a scratch file:
+Answer four questions in a scratch file:
 :::
 
 ::: {.fragment style="margin: 0.6em 0; padding: 0.8em 1.2em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
 1. What am I trying to accomplish? *(the goal, not the implementation)*
 2. What's my best guess for how to do it? *(rough or wrong is fine)*
 3. What are the tricky parts? *(edge cases, assumptions, unknowns)*
+4. How will I know it worked? *(what output am I expecting; how will I verify)*
 :::
 
 ::: {.fragment style="margin-top: 1em;"}
@@ -443,7 +452,7 @@ Second practice. The pre-prompt pause.
 
 Before prompting an AI tool, spend 2 to 5 minutes writing your own approach in a scratch file.
 
-Three questions to answer in writing: What am I trying to accomplish? — the goal, not the implementation. What's my best guess for how to do it? — rough or wrong is fine. What are the tricky parts? — edge cases, assumptions, unknowns.
+Four questions to answer in writing: What am I trying to accomplish? — the goal, not the implementation. What's my best guess for how to do it? — rough or wrong is fine. What are the tricky parts? — edge cases, assumptions, unknowns. How will I know it worked? — what output am I expecting; how will I verify.
 
 Then prompt the AI with your plan as context. Compare the AI's approach to yours.
 
@@ -637,7 +646,7 @@ Four practices from the source guide that travel well:
 - **The Two-Pass Assignment** — attempt without AI; iterate with AI; submit both with reflection.
 - **Explain-Your-Code Assessments** — supplement code with an oral or written walkthrough.
 - **Debugging Exercises** — intentionally broken code; no AI tools allowed.
-- **Code Review Culture** — AI-generated code receives the same (or more) scrutiny as human-written code. *"Can you walk me through this?"* If the author can't, the PR isn't ready.
+- **Code Review Culture** — AI-generated code receives the same (or more) scrutiny as human-written code. *"Can you walk me through this?"* If the author can't walk through it, the work isn't ready.
 :::
 
 ::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.7em; text-align: center;"}
@@ -653,7 +662,7 @@ Explain-Your-Code Assessments — supplement code submissions with oral or writt
 
 Debugging Exercises — give students intentionally broken code, with no AI tools allowed.
 
-Code Review Culture — AI-generated code receives the same, or more, scrutiny as human-written code. The standing question: "Can you walk me through this?" If the author can't, the PR isn't ready.
+Code Review Culture — AI-generated code receives the same, or more, scrutiny as human-written code. The standing question: "Can you walk me through this?" If the author can't walk through it, the work isn't ready.
 
 The work isn't to remove AI. It's to design assignments and reviews where understanding still has to show.
 :::
