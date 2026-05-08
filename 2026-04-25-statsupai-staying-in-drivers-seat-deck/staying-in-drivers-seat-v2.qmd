@@ -144,24 +144,28 @@ So what's new with AI? The scope. Not the mechanism.
 
 Bainbridge's *Ironies of Automation* (1983) named four specific failure modes that map directly to AI use today.
 
-<div class="quadrant-grid">
-<div class="quadrant">
-<div class="quadrant-title">1. Skill degradation in the takeover</div>
-<div class="quadrant-detail">The better the automation, the rarer the cases that need a human — and the less practiced the human is when those cases arrive.</div>
-</div>
-<div class="quadrant">
-<div class="quadrant-title">2. The training paradox</div>
-<div class="quadrant-detail">We train people to follow instructions, then put them in the loop to provide judgment. The two skills aren't the same.</div>
-</div>
-<div class="quadrant">
-<div class="quadrant-title">3. The monitoring difficulty</div>
-<div class="quadrant-detail">Sustained attention is what humans are worst at — and it becomes their primary job once automation handles the routine work.</div>
-</div>
-<div class="quadrant">
-<div class="quadrant-title">4. The transparency cost</div>
-<div class="quadrant-detail">For humans to oversee, the system must operate in ways humans can follow — even when that's technically suboptimal.</div>
-</div>
-</div>
+::: {.quadrant-grid}
+::: {.quadrant}
+[Skill degradation in the takeover]{.quadrant-title}
+
+The better the automation, the rarer the cases that need a human — and the less practiced the human is when those cases arrive.
+:::
+::: {.quadrant}
+[The training paradox]{.quadrant-title}
+
+We train people to follow instructions, then put them in the loop to provide judgment. The two skills aren't the same.
+:::
+::: {.quadrant}
+[The monitoring difficulty]{.quadrant-title}
+
+Sustained attention is what humans are worst at — and it becomes their primary job once automation handles the routine work.
+:::
+::: {.quadrant}
+[The transparency cost]{.quadrant-title}
+
+For humans to oversee, the system must operate in ways humans can follow — even when that's technically suboptimal.
+:::
+:::
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
 The ironies aren't avoidable. They're things you design around.
@@ -267,17 +271,17 @@ The next three slides show what that part is in each.
 
 The part you don't outsource is the **chain of judgment.**
 
-<div class="flow-diagram">
-<div class="flow-step">Frame the<br>question</div>
-<div class="flow-arrow">→</div>
-<div class="flow-step">Choose<br>methods</div>
-<div class="flow-arrow">→</div>
-<div class="flow-step">Verify<br>output</div>
-<div class="flow-arrow">→</div>
-<div class="flow-step">Interpret<br>result</div>
-<div class="flow-arrow">→</div>
-<div class="flow-step">Defend<br>the work</div>
-</div>
+::: {.flow-diagram}
+[Frame the question]{.flow-step}
+[→]{.flow-arrow}
+[Choose methods]{.flow-step}
+[→]{.flow-arrow}
+[Verify output]{.flow-step}
+[→]{.flow-arrow}
+[Interpret result]{.flow-step}
+[→]{.flow-arrow}
+[Defend the work]{.flow-step}
+:::
 
 ::: {.flow-caption}
 AI accelerates execution at every stage. The judgment at every stage stays yours.
@@ -355,24 +359,28 @@ I want to plant a question, not a claim. We should be deliberate about whether A
 
 Bjork & Bjork identified four *desirable difficulties* — specific kinds of effort that distinguish learning that lasts from performance that fades.
 
-<div class="quadrant-grid">
-<div class="quadrant">
-<div class="quadrant-title">Spacing</div>
-<div class="quadrant-detail">Distributing practice over time, not cramming. AI's instant access collapses spacing into a single retrieval.</div>
-</div>
-<div class="quadrant">
-<div class="quadrant-title">Interleaving</div>
-<div class="quadrant-detail">Mixing topics, not blocked practice. AI's task-specific scaffolding tends to reinforce blocking.</div>
-</div>
-<div class="quadrant">
-<div class="quadrant-title">Retrieval practice</div>
-<div class="quadrant-detail">Testing as study, not just review. When AI supplies the answer, the retrieval that builds memory doesn't happen.</div>
-</div>
-<div class="quadrant">
-<div class="quadrant-title">Generation</div>
-<div class="quadrant-detail">Producing answers, not reading them. Generation is where AI most directly substitutes for the learner.</div>
-</div>
-</div>
+::: {.quadrant-grid}
+::: {.quadrant}
+[Spacing]{.quadrant-title}
+
+Distributing practice over time, not cramming. AI's instant access collapses spacing into a single retrieval.
+:::
+::: {.quadrant}
+[Interleaving]{.quadrant-title}
+
+Mixing topics, not blocked practice. AI's task-specific scaffolding tends to reinforce blocking.
+:::
+::: {.quadrant}
+[Retrieval practice]{.quadrant-title}
+
+Testing as study, not just review. When AI supplies the answer, the retrieval that builds memory doesn't happen.
+:::
+::: {.quadrant}
+[Generation]{.quadrant-title}
+
+Producing answers, not reading them. Generation is where AI most directly substitutes for the learner.
+:::
+:::
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
 AI tends to remove all four. Each one needs deliberate preservation.
@@ -571,31 +579,33 @@ This habit is counterintuitive. We add 2 to 5 minutes of friction before a produ
 
 An illustrative example — planning a power analysis for a follow-up study.
 
-<div class="worked-grid">
-<div class="worked-col">
-<div class="worked-label">What I wrote (1 min)</div>
-<div class="worked-text">
-<strong>Goal:</strong> sample size for a confirmatory follow-up.<br><br>
-<strong>My approach:</strong> use the pilot's effect size in <code>pwr.t.test()</code>.<br><br>
-<strong>Tricky:</strong> the pilot is small and may overestimate the effect. I want to plan for a deflated value too.
-</div>
-</div>
-<div class="worked-col ai">
-<div class="worked-label">What AI suggested</div>
-<div class="worked-text">
-<code>pwr.t.test()</code> with the pilot's reported effect size, 80% power, two-sided α = 0.05.<br><br>
+::: {.worked-grid}
+::: {.worked-col}
+[What I wrote (1 min)]{.worked-label}
+
+**Goal:** sample size for a confirmatory follow-up.
+
+**My approach:** use the pilot's effect size in `pwr.t.test()`.
+
+**Tricky:** the pilot is small and may overestimate the effect. I want to plan for a deflated value too.
+:::
+::: {.worked-col .ai}
+[What AI suggested]{.worked-label}
+
+`pwr.t.test()` with the pilot's reported effect size, 80% power, two-sided α = 0.05.
+
 A clean, correct answer to the literal question.
-</div>
-</div>
-<div class="worked-col">
-<div class="worked-label">What I learned</div>
-<div class="worked-text">
-AI answered the <em>literal</em> prompt — not the concern the third line raised.<br><br>
-The diff revealed my real question: <em>what effect size do I plan for given the pilot is likely inflated?</em><br><br>
+:::
+::: {.worked-col}
+[What I learned]{.worked-label}
+
+AI answered the *literal* prompt — not the concern the third line raised.
+
+The diff revealed my real question: *what effect size do I plan for given the pilot is likely inflated?*
+
 I left the conversation with two power analyses, not one.
-</div>
-</div>
-</div>
+:::
+:::
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
 The diff is the lesson.
