@@ -271,17 +271,19 @@ The next three slides show what that part is in each.
 
 The part you don't outsource is the **chain of judgment.**
 
-::: {.flow-diagram}
-[Frame the question]{.flow-step}
-[→]{.flow-arrow}
-[Choose methods]{.flow-step}
-[→]{.flow-arrow}
-[Verify output]{.flow-step}
-[→]{.flow-arrow}
-[Interpret result]{.flow-step}
-[→]{.flow-arrow}
-[Defend the work]{.flow-step}
-:::
+```{=html}
+<div class="flow-diagram">
+<div class="flow-step">Frame the question</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Choose methods</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Verify output</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Interpret result</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Defend the work</div>
+</div>
+```
 
 ::: {.flow-caption}
 AI accelerates execution at every stage. The judgment at every stage stays yours.
