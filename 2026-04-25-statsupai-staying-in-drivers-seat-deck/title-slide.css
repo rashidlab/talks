@@ -28,12 +28,14 @@
 #title-slide .title {
   color: var(--rl-navy);
   font-family: var(--rl-font-serif);
-  font-size: 2.2em;
+  font-size: 2.0em;
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.005em;
   margin-bottom: 0.25em;     /* tight — title and subtitle are one group */
-  white-space: nowrap;
+  /* white-space: nowrap removed (May 2026) — was forcing the title wider
+     than the slide on smaller viewports, which broke horizontal centering.
+     The title is short enough to wrap gracefully if a viewport requires it. */
 }
 
 #title-slide .subtitle {

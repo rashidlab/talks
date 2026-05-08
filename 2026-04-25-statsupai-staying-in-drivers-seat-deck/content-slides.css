@@ -148,3 +148,45 @@
   padding-bottom: 0;
   letter-spacing: 0.01em;
 }
+
+/* Dark-background slides (movement dividers and closing slide).
+   The lab template defaults h1/h2/h3 to navy, which is invisible on the
+   navy section-divider backgrounds. Force white. Also keep emphasized
+   text (em/strong) inheriting the parent color, since markdown's `*text*`
+   wraps in <em> which would otherwise pick up the body color rule. */
+.reveal section.has-dark-background h1,
+.reveal section.has-dark-background h2,
+.reveal section.has-dark-background h3,
+.reveal section.has-dark-background h4,
+.reveal section.has-dark-background p,
+.reveal section.has-dark-background li {
+  color: #FFFFFF;
+}
+
+.reveal section.has-dark-background em,
+.reveal section.has-dark-background strong {
+  color: inherit;
+}
+
+/* Logo card — the lab logo PNG has a transparent background, which
+   makes the navy logo elements disappear on dark-background slides.
+   Wrapping the logo in a small white card makes it readable on both
+   light and dark slides without swapping logo files. */
+.reveal .slide-logo {
+  background-color: #FFFFFF;
+  padding: 4px 8px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Defensive centering for the closing slide. The `.center` class
+   centers vertically; this ensures inline `<div>`s with style attributes
+   are also horizontally centered. */
+.reveal section.closing-slide {
+  text-align: center;
+}
+
+.reveal section.closing-slide > div {
+  margin-left: auto;
+  margin-right: auto;
+}

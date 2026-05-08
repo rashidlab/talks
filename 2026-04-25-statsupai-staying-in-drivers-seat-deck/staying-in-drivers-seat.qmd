@@ -26,14 +26,14 @@ format:
       data-state: "hide-footer"
 ---
 
-# The Trap {.center background-color="#13294B"}
+# What's at Stake {.center background-color="#13294B"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
 *What's the worry, and is it new?*
 :::
 
 ::: {.notes}
-Let's start with the first question I want us to sit with: what's the worry — and is it actually new?
+Let's start with the first question I want us to sit with: what's actually at stake here, and is this concern new?
 :::
 
 
@@ -139,7 +139,7 @@ So what's new with AI? The scope. Not the mechanism.
 :::
 
 
-## Why this matters for us {.smaller}
+## Why this matters {.smaller}
 
 ::: {style="color: #5B6670; margin-bottom: 0.7em; font-size: 0.92em;"}
 I use these tools extensively. This isn't a talk about abstinence — it's a talk about calibration.
@@ -154,7 +154,7 @@ By now, the surface concerns are familiar to most of us.
 :::
 
 ::: {.fragment style="font-style: italic; color: #5B6670; margin-top: 1em;"}
-I'm not here to repeat what you already discuss on stats Twitter, in the comments on Gelman's blog, or in your department hallways.
+I'm not here to repeat what you already discuss in your circles.
 :::
 
 ::: {.fragment style="margin-top: 1.5em;"}
@@ -172,7 +172,7 @@ Before I go on — I use these tools extensively. This isn't a talk about abstin
 
 By now, the surface concerns are familiar to most of us. LLMs hallucinate. LLM benchmarks rarely report uncertainty, dependence, or deployment shift. We've seen recent reports of fabricated citations surviving expert review.
 
-I'm not here to repeat what you already discuss on stats Twitter, in the comments on Gelman's blog, or in your department hallways.
+I'm not here to repeat what you already discuss in your circles.
 
 Some of you will reasonably think: trainees who never learned the unplugged version still end up better statisticians, because they iterate faster and reach harder problems sooner. I take that seriously, and I don't think it's wrong for every learner. The argument I'm making is narrower — that the formation of judgment depends on private wrong turns that AI can short-circuit, and the bar for whether that's happening should be deliberate, not default.
 
@@ -519,11 +519,7 @@ Try to explain the implementation to:
 Where you get stuck is where your understanding has gaps.
 :::
 
-::: {.fragment style="margin: 0.7em 0 0; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.85em;"}
-**And in real time** — narrate at the system level, not the action level. Not *"I asked for X and it worked,"* but *"the bug was a race condition; the mutex works because shared state is only accessed from two places."*
-:::
-
-::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.6em; text-align: center;"}
+::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;"}
 The thinking required to explain is the point.
 :::
 
@@ -561,12 +557,8 @@ The thinking required to explain is the point.
 *Rashid Lab Code Ownership Guide*
 :::
 
-::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.4em; text-align: center;"}
+::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.6em; text-align: center;"}
 For research, an analysis plan. For a course, a syllabus rationale. For a manuscript, a one-page summary.
-:::
-
-::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 0.88em; color: #5B6670; font-style: italic;"}
-And the question that travels everywhere: *if this component fails, what's the blast radius?*
 :::
 
 ::: {.notes}
@@ -777,17 +769,13 @@ For many in clinical trials, biopharma, and industry, the line isn't personal �
 ::: {.fragment style="margin-top: 0.8em;"}
 The same practices apply, with an audit-trail layer:
 
-- **Decision log → prompt logs.** Log the prompt, the model version, and the diff you accepted.
-- **Pre-prompt pause → analysis-plan pre-specification.** Define permitted AI use in the SAP, programming plan, validation plan, or SOP before analysis begins.
-- **Read everything that ships → double programming.** AI-assisted code receives the same independent re-derivation as human-written code.
-- **Architecture docs → reproducibility under model deprecation.** Pin model versions; expect them to disappear.
+- **Decision log → prompt logs.** Log prompt, model version, and accepted diff.
+- **Pre-prompt pause → SAP pre-specification.** Define permitted AI use before analysis begins.
+- **Read everything → double programming.** AI-assisted code gets independent re-derivation.
+- **Architecture docs → reproducibility under model deprecation.** Pin model versions.
 :::
 
-::: {.fragment style="margin: 0.7em 0 0; padding: 0.55em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.78em; color: #5B6670;"}
-**Data residency:** hosted-LLM use with patient or confidential sponsor data may violate institutional policy or trigger privacy/security review. Local/on-prem deployments — and the productivity gap they create — are part of the calibration.
-:::
-
-::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.6em; text-align: center;"}
+::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;"}
 The line is drawn by your sponsor, the FDA, and your QA group — not by you alone.
 :::
 
@@ -905,13 +893,12 @@ It's that you are deliberate about drawing one at all.
 
 ## Calibration questions {.smaller}
 
-To stay deliberate, an honest self-check — and one for your group.
+An honest self-check — and one for your group.
 
 ::: {.fragment style="margin-top: 0.5em; font-size: 0.82em;"}
 **For yourself:**
 
-- ☐ Could you explain how your last analysis or paper works without AI assistance?
-- ☐ Could you reconstruct your last project's architecture from memory?
+- ☐ Could you explain how your last analysis works without AI assistance?
 - ☐ Are you still learning new methods, or has AI handled what you don't fully understand?
 :::
 
@@ -926,11 +913,10 @@ To stay deliberate, an honest self-check — and one for your group.
 **For yourself, as advisor:**
 
 - ☐ Have you asked your trainee how they actually use AI before judging the workflow?
-- ☐ Are you keeping pace with their fluency, or judging from a 2023 mental model?
 :::
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.8em;"}
-The questions are diagnostic, not judgmental. If something gets a "no" — the next slide is where to start.
+Diagnostic, not judgmental. If anything gets a "no" — the next slide is where to start.
 :::
 
 ::: {.notes}
