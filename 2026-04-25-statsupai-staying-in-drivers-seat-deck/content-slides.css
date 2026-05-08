@@ -190,3 +190,119 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ============================================================================
+   v2 additions (May 2026) — visual layouts for the substance-deepening pass.
+   Used by the v2 qmd (staying-in-drivers-seat-v2.qmd). Backwards-compatible
+   with v1 since v1 doesn't reference these classes.
+   ============================================================================ */
+
+/* Flow diagram — horizontal sequence of boxes with arrows.
+   Used for the chain-of-judgment visualization on the "In your own research"
+   slide. Each step is a colored box; arrows are vertically centered between. */
+.reveal .flow-diagram {
+  display: flex;
+  align-items: stretch;
+  gap: 0.3em;
+  margin: 0.6em 0 0.4em;
+}
+
+.reveal .flow-step {
+  flex: 1 1 0;
+  padding: 0.55em 0.35em;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.72em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--rl-fog);
+  border-top: 3px solid var(--rl-carolina);
+  color: var(--rl-navy);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.reveal .flow-arrow {
+  align-self: center;
+  font-size: 1.1em;
+  color: var(--rl-graphite);
+  flex: 0 0 auto;
+  padding: 0 0.05em;
+  font-weight: 700;
+}
+
+.reveal .flow-caption {
+  text-align: center;
+  font-size: 0.78em;
+  color: var(--rl-graphite);
+  font-style: italic;
+  margin-top: 0.2em;
+}
+
+/* Quadrant grid — 2x2 layout for paired concepts.
+   Used for Bainbridge's ironies and Bjork's desirable difficulties. */
+.reveal .quadrant-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+  margin: 0.4em 0;
+}
+
+.reveal .quadrant {
+  padding: 0.55em 0.7em;
+  border-radius: 4px;
+  background-color: var(--rl-fog);
+  border-left: 3px solid var(--rl-carolina);
+  font-size: 0.72em;
+  line-height: 1.35;
+}
+
+.reveal .quadrant-title {
+  color: var(--rl-navy);
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 0.25em;
+}
+
+.reveal .quadrant-detail {
+  color: var(--rl-ink);
+}
+
+/* Worked-example layout — 3-column showing a concrete walk-through.
+   Used for the pre-prompt-pause example. */
+.reveal .worked-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.4em;
+  margin: 0.5em 0;
+}
+
+.reveal .worked-col {
+  padding: 0.5em 0.6em;
+  border-radius: 4px;
+  font-size: 0.62em;
+  background-color: #FFFFFF;
+  border: 1px solid var(--rl-mist);
+  border-left: 3px solid var(--rl-carolina);
+  line-height: 1.4;
+}
+
+.reveal .worked-col.ai {
+  border-left-color: var(--rl-graphite);
+  background-color: #F8F9FA;
+}
+
+.reveal .worked-label {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-mono);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+  font-weight: 500;
+}
+
+.reveal .worked-text {
+  color: var(--rl-ink);
+}

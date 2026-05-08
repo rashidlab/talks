@@ -140,6 +140,48 @@ So what's new with AI? The scope. Not the mechanism.
 :::
 
 
+## Bainbridge's ironies {.smaller}
+
+Bainbridge's *Ironies of Automation* (1983) named four specific failure modes that map directly to AI use today.
+
+<div class="quadrant-grid">
+<div class="quadrant">
+<div class="quadrant-title">1. Skill degradation in the takeover</div>
+<div class="quadrant-detail">The better the automation, the rarer the cases that need a human — and the less practiced the human is when those cases arrive.</div>
+</div>
+<div class="quadrant">
+<div class="quadrant-title">2. The training paradox</div>
+<div class="quadrant-detail">We train people to follow instructions, then put them in the loop to provide judgment. The two skills aren't the same.</div>
+</div>
+<div class="quadrant">
+<div class="quadrant-title">3. The monitoring difficulty</div>
+<div class="quadrant-detail">Sustained attention is what humans are worst at — and it becomes their primary job once automation handles the routine work.</div>
+</div>
+<div class="quadrant">
+<div class="quadrant-title">4. The transparency cost</div>
+<div class="quadrant-detail">For humans to oversee, the system must operate in ways humans can follow — even when that's technically suboptimal.</div>
+</div>
+</div>
+
+::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+The ironies aren't avoidable. They're things you design around.
+:::
+
+::: {.notes}
+Bainbridge's paper isn't just a citation — it identifies four specific ironies that map cleanly onto AI in research today. I want to walk through them because each one is a checklist item, not a warning.
+
+First, skill degradation in the takeover. The better the automation gets, the rarer the cases where a human is needed. And those cases tend to be the hardest ones — methodological edge cases, anomalies, novel domains. The human is then asked to handle them with less practice than ever.
+
+Second, the training paradox. We train people to follow instructions, then drop them into systems where their job is to provide intelligence and judgment. The two skills aren't the same — and sometimes one undermines the other.
+
+Third, the monitoring difficulty. Humans are bad at sustained attention. This is well-documented from aviation, anesthesiology, and process control. And yet sustained monitoring becomes the primary job once automation handles the routine work.
+
+Fourth, the transparency cost. For humans to be able to step in, the system has to operate in ways humans can follow. That's often not the technically best way to do something. There's a real efficiency cost to keeping humans in the loop — and it's a cost worth paying.
+
+These four aren't avoidable. The practices in the second half of this talk are exactly that — design responses to ironies that have been understood for forty years.
+:::
+
+
 ## Why this matters {.smaller}
 
 ::: {style="color: #5B6670; margin-bottom: 0.7em; font-size: 0.92em;"}
@@ -223,7 +265,23 @@ The next three slides show what that part is in each.
 
 ## In your own research {.smaller}
 
-The part you don't outsource is the **chain of judgment**: framing the question; choosing methods (over alternatives the AI didn't suggest); verifying that what was produced is what you actually intended; interpreting what the result means *and what it does not*; defending the work to a hostile reader.
+The part you don't outsource is the **chain of judgment.**
+
+<div class="flow-diagram">
+<div class="flow-step">Frame the<br>question</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Choose<br>methods</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Verify<br>output</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Interpret<br>result</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Defend<br>the work</div>
+</div>
+
+::: {.flow-caption}
+AI accelerates execution at every stage. The judgment at every stage stays yours.
+:::
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em;"}
 **A frequent failure mode is plausibly wrong output that survives casual inspection.**
@@ -290,6 +348,52 @@ This was research on conventional instruction. The extension to AI-assisted lear
 But the principle generalizes well. The struggle in graduate training is where calibrated intuition is laid down — the kind that lets each of us, today, catch a wrong answer in a paper, in a colleague's analysis, or in an AI's output.
 
 I want to plant a question, not a claim. We should be deliberate about whether AI lets the next generation skip the private wrong turns that build judgment.
+:::
+
+
+## What the struggle preserves {.smaller}
+
+Bjork & Bjork identified four *desirable difficulties* — specific kinds of effort that distinguish learning that lasts from performance that fades.
+
+<div class="quadrant-grid">
+<div class="quadrant">
+<div class="quadrant-title">Spacing</div>
+<div class="quadrant-detail">Distributing practice over time, not cramming. AI's instant access collapses spacing into a single retrieval.</div>
+</div>
+<div class="quadrant">
+<div class="quadrant-title">Interleaving</div>
+<div class="quadrant-detail">Mixing topics, not blocked practice. AI's task-specific scaffolding tends to reinforce blocking.</div>
+</div>
+<div class="quadrant">
+<div class="quadrant-title">Retrieval practice</div>
+<div class="quadrant-detail">Testing as study, not just review. When AI supplies the answer, the retrieval that builds memory doesn't happen.</div>
+</div>
+<div class="quadrant">
+<div class="quadrant-title">Generation</div>
+<div class="quadrant-detail">Producing answers, not reading them. Generation is where AI most directly substitutes for the learner.</div>
+</div>
+</div>
+
+::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+AI tends to remove all four. Each one needs deliberate preservation.
+:::
+
+::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
+*Bjork & Bjork, 2011, "Making things hard on yourself, but in a good way."*
+:::
+
+::: {.notes}
+Why does productive struggle matter mechanically? Bjork and Bjork named four specific kinds of difficulty that distinguish performance that fades from learning that lasts.
+
+Spacing — distributing practice over time rather than cramming. The principle is that the effort of recalling something after a delay strengthens the memory more than re-reading it immediately. AI tends to collapse spacing into a single retrieval — you ask, you get the answer, you move on. The delay-and-recall cycle doesn't happen.
+
+Interleaving — mixing topics rather than blocked practice. The effort of distinguishing similar concepts is where their differences get encoded. AI's task-specific scaffolding tends to reinforce blocking — each session focuses on one thing.
+
+Retrieval practice — using tests as study, not just as assessment. The act of pulling something from memory strengthens it. When AI supplies the answer, the retrieval that builds memory doesn't happen.
+
+Generation — producing answers rather than reading them. The effort of generating is what distinguishes long-term retention from passive recognition. Generation is exactly where AI most directly substitutes for the learner.
+
+The honest extrapolation: AI tends to remove all four, every time we use it. Each one needs deliberate preservation if we care about the learning, not just the answer.
 :::
 
 
@@ -460,6 +564,55 @@ Then prompt the AI with your plan as context. Compare the AI's approach to yours
 The differences are where learning happens.
 
 This habit is counterintuitive. We add 2 to 5 minutes of friction before a productivity tool — it feels backwards. But it's cheap insurance against being steered.
+:::
+
+
+## The pause in action {.smaller}
+
+An illustrative example — planning a power analysis for a follow-up study.
+
+<div class="worked-grid">
+<div class="worked-col">
+<div class="worked-label">What I wrote (1 min)</div>
+<div class="worked-text">
+<strong>Goal:</strong> sample size for a confirmatory follow-up.<br><br>
+<strong>My approach:</strong> use the pilot's effect size in <code>pwr.t.test()</code>.<br><br>
+<strong>Tricky:</strong> the pilot is small and may overestimate the effect. I want to plan for a deflated value too.
+</div>
+</div>
+<div class="worked-col ai">
+<div class="worked-label">What AI suggested</div>
+<div class="worked-text">
+<code>pwr.t.test()</code> with the pilot's reported effect size, 80% power, two-sided α = 0.05.<br><br>
+A clean, correct answer to the literal question.
+</div>
+</div>
+<div class="worked-col">
+<div class="worked-label">What I learned</div>
+<div class="worked-text">
+AI answered the <em>literal</em> prompt — not the concern the third line raised.<br><br>
+The diff revealed my real question: <em>what effect size do I plan for given the pilot is likely inflated?</em><br><br>
+I left the conversation with two power analyses, not one.
+</div>
+</div>
+</div>
+
+::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+The diff is the lesson.
+:::
+
+::: {.notes}
+Here's a recent example from my own work — illustrative, since power analysis is a problem most of you have run into.
+
+I was planning a confirmatory follow-up to a small pilot study. I gave myself 60 seconds to write what I wanted: sample size for the follow-up, my approach was to plug the pilot effect size into the standard power calculation, and the tricky part was that I knew small pilots tend to overestimate effects, so I wanted to plan for a deflated value too.
+
+I prompted the AI. It gave me a clean, correct answer to the literal prompt — pwr.t.test with the pilot's reported effect size, 80% power, two-sided alpha 0.05. Exactly what I asked for.
+
+But not what I needed.
+
+The diff is what taught me something. AI answered the literal prompt. My third line — the "tricky parts" line — was where the real intellectual content lived: the question wasn't computing power, it was deciding what effect size to plan for. I left the conversation with two power analyses, not one. I would have left with one if I hadn't written the pause first.
+
+The diff is the lesson. Not the AI's answer. Not my prompt. The gap between them.
 :::
 
 
