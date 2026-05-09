@@ -1077,7 +1077,10 @@ display:block!important;
 <p>The goal is not to use AI less — it’s to use it in ways that <strong>keep you learning.</strong></p>
 </blockquote>
 </div>
-<div class="fragment" style="font-size: 0.6em; color: #5B6670; margin-top: 1.5em;">
+<div class="fragment" style="margin-top: 1.2em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;">
+<p>The concern this talk takes seriously: AI may do enough of our work well that we stop practicing the judgment that makes the work — the trial, the submission, the dissertation — ours.</p>
+</div>
+<div class="fragment" style="font-size: 0.6em; color: #5B6670; margin-top: 1.2em;">
 <p><em>Source: Rashid Lab Code Ownership Guide (March 2026)</em></p>
 </div>
 <aside class="notes">
@@ -1114,7 +1117,7 @@ display:block!important;
 <p>Bainbridge’s <em>Ironies of Automation</em> (1983) anticipated the central argument 40 years before AI: as automation grows, the human’s job becomes monitoring and judgment — and those skills atrophy without practice.</p>
 </div>
 <div class="fragment" style="margin-top: 0.4em; font-size: 0.82em; color: #5B6670; font-style: italic;">
-<p>And recently, in professionals: Lee et al. (CHI 2025, n=319 knowledge workers) — higher GenAI confidence predicts less critical thinking; outputs grow more homogeneous (<em>mechanized convergence</em>).</p>
+<p>And recently, in professionals: Lee et al. (CHI 2025, n=319 knowledge workers) — higher GenAI confidence predicts less critical thinking.</p>
 </div>
 <div class="fragment" style="color: #4B9CD3; font-weight: 600; font-size: 1.1em; margin-top: 1em;">
 <p>What is new is the scope, not the mechanism.</p>
@@ -1122,7 +1125,7 @@ display:block!important;
 <aside class="notes">
 <p>Before we go further, I want to ground this in something. The worry I just named isn’t new with AI. Tools have been changing what we encode and what skills we maintain for decades.</p>
 <p>Calculators changed mental arithmetic. GPS changed spatial memory. Search engines changed factual recall.</p>
-<p>Cognitive offloading is settled science — not 2025 speculation. Erik Risko and Sam Gilbert reviewed the literature in 2016 in <em>Trends in Cognitive Sciences</em>; Betsy Sparrow’s “Google effects on memory” paper came out in <em>Science</em> in 2011.</p>
+<p>Cognitive offloading is a well-established literature — not 2025 speculation. Erik Risko and Sam Gilbert reviewed the literature in 2016 in <em>Trends in Cognitive Sciences</em>; Betsy Sparrow’s “Google effects on memory” paper came out in <em>Science</em> in 2011.</p>
 <p>In fact, the central argument of this talk was anticipated in 1983 by Lisanne Bainbridge, in a paper called “Ironies of Automation.” She observed that as automation grows, the human’s job becomes monitoring and judgment — and those skills atrophy without practice.</p>
 <p>So what’s new with AI? The scope. Not the mechanism.</p>
 <style type="text/css">
@@ -1139,7 +1142,7 @@ display:block!important;
 </section>
 <section id="bainbridges-ironies" class="slide level2 smaller">
 <h2>Bainbridge’s ironies</h2>
-<p>Bainbridge’s <em>Ironies of Automation</em> (1983) named four specific failure modes that map directly to AI use today.</p>
+<p>Bainbridge’s <em>Ironies of Automation</em> (1983) anticipated several automation failure modes that map directly to AI use today. The four below are our synthesis.</p>
 <div class="quadrant-grid">
 <div class="quadrant">
 <p><span class="quadrant-title">Skill degradation in the takeover</span></p>
@@ -1196,7 +1199,10 @@ display:block!important;
 <div class="fragment" style="font-style: italic; color: #5B6670; margin-top: 1em;">
 <p>I’m not here to repeat what you already discuss in your circles.</p>
 </div>
-<div class="fragment" style="margin-top: 1.5em;">
+<div class="fragment" style="margin-top: 1em; font-size: 0.88em; color: #13294B;">
+<p>And I’m not arguing AI use is lazy, that trainees must learn the way we did, that all first attempts must be unaided, or that speed and learning are opposites — I’m arguing that some forms of speed remove the very struggle that builds judgment.</p>
+</div>
+<div class="fragment" style="margin-top: 1.2em;">
 <p><strong>The quieter cost</strong> is what I want to focus on:</p>
 <ul>
 <li>For our <strong>research</strong> — the cost is rigor.</li>
@@ -1297,18 +1303,57 @@ display:block!important;
 </div>
 <div class="fragment" style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em;">
 <p><strong>A frequent failure mode is plausibly wrong output that survives casual inspection.</strong></p>
-<p>Across 576,000 code samples from 16 LLMs (mostly Python/JavaScript): commercial GPT-class models referenced nonexistent packages <strong>5.2%</strong> of the time; open-source models, <strong>21.7%</strong>. 200,000+ unique fabricated names.</p>
+<p>Across 576,000 code samples from 16 LLMs (mostly Python/JavaScript): commercial GPT-class models referenced nonexistent packages <strong>5.2%</strong> of the time; open-source models, <strong>21.7%</strong>.</p>
+<p>Package hallucination is the visible version of a broader problem: plausible artifacts that pass casual inspection.</p>
 <p><em>Spracklen et al., USENIX Security 2025. Generalizes in kind to R/SAS; magnitude less established.</em></p>
 </div>
-<div class="fragment" style="margin-top: 0.5em; text-align: center; font-size: 0.82em; color: #5B6670; font-style: italic;">
-<p>For us, the dangerous output isn’t a missing package. It’s a model that runs, a p-value that prints, a sensitivity analysis answering the wrong estimand.</p>
+<div class="fragment" style="margin-top: 0.5em; font-size: 0.82em; text-align: center;">
+<p>For us, the dangerous output isn’t a missing package — it’s a model that does what AI suggested but answers a different question:</p>
+</div>
+<div class="fragment" style="margin-top: 0.4em; font-size: 0.7em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>AI can produce</th>
+<th>Human must decide</th>
+<th>Failure if outsourced</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Regression code</td>
+<td>What estimand the question requires</td>
+<td>Correct model, wrong question</td>
+</tr>
+<tr class="even">
+<td>ITT analysis code</td>
+<td>Which ICH E9(R1) estimand the protocol specifies</td>
+<td>Code is correct; estimand contradicts the SAP</td>
+</tr>
+<tr class="odd">
+<td>Sensitivity analysis</td>
+<td>Which assumptions are plausible to vary</td>
+<td>Sensitivity to irrelevant assumptions</td>
+</tr>
+<tr class="even">
+<td>Simulation</td>
+<td>What data-generating process matters</td>
+<td>Simulation validates the wrong world</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="fragment" style="margin-top: 0.5em; color: #4B9CD3; font-weight: 600; text-align: center;">
 <p>Without your judgment, plausibly wrong passes.</p>
 </div>
 <aside class="notes">
 <p>Start with our own research. The part you don’t outsource is what I’d call the chain of judgment.</p>
-<p>Framing the question — what’s worth asking. Choosing methods, including over alternatives the AI didn’t suggest. Verifying that what was produced is what you actually intended — that the code does what you described, that the output answers the question you asked. Interpreting what the result means and, just as importantly, what it does not. Defending the work to a hostile reader.</p>
+<p>Framing the question — what’s worth asking. Choosing methods, including the <em>estimand</em> — what quantity does my question actually require? — and the design that targets it, including over alternatives the AI didn’t suggest. Verifying that what was produced is what you actually intended — that the code does what you described, that the output answers the question you asked. Interpreting what the result means and, just as importantly, what it does not. Defending the work to a hostile reader.</p>
 <p>What’s the actual failure mode AI introduces here? It’s not gross incompetence. It’s plausibly wrong output that survives casual inspection.</p>
 <p>Spracklen and colleagues at the USENIX Security symposium last year looked at 576,000 code samples generated by 16 LLMs — predominantly Python and JavaScript. Even commercial GPT-class models referenced nonexistent software packages 5.2% of the time. Open-source models, 21.7%. Over 200,000 unique fabricated package names.</p>
 <p>That study’s about Python and JavaScript, not R or SAS. So the failure mode generalizes in kind to our work; the magnitude is less established. But the pattern matters — and in statistics, the dangerous output is often not a nonexistent package. It’s a model that runs, a p-value that prints, a prior that sounds reasonable, a contrast that looks plausible, or a sensitivity analysis that answers the wrong estimand.</p>
@@ -1329,71 +1374,45 @@ display:block!important;
 <section id="in-doctoral-training" class="slide level2 smaller">
 <h2>In doctoral training</h2>
 <p>The part you don’t outsource is the <strong>productive struggle.</strong></p>
-<div class="fragment" style="margin-top: 1.2em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-style: italic; color: #5B6670; font-size: 0.85em;">
+<div class="fragment" style="margin-top: 0.7em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-style: italic; color: #5B6670; font-size: 0.78em;">
 <p>“Conditions of instruction that make performance improve rapidly often fail to support long-term retention and transfer.”</p>
-<p><em>Bjork &amp; Bjork, 2011. From research on conventional instruction; the extension to AI-assisted learning is an extrapolation, not a finding.</em></p>
+<p><em>Bjork &amp; Bjork, 2011. Extension to AI-assisted learning is an extrapolation, not a finding.</em></p>
 </div>
-<div class="fragment" style="margin-top: 0.8em; font-size: 0.92em;">
-<p><strong>Concretely:</strong> working through a derivation by hand the first time. Manually debugging by staring at residuals before reaching for help. Building a small simulation from scratch before reaching for a library.</p>
+<div class="fragment" style="margin-top: 0.5em; text-align: center; font-size: 0.88em;">
+<p>The struggle preserves four kinds of effort that distinguish learning that lasts:</p>
 </div>
-<div class="fragment" style="margin-top: 1em;">
-<p>The struggle is where <strong>calibrated intuition</strong> is laid down — the kind that lets each of us, today, catch a wrong answer in a paper, a colleague’s analysis, or an AI’s output.</p>
-</div>
-<div class="fragment" style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;">
-<p>We should be deliberate about whether AI lets the next generation skip the private wrong turns that build judgment.</p>
-</div>
-<aside class="notes">
-<p>In doctoral training, the part you don’t outsource is the productive struggle.</p>
-<p>In 2011, Robert and Elizabeth Bjork wrote: “Conditions of instruction that make performance improve rapidly often fail to support long-term retention and transfer.”</p>
-<p>This was research on conventional instruction. The extension to AI-assisted learning is an extrapolation, not a finding — and I want to be honest about that.</p>
-<p>But the principle generalizes well. The struggle in graduate training is where calibrated intuition is laid down — the kind that lets each of us, today, catch a wrong answer in a paper, in a colleague’s analysis, or in an AI’s output.</p>
-<p>I want to plant a question, not a claim. We should be deliberate about whether AI lets the next generation skip the private wrong turns that build judgment.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="what-the-struggle-preserves" class="slide level2 smaller">
-<h2>What the struggle preserves</h2>
-<p>Bjork &amp; Bjork identified four <em>desirable difficulties</em> — specific kinds of effort that distinguish learning that lasts from performance that fades.</p>
 <div class="quadrant-grid">
 <div class="quadrant">
 <p><span class="quadrant-title">Spacing</span></p>
-<p>Distributing practice over time, not cramming. AI’s instant access collapses spacing into a single retrieval.</p>
+<p>Practice over time, not cramming. AI’s instant access collapses spacing.</p>
 </div>
 <div class="quadrant">
 <p><span class="quadrant-title">Interleaving</span></p>
-<p>Mixing topics, not blocked practice. AI’s task-specific scaffolding tends to reinforce blocking.</p>
+<p>Mixing topics, not blocked practice. AI scaffolding reinforces blocking.</p>
 </div>
 <div class="quadrant">
 <p><span class="quadrant-title">Retrieval practice</span></p>
-<p>Testing as study, not just review. When AI supplies the answer, the retrieval that builds memory doesn’t happen.</p>
+<p>Testing as study. When AI supplies the answer, retrieval doesn’t happen.</p>
 </div>
 <div class="quadrant">
 <p><span class="quadrant-title">Generation</span></p>
-<p>Producing answers, not reading them. Generation is where AI most directly substitutes for the learner.</p>
+<p>Producing answers, not reading them. Generation is where AI directly substitutes.</p>
 </div>
 </div>
-<div class="fragment" style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;">
-<p>AI tends to remove all four. Each one needs deliberate preservation.</p>
-</div>
-<div class="fragment" style="margin-top: 0.4em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;">
-<p><em>Bjork &amp; Bjork, 2011, “Making things hard on yourself, but in a good way.”</em></p>
+<div class="fragment" style="margin-top: 0.5em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;">
+<p>Default AI use can bypass all four. Each one needs deliberate preservation.</p>
 </div>
 <aside class="notes">
-<p>Why does productive struggle matter mechanically? Bjork and Bjork named four specific kinds of difficulty that distinguish performance that fades from learning that lasts.</p>
-<p>Spacing — distributing practice over time rather than cramming. The principle is that the effort of recalling something after a delay strengthens the memory more than re-reading it immediately. AI tends to collapse spacing into a single retrieval — you ask, you get the answer, you move on. The delay-and-recall cycle doesn’t happen.</p>
-<p>Interleaving — mixing topics rather than blocked practice. The effort of distinguishing similar concepts is where their differences get encoded. AI’s task-specific scaffolding tends to reinforce blocking — each session focuses on one thing.</p>
+<p>In doctoral training, the part you don’t outsource is the productive struggle.</p>
+<p>In 2011, Robert and Elizabeth Bjork wrote: “Conditions of instruction that make performance improve rapidly often fail to support long-term retention and transfer.” This was research on conventional instruction; the extension to AI-assisted learning is an extrapolation, not a finding.</p>
+<p>But the principle generalizes well, and the mechanism is concrete. Bjork &amp; Bjork named four specific difficulties that distinguish learning that lasts from performance that fades:</p>
+<p>Spacing — distributing practice over time rather than cramming. The effort of recalling something after a delay strengthens the memory more than re-reading it. AI’s instant access collapses spacing — you ask, you get the answer, you move on.</p>
+<p>Interleaving — mixing topics rather than blocked practice. The effort of distinguishing similar concepts is where their differences get encoded. AI’s task-specific scaffolding tends to reinforce blocking.</p>
 <p>Retrieval practice — using tests as study, not just as assessment. The act of pulling something from memory strengthens it. When AI supplies the answer, the retrieval that builds memory doesn’t happen.</p>
-<p>Generation — producing answers rather than reading them. The effort of generating is what distinguishes long-term retention from passive recognition. Generation is exactly where AI most directly substitutes for the learner.</p>
-<p>The honest extrapolation: AI tends to remove all four, every time we use it. Each one needs deliberate preservation if we care about the learning, not just the answer.</p>
+<p>Generation — producing answers rather than reading them. The effort of generating distinguishes long-term retention from passive recognition. Generation is exactly where AI most directly substitutes for the learner.</p>
+<p>The honest extrapolation: default AI use can bypass all four. Each one needs deliberate preservation.</p>
+<p>Concretely in graduate stats training, that means working through a derivation by hand the first time, manually debugging by staring at residuals before reaching for help, building a small simulation from scratch before reaching for a library. The struggle is where calibrated intuition is laid down — the kind that lets each of us, today, catch a wrong answer in a paper, in a colleague’s analysis, or in an AI’s output.</p>
+<p>We should be deliberate about whether AI lets the next generation skip the private wrong turns that build judgment.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1410,7 +1429,7 @@ display:block!important;
 <h2>In classroom teaching</h2>
 <p>The part you don’t outsource is the <strong>first encounter</strong> with a concept.</p>
 <div class="fragment" style="margin-top: 1em; font-size: 1.05em;">
-<p>The schema gets built then, or it does not.</p>
+<p>The first encounter strongly shapes the schema students build.</p>
 </div>
 <div class="fragment" style="margin-top: 1em;">
 <p>Concept formation is:</p>
@@ -1425,7 +1444,7 @@ display:block!important;
 </div>
 <aside class="notes">
 <p>In classroom teaching, the part you don’t outsource is the first encounter with a concept.</p>
-<p>The schema gets built then, or it does not.</p>
+<p>The first encounter strongly shapes the schema students build.</p>
 <p>Concept formation is the most contextual phase of learning — it depends on what just happened in this room, with this cohort, this semester. It’s the hardest to automate well phase, for that same reason. And it’s where the broader statistical literacy of our students is determined.</p>
 <p>A student who outsources the first encounter with confounding, likelihood, or simulation often retains the answer without the schema.</p>
 <style type="text/css">
@@ -1503,34 +1522,6 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="a-few-practices-that-travel" class="slide level2 smaller">
-<h2>A few practices that travel</h2>
-<p>The source guide is built in layers: <strong>principles → daily habits → project-level practices.</strong> We won’t walk all of them.</p>
-<div class="fragment" style="margin-top: 1em;">
-<p>The ones that travel best across coding, research, and teaching share a common theme.</p>
-</div>
-<div class="fragment" style="margin-top: 1.2em; text-align: center; font-size: 1.5em; color: #4B9CD3; font-weight: 600;">
-<p>deliberate friction</p>
-</div>
-<div class="fragment" style="text-align: center; margin-top: 0.8em; color: #5B6670; font-style: italic;">
-<p>Listen for it as we walk through the practices.</p>
-</div>
-<aside class="notes">
-<p>The source guide is built in three layers: principles, daily habits, and project-level practices. We won’t walk all of them.</p>
-<p>The ones that travel best across coding, research, and teaching share a common theme.</p>
-<p>Listen for one phrase as we go: deliberate friction. It’s the through-line. It lands as the synthesis at the end of this section.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
 <section id="read-everything-that-ships" class="slide level2 smaller">
 <h2>Read everything that ships</h2>
 <blockquote>
@@ -1584,7 +1575,7 @@ display:block!important;
 <ol type="1">
 <li>What am I trying to accomplish? <em>(the goal, not the implementation)</em></li>
 <li>What’s my best guess for how to do it? <em>(rough or wrong is fine)</em></li>
-<li>What are the tricky parts? <em>(edge cases, assumptions, unknowns)</em></li>
+<li>What are the tricky parts? <em>(edge cases, assumptions, unknowns — and: what assumption would change the conclusion? what did the AI not suggest?)</em></li>
 <li>How will I know it worked? <em>(what output am I expecting; how will I verify)</em></li>
 </ol>
 </div>
@@ -1674,6 +1665,9 @@ Affected: src/optim.R, sim/runner.R, methods section §3.2.</code></pre>
 <div class="fragment" style="color: #4B9CD3; font-weight: 600; margin-top: 0.5em; text-align: center;">
 <p>Generalizes beyond code: research projects, course curricula, manuscripts.</p>
 </div>
+<div class="fragment" style="margin-top: 0.4em; text-align: center; font-size: 0.82em; color: #5B6670; font-style: italic;">
+<p>Same principle scales up — to architecture documents, analysis plans, syllabus rationales. Write your own (not AI’s) project map.</p>
+</div>
 <aside class="notes">
 <p>Third practice. A decision log.</p>
 <p>Keep a lightweight markdown file called <code>DECISIONS.md</code> in every project.</p>
@@ -1681,6 +1675,7 @@ Affected: src/optim.R, sim/runner.R, methods section §3.2.</code></pre>
 <p>Here’s an example from a real project of mine: switching the simulator’s optimizer from BFGS to L-BFGS-B. The reason — BFGS hit memory limits when n_params went over 5000. The trade-off — about 10x memory reduction, but slower per-iteration and needs a warm start. Affected — <code>src/optim.R</code>, <code>sim/runner.R</code>, methods section §3.2.</p>
 <p>The point isn’t the artifact — it’s the act of writing. Articulating the decision forces you to understand it. The log helps teammates, helps reviewers, and helps future-you reconstruct the reasoning when you’ve forgotten why you did what you did.</p>
 <p>This generalizes beyond code: research projects, course curricula, manuscripts. Anywhere decisions get made and forgotten.</p>
+<p>The same principle scales up to architecture documents — a living description of how a project’s components fit together. The full architecture-documentation guidance is in the source guide and lab handbook (linked in the appendix); for purposes of this talk, the decision log is the daily-habit version, and architecture docs are what you build over time when decision logs accumulate enough decisions worth synthesizing.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1712,7 +1707,10 @@ display:block!important;
 <div class="fragment" style="margin-top: 0.8em;">
 <p>Where you get stuck is where your understanding has gaps.</p>
 </div>
-<div class="fragment" style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;">
+<div class="fragment" style="margin-top: 0.6em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em;">
+<p><strong>Good explain-back, in practice — you can:</strong> (a) explain the goal in statistical terms, (b) name at least one reasonable alternative, (c) predict how the result could fail.</p>
+</div>
+<div class="fragment" style="color: #4B9CD3; font-weight: 600; margin-top: 0.6em; text-align: center;">
 <p>The thinking required to explain is the point.</p>
 </div>
 <aside class="notes">
@@ -1723,45 +1721,6 @@ display:block!important;
 <p>Where you get stuck is where your understanding has gaps.</p>
 <p>And in real time — narrate at the system level, not the action level. Not “I asked for X and it worked,” but “the bug was a race condition; the mutex works because shared state is only accessed from two places.”</p>
 <p>The thinking required to explain is the point.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="architecture-documentation" class="slide level2 smaller">
-<h2>Architecture documentation</h2>
-<blockquote>
-<p>A living document describing your project at a high level.</p>
-</blockquote>
-<div class="fragment" style="margin-top: 1em;">
-<ul>
-<li>major components and how they interact</li>
-<li>the data model and how state flows</li>
-<li>key design decisions and their rationale</li>
-<li>external dependencies and why each was chosen</li>
-</ul>
-</div>
-<div class="fragment" style="margin: 1em 0 0.8em; padding: 0.8em 1.2em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-style: italic; color: #5B6670; font-size: 0.92em;">
-<p>“Writing it yourself — not asking AI to generate it — is the point. The act of writing is the act of understanding.”</p>
-<p><em>Rashid Lab Code Ownership Guide</em></p>
-</div>
-<div class="fragment" style="color: #4B9CD3; font-weight: 600; margin-top: 0.6em; text-align: center;">
-<p>For research, an analysis plan. For a course, a syllabus rationale. For a manuscript, a one-page summary.</p>
-</div>
-<aside class="notes">
-<p>Fifth practice. Architecture documentation.</p>
-<p>A living document describing your project at a high level.</p>
-<p>Major components and how they interact. The data model and how state flows. Key design decisions and their rationale. External dependencies and why each was chosen.</p>
-<p>The source guide puts it this way: “Writing it yourself — not asking AI to generate it — is the point. The act of writing is the act of understanding.”</p>
-<p>For a research project, that’s an analysis plan. For a course, a syllabus rationale. For a manuscript, a one-page summary.</p>
-<p>And the question that travels everywhere: if this component fails, what’s the blast radius? In research, that becomes: if this assumption fails, what conclusions break? In teaching: if students misunderstand this, what later material collapses? In clinical work: if this analysis is wrong, what does the trial conclude?</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1789,7 +1748,7 @@ display:block!important;
 <p>Bjork &amp; Bjork, 2011 (desirable difficulties — <em>resolvable</em>, not arbitrary).<br> Kapur, 2008 / 2016 (productive failure, distinct from unproductive failure).<br> Deslauriers et al., <em>PNAS</em> 2019 (the <em>feeling</em> of learning ≠ learning).</p>
 </div>
 <div class="fragment" style="margin: 1.2em 0 0; text-align: center; font-size: 1.1em; color: #13294B; font-weight: 600; line-height: 1.4;">
-<p>The friction isn’t the problem AI solves.<br> It’s the asset AI is most likely to remove.</p>
+<p>The friction isn’t the problem AI solves.<br> It’s an asset that’s easy to lose to AI.</p>
 </div>
 <aside class="notes">
 <p>What ties these five practices together?</p>
@@ -1881,7 +1840,7 @@ Better in practice. <strong style="color: #C95E55;">17% worse</strong> when acce
 Tutor-prompted GPT (with guardrails)
 </div>
 <div class="comparison-text">
-Better in practice. <strong style="color: #5CA77C;">No detectable harm</strong> when access removed.
+Better in practice. <strong style="color: #5CA77C;">No detectable underperformance</strong> when access removed.
 </div>
 </div>
 </div>
@@ -1889,15 +1848,15 @@ Better in practice. <strong style="color: #5CA77C;">No detectable harm</strong> 
 <p>One study, one population, one subject. Suggestive of a broader pattern; not yet established for graduate technical training.</p>
 </div>
 <div class="fragment" style="margin-top: 0.8em; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600;">
-<p>Design matters more than the tool.</p>
+<p>The same tool can have very different learning consequences depending on design.</p>
 </div>
 <aside class="notes">
 <p>I want to anchor what I just said in the strongest empirical evidence we have on this question.</p>
 <p>Bastani and colleagues. <em>PNAS</em>, 2025. Field experiment. Roughly 1,000 high-school math students.</p>
 <p>Vanilla GPT during practice — students performed better in practice. But 17% worse than no-AI controls when access was removed.</p>
-<p>Tutor-prompted GPT — same access, same students, same content. The only thing that differed was the prompt scaffolding. No detectable harm when access was removed.</p>
+<p>Tutor-prompted GPT — same access, same students, same content. The only thing that differed was the prompt scaffolding. No detectable underperformance when access was removed.</p>
 <p>The point is not that this study settles graduate statistics education. It obviously does not. One study, one population, one subject — high-school math, not biostatistics. The point is that the same tool can produce very different learning consequences depending on the surrounding design.</p>
-<p>Design matters more than the tool.</p>
+<p>The same tool can have very different learning consequences depending on design.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1923,7 +1882,7 @@ display:block!important;
 <p>Concrete moves:</p>
 <ul>
 <li>Require the unplugged version first on key derivations and debugging.</li>
-<li>Audit <em>what</em> the AI did on a project, not just whether it worked.</li>
+<li>Standing question for any AI-assisted work: <em>“show me one place AI helped, one suggestion you rejected, one thing you verified independently.”</em> (Same conversation works senior-to-junior in industry teams.)</li>
 <li>Make defending the decision — not producing the output — the bar for sign-off.</li>
 </ul>
 </div>
@@ -1987,7 +1946,7 @@ display:block!important;
 <div class="fragment" style="margin-top: 0.8em;">
 <p>The same practices apply, with an audit-trail layer:</p>
 <ul>
-<li><strong>Decision log → prompt logs.</strong> Log prompt, model version, and accepted diff.</li>
+<li><strong>Decision log → audit trail.</strong> Log the <em>decision</em>, model version, and accepted diff. Redact or omit verbatim prompts where institutional policy requires (PHI / sponsor-confidential).</li>
 <li><strong>Pre-prompt pause → SAP pre-specification.</strong> Define permitted AI use before analysis begins.</li>
 <li><strong>Read everything → double programming.</strong> AI-assisted code gets independent re-derivation.</li>
 <li><strong>Architecture docs → reproducibility under model deprecation.</strong> Pin model versions.</li>
@@ -1999,12 +1958,59 @@ display:block!important;
 <aside class="notes">
 <p>I want to acknowledge directly that for many of you in clinical trials, biopharma, or industry — the line isn’t personal. It’s drawn by SOPs, sponsor protocols, FDA, and QA.</p>
 <p>The same practices apply, but with an audit-trail layer.</p>
-<p>The decision log becomes prompt logs — log the prompt, the model version, and the diff you accepted.</p>
+<p>One important nuance on the first bullet: the judgment-preserving thing to log is the <em>decision</em>, the <em>model version</em>, and the <em>diff</em> you accepted. Logging the verbatim prompt sounds rigorous, but in HIPAA-covered or sponsor-confidential settings, the prompt itself can contain PHI or unblinded information. That’s a disclosure event nobody wants. So: log the artifact of the decision, not the conversation that produced it.</p>
+<p>The decision log becomes an audit trail — log the decision, the model version, and the diff you accepted. The verbatim prompt is the part that can leak PHI or unblinded data, so it gets redacted or omitted under institutional policy.</p>
 <p>The pre-prompt pause becomes analysis-plan pre-specification — define permitted AI use in the SAP, programming plan, validation plan, or SOP before analysis begins.</p>
 <p>Read everything that ships becomes double programming — AI-assisted code receives the same independent re-derivation as human-written code.</p>
 <p>Architecture documentation becomes reproducibility under model deprecation — pin model versions; expect them to disappear.</p>
-<p>One operational reality: hosted-LLM use with patient or confidential sponsor data may violate institutional policy or trigger privacy/security review. Local and on-prem deployments — and the productivity gap they create — are part of the calibration.</p>
 <p>The line is drawn by your sponsor, the FDA, and your QA group — not by you alone.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="regulated-work-in-practice" class="slide level2 smaller">
+<h2>Regulated work, in practice</h2>
+<p>The same statistical task — different artifact requirements:</p>
+<div class="comparison-grid">
+<div class="comparison-box neutral">
+<div class="comparison-label">
+Academic exploration
+</div>
+<div class="comparison-text">
+A power analysis with AI-scaffolded simulation. <code>DECISIONS.md</code> captures the trade-off; the work moves on.
+</div>
+</div>
+<div class="comparison-box highlighted">
+<div class="comparison-label">
+Regulated submission
+</div>
+<div class="comparison-text">
+The SAP pre-specifies permitted AI use; an independent statistician re-derives; the diff between AI suggestion and accepted code is itself an audit artifact.
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: 0.7em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;">
+<p>The judgment doesn’t change — the documentation does.</p>
+</div>
+<div class="fragment" style="margin-top: 0.5em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.78em; color: #5B6670;">
+<p><strong>Data residency:</strong> hosted-LLM use with patient or sponsor-confidential data may violate institutional policy or trigger privacy/security review. Local/on-prem deployments — and the productivity gap they create — are part of the calibration.</p>
+</div>
+<div class="fragment" style="color: #4B9CD3; font-weight: 600; margin-top: 0.5em; text-align: center;">
+<p>Institutional and sponsor disclosure requirements take precedence over personal practice.</p>
+</div>
+<aside class="notes">
+<p>The same statistical task can require very different artifacts depending on context. Same power analysis, same simulation logic — but the academic version is documented in a project DECISIONS log and the work moves on; the regulated version requires the SAP to pre-specify whether AI-assisted code is permitted, an independent statistician to re-derive, and the diff between AI suggestion and accepted code to live as an audit artifact.</p>
+<p>The judgment doesn’t change. What changes is what evidence of that judgment must remain.</p>
+<p>One operational reality worth flagging: hosted-LLM use with patient or sponsor-confidential data can itself violate institutional policy or trigger privacy/security review. Even when the AI’s output is fine, the prompt may not be. Local or on-prem deployments avoid that, but they also create a productivity gap with colleagues using hosted tools. That gap is part of the calibration — it’s a real cost of compliance.</p>
+<p>And on disclosure specifically: whatever your SOPs, sponsor protocols, journal policies, or institutional rules require — that’s the floor, not your judgment. Personal disclosure practice operates above that floor, not in place of it.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -2019,8 +2025,11 @@ display:block!important;
 </section>
 <section id="the-spectrum-of-delegation" class="slide level2 smaller">
 <h2>The spectrum of delegation</h2>
-<div style="text-align: center; color: #5B6670; font-style: italic; margin-bottom: 0.5em; font-size: 0.85em;">
+<div style="text-align: center; color: #5B6670; font-style: italic; margin-bottom: 0.4em; font-size: 0.85em;">
 <p>Where do you draw the line — and how does it shift across activities?</p>
+</div>
+<div style="text-align: center; margin-bottom: 0.5em; font-size: 0.82em; color: #13294B;">
+<p><strong>Three modes of use:</strong> <em>executor</em> (writes the work) · <em>tutor</em> (teaches through it) · <em>critic</em> (challenges it).</p>
 </div>
 <div class="spectrum-grid">
 <div class="spectrum-col safe">
@@ -2111,6 +2120,7 @@ Diagnosing the room
 <p>Right column — stay hands-on. Architecture and design. Core algorithms. Methodological choices. Interpretation and defense. Curriculum judgment. Diagnosing the room.</p>
 <p>Notice the right column has both code-side items — architecture, algorithms — and non-code items — curriculum judgment, diagnosing the room. The same column structure applies across all our roles. The items shift. The columns don’t.</p>
 <p>The line also shifts by learner stage. For beginners, AI works best when it explains, quizzes, and gives hints. For intermediate learners, it can critique plans and help debug. For advanced users, it accelerates execution but the user still owns method choice and interpretation. For regulated work, the question becomes not just “do I understand it?” but “can I document and validate it?”</p>
+<p>A separate way to think about the same thing — three modes of use. <em>Executor</em> output may end up in the deliverable; document accordingly. <em>Tutor</em> and <em>critic</em> outputs support thinking and usually need no retention. Some example prompts that put AI in tutor or critic mode rather than executor mode: “Ask me three questions before suggesting a method.” “Don’t give code yet — ask me to specify the estimand.” “List assumptions under which this analysis would fail.” “Argue against this model choice.” “Give me two alternatives I should consider before proceeding.” “Quiz me on the method before helping me implement it.” One caveat worth flagging: critic-mode output is itself delegated judgment — it needs the same review as code.</p>
 <p>The columns are stable. The items shift by activity, by stakes, and by where you are in your career.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
@@ -2232,7 +2242,8 @@ display:block!important;
 <p>Adopt one. Add the next when the first feels routine.</p>
 <p>A year in: you can defend your work without your notes; your trainees can defend theirs.</p>
 <p>These are from the source guide’s quick-start checklist, lightly reordered.</p>
-<p>And one practical default for disclosure: disclose AI assistance when it materially shaped the analysis, writing, code, or interpretation — not when it merely helped with formatting or syntax.</p>
+<p>And one practical default for disclosure: disclose AI assistance when it materially shaped analysis, code, interpretation, literature synthesis, or substantive writing — not when it merely helped with formatting or syntax. Whatever your SOPs, sponsor protocols, or journal policies require is the floor, not your judgment. When in doubt, disclose the role, not the tool.</p>
+<p>A green/yellow/red AI-use policy template lives in the lab guide for those of you writing one for your course or team.</p>
 <p>As you sit with these — and pick where to start — here’s the image I keep coming back to.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
@@ -2278,8 +2289,11 @@ display:block!important;
 </section></section>
 <section id="stay-in-the-drivers-seat" class="title-slide slide level1 center closing-slide" data-background-color="#13294B">
 <h1>Stay in the Driver’s Seat</h1>
-<div style="color: #4B9CD3; font-size: 0.65em; font-style: italic; margin-top: 0.2em; margin-bottom: 1.2em;">
+<div style="color: #4B9CD3; font-size: 0.65em; font-style: italic; margin-top: 0.2em; margin-bottom: 1.4em;">
 <p>Calibrating AI Use in Statistical Research, Training, and Practice</p>
+</div>
+<div style="color: #4B9CD3; font-size: 0.78em; line-height: 1.5; max-width: 78%; margin: 0 auto 1.2em; font-weight: 500;">
+<p><strong>This week</strong> — pick one place where AI has made your work smoother. Add back one piece of <em>deliberate friction.</em></p>
 </div>
 <div style="color: #FFFFFF; font-size: 0.9em; line-height: 1.6; max-width: 80%; margin: 0 auto; font-style: italic; font-weight: 300;">
 <p>not because we don’t trust the GPS,<br> but because we still want to know where we are when we arrive.</p>
@@ -2291,7 +2305,8 @@ display:block!important;
 <p>naim@unc.edu  ·  naimurashid.github.io  ·  LinkedIn: Naim Rashid  ·  GitHub: @naimurashid</p>
 </div>
 <aside class="notes">
-<p>Stay in the driver’s seat — not because we don’t trust the GPS, but because we still want to know where we are when we arrive.</p>
+<p>One last takeaway, before we close. This week — pick one place where AI has made your work smoother. Add back one piece of deliberate friction. Not to slow yourself down permanently, but to make sure the judgment is still yours.</p>
+<p>And then: stay in the driver’s seat — not because we don’t trust the GPS, but because we still want to know where we are when we arrive.</p>
 <p>Thank you. I’m happy to take questions.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
