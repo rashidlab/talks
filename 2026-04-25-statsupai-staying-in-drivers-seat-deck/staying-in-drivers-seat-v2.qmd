@@ -689,6 +689,48 @@ The thinking required to explain is the point.
 :::
 
 
+## Red-team your analysis {.smaller}
+
+> Before accepting an AI-assisted result, argue against it.
+
+::: {.fragment style="margin: 0.6em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.88em;"}
+- What assumption would change the conclusion?
+- What estimand did this actually answer?
+- What alternative method would a skeptical reviewer expect?
+- What diagnostic would make me distrust this?
+- What would I do if the result were reversed?
+- What did the AI not suggest?
+:::
+
+::: {.fragment style="margin-top: 0.6em; font-size: 0.85em; color: #5B6670; font-style: italic; text-align: center;"}
+The questions you ask before submitting are the questions a hostile reviewer asks first.
+:::
+
+::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.5em; text-align: center;"}
+For regulated work — these become a sponsor-reviewable checklist.
+:::
+
+::: {.notes}
+A fifth practice — though really it's the explicit version of something already built into the pre-prompt pause and explain-it-back. Before accepting an AI-assisted result, argue against it.
+
+What assumption would change the conclusion? This is the assumption-sensitivity test. If your finding hinges on a single assumption, the result is fragile and the assumption needs explicit defense.
+
+What estimand did this actually answer? This is the question the table on slide 9 flagged. AI gives you what you literally asked for; the estimand question makes sure that matches what your protocol or your science actually needs.
+
+What alternative method would a skeptical reviewer expect? This is the version of the opening scenario you can act on. The dissertation candidate didn't ask this question; if they had, the AI never generating the alternative wouldn't have been the only line of defense.
+
+What diagnostic would make me distrust this? Concrete falsification criterion. If you can't name one, you don't have a model — you have a fitting procedure.
+
+What would I do if the result were reversed? Pre-mortem on the conclusion. If you'd report it the same way, you don't actually have a directional finding.
+
+What did the AI not suggest? The opening scenario in one question. The AI is generative within its training distribution; alternatives outside that distribution are the human's responsibility.
+
+For regulated work, these six questions become a sponsor-reviewable checklist. Many SAPs already include something like this; making it AI-aware just means asking the questions in light of how AI helped produce the analysis.
+
+The questions you ask before submitting are the questions a hostile reviewer asks first. Red-teaming is just running that conversation early — with yourself.
+:::
+
+
 ## What ties these practices together {.smaller}
 
 ::: {style="text-align: center; margin: 0.6em 0 0; font-size: 1.6em; color: #4B9CD3; font-weight: 700; letter-spacing: 0.02em;"}
@@ -728,7 +770,56 @@ That's from Bjork and Bjork on desirable difficulties, Kapur on productive failu
 
 The friction isn't the problem AI solves.
 
-It's the asset AI is most likely to remove.
+It's an asset that's easy to lose to AI.
+:::
+
+
+## Three modes of AI use {.smaller}
+
+How you prompt AI determines what kind of work it does for you.
+
+```{=html}
+<div style="display: flex; gap: 0.6em; align-items: stretch; margin: 0.6em 0 0.4em;">
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Executor</div>
+<div style="color: #13294B; margin-bottom: 0.55em;">Writes the work. Code, drafts, refactoring, format conversions.</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Write a function that…"</div>
+</div>
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Tutor</div>
+<div style="color: #13294B; margin-bottom: 0.55em;">Teaches through the work. Explains, asks questions, gives hints, quizzes.</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Quiz me on the method before helping me implement it."</div>
+</div>
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Critic</div>
+<div style="color: #13294B; margin-bottom: 0.55em;">Challenges the work. Argues against, names alternatives, stress-tests assumptions.</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Argue against this model choice. List two alternatives."</div>
+</div>
+</div>
+```
+
+::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+Default AI is executor. Tutor and critic modes are designed.
+:::
+
+::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
+Critic-mode output is itself delegated judgment — it needs the same review as code.
+:::
+
+::: {.notes}
+Before we move into how this changes by role, here's a vocabulary I think you'll find useful. The same model can do three very different things depending on the prompt you give it.
+
+Executor mode is the default. You ask, it produces. Code, drafts, format conversions. The output is the deliverable, or part of it. This is what most people mean when they say "I used AI" — and it's the mode the spectrum of delegation we just looked at is mostly about.
+
+Tutor mode is when you ask AI to teach you something rather than do it for you. "Quiz me on the method before helping me implement it." "Explain why this estimator has the bias it does." "Walk me through the assumptions before showing me the code." The output isn't the deliverable — it's understanding. The work product still has to be yours.
+
+Critic mode is when you ask AI to challenge your work. "Argue against this model choice." "List two alternatives I should consider before proceeding." "What assumption would change my conclusion?" "Where would a skeptical reviewer push back?" The output isn't the deliverable either — it's calibration. AI is generating disagreement so you can stress-test your thinking.
+
+Default AI is executor. The other two modes you have to design for — they don't happen unless you prompt them.
+
+One important caveat: critic-mode output is itself delegated judgment — it needs the same review as code. If you ask the AI to argue against your model choice and it does so unconvincingly, that's not evidence your model is right. It's evidence the AI didn't argue well.
+
+This is the same content as the spectrum we just looked at, viewed from a different angle. The spectrum tells you *what* kinds of tasks to delegate. Modes tell you *how* to use AI on whatever you're delegating. Both are useful; together, they cover most of the design space.
 :::
 
 
