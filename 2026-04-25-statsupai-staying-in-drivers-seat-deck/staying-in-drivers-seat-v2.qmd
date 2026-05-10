@@ -823,6 +823,52 @@ This is the same content as the spectrum we just looked at, viewed from a differ
 :::
 
 
+## The modes in action {.smaller}
+
+Same situation, three modes — *"I'm choosing between OLS, GLS, and a robust regression for this dataset."*
+
+```{=html}
+<div style="display: flex; gap: 0.6em; align-items: stretch; margin: 0.5em 0 0.4em;">
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.7em; line-height: 1.45;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4em;">Executor prompt</div>
+<div style="color: #5B6670; font-style: italic; margin-bottom: 0.45em;">"Use GLS with HC3 standard errors. Write me the code."</div>
+<div style="border-top: 1px solid #DEE2E6; padding-top: 0.4em; color: #13294B;"><strong>Output:</strong> code that runs.</div>
+<div style="margin-top: 0.4em; color: #C95E55; font-size: 0.92em;"><em>What's missing:</em> whether GLS was the right call.</div>
+</div>
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.7em; line-height: 1.45;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4em;">Tutor prompt</div>
+<div style="color: #5B6670; font-style: italic; margin-bottom: 0.45em;">"Walk me through the assumptions of each — when does each model fail? Quiz me before showing code."</div>
+<div style="border-top: 1px solid #DEE2E6; padding-top: 0.4em; color: #13294B;"><strong>Output:</strong> a primer + retrieval practice.</div>
+<div style="margin-top: 0.4em; color: #5CA77C; font-size: 0.92em;"><em>What you get:</em> the assumptions encoded, not just applied.</div>
+</div>
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.7em; line-height: 1.45;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4em;">Critic prompt</div>
+<div style="color: #5B6670; font-style: italic; margin-bottom: 0.45em;">"Argue for OLS despite the heteroskedasticity. What residual pattern would I need to see?"</div>
+<div style="border-top: 1px solid #DEE2E6; padding-top: 0.4em; color: #13294B;"><strong>Output:</strong> three scenarios where OLS would still be defensible.</div>
+<div style="margin-top: 0.4em; color: #5CA77C; font-size: 0.92em;"><em>What you get:</em> a stress test of your default.</div>
+</div>
+</div>
+```
+
+::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+The mode you're in is a lever you control.
+:::
+
+::: {.notes}
+Same statistical situation — choosing between OLS, GLS, and a robust regression for a dataset where you've noticed some heteroskedasticity. The same model, the same data, can produce three very different conversations depending on the prompt.
+
+Executor prompt: "Use GLS with HC3 standard errors. Write me the code." That's a fine prompt if you've already made the decision. The AI gives you working code. What's missing is the question of whether GLS was the right call. If you got there by following the AI's first suggestion, the executor mode hasn't given you the option to challenge that suggestion.
+
+Tutor prompt: "Walk me through the assumptions of each — when does each model fail? Quiz me before showing code." Now the AI is teaching you. You get a primer on the assumptions of each model and an opportunity for retrieval practice. What you walk away with isn't just code — it's the assumptions encoded in your understanding, not just applied through the model.
+
+Critic prompt: "Argue for OLS despite the heteroskedasticity. What residual pattern would I need to see?" Now the AI is challenging your default. You probably went in leaning toward GLS or robust standard errors. The critic prompt forces a steelman of the alternative — three scenarios where OLS would still be defensible. You may end up using GLS anyway, but now you've stress-tested the choice rather than defaulted into it.
+
+The mode you're in is a lever you control. The same AI, the same dataset, three very different statistical conversations. You don't get tutor or critic outputs unless you prompt for them.
+
+One thing worth flagging: the same prompt can change modes mid-conversation. You might start in executor — "give me the code" — then realize you don't fully understand a choice the AI made and pivot to tutor mode — "explain why you used HC3 specifically." That's a healthy pattern. The mode discipline isn't about staying in one mode forever; it's about being aware of which mode you're in at each step.
+:::
+
+
 # Across Our Roles {.center background-color="#13294B"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
@@ -1185,6 +1231,37 @@ Have you asked your trainee how they actually use AI before judging the workflow
 Are you keeping pace with their fluency — or judging from a 2023 mental model?
 
 These are diagnostic, not judgmental. If something gets a "no" — the next slide is where to start.
+:::
+
+
+## What I'm changing my mind about {.smaller}
+
+Two things I've updated my own thinking on while preparing this talk.
+
+::: {.fragment style="margin: 0.5em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
+I came in assuming the right line was clear: AI for code, not for analysis. The students who pushed back have convinced me the line moves with the *task*, not the *role* — a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool's capability.
+:::
+
+::: {.fragment style="margin: 0.4em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
+Six months ago I thought decision logs were overkill for individual work. Now I keep one in every project — including for myself, not just for trainees — because the act of writing has caught me three times this year on choices I would have forgotten making.
+:::
+
+::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
+The calibration argument applies to the speaker, too.
+:::
+
+::: {.notes}
+**SPEAKER NOTE — IMPORTANT before delivery.** The two updates on this slide are *plausible candidates* — both are reasonable updates a speaker in your position might genuinely have made. They're shippable as written if you've actually had similar shifts. But the slide lands harder if at least one of the two is in your voice and grounded in a specific moment you remember. Replace with real updates if you have them. The structure to keep: "I came in assuming X; the thing that changed my view was Y; I now think Z."
+
+Some prompts to surface candidates from your own recent thinking:
+- What's a position about AI in research you held a year ago that you'd argue against today?
+- What's something a student or colleague said that updated your view?
+- What's a piece of evidence (Bastani, Lee, your own lab observations) that changed how you teach or supervise?
+- What policy or practice did you start using yourself only after you stopped recommending it skeptically to others?
+
+Why this slide matters at this moment in the talk: the previous slide asks the audience to do calibration questions. This slide demonstrates that you, the speaker, have actually run those questions on yourself. It models the work you're asking them to do.
+
+Keep delivery short — about 90 seconds total. Two updates, one specific moment each. Don't let it become a full philosophical re-grounding; the calibration argument applies to you, too, and you've shown your work.
 :::
 
 
