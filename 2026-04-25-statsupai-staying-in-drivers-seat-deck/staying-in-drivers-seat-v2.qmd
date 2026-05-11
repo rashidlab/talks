@@ -106,28 +106,25 @@ That second sentence is the talk's posture in one line. I'm not arguing we shoul
 
 ## This is not an AI-specific worry {.smaller}
 
-Tools have been changing what we encode and what skills we maintain for decades.
+Tools have been reshaping what we practice — and what atrophies — for decades.
 
-::: {.fragment}
-- Calculators changed mental arithmetic
-- GPS changed spatial memory
-- Search engines changed factual recall
+```{=html}
+<div class="flow-diagram" style="margin-top: 0.9em;">
+<div class="flow-step"><strong style="font-size: 1.1em;">Calculator</strong><br><span style="font-size: 0.95em; color: #5B6670;">mental arithmetic</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step"><strong style="font-size: 1.1em;">GPS</strong><br><span style="font-size: 0.95em; color: #5B6670;">spatial memory</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step"><strong style="font-size: 1.1em;">Search</strong><br><span style="font-size: 0.95em; color: #5B6670;">factual recall</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step" style="background-color: #FCF5DC; border-top-color: #D9B546;"><strong style="font-size: 1.1em;">GenAI</strong><br><span style="font-size: 0.95em; color: #5B6670;">judgment?</span></div>
+</div>
+```
+
+::: {.fragment style="margin-top: 0.9em; font-size: 0.85em; color: #5B6670; font-style: italic;"}
+Bainbridge (*Ironies of Automation*, 1983) anticipated this 40 years before AI: as automation grows, the human's job becomes monitoring and judgment — and those skills atrophy without practice. Recently, in professionals: Lee et al. (CHI 2025, n=319) — higher GenAI confidence predicts less critical thinking.
 :::
 
-::: {.fragment style="margin-top: 1em;"}
-Cognitive offloading is a well-established phenomenon: external tools improve performance while changing what we come to retain and practice internally.
-*(Risko & Gilbert, Trends in Cognitive Sciences, 2016; Sparrow et al., Science, 2011.)*
-:::
-
-::: {.fragment style="margin-top: 0.5em; font-size: 0.82em; color: #5B6670; font-style: italic;"}
-Bainbridge's *Ironies of Automation* (1983) anticipated the central argument 40 years before AI: as automation grows, the human's job becomes monitoring and judgment — and those skills atrophy without practice.
-:::
-
-::: {.fragment style="margin-top: 0.4em; font-size: 0.82em; color: #5B6670; font-style: italic;"}
-And recently, in professionals: Lee et al. (CHI 2025, n=319 knowledge workers) — higher GenAI confidence predicts less critical thinking.
-:::
-
-::: {.fragment style="color: #4B9CD3; font-weight: 600; font-size: 1.1em; margin-top: 1em;"}
+::: {.fragment style="color: #4B9CD3; font-weight: 600; font-size: 1.2em; margin-top: 1em;"}
 What is new is the scope, not the mechanism.
 :::
 
@@ -208,8 +205,8 @@ By now, the surface concerns are familiar to most of us.
 I'm not here to repeat what you already discuss in your circles.
 :::
 
-::: {.fragment style="margin-top: 1em; font-size: 0.88em; color: #13294B;"}
-And I'm not arguing AI use is lazy, that trainees must learn the way we did, that all first attempts must be unaided, or that speed and learning are opposites — I'm arguing that some forms of speed remove the very struggle that builds judgment.
+::: {.fragment style="margin-top: 1em; font-size: 0.9em; color: #13294B;"}
+I'm not arguing AI use is lazy, or that trainees must learn the way we did, or that speed and learning are opposites. I'm arguing that *some* forms of speed remove the struggle that builds judgment.
 :::
 
 ::: {.fragment style="margin-top: 1.2em;"}
@@ -297,14 +294,14 @@ The part you don't outsource is the **chain of judgment.**
 AI accelerates execution at every stage. The judgment at every stage stays yours.
 :::
 
-::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em;"}
-**A frequent failure mode is plausibly wrong output that survives casual inspection.**
+::: {.fragment style="margin-top: 0.7em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.86em;"}
+**The failure mode that matters: plausibly wrong output that passes casual inspection.**
 
-Across 576,000 code samples from 16 LLMs (mostly Python/JavaScript): commercial GPT-class models referenced nonexistent packages **5.2%** of the time; open-source models, **21.7%**.
+576,000 code samples, 16 LLMs (mostly Python/JS): commercial models reference nonexistent packages **5.2%** of the time; open-source models, **21.7%**.
 
-Package hallucination is the visible version of a broader problem: plausible artifacts that pass casual inspection.
+Package hallucination is the visible tip. The harder cases are statistical.
 
-*Spracklen et al., USENIX Security 2025. Generalizes in kind to R/SAS; magnitude less established.*
+*Spracklen et al., USENIX Security 2025.*
 :::
 
 ::: {.fragment style="margin-top: 0.5em; font-size: 0.82em; text-align: center;"}
@@ -648,8 +645,8 @@ The same principle scales up to architecture documents — a living description 
 
 > After AI helps you build something, close the tool.
 
-::: {.fragment style="margin-top: 0.6em; font-size: 0.78em; color: #5B6670; font-style: italic;"}
-Empirically: the *self-explanation effect* (Chi et al., 1989, 1994) and *retrieval practice* (Roediger & Karpicke, 2006) — well-evidenced mechanisms by which articulating cements understanding.
+::: {.fragment style="margin-top: 0.6em; font-size: 0.82em; color: #5B6670; font-style: italic;"}
+Mechanism: the *self-explanation effect* (Chi 1989, 1994) and *retrieval practice* (Roediger & Karpicke 2006).
 :::
 
 ::: {.fragment style="margin-top: 1em;"}
@@ -731,46 +728,25 @@ The questions you ask before submitting are the questions a hostile reviewer ask
 :::
 
 
-## What ties these practices together {.smaller}
+## What ties these practices together
 
-::: {style="text-align: center; margin: 0.6em 0 0; font-size: 1.6em; color: #4B9CD3; font-weight: 700; letter-spacing: 0.02em;"}
+::: {style="text-align: center; margin: 1.4em 0 0.3em; font-size: 2.0em; color: #4B9CD3; font-weight: 700; letter-spacing: 0.02em;"}
 deliberate friction
 :::
 
-::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.85em; color: #5B6670; font-style: italic;"}
-The kind of struggle a learner can resolve — not arbitrary difficulty.
-:::
-
-::: {.fragment style="margin-top: 1em; text-align: center; font-size: 1.0em;"}
-When learning feels effortful and *resolvable*, it tends to stick.<br>
-When it feels smooth, the feeling can mislead us.
-:::
-
-::: {.fragment style="text-align: center; color: #5B6670; font-size: 0.78em; font-style: italic; margin-top: 0.4em; line-height: 1.5;"}
-Bjork & Bjork, 2011 (desirable difficulties — *resolvable*, not arbitrary).<br>
-Kapur, 2008 / 2016 (productive failure, distinct from unproductive failure).<br>
-Deslauriers et al., *PNAS* 2019 (the *feeling* of learning ≠ learning).
-:::
-
-::: {.fragment style="margin: 1.2em 0 0; text-align: center; font-size: 1.1em; color: #13294B; font-weight: 600; line-height: 1.4;"}
+::: {.fragment style="margin-top: 1.6em; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600; line-height: 1.5;"}
 The friction isn't the problem AI solves.<br>
 It's an asset that's easy to lose to AI.
 :::
 
 ::: {.notes}
-What ties these five practices together?
+What ties these five practices together? One phrase: deliberate friction.
 
-Deliberate friction.
+Not arbitrary difficulty — the kind of struggle a learner can resolve. The Bjorks call them "desirable difficulties." When learning feels effortful and resolvable, it tends to stick. When it feels smooth, the feeling itself can mislead us — Deslauriers and colleagues showed that in PNAS in 2019, that the feeling of learning isn't the same as actual learning. Kapur's work on productive failure draws the same distinction between effort that builds understanding and effort that just hurts.
 
-The kind of struggle a learner can resolve — not arbitrary difficulty.
+The takeaway for our practices is one sentence. The friction isn't the problem AI solves. It's an asset that's easy to lose to AI.
 
-When learning feels effortful and resolvable, it tends to stick. When it feels smooth, the feeling can mislead us.
-
-That's from Bjork and Bjork on desirable difficulties, Kapur on productive failure, and Deslauriers and colleagues at PNAS in 2019 — showing that the feeling of learning isn't the same as actual learning.
-
-The friction isn't the problem AI solves.
-
-It's an asset that's easy to lose to AI.
+[PAUSE here. This is one of the talk's anchor lines — let it land before moving on.]
 :::
 
 
@@ -1061,8 +1037,8 @@ The same statistical task — different artifact requirements:
 The judgment doesn't change — the documentation does.
 :::
 
-::: {.fragment style="margin-top: 0.5em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.78em; color: #5B6670;"}
-**Data residency:** hosted-LLM use with patient or sponsor-confidential data may violate institutional policy or trigger privacy/security review. Local/on-prem deployments — and the productivity gap they create — are part of the calibration.
+::: {.fragment style="margin-top: 0.5em; padding: 0.55em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.82em; color: #5B6670;"}
+**Data residency:** hosted-LLM use with patient or sponsor-confidential data can violate policy. Local/on-prem deployments — and the productivity gap they create — are part of the calibration.
 :::
 
 ::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.5em; text-align: center;"}
@@ -1080,14 +1056,10 @@ And on disclosure specifically: whatever your SOPs, sponsor protocols, journal p
 :::
 
 
-## The spectrum of delegation {.smaller}
+## The spectrum of delegation
 
-::: {style="text-align: center; color: #5B6670; font-style: italic; margin-bottom: 0.4em; font-size: 0.85em;"}
-Where do you draw the line — and how does it shift across activities?
-:::
-
-::: {style="text-align: center; margin-bottom: 0.5em; font-size: 0.82em; color: #13294B;"}
-**Three modes of use:** *executor* (writes the work) · *tutor* (teaches through it) · *critic* (challenges it).
+::: {style="text-align: center; color: #5B6670; font-style: italic; margin-bottom: 0.7em; font-size: 0.95em;"}
+Where does the line sit — and which way is it shifting for you?
 :::
 
 <div class="spectrum-grid">
@@ -1099,35 +1071,32 @@ Where do you draw the line — and how does it shift across activities?
 <li>Format conversions</li>
 <li>Search-query brainstorming</li>
 <li>Prose smoothing</li>
-<li>Slide formatting</li>
 </ul>
 </div>
 <div class="spectrum-col review">
 <div class="spectrum-label">Delegate with review</div>
 <ul>
 <li>Analysis code</li>
-<li>Refactoring</li>
 <li>Database queries</li>
 <li>Methods-section drafts</li>
-<li>Literature summaries / source triage</li>
-<li>Worked examples &amp; rubric drafts</li>
+<li>Literature summaries</li>
+<li>Worked examples &amp; rubrics</li>
 </ul>
 </div>
 <div class="spectrum-col handson">
 <div class="spectrum-label">Stay hands-on</div>
 <ul>
 <li>Architecture &amp; design</li>
-<li>Core algorithms</li>
 <li>Methodological choices</li>
+<li>Core algorithms</li>
 <li>Interpretation &amp; defense</li>
-<li>Curriculum judgment</li>
 <li>Diagnosing the room</li>
 </ul>
 </div>
 </div>
 
-::: {.fragment style="margin-top: 1em; text-align: center; font-size: 0.85em; color: #5B6670; font-style: italic;"}
-The columns are stable. The items shift by activity, by stakes, and by where you are in your career.
+::: {.fragment style="margin-top: 1.2em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+The columns are stable. The items shift — by activity, by stakes, by career stage.
 :::
 
 ::: {.notes}
