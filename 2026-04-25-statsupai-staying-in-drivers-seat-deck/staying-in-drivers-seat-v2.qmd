@@ -980,7 +980,7 @@ Three concrete moves.
 
 Require the unplugged version first on key derivations and debugging.
 
-Audit what the AI did on a project, not just whether it worked.
+Make a standing question part of every advising conversation: show me one place AI helped, one suggestion you rejected, one thing you verified independently. The same conversation works senior-to-junior in industry teams — same question, different power dynamic, same goal.
 
 And make defending the decision — not producing the output — the bar for sign-off.
 :::
@@ -1111,9 +1111,40 @@ It's that you are deliberate about drawing one at all.
 :::
 
 
+## What I'm changing my mind about {.smaller}
+
+Two things I've updated my own thinking on while preparing this talk.
+
+::: {.fragment style="margin: 0.5em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
+I came in assuming the right line was clear: AI for code, not for analysis. The students who pushed back have convinced me the line moves with the *task*, not the *role* — a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool's capability.
+:::
+
+::: {.fragment style="margin: 0.4em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
+Six months ago I thought decision logs were overkill for individual work. Now I keep one in every project — including for myself, not just for trainees — because the act of writing has caught me three times this year on choices I would have forgotten making.
+:::
+
+::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
+The calibration argument applies to the speaker, too.
+:::
+
+::: {.notes}
+**SPEAKER NOTE — IMPORTANT before delivery.** The two updates on this slide are *plausible candidates* — both are reasonable updates a speaker in your position might genuinely have made. They're shippable as written if you've actually had similar shifts. But the slide lands harder if at least one of the two is in your voice and grounded in a specific moment you remember. Replace with real updates if you have them. The structure to keep: "I came in assuming X; the thing that changed my view was Y; I now think Z."
+
+Some prompts to surface candidates from your own recent thinking:
+- What's a position about AI in research you held a year ago that you'd argue against today?
+- What's something a student or colleague said that updated your view?
+- What's a piece of evidence (Bastani, Lee, your own lab observations) that changed how you teach or supervise?
+- What policy or practice did you start using yourself only after you stopped recommending it skeptically to others?
+
+Why this slide matters at this moment in the talk: the next slide is going to ask *you*, the audience, to do calibration questions on yourselves. This slide is what running those questions looked like for me. It models the work I'm about to ask you to do — and signals that "calibration" isn't something I'm asking of you that I haven't asked of myself.
+
+Keep delivery short — about 60–90 seconds total. Two updates, one specific moment each. Don't let it become a full philosophical re-grounding. Then pivot directly into the audience's turn.
+:::
+
+
 ## Calibration questions {.smaller}
 
-An honest self-check — and one for your group.
+Now your turn — an honest self-check. And one for your group.
 
 ::: {.fragment style="margin-top: 0.5em; font-size: 0.82em;"}
 **For yourself:**
@@ -1140,7 +1171,7 @@ Diagnostic, not judgmental. If anything gets a "no" — the next slide is where 
 :::
 
 ::: {.notes}
-Before I close, I want to give you a self-check. To stay deliberate — an honest one. And one for your group.
+You just saw what calibration looks like for me. Now your turn — an honest self-check. And one for your group.
 
 For yourself.
 
@@ -1163,37 +1194,6 @@ Have you asked your trainee how they actually use AI before judging the workflow
 Are you keeping pace with their fluency — or judging from a 2023 mental model?
 
 These are diagnostic, not judgmental. If something gets a "no" — the next slide is where to start.
-:::
-
-
-## What I'm changing my mind about {.smaller}
-
-Two things I've updated my own thinking on while preparing this talk.
-
-::: {.fragment style="margin: 0.5em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
-I came in assuming the right line was clear: AI for code, not for analysis. The students who pushed back have convinced me the line moves with the *task*, not the *role* — a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool's capability.
-:::
-
-::: {.fragment style="margin: 0.4em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
-Six months ago I thought decision logs were overkill for individual work. Now I keep one in every project — including for myself, not just for trainees — because the act of writing has caught me three times this year on choices I would have forgotten making.
-:::
-
-::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
-The calibration argument applies to the speaker, too.
-:::
-
-::: {.notes}
-**SPEAKER NOTE — IMPORTANT before delivery.** The two updates on this slide are *plausible candidates* — both are reasonable updates a speaker in your position might genuinely have made. They're shippable as written if you've actually had similar shifts. But the slide lands harder if at least one of the two is in your voice and grounded in a specific moment you remember. Replace with real updates if you have them. The structure to keep: "I came in assuming X; the thing that changed my view was Y; I now think Z."
-
-Some prompts to surface candidates from your own recent thinking:
-- What's a position about AI in research you held a year ago that you'd argue against today?
-- What's something a student or colleague said that updated your view?
-- What's a piece of evidence (Bastani, Lee, your own lab observations) that changed how you teach or supervise?
-- What policy or practice did you start using yourself only after you stopped recommending it skeptically to others?
-
-Why this slide matters at this moment in the talk: the previous slide asks the audience to do calibration questions. This slide demonstrates that you, the speaker, have actually run those questions on yourself. It models the work you're asking them to do.
-
-Keep delivery short — about 90 seconds total. Two updates, one specific moment each. Don't let it become a full philosophical re-grounding; the calibration argument applies to you, too, and you've shown your work.
 :::
 
 
