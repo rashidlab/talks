@@ -327,10 +327,11 @@ The next slide is what that actually looks like in statistical practice.
 
 The dangerous output in statistics isn't a missing package — it's a model that does what AI suggested but answers a different question.
 
-::: {.fragment style="margin-top: 0.7em; font-size: 0.78em;"}
+::: {.fragment style="margin-top: 0.7em; font-size: 0.74em;"}
 | AI can produce | Human must decide | Failure if outsourced |
 |---|---|---|
 | Regression code | What estimand the question requires | Correct model, wrong question |
+| Covariate-adjusted regression | Which covariates are pre- vs. post-treatment | Adjusted away the treatment effect by conditioning on a mediator |
 | ITT analysis code | Which ICH E9(R1) estimand the protocol specifies | Code is correct; estimand contradicts the SAP |
 | Imputation code | Which missingness mechanism is plausible (MCAR / MAR / MNAR) | Imputed under MCAR when MAR/MNAR is more credible; inference understates uncertainty |
 | Sensitivity analysis | Which assumptions are plausible to vary | Sensitivity to irrelevant assumptions |
@@ -345,6 +346,8 @@ The middle column is where the chain of judgment lives.
 This is what "plausibly wrong output that passes casual inspection" looks like inside a statistical workflow.
 
 The pattern, four rows. AI can produce regression code; you have to decide what estimand the question actually requires. Default to AI's suggestion, you get the correct model for the wrong question — code that runs, output that prints, conclusion that doesn't match what the study was supposed to answer.
+
+Covariate adjustment. AI will happily include every available covariate in a regression — that's what the default formula does. You decide which are pre-treatment and which are post-treatment. Adjust for a post-treatment variable — a mediator, a collider — and you don't just lose precision, you bias the estimate. The model runs, the coefficients print, and the conclusion contradicts the science you were trying to test. This is one of the cleanest examples in the table: AI being *better at code* doesn't fix it, because the failure isn't about code.
 
 ITT analysis code is a regulated-work version of the same point. AI happily writes the code. The protocol specifies the estimand under ICH E9(R1) — intercurrent events, hypothetical strategies, principal stratum, whatever was negotiated. The code can be technically correct and still contradict the SAP, because the SAP is the document that says which estimand this trial is actually about.
 
@@ -405,6 +408,8 @@ Default AI use can bypass all four. Each one needs deliberate preservation.
 In doctoral training, the part you don't outsource is the productive struggle.
 
 In 2011, Robert and Elizabeth Bjork wrote: "Conditions of instruction that make performance improve rapidly often fail to support long-term retention and transfer." This was research on conventional instruction; the extension to AI-assisted learning is an extrapolation, not a finding.
+
+[VERBAL: emphasize the hedge out loud. Audience members will mishear sophistication as certainty if you don't. The honest position is that the cognitive mechanism is well-evidenced in older work; the AI-specific application is plausible but not established in advanced statistical training. Say that.]
 
 But the principle generalizes well, and the mechanism is concrete. Bjork & Bjork named four specific difficulties that distinguish learning that lasts from performance that fades:
 
@@ -769,6 +774,8 @@ Not arbitrary difficulty — the kind of struggle a learner can resolve. The Bjo
 The takeaway for our practices is one sentence. The friction isn't the problem AI solves. It's an asset that's easy to lose to AI.
 
 [PAUSE here. This is one of the talk's anchor lines — let it land before moving on.]
+
+[VERBAL: when this lands, the audience may hear it as a stronger claim than you mean. The honest version: this is a concern grounded in older cognitive-science literature, consistent with the AI-era evidence we have, but not yet definitively established in advanced training. The strength of the argument is the *mechanism*, not the empirical magnitude. Volunteer that distinction.]
 :::
 
 
@@ -933,6 +940,8 @@ Bastani and colleagues. *PNAS*, 2025. Field experiment. Roughly 1,000 high-schoo
 Vanilla GPT during practice — students performed better in practice. But 17% worse than no-AI controls when access was removed.
 
 Tutor-prompted GPT — same access, same students, same content. The only thing that differed was the prompt scaffolding. No detectable underperformance when access was removed.
+
+[VERBAL: emphasize that this is one study, one population, one subject. High-school math, not graduate statistical training. The finding is suggestive of a broader pattern — "design matters" — not proof that AI degrades expertise. Statisticians in the room will appreciate the restraint and may push back if you don't volunteer it.]
 
 The point is not that this study settles graduate statistics education. It obviously does not. One study, one population, one subject — high-school math, not biostatistics. The point is that the same tool can produce very different learning consequences depending on the surrounding design.
 
