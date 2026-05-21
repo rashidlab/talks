@@ -5,7 +5,7 @@ Each talk lives in its own dated subdirectory and is published via GitHub Pages.
 
 ## Current talks
 
-- **[Staying in the Driver's Seat: Calibrating AI Use in Statistical Research, Training, and Practice](https://rashidlab.github.io/talks/2026-04-25-statsupai-staying-in-drivers-seat-deck/staying-in-drivers-seat.html)**
+- **[Staying in the Driver's Seat: Calibrating AI Use in Statistical Research, Training, and Practice](https://rashidlab.github.io/talks/2026-04-25-statsupai-staying-in-drivers-seat-deck/staying-in-drivers-seat-v2.html)**
   Naim Rashid · StatsUpAI Webinar (American Statistical Association) · May 26, 2026
 
 ## Repository conventions

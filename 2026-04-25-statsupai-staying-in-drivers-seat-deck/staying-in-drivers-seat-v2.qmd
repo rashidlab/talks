@@ -1142,6 +1142,40 @@ Keep delivery short — about 60–90 seconds total. Two updates, one specific m
 :::
 
 
+## Drawing the line {.smaller}
+
+When in doubt about where the line should sit, ask:
+
+::: {.fragment style="text-align: center; margin: 1.2em 0 0.7em; font-size: 1.35em; color: #13294B; font-weight: 600; line-height: 1.5;"}
+Can you still answer the<br>
+[fundamental questions]{style="color: #4B9CD3;"} about your own work?
+:::
+
+::: {.fragment style="margin: 0.8em 1.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em; line-height: 1.6;"}
+- What's the right method here, and why?
+- What does this result mean — and what doesn't it mean?
+- If a piece of this fails, what breaks downstream?
+:::
+
+::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 0.95em; color: #4B9CD3; font-weight: 600;"}
+Where you can still answer is where you're still in the driver's seat.
+:::
+
+::: {.notes}
+You've just seen what running calibration questions looked like for me. The next slide is going to ask you to run them on yourselves.
+
+But before that — one summary line that ties this whole talk together. When in doubt about where the line should sit, ask: can you still answer the fundamental questions about your own work?
+
+Three in particular. What's the right method here, and why. What does this result mean — and what doesn't it mean. If a piece of this fails, what breaks downstream.
+
+Those answers shouldn't come from the AI. They can be informed by it. They have to land in you.
+
+The title of this talk is *Staying in the Driver's Seat*. Where you can still answer is where you're still in the driver's seat. Where you stop being able to — that's where the line is sitting today.
+
+PAUSE here for ~3 seconds before transitioning to the audience self-check slide. This is one of the talk's anchor lines — let it land.
+:::
+
+
 ## Calibration questions {.smaller}
 
 Now your turn — an honest self-check. And one for your group.
