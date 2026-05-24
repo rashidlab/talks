@@ -18,5 +18,4 @@ Each talk lives in its own dated subdirectory and is published via GitHub Pages.
 
 ## Lab
 
-- Website: [rashidlab.github.io/lab-handbook](https://rashidlab.github.io/lab-handbook/)
 - GitHub: [@rashidlab](https://github.com/rashidlab)

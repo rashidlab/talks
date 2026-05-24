@@ -1342,12 +1342,12 @@ Thank you. I'm happy to take questions — the next slide has the lab guide URL 
 </div>
 ```
 
-**Source guide** — *deep-dive PDF*
-
-→ [rashidlab.github.io/lab-handbook/claude-code/code-ownership](https://rashidlab.github.io/lab-handbook/claude-code/code-ownership.html)
+::: {style="margin-top: 0.6em; font-size: 0.85em;"}
+*The repo includes the* **handout PDF** *(deep-dive guide), plus standalone templates and checklists:*
+:::
 
 ::: {style="font-size: 0.75em; color: #5B6670; margin-top: 0.4em; line-height: 1.4;"}
-*Both include:* `DECISIONS.md` template · pre-prompt pause + red-team checklists · green/yellow/red AI-use policy · tutor/critic prompts (incl. OLS/GLS example) · Red Flags self-assessment
+`DECISIONS.md` template · pre-prompt pause + red-team checklists · green/yellow/red AI-use policy · tutor/critic prompts (incl. OLS/GLS example) · Red Flags self-assessment
 :::
 
 :::
