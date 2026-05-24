@@ -100,7 +100,7 @@ That second sentence is the talk's posture in one line. I'm not arguing we shoul
 :::
 
 
-## This is not an AI-specific worry {.smaller}
+## This has happened before, and it will happen again {.smaller}
 
 Tools have been reshaping what we practice - and what atrophies - for decades.
 
@@ -137,27 +137,27 @@ So what's new with AI? The scope. Not the mechanism.
 :::
 
 
-## Bainbridge's ironies {.smaller}
+## Sound familiar? {.smaller}
 
 Bainbridge's *Ironies of Automation* (1983) anticipated several automation failure modes that map directly to AI use today. The four below are our synthesis.
 
 ::: {.quadrant-grid}
-::: {.quadrant}
+::: {.quadrant .fragment}
 [Skill degradation in the takeover]{.quadrant-title}
 
 The better the automation, the rarer the cases that need a human - and the less practiced the human is when those cases arrive.
 :::
-::: {.quadrant}
+::: {.quadrant .fragment}
 [The training paradox]{.quadrant-title}
 
 We train people to follow instructions, then put them in the loop to provide judgment. The two skills aren't the same.
 :::
-::: {.quadrant}
+::: {.quadrant .fragment}
 [The monitoring difficulty]{.quadrant-title}
 
 Sustained attention is what humans are worst at - and it becomes their primary job once automation handles the routine work.
 :::
-::: {.quadrant}
+::: {.quadrant .fragment}
 [The transparency cost]{.quadrant-title}
 
 For humans to oversee, the system must operate in ways humans can follow - even when that's technically suboptimal.
@@ -527,7 +527,26 @@ If that's what stays ours - what does keeping it look like in practice?
 :::
 
 
-## Read everything that ships {.smaller}
+## Five practices ahead {.smaller}
+
+::: {style="font-size: 1.15em; line-height: 2.1; margin: 1.2em 1.5em 0.5em;"}
+1. **Read everything that ships**
+2. **The pre-prompt pause** *(with a worked example)*
+3. **The decision log**
+4. **The explain-it-back test**
+5. **Red-team your analysis**
+:::
+
+::: {style="text-align: center; margin-top: 0.8em; color: #4B9CD3; font-weight: 600; font-size: 1.0em;"}
+Then: what ties them together.
+:::
+
+::: {.notes}
+Here's the road map for this section. Five practices, not equal in weight - the pre-prompt pause and decision log are the daily-habit anchors; the others orbit around them. I'll walk through each, then we'll look at what ties the set together. After that we'll move from practices to roles.
+:::
+
+
+## 1. Read everything that ships {.smaller}
 
 > Treat AI output like a pull request from a junior developer.
 
@@ -566,7 +585,7 @@ If you wouldn't ship it from a student, don't ship it from an AI.
 :::
 
 
-## The pre-prompt pause {.smaller}
+## 2. The pre-prompt pause {.smaller}
 
 > Before prompting: 2–5 minutes writing your own approach.
 
@@ -655,7 +674,7 @@ The diff is the lesson. Not the AI's answer. Not my prompt. The gap between them
 :::
 
 
-## The decision log {.smaller}
+## 3. The decision log {.smaller}
 
 > A lightweight `DECISIONS.md` in every project.
 
@@ -698,7 +717,7 @@ The same principle scales up to architecture documents - a living description of
 :::
 
 
-## The explain-it-back test {.smaller}
+## 4. The explain-it-back test {.smaller}
 
 > After AI helps you build something, close the tool.
 
@@ -743,7 +762,7 @@ The thinking required to explain is the point.
 :::
 
 
-## Red-team your analysis {.smaller}
+## 5. Red-team your analysis {.smaller}
 
 > Before accepting an AI-assisted result, argue against it.
 
@@ -781,7 +800,11 @@ The questions you ask before submitting are the questions a hostile reviewer ask
 
 ## What ties these practices together
 
-::: {style="text-align: center; margin: 1.4em 0 0.3em; font-size: 2.0em; color: #4B9CD3; font-weight: 700; letter-spacing: 0.02em;"}
+::: {style="text-align: center; font-size: 0.62em; color: #5B6670; margin: 0.4em 0 0.2em; line-height: 1.5;"}
+1. Read everything that ships · 2. Pre-prompt pause · 3. Decision log · 4. Explain-it-back · 5. Red-team
+:::
+
+::: {style="text-align: center; margin: 0.7em 0 0.3em; font-size: 2.0em; color: #4B9CD3; font-weight: 700; letter-spacing: 0.02em;"}
 deliberate friction
 :::
 
@@ -971,6 +994,37 @@ And make defending the decision - not producing the output - the bar for sign-of
 :::
 
 
+## What I'm changing my mind about {.smaller}
+
+Two things I've updated my own thinking on while preparing this talk.
+
+::: {.fragment style="margin: 0.5em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
+I came in assuming the right line was clear: AI for code, not for analysis. The students who pushed back have convinced me the line moves with the *task*, not the *role* - a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool's capability.
+:::
+
+::: {.fragment style="margin: 0.4em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
+Six months ago I thought decision logs were overkill for individual work. Now I keep one in every project - including for myself, not just for trainees - because the act of writing has caught me three times this year on choices I would have forgotten making.
+:::
+
+::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
+The calibration argument applies to the speaker, too.
+:::
+
+::: {.notes}
+**SPEAKER NOTE - IMPORTANT before delivery.** The two updates on this slide are *plausible candidates* - both are reasonable updates a speaker in your position might genuinely have made. They're shippable as written if you've actually had similar shifts. But the slide lands harder if at least one of the two is in your voice and grounded in a specific moment you remember. Replace with real updates if you have them. The structure to keep: "I came in assuming X; the thing that changed my view was Y; I now think Z."
+
+Some prompts to surface candidates from your own recent thinking:
+- What's a position about AI in research you held a year ago that you'd argue against today?
+- What's something a student or colleague said that updated your view?
+- What's a piece of evidence (Bastani, Lee, your own lab observations) that changed how you teach or supervise?
+- What policy or practice did you start using yourself only after you stopped recommending it skeptically to others?
+
+Why this slide sits here: we've just walked through practices for educators and for doctoral training. The next slide is about your own work - which means the calibration argument applies to me too. Showing my own recent shifts before pivoting to "for your own research" signals this isn't asymmetric: I'm asking myself the same questions I'm asking you.
+
+Keep delivery short - about 60-90 seconds total. Two updates, one specific moment each. Don't let it become a full philosophical re-grounding. Then pivot directly into the personal practices.
+:::
+
+
 ## For your own research {.smaller}
 
 You are also someone whose intuition and judgment have to be maintained.
@@ -1101,37 +1155,6 @@ It's that you are deliberate about drawing one at all.
 :::
 
 
-## What I'm changing my mind about {.smaller}
-
-Two things I've updated my own thinking on while preparing this talk.
-
-::: {.fragment style="margin: 0.5em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
-I came in assuming the right line was clear: AI for code, not for analysis. The students who pushed back have convinced me the line moves with the *task*, not the *role* - a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool's capability.
-:::
-
-::: {.fragment style="margin: 0.4em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
-Six months ago I thought decision logs were overkill for individual work. Now I keep one in every project - including for myself, not just for trainees - because the act of writing has caught me three times this year on choices I would have forgotten making.
-:::
-
-::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
-The calibration argument applies to the speaker, too.
-:::
-
-::: {.notes}
-**SPEAKER NOTE - IMPORTANT before delivery.** The two updates on this slide are *plausible candidates* - both are reasonable updates a speaker in your position might genuinely have made. They're shippable as written if you've actually had similar shifts. But the slide lands harder if at least one of the two is in your voice and grounded in a specific moment you remember. Replace with real updates if you have them. The structure to keep: "I came in assuming X; the thing that changed my view was Y; I now think Z."
-
-Some prompts to surface candidates from your own recent thinking:
-- What's a position about AI in research you held a year ago that you'd argue against today?
-- What's something a student or colleague said that updated your view?
-- What's a piece of evidence (Bastani, Lee, your own lab observations) that changed how you teach or supervise?
-- What policy or practice did you start using yourself only after you stopped recommending it skeptically to others?
-
-Why this slide matters at this moment in the talk: the next few slides are going to ask *you*, the audience, to do calibration questions on yourselves. This slide is what running those questions looked like for me. It models the work I'm about to ask you to do - and signals that "calibration" isn't something I'm asking of you that I haven't asked of myself.
-
-Keep delivery short - about 60–90 seconds total. Two updates, one specific moment each. Don't let it become a full philosophical re-grounding. Then pivot directly into the audience's turn.
-:::
-
-
 ## Drawing the line {.smaller}
 
 When in doubt about where the line should sit, ask:
@@ -1152,9 +1175,7 @@ Where you can still answer is where you're still in the driver's seat.
 :::
 
 ::: {.notes}
-You've just seen what running calibration questions looked like for me. The next slide is going to ask you to run them on yourselves.
-
-But before that - one summary line that ties this whole talk together. When in doubt about where the line should sit, ask: can you still answer the fundamental questions about your own work?
+One summary line ties this whole talk together. When in doubt about where the line should sit, ask: can you still answer the fundamental questions about your own work?
 
 Three in particular. What's the right method here, and why. What does this result mean - and what doesn't it mean. If a piece of this fails, what breaks downstream.
 
@@ -1313,8 +1334,12 @@ but because we still want to know where we are when we arrive.
 **Thank you ·** *Questions welcome*
 :::
 
-::: {style="color: #FFFFFF; opacity: 0.7; margin-top: 0.5em; font-size: 0.5em;"}
-naim@unc.edu &nbsp;·&nbsp; naimurashid.github.io &nbsp;·&nbsp; LinkedIn: Naim Rashid &nbsp;·&nbsp; GitHub: &#64;naimurashid
+::: {style="color: #FFFFFF; margin-top: 0.8em; font-size: 0.55em; font-weight: 500;"}
+Continue the discussion → **linkedin.com/in/naimurashid** &nbsp;·&nbsp; follow for follow-up posts
+:::
+
+::: {style="color: #FFFFFF; opacity: 0.65; margin-top: 0.4em; font-size: 0.48em;"}
+naim@unc.edu &nbsp;·&nbsp; naimurashid.github.io &nbsp;·&nbsp; GitHub: &#64;naimurashid
 :::
 
 ::: {.notes}
@@ -1355,7 +1380,7 @@ Thank you. I'm happy to take questions - the next slide has the lab guide URL an
 
 **Cited work**
 
-::: {style="font-size: 0.78em; line-height: 1.6;"}
+::: {style="font-size: 0.65em; line-height: 1.55;"}
 - Bainbridge (1983). *Ironies of Automation.* Automatica 19(6).
 - Sparrow, Liu & Wegner (2011). Google effects on memory. *Science* 333.
 - Bjork & Bjork (2011). Desirable difficulties. In *Psychology and the Real World.*
