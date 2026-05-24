@@ -8,3 +8,6 @@
 *.swp
 .vscode/
 .idea/
+
+# Nested companion-resources repo (lives at github.com/naimurashid/staying-in-drivers-seat-resources)
+staying-in-drivers-seat-resources/

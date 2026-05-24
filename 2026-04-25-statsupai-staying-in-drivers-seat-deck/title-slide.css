@@ -21,6 +21,8 @@
   text-align: center;
   padding-top: 1.2em;
   padding-bottom: 1.2em;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* ── Title block ───────────────────────────────────────────────── */
