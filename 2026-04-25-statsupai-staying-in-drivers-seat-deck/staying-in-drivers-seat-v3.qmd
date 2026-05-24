@@ -224,7 +224,7 @@ So if AI is reshaping what we offload - the second question becomes: what must e
 ## A part you don't outsource {.smaller}
 
 ::: {style="font-size: 1.15em; margin-top: 0.6em; color: #13294B;"}
-> There's a part of every project that, if you outsource it, the work goes slack.
+> Every project has a part you can't outsource. Skip it, and the work might still ship - but it stops being yours.
 :::
 
 ::: {.fragment style="margin-top: 1.5em; color: #5B6670;"}
@@ -240,9 +240,9 @@ The next three slides show what that part is in each.
 :::
 
 ::: {.notes}
-I want to start with one observation that I think holds across everything we do.
+One observation that holds across everything we do.
 
-There's a part of every project that, if you outsource it, the work goes slack.
+Every project has a part you can't outsource. Skip it, and the work might still ship - but it stops being yours.
 
 The same sentence applies whether we're talking about our own research, the doctoral students we train, or the students we teach.
 
