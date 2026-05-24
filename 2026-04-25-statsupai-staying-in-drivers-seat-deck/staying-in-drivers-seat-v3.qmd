@@ -49,11 +49,11 @@ A senior colleague asks: *"Why didn't you consider [a different approach]?"*
 :::
 
 ::: {.fragment .fade-up}
-They have no answer - not because they missed it, but because they had stopped generating alternatives of their own.
+They have no answer. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
 :::
 
 ::: {.fragment .fade-up style="color: #13294B; font-weight: 600; margin-top: 0.6em;"}
-One missing alternative gets flagged. The deeper thing - that their judgment has stopped generating alternatives - doesn't. The work moves forward.
+The senior colleague notes the omission. The work moves forward anyway. What nobody sees is the deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
 :::
 
 ::: {.notes}
@@ -63,9 +63,9 @@ Imagine a new hire. Three months in. Presenting their first analysis to senior l
 
 A senior colleague asks: "Why didn't you consider a different approach?"
 
-They have no answer. Not because they missed it - but because the AI never proposed it, and they had stopped generating alternatives of their own.
+They have no answer. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
 
-One missing alternative gets flagged. The deeper thing - that their judgment has stopped generating alternatives - doesn't. The work moves forward.
+The senior colleague notes the omission. The work moves forward anyway. What nobody sees is the deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
 
 This is a composite scenario. Not a specific case. But it's the failure mode I want us to take seriously today - because it's not about careless AI use. It's about sophisticated AI use that quietly narrows the option space.
 
