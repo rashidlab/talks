@@ -1331,19 +1331,24 @@ Thank you. I'm happy to take questions — the next slide has the lab guide URL 
 ::: {.columns}
 ::: {.column width="55%"}
 
-**Source guide**
+**Companion repo** — *standalone templates, checklists, prompts*
 
-*Staying in the Driver's Seat* — the lab guide this talk draws from.
+```{=html}
+<div style="display: flex; align-items: center; gap: 0.8em; margin: 0.3em 0 0.7em;">
+  <img src="resources-qr.png" alt="QR for companion repo" style="width: 100px; height: 100px; background: #FFFFFF; padding: 4px; border: 1px solid #E5E7EB;" />
+  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7em; color: #007FAE; line-height: 1.45;">
+    github.com/naimurashid/<br>staying-in-drivers-seat-resources
+  </div>
+</div>
+```
+
+**Source guide** — *deep-dive PDF*
 
 → [rashidlab.github.io/lab-handbook/claude-code/code-ownership](https://rashidlab.github.io/lab-handbook/claude-code/code-ownership.html)
 
-*Templates included:*
-
-- `DECISIONS.md` template
-- Pre-prompt pause checklist
-- Green / yellow / red AI-use policy
-- Architecture documentation guide
-- Red Flags self-assessment
+::: {style="font-size: 0.75em; color: #5B6670; margin-top: 0.4em; line-height: 1.4;"}
+*Both include:* `DECISIONS.md` template · pre-prompt pause + red-team checklists · green/yellow/red AI-use policy · tutor/critic prompts (incl. OLS/GLS example) · Red Flags self-assessment
+:::
 
 :::
 ::: {.column width="45%"}
