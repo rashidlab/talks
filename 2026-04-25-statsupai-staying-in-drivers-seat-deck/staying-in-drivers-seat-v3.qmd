@@ -1123,6 +1123,35 @@ The columns are stable. The items shift by activity, by stakes, and by where you
 :::
 
 
+## Where the line sits, exactly {.smaller}
+
+The line between "delegable" and "stay hands-on" shifts along three dimensions.
+
+::: {.fragment style="margin-top: 0.6em; font-size: 0.78em;"}
+| Shifts with | Tightens *(more hands-on)* | Loosens *(more delegable)* |
+|---|---|---|
+| **Context** | First encounter in teaching · method choice in research · productive struggle in training | Refinement, formatting, scaffolding |
+| **Career stage** | New researcher building judgment from scratch | Senior researcher whose intuition is already load-bearing |
+| **Stakes** | Regulated, defended, published | Exploratory, scratch work, drafts |
+:::
+
+::: {.fragment style="margin-top: 0.9em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+Three dials. Adjust them honestly for your own situation.
+:::
+
+::: {.notes}
+The spectrum tells you what kinds of work to delegate. But the line itself isn't fixed - it moves. Three dimensions that move it.
+
+First dimension: context. In teaching, the line sits at the first encounter with a concept - AI should not be the first time a student meets confounding or likelihood. In research, the line sits at method choice - AI can write the code, but the analyst owns the estimand. In doctoral training, the line sits at the productive struggle - the unplugged derivation, the manual debugging - the places where calibrated intuition is laid down.
+
+Second dimension: career stage. Junior researchers need a wider "stay hands-on" column - judgment is being built, and AI substituting for it would prevent the building. Senior researchers can delegate more because their intuition catches problems AI misses. The line moves rightward over a career - but it doesn't disappear.
+
+Third dimension: stakes. Regulated work, published work, work that will be defended - all of these narrow what can be safely delegated. Scratch work, exploratory analysis, drafts you're going to rewrite - those widen it.
+
+The honest move is to adjust these dials for your own situation, not to copy mine.
+:::
+
+
 ## The line is personal {.smaller}
 
 Where the columns sit on this grid is yours, not mine.
