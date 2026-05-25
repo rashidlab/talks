@@ -1039,7 +1039,7 @@ display:block!important;
 <p>A senior colleague asks: <em>“Why didn’t you consider [a different approach]?”</em></p>
 </div>
 <div class="fragment fade-up">
-<p>They have no answer. They had reviewed every line of the AI’s suggestion. They had not thought to question the framing they started from.</p>
+<p>They have no answer. They had reviewed every line of the AI’s suggestion. They had not thought to question the line they started from.</p>
 </div>
 <div class="fragment fade-up" style="color: #13294B; font-weight: 600; margin-top: 0.6em;">
 <p>The senior colleague notes the omission. The work moves forward anyway. What nobody sees is the deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.</p>
@@ -1048,7 +1048,7 @@ display:block!important;
 <p>I want to start with a scenario. Not a specific case - a composite - but a failure mode I think every one of us in this room should take seriously.</p>
 <p>Imagine a new hire. Three months in. Presenting their first analysis to senior leadership. They’ve used AI to help build it, reviewed every line, and they can defend the strategy fully.</p>
 <p>A senior colleague asks: “Why didn’t you consider a different approach?”</p>
-<p>They have no answer. They had reviewed every line of the AI’s suggestion. They had not thought to question the framing they started from.</p>
+<p>They have no answer. They had reviewed every line of the AI’s suggestion. They had not thought to question the line they started from.</p>
 <p>The senior colleague notes the omission. The work moves forward anyway. What nobody sees is the deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.</p>
 <p>This is a composite scenario. Not a specific case. But it’s the failure mode I want us to take seriously today - because it’s not about careless AI use. It’s about sophisticated AI use that quietly narrows the option space.</p>
 <p>Let me tell you why I think that’s the central worry.</p>
@@ -1284,7 +1284,7 @@ display:block!important;
 <p>AI accelerates execution at every stage. The judgment at every stage stays yours.</p>
 </div>
 <div class="fragment" style="margin-top: 0.9em; padding: 0.8em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.9em;">
-<p><strong>A failure mode that matters: plausibly wrong output that passes casual inspection.</strong></p>
+<p><strong>The failure mode that matters: plausibly wrong output that passes casual inspection.</strong></p>
 <p>576,000 code samples, 16 LLMs (mostly Python/JS): commercial models reference nonexistent packages <strong>5.2%</strong> of the time; open-source models, <strong>21.7%</strong>.</p>
 <p>Package hallucination is the visible tip. The harder cases are statistical.</p>
 <p><em>Spracklen et al., USENIX Security 2025.</em></p>
@@ -1313,7 +1313,7 @@ display:block!important;
 </section>
 <section id="correct-code-wrong-question" class="slide level2 smaller">
 <h2>Correct code, wrong question</h2>
-<p>One dangerous output in statistics isn’t a missing package - it’s a model that does what AI suggested but answers a different question.</p>
+<p>The dangerous output in statistics isn’t a missing package - it’s a model that does what AI suggested but answers a different question.</p>
 <div class="fragment" style="margin-top: 0.7em; font-size: 0.74em;">
 <table class="caption-top">
 <colgroup>
@@ -1513,7 +1513,7 @@ display:block!important;
 <p>A pause to take stock.</p>
 </div>
 <div style="font-size: 1.2em; margin: 1em 0; color: #13294B; font-weight: 600; text-align: center;">
-<p>Where do you feel least calibrated in your AI-assisted work today?</p>
+<p>Where do you feel most exposed in your AI-assisted work today?</p>
 </div>
 <div style="display: flex; gap: 2em; align-items: center; margin: 1.2em 1.5em 0.6em; justify-content: center;">
   <div style="padding: 0.9em 1.3em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.95em; line-height: 2.1; flex: 0 1 auto;">
@@ -1705,7 +1705,7 @@ display:block!important;
 </div>
 </div>
 <div class="fragment" style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;">
-<p>The gap is the lesson.</p>
+<p>The diff is the lesson.</p>
 </div>
 <aside class="notes">
 <p>Here’s a recent example from my own work - illustrative, since power analysis is a problem most of you have run into.</p>
@@ -1713,7 +1713,7 @@ display:block!important;
 <p>I prompted the AI. It gave me a clean, correct answer to the literal prompt - pwr.t.test with the pilot’s reported effect size, 80% power, two-sided alpha 0.05. Exactly what I asked for.</p>
 <p>But not what I needed.</p>
 <p>The diff is what taught me something. AI answered the literal prompt. My third line - the “tricky parts” line - was where the real intellectual content lived: the question wasn’t computing power, it was deciding what effect size to plan for. I left the conversation with two power analyses, not one. I would have left with one if I hadn’t written the pause first.</p>
-<p>The gap is the lesson. Not the AI’s answer. Not my prompt. The gap between them.</p>
+<p>The diff is the lesson. Not the AI’s answer. Not my prompt. The gap between them.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1737,7 +1737,7 @@ Reason: BFGS hit memory limits for n_params &gt; 5000.
 Trade-off: ~10× memory reduction; slower per-iteration; needs warm start.
 Affected: src/optim.R, sim/runner.R, methods section §3.2.</code></pre>
 <div class="fragment" style="margin-top: 0.6em;">
-<p><strong>The point isn’t the file - it’s the act of writing.</strong></p>
+<p><strong>The point isn’t the artifact - it’s the act of writing.</strong></p>
 <p>Articulating the decision forces you to understand it. The log helps teammates, reviewers, and future-you reconstruct the reasoning.</p>
 </div>
 <div class="fragment" style="color: #4B9CD3; font-weight: 600; margin-top: 0.5em; text-align: center;">
@@ -1948,7 +1948,7 @@ Better in practice. <strong style="color: #C95E55;">17% worse</strong> when acce
 Tutor-prompted GPT (with guardrails)
 </div>
 <div class="comparison-text">
-Better in practice. <strong style="color: #5CA77C;">No detectable drop-off</strong> when access removed.
+Better in practice. <strong style="color: #5CA77C;">No detectable underperformance</strong> when access removed.
 </div>
 </div>
 </div>
@@ -2019,7 +2019,7 @@ display:block!important;
 <h2>What I’m changing my mind about</h2>
 <p>Two things I’ve updated my own thinking on while preparing this talk.</p>
 <div class="fragment" style="margin: 0.5em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;">
-<p>I came in assuming the right line was clear: AI for implementation, not for statistical judgment. The students who pushed back have convinced me the line moves with the <em>task</em>, not the <em>role</em> - a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool’s capability.</p>
+<p>I came in assuming the right line was clear: AI for code, not for analysis. The students who pushed back have convinced me the line moves with the <em>task</em>, not the <em>role</em> - a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool’s capability.</p>
 </div>
 <div class="fragment" style="margin: 0.4em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;">
 <p>Six months ago I thought decision logs were overkill for individual work. Now I keep one in every project - including for myself, not just for trainees - because the act of writing has caught me three times this year on choices I would have forgotten making.</p>
@@ -2196,7 +2196,7 @@ display:block!important;
 </div>
 </div>
 <div class="fragment" style="margin-top: 0.6em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;">
-<p>By default, AI behaves like an executor. Tutor and critic modes are designed.</p>
+<p>Default AI is executor. Tutor and critic modes are designed.</p>
 </div>
 <div style="margin: 0.7em 0 0.3em; padding: 0.7em 1em; background-color: #FCF5DC; border-left: 3px solid #D9B546; font-size: 0.68em; line-height: 1.55;">
   <div style="font-style: italic; color: #5B6670; margin-bottom: 0.35em;">Same question - choosing between OLS, GLS, and robust regression with heteroskedasticity:</div>

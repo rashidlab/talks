@@ -49,7 +49,7 @@ A senior colleague asks: *"Why didn't you consider [a different approach]?"*
 :::
 
 ::: {.fragment .fade-up}
-They have no answer. They had reviewed every line of the AI's suggestion. They had not thought to question the framing they started from.
+They have no answer. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
 :::
 
 ::: {.fragment .fade-up style="color: #13294B; font-weight: 600; margin-top: 0.6em;"}
@@ -63,7 +63,7 @@ Imagine a new hire. Three months in. Presenting their first analysis to senior l
 
 A senior colleague asks: "Why didn't you consider a different approach?"
 
-They have no answer. They had reviewed every line of the AI's suggestion. They had not thought to question the framing they started from.
+They have no answer. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
 
 The senior colleague notes the omission. The work moves forward anyway. What nobody sees is the deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
 
@@ -273,7 +273,7 @@ AI accelerates execution at every stage. The judgment at every stage stays yours
 :::
 
 ::: {.fragment style="margin-top: 0.9em; padding: 0.8em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.9em;"}
-**A failure mode that matters: plausibly wrong output that passes casual inspection.**
+**The failure mode that matters: plausibly wrong output that passes casual inspection.**
 
 576,000 code samples, 16 LLMs (mostly Python/JS): commercial models reference nonexistent packages **5.2%** of the time; open-source models, **21.7%**.
 
@@ -303,7 +303,7 @@ The next slide is what that actually looks like in statistical practice.
 
 ## Correct code, wrong question {.smaller}
 
-One dangerous output in statistics isn't a missing package - it's a model that does what AI suggested but answers a different question.
+The dangerous output in statistics isn't a missing package - it's a model that does what AI suggested but answers a different question.
 
 ::: {.fragment style="margin-top: 0.7em; font-size: 0.74em;"}
 | AI can produce | Human must decide | Failure if outsourced |
@@ -465,7 +465,7 @@ A pause to take stock.
 :::
 
 ::: {style="font-size: 1.2em; margin: 1em 0; color: #13294B; font-weight: 600; text-align: center;"}
-Where do you feel least calibrated in your AI-assisted work today?
+Where do you feel most exposed in your AI-assisted work today?
 :::
 
 ```{=html}
@@ -650,7 +650,7 @@ I left the conversation with two power analyses, not one.
 :::
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-The gap is the lesson.
+The diff is the lesson.
 :::
 
 ::: {.notes}
@@ -664,7 +664,7 @@ But not what I needed.
 
 The diff is what taught me something. AI answered the literal prompt. My third line - the "tricky parts" line - was where the real intellectual content lived: the question wasn't computing power, it was deciding what effect size to plan for. I left the conversation with two power analyses, not one. I would have left with one if I hadn't written the pause first.
 
-The gap is the lesson. Not the AI's answer. Not my prompt. The gap between them.
+The diff is the lesson. Not the AI's answer. Not my prompt. The gap between them.
 :::
 
 
@@ -681,7 +681,7 @@ Affected: src/optim.R, sim/runner.R, methods section §3.2.
 ```
 
 ::: {.fragment style="margin-top: 0.6em;"}
-**The point isn't the file - it's the act of writing.**
+**The point isn't the artifact - it's the act of writing.**
 
 Articulating the decision forces you to understand it. The log helps teammates, reviewers, and future-you reconstruct the reasoning.
 :::
@@ -863,7 +863,7 @@ Bastani et al., *PNAS* 2025. Field experiment, ~1,000 high-school math students.
 
 <div class="comparison-grid">
 <div class="comparison-box neutral"><div class="comparison-label">Vanilla GPT during practice</div><div class="comparison-text">Better in practice. <strong style="color: #C95E55;">17% worse</strong> when access removed.</div></div>
-<div class="comparison-box highlighted"><div class="comparison-label">Tutor-prompted GPT (with guardrails)</div><div class="comparison-text">Better in practice. <strong style="color: #5CA77C;">No detectable drop-off</strong> when access removed.</div></div>
+<div class="comparison-box highlighted"><div class="comparison-label">Tutor-prompted GPT (with guardrails)</div><div class="comparison-text">Better in practice. <strong style="color: #5CA77C;">No detectable underperformance</strong> when access removed.</div></div>
 </div>
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
@@ -933,7 +933,7 @@ And make defending the decision - not producing the output - the bar for sign-of
 Two things I've updated my own thinking on while preparing this talk.
 
 ::: {.fragment style="margin: 0.5em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
-I came in assuming the right line was clear: AI for implementation, not for statistical judgment. The students who pushed back have convinced me the line moves with the *task*, not the *role* - a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool's capability.
+I came in assuming the right line was clear: AI for code, not for analysis. The students who pushed back have convinced me the line moves with the *task*, not the *role* - a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool's capability.
 :::
 
 ::: {.fragment style="margin: 0.4em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
@@ -1079,7 +1079,7 @@ The spectrum tells you *what* to delegate. Modes tell you *how* to talk to AI ab
 ```
 
 ::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-By default, AI behaves like an executor. Tutor and critic modes are designed.
+Default AI is executor. Tutor and critic modes are designed.
 :::
 
 ```{=html}
