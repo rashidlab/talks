@@ -38,7 +38,7 @@ Let's start with the first question I want us to sit with: what's actually at st
 :::
 
 
-## A scenario {.smaller}
+## A failure mode {.smaller}
 
 ::: {.fragment .fade-up}
 Imagine a new hire - three months in - presenting their first analysis to senior leadership. They've used AI to help build it, reviewed every line, and can defend the strategy fully.
@@ -171,7 +171,7 @@ These four aren't avoidable. They're things you design around. The practices in 
 :::
 
 
-## Why this matters {.smaller}
+## The quieter cost {.smaller}
 
 ::: {style="color: #5B6670; margin-bottom: 0.7em; font-size: 0.92em;"}
 I use these tools extensively. This isn't a talk about abstinence - it's a talk about calibration.
@@ -432,7 +432,7 @@ A student who outsources the first encounter with confounding, likelihood, or si
 :::
 
 
-## The pattern across all three {.smaller}
+## Execution moves. Responsibility doesn't. {.smaller}
 
 <div class="comparison-grid">
 <div class="comparison-box neutral"><div class="comparison-label">What AI is excellent at</div><div class="comparison-text"><strong>Executing</strong> under decisions already made.</div></div>
