@@ -820,62 +820,6 @@ The takeaway for our practices is one sentence. The friction isn't the problem A
 :::
 
 
-## Three modes of AI use {.smaller}
-
-How you prompt AI determines what kind of work it does for you.
-
-```{=html}
-<div style="display: flex; gap: 0.6em; align-items: stretch; margin: 0.6em 0 0.4em;">
-<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Executor</div>
-<div style="color: #13294B; margin-bottom: 0.55em;">Writes the work. Code, drafts, refactoring, format conversions.</div>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Write a function that…"</div>
-</div>
-<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Tutor</div>
-<div style="color: #13294B; margin-bottom: 0.55em;">Teaches through the work. Explains, asks questions, gives hints, quizzes.</div>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Quiz me on the method before helping me implement it."</div>
-</div>
-<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Critic</div>
-<div style="color: #13294B; margin-bottom: 0.55em;">Challenges the work. Argues against, names alternatives, stress-tests assumptions.</div>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Argue against this model choice. List two alternatives."</div>
-</div>
-</div>
-```
-
-::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-Default AI is executor. Tutor and critic modes are designed.
-:::
-
-```{=html}
-<div style="margin: 0.7em 0 0.3em; padding: 0.7em 1em; background-color: #FCF5DC; border-left: 3px solid #D9B546; font-size: 0.68em; line-height: 1.55;">
-  <div style="font-style: italic; color: #5B6670; margin-bottom: 0.35em;">Same question - choosing between OLS, GLS, and robust regression with heteroskedasticity:</div>
-  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Executor:</strong> "Use GLS with HC3, write the code."</div>
-  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Tutor:</strong> "Walk through the assumptions; quiz me before code."</div>
-  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Critic:</strong> "Argue for OLS despite the heteroskedasticity. What residual pattern would I need to see?"</div>
-</div>
-```
-
-::: {.fragment style="margin-top: 0.3em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
-Critic-mode output is itself delegated judgment - it needs the same review as code.
-:::
-
-::: {.notes}
-Before we move into how this changes by role, a vocabulary I think you'll find useful. The same model can do three very different things depending on the prompt.
-
-Executor mode is the default - you ask, it produces. Tutor mode is when you ask AI to teach rather than do - quiz me before code, walk me through the assumptions. Critic mode is when you ask it to challenge you - argue against this model choice, list two alternatives.
-
-Default AI is executor. The other two you have to design for - they don't happen unless you prompt them.
-
-[Walk through the worked example in the yellow callout. Same statistical situation - heteroskedasticity, choosing among OLS/GLS/robust - produces three completely different conversations. Executor gives you code without asking whether GLS was the right call. Tutor gets you the assumptions encoded, not just applied. Critic stress-tests your default. The mode is a lever you control.]
-
-One important caveat: critic-mode output is itself delegated judgment - it needs the same review as code. If the AI argues against your model choice unconvincingly, that's not evidence your model is right; it's evidence the AI didn't argue well.
-
-This is the same content as the spectrum we just looked at, from a different angle. The spectrum tells you *what* to delegate. Modes tell you *how* to use AI on whatever you're delegating.
-:::
-
-
 # Across Our Roles {.center background-color="#13294B"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
@@ -1120,6 +1064,62 @@ Right column - stay hands-on. Architecture and design. Core algorithms. Methodol
 Notice the right column has both code-side items - architecture, algorithms - and non-code items - curriculum judgment, diagnosing the room. The same column structure applies across all our roles. The items shift. The columns don't.
 
 The columns are stable. The items shift by activity, by stakes, and by where you are in your career.
+:::
+
+
+## Three modes of AI use {.smaller}
+
+The spectrum tells you *what* to delegate. Modes tell you *how* to talk to AI about whatever you delegate.
+
+```{=html}
+<div style="display: flex; gap: 0.6em; align-items: stretch; margin: 0.6em 0 0.4em;">
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Executor</div>
+<div style="color: #13294B; margin-bottom: 0.55em;">Writes the work. Code, drafts, refactoring, format conversions.</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Write a function that…"</div>
+</div>
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Tutor</div>
+<div style="color: #13294B; margin-bottom: 0.55em;">Teaches through the work. Explains, asks questions, gives hints, quizzes.</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Quiz me on the method before helping me implement it."</div>
+</div>
+<div style="flex: 1 1 0; padding: 0.65em 0.75em; border-radius: 4px; background-color: #F8F9FA; border-top: 3px solid #4B9CD3; font-size: 0.74em; line-height: 1.4;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.45em; text-align: center;">Critic</div>
+<div style="color: #13294B; margin-bottom: 0.55em;">Challenges the work. Argues against, names alternatives, stress-tests assumptions.</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; color: #5B6670; font-style: italic; border-top: 1px solid #DEE2E6; padding-top: 0.4em;">"Argue against this model choice. List two alternatives."</div>
+</div>
+</div>
+```
+
+::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+Default AI is executor. Tutor and critic modes are designed.
+:::
+
+```{=html}
+<div style="margin: 0.7em 0 0.3em; padding: 0.7em 1em; background-color: #FCF5DC; border-left: 3px solid #D9B546; font-size: 0.68em; line-height: 1.55;">
+  <div style="font-style: italic; color: #5B6670; margin-bottom: 0.35em;">Same question - choosing between OLS, GLS, and robust regression with heteroskedasticity:</div>
+  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Executor:</strong> "Use GLS with HC3, write the code."</div>
+  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Tutor:</strong> "Walk through the assumptions; quiz me before code."</div>
+  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Critic:</strong> "Argue for OLS despite the heteroskedasticity. What residual pattern would I need to see?"</div>
+</div>
+```
+
+::: {.fragment style="margin-top: 0.3em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
+Critic-mode output is itself delegated judgment - it needs the same review as code.
+:::
+
+::: {.notes}
+The spectrum told us what kinds of tasks to delegate. Modes tell us how to talk to AI about whatever we're delegating. Three modes worth distinguishing.
+
+Executor mode is the default - you ask, it produces. Tutor mode is when you ask AI to teach rather than do - quiz me before code, walk me through the assumptions. Critic mode is when you ask it to challenge you - argue against this model choice, list two alternatives.
+
+Default AI is executor. The other two you have to design for - they don't happen unless you prompt them.
+
+[Walk through the worked example in the yellow callout. Same statistical situation - heteroskedasticity, choosing among OLS/GLS/robust - produces three completely different conversations. Executor gives you code without asking whether GLS was the right call. Tutor gets you the assumptions encoded, not just applied. Critic stress-tests your default. The mode is a lever you control.]
+
+One important caveat: critic-mode output is itself delegated judgment - it needs the same review as code. If the AI argues against your model choice unconvincingly, that's not evidence your model is right; it's evidence the AI didn't argue well.
+
+The spectrum tells you what to delegate; modes tell you how. Together they cover the design space.
 :::
 
 
