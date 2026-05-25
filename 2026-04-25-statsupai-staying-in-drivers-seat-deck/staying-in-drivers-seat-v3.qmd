@@ -458,7 +458,7 @@ The line moves over time. The distinction does not.
 :::
 
 
-## Quick poll {.smaller}
+## A quick calibration check {.smaller}
 
 ::: {style="text-align: center; color: #5B6670; font-style: italic; margin-bottom: 0.8em; font-size: 0.95em;"}
 A pause to take stock.
@@ -1110,7 +1110,7 @@ The spectrum tells you what to delegate; modes tell you how. Together they cover
 :::
 
 
-## Where the line sits, exactly {.smaller}
+## Three dials, one line {.smaller}
 
 The line between "delegable" and "stay hands-on" shifts along three dimensions.
 
@@ -1165,7 +1165,7 @@ It's that you are deliberate about drawing one at all.
 :::
 
 
-## Drawing the line {.smaller}
+## The fundamental questions {.smaller}
 
 When in doubt about where the line should sit, ask:
 
@@ -1303,7 +1303,7 @@ As you sit with these - and pick where to start - here's the image I keep coming
 :::
 
 
-## The GPS analogy {.smaller}
+## Still knowing where you are {.smaller}
 
 ::: {style="font-size: 1.05em; line-height: 1.6; margin-top: 0.4em;"}
 > GPS didn't make people worse drivers,<br>
