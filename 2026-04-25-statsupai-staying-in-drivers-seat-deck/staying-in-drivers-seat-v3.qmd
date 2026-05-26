@@ -501,42 +501,27 @@ Where do you feel most exposed in your AI-assisted work today?
 ```
 
 ::: {style="text-align: center; margin-top: 0.8em; color: #5B6670; font-size: 0.82em; font-style: italic;"}
-Scan, visit the URL, or type A/B/C/D in chat - your pick.
+Scan or visit the URL - your pick.
 :::
 
 ::: {.notes}
 This is a natural pause point. We've just established what stays yours - the chain of judgment, the productive struggle, the first encounter. Movement 3 is about how to keep those things alive in practice. Before we go there, I want a quick read of the room.
 
-[Deliver the question. Audience scans the QR, visits slido.com/1454077, or types A/B/C/D in chat. Also paste the join URL into the webinar chat as backup.]
+[BEFORE delivering this slide: activate the poll in your Slido admin tab. Click the play/launch button on the Multiple-choice poll. Until you do this, audience members who scan the QR will see "no active polls."]
 
-[Speak through ~30-45 seconds of voting. "While you're voting, let me tell you why I think this question matters..." Then advance to the next slide (Live results) so the audience sees the bars come in.]
+[Deliver the question. Audience scans the QR or visits slido.com/1454077. Also paste the join URL into the webinar chat as backup.]
+
+[Speak through ~30-45 seconds of voting. "While you're voting, let me tell you why I think this question matters..."]
+
+[To show live results: switch your screen-share to your Slido admin/presenter tab (which already shows the live results bars). After ~30 seconds, switch back to the deck and continue to Movement 3.]
+
+[Read the room as results come in:
+- "Research rigor" high: "research rigor running high - that's exactly where the next section starts."
+- "Trainees I mentor" high: foreground the advisor moves in Movement 4 when you get there.
+- "Students I teach" high: foreground the teaching moves in Movement 4.
+- "Still figuring out" high: validate that - "that's exactly what the next section is for."]
 
 This isn't a quiz. It's a baseline so the next section's practices land for where you actually are.
-:::
-
-
-## Live results {.smaller}
-
-::: {style="text-align: center; color: #5B6670; font-style: italic; margin-bottom: 0.4em; font-size: 0.9em;"}
-Where do you feel most exposed in your AI-assisted work today?
-:::
-
-```{=html}
-<iframe src="https://app.sli.do/event/4HTCEZB1WEBQfG2eTZBbeS" width="100%" height="560" style="border: 1px solid #E5E7EB; border-radius: 6px;" allowfullscreen></iframe>
-```
-
-::: {.notes}
-The iframe shows the live Slido event - the audience sees the bars populate in real time as votes come in.
-
-While results come in, shape the transition based on what's leading:
-- If "Research rigor" runs high: "research rigor running high - that's exactly where the next section starts."
-- If "Trainees I mentor" runs high: foreground the advisor moves in Movement 4 when you get there.
-- If "Students I teach" runs high: foreground the teaching moves in Movement 4.
-- If "Still figuring out" runs high: validate that - "that's exactly what the next section is for."
-
-Don't linger past ~30 seconds. Summarize what you see, then advance to "How We Keep It."
-
-FALLBACK if iframe doesn't load live (network issue or Slido embed restriction): open your Slido admin/present view in a separate browser tab/window and screen-share that briefly. The audience already has the URL; the embedded view is a convenience, not a requirement.
 :::
 
 
