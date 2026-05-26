@@ -33,9 +33,6 @@ format:
 *What's the worry, and is it new?*
 :::
 
-::: {.notes}
-Let's start with the first question I want us to sit with: what's actually at stake here, and is this concern new?
-:::
 
 
 ## A failure mode {.smaller}
@@ -60,21 +57,6 @@ The senior colleague notes the omission. The work moves forward anyway.
 The deeper failure: scrutinized every detail, never the framing.
 :::
 
-::: {.notes}
-I want to start with a scenario. Not a specific case - a composite - but a failure mode I think every one of us in this room should take seriously.
-
-Imagine a new hire. Three months in. Presenting their first analysis to senior leadership. They've used AI to help build it, reviewed every line, and they can defend the strategy fully.
-
-A senior colleague asks: "Why didn't you consider a different approach?"
-
-They were caught off-guard. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
-
-The senior colleague notes the omission. The work moves forward anyway. The deeper failure: scrutinized every detail, never the framing.
-
-This is a composite scenario. Not a specific case. But it's the failure mode I want us to take seriously today - because it's not about careless AI use. It's about sophisticated AI use that quietly narrows the option space.
-
-Let me tell you why I think that's the central worry.
-:::
 
 
 ## The core tension {.smaller}
@@ -89,12 +71,26 @@ Let me tell you why I think that's the central worry.
 Without that judgment, the work might still ship - but **the work stops being ours.**
 :::
 
-::: {.notes}
-The risk isn't just AI being wrong. It's AI being good enough that it quietly substitutes for the judgment we'd otherwise build.
 
-The goal isn't to use AI less. It's to use it in ways that keep our judgment in the loop.
 
-The pivot: I'm not arguing we should use AI less. I'm arguing about what kind of use preserves the judgment that makes the work ours. Without that judgment, the work might still ship - but it stops being ours.
+## What I am not arguing {.smaller}
+
+Before going further - the position I am taking, and three I am not.
+
+::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.88em; line-height: 1.55;"}
+**Not** that we should use AI less.
+:::
+
+::: {.fragment style="margin-top: 0.4em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.88em; line-height: 1.55;"}
+**Not** that trainees have to learn the way we did.
+:::
+
+::: {.fragment style="margin-top: 0.4em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.88em; line-height: 1.55;"}
+**Not** that speed and learning are opposites - some AI use is faster *and* deeper.
+:::
+
+::: {.fragment style="margin-top: 0.9em; text-align: center; font-size: 1.05em; color: #13294B; font-weight: 600; line-height: 1.5;"}
+The narrower claim: some forms of speed remove the struggle that builds judgment - and the question is which ones.
 :::
 
 
@@ -117,29 +113,18 @@ Clues from prior tool shifts - to navigate this one with eyes open.
 :::
 
 ::: {.fragment style="margin-top: 0.9em; font-size: 0.85em; color: #5B6670; font-style: italic;"}
-Lee et al. (CHI 2025, n=319): higher GenAI confidence predicts less critical thinking; higher self-confidence predicts more.
+Lee et al. (CHI 2025, survey of 319 knowledge workers): higher GenAI confidence was associated with less self-reported critical thinking; higher task self-confidence with more.
 :::
 
 ::: {.fragment style="color: #4B9CD3; font-weight: 600; font-size: 1.1em; margin-top: 1em; line-height: 1.4;"}
 The pattern is old. What's new is the surface area - and that the work being offloaded is judgment, not arithmetic.
 :::
 
-::: {.notes}
-Before we go further, I want to ground this in something. The worry I just named isn't new with AI. Tools have been changing what we encode and what skills we maintain for decades.
-
-Calculators changed mental arithmetic. GPS changed spatial memory. Search engines changed factual recall.
-
-Cognitive offloading is a well-established literature - not 2025 speculation. Erik Risko and Sam Gilbert reviewed the literature in 2016 in *Trends in Cognitive Sciences*; Betsy Sparrow's "Google effects on memory" paper came out in *Science* in 2011.
-
-In fact, the central argument of this talk was anticipated in 1983 by Lisanne Bainbridge, in a paper called "Ironies of Automation." She observed that as automation grows, the human's job becomes monitoring and judgment - and those skills atrophy without practice.
-
-The pattern is old. But the analogy only goes so far - a calculator doesn't write your Methods section. What's new with AI is the surface area, and that the work being offloaded is judgment, not arithmetic.
-:::
 
 
 ## Sound familiar? {.smaller}
 
-Bainbridge's *Ironies of Automation* (1983) anticipated several automation failure modes that map directly to AI use today. The four below are a synthesis.
+Bainbridge's *Ironies of Automation* (1983) anticipated several automation failure modes that offer a useful but imperfect map for AI use today. The four below are a synthesis.
 
 ::: {.quadrant-grid}
 ::: {.quadrant .fragment}
@@ -165,20 +150,13 @@ For humans to oversee, the system must operate in ways humans can follow - even 
 :::
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-The ironies aren't avoidable. They're things you design around.
+The ironies don't disappear on their own. They're things you design around.
 :::
 
 ::: {.fragment style="margin-top: 0.5em; text-align: center; font-style: italic; color: #4B9CD3; font-size: 0.95em;"}
 Designing around them is drawing the line.
 :::
 
-::: {.notes}
-Bainbridge's paper isn't just a citation - it identifies four specific ironies that map cleanly onto AI in research today. Each one is a checklist item, not a warning.
-
-Skill degradation in the takeover - the cases that need a human are the hardest, and the human is least practiced when they arrive. The training paradox - we train people to follow instructions, then drop them into systems where their job is judgment. The monitoring difficulty - humans are bad at sustained attention, and yet that becomes the primary job once automation handles the routine work. The transparency cost - for humans to step in, the system has to operate in ways humans can follow, even when that's not the technically best way.
-
-These four aren't avoidable. They're things you design around. The practices in the second half of this talk are exactly that - design responses to ironies understood for forty years.
-:::
 
 
 ## The quieter cost {.smaller}
@@ -200,28 +178,17 @@ I'm not here to repeat what you already discuss in your circles.
 :::
 
 ::: {.fragment style="margin-top: 1.2em;"}
-**The quieter cost** is what I want to focus on:
+**The quieter risks** are different across our roles:
 
-- For our **research** - the cost is rigor.
-- For our **trainees** - the cost is the formation of judgment.
-- For our **students** - the cost is the literacy we owe them.
+- For **research** - rigor can become harder to verify.
+- For **trainees** - judgment may be practiced less often.
+- For **students** - statistical literacy can become more fragile.
 :::
 
 ::: {.fragment style="margin-top: 1em; text-align: center; font-style: italic; color: #4B9CD3; font-size: 0.95em;"}
 Where the line sits - what has to stay yours - is what comes next.
 :::
 
-::: {.notes}
-Why does any of this matter for our community specifically?
-
-Before I go on - I use these tools extensively. This isn't a talk about abstinence; it's a talk about calibration. The productivity gains are real. The question is what must remain practiced while those gains are captured.
-
-The surface concerns on the slide are familiar to most of you - hallucinations, benchmark uncertainty, fabricated citations. I'm not here to repeat what you already discuss in your circles.
-
-I want to be clear about what I'm not arguing. I'm not arguing AI use is lazy. I'm not arguing trainees have to learn the way we did. I'm not arguing speed and learning are opposites. The argument is narrower - *some* forms of speed remove the struggle that builds judgment. Some of you will reasonably think trainees who never learned the unplugged version still end up better statisticians, because they iterate faster and reach harder problems sooner. I take that seriously. The bar for whether that's actually happening should be deliberate, not default.
-
-What I want to focus on is a quieter cost. For our research - the cost is rigor. For our trainees - the cost is the formation of judgment. For our students - the cost is the literacy we owe them.
-:::
 
 
 # What Stays Yours {.center background-color="#13294B"}
@@ -230,9 +197,6 @@ What I want to focus on is a quieter cost. For our research - the cost is rigor.
 *What must each of us actually hold onto, and why?*
 :::
 
-::: {.notes}
-So if AI is reshaping what we offload - the second question becomes: what must each of us actually hold onto, and why?
-:::
 
 
 ## A part you don't outsource {.smaller}
@@ -253,15 +217,6 @@ The same sentence applies across:
 The next three slides show - for each - where the line sits.
 :::
 
-::: {.notes}
-One observation that holds across everything we do.
-
-Every project has a part you can't outsource. Skip it, and the work might still ship - but it stops being yours.
-
-The same sentence applies whether we're talking about our own research, the doctoral students we train, or the students we teach.
-
-The next three slides show what that part is in each.
-:::
 
 
 ## In your own research {.smaller}
@@ -291,7 +246,7 @@ AI accelerates execution at every stage. The judgment at every stage stays yours
 
 576,000 code samples, 16 LLMs: commercial models reference nonexistent packages **5.2%** of the time; open-source models, **21.7%**.
 
-Package hallucination is the visible tip. The harder cases are statistical.
+Package hallucination is the visible version of a broader problem: output that looks executable but rests on a false premise. In statistics, the analogous failures are often conceptual rather than syntactic.
 
 *Spracklen et al., USENIX Security 2025.*
 :::
@@ -300,19 +255,6 @@ Package hallucination is the visible tip. The harder cases are statistical.
 Without your judgment, plausibly wrong passes.
 :::
 
-::: {.notes}
-Start with our own research. The part you don't outsource is what I'd call the chain of judgment.
-
-Framing the question - what's worth asking. Choosing methods, including the *estimand* - what quantity does my question actually require? - and the design that targets it, including over alternatives the AI didn't suggest. Verifying that what was produced is what you actually intended - that the code does what you described, that the output answers the question you asked. Interpreting what the result means and, just as importantly, what it does not. Defending the work to a hostile reader.
-
-What's the actual failure mode AI introduces here? It's not gross incompetence. It's plausibly wrong output that survives casual inspection.
-
-Spracklen and colleagues at the USENIX Security symposium last year looked at 576,000 code samples generated by 16 LLMs - predominantly Python and JavaScript. Commercial GPT-class models referenced nonexistent software packages 5.2% of the time; open-source models, 21.7%.
-
-That study's about Python and JavaScript, not R or SAS. So the failure mode generalizes in kind to our work; the magnitude is less established. But the pattern matters - and in statistics, the dangerous output is often not a missing package.
-
-The next slide is what that actually looks like in statistical practice.
-:::
 
 
 ## Correct code, wrong question {.smaller}
@@ -332,21 +274,6 @@ Here's what "plausibly wrong output" often looks like in statistics: a model tha
 The middle column is where the chain of judgment lives.
 :::
 
-::: {.notes}
-This is what "plausibly wrong output that passes casual inspection" looks like inside a statistical workflow.
-
-The pattern, four rows. AI can produce regression code; you have to decide what estimand the question actually requires. Default to AI's suggestion, you get the correct model for the wrong question - code that runs, output that prints, conclusion that doesn't match what the study was supposed to answer.
-
-Covariate adjustment. AI will happily include every available covariate in a regression - that's what the default formula does. You decide which are pre-treatment and which are post-treatment. Adjust for a post-treatment variable - a mediator, a collider - and you don't just lose precision, you bias the estimate. The model runs, the coefficients print, and the conclusion contradicts the science you were trying to test. This is one of the cleanest examples in the table: AI being *better at code* doesn't fix it, because the failure isn't about code.
-
-Missing data - this is the row I'd guess most of you have personally tripped over. AI defaults to listwise deletion or simple imputation. You're the one who knows whether the missingness mechanism is plausibly MCAR, MAR, or MNAR. Get that wrong and the inference understates uncertainty in the direction that's hardest to spot - the imputed dataset looks complete, the standard errors look reasonable, and the result is silently overconfident.
-
-Simulation. AI can implement any data-generating process. You decide which DGP actually matters for the question. Simulating the wrong world is the most consequential version of this failure mode - the result is internally consistent and externally meaningless.
-
-The point of the table: the middle column is where the chain of judgment lives. It's the column AI doesn't help with - not because it can't, but because the choices in that column are what the work is *for*. The other two columns are mechanical.
-
-[PAUSE here. "Simulation validates the wrong world" is one of the talk's anchor lines - let it land.]
-:::
 
 
 ## In doctoral training {.smaller}
@@ -367,56 +294,33 @@ The struggle preserves four kinds of effort that distinguish learning that lasts
 ::: {.quadrant .fragment}
 [Varying conditions of practice]{.quadrant-title}
 
-Practice across contexts, not one fixed setup. AI's task-specific scaffolding narrows the practice context.
+Practice across contexts, not one fixed setup. Default AI use can narrow the practice context.
 :::
 ::: {.quadrant .fragment}
 [Spacing]{.quadrant-title}
 
-Practice over time, not cramming. AI's instant access collapses spacing.
+Practice over time, not cramming. Instant answer-seeking can collapse spacing.
 :::
 ::: {.quadrant .fragment}
 [Interleaving]{.quadrant-title}
 
-Mixing topics, not blocked practice. AI scaffolding reinforces blocking.
+Mixing topics, not blocked practice. Task-specific prompting can reinforce blocking.
 :::
 ::: {.quadrant .fragment}
 [Using tests as study events]{.quadrant-title}
 
-Retrieving and generating, not reading. When AI supplies the answer, neither happens.
+Retrieving and generating, not reading. When AI supplies the answer before retrieval, neither happens.
 :::
 :::
 
 ::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 0.68em; font-style: italic; color: #5B6670; line-height: 1.5;"}
-Sources: Shea & Morgan 1979 (varied practice); Cepeda et al. 2006 (spacing); Rohrer & Taylor 2007 (interleaving); Roediger & Karpicke 2006 (testing).
+Sources: Shea & Morgan 1979 (varied practice); Cepeda et al. 2006 (spacing); Rohrer & Taylor 2007 (interleaving); Roediger & Karpicke 2006 (testing). Extension to AI-assisted training in advanced statistics is plausible but not yet established empirically - treat as motivating, not proven.
 :::
 
 ::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
 Default AI use can bypass all four. Each one needs deliberate preservation.
 :::
 
-::: {.notes}
-In doctoral training, the part you don't outsource is the productive struggle.
-
-In 2011, Robert and Elizabeth Bjork wrote: "Conditions of learning that make performance improve rapidly often fail to support long-term retention and transfer." This was research on conventional instruction; the extension to AI-assisted learning is an extrapolation, not a finding.
-
-[VERBAL: emphasize the hedge out loud. Audience members will mishear sophistication as certainty if you don't. The honest position is that the cognitive mechanism is well-evidenced in older work; the AI-specific application is plausible but not established in advanced statistical training. Say that.]
-
-But the principle generalizes well, and the mechanism is concrete. Bjork & Bjork named four specific desirable difficulties that distinguish learning that lasts from performance that fades:
-
-Varying conditions of practice - practicing across contexts rather than one fixed setup. The effort of generalizing across conditions is where transferable understanding gets built. AI's task-specific scaffolding tends to narrow the practice context.
-
-Spacing - distributing practice over time rather than cramming. The effort of recalling something after a delay strengthens the memory more than re-reading it. AI's instant access collapses spacing - you ask, you get the answer, you move on.
-
-Interleaving - mixing topics rather than blocked practice. The effort of distinguishing similar concepts is where their differences get encoded. AI's task-specific scaffolding tends to reinforce blocking.
-
-Using tests as study events - retrieving information from memory and generating answers, rather than reading or being shown. Both retrieval practice (Roediger & Karpicke 2006) and the generation effect live here. When AI supplies the answer, neither retrieval nor generation happens.
-
-The honest extrapolation: default AI use can bypass all four. Each one needs deliberate preservation.
-
-Concretely in graduate stats training, that means working through a derivation by hand the first time, manually debugging by staring at residuals before reaching for help, building a small simulation from scratch before reaching for a library. The struggle is where calibrated intuition is laid down - the kind that lets each of us, today, catch a wrong answer in a paper, in a colleague's analysis, or in an AI's output.
-
-We should be deliberate about whether AI lets the next generation skip the private wrong turns that build judgment.
-:::
 
 
 ## In classroom teaching {.smaller}
@@ -436,25 +340,16 @@ Concept formation is:
 :::
 
 ::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;"}
-A student who outsources the first encounter retains the answer without the schema. A course that outsources teaching it never builds one.
+The first encounter should be designed, not defaulted. A student who outsources it may retain the answer without the schema. A course that lets generic AI output introduce the concept risks building the wrong schema before the instructor ever sees it.
 :::
 
-::: {.notes}
-In classroom teaching, the part you don't outsource - as faculty or as a student - is the first encounter with a concept.
-
-The first encounter strongly shapes the schema students build.
-
-Concept formation is the most contextual phase of learning - it depends on what just happened in this room, with this cohort, this semester. It's the hardest to automate well phase, for that same reason. And it's where the broader statistical literacy of our students is determined.
-
-Two sides to this. A student who outsources their first encounter with confounding, likelihood, or simulation retains the answer without the schema. And a course that outsources teaching that first encounter - lets AI-generated material introduce the concept - never builds the schema either.
-:::
 
 
 ## Execution moves. Responsibility doesn't. {.smaller}
 
 <div class="comparison-grid">
-<div class="comparison-box neutral"><div class="comparison-label">What AI is excellent at</div><div class="comparison-text"><strong>Executing</strong> under decisions already made.</div></div>
-<div class="comparison-box highlighted"><div class="comparison-label">What stays ours</div><div class="comparison-text"><strong>Deciding</strong> - what's worth doing, what counts as done, what the result means.</div></div>
+<div class="comparison-box neutral"><div class="comparison-label">What AI can assist with</div><div class="comparison-text"><strong>Execution, options, critique, drafting, implementation.</strong></div></div>
+<div class="comparison-box highlighted"><div class="comparison-label">What stays ours</div><div class="comparison-text"><strong>Accountability</strong> - for what was chosen, why it was chosen, and what the result means.</div></div>
 </div>
 
 ::: {.fragment style="margin-top: 1em; font-size: 0.92em; color: #5B6670; text-align: center;"}
@@ -465,15 +360,6 @@ AI increasingly helps with deciding too - surfacing options, finding gaps in rea
 The line between them moves over time. The distinction does not.
 :::
 
-::: {.notes}
-Step back from the three contexts. What's the pattern?
-
-AI is excellent at executing under decisions already made.
-
-What stays ours is deciding - what's worth doing, what counts as done, what the result means.
-
-The line between them - between executing and deciding - moves over time. The distinction does not.
-:::
 
 
 ## A quick calibration check {.smaller}
@@ -508,25 +394,6 @@ Where do you feel most exposed in your AI-assisted work today?
 Scan or visit the URL - your pick.
 :::
 
-::: {.notes}
-This is a natural pause point. We've just established what stays yours - the chain of judgment, the productive struggle, the first encounter. Movement 3 is about how to keep those things alive in practice. Before we go there, I want a quick read of the room.
-
-[BEFORE delivering this slide: activate the poll in your Slido admin tab. Click the play/launch button on the Multiple-choice poll. Until you do this, audience members who scan the QR will see "no active polls."]
-
-[Deliver the question. Audience scans the QR or visits slido.com/1454077. Also paste the join URL into the webinar chat as backup.]
-
-[Speak through ~30-45 seconds of voting. "While you're voting, let me tell you why I think this question matters..."]
-
-[To show live results: switch your screen-share to your Slido admin/presenter tab (which already shows the live results bars). After ~30 seconds, switch back to the deck and continue to Movement 3.]
-
-[Read the room as results come in:
-- "Research rigor" high: "research rigor running high - that's exactly where the next section starts."
-- "Trainees I mentor" high: foreground the advisor moves in Movement 4 when you get there.
-- "Students I teach" high: foreground the teaching moves in Movement 4.
-- "Still figuring out" high: validate that - "that's exactly what the next section is for."]
-
-This isn't a quiz. It's a baseline so the next section's practices land for where you actually are.
-:::
 
 
 # How We Keep It {.center background-color="#13294B"}
@@ -535,9 +402,6 @@ This isn't a quiz. It's a baseline so the next section's practices land for wher
 *What does keeping understanding alive look like in practice?*
 :::
 
-::: {.notes}
-If that's what stays ours - what does keeping it look like in practice?
-:::
 
 
 ## Five practices ahead {.smaller}
@@ -554,14 +418,11 @@ If that's what stays ours - what does keeping it look like in practice?
 Then: what ties them together.
 :::
 
-::: {.notes}
-Here's the road map for this section. Five practices, not equal in weight - the pre-prompt pause and decision log are the daily-habit anchors; the others orbit around them. I'll walk through each, then we'll look at what ties the set together. After that we'll move from practices to roles.
-:::
 
 
 ## 1. Read everything that ships {.smaller}
 
-> Treat AI output like a pull request from a junior developer.
+> Treat AI output like a pull request from a capable collaborator who is not accountable for the final product.
 
 ::: {.fragment style="margin-top: 0.8em;"}
 Review every line. Question every design choice. Switch into reviewer mode:
@@ -581,21 +442,6 @@ Same posture for an AI-drafted methods sentence, simulation parameter, lecture e
 If something doesn't make sense - stop and learn the concept before accepting it.
 :::
 
-::: {.notes}
-First practice. Read everything that ships.
-
-Treat AI output like a pull request from a junior developer.
-
-Review every line. Question every design choice. Switch into reviewer mode.
-
-Three questions to ask: Could I have written this myself? If not, what concept am I missing? Is this the approach I would have chosen - and why or why not? What does this assume about inputs, environment, or state?
-
-Same posture for an AI-drafted methods sentence, simulation parameter, lecture example, or rubric.
-
-If something doesn't make sense - stop and learn the concept before accepting it.
-
-If you wouldn't ship it from a student, don't ship it from an AI.
-:::
 
 
 ## 2. The pre-prompt pause {.smaller}
@@ -621,19 +467,6 @@ Then prompt with your plan as context. Compare the AI's approach to yours.
 The differences are where learning happens.
 :::
 
-::: {.notes}
-Second practice. The pre-prompt pause.
-
-Before prompting an AI tool, spend 2 to 5 minutes writing your own approach in a scratch file.
-
-Four questions to answer in writing: What am I trying to accomplish? - the goal, not the implementation. What's my best guess for how to do it? - rough or wrong is fine. What are the tricky parts? - edge cases, assumptions, unknowns. How will I know it worked? - what output am I expecting; how will I verify.
-
-Then prompt the AI with your plan as context. Compare the AI's approach to yours.
-
-The differences are where learning happens.
-
-This habit is counterintuitive. We add 2 to 5 minutes of friction before a productivity tool - it feels backwards. But it's cheap insurance against being steered.
-:::
 
 
 ## The pause in action {.smaller}
@@ -662,9 +495,9 @@ A clean, correct answer to the literal question.
 
 AI answered the *literal* prompt - not the concern the third line raised.
 
-The diff revealed my real question: *what effect size do I plan for given the pilot is likely inflated?*
+The diff revealed that the real task wasn't computing power. It was choosing the planning effect size: pilot estimate, clinically meaningful minimum, and a deflated or shrunk effect.
 
-I left the conversation with two power analyses, not one.
+I left with a sensitivity analysis, not a single sample-size answer.
 :::
 :::
 
@@ -672,19 +505,6 @@ I left the conversation with two power analyses, not one.
 The diff is the lesson.
 :::
 
-::: {.notes}
-Here's a recent example from my own work - illustrative, since power analysis is a problem most of you have run into.
-
-I was planning a confirmatory follow-up to a small pilot study. I gave myself 60 seconds to write what I wanted: sample size for the follow-up, my approach was to plug the pilot effect size into the standard power calculation, and the tricky part was that I knew small pilots tend to overestimate effects, so I wanted to plan for a deflated value too.
-
-I prompted the AI. It gave me a clean, correct answer to the literal prompt - pwr.t.test with the pilot's reported effect size, 80% power, two-sided alpha 0.05. Exactly what I asked for.
-
-But not what I needed.
-
-The diff is what taught me something. AI answered the literal prompt. My third line - the "tricky parts" line - was where the real intellectual content lived: the question wasn't computing power, it was deciding what effect size to plan for. I left the conversation with two power analyses, not one. I would have left with one if I hadn't written the pause first.
-
-The diff is the lesson. Not the AI's answer. Not my prompt. The gap between them.
-:::
 
 
 ## 3. The decision log {.smaller}
@@ -709,21 +529,6 @@ Articulating the decision forces you to understand it. The log helps teammates, 
 Generalizes beyond code: research projects, analysis plans, course curricula, manuscripts. Write your own project map - not AI's.
 :::
 
-::: {.notes}
-Third practice. A decision log.
-
-Keep a lightweight markdown file called `DECISIONS.md` in every project.
-
-Each entry captures the date, what decision was made, why this approach over alternatives, what trade-offs were accepted, and which components were affected.
-
-Here's an example from a real project of mine: switching the simulator's optimizer from BFGS to L-BFGS-B. The reason - BFGS hit memory limits when n_params went over 5000. The trade-off - about 10x memory reduction, but slower per-iteration and needs a warm start. Affected - `src/optim.R`, `sim/runner.R`, methods section §3.2.
-
-The point isn't the artifact - it's the act of writing. Articulating the decision forces you to understand it. The log helps teammates, helps reviewers, and helps future-you reconstruct the reasoning when you've forgotten why you did what you did.
-
-This generalizes beyond code: research projects, course curricula, manuscripts. Anywhere decisions get made and forgotten.
-
-The same principle scales up to architecture documents - a living description of how a project's components fit together. The full architecture-documentation guidance is in the source guide and lab handbook; for purposes of this talk, the decision log is the daily-habit version, and architecture docs are what you build over time when decision logs accumulate enough decisions worth synthesizing.
-:::
 
 
 ## 4. The explain-it-back test {.smaller}
@@ -754,21 +559,6 @@ Where you get stuck is where your understanding has gaps.
 The thinking required to explain is the point.
 :::
 
-::: {.notes}
-Fourth practice. The explain-it-back test.
-
-After AI helps you build something - close the tool.
-
-The empirical backing here is strong. This is essentially the self-explanation effect - Chi and colleagues, 1989 and 1994 - and retrieval practice - Roediger and Karpicke, 2006. Well-evidenced mechanisms by which articulating cements understanding.
-
-Try to explain the implementation to a rubber duck, a colleague, or a voice memo on your phone.
-
-Where you get stuck is where your understanding has gaps.
-
-And in real time - narrate at the system level, not the action level. Not "I asked for X and it worked," but "the bug was a race condition; the mutex works because shared state is only accessed from two places."
-
-The thinking required to explain is the point.
-:::
 
 
 ## 5. Red-team your analysis {.smaller}
@@ -790,21 +580,6 @@ The questions you ask before submitting are the questions a hostile reviewer ask
 For regulated work - these become a sponsor-reviewable checklist.
 :::
 
-::: {.notes}
-A fifth practice. Four questions in particular - the questions a hostile reviewer asks first. Before accepting an AI-assisted result, argue against it:
-
-What estimand did this actually answer? Callback to the table earlier. AI gives you what you literally asked for; the estimand question makes sure that matches what your protocol or your science actually needs.
-
-What diagnostic would make me distrust this? Concrete falsification criterion. If you can't name one, you don't have a model - you have a fitting procedure.
-
-What did the AI not suggest? The opening scenario in one question. The AI is generative within its training distribution; alternatives outside that distribution are the human's responsibility.
-
-What would I do if the result were reversed? Pre-mortem on the conclusion. If you'd report the work the same way regardless of which direction the finding went, you don't have a directional finding - you have a fitting procedure dressed as a finding.
-
-For regulated work, these become a sponsor-reviewable checklist. Many SAPs already include something like this; making it AI-aware just means asking the questions in light of how AI helped produce the analysis.
-
-The questions you ask before submitting are the questions a hostile reviewer asks first. Red-teaming is just running that conversation early - with yourself.
-:::
 
 
 ## What ties these practices together
@@ -818,21 +593,10 @@ deliberate friction
 :::
 
 ::: {.fragment style="margin-top: 1.6em; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600; line-height: 1.5;"}
-Friction is where understanding gets built.<br>
-AI removes friction - and the building goes with it.
+Some friction is where understanding gets built.<br>
+AI removes friction indiscriminately - the discipline is preserving the kind that matters.
 :::
 
-::: {.notes}
-What ties these five practices together? One phrase: deliberate friction.
-
-Not arbitrary difficulty - the kind of struggle a learner can resolve. The Bjorks call them "desirable difficulties." When learning feels effortful and resolvable, it tends to stick. When it feels smooth, the feeling itself can mislead us - Deslauriers and colleagues showed that in PNAS in 2019, that the feeling of learning isn't the same as actual learning. Kapur's work on productive failure draws the same distinction between effort that builds understanding and effort that just hurts.
-
-The takeaway for our practices is one sentence. Friction is where understanding gets built. AI removes friction - and the building goes with it.
-
-[PAUSE here. This is one of the talk's anchor lines - let it land before moving on.]
-
-[VERBAL: when this lands, the audience may hear it as a stronger claim than you mean. The honest version: this is a concern grounded in older cognitive-science literature, consistent with the AI-era evidence we have, but not yet definitively established in advanced training. The strength of the argument is the *mechanism*, not the empirical magnitude. Volunteer that distinction.]
-:::
 
 
 # Across Our Roles {.center background-color="#13294B"}
@@ -841,9 +605,6 @@ The takeaway for our practices is one sentence. Friction is where understanding 
 *How does the line differ between our research, our trainees, and our students?*
 :::
 
-::: {.notes}
-We've got the practices. The next question is how the line differs across our roles - research, training, teaching.
-:::
 
 
 ## For educators and team leads {.smaller}
@@ -861,19 +622,6 @@ Four practices from the source guide that travel well:
 The work isn't to remove AI. It's to design assignments and reviews where understanding still has to show.
 :::
 
-::: {.notes}
-Start with educators and team leads. Four practices from the source guide that travel well.
-
-The Two-Pass Assignment - students attempt without AI first, submit; then iterate with AI and reflect on the differences.
-
-Explain-Your-Code Assessments - supplement code submissions with oral or written walkthroughs.
-
-Debugging Exercises - give students intentionally broken code, with no AI tools allowed.
-
-Code Review Culture - AI-generated code receives the same, or more, scrutiny as human-written code. The standing question: "Can you walk me through this?" If the author can't walk through it, the work isn't ready.
-
-The work isn't to remove AI. It's to design assignments and reviews where understanding still has to show.
-:::
 
 
 ## Evidence that design matters {.smaller}
@@ -881,7 +629,7 @@ The work isn't to remove AI. It's to design assignments and reviews where unders
 Bastani et al., *PNAS* 2025. Field experiment, ~1,000 high-school math students.
 
 ::: {style="margin-top: 0.5em; text-align: center; font-size: 0.92em; color: #5B6670; font-style: italic;"}
-Three randomized groups: vanilla GPT, tutor-prompted GPT, no-AI control. Same model, different prompt design.
+Three randomized groups: vanilla GPT, tutor-prompted GPT, no-AI control. Same underlying model, different instructional design.
 :::
 
 <div class="comparison-grid">
@@ -897,23 +645,6 @@ One study, one population, one subject. Suggestive of a broader pattern; not yet
 The same tool can have very different learning consequences depending on design.
 :::
 
-::: {.notes}
-I want to anchor what I just said in the strongest empirical evidence we have on this question.
-
-Bastani and colleagues. *PNAS*, 2025. Field experiment. Roughly 1,000 high-school math students.
-
-Vanilla GPT - students could ask anything, AI gave direct answers. During practice, these students outperformed the no-AI control group. But on the post-test with AI removed, they did 17% worse than the no-AI group. The practice-phase gain didn't transfer.
-
-Tutor-prompted GPT - same students, same problems, same model. The only thing that differed was the system prompt: the tutor version was instructed to ask guiding questions and give hints, not direct answers. Same practice-phase advantage as vanilla. But on the post-test with AI removed, no detectable underperformance vs the no-AI group. The practice-phase gain held.
-
-The key insight is that both AI conditions looked identical during practice. The post-test - the assessment after AI was removed - is where the difference showed up. Practice performance was misleading about learning.
-
-[VERBAL: emphasize that this is one study, one population, one subject. High-school math, not graduate statistical training. The finding is suggestive of a broader pattern - "design matters" - not proof that AI degrades expertise. Statisticians in the room will appreciate the restraint and may push back if you don't volunteer it.]
-
-The point is not that this study settles graduate statistics education. It obviously does not. One study, one population, one subject - high-school math, not biostatistics. The point is that the same tool can produce very different learning consequences depending on the surrounding design.
-
-The same tool can have very different learning consequences depending on design.
-:::
 
 
 ## For doctoral training {.smaller}
@@ -936,21 +667,6 @@ Concrete moves:
 - Make defending the decision - not producing the output - the bar for sign-off.
 :::
 
-::: {.notes}
-For doctoral training, here's the standing question I think advisors should be carrying.
-
-"Which struggles do I let happen, and which do I remove?"
-
-The job isn't to remove AI from your trainees' work. It's to design the struggles AI cannot remove - the parts where understanding has to be built, not produced.
-
-Three concrete moves.
-
-Require the unplugged version first on key derivations and debugging.
-
-Make a standing question part of every advising conversation: show me one place AI helped, one suggestion you rejected, one thing you verified independently. The same conversation works senior-to-junior in industry teams - same question, different power dynamic, same goal.
-
-And make defending the decision - not producing the output - the bar for sign-off.
-:::
 
 
 ## For your own research {.smaller}
@@ -969,21 +685,6 @@ The same practices apply to your own work:
 The trainees you mentor will calibrate to the practices you actually keep.
 :::
 
-::: {.notes}
-And then there's our own research. I want to be clear that this isn't advice for trainees from a faculty member who has it figured out.
-
-You are also someone whose intuition and judgment have to be maintained.
-
-The same practices apply to your own work.
-
-A `DECISIONS.md` for your active research projects, not just your code.
-
-Unplugged hours - 90 minutes a week without AI assistance, on real problems.
-
-Periodic explain-it-back on your own analyses - before you teach them or submit them.
-
-The trainees you mentor will calibrate to the practices you actually keep.
-:::
 
 
 ## The spectrum of delegation {.smaller}
@@ -1000,7 +701,6 @@ Where does the line sit - and which way is it shifting for you?
 <li>Syntax &amp; idioms</li>
 <li>Format conversions</li>
 <li>Search-query brainstorming</li>
-<li>Prose smoothing</li>
 </ul>
 </div>
 <div class="spectrum-col review">
@@ -1009,6 +709,7 @@ Where does the line sit - and which way is it shifting for you?
 <li>Analysis code</li>
 <li>Database queries</li>
 <li>Methods-section drafts</li>
+<li>Prose smoothing</li>
 <li>Literature summaries</li>
 <li>Worked examples &amp; rubrics</li>
 </ul>
@@ -1029,23 +730,6 @@ Where does the line sit - and which way is it shifting for you?
 The columns are stable. The items shift - by activity, by stakes, by career stage.
 :::
 
-::: {.notes}
-Now for the take-home.
-
-Where do you draw the line - and how does it shift across activities?
-
-Left column - usually safe to delegate. Boilerplate and scaffolding. Syntax and idioms. Format conversions. Search-query brainstorming. Prose smoothing. Slide formatting.
-
-Middle column - delegate with review. Analysis code. Refactoring. Database queries. Methods-section drafts. Literature summaries and source triage. Worked examples and rubric drafts.
-
-Note that I moved literature work into the middle column. Search-query brainstorming is safe; AI-summarized papers and AI-suggested citations need verification - that's where the fake-citation problem shows up.
-
-Right column - stay hands-on. Architecture and design. Core algorithms. Methodological choices. Interpretation and defense. Curriculum judgment. Diagnosing the room.
-
-Notice the right column has both code-side items - architecture, algorithms - and non-code items - curriculum judgment, diagnosing the room. The same column structure applies across all our roles. The items shift. The columns don't.
-
-The columns are stable. The items shift by activity, by stakes, and by where you are in your career.
-:::
 
 
 ## Three modes of AI use {.smaller}
@@ -1078,10 +762,10 @@ Default AI is executor. Tutor and critic require deliberate prompting.
 
 ```{=html}
 <div style="margin: 0.7em 0 0.3em; padding: 0.7em 1em; background-color: #FCF5DC; border-left: 3px solid #D9B546; font-size: 0.68em; line-height: 1.55;">
-  <div style="font-style: italic; color: #5B6670; margin-bottom: 0.35em;">Same question - choosing between OLS, GLS, and robust regression with heteroskedasticity:</div>
-  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Executor:</strong> "Use GLS with HC3, write the code."</div>
-  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Tutor:</strong> "Walk through the assumptions; quiz me before code."</div>
-  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Critic:</strong> "Argue for OLS despite the heteroskedasticity. What residual pattern would I need to see?"</div>
+  <div style="font-style: italic; color: #5B6670; margin-bottom: 0.35em;">Same question - heteroskedasticity and model choice:</div>
+  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Executor:</strong> "Fit OLS with HC3 robust SEs and show a feasible GLS sensitivity analysis."</div>
+  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Tutor:</strong> "Quiz me on the assumptions behind OLS+HC3, feasible GLS, and robust regression before writing code."</div>
+  <div style="font-family: 'IBM Plex Mono', monospace; color: #13294B;"><strong style="color: #007FAE;">Critic:</strong> "Argue against feasible GLS here. What residual pattern or design feature would make OLS+HC3 preferable?"</div>
 </div>
 ```
 
@@ -1089,19 +773,6 @@ Default AI is executor. Tutor and critic require deliberate prompting.
 Critic-mode output is itself delegated judgment - it needs the same review as code.
 :::
 
-::: {.notes}
-The spectrum told us what kinds of tasks to delegate. Modes tell us how to talk to AI about whatever we're delegating. Three modes worth distinguishing.
-
-Executor mode is the default - you ask, it produces. Tutor mode is when you ask AI to teach rather than do - quiz me before code, walk me through the assumptions. Critic mode is when you ask it to challenge you - argue against this model choice, list two alternatives.
-
-Default AI is executor. The other two you have to design for - they don't happen unless you prompt them.
-
-[Walk through the worked example in the yellow callout. Same statistical situation - heteroskedasticity, choosing among OLS/GLS/robust - produces three completely different conversations. Executor gives you code without asking whether GLS was the right call. Tutor gets you the assumptions encoded, not just applied. Critic stress-tests your default. The mode is a lever you control.]
-
-One important caveat: critic-mode output is itself delegated judgment - it needs the same review as code. If the AI argues against your model choice unconvincingly, that's not evidence your model is right; it's evidence the AI didn't argue well.
-
-The spectrum tells you what to delegate; modes tell you how. Together they cover the design space.
-:::
 
 
 ## Three dials, one line {.smaller}
@@ -1120,47 +791,23 @@ The line between "hands-off" and "hands-on" shifts along three dimensions.
 Three dials. Adjust them for your actual situation.
 :::
 
-::: {.notes}
-The spectrum tells you what kinds of work to delegate. But the line itself isn't fixed - it moves. Three dimensions that move it.
-
-First dimension: context. In teaching, the line sits at the first encounter with a concept - AI should not be the first time a student meets confounding or likelihood. In research, the line sits at method choice - AI can write the code, but the analyst owns the estimand. In doctoral training, the line sits at the productive struggle - the unplugged derivation, the manual debugging - the places where calibrated intuition is laid down.
-
-Second dimension: career stage. Junior researchers need a wider "stay hands-on" column - judgment is being built, and AI substituting for it would prevent the building. Senior researchers can delegate more because their intuition catches problems AI misses. The line moves rightward over a career - but it doesn't disappear.
-
-Third dimension: stakes. Regulated work, published work, work that will be defended - all of these narrow what can be safely delegated. Scratch work, exploratory analysis, drafts you're going to rewrite - those widen it.
-
-The honest move is to adjust these dials for your own situation, not to copy mine.
-:::
 
 
-## The line is personal {.smaller}
+## The line is situated {.smaller}
 
-Where the columns sit on this grid is yours, not mine.
+It shifts by task, stakes, career stage, and role.<br>
+But it is not just personal preference.
 
 ::: {.fragment style="margin-top: 1em;"}
-It will be different for you than for me.<br>
-Different for our trainees than for either of us.<br>
-Different for code than for analysis than for teaching.
+In scratch work, the line can be private.<br>
+In teaching, mentoring, publishing, and regulated analysis, the line has to be explicit enough for others to inspect.
 :::
 
-::: {.fragment style="margin-top: 0.8em; padding: 0.55em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.88em; line-height: 1.55;"}
-Some of the line is yours to draw. Some is drawn by your lab, your sponsor, your regulator - and that's a feature, not a constraint.
+::: {.fragment style="margin: 1.2em 0 0; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600; line-height: 1.5;"}
+The discipline isn't drawing the same line everywhere.<br>
+It's knowing which line applies - and making it <span style="color: #4B9CD3;">visible</span>.
 :::
 
-::: {.fragment style="margin: 1em 0 0; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600; line-height: 1.5;"}
-The discipline isn't where you draw the line.<br>
-It's that you are <span style="color: #4B9CD3;">deliberate</span> about drawing one at all.
-:::
-
-::: {.notes}
-Where the columns sit on this grid - that's yours, not mine.
-
-It will be different for you than for me. Different for our trainees than for either of us. Different for code than for analysis than for teaching.
-
-The discipline isn't where you draw the line.
-
-It's that you are deliberate about drawing one at all.
-:::
 
 
 ## The fundamental questions {.smaller}
@@ -1172,82 +819,76 @@ Can you still answer the<br>
 [fundamental questions]{style="color: #4B9CD3;"} about your own work?
 :::
 
-::: {.fragment style="margin: 0.8em 1.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em; line-height: 1.6;"}
-- What's the right method here, and why?
-- What does this result mean - and what doesn't it mean?
-- If a piece of this fails, what breaks downstream?
+::: {.fragment style="margin: 0.8em 1.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.6;"}
+- What is the estimand or target of inference?
+- What assumptions make this method answer that question?
+- What diagnostic or sensitivity analysis would make me distrust the result?
+- If this piece fails, what breaks downstream?
 :::
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 0.95em; color: #4B9CD3; font-weight: 600;"}
 Where you can still answer - without the model open - is where you're still in the driver's seat.
 :::
 
-::: {.notes}
-One summary line ties this whole talk together. When in doubt about where the line should sit, ask: can you still answer the fundamental questions about your own work?
 
-Three in particular. What's the right method here, and why. What does this result mean - and what doesn't it mean. If a piece of this fails, what breaks downstream.
 
-Those answers shouldn't come from the AI. They can be informed by it. They have to land in you.
+## What this looks like in regulated work {.smaller}
 
-The title of this talk is *Staying in the Driver's Seat*. Where you can still answer is where you're still in the driver's seat. Where you stop being able to - that's where the line is sitting today.
+For sponsor-reviewable analyses, the practices become artifacts.
 
-PAUSE here for ~3 seconds before transitioning to the audience self-check slide. This is one of the talk's anchor lines - let it land.
+::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.55;"}
+**AI-use disclosure** in methods sections or SAPs:
+
+*"AI tools assisted with [code, drafts, literature triage]; methodological choices, estimands, assumptions, and result interpretation remain the analyst's responsibility."*
+:::
+
+::: {.fragment style="margin-top: 0.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.55;"}
+**Decision log alongside the SAP** - choices tried, accepted, rejected, with AI-assisted steps flagged. Audit-trail evidence that judgment was applied, not delegated.
+:::
+
+::: {.fragment style="margin-top: 0.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.55;"}
+**Sponsor-reviewable red-team**: estimand specified before AI was consulted; pre- vs. post-treatment covariates verified; missingness mechanism named independently; simulation DGP validated.
+:::
+
+::: {.fragment style="margin-top: 0.8em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600; line-height: 1.5;"}
+In regulated work the line isn't just where you draw it - it's what you can show you drew.
 :::
 
 
 ## Calibration questions {.smaller}
 
-Now your turn: a self-check for you, and one for your group.
+Now your turn. The check looks different depending on your role.
 
-::: {.fragment style="margin-top: 0.5em; font-size: 0.82em;"}
-**For yourself:**
+::: {.columns}
+::: {.column width="50%"}
+::: {.fragment style="margin-top: 0.5em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.76em;"}
+**As advisor / senior researcher:**
 
 - ☐ Could you explain how your last analysis works without AI assistance?
 - ☐ Are you still learning new methods, or has AI handled what you don't fully understand?
-:::
-
-::: {.fragment style="margin-top: 0.5em; font-size: 0.82em;"}
-**For your trainees:**
-
-- ☐ Have you seen them work without AI on a substantive task this term?
+- ☐ Have you seen your trainees work without AI on a substantive task this term?
 - ☐ Can they walk you through *why* their AI-assisted choices were the right ones?
+- ☐ Have you asked them how they actually use AI before judging the workflow?
+:::
 :::
 
-::: {.fragment style="margin-top: 0.5em; font-size: 0.82em;"}
-**For yourself, as advisor:**
+::: {.column width="50%"}
+::: {.fragment style="margin-top: 0.5em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.76em;"}
+**As trainee / early-career:**
 
-- ☐ Have you asked your trainee how they actually use AI before judging the workflow?
+- ☐ Can I reconstruct the last analysis I shipped without re-prompting the model?
+- ☐ Have I worked unplugged on something substantive this term?
+- ☐ Can I defend the methodological choices in my recent work to a hostile reviewer?
+- ☐ If my advisor isn't being explicit about AI use, am I asking?
+- ☐ When the model and I disagree, am I checking the source or accepting the override?
+:::
+:::
 :::
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.8em;"}
 Diagnostic, not judgmental. If anything gets a "no" - the next slide is where to start.
 :::
 
-::: {.notes}
-You just saw what calibration looks like for me. Now your turn: a self-check for you, and one for your group.
-
-For yourself.
-
-Could you explain how your last analysis or paper actually works without AI assistance?
-
-Could you reconstruct your last project's architecture from memory?
-
-Are you still learning new methods - or has AI handled what you don't fully understand?
-
-For your trainees.
-
-Have you seen them work without AI on a substantive task this term?
-
-Can they walk you through why their AI-assisted choices were the right ones?
-
-And for yourself, as advisor.
-
-Have you asked your trainee how they actually use AI before judging the workflow?
-
-Are you keeping pace with their fluency - or judging from a 2023 mental model?
-
-These are diagnostic, not judgmental. If something gets a "no" - the next slide is where to start.
-:::
 
 
 ## A place to start {.smaller}
@@ -1274,31 +915,6 @@ A year in: you can defend your work without your notes; your trainees can defend
 From the source guide's quick-start checklist, lightly reordered.
 :::
 
-::: {.notes}
-If something on the previous slide got a "no" - start here, in order.
-
-First. Open a `DECISIONS.md` in your active project this week.
-
-Second. Before your next prompt, write your own approach first.
-
-Third. Schedule one 90-minute unplugged session.
-
-Fourth. Line-by-line review on the next AI-generated chunk.
-
-Fifth. Explain-it-back on the last thing you built with AI help.
-
-Adopt one. Add the next when the first feels routine.
-
-A year in: you can defend your work without your notes; your trainees can defend theirs.
-
-These are from the source guide's quick-start checklist, lightly reordered.
-
-And one practical default for disclosure: disclose AI assistance when it materially shaped analysis, code, interpretation, literature synthesis, or substantive writing - not when it merely helped with formatting or syntax. Whatever your SOPs, sponsor protocols, or journal policies require is the floor, not your judgment. When in doubt, disclose the role, not the tool.
-
-A green/yellow/red AI-use policy template lives in the lab guide for those of you writing one for your course or team.
-
-As you sit with these - and pick where to start - here's the image I keep coming back to.
-:::
 
 
 ## Still knowing where you are {.smaller}
@@ -1316,11 +932,6 @@ As you sit with these - and pick where to start - here's the image I keep coming
 From the source guide.
 :::
 
-::: {.notes}
-GPS didn't make people worse drivers, but it did make many people worse at knowing where they are.
-
-The people who still have a sense of direction are the ones who glance at the map occasionally, notice landmarks, and pay attention to the route - even while GPS is guiding them.
-:::
 
 
 # Stay in the Driver's Seat {.center .closing-slide background-color="#13294B"}
@@ -1343,13 +954,6 @@ but because we still want to know where we are when we arrive.
 Continue the discussion: **linkedin.com/in/naimurashid** &nbsp;·&nbsp; naim@unc.edu
 :::
 
-::: {.notes}
-One last takeaway, before we close. This week - pick one place where AI has made your work smoother. Add back one piece of deliberate friction. Not to slow yourself down permanently, but to make sure the judgment is still yours.
-
-And then: stay in the driver's seat - not because we don't trust the GPS, but because we still want to know where we are when we arrive.
-
-Thank you. I'm happy to take questions - the next slide has the lab guide URL and full references, feel free to screenshot.
-:::
 
 
 ## Resources & references {.smaller}
@@ -1399,8 +1003,3 @@ Thank you. I'm happy to take questions - the next slide has the lab guide URL an
 :::
 :::
 
-::: {.notes}
-This is an appendix - displayed during Q&A or after the talk for screenshots. The source guide URL hosts everything the talk references, plus the templates I described and a fuller bibliography.
-
-If anyone wants a specific paper, they're all on this slide. Full bibliographic details for items where I only gave year/journal are in the source guide.
-:::
