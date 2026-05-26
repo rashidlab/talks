@@ -494,8 +494,7 @@ Where do you feel most exposed in your AI-assisted work today?
     <!-- REPLACE slido-qr.png with the QR PNG downloaded from your Slido event admin -->
     <img src="slido-qr.png" alt="Slido poll QR code" style="width: 180px; height: 180px; background-color: #FFFFFF; padding: 8px; border: 2px solid #E5E7EB;" />
     <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95em; color: #007FAE; font-weight: 600; margin-top: 0.6em; letter-spacing: 0.04em;">
-      <!-- REPLACE: paste your Slido short URL -->
-      slido.com/XXXXXX
+      slido.com/1454077
     </div>
   </div>
 </div>
@@ -508,19 +507,36 @@ Scan, visit the URL, or type A/B/C/D in chat - your pick.
 ::: {.notes}
 This is a natural pause point. We've just established what stays yours - the chain of judgment, the productive struggle, the first encounter. Movement 3 is about how to keep those things alive in practice. Before we go there, I want a quick read of the room.
 
-[Deliver the question. Audience scans the QR, visits the short URL, or types A/B/C/D in chat. Pause ~45-60 seconds. While audience votes, switch to your Slido presenter view in a separate browser tab/window to monitor live results. Speak through the wait - "while you're voting, let me tell you why I think this question matters…"]
+[Deliver the question. Audience scans the QR, visits slido.com/1454077, or types A/B/C/D in chat. Also paste the join URL into the webinar chat as backup.]
 
-[Brief comment on results - shape the transition based on what came up. If "research rigor" runs high, foreground the practices' application to your own work. If "trainees" runs high, foreground the advisor moves. If "still figuring out" runs high, validate that - "that's exactly what the next section is for."]
+[Speak through ~30-45 seconds of voting. "While you're voting, let me tell you why I think this question matters..." Then advance to the next slide (Live results) so the audience sees the bars come in.]
 
 This isn't a quiz. It's a baseline so the next section's practices land for where you actually are.
+:::
 
-[SETUP CHECKLIST before delivery:
-1. Create Slido event at slido.com (Google sign-in, ~3 min)
-2. Add a Multiple-choice poll with the 4 options above
-3. Download QR code from Slido admin → save to deck folder as `slido-qr.png` (overwrite the placeholder)
-4. Copy the Slido short URL (e.g., `slido.com/AB1234`) → replace `slido.com/XXXXXX` placeholder on this slide
-5. Re-render: `quarto render staying-in-drivers-seat-v3.qmd`
-6. Open the Slido presenter view in a separate browser window before the talk starts - switch to it during the poll to see live results.]
+
+## Live results {.smaller}
+
+::: {style="text-align: center; color: #5B6670; font-style: italic; margin-bottom: 0.4em; font-size: 0.9em;"}
+Where do you feel most exposed in your AI-assisted work today?
+:::
+
+```{=html}
+<iframe src="https://app.sli.do/event/4HTCEZB1WEBQfG2eTZBbeS" width="100%" height="560" style="border: 1px solid #E5E7EB; border-radius: 6px;" allowfullscreen></iframe>
+```
+
+::: {.notes}
+The iframe shows the live Slido event - the audience sees the bars populate in real time as votes come in.
+
+While results come in, shape the transition based on what's leading:
+- If "Research rigor" runs high: "research rigor running high - that's exactly where the next section starts."
+- If "Trainees I mentor" runs high: foreground the advisor moves in Movement 4 when you get there.
+- If "Students I teach" runs high: foreground the teaching moves in Movement 4.
+- If "Still figuring out" runs high: validate that - "that's exactly what the next section is for."
+
+Don't linger past ~30 seconds. Summarize what you see, then advance to "How We Keep It."
+
+FALLBACK if iframe doesn't load live (network issue or Slido embed restriction): open your Slido admin/present view in a separate browser tab/window and screen-share that briefly. The audience already has the URL; the embedded view is a convenience, not a requirement.
 :::
 
 
