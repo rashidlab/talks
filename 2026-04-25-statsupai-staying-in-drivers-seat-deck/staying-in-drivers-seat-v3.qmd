@@ -78,7 +78,7 @@ Without that judgment, the work might still ship - but **the work stops being ou
 Before going further - the position I am taking, and three I am not.
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.88em; line-height: 1.55;"}
-**Not** that we should use AI less.
+**Not** that the productivity gains from AI are illusory.
 :::
 
 ::: {.fragment style="margin-top: 0.4em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-size: 0.88em; line-height: 1.55;"}
