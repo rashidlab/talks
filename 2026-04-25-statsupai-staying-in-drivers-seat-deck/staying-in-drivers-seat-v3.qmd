@@ -1069,7 +1069,7 @@ The spectrum tells you *what* to delegate. Modes tell you *how* to talk to AI ab
 ```
 
 ::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-Default AI is executor. Tutor and critic modes are designed.
+Default AI is executor. Tutor and critic require deliberate prompting.
 :::
 
 ```{=html}
