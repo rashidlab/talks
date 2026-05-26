@@ -382,6 +382,10 @@ Retrieving and generating, not reading. When AI supplies the answer, neither hap
 :::
 :::
 
+::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 0.68em; font-style: italic; color: #5B6670; line-height: 1.5;"}
+Sources: Shea & Morgan 1979 (varied practice); Cepeda et al. 2006 (spacing); Rohrer & Taylor 2007 (interleaving); Roediger & Karpicke 2006 (testing).
+:::
+
 ::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
 Default AI use can bypass all four. Each one needs deliberate preservation.
 :::
@@ -413,7 +417,7 @@ We should be deliberate about whether AI lets the next generation skip the priva
 
 ## In classroom teaching {.smaller}
 
-The part you don't outsource is the **first encounter** with a concept.
+The part you don't outsource - as faculty or as a student - is the **first encounter** with a concept.
 
 ::: {.fragment style="margin-top: 1em; font-size: 1.05em;"}
 The first encounter strongly shapes the schema students build.
@@ -428,17 +432,17 @@ Concept formation is:
 :::
 
 ::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;"}
-A student who outsources the first encounter with confounding, likelihood, or simulation often retains the answer without the schema.
+A student who outsources the first encounter retains the answer without the schema. A course that outsources teaching it never builds one.
 :::
 
 ::: {.notes}
-In classroom teaching, the part you don't outsource is the first encounter with a concept.
+In classroom teaching, the part you don't outsource - as faculty or as a student - is the first encounter with a concept.
 
 The first encounter strongly shapes the schema students build.
 
 Concept formation is the most contextual phase of learning - it depends on what just happened in this room, with this cohort, this semester. It's the hardest to automate well phase, for that same reason. And it's where the broader statistical literacy of our students is determined.
 
-A student who outsources the first encounter with confounding, likelihood, or simulation often retains the answer without the schema.
+Two sides to this. A student who outsources their first encounter with confounding, likelihood, or simulation retains the answer without the schema. And a course that outsources teaching that first encounter - lets AI-generated material introduce the concept - never builds the schema either.
 :::
 
 
@@ -454,7 +458,7 @@ AI increasingly helps with deciding too - surfacing options, finding gaps in rea
 :::
 
 ::: {.fragment style="text-align: center; margin-top: 1.4em; font-size: 1.1em; color: #13294B; font-weight: 600;"}
-The line moves over time. The distinction does not.
+The line between them moves over time. The distinction does not.
 :::
 
 ::: {.notes}
@@ -464,14 +468,14 @@ AI is excellent at executing under decisions already made.
 
 What stays ours is deciding - what's worth doing, what counts as done, what the result means.
 
-The line moves over time. The distinction does not.
+The line between them - between executing and deciding - moves over time. The distinction does not.
 :::
 
 
 ## A quick calibration check {.smaller}
 
 ::: {style="text-align: center; color: #5B6670; font-style: italic; margin-bottom: 0.8em; font-size: 0.95em;"}
-A pause to take stock.
+A pause to take stock - after what we just covered.
 :::
 
 ::: {style="font-size: 1.2em; margin: 1em 0; color: #13294B; font-weight: 600; text-align: center;"}
