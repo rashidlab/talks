@@ -793,23 +793,6 @@ Three dials. Adjust them for your actual situation.
 
 
 
-## The line is situated {.smaller}
-
-It shifts by task, stakes, career stage, and role.<br>
-But it is not just personal preference.
-
-::: {.fragment style="margin-top: 1em;"}
-In scratch work, the line can be private.<br>
-In teaching, mentoring, publishing, and regulated analysis, the line has to be explicit enough for others to inspect.
-:::
-
-::: {.fragment style="margin: 1.2em 0 0; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600; line-height: 1.5;"}
-The discipline isn't drawing the same line everywhere.<br>
-It's knowing which line applies - and making it <span style="color: #4B9CD3;">visible</span>.
-:::
-
-
-
 ## The fundamental questions {.smaller}
 
 When in doubt about where the line should sit, ask:
