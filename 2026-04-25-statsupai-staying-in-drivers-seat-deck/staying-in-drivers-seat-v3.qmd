@@ -1373,8 +1373,12 @@ Thank you. I'm happy to take questions - the next slide has the lab guide URL an
 
 **Cited work**
 
-::: {style="font-size: 0.65em; line-height: 1.55;"}
+::: {style="font-size: 0.6em; line-height: 1.5;"}
+- Shea & Morgan (1979). Variable practice. *J Exp Psych: Hum L M* 5(2).
 - Bainbridge (1983). *Ironies of Automation.* Automatica 19(6).
+- Cepeda et al. (2006). Spacing meta-analysis. *Psychological Bulletin* 132(3).
+- Roediger & Karpicke (2006). Testing effect. *Psychological Science* 17(3).
+- Rohrer & Taylor (2007). Interleaving in math. *Instructional Science* 35.
 - Sparrow, Liu & Wegner (2011). Google effects on memory. *Science* 333.
 - Bjork & Bjork (2011). Desirable difficulties. In *Psychology and the Real World.*
 - Risko & Gilbert (2016). Cognitive offloading. *Trends in Cognitive Sciences* 20.
