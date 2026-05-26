@@ -949,37 +949,6 @@ And make defending the decision - not producing the output - the bar for sign-of
 :::
 
 
-## What I'm changing my mind about {.smaller}
-
-Two things I've updated my own thinking on while preparing this talk.
-
-::: {.fragment style="margin: 0.5em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
-I came in assuming the right line was clear: AI for code, not for analysis. The students who pushed back have convinced me the line moves with the *task*, not the *role* - a senior researcher debugging a tricky model can use AI more like a tutor; a first-year writing a power analysis from scratch needs to do it unplugged regardless of the tool's capability.
-:::
-
-::: {.fragment style="margin: 0.4em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em;"}
-Six months ago I thought decision logs were overkill for individual work. Now I keep one in every project - including for myself, not just for trainees - because the act of writing has caught me three times this year on choices I would have forgotten making.
-:::
-
-::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
-The calibration argument applies to the speaker, too.
-:::
-
-::: {.notes}
-**SPEAKER NOTE - IMPORTANT before delivery.** The two updates on this slide are *plausible candidates* - both are reasonable updates a speaker in your position might genuinely have made. They're shippable as written if you've actually had similar shifts. But the slide lands harder if at least one of the two is in your voice and grounded in a specific moment you remember. Replace with real updates if you have them. The structure to keep: "I came in assuming X; the thing that changed my view was Y; I now think Z."
-
-Some prompts to surface candidates from your own recent thinking:
-- What's a position about AI in research you held a year ago that you'd argue against today?
-- What's something a student or colleague said that updated your view?
-- What's a piece of evidence (Bastani, Lee, your own lab observations) that changed how you teach or supervise?
-- What policy or practice did you start using yourself only after you stopped recommending it skeptically to others?
-
-Why this slide sits here: we've just walked through practices for educators and for doctoral training. The next slide is about your own work - which means the calibration argument applies to me too. Showing my own recent shifts before pivoting to "for your own research" signals this isn't asymmetric: I'm asking myself the same questions I'm asking you.
-
-Keep delivery short - about 60-90 seconds total. Two updates, one specific moment each. Don't let it become a full philosophical re-grounding. Then pivot directly into the personal practices.
-:::
-
-
 ## For your own research {.smaller}
 
 You are also someone whose intuition and judgment have to be maintained.
