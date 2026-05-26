@@ -1133,10 +1133,10 @@ The spectrum tells you what to delegate; modes tell you how. Together they cover
 
 ## Three dials, one line {.smaller}
 
-The line between "delegable" and "stay hands-on" shifts along three dimensions.
+The line between "hands-off" and "hands-on" shifts along three dimensions.
 
 ::: {.fragment style="margin-top: 0.6em; font-size: 0.78em;"}
-| Shifts with | Tightens *(more hands-on)* | Loosens *(more delegable)* |
+| Shifts with | Tightens *(more hands-on)* | Loosens *(more hands-off)* |
 |---|---|---|
 | **Context** | First encounter in teaching · method choice in research · productive struggle in training | Refinement, formatting, scaffolding |
 | **Career stage** | New researcher building judgment from scratch | Senior researcher whose intuition is already load-bearing |
