@@ -52,8 +52,12 @@ A senior colleague asks: *"Why didn't you consider [a different approach]?"*
 They were caught off-guard. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
 :::
 
-::: {.fragment .fade-up style="color: #13294B; font-weight: 600; margin-top: 0.6em;"}
-The senior colleague notes the omission. The work moves forward anyway. The deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
+::: {.fragment .fade-up style="margin-top: 0.6em;"}
+The senior colleague notes the omission. The work moves forward anyway.
+:::
+
+::: {.fragment .fade-up style="color: #13294B; font-weight: 600; margin-top: 0.8em; font-size: 1.05em;"}
+The deeper failure: scrutinized every detail, never the framing.
 :::
 
 ::: {.notes}
@@ -65,7 +69,7 @@ A senior colleague asks: "Why didn't you consider a different approach?"
 
 They were caught off-guard. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
 
-The senior colleague notes the omission. The work moves forward anyway. The deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
+The senior colleague notes the omission. The work moves forward anyway. The deeper failure: scrutinized every detail, never the framing.
 
 This is a composite scenario. Not a specific case. But it's the failure mode I want us to take seriously today - because it's not about careless AI use. It's about sophisticated AI use that quietly narrows the option space.
 
