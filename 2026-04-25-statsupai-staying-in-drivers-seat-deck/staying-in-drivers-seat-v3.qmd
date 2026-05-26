@@ -834,11 +834,11 @@ The takeaway for our practices is one sentence. Friction is where understanding 
 # Across Our Roles {.center background-color="#13294B"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
-*Where does the line sit for our research, our trainees, our students?*
+*How does the line differ between our research, our trainees, and our students?*
 :::
 
 ::: {.notes}
-We've got the practices. The next question is where the line sits in each of our roles - research, training, teaching.
+We've got the practices. The next question is how the line differs across our roles - research, training, teaching.
 :::
 
 
