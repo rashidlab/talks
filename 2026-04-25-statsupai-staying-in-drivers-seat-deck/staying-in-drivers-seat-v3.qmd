@@ -120,8 +120,8 @@ Clues from prior tool shifts - to navigate this one with eyes open.
 Lee et al. (CHI 2025, n=319): higher GenAI confidence predicts less critical thinking; higher self-confidence predicts more.
 :::
 
-::: {.fragment style="color: #4B9CD3; font-weight: 600; font-size: 1.2em; margin-top: 1em;"}
-What is new is the scope, not the mechanism.
+::: {.fragment style="color: #4B9CD3; font-weight: 600; font-size: 1.1em; margin-top: 1em; line-height: 1.4;"}
+The pattern is old. What's new is the surface area - and that the work being offloaded is judgment, not arithmetic.
 :::
 
 ::: {.notes}
@@ -133,7 +133,7 @@ Cognitive offloading is a well-established literature - not 2025 speculation. Er
 
 In fact, the central argument of this talk was anticipated in 1983 by Lisanne Bainbridge, in a paper called "Ironies of Automation." She observed that as automation grows, the human's job becomes monitoring and judgment - and those skills atrophy without practice.
 
-So what's new with AI? The scope. Not the mechanism.
+The pattern is old. But the analogy only goes so far - a calculator doesn't write your Methods section. What's new with AI is the surface area, and that the work being offloaded is judgment, not arithmetic.
 :::
 
 
@@ -881,7 +881,7 @@ The work isn't to remove AI. It's to design assignments and reviews where unders
 Bastani et al., *PNAS* 2025. Field experiment, ~1,000 high-school math students.
 
 ::: {style="margin-top: 0.5em; text-align: center; font-size: 0.92em; color: #5B6670; font-style: italic;"}
-Same students, same problems, same model. Only the prompt scaffolding differed.
+Three randomized groups: vanilla GPT, tutor-prompted GPT, no-AI control. Same model, different prompt design.
 :::
 
 <div class="comparison-grid">
@@ -1143,7 +1143,11 @@ Different for our trainees than for either of us.<br>
 Different for code than for analysis than for teaching.
 :::
 
-::: {.fragment style="margin: 1.4em 0 0; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600; line-height: 1.5;"}
+::: {.fragment style="margin-top: 0.8em; padding: 0.55em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.88em; line-height: 1.55;"}
+Some of the line is yours to draw. Some is drawn by your lab, your sponsor, your regulator - and that's a feature, not a constraint.
+:::
+
+::: {.fragment style="margin: 1em 0 0; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600; line-height: 1.5;"}
 The discipline isn't where you draw the line.<br>
 It's that you are <span style="color: #4B9CD3;">deliberate</span> about drawing one at all.
 :::
@@ -1175,7 +1179,7 @@ Can you still answer the<br>
 :::
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 0.95em; color: #4B9CD3; font-weight: 600;"}
-Where you can still answer is where you're still in the driver's seat.
+Where you can still answer - without the model open - is where you're still in the driver's seat.
 :::
 
 ::: {.notes}
