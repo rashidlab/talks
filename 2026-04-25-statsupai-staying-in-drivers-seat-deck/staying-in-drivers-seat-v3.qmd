@@ -49,11 +49,11 @@ A senior colleague asks: *"Why didn't you consider [a different approach]?"*
 :::
 
 ::: {.fragment .fade-up}
-They have no answer. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
+They were caught off-guard. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
 :::
 
 ::: {.fragment .fade-up style="color: #13294B; font-weight: 600; margin-top: 0.6em;"}
-The senior colleague notes the omission. The work moves forward anyway. What nobody sees is the deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
+The senior colleague notes the omission. The work moves forward anyway. The deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
 :::
 
 ::: {.notes}
@@ -63,9 +63,9 @@ Imagine a new hire. Three months in. Presenting their first analysis to senior l
 
 A senior colleague asks: "Why didn't you consider a different approach?"
 
-They have no answer. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
+They were caught off-guard. They had reviewed every line of the AI's suggestion. They had not thought to question the line they started from.
 
-The senior colleague notes the omission. The work moves forward anyway. What nobody sees is the deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
+The senior colleague notes the omission. The work moves forward anyway. The deeper failure: an analyst trained to scrutinize every detail, whose judgment never scrutinized the framing.
 
 This is a composite scenario. Not a specific case. But it's the failure mode I want us to take seriously today - because it's not about careless AI use. It's about sophisticated AI use that quietly narrows the option space.
 
@@ -75,7 +75,7 @@ Let me tell you why I think that's the central worry.
 
 ## The core tension {.smaller}
 
-> The risk isn't AI being wrong. It's AI being good enough that it quietly substitutes for **the judgment we'd otherwise build.**
+> The risk isn't just AI being wrong. It's AI being good enough that it quietly substitutes for **the judgment we'd otherwise build.**
 
 ::: {.fragment style="margin-top: 1.2em;"}
 > The goal isn't to use AI less - it's to use it in ways that **keep our judgment in the loop.**
@@ -86,7 +86,7 @@ Without that judgment, the work might still ship - but **the work stops being ou
 :::
 
 ::: {.notes}
-The risk isn't AI being wrong. It's AI being good enough that it quietly substitutes for the judgment we'd otherwise build.
+The risk isn't just AI being wrong. It's AI being good enough that it quietly substitutes for the judgment we'd otherwise build.
 
 The goal isn't to use AI less. It's to use it in ways that keep our judgment in the loop.
 
@@ -96,8 +96,9 @@ The pivot: I'm not arguing we should use AI less. I'm arguing about what kind of
 
 ## This has happened before, and it will happen again {.smaller}
 
-Tools have been reshaping what we practice - and what atrophies - for decades.
+Clues from prior tool shifts - to navigate this one with eyes open.
 
+::: {.fragment}
 ```{=html}
 <div class="flow-diagram" style="margin-top: 0.9em;">
 <div class="flow-step"><strong style="font-size: 1.1em;">Calculator</strong><br><span style="font-size: 0.95em; color: #5B6670;">mental arithmetic</span></div>
@@ -109,6 +110,7 @@ Tools have been reshaping what we practice - and what atrophies - for decades.
 <div class="flow-step" style="background-color: #FCF5DC; border-top-color: #D9B546;"><strong style="font-size: 1.1em;">GenAI</strong><br><span style="font-size: 0.95em; color: #5B6670;">judgment?</span></div>
 </div>
 ```
+:::
 
 ::: {.fragment style="margin-top: 0.9em; font-size: 0.85em; color: #5B6670; font-style: italic;"}
 Lee et al. (CHI 2025, n=319): higher GenAI confidence predicts less critical thinking; higher self-confidence predicts more.
@@ -162,6 +164,10 @@ For humans to oversee, the system must operate in ways humans can follow - even 
 The ironies aren't avoidable. They're things you design around.
 :::
 
+::: {.fragment style="margin-top: 0.5em; text-align: center; font-style: italic; color: #4B9CD3; font-size: 0.95em;"}
+Designing around them is drawing the line.
+:::
+
 ::: {.notes}
 Bainbridge's paper isn't just a citation - it identifies four specific ironies that map cleanly onto AI in research today. Each one is a checklist item, not a warning.
 
@@ -195,6 +201,10 @@ I'm not here to repeat what you already discuss in your circles.
 - For our **research** - the cost is rigor.
 - For our **trainees** - the cost is the formation of judgment.
 - For our **students** - the cost is the literacy we owe them.
+:::
+
+::: {.fragment style="margin-top: 1em; text-align: center; font-style: italic; color: #4B9CD3; font-size: 0.95em;"}
+Where the line sits - what has to stay yours - is what comes next.
 :::
 
 ::: {.notes}
@@ -236,7 +246,7 @@ The same sentence applies across:
 :::
 
 ::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 1em;"}
-The next three slides show what that part is in each.
+The next three slides show - for each - where the line sits.
 :::
 
 ::: {.notes}
@@ -275,7 +285,7 @@ AI accelerates execution at every stage. The judgment at every stage stays yours
 ::: {.fragment style="margin-top: 0.9em; padding: 0.8em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.9em;"}
 **The failure mode that matters: plausibly wrong output that passes casual inspection.**
 
-576,000 code samples, 16 LLMs (mostly Python/JS): commercial models reference nonexistent packages **5.2%** of the time; open-source models, **21.7%**.
+576,000 code samples, 16 LLMs: commercial models reference nonexistent packages **5.2%** of the time; open-source models, **21.7%**.
 
 Package hallucination is the visible tip. The harder cases are statistical.
 
@@ -303,7 +313,7 @@ The next slide is what that actually looks like in statistical practice.
 
 ## Correct code, wrong question {.smaller}
 
-The dangerous output in statistics isn't a missing package - it's a model that does what AI suggested but answers a different question.
+Here's what "plausibly wrong output" often looks like in statistics: a model that does what AI suggested but answers a different question.
 
 ::: {.fragment style="margin-top: 0.7em; font-size: 0.74em;"}
 | AI can produce | Human must decide | Failure if outsourced |
@@ -342,7 +352,7 @@ The part you don't outsource is the **productive struggle.**
 ::: {.fragment style="margin-top: 0.7em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-style: italic; color: #5B6670; font-size: 0.78em;"}
 "Conditions of learning that make performance improve rapidly often fail to support long-term retention and transfer."
 
-*Bjork & Bjork, 2011. Extension to AI-assisted learning is an extrapolation, not a finding.*
+*Bjork & Bjork, 2011. Applied to AI-assisted learning: extrapolation, not finding.*
 :::
 
 ::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 0.88em;"}
@@ -350,22 +360,22 @@ The struggle preserves four kinds of effort that distinguish learning that lasts
 :::
 
 ::: {.quadrant-grid}
-::: {.quadrant}
+::: {.quadrant .fragment}
 [Varying conditions of practice]{.quadrant-title}
 
 Practice across contexts, not one fixed setup. AI's task-specific scaffolding narrows the practice context.
 :::
-::: {.quadrant}
+::: {.quadrant .fragment}
 [Spacing]{.quadrant-title}
 
 Practice over time, not cramming. AI's instant access collapses spacing.
 :::
-::: {.quadrant}
+::: {.quadrant .fragment}
 [Interleaving]{.quadrant-title}
 
 Mixing topics, not blocked practice. AI scaffolding reinforces blocking.
 :::
-::: {.quadrant}
+::: {.quadrant .fragment}
 [Using tests as study events]{.quadrant-title}
 
 Retrieving and generating, not reading. When AI supplies the answer, neither happens.
