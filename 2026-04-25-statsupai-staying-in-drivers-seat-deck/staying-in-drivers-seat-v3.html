@@ -1711,10 +1711,10 @@ Diagnosing the room
 <p>Default AI is executor. Tutor and critic require deliberate prompting.</p>
 </div>
 <div style="margin: 0.7em 0 0.3em; padding: 0.7em 1em; background-color: #FCF5DC; border-left: 3px solid #D9B546; font-size: 0.68em; line-height: 1.55;">
-  <div style="font-style: italic; color: #5B6670; margin-bottom: 0.35em;">Same question - heteroskedasticity and model choice:</div>
-  <div style="font-family: &#39;IBM Plex Mono&#39;, monospace; color: #13294B;"><strong style="color: #007FAE;">Executor:</strong> &quot;Fit OLS with HC3 robust SEs and show a feasible GLS sensitivity analysis.&quot;</div>
-  <div style="font-family: &#39;IBM Plex Mono&#39;, monospace; color: #13294B;"><strong style="color: #007FAE;">Tutor:</strong> &quot;Quiz me on the assumptions behind OLS+HC3, feasible GLS, and robust regression before writing code.&quot;</div>
-  <div style="font-family: &#39;IBM Plex Mono&#39;, monospace; color: #13294B;"><strong style="color: #007FAE;">Critic:</strong> &quot;Argue against feasible GLS here. What residual pattern or design feature would make OLS+HC3 preferable?&quot;</div>
+  <div style="font-style: italic; color: #5B6670; margin-bottom: 0.35em;">Same question - handling heteroskedasticity in a regression:</div>
+  <div style="font-family: &#39;IBM Plex Mono&#39;, monospace; color: #13294B;"><strong style="color: #007FAE;">Executor:</strong> &quot;Fit OLS with robust standard errors and show GLS as a sensitivity analysis.&quot;</div>
+  <div style="font-family: &#39;IBM Plex Mono&#39;, monospace; color: #13294B;"><strong style="color: #007FAE;">Tutor:</strong> &quot;Quiz me on the assumptions behind OLS with robust SEs vs GLS before writing code.&quot;</div>
+  <div style="font-family: &#39;IBM Plex Mono&#39;, monospace; color: #13294B;"><strong style="color: #007FAE;">Critic:</strong> &quot;Argue against GLS here. What residual pattern would make OLS with robust SEs preferable?&quot;</div>
 </div>
 <div class="fragment" style="margin-top: 0.3em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;">
 <p>Critic-mode output is itself delegated judgment - it needs the same review as code.</p>
