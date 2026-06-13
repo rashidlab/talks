@@ -409,20 +409,39 @@ Here's the design in a real PDAC trial at UNC. PANGEA, led by Ashwin Somasundara
 :::
 
 
-## Resistance is a temporal process {.smaller}
+## Resistance is a dynamic process {.smaller}
 
-::: {style="margin-top: 0.2em; font-size: 0.92em;"}
-Classical trial design assumes patients are draws from a *fixed* distribution. Under RAS inhibition, **each patient is a moving target**, and a trial that doesn't *see* resistance arise cannot act on it.
-:::
+:::: {.columns}
 
-![](images/resistance_evolution.png){fig-alt="Tumor growth, intra-tumoral heterogeneity, therapy, and drug resistance: clonal expansion under selection pressure (genetic and non-genetic mechanisms)" width="92%" fig-align="center"}
+::: {.column width="60%"}
+![](images/resistance_evolution.png){width=100% fig-alt="Tumor growth, intra-tumoral heterogeneity, therapy, and drug resistance: clonal expansion under selection pressure (genetic and non-genetic mechanisms)"}
 
-::: {style="margin-top: 0.2em; text-align: center; font-size: 0.7em; color: #5B6670; font-style: italic;"}
+::: {style="margin-top: 0.3em; font-size: 0.7em; color: #5B6670; font-style: italic;"}
 Schematic adapted from ARPA-H ADAPT program overview materials.
 :::
+:::
+
+::: {.column width="40%"}
+::: {.r-fit-text}
+**Resistance mechanisms emerge under RAS-inhibitor pressure**
+
+- Pathway reactivation: KRAS amplification, NRAS / BRAF / MAP2K1
+- RTK upregulation and bypass signaling
+- Cell-state plasticity (basal ↔ classical, partial EMT)
+
+::: {.fragment}
+**Traditional trials fail to capture this**
+
+- Fixed regimens miss the interception window
+- Baseline-only biomarkers can't track evolution under therapy
+:::
+:::
+:::
+
+::::
 
 ::: {.notes}
-Holding the thread from Act II — we still have a calibration burden waiting for us. But before we get there I want to layer on the second design problem these combinations create. Classical trials treat patients as if they're samples from a fixed distribution — you enroll them, you randomize them, you administer the regimen, you measure the endpoint at a fixed time. That logic works when the underlying biology is static. It doesn't work for RAS inhibitors, because under sustained RAS pressure the tumor evolves. Each patient is a moving target. Resistance signals start appearing weeks into treatment — sometimes earlier — and a trial that's only looking at fixed endpoints months down the line cannot see them in time to do anything about them. The design has to become temporal too.
+Classical trial design treats patients as if they're draws from a fixed distribution — enroll, randomize, administer the regimen, measure outcomes at predefined timepoints. That logic works when the underlying biology is static. Under sustained RAS-inhibitor pressure it doesn't. The tumor evolves. Each patient is a moving target. Resistance signals start appearing weeks into therapy — sometimes earlier. The mechanisms split into a few buckets that the next slide spells out in detail: pathway reactivation through KRAS amplification or downstream NRAS, BRAF, MAP2K1 mutations; RTK upregulation and bypass signaling — that's the Zhuang and Aronchik mechanistic case for combinations; cell-state plasticity between basal-like and classical with partial EMT under therapy — Aguirre's PDAC work. None of these are baseline phenotypes. A fixed-regimen trial with baseline-only biomarkers cannot see them, and even when it captures them retrospectively at progression, it cannot act on them. The design has to become temporal too — that's what the next few slides are about.
 :::
 
 
