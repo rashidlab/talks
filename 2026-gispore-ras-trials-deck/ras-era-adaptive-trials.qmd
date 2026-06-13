@@ -1,6 +1,6 @@
 ---
 title: "Adaptive Trial Design for the RAS-Inhibitor Era"
-subtitle: "Combinations, Resistance, and Biomarker-Guided Therapy in GI Oncology"
+subtitle: "How can we evaluate hundreds of RAS-directed trial designs before patients are enrolled?"
 author: "Naim Rashid, PhD"
 institute: |
   Department of Biostatistics · Lineberger Comprehensive Cancer Center · UNC
@@ -519,6 +519,10 @@ Funding, accrual, and biopsy logistics are real.
 **In our group's experience, several months per design.** For combined dose + resistance designs (20+ parameters), hand-tuning is infeasible.
 :::
 
+::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.05em; color: #13294B; font-style: italic;"}
+> *We could design the science. We could not design the trial.*
+:::
+
 ::: {.slide-refs}
 FDA–AACR Project Optimus impact review, *JCO Onc Adv* 2025 (367 Phase I protocols)
 :::
@@ -533,24 +537,28 @@ This is the slide that opens the BATON section, and I want to land it carefully.
 :::: {.columns}
 
 ::: {.column width="50%"}
-::: {style="margin-top: 0.2em; color: #5B6670; font-style: italic; font-size: 0.85em;"}
-Our answer to the calibration question:
-:::
-
-::: {style="margin-top: 0.4em; font-size: 0.92em;"}
+::: {style="margin-top: 0.2em; font-size: 0.92em;"}
 **BATON** = **B**ayesian **A**daptive **T**rial **O**ptimizatio**N** [@baton2026]
 :::
 
-::: {.fragment style="margin-top: 0.6em; padding: 0.7em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
-*"BATON automatically searches the design parameter space to find trial configurations satisfying all operating-characteristic constraints — minimizing expected N, max N, or a trade-off, depending on the loss you specify."*
+::: {style="margin-top: 0.4em; color: #5B6670; font-style: italic; font-size: 0.85em;"}
+Think of BATON as a navigation system for trial design:
 :::
 
-::: {.fragment style="margin-top: 0.7em; color: #4B9CD3; font-weight: 600; font-size: 0.95em;"}
-BATON tunes the design; it does not replace it.
+::: {.incremental style="margin-top: 0.4em; font-size: 0.88em; line-height: 1.4;"}
+1. **GOAL** — Type I ≤ 0.10, Power ≥ 0.80, minimum N
+2. **EXPLORE** — sample candidate designs
+3. **LEARN** — model which regions of design space satisfy constraints
+4. **FOCUS** — concentrate search on the feasible region
+5. **ARRIVE** — calibrated design that meets all targets
 :::
 
-::: {.fragment style="margin-top: 0.3em; font-size: 0.82em; color: #5B6670;"}
-You bring the clinical design; BATON finds the parameter settings that meet your targets. Open-source R package: [github.com/naimurashid/BATON](https://github.com/naimurashid/BATON)
+::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B; font-style: italic;"}
+Designs that would have taken months to discover — or never been found at all.
+:::
+
+::: {.fragment style="margin-top: 0.4em; font-size: 0.72em; color: #5B6670;"}
+Under the hood: constrained Bayesian optimization with Gaussian process surrogates. You bring the clinical design; BATON finds the parameter settings that meet your targets. R package: [github.com/naimurashid/BATON](https://github.com/naimurashid/BATON)
 :::
 :::
 
@@ -569,7 +577,54 @@ Young et al., 2026 (BATON manuscript) · github.com/naimurashid/BATON
 ::::
 
 ::: {.notes}
-BATON does one thing, and I'm going to tell you what it is in a single sentence. BATON automatically searches the design parameter space to find trial configurations that satisfy all the operating-characteristic constraints — Type I, power, sample size, duration, all of them — under whichever loss you specify, whether that's minimum expected N, minimum max N, or a trade-off between them. That's it. One important distinction before I show you results: BATON does not design the trial. You and your clinical team bring the clinical design — the adaptive structure, the stopping rule logic, the endpoints, the biomarker strategy. BATON takes that design and finds the parameter settings that meet your operating-characteristic targets. Under the hood there's constrained Bayesian optimization with Gaussian process surrogates, but for the clinical audience what matters is the input and the output. You give BATON a design template, a set of operating-characteristic targets, and a scenario grid. BATON returns a calibrated design that meets your targets. Days instead of months. FRAMING DISCIPLINE — and this matters because the next slide is PANGEA: in the BATON manuscript, the worked example is EVOLVE, not PANGEA. BATON was developed and validated during EVOLVE activation, across breast cancer subtrials at 8 to 13 parameters. PANGEA is an application of the same tool, not what the paper reports. If anyone asks "is this published," the clean answer is: the method and its validation are under review at JASA Applications and Case Studies; PANGEA is one application of the same software. Don't let the live delivery imply the PANGEA calibration is what the paper validates. Q&A POCKETS, in order of likelihood. (1) "Is BATON really optimal?" Manuscript benchmarked it against Simon two-stage designs where the optimum is known analytically; BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs and recovering the optimal design across most of 12 scenarios. So the answer is: it recovers the analytically optimal design on problems where we can check. The "near-optimum on plateaus" caveat is a footnote, not a retreat. (2) "Can we use it?" Yes — open-source R package at github.com/naimurashid/BATON, with the companion evolveTrial package. (3) "What's the gain over grid or random search?" The paper has a head-to-head: BATON found feasible designs in 150–200 evaluations where grid and random search often found none at all. That's the empirical version of the "calibration is the barrier" argument made on the previous slide.
+Think of BATON as GPS for trial design. You tell it the destination — power, type-I error, sample-size targets, expected duration. It explores candidate designs by Monte Carlo simulation. It learns which regions of the parameter space satisfy your constraints. It focuses the search on the feasible region. And it arrives at a calibrated design. Hours instead of months. Under the hood: constrained Bayesian optimization with Gaussian process surrogates, but for this audience what matters is the input and the output. You give BATON a design template, a set of operating-characteristic targets, and a scenario grid. BATON returns a calibrated design that meets your targets. FRAMING DISCIPLINE — and this matters because the next slide is PANGEA: in the BATON manuscript, the worked example is EVOLVE, not PANGEA. BATON was developed and validated during EVOLVE activation, across breast cancer subtrials at 8 to 13 parameters. PANGEA is an application of the same tool, not what the paper reports. If anyone asks "is this published," the clean answer is: the method and its validation are under review at JASA Applications and Case Studies; PANGEA is one application of the same software. Q&A POCKETS, in order of likelihood. (1) "Is BATON really optimal?" Manuscript benchmarked it against Simon two-stage designs where the optimum is known analytically; BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. So the answer is: it recovers the analytically optimal design on problems where we can check. (2) "Can we use it?" Yes — open-source R package at github.com/naimurashid/BATON, with the companion evolveTrial package. (3) "What's the gain over grid or random search?" The paper has a head-to-head: BATON found feasible designs in 150–200 evaluations where grid and random search often found none at all.
+:::
+
+
+## Traditional calibration vs BATON {.smaller}
+
+:::: {.columns}
+
+::: {.column width="48%"}
+::: {style="text-align: center; font-weight: 600; color: #13294B; font-size: 1.0em; margin-bottom: 0.4em;"}
+Manual approach
+:::
+
+| Aspect | Limitation |
+|:---|:---|
+| Process | Trial-and-error |
+| Duration | Weeks to months |
+| Scope | One design at a time |
+| Reproducibility | Statistician-dependent |
+| Documentation | Often incomplete |
+| Regulatory risk | Variable |
+:::
+
+::: {.column width="48%"}
+::: {.fragment}
+::: {style="text-align: center; font-weight: 600; color: #4B9CD3; font-size: 1.0em; margin-bottom: 0.4em;"}
+BATON
+:::
+
+| Aspect | Capability |
+|:---|:---|
+| Process | Systematic search |
+| Duration | Hours wall-clock |
+| Scope | Hundreds evaluated |
+| Reproducibility | Deterministic (seeded) |
+| Documentation | Complete FDA audit trail |
+| Regulatory risk | Documented |
+:::
+:::
+
+::::
+
+::: {.fragment style="margin-top: 0.9em; text-align: center; font-style: italic; color: #13294B; font-size: 0.95em;"}
+Same clinical question. Same statistical constraints. The bottleneck wasn't the design — it was the calibration.
+:::
+
+::: {.notes}
+Same clinical question. Same statistical constraints. The bottleneck was never the design itself — it was the calibration. Hand-tuning is trial-and-error: takes days to weeks of a senior statistician's time, varies by who's doing it, produces incomplete documentation, leaves regulatory risk on the table. BATON systematically searches hundreds of designs in hours, with deterministic seeding and a complete FDA audit trail. The methodology shift Project Optimus formalized — adaptive Bayesian designs as the standard — is the destination. BATON is what makes getting there feasible at scale.
 :::
 
 
@@ -619,14 +674,82 @@ Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptiv
      funding line if needed. -->
 
 
+## What BATON changed for PANGEA Phase II {.smaller}
+
+:::: {.columns}
+
+::: {.column width="48%"}
+::: {style="text-align: center; font-weight: 600; color: #5B6670; font-size: 0.95em; margin-bottom: 0.4em;"}
+Without BATON
+:::
+
+::: {style="font-size: 0.86em; line-height: 1.55;"}
+- Months of senior-statistician hand-tuning
+- Four interacting parameters; designs typically fail Type I ≤ 0.10 **and** Power ≥ 0.80 simultaneously
+- No reproducibility guarantee; no audit trail
+- Activation slips, *or* design ships under-validated
+:::
+:::
+
+::: {.column width="48%"}
+::: {.fragment}
+::: {style="text-align: center; font-weight: 600; color: #4B9CD3; font-size: 0.95em; margin-bottom: 0.4em;"}
+With BATON
+:::
+
+::: {style="font-size: 0.86em; line-height: 1.55;"}
+- **150–200 evaluations**, hours wall-clock
+- All four parameters jointly calibrated against both constraints
+- Deterministic, FDA-grade audit trail
+- Achieved OCs from the previous slide — power 82.2%, type I 7.0%, expected duration 27.3 mo
+:::
+:::
+:::
+
+::::
+
+::: {.fragment style="margin-top: 0.9em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; text-align: center; font-weight: 600;"}
+PANGEA Phase II is the proof: a calibrated, FDA-defensible adaptive design — delivered in days, not months.
+:::
+
+::: {.slide-refs}
+Young et al., 2026 (BATON)
+:::
+
+::: {.notes}
+This is the practical-impact slide. Without BATON: months of a senior statistician's time hand-tuning, designs that typically fail to hit Type I ≤ 0.10 AND Power ≥ 0.80 simultaneously across the four interacting parameters, no reproducibility guarantee, no audit trail — so either activation slips or the design ships under-validated. With BATON: 150 to 200 evaluations, hours of wall-clock time, all four parameters jointly calibrated against both constraints, deterministic seeded output, FDA-grade audit trail. The achieved operating characteristics on the previous slide — power 82.2%, type I 7.0%, expected duration 27.3 months — those came out of BATON, not out of months of manual iteration. Delivered in days, not months. The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
+:::
+
+
 ## Where this is going {.smaller}
 
-- **Today:** BATON has calibrated **EVOLVE** (single-arm, between-arm, seamless two-stage subtrials) and **PANGEA Phase II** [@baton2026].
-- **Next:** Extend BATON to (i) **Phase I Bayesian adaptive designs** (U-BOIN, BOIN12) for OBD selection; (ii) **joint-surface combination designs** (POCRM [@wages2011pocrm], BOIN-COMB [@lin2017boincomb], BLRM [@neuenschwander2008blrm]) for novel-novel RAS doublets (e.g., daraxonrasib + elironrasib) where neither dose is externally established; (iii) scenarios where **trial assumptions are uncertain** (CARBO).
-- The barrier pushing PIs back to 3+3, *gone*.
+::: {style="margin-top: 0.2em; font-size: 0.9em;"}
+**Three design philosophies, in plain language.** BATON calibrates each:
+:::
 
-::: {.fragment style="margin-top: 1.0em; text-align: center; font-size: 1.05em; color: #13294B; font-weight: 600;"}
-The next generation of GI oncology trials should not be limited by what a statistician can hand-tune.
+::: {.incremental style="margin-top: 0.4em; font-size: 0.85em; line-height: 1.45;"}
+- **Aggressive** — minimize expected N; find active drugs fastest *(statistical name: Optimal / Fleming)*
+- **Conservative** — bounded max N; strict capacity *(Minimax)*
+- **Balanced** — Pareto-optimal compromise between the two *(Admissible)*
+:::
+
+::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B; font-style: italic;"}
+Every point on the Pareto frontier is a valid design. The choice is about what your program needs most.
+:::
+
+::: {.fragment style="margin-top: 0.6em; font-size: 0.88em;"}
+**Where this lands in GI:**
+:::
+
+::: {.incremental style="margin-top: 0.3em; font-size: 0.82em; line-height: 1.45;"}
+- **PDAC** — RAS-backbone combinations; U-BOIN / BOIN12 Phase I OBD selection
+- **CRC** — joint-surface combinations (POCRM [@wages2011pocrm], BOIN-COMB [@lin2017boincomb], BLRM [@neuenschwander2008blrm]) for novel-novel RAS doublets (e.g., daraxonrasib + elironrasib)
+- **Basket / umbrella / platform** — biomarker-stratified subtrials with shared decision rules
+- **Robust calibration (CARBO)** — designs that hold up when trial assumptions are uncertain
+:::
+
+::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+Could BATON become standard infrastructure for adaptive trial design in GI oncology?
 :::
 
 ::: {.slide-refs}
