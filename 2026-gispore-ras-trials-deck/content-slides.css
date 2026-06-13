@@ -1,0 +1,327 @@
+/*-- scss:rules --*/
+
+/* Slide-level citation footer — small grey italic text at the bottom-right
+   of slides that carry inline citation superscripts. Sits above the global
+   footer band (Quarto positions the global footer at the very bottom of the
+   slide; this absolute-positioned div sits just above it). Use sparingly —
+   only on slides where the audience benefits from seeing the source authors
+   without flipping to the References slide. */
+.reveal .slide-refs {
+  position: absolute;
+  bottom: -8px;
+  right: 28px;
+  left: 28px;
+  font-size: 0.55em;
+  color: #5B6670;
+  font-style: italic;
+  text-align: right;
+  line-height: 1.3;
+  pointer-events: none;
+}
+
+/* Content-slide utilities — applied across all non-title slides.
+   Add new utility classes here as the deck grows.
+
+   Updated April 2026 to use --rl-* tokens directly (was hardcoded
+   #4B9CD3 / #13294B / #DEE2E6 / etc. literals). The deck-specific
+   tinted backgrounds for the Spectrum of Delegation traffic-light
+   palette are kept as literals because they're intentional
+   illustrative colors, not brand tokens.
+
+   Landing-line color convention (used inline in the qmd, not as classes):
+   - Carolina (var(--rl-carolina)) bold + center-aligned: practice or
+     section landing line — the takeaway of an individual slide.
+   - Navy (var(--rl-navy)) bold + center-aligned: major synthesis line —
+     the talk-thesis level beat (e.g., "The line moves over time. The
+     distinction does not.", "The friction isn't the problem AI solves.",
+     "Design matters more than the tool.", and the personal-calibration
+     close).
+   This is intentional hierarchy: practice landings use the accent color,
+   thesis-level lines use the primary color. */
+
+/* Two-box comparison layout (e.g., "AI executes / We decide" on the
+   What Stays Yours synthesis slide). Uses flexbox so the boxes are
+   guaranteed equal height regardless of text length. */
+.reveal .comparison-grid {
+  display: flex;
+  gap: 1.5em;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0.6em 0 1em;
+}
+
+.reveal .comparison-box {
+  flex: 1 1 0;
+  padding: 1.4em 1em;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 45%;
+}
+
+.reveal .comparison-box.neutral {
+  border: 1px solid var(--rl-mist);
+  background-color: var(--rl-paper, #FFFFFF);
+}
+
+.reveal .comparison-box.highlighted {
+  background-color: var(--rl-fog);
+  border-left: 3px solid var(--rl-carolina);
+}
+
+.reveal .comparison-label {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-mono);
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.7em;
+  font-weight: 500;
+}
+
+.reveal .comparison-box.highlighted .comparison-label {
+  color: var(--rl-carolina-deep);
+}
+
+.reveal .comparison-text {
+  font-size: 1.05em;
+  color: var(--rl-navy);
+  line-height: 1.4;
+}
+
+/* Spectrum of Delegation — three-column grid for the take-home slide.
+   Colors echo a traffic-light palette: green = safe, yellow = review,
+   pink = hands-on. Kept as illustrative literals (not --rl-* tokens)
+   because they encode meaning beyond brand identity. */
+.reveal .spectrum-grid {
+  display: flex;
+  gap: 0.8em;
+  align-items: stretch;
+  margin-top: 0.4em;
+}
+
+.reveal .spectrum-col {
+  flex: 1 1 0;
+  padding: 0.9em 0.9em 0.6em;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reveal .spectrum-col.safe {
+  background-color: #EFF7EF;
+  border-top: 3px solid #5CA77C;
+}
+
+.reveal .spectrum-col.review {
+  background-color: #FCF5DC;
+  border-top: 3px solid #D9B546;
+}
+
+.reveal .spectrum-col.handson {
+  background-color: #FCEAE7;
+  border-top: 3px solid #C95E55;
+}
+
+.reveal .spectrum-label {
+  color: var(--rl-navy);
+  font-family: var(--rl-font-mono);
+  font-size: 0.82em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: 0.8em;
+}
+
+.reveal .spectrum-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.82em;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.reveal .spectrum-col ul li {
+  padding: 0.4em 0.2em;
+  border-bottom: 1px solid var(--rl-border);
+  color: var(--rl-ink);
+}
+
+.reveal .spectrum-col ul li:last-child {
+  border-bottom: none;
+}
+
+/* Closing slide — section-divider pattern with custom typography for the
+   final card. Inherits centering from `.center`; this just polishes the
+   H1 and ensures readability on the navy background. */
+.reveal section.closing-slide h1 {
+  color: #FFFFFF;
+  border-bottom: none;
+  font-size: 1.7em;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Dark-background slides (movement dividers and closing slide).
+   The lab template defaults h1/h2/h3 to navy, which is invisible on the
+   navy section-divider backgrounds. Force white. Also keep emphasized
+   text (em/strong) inheriting the parent color, since markdown's `*text*`
+   wraps in <em> which would otherwise pick up the body color rule. */
+.reveal section.has-dark-background h1,
+.reveal section.has-dark-background h2,
+.reveal section.has-dark-background h3,
+.reveal section.has-dark-background h4,
+.reveal section.has-dark-background p,
+.reveal section.has-dark-background li {
+  color: #FFFFFF;
+}
+
+.reveal section.has-dark-background em,
+.reveal section.has-dark-background strong {
+  color: inherit;
+}
+
+/* Logo card — the lab logo PNG has a transparent background, which
+   makes the navy logo elements disappear on dark-background slides.
+   Wrapping the logo in a small white card makes it readable on both
+   light and dark slides without swapping logo files. */
+.reveal .slide-logo {
+  background-color: #FFFFFF;
+  padding: 4px 8px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Defensive centering for the closing slide. The `.center` class
+   centers vertically; this ensures inline `<div>`s with style attributes
+   are also horizontally centered. */
+.reveal section.closing-slide {
+  text-align: center;
+}
+
+.reveal section.closing-slide > div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================================
+   v2 additions (May 2026) — visual layouts for the substance-deepening pass.
+   Used by the v2 qmd (staying-in-drivers-seat-v2.qmd). Backwards-compatible
+   with v1 since v1 doesn't reference these classes.
+   ============================================================================ */
+
+/* Flow diagram — horizontal sequence of boxes with arrows.
+   Used for the chain-of-judgment visualization on the "In your own research"
+   slide. Each step is a colored box; arrows are vertically centered between. */
+.reveal .flow-diagram {
+  display: flex;
+  align-items: stretch;
+  gap: 0.3em;
+  margin: 0.6em 0 0.4em;
+}
+
+.reveal .flow-step {
+  flex: 1 1 0;
+  padding: 0.55em 0.35em;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.72em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--rl-fog);
+  border-top: 3px solid var(--rl-carolina);
+  color: var(--rl-navy);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.reveal .flow-arrow {
+  align-self: center;
+  font-size: 1.1em;
+  color: var(--rl-graphite);
+  flex: 0 0 auto;
+  padding: 0 0.05em;
+  font-weight: 700;
+}
+
+.reveal .flow-caption {
+  text-align: center;
+  font-size: 0.78em;
+  color: var(--rl-graphite);
+  font-style: italic;
+  margin-top: 0.2em;
+}
+
+/* Quadrant grid — 2x2 layout for paired concepts.
+   Used for Bainbridge's ironies and Bjork's desirable difficulties. */
+.reveal .quadrant-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+  margin: 0.4em 0;
+}
+
+.reveal .quadrant {
+  padding: 0.55em 0.7em;
+  border-radius: 4px;
+  background-color: var(--rl-fog);
+  border-left: 3px solid var(--rl-carolina);
+  font-size: 0.72em;
+  line-height: 1.35;
+}
+
+.reveal .quadrant-title {
+  color: var(--rl-navy);
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 0.25em;
+}
+
+.reveal .quadrant-detail {
+  color: var(--rl-ink);
+}
+
+/* Worked-example layout — 3-column showing a concrete walk-through.
+   Used for the pre-prompt-pause example. */
+.reveal .worked-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.4em;
+  margin: 0.5em 0;
+}
+
+.reveal .worked-col {
+  padding: 0.5em 0.6em;
+  border-radius: 4px;
+  font-size: 0.62em;
+  background-color: #FFFFFF;
+  border: 1px solid var(--rl-mist);
+  border-left: 3px solid var(--rl-carolina);
+  line-height: 1.4;
+}
+
+.reveal .worked-col.ai {
+  border-left-color: var(--rl-graphite);
+  background-color: #F8F9FA;
+}
+
+.reveal .worked-label {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-mono);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em;
+  font-weight: 500;
+}
+
+.reveal .worked-text {
+  color: var(--rl-ink);
+}

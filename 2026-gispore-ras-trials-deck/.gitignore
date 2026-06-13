@@ -1,0 +1,21 @@
+# Internal prep / audit / walkthrough notes — pre-delivery discussion, NOT public
+ASSESSMENT.md
+AUGMENTATION_PLAN.md
+VERIFICATION.md
+WALKTHROUGH.md
+PREFLIGHT.md
+citation-guide.md
+
+# RAG database, downloaded publisher PDFs, vector store, Python venv — not for public dissemination
+refs/
+
+# Build artifacts from PDF render
+ras-era-adaptive-trials_files/
+*.tex
+*.aux
+*.log
+*.out
+
+# Editor / OS noise
+.DS_Store
+*.swp

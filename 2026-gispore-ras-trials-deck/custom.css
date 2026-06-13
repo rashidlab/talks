@@ -1,0 +1,285 @@
+/*-- scss:defaults --*/
+
+/* =============================================================================
+   RASHID LAB — RevealJS PRESENTATION TEMPLATE
+   Mirrors naimurashid.github.io's _tokens.scss. See branding/colors.qmd for
+   the canonical token reference. Updated April 2026 to align with the
+   website's three-font academic register (Archivo + Source Serif 4 +
+   IBM Plex Mono).
+
+   Usage:
+     1. Copy this file into your presentation directory as `custom.css`.
+     2. In your .qmd YAML: format: revealjs: theme: [default, custom.css]
+     3. Drop RLlogoA.png into the same directory and reference it via
+        format: revealjs: logo: RLlogoA.png
+
+   Older decks using `#007FAE` link color, `Open Sans` body font, or
+   `border-bottom: 3px solid #4B9CD3` heading underlines should be
+   updated against this file when next opened.
+   ============================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* Brand palette */
+$rl-navy:          #13294B;
+$rl-navy-deep:     #0B1D3A;
+$rl-carolina:      #4B9CD3;
+$rl-carolina-deep: #2E6A9F;
+$rl-graphite:      #5B6670;
+$rl-ink:           #1A202C;
+$rl-fog:           #F4F6F8;
+$rl-mist:          #E6EAEF;
+
+/* RevealJS variable mapping */
+$body-bg:                    #FFFFFF;
+$body-color:                 $rl-ink;
+$link-color:                 $rl-carolina-deep;
+$presentation-heading-color: $rl-navy;
+$presentation-heading-font:  "Archivo", -apple-system, BlinkMacSystemFont, sans-serif;
+$presentation-font:          "Archivo", -apple-system, BlinkMacSystemFont, sans-serif;
+
+/*-- scss:rules --*/
+
+/* ============================================
+   TOKEN EMISSION (runtime CSS variables)
+   ============================================ */
+
+:root {
+  --rl-navy:          #13294B;
+  --rl-navy-deep:     #0B1D3A;
+  --rl-carolina:      #4B9CD3;
+  --rl-carolina-deep: #2E6A9F;
+  --rl-graphite:      #5B6670;
+  --rl-ink:           #1A202C;
+  --rl-fog:           #F4F6F8;
+  --rl-mist:          #E6EAEF;
+
+  --rl-font-sans:  "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --rl-font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --rl-font-mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* ============================================
+   GLOBAL TYPOGRAPHY
+   ============================================ */
+
+.reveal {
+  font-family: var(--rl-font-sans);
+  color: var(--rl-ink);
+}
+
+.reveal p,
+.reveal li {
+  color: var(--rl-ink);
+  line-height: 1.45;
+}
+
+/* ============================================
+   TITLE SLIDE
+   Serif title (book-cover register). Sans subtitle for legibility.
+   Mono caps for institute + date metadata.
+   ============================================ */
+
+#title-slide {
+  text-align: left;
+  padding-left: 5%;
+}
+
+#title-slide .title {
+  color: var(--rl-navy);
+  font-family: var(--rl-font-serif);
+  font-size: 2.4em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+#title-slide .subtitle {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-sans);
+  font-size: 1.3em;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1.25em;
+}
+
+#title-slide .author {
+  color: var(--rl-ink);
+  font-family: var(--rl-font-sans);
+  font-size: 1.0em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+#title-slide .institute,
+#title-slide .date {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-mono);
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+#title-slide .date {
+  margin-top: 1.5em;
+}
+
+/* ============================================
+   SECTION HEADERS
+   Sans for slide-deck legibility. No decorative bottom-borders.
+   Whitespace + size hierarchy carry the structure.
+   ============================================ */
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: var(--rl-navy);
+  font-family: var(--rl-font-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.reveal h1 { font-size: 1.8em; }
+.reveal h2 { font-size: 1.25em; }
+.reveal h3 { font-size: 1.05em; }
+
+/* ============================================
+   LINKS
+   Carolina-deep, no decoration until hover.
+   ============================================ */
+
+.reveal a {
+  color: var(--rl-carolina-deep);
+  text-decoration: none;
+}
+
+.reveal a:hover {
+  color: var(--rl-navy);
+  text-decoration: underline;
+}
+
+/* ============================================
+   CODE BLOCKS
+   Mono font, fog background, hairline border. No 4px Carolina stripe.
+   ============================================ */
+
+.reveal pre,
+.reveal code {
+  font-family: var(--rl-font-mono);
+}
+
+.reveal pre {
+  background: var(--rl-fog);
+  border: 1px solid var(--rl-mist);
+  border-radius: 4px;
+  font-size: 0.55em;
+  line-height: 1.4;
+  padding: 0.6em 0.8em;
+}
+
+.reveal code {
+  background: var(--rl-fog);
+  color: var(--rl-ink);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+.reveal pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* ============================================
+   TABLES
+   Hairline borders only. Mono uppercase column headers.
+   No navy header bar with white text.
+   ============================================ */
+
+.reveal table {
+  border-collapse: collapse;
+  font-size: 0.8em;
+  margin: 1em auto;
+}
+
+.reveal table th {
+  border-bottom: 2px solid var(--rl-navy);
+  color: var(--rl-navy);
+  font-family: var(--rl-font-mono);
+  font-size: 0.85em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.4em 0.8em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.reveal table td {
+  border-bottom: 1px solid var(--rl-mist);
+  padding: 0.4em 0.8em;
+}
+
+/* ============================================
+   SLIDE CHROME
+   Slide number + footer in mono caps, muted.
+   ============================================ */
+
+.reveal .slide-number {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-mono);
+  font-size: 0.7em;
+  letter-spacing: 0.04em;
+}
+
+.reveal .footer {
+  color: var(--rl-graphite);
+  font-family: var(--rl-font-mono);
+  font-size: 0.65em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   CALLOUTS
+   Hairline 3px left border in token color.
+   ============================================ */
+
+.callout {
+  border-radius: 4px;
+  font-family: var(--rl-font-sans);
+}
+
+.callout-note      { border-left: 3px solid var(--rl-carolina-deep); }
+.callout-tip       { border-left: 3px solid #2E8B6D; }
+.callout-warning   { border-left: 3px solid #C48A1A; }
+.callout-important { border-left: 3px solid #C75050; }
+
+/* ============================================
+   LISTS
+   Tighter spacing between bullet points.
+   ============================================ */
+
+.reveal ul,
+.reveal ol {
+  margin-left: 1em;
+}
+
+.reveal li + li {
+  margin-top: 0.4em;
+}
+
+/* ============================================
+   EMPHASIS
+   ============================================ */
+
+.reveal strong {
+  color: var(--rl-navy);
+  font-weight: 600;
+}
+
+.reveal em {
+  font-style: italic;
+}
