@@ -434,7 +434,7 @@ Holding the thread from Act II — we still have a calibration burden waiting fo
 **Non-genomic: cell-state plasticity**
 
 - PDAC cells morph into RAS-independent states [@aguirre2024resistance]
-- Dynamic kinome reprogramming (Stalnecker, UNC, AACR RAS 2026) [@xu2025kinome]
+- Dynamic kinome reprogramming (Xu/Stalnecker, UNC) [@xu2025kinome]
 :::
 
 ::: {.slide-refs}
