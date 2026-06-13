@@ -425,15 +425,16 @@ Schematic adapted from ARPA-H ADAPT program overview materials.
 ::: {.r-fit-text}
 **Resistance mechanisms emerge under RAS-inhibitor pressure**
 
-- Pathway reactivation: KRAS amplification, NRAS / BRAF / MAP2K1
-- RTK upregulation and bypass signaling
-- Cell-state plasticity (basal ↔ classical, partial EMT)
+- Pathway reactivation: KRAS amplification, NRAS / BRAF / MAP2K1 [@aguirre2024resistance; @awad2021resistance; @wasko2024rmc7977]
+- RTK upregulation and bypass signaling [@zhuang2026rtk]
+- Cell-state plasticity (basal ↔ classical, partial EMT) [@aguirre2024resistance; @xu2025kinome]
 
 ::: {.fragment}
 **Traditional trials fail to capture this**
 
 - Fixed regimens miss the interception window
 - Baseline-only biomarkers can't track evolution under therapy
+- **Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging — a resistance-aware trial has to *do both***
 :::
 :::
 :::
@@ -441,41 +442,7 @@ Schematic adapted from ARPA-H ADAPT program overview materials.
 ::::
 
 ::: {.notes}
-Classical trial design treats patients as if they're draws from a fixed distribution — enroll, randomize, administer the regimen, measure outcomes at predefined timepoints. That logic works when the underlying biology is static. Under sustained RAS-inhibitor pressure it doesn't. The tumor evolves. Each patient is a moving target. Resistance signals start appearing weeks into therapy — sometimes earlier. The mechanisms split into a few buckets that the next slide spells out in detail: pathway reactivation through KRAS amplification or downstream NRAS, BRAF, MAP2K1 mutations; RTK upregulation and bypass signaling — that's the Zhuang and Aronchik mechanistic case for combinations; cell-state plasticity between basal-like and classical with partial EMT under therapy — Aguirre's PDAC work. None of these are baseline phenotypes. A fixed-regimen trial with baseline-only biomarkers cannot see them, and even when it captures them retrospectively at progression, it cannot act on them. The design has to become temporal too — that's what the next few slides are about.
-:::
-
-
-## Different resistance mechanisms require different detection strategies {.smaller}
-
-::: {style="margin-top: 0.2em; padding: 0.45em 0.8em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.85em; line-height: 1.3;"}
-**Genomic** → catchable by **ctDNA** · **Non-genomic / plasticity** → requires **serial biopsies, transcriptomics, imaging** · A resistance-aware trial has to *do both*.
-:::
-
-:::: {.columns}
-
-::: {.column width="50%"}
-**Genomic resistance**
-
-- **Clinical PDAC** (Aguirre, *Cancer Discovery* 2024): PIK3CA, KRAS amplification, MYC/MET/EGFR/CDK6 amplifications [@aguirre2024resistance]
-- **Preclinical RAS(ON)** (Wasko, *Nature* 2024): Myc amplification, PI3K family gains under RMC-7977 [@wasko2024rmc7977]
-- **G12C clinical adagrasib** (Awad, *NEJM* 2021): NRAS, BRAF, MAP2K1; ALK/RET/BRAF/RAF1/FGFR3 fusions [@awad2021resistance]
-:::
-
-::: {.column width="50%"}
-**Non-genomic: cell-state plasticity**
-
-- PDAC cells morph into RAS-independent states [@aguirre2024resistance]
-- Dynamic kinome reprogramming (Yeh/Johnson lab, UNC) [@xu2025kinome]
-:::
-
-::: {.slide-refs}
-Aguirre et al., *Cancer Discov* 2024 · Wasko et al., *Nature* 2024 · Awad et al., *NEJM* 2021 · Xu et al., *Cancer Discov* 2025
-:::
-
-::::
-
-::: {.notes}
-The resistance landscape splits into two classes, and the audience here will see both of these in their clinics. But the design implication is what I want to lead with: different resistance mechanisms require different detection strategies built into the trial. Genomic resistance — NRAS mutations, MAP2K1 mutations, on-target mutations — is catchable by ctDNA. That's relatively cheap, continuous, easy to add to a trial. Non-genomic resistance — cell-state plasticity, kinome reprogramming, metabolic rewiring — needs serial biopsies, transcriptomic monitoring, sometimes imaging. That's expensive, episodic, hard. A resistance-aware trial has to design for both, because both are happening in your patients simultaneously. Andy Aguirre's group at Dana-Farber has published extensively on the genomic side. Closer to home, the Yeh and Johnson labs here at UNC have shown the non-genomic side at the kinome level. The biology is on the slide as evidence; the design implication is the headline.
+Classical trial design treats patients as if they're draws from a fixed distribution — enroll, randomize, administer the regimen, measure outcomes at predefined timepoints. That logic works when the underlying biology is static. Under sustained RAS-inhibitor pressure it doesn't. The tumor evolves. Each patient is a moving target. Resistance signals start appearing weeks into therapy — sometimes earlier. The mechanisms split into a few buckets. Pathway reactivation through KRAS amplification or downstream NRAS, BRAF, MAP2K1 mutations — Aguirre's PDAC clinical work, Awad's adagrasib resistance series, Wasko's preclinical RMC-7977 paper. RTK upregulation and bypass signaling — the Zhuang and Aronchik mechanistic case for combinations. Cell-state plasticity between basal-like and classical with partial EMT — Aguirre again, plus the Yeh and Johnson labs' kinome work at UNC. None of these are baseline phenotypes. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add to a trial. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both. A fixed-regimen trial with baseline-only biomarkers cannot see either, and even when it captures them retrospectively at progression, it cannot act on them. The design has to become temporal too — that's what the next few slides are about.
 :::
 
 
