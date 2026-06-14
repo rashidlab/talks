@@ -558,21 +558,33 @@ This is the design-implications side of the previous slide. The two-row timeline
 
 ## ADAPT / EVOLVE: what a resistance-aware trial looks like {.smaller}
 
-::: {style="margin-top: 0.3em; text-align: center; font-size: 1.05em; color: #13294B; font-weight: 700;"}
+:::: {.columns}
+
+::: {.column width="40%"}
+::: {style="margin-top: 0.6em; text-align: left; font-size: 1.05em; color: #13294B; font-weight: 700;"}
 Different disease, same design problem.
 :::
 
-::: {style="margin-top: 0.3em; font-size: 0.92em; line-height: 1.4;"}
+::: {.incremental style="margin-top: 0.7em; font-size: 0.92em; line-height: 1.6;"}
 - Longitudinal resistance detection
 - Biomarker-guided adaptation
-- Template ports directly to PDAC (next slide)
+- Template ports directly to PDAC *(next slide)*
 :::
 
-![](images/adapt_goal_dynamic.jpg){width=80% fig-align="center" fig-alt="Two-panel ARPA-H ADAPT schematic: current static-biomarker state (top) vs dynamic-biomarker state (bottom)."}
-
-::: {.fragment style="margin-top: 0.3em; text-align: center; font-size: 0.82em; color: #13294B; font-style: italic;"}
-ARPA-H **ADAPT** → **EVOLVE** (UNC-led; Carey PI, Rashid co-PI). Enrolling.
+::: {.fragment style="margin-top: 0.9em; font-size: 0.8em; color: #13294B; font-style: italic;"}
+ARPA-H **ADAPT** → **EVOLVE** (UNC-led; Carey PI, Rashid co-PI). **Enrolling.**
 :::
+:::
+
+::: {.column width="60%"}
+![](images/adapt_goal_dynamic.jpg){fig-align="center" fig-alt="Two-panel ARPA-H ADAPT schematic: current static-biomarker state (top) vs dynamic-biomarker state (bottom)."}
+
+::: {style="margin-top: 0.2em; text-align: center; font-size: 0.68em; color: #5B6670; font-style: italic;"}
+ARPA-H ADAPT — current state (top) vs dynamic-biomarker state (bottom).
+:::
+:::
+
+::::
 
 ::: {.notes}
 This is what a resistance-aware trial actually looks like operationally. ARPA-H — the new Advanced Research Projects Agency for Health — has funded a program called ADAPT specifically to build trials of this kind. The ARPA-H figure tells the story in two panels. Top: current state. A single static biomarker, sequential treatments — Tx 1, then Tx 1 continued, then Tx 2 — and the resistant subclones persist into the final cell mix. Bottom: ADAPT's future state. In-depth dynamic biomarkers, treatments switched in response to observed resistance traits, eventual clearance. Our EVOLVE trial in metastatic breast cancer is one of the first to operationalize this, and the design template generalizes directly to the kind of RAS-backbone combination trial you all are going to be running for PDAC in the next few years. CRITICAL FRAMING DISCIPLINE: the closer says "enrolling," not "EVOLVE shows" or "EVOLVE works." This is the resistance-side honesty I committed to in the opening — methods exist and are deployed, not yet completed. If a trialist asks for the readout, the answer is the design exists and is accruing; the readout is what we will report when interim looks are run. Do not let the live delivery drift toward an implied result. The next slide takes the audience inside the protocol — what EVOLVE actually does, and what the PDAC analog would look like.
@@ -618,24 +630,44 @@ This is the load-bearing slide for "could we actually do this in PDAC?" The figu
 
 ## What this demands of the statistical design {.smaller}
 
-::: {style="margin-top: 0.2em; font-size: 0.92em;"}
-**Four design axes — each disease-agnostic.** A RAS-backbone PDAC combination would need all four for the same reasons.
+::: {style="margin-top: 0.3em; font-size: 0.95em; text-align: center;"}
+**Four design axes — disease-agnostic.** A RAS-backbone PDAC combination would need all four.
 :::
 
-::: {.fragment style="margin-top: 0.4em; font-size: 0.82em;"}
-| Axis | Operationalized as |
-|---|---|
-| Adaptive stopping | Bayesian futility/efficacy boundaries at each interim |
-| Real-time biomarker discovery | Pre-specified candidate signatures + agnostic discovery window |
-| Longitudinal monitoring | Serial ctDNA, imaging, biopsies on every patient — *the "do both" requirement* |
-| In-trial evaluation | Biomarker-guided cohorts within the same protocol — *characterize the temporal surface and act on it* |
+::: {.fragment}
+```{r}
+#| fig.height: 3.0
+#| fig.width: 10
+#| fig.align: center
+library(ggplot2)
+pillars <- data.frame(
+  x = c(1, 2, 3, 4),
+  y = rep(1, 4),
+  header = c("Adaptive\nstopping",
+             "Real-time\nbiomarker\ndiscovery",
+             "Longitudinal\nmonitoring",
+             "In-trial\nevaluation"),
+  detail = c("Bayesian futility /\nefficacy boundaries\nat each interim",
+             "Pre-specified signatures\n+ agnostic\ndiscovery window",
+             "Serial ctDNA, imaging,\nbiopsies on every\npatient — *do both*",
+             "Biomarker-guided\ncohorts within the\nsame protocol"),
+  fill = c("#13294B", "#4B9CD3", "#13294B", "#4B9CD3")
+)
+ggplot() +
+  geom_tile(data = pillars, aes(x = x, y = y, fill = fill),
+            width = 0.85, height = 1.6, color = "white", linewidth = 2) +
+  scale_fill_identity() +
+  geom_text(data = pillars, aes(x = x, y = y + 0.45, label = header),
+            color = "white", size = 4.6, fontface = "bold", lineheight = 0.92) +
+  geom_text(data = pillars, aes(x = x, y = y - 0.30, label = detail),
+            color = "white", size = 3.2, lineheight = 1.05) +
+  scale_x_continuous(limits = c(0.45, 4.55), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.1, 1.95), expand = c(0, 0)) +
+  theme_void()
+```
 :::
 
-::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.92em;"}
-**Continual learning during enrollment is not a tweak to a Phase II — it is a structurally different trial.** Each axis adds interacting parameters: interim timing, posterior-probability thresholds, biomarker decision rules, randomization-weight updates, cohort-opening logic.
-:::
-
-::: {.fragment style="margin-top: 0.8em; padding: 0.8em 1em; background-color: #13294B; color: #FFFFFF; font-size: 1.05em; text-align: center; font-weight: 600;"}
+::: {.fragment style="margin-top: 0.6em; padding: 0.8em 1em; background-color: #13294B; color: #FFFFFF; font-size: 1.05em; text-align: center; font-weight: 600;"}
 The methods exist.<br>**Calibrating them to actually launch is the gap.**
 :::
 
@@ -664,6 +696,7 @@ Funding, accrual, and biopsy logistics are real.
 :::: {.columns}
 
 ::: {.column width="42%"}
+::: {.fragment}
 ```{r}
 #| fig.height: 4.6
 #| fig.width: 4.2
@@ -695,6 +728,7 @@ ggplot() +
   scale_y_continuous(limits = c(0.3, 6.7), expand = c(0, 0)) +
   theme_void()
 ```
+:::
 :::
 
 ::: {.column width="58%"}
@@ -751,6 +785,53 @@ This is the slide that opens the BATON section, and I want to land it carefully.
 :::
 
 
+## The calibration challenge: four competing goals {.smaller}
+
+::: {style="margin-top: 0.2em; text-align: center; font-size: 0.95em; font-weight: 600; color: #13294B;"}
+Designing an adaptive trial requires achieving **all four** simultaneously.
+:::
+
+```{r}
+#| fig.height: 4.0
+#| fig.width: 9
+#| fig.align: center
+library(ggplot2)
+goals <- data.frame(
+  x = c(1, 2, 1, 2),
+  y = c(2, 2, 1, 1),
+  header = c("1. FDA compliance",
+             "2. Minimize patients",
+             "3. Stop bad early",
+             "4. Accelerate good"),
+  detail = c("Power ≥ 0.80\nType I ≤ 0.10",
+             "Smaller E[N]\nEfficient use of\nscarce patients",
+             "Futility stopping\nProtect patients\nfrom inactive arms",
+             "Efficacy stopping\nFaster access\nwhen drug works"),
+  fill = c("#13294B", "#4B9CD3", "#4B9CD3", "#13294B")
+)
+ggplot() +
+  geom_tile(data = goals, aes(x = x, y = y, fill = fill),
+            width = 0.9, height = 0.85, color = "white", linewidth = 2) +
+  scale_fill_identity() +
+  geom_text(data = goals, aes(x = x, y = y + 0.25, label = header),
+            color = "white", size = 5, fontface = "bold") +
+  geom_text(data = goals, aes(x = x, y = y - 0.12, label = detail),
+            color = "white", size = 3.5, lineheight = 1.0) +
+  coord_fixed(ratio = 0.6) +
+  scale_x_continuous(limits = c(0.4, 2.6), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.4, 2.6), expand = c(0, 0)) +
+  theme_void()
+```
+
+::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.95em; color: #13294B; font-style: italic;"}
+Of thousands of plausible designs, only a small fraction satisfies all four — and you cannot find it by hand.
+:::
+
+::: {.notes}
+This is the slide that names what calibration actually has to do. The four goals come from the design problem itself, not from a methodologist's preference. (1) FDA compliance — the trial has to meet the regulatory floor on Type I error and power. Without this, no IND, no protocol. (2) Minimize patients — the smallest expected N consistent with the other constraints, because pancreatic cancer patients are a scarce, time-critical resource. (3) Stop bad early — when the drug isn't working, futility stopping protects patients from staying on an inactive arm. (4) Accelerate good — when the drug IS working, efficacy stopping gets the answer to the field faster. The visual point: all four at once. A design that hits FDA OCs but enrolls 200 patients fails goal 2. A design that minimizes N but doesn't meet power fails goal 1. A design that stops bad early but never declares efficacy fails goal 4. Calibration is finding the corner of parameter space where ALL four are satisfied simultaneously. Quantitatively, in our experience: of thousands of plausible parameter combinations, only a small fraction — typically 1-10% — meets all four. The exact fraction depends on the design and the OC targets; the symposium slide quotes "out of 1,000 possible designs, only ~70 satisfy all four requirements." Land that as the punchline: this is what BATON has to find. Pivot to next slide.
+:::
+
+
 ## &nbsp; {.center}
 
 ::: {style="text-align: center; padding-top: 2em; font-size: 2.0em; color: #13294B; font-style: italic; font-weight: 700; line-height: 1.5;"}
@@ -768,24 +849,21 @@ Pause. Let the line land. This is the pivot of the talk. Everything before this 
 
 ## BATON: the calibration tool {.smaller}
 
-:::: {.columns}
-
-::: {.column width="50%"}
-::: {style="margin-top: 0.2em; font-size: 0.92em;"}
+::: {style="margin-top: 0.1em; text-align: center; font-size: 0.95em;"}
 **BATON** = **B**ayesian **A**daptive **T**rial **O**ptimizatio**N** [@baton2026]
 :::
 
-::: {style="margin-top: 0.4em; font-size: 1.0em; color: #13294B; font-weight: 600; font-style: italic;"}
+::: {style="margin-top: 0.2em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600; font-style: italic;"}
 BATON turns clinically necessary trial complexity into calibrated, launchable designs.
 :::
 
-::: {style="margin-top: 0.3em; color: #5B6670; font-style: italic; font-size: 0.82em;"}
-Think of BATON as a navigation system for trial design:
-:::
+:::: {.columns}
 
+::: {.column width="38%"}
+::: {.fragment}
 ```{r}
-#| fig.height: 4.4
-#| fig.width: 2.4
+#| fig.height: 4.2
+#| fig.width: 3.6
 #| fig.align: center
 library(ggplot2)
 steps <- data.frame(
@@ -804,38 +882,33 @@ ggplot(steps, aes(x = x, y = y)) +
                aes(x = x, xend = xend, y = y, yend = yend),
                arrow = arrow(length = unit(0.22, "cm"), type = "closed"),
                color = "#4B9CD3", linewidth = 1.6) +
-  geom_tile(aes(width = 0.9, height = 0.7), fill = "#EDF0F2",
+  geom_tile(aes(width = 0.95, height = 0.7), fill = "#EDF0F2",
             color = "#4B9CD3", linewidth = 1.5) +
   geom_text(aes(label = step), size = 5, fontface = "bold", color = "#4B9CD3") +
-  geom_text(aes(label = detail, x = 1.55), size = 3.8, color = "#444444",
+  geom_text(aes(label = detail, x = 1.62), size = 3.8, color = "#444444",
             hjust = 0, lineheight = 0.85) +
-  scale_x_continuous(limits = c(0.45, 2.3), expand = c(0, 0)) +
+  scale_x_continuous(limits = c(0.45, 2.55), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0.4, 5.6), expand = c(0, 0)) +
   theme_void()
 ```
-
-::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B; font-style: italic;"}
-Designs that would have taken months to discover — or never been found at all.
-:::
-
-::: {.fragment style="margin-top: 0.4em; font-size: 0.72em; color: #5B6670;"}
-You bring the clinical design; BATON evaluates hundreds of candidate parameter settings *in silico* and returns the ones that meet your targets. R package: [github.com/naimurashid/BATON](https://github.com/naimurashid/BATON)
 :::
 :::
 
-::: {.column width="50%"}
+::: {.column width="62%"}
+::: {.fragment}
 ![](images/baton-acquisition-cartoon.svg){fig-alt="BATON acquisition surface: bowl-shaped objective with two constraint boundaries and feasible region; sequential evaluations converging to the constrained optimum"}
 
 ::: {style="margin-top: 0.3em; font-size: 0.72em; color: #5B6670; font-style: italic; text-align: center; line-height: 1.3;"}
-Red = high expected N (bad); blue = low. Dashed lines = Type I and Power constraints. Numbered points = BATON's sequential evaluations converging to the constrained optimum (★).
+Red = high expected N (bad); blue = low. Dashed lines = Type I and Power constraints. Numbered points = sequential evaluations converging to the constrained optimum (★).
 :::
-
-::: {.slide-refs}
-Young et al., 2026 (BATON manuscript) · github.com/naimurashid/BATON
 :::
 :::
 
 ::::
+
+::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
+You bring the clinical design; BATON evaluates hundreds of candidates *in silico* and returns the ones that meet your targets. R package: [github.com/naimurashid/BATON](https://github.com/naimurashid/BATON) [@baton2026]
+:::
 
 ::: {.notes}
 Think of BATON as GPS for trial design. You tell it the destination — power, type-I error, sample-size targets, expected duration. It explores candidate designs by Monte Carlo simulation. It learns which regions of the parameter space satisfy your constraints. It focuses the search on the feasible region. And it arrives at a calibrated design. Hours instead of months. Under the hood: constrained Bayesian optimization with Gaussian process surrogates, but for this audience what matters is the input and the output. You give BATON a design template, a set of operating-characteristic targets, and a scenario grid. BATON returns a calibrated design that meets your targets. FRAMING DISCIPLINE — and this matters because the next slide is PANGEA: in the BATON manuscript, the worked example is EVOLVE, not PANGEA. BATON was developed and validated during EVOLVE activation, across breast cancer subtrials at 8 to 13 parameters. PANGEA is an application of the same tool, not what the paper reports. If anyone asks "is this published," the clean answer is: the method and its validation are under review at JASA Applications and Case Studies; PANGEA is one application of the same software. Q&A POCKETS, in order of likelihood. (1) "Is BATON really optimal?" Manuscript benchmarked it against Simon two-stage designs where the optimum is known analytically; BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. So the answer is: it recovers the analytically optimal design on problems where we can check. (2) "Can we use it?" Yes — open-source R package at github.com/naimurashid/BATON, with the companion evolveTrial package. (3) "What's the gain over grid or random search?" The paper has a head-to-head: BATON found feasible designs in 150–200 evaluations where grid and random search often found none at all. (4) "Why isn't a good statistician enough?" Honest answer: BATON IS the statistician's tool. A senior statistician with BATON > the same statistician without it. What BATON removes is the months-of-recalibration tax that currently makes the right designs operationally infeasible — the team can't commit to deliver a calibrated, defensible design within the trial timeline. Manual calibration also returns one design and you hope it's robust; BATON returns the feasible region and lets you pick the most defensible point in it. Under the hood for the methodologist who asks: constrained Bayesian optimization with Gaussian process surrogates over the operating-characteristic landscape.
@@ -1009,12 +1082,38 @@ ggplot(convergence_data, aes(x = Evaluation, y = Patients_Spared, color = Feasib
         panel.grid.minor = element_blank())
 ```
 
-::: {style="margin-top: 0.3em; text-align: center; font-size: 0.95em;"}
-**Bottom line:** BATON-calibrated adaptive design with **E[N] = 53 vs Max N = 76**: ~23 fewer patients on a potentially-ineffective arm — while meeting Type I ≤ 0.10 AND Power ≥ 0.80. *The savings come from adaptive stopping; BATON's job is finding the design that achieves them within the OC constraints.*
+::: {.fragment}
+```{r}
+#| fig.height: 1.5
+#| fig.width: 10
+#| fig.align: center
+library(ggplot2)
+callouts <- data.frame(
+  x = c(1, 2.4, 3.8),
+  number = c("~23", "7.0%", "82.2%"),
+  label = c("patients spared\n(E[N] = 53 vs Max N = 76)",
+            "achieved Type I\n(target ≤ 10%)",
+            "achieved Power\n(target ≥ 80%)"),
+  color = c("#4B9CD3", "#13294B", "#13294B")
+)
+ggplot(callouts, aes(x = x)) +
+  geom_text(aes(y = 0.72, label = number, color = color),
+            size = 16, fontface = "bold") +
+  geom_text(aes(y = 0.32, label = label),
+            size = 4, color = "#333333", lineheight = 0.95) +
+  scale_color_identity() +
+  scale_x_continuous(limits = c(0.4, 4.4), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.15, 0.95), expand = c(0, 0)) +
+  theme_void()
+```
 :::
 
-::: {style="margin-top: 0.2em; text-align: center; font-size: 0.72em; color: #5B6670;"}
-Each point = one candidate design evaluated (≈10,000 simulated trials per design).
+::: {.fragment style="margin-top: 0.0em; text-align: center; font-size: 0.85em; color: #5B6670; font-style: italic;"}
+Savings come from adaptive stopping; BATON's job is finding the design that achieves them within the OC constraints.
+:::
+
+::: {style="margin-top: 0.2em; text-align: center; font-size: 0.7em; color: #5B6670;"}
+Each point on the convergence plot = one candidate design evaluated (≈10,000 simulated trials per design).
 :::
 
 ::: {.notes}
