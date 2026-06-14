@@ -168,7 +168,7 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 
 ## Why combinations break the rules you grew up on {.smaller}
 
-- **3+3 was built for single-agent chemo** [@letourneau2009]. Combinations violate its four core assumptions: **monotonic dose-toxicity, additive joint toxicity, Cycle-1-observable DLTs, and a joint surface that can be characterized by titrating one drug at a time.**
+- **3+3 was built for single-agent chemo** [@letourneau2009]. It assumes monotonic dose-toxicity, additive joint toxicity, Cycle-1 DLTs, and one-drug-at-a-time titration. **Combinations violate all four.**
 - **In practice, combination dose-finding collapses to one drug.** Pick agent A's dose, fix it, add agent B. The joint efficacy-toxicity surface is **almost never searched** — in 162 combination trials, **88% used 3+3 and all but one used a single-agent design** [@riviere2015combo; @harrington2013dual].
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
@@ -238,10 +238,10 @@ What you may not have caught is that the FDA has formalized this. The 2024 Proje
 <img src="images/dose-response-trio.svg" style="width: 90%; max-width: 1080px; height: auto;" alt="Three dose-response shapes side by side: cytotoxic chemo (monotone), targeted agent (plateau), IO/CAR-T/bispecific (umbrella)"/>
 :::
 
-::: {.incremental style="margin-top: 0.1em; font-size: 0.68em; line-height: 1.2;"}
-- **Pembrolizumab:** flat exposure-response 2→10 mg/kg; MTD never reached, efficacy plateaued at lowest dose tested [@patnaik2015pembro]
-- **CAR-T:** non-monotonic; high cell doses drive severe CRS/ICANS without proportional benefit
-- **A RAS combination spans both.** Backbone on the plateau, IO/bispecific partner brings the umbrella. Neither rewards titrating to toxicity.
+::: {.incremental style="margin-top: 0.4em; font-size: 0.85em; line-height: 1.35;"}
+- **Pembrolizumab** — efficacy plateaus at the lowest dose tested; MTD never reached [@patnaik2015pembro]
+- **CAR-T** — non-monotonic; high doses drive severe CRS/ICANS, not benefit
+- **A RAS combination spans both shapes.** Neither rewards titrating to toxicity.
 :::
 
 ::: {.notes}
@@ -251,16 +251,12 @@ The reason MTD fails for these agents is mechanistic, and it has two flavors. I'
 
 ## The cost of MTD-only thinking {.smaller}
 
-::: {style="margin-top: 0.4em; font-size: 1.0em;"}
-**Sotorasib was approved at the highest dose tested. A 4× lower dose — never compared during the trial — was later shown to give similar PFS with less toxicity.**
-:::
-
-::: {.incremental style="margin-top: 0.6em;"}
+::: {.incremental style="margin-top: 0.5em;"}
 - **Sotorasib** (KRAS G12C, first-in-class, approved 2021) [@hong2020sotorasib]:
   - 960 mg selected as the **highest dose tested**, no DLTs — a more-is-better default, not an MTD
   - FDA required a **240 mg vs 960 mg** comparison. **PFS was similar** at one-quarter the exposure [@hochmair2024sotorasib]
 - **MTD ≠ optimal dose** for targeted agents and immunotherapies
-- **More than 40% of patients** in small-molecule registrational trials require dose reductions or interruptions, a marker of overly aggressive dosing [@fda_aacr_dosing2025]
+- **More than 40% of patients** in small-molecule registrational trials require dose reductions or interruptions [@fda_aacr_dosing2025]
 :::
 
 ::: {.fragment style="margin-top: 0.8em; text-align: center; font-size: 1.05em; color: #13294B; font-weight: 600;"}
@@ -350,16 +346,8 @@ The paradigm shift in one sentence: Phase I now ends with an OBD, not an MTD. Th
 - **Hypothesis:** lower-dose erlotinib may be more efficacious (OBD-below-MTD) [@cohen2016erlotinib]
 - **Six dose levels:** 25 mg QOD → 25 / 50 / 75 / 100 / 150 mg QD; **start at DL3**
 
-::: {.fragment style="margin-top: 0.25em; font-size: 0.78em; line-height: 1.3;"}
-**Design:** *Stage 1 BOIN* [@liu2015boin] (target DLT ≤25%, cohorts of 4); *Stage 2 BOIN12-like utility within U-BOIN* [@zhou2019uboin] (tox ≤25%, eff ≥20%).
-:::
-
-::: {.fragment style="margin-top: 0.3em; text-align: center; color: #13294B; font-weight: 600; font-size: 0.92em;"}
-Up to 52 patients; ~28 at OBD (Scenario 1).
-:::
-
-::: {.fragment style="margin-top: 0.3em; padding: 0.45em 0.7em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.75em; color: #13294B; line-height: 1.3;"}
-**Justified dimensionality reduction:** GnP fixed because the FDA-approved standard-of-care dose is established (MPACT); erlotinib searched because its combination OBD-below-MTD is the genuinely open question.
+::: {.fragment style="margin-top: 0.3em; font-size: 0.82em; line-height: 1.35;"}
+**Design:** *Stage 1 BOIN* [@liu2015boin] (target DLT ≤25%, cohorts of 4) → *Stage 2 BOIN12-like utility within U-BOIN* [@zhou2019uboin] (tox ≤25%, eff ≥20%). **Up to 52 patients; ~28 at OBD** (Scenario 1).
 :::
 
 ::: {.slide-refs}
@@ -374,7 +362,7 @@ Rashid et al., *Clin Cancer Res* 2020 (PurIST) · Cohen et al., *Cancer Chemo Ph
 ::::
 
 ::: {.notes}
-Here's the design in a real PDAC trial at UNC. PANGEA, led by Ashwin Somasundaram. The population is biomarker-defined — basal-like PDAC by PurIST, a subtype that has historically responded poorly to gemcitabine/nab-paclitaxel. The intervention is adding low-dose erlotinib to that backbone. And here's where the talk's argument lands on a real protocol: the central biological hypothesis of PANGEA is that lower doses of erlotinib may be more efficacious than the labeled dose, when given in combination with chemotherapy. The full-label dose of erlotinib is 150 mg daily. PANGEA tests six dose levels going down to 25 mg every other day. This is the OBD-below-MTD case made concrete — exactly the kind of question 3+3 cannot answer, and exactly the kind of question U-BOIN was built for. Stage 1 uses BOIN-style toxicity rules to establish the safe envelope, with a target DLT rate of 25%. Once we have enough data at any dose, we transition to Stage 2, which uses a utility function — elicited from our clinical team — to find the dose that maximizes the benefit-risk tradeoff. Doses have to clear both toxicity admissibility, no more than 25% DLT, and efficacy admissibility, at least 20% response rate. The trial ends when twenty patients have accumulated at any one dose, or when fifty-two patients have been treated total. Under the most plausible scenario from our simulations, we expect about thirty-eight patients in the U-BOIN phase, with about twenty-eight ultimately treated at the OBD. This is what an OBD-paradigm Phase I trial looks like in basal-like PDAC.
+Here's the design in a real PDAC trial at UNC. PANGEA, led by Ashwin Somasundaram. The population is biomarker-defined — basal-like PDAC by PurIST, a subtype that has historically responded poorly to gemcitabine/nab-paclitaxel. The intervention is adding low-dose erlotinib to that backbone. And here's where the talk's argument lands on a real protocol: the central biological hypothesis of PANGEA is that lower doses of erlotinib may be more efficacious than the labeled dose, when given in combination with chemotherapy. The full-label dose of erlotinib is 150 mg daily. PANGEA tests six dose levels going down to 25 mg every other day. This is the OBD-below-MTD case made concrete — exactly the kind of question 3+3 cannot answer, and exactly the kind of question U-BOIN was built for. Stage 1 uses BOIN-style toxicity rules to establish the safe envelope, with a target DLT rate of 25%. Once we have enough data at any dose, we transition to Stage 2, which uses a utility function — elicited from our clinical team — to find the dose that maximizes the benefit-risk tradeoff. Doses have to clear both toxicity admissibility, no more than 25% DLT, and efficacy admissibility, at least 20% response rate. The trial ends when twenty patients have accumulated at any one dose, or when fifty-two patients have been treated total. Under the most plausible scenario from our simulations, we expect about thirty-eight patients in the U-BOIN phase, with about twenty-eight ultimately treated at the OBD. Q&A POCKET — justified dimensionality reduction. If a methodologist asks "why are you only searching erlotinib, not the joint surface?": GnP is fixed because the FDA-approved standard-of-care dose is established (MPACT); erlotinib is searched because its combination OBD-below-MTD is the genuinely open question. This is a justified single-axis search inside a two-drug regimen, not a regression to the fix-A-add-B antipattern. This is what an OBD-paradigm Phase I trial looks like in basal-like PDAC.
 :::
 
 
@@ -1046,11 +1034,7 @@ Over-constraining the max N can *prevent* patients from learning sooner that the
 :::
 
 ::: {.fragment style="margin-top: 0.8em; font-size: 0.92em; text-align: center; color: #13294B;"}
-**BATON surfaced this hidden trade-off during PANGEA Phase II calibration — *before* the design was finalized.** Caps too low → early-efficacy declarations suppressed → patients wait until the final analysis for an answer.
-:::
-
-::: {.fragment style="margin-top: 0.5em; font-size: 0.88em; text-align: center; color: #5B6670; font-style: italic;"}
-The fix: a slightly higher cap that preserves early efficacy stopping while still bounding worst-case enrollment. Manual calibration would have anchored on the first feasible design; BATON returned the Pareto frontier.
+**BATON surfaced this during PANGEA Phase II calibration:** caps set too low suppress early-efficacy declarations. Manual calibration anchors on the first feasible design; BATON returned the Pareto frontier.
 :::
 :::
 
