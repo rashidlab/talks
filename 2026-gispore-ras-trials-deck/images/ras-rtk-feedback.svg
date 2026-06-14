@@ -48,13 +48,14 @@
              stroke="#5B6670" stroke-width="2.4"/>
 
     <!-- RTKs anchored on membrane, oriented outward.
-         (cx_membrane, cy_membrane, rotation_deg from local +y "up") -->
-    <use href="#rtk" transform="translate(48,160)  rotate(-118)"/>
-    <use href="#rtk" transform="translate(58,222)  rotate(-62)"/>
-    <use href="#rtk" transform="translate(120,77)  rotate(180)"/>
-    <use href="#rtk" transform="translate(120,303) rotate(0)"/>
-    <use href="#rtk" transform="translate(190,140) rotate(118)"/>
-    <use href="#rtk" transform="translate(187,238) rotate(62)"/>
+         Rotation = atan2(P.y - C.y, P.x - C.x) + 90, where C = (120, 190).
+         Symbol's default stalk points up (-y); rotation aligns stalk with outward normal. -->
+    <use href="#rtk" transform="translate(48,160)  rotate(-67)"/>
+    <use href="#rtk" transform="translate(58,222)  rotate(-117)"/>
+    <use href="#rtk" transform="translate(120,77)  rotate(0)"/>
+    <use href="#rtk" transform="translate(120,303) rotate(180)"/>
+    <use href="#rtk" transform="translate(190,140) rotate(55)"/>
+    <use href="#rtk" transform="translate(187,238) rotate(126)"/>
 
     <!-- Active RAS-GTP dots — slightly varied sizes for organic feel -->
     <g fill="#C75050">
@@ -117,19 +118,20 @@
       <circle cx="660" cy="267"  r="18" fill="url(#rtkGlow)"/>
     </g>
 
-    <!-- RTKs anchored on membrane (12 — more than untreated) -->
-    <use href="#rtk" transform="translate(528,158) rotate(-118)"/>
-    <use href="#rtk" transform="translate(538,222) rotate(-62)"/>
-    <use href="#rtk" transform="translate(600,77)  rotate(180)"/>
-    <use href="#rtk" transform="translate(600,303) rotate(0)"/>
-    <use href="#rtk" transform="translate(670,140) rotate(118)"/>
-    <use href="#rtk" transform="translate(667,238) rotate(62)"/>
-    <use href="#rtk" transform="translate(538,117) rotate(-150)"/>
-    <use href="#rtk" transform="translate(582,82)  rotate(-165)"/>
-    <use href="#rtk" transform="translate(620,80)  rotate(165)"/>
-    <use href="#rtk" transform="translate(655,103) rotate(150)"/>
-    <use href="#rtk" transform="translate(542,267) rotate(-35)"/>
-    <use href="#rtk" transform="translate(660,267) rotate(35)"/>
+    <!-- RTKs anchored on membrane (12 — more than untreated).
+         Rotation = atan2(P.y - C.y, P.x - C.x) + 90, where C = (600, 190). -->
+    <use href="#rtk" transform="translate(528,158) rotate(-66)"/>
+    <use href="#rtk" transform="translate(538,222) rotate(-117)"/>
+    <use href="#rtk" transform="translate(600,77)  rotate(0)"/>
+    <use href="#rtk" transform="translate(600,303) rotate(180)"/>
+    <use href="#rtk" transform="translate(670,140) rotate(55)"/>
+    <use href="#rtk" transform="translate(667,238) rotate(126)"/>
+    <use href="#rtk" transform="translate(538,117) rotate(-40)"/>
+    <use href="#rtk" transform="translate(582,82)  rotate(-10)"/>
+    <use href="#rtk" transform="translate(620,80)  rotate(10)"/>
+    <use href="#rtk" transform="translate(655,103) rotate(32)"/>
+    <use href="#rtk" transform="translate(542,267) rotate(-143)"/>
+    <use href="#rtk" transform="translate(660,267) rotate(142)"/>
 
     <!-- Active RAS-GTP dots (FEW — RAS inhibited) -->
     <g fill="#C75050" opacity="0.5">
