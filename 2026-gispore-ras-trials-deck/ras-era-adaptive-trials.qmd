@@ -164,8 +164,12 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 
 ## Why combinations break the rules you grew up on {.smaller}
 
-- **3+3 was built for single-agent cytotoxics** [@letourneau2009] — assuming monotonic dose-toxicity, Cycle-1-observable DLTs, and a single dose dimension. **Combinations break all three, and 3+3 has no joint-surface model at all.**
-- **In practice, combination dose-finding collapses to one drug.** Pick agent A's dose, fix it, add agent B — the dominant pattern. Even when both drugs *are* dose-escalated, designs treat the combinations as independent: in Rivière's review of 162 such trials, **88% used 3+3 designs developed for single-agent evaluation** — no joint-surface modeling [@riviere2015combo; @harrington2013dual].
+- **3+3 was built for single-agent cytotoxics** [@letourneau2009]:
+  - Monotonic dose-toxicity
+  - Cycle-1-observable DLTs
+  - Single dose dimension
+- **Combinations break all three** — and 3+3 has no joint-surface model at all.
+- **In practice:** pick A's dose, fix it, add B — the dominant pattern. Rivière's review of 162 combination trials: **88% used single-agent designs** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
 
 ::: {.slide-refs}
 Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
