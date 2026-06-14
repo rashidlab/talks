@@ -435,7 +435,50 @@ This is happening, federally funded, enrolling.
 :::
 
 ::: {.notes}
-This is what a resistance-aware trial actually looks like operationally. ARPA-H — the new Advanced Research Projects Agency for Health — has funded a program called ADAPT specifically to build trials of this kind. The ARPA-H figure tells the story in two panels. Top: current state. A single static biomarker, sequential treatments — Tx 1, then Tx 1 continued, then Tx 2 — and the resistant subclones persist into the final cell mix. Bottom: ADAPT's future state. In-depth dynamic biomarkers, treatments switched in response to observed resistance traits, eventual clearance. Our EVOLVE trial in metastatic breast cancer is one of the first to operationalize this, and the design template generalizes directly to the kind of RAS-backbone combination trial you all are going to be running for PDAC in the next few years. CRITICAL FRAMING DISCIPLINE: the closer says "enrolling," not "EVOLVE shows" or "EVOLVE works." This is the resistance-side honesty I committed to in the opening — methods exist and are deployed, not yet completed. If a trialist asks for the readout, the answer is the design exists and is accruing; the readout is what we will report when interim looks are run. Do not let the live delivery drift toward an implied result. The next slide names what this demands of the statistical design — and why deploying it is the gap the rest of the talk is about.
+This is what a resistance-aware trial actually looks like operationally. ARPA-H — the new Advanced Research Projects Agency for Health — has funded a program called ADAPT specifically to build trials of this kind. The ARPA-H figure tells the story in two panels. Top: current state. A single static biomarker, sequential treatments — Tx 1, then Tx 1 continued, then Tx 2 — and the resistant subclones persist into the final cell mix. Bottom: ADAPT's future state. In-depth dynamic biomarkers, treatments switched in response to observed resistance traits, eventual clearance. Our EVOLVE trial in metastatic breast cancer is one of the first to operationalize this, and the design template generalizes directly to the kind of RAS-backbone combination trial you all are going to be running for PDAC in the next few years. CRITICAL FRAMING DISCIPLINE: the closer says "enrolling," not "EVOLVE shows" or "EVOLVE works." This is the resistance-side honesty I committed to in the opening — methods exist and are deployed, not yet completed. If a trialist asks for the readout, the answer is the design exists and is accruing; the readout is what we will report when interim looks are run. Do not let the live delivery drift toward an implied result. The next slide takes the audience inside the protocol — what EVOLVE actually does, and what the PDAC analog would look like.
+:::
+
+
+## EVOLVE-BDT — and what this would look like in PDAC {.smaller}
+
+![](images/evolve_flow.jpg){width=92% fig-align="center" fig-alt="EVOLVE-BDT flow chart: 2L MBC patients enter, biopsy stratifies into Subgroup A-D, subgroup-stratified adaptive randomization assigns to 2L Arm 1 or Arm 2, progression triggers re-subgrouping via liquid biopsy for 3L Arm 1 or Arm 2, arms are replaced if futility or efficacy is determined and a new arm enters."}
+
+::: {style="margin-top: 0.2em; text-align: center; font-size: 0.7em; color: #5B6670; font-style: italic;"}
+TBCRC EVOLVE-BDT flow — biomarker-stratified subtrials, adaptive randomization, in-trial arm replacement on futility or efficacy.
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {style="margin-top: 0.4em; font-size: 0.82em; line-height: 1.45;"}
+**EVOLVE-BDT (real, enrolling)** — 2L MBC, ~700 pts
+
+- ER+/HER2− and TNBC subtrials
+- Subgroups A–D by **ESR1**, **PI3K/AKT/PTEN**, **PD-L1**, **AR** status
+- Serial tumor + blood at every visit
+- Arms swap on Bayesian futility/efficacy
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="margin-top: 0.4em; font-size: 0.82em; line-height: 1.45;"}
+**PDAC analog (hypothetical)** — 2L mPDAC on daraxonrasib + GnP
+
+- **Basal-like vs classical by PurIST** [@purist_rashid2020]
+- Subgroups by **KRAS amp / RTK upregulation / pEMT** [@aronchik2025ena]
+- Serial **ctDNA + biopsies** at every visit
+- Arms: + EGFR-i, + SHP2-i, classical-state shifters
+:::
+:::
+
+::::
+
+::: {.fragment style="margin-top: 0.4em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.95em; text-align: center;"}
+**Same architecture, different disease.** Every row of the right column has a real biomarker, a real assay, and a real combination partner already in or entering the clinic.
+:::
+
+::: {.notes}
+This is the load-bearing slide for "could we actually do this in PDAC?" The figure is EVOLVE-BDT's flow — TBCRC EVOLVE-BDT, our group's adaptive platform in 2L metastatic breast cancer. Walk it left to right. Second line MBC patient enters. Biopsy. Subgroup determination — molecular profile assigns A through D. Subgroup-stratified adaptive randomization sends the patient to 2L Arm 1 or Arm 2. Patient is treated. At progression, a liquid biopsy re-determines the subgroup — because the biology has changed — and the patient enters 3+L treatment in a subgroup-stratified Arm 1 or Arm 2. Crucially, the dashed boxes mean arms get replaced when the Bayesian decision rule fires futility or efficacy. New arms enter. The trial keeps learning. Now the columns below the figure are the explicit translation. Left: real EVOLVE specs. ER+/HER2- and TNBC parallel platforms, about 700 patients total. Subgroups A through D defined by ESR1 mutations, PI3K/AKT/PTEN status, PD-L1, androgen receptor — all things that already drive treatment decisions in breast clinical practice. Serial tumor and blood at every visit. Arms swap on the Bayesian decision rule. Right: the PDAC translation. Stratify by basal-like versus classical using PurIST. Subgroups by KRAS amplification, RTK upregulation, partial EMT — the Aronchik data shows 59% develop measurable resistance, so these subgroups have empirical basis. Serial ctDNA for the genomic side, serial biopsies for plasticity — the do-both requirement made concrete. Arms include daraxonrasib plus EGFR-inhibitor for RTK-upregulation patients, daraxonrasib plus SHP2-inhibitor for pathway-reactivation patients, classical-state shifters for plasticity-driven failures. The bottom callout makes the point: same architecture. Every row of the right column has a real biomarker, a real assay, and a real combination partner already in or entering the clinic. This is not a hypothetical that needs new science. It's the deployment problem. Which is exactly what BATON solves. Pause briefly before moving on to the statistical-demands slide.
 :::
 
 
