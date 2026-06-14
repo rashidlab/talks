@@ -776,7 +776,7 @@ ggplot(convergence_data, aes(x = Evaluation, y = Patients_Spared, color = Feasib
 ```
 
 ::: {style="margin-top: 0.3em; text-align: center; font-size: 0.95em;"}
-**Bottom line:** BATON converges on a design that spares ~23 patients from a potentially-ineffective arm — while meeting Type I ≤ 0.10 AND Power ≥ 0.80.
+**Bottom line:** BATON-calibrated adaptive design with **E[N] = 53 vs Max N = 76**: ~23 fewer patients on a potentially-ineffective arm — while meeting Type I ≤ 0.10 AND Power ≥ 0.80. *The savings come from adaptive stopping; BATON's job is finding the design that achieves them within the OC constraints.*
 :::
 
 ::: {style="margin-top: 0.2em; text-align: center; font-size: 0.72em; color: #5B6670;"}
@@ -784,7 +784,7 @@ Each point = one candidate design evaluated (≈10,000 simulated trials per desi
 :::
 
 ::: {.notes}
-This is the same BATON convergence story you just saw on the grid-vs-BATON slide, but framed in clinically relevant units. Y-axis: patients spared from a potentially-ineffective treatment arm, relative to the traditional fixed-N=76 design. X-axis: BATON's optimization progress — each point is one candidate design that BATON evaluated by simulating ten thousand trials at that parameter combination. Dark-blue points are designs that don't yet meet the FDA operating-characteristic constraints — Type I error ≤ 0.10 AND power ≥ 0.80, simultaneously. Light-blue points are designs that do. BATON enters the feasible region around evaluation 14, then climbs to the optimum near evaluation 75. The horizontal dashed line — about 23 patients spared — is where the optimal calibrated design lands. That's the same point as the achieved expected N of 53 against the calibrated max of 76 that you'll see on the next slide.
+This is the same BATON convergence story you just saw on the grid-vs-BATON slide, but framed in clinically relevant units. Y-axis: patients spared relative to running a fixed-N=76 design. X-axis: BATON's optimization progress — each point is one candidate design that BATON evaluated by simulating ten thousand trials at that parameter combination. Dark-blue points are designs that don't yet meet the FDA operating-characteristic constraints — Type I error ≤ 0.10 AND power ≥ 0.80, simultaneously. Light-blue points are designs that do. BATON enters the feasible region around evaluation 14, then climbs to the optimum near evaluation 75. The horizontal dashed line — about 23 patients spared — is where the optimal calibrated design lands. CREDIT DISCIPLINE: the patients are spared by the adaptive design class itself — early futility/efficacy stopping is what makes E[N] of 53 possible against a max of 76. BATON's contribution is finding the configuration of stopping thresholds and futility margin that delivers those operating characteristics. Say "the BATON-calibrated adaptive design spares ~23 patients" or "the design BATON found spares ~23 patients", not "BATON spares ~23 patients" — the second sentence credits the optimizer rather than the design. The achieved expected N of 53 against the calibrated max of 76 is what you'll see on the next slide.
 :::
 
 
@@ -807,7 +807,7 @@ This is the same BATON convergence story you just saw on the grid-vs-BATON slide
 |---|---|
 | Power | **82.2%** |
 | Type I error | 7.0% |
-| Max N | 76 |
+| Max N | **76** (82 accrual w/ buffer) |
 | Expected N under H₀ | 53.0 |
 | Expected N under H₁ | 58.1 |
 | Pr(early futility stop \| H₀) | **77.9%** |
