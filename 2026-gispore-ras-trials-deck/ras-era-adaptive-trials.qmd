@@ -425,6 +425,10 @@ Schematic adapted from ARPA-H ADAPT program overview materials.
 ::: {.r-fit-text}
 **Resistance mechanisms emerge under RAS-inhibitor pressure**
 
+::: {style="margin-top: 0.4em; padding: 0.5em 0.7em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.92em;"}
+**Daraxonrasib monotherapy in mPDAC** (n=44, paired ctDNA): **59% show RAS-pathway resistance at progression — KRAS amplification in 36%** [@aronchik2025ena]
+:::
+
 - Pathway reactivation and downstream amplification: KRAS amp, NRAS / BRAF / MAP2K1, MYC, PI3K family [@aguirre2024resistance; @awad2021resistance; @wasko2024rmc7977]
 - RTK upregulation and bypass signaling [@zhuang2026rtk]
 - Cell-state plasticity (basal ↔ classical, partial EMT) [@aguirre2024resistance; @xu2025kinome]
@@ -434,7 +438,7 @@ Schematic adapted from ARPA-H ADAPT program overview materials.
 ::::
 
 ::: {.notes}
-Classical trial design treats patients as if they're draws from a fixed distribution — enroll, randomize, administer the regimen, measure outcomes at predefined timepoints. That logic works when the underlying biology is static. Under sustained RAS-inhibitor pressure it doesn't. The tumor evolves. Each patient is a moving target. Resistance signals start appearing weeks into therapy — sometimes earlier. The mechanisms split into a few buckets. Pathway reactivation through KRAS amplification or downstream NRAS, BRAF, MAP2K1 mutations — Aguirre's PDAC clinical work and Awad's adagrasib resistance series. Downstream amplification — MYC and PI3K family — is Wasko's preclinical RMC-7977 finding (the prevalent in-vivo resistance mechanism in KPC tumours, not pathway reactivation per se since pERK remained suppressed in resistant tumours). RTK upregulation and bypass signaling — the Zhuang and Aronchik mechanistic case for combinations. Cell-state plasticity between basal-like and classical with partial EMT — Aguirre again, plus the Yeh and Johnson labs' kinome work at UNC. None of these are baseline phenotypes. The biology is genuinely dynamic — and that's the setup for what trials need to do differently, which is the next slide.
+Classical trial design treats patients as if they're draws from a fixed distribution — enroll, randomize, administer the regimen, measure outcomes at predefined timepoints. That logic works when the underlying biology is static. Under sustained RAS-inhibitor pressure it doesn't. The tumor evolves. Each patient is a moving target. Concretely — and this is the headline I want to anchor on — Aronchik's ENA 2025 paired-ctDNA work on the drug we just saw on slide 4, daraxonrasib, shows that 59% of PDAC patients on monotherapy develop detectable RAS-pathway resistance alterations at progression, with KRAS amplification specifically in 36%. Same drug from RASolute 302, same disease, n=44 patients with paired pre- and end-of-treatment ctDNA. That is the dynamic biology the trial design has to be prepared to see. Resistance signals start appearing weeks into therapy — sometimes earlier. The mechanisms split into a few buckets. Pathway reactivation through KRAS amplification or downstream NRAS, BRAF, MAP2K1 mutations — Aguirre's PDAC clinical work and Awad's adagrasib resistance series. Downstream amplification — MYC and PI3K family — is Wasko's preclinical RMC-7977 finding (the prevalent in-vivo resistance mechanism in KPC tumours, not pathway reactivation per se since pERK remained suppressed in resistant tumours). RTK upregulation and bypass signaling — the Zhuang and Aronchik mechanistic case for combinations. Cell-state plasticity between basal-like and classical with partial EMT — Aguirre again, plus the Yeh and Johnson labs' kinome work at UNC. None of these are baseline phenotypes. The biology is genuinely dynamic — and that's the setup for what trials need to do differently, which is the next slide.
 :::
 
 
