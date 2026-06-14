@@ -274,17 +274,81 @@ The empirical evidence that this is not just theoretical. The FDA-AACR Strategie
 
 ## Combination dose selection in RAS is harder {.smaller}
 
-::: {style="margin-top: 0.6em; font-size: 1.15em; text-align: center; color: #13294B; font-weight: 700;"}
+::: {style="margin-top: 0.3em; font-size: 1.1em; text-align: center; color: #13294B; font-weight: 700;"}
 **Combinations make MTD logic worse on every axis.**
 :::
 
-::: {.fragment style="margin-top: 1.2em; font-size: 1.0em; text-align: center; line-height: 1.6;"}
-You search a 2-D surface single-agent data can't reconstruct, the optimum can sit **below both single-agent doses**, and for RAS the **toxicity headroom is already spent** at the monotherapy dose.
+:::: {.columns}
+
+::: {.column width="55%"}
+```{r}
+#| fig.height: 4.4
+#| fig.width: 5.6
+#| fig.align: center
+library(ggplot2)
+n <- 60
+grid <- expand.grid(A = seq(0, 1, length = n), B = seq(0, 1, length = n))
+grid$eff <- pmax(0, 0.85 - 1.6 * ((grid$A - 0.32)^2 + (grid$B - 0.42)^2))
+mono_A <- data.frame(A = 0.68, B = 0.02, lab = "Monotherapy A\noptimum")
+mono_B <- data.frame(A = 0.02, B = 0.75, lab = "Monotherapy B\noptimum")
+combo  <- data.frame(A = 0.32, B = 0.42, lab = "Combination\noptimum")
+
+ggplot() +
+  geom_tile(data = grid, aes(x = A, y = B, fill = eff)) +
+  scale_fill_gradient(low = "#FFFFFF", high = "#4B9CD3", guide = "none") +
+  geom_contour(data = grid, aes(x = A, y = B, z = eff),
+               color = "#13294B", linewidth = 0.3, alpha = 0.4, bins = 6) +
+  # mono A on x-axis
+  geom_point(data = mono_A, aes(x = A, y = B), shape = 21, fill = "#5B6670",
+             color = "white", size = 5, stroke = 1.8) +
+  geom_text(data = mono_A, aes(x = A, y = B, label = lab),
+            color = "#5B6670", size = 3.3, hjust = 0.5, vjust = 2.0,
+            fontface = "bold", lineheight = 0.9) +
+  # mono B on y-axis
+  geom_point(data = mono_B, aes(x = A, y = B), shape = 21, fill = "#5B6670",
+             color = "white", size = 5, stroke = 1.8) +
+  geom_text(data = mono_B, aes(x = A, y = B, label = lab),
+            color = "#5B6670", size = 3.3, hjust = -0.10, vjust = 0.5,
+            fontface = "bold", lineheight = 0.9) +
+  # combination optimum
+  geom_point(data = combo, aes(x = A, y = B), shape = 23, fill = "#C75050",
+             color = "white", size = 7, stroke = 2.5) +
+  geom_text(data = combo, aes(x = A, y = B, label = lab),
+            color = "#C75050", size = 3.7, hjust = -0.10, vjust = -1.0,
+            fontface = "bold", lineheight = 0.9) +
+  # dotted projections from combo optimum to axes
+  geom_segment(aes(x = 0.32, xend = 0.32, y = 0, yend = 0.42),
+               color = "#C75050", linetype = "dotted", linewidth = 0.6) +
+  geom_segment(aes(x = 0, xend = 0.32, y = 0.42, yend = 0.42),
+               color = "#C75050", linetype = "dotted", linewidth = 0.6) +
+  labs(x = "Drug A dose →", y = "Drug B dose →") +
+  scale_x_continuous(limits = c(0, 1), breaks = NULL, expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 1), breaks = NULL, expand = c(0, 0)) +
+  coord_fixed() +
+  theme_minimal(base_size = 11) +
+  theme(panel.grid = element_blank(),
+        axis.title.x = element_text(face = "bold", color = "#13294B", size = 11),
+        axis.title.y = element_text(face = "bold", color = "#13294B", size = 11))
+```
+
+::: {style="margin-top: 0.1em; font-size: 0.7em; color: #5B6670; font-style: italic; text-align: center;"}
+Schematic. The combination optimum sits below both single-agent doses; single-agent data alone cannot reconstruct the contour.
+:::
 :::
 
-::: {.fragment style="margin-top: 1.0em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.95em; text-align: center;"}
+::: {.column width="45%"}
+::: {.fragment style="margin-top: 0.6em; font-size: 0.92em; line-height: 1.5;"}
+- The optimum can sit **below both single-agent doses**
+- Single-agent data **cannot reconstruct** the joint surface
+- For RAS, the **toxicity headroom is already spent** at the monotherapy dose
+:::
+
+::: {.fragment style="margin-top: 0.8em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.95em; text-align: center;"}
 **Fix what you know. Search what you don't.**
 :::
+:::
+
+::::
 
 ::: {.slide-refs}
 Hong et al., *NEJM* 2020 · Wolpin et al., *NEJM* 2026 (RMC-6236-001) [@hong2020sotorasib; @daraxonrasib_mono]
@@ -433,21 +497,54 @@ Classical trial design treats patients as if they're draws from a fixed distribu
 
 ## Why classical trial designs miss resistance {.smaller}
 
-::: {style="margin-top: 0.4em; font-size: 1.0em;"}
-**Traditional trials fail to capture this:**
-:::
+```{r}
+#| fig.height: 3.6
+#| fig.width: 11
+#| fig.align: center
+library(ggplot2)
+trad <- data.frame(
+  x = c(1, 2.6, 4.2, 5.8, 7.4),
+  y = rep(2.2, 5),
+  label = c("Baseline", "Treatment", "Resistance\nemerges", "Progression", "Trial closes"),
+  fill = c("#5B6670", "#5B6670", "#5B6670", "#5B6670", "#C75050")
+)
+adapt <- data.frame(
+  x = c(1, 2.6, 4.2, 5.8, 7.4),
+  y = rep(0.8, 5),
+  label = c("Baseline", "Treatment", "Resistance\ndetected", "Adapt\n(switch arm)", "Continue\nlearning"),
+  fill = c("#4B9CD3", "#4B9CD3", "#13294B", "#4B9CD3", "#4B9CD3")
+)
+both <- rbind(trad, adapt)
+arrows <- data.frame(
+  x = c(rep(c(1.6, 3.2, 4.8, 6.4), 2)),
+  xend = c(rep(c(2.0, 3.6, 5.2, 6.8), 2)),
+  y = c(rep(2.2, 4), rep(0.8, 4)),
+  yend = c(rep(2.2, 4), rep(0.8, 4))
+)
+ggplot() +
+  geom_tile(data = both, aes(x = x, y = y, fill = fill),
+            width = 1.25, height = 0.65, color = "white", linewidth = 2) +
+  scale_fill_identity() +
+  geom_text(data = both, aes(x = x, y = y, label = label),
+            color = "white", size = 3.7, fontface = "bold", lineheight = 0.95) +
+  geom_segment(data = arrows, aes(x = x, xend = xend, y = y, yend = yend),
+               arrow = arrow(length = unit(0.22, "cm"), type = "closed"),
+               color = "#5B6670", linewidth = 1.3) +
+  geom_text(aes(x = -0.25, y = 2.2), label = "Traditional",
+            color = "#5B6670", size = 4.5, fontface = "bold", hjust = 0) +
+  geom_text(aes(x = -0.25, y = 0.8), label = "Adaptive",
+            color = "#13294B", size = 4.5, fontface = "bold", hjust = 0) +
+  geom_text(aes(x = 7.4, y = 2.85), label = "biology has\nalready changed",
+            color = "#C75050", size = 3.2, fontface = "italic", lineheight = 0.9) +
+  geom_text(aes(x = 4.2, y = 0.15), label = "in time to act",
+            color = "#13294B", size = 3.2, fontface = "italic") +
+  scale_x_continuous(limits = c(-0.4, 8.2), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(-0.2, 3.3), expand = c(0, 0)) +
+  theme_void()
+```
 
-::: {style="margin-top: 0.4em; font-size: 0.95em;"}
-| Failure mode | Why it breaks under RAS-era biology |
-|:---|:---|
-| **Fixed regimens** | Miss the interception window — biology has changed by readout |
-| **Baseline-only biomarkers** | Can't track evolution under therapy |
-| **Retrospective characterization** | Resistance known only after progression [@awad2021resistance; @aguirre2024resistance] |
-| **Temporal surface** | When / who / how resistance emerges → never characterized |
-:::
-
-::: {.fragment style="margin-top: 0.8em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.95em;"}
-**Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging.** A resistance-aware trial has to **do both** during enrollment.
+::: {.fragment style="margin-top: 0.4em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.95em;"}
+**Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging.** A resistance-aware trial has to **do both** during enrollment [@awad2021resistance; @aguirre2024resistance].
 :::
 
 ::: {.slide-refs}
@@ -455,27 +552,26 @@ Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024
 :::
 
 ::: {.notes}
-This is the design-implications side of the previous slide. The four rows of the table name the four interlocking failure modes of classical trial designs under RAS-era biology. First, fixed regimens miss the interception window — by the time the trial reads out, the biology has changed. Second, baseline-only biomarkers can't track evolution under therapy — you measured the wrong thing at the wrong time. Third, resistance is characterized retrospectively, only after progression and trial closure. The Awad and Aguirre papers cited here are themselves post-progression analyses — ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Fourth, the temporal surface — when resistance emerges, in which patients, by which mechanism — is never characterized. The empirical anchor for this room: Aronchik's ENA 2025 paired-ctDNA work on daraxonrasib [@aronchik2025ena] shows RAS-pathway alterations — KRAS amplification (36% of patients), BRAF, MAP2K1 — emerging at progression in 59% of PDAC patients on monotherapy, mechanisms that a baseline-biomarker trial would not catch. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both, during enrollment, not after. Same structural failure as the combination dose-finding critique two sections ago: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
+This is the design-implications side of the previous slide. The two-row timeline names the structural failure of classical trial designs under RAS-era biology. The traditional row: baseline → treatment → resistance emerges → progression → trial closes — and the red marker on "trial closes" is the point: by the time the trial reads out, the biology has already changed. The adaptive row catches resistance when it emerges, in time to act on it within the same protocol. Three things to land verbally. First, fixed regimens miss the interception window — by the time the trial reads out, the biology has changed. Second, baseline-only biomarkers can't track evolution under therapy — you measured the wrong thing at the wrong time. Third, resistance is characterized retrospectively, only after progression and trial closure. The Awad and Aguirre papers cited here are themselves post-progression analyses — ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Fourth, the temporal surface — when resistance emerges, in which patients, by which mechanism — is never characterized. The empirical anchor for this room: Aronchik's ENA 2025 paired-ctDNA work on daraxonrasib [@aronchik2025ena] shows RAS-pathway alterations — KRAS amplification (36% of patients), BRAF, MAP2K1 — emerging at progression in 59% of PDAC patients on monotherapy, mechanisms that a baseline-biomarker trial would not catch. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both, during enrollment, not after. Same structural failure as the combination dose-finding critique two sections ago: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
 :::
 
 
 ## ADAPT / EVOLVE: what a resistance-aware trial looks like {.smaller}
 
-::: {style="margin-bottom: 0.4em; text-align: center; font-size: 0.95em; color: #5B6670; font-style: italic;"}
-Pulled from breast cancer to make the design problem concrete. The template ports directly to PDAC — shown on the next slide.
+::: {style="margin-top: 0.3em; text-align: center; font-size: 1.05em; color: #13294B; font-weight: 700;"}
+Different disease, same design problem.
 :::
 
-- ARPA-H **ADAPT** program → **EVOLVE trial** in metastatic breast cancer (UNC-led; PI: Carey, Rashid co-PI)
-- **Different disease, same design problem:** longitudinal resistance detection + biomarker-guided adaptation. The design template generalizes directly to a RAS-backbone PDAC combination.
-
-![](images/adapt_goal_dynamic.jpg){width=82% fig-align="center" fig-alt="Two-panel ARPA-H ADAPT schematic. Top current state: single static biomarker, sequential treatments, resistant subclones persist. Bottom ADAPT future state: in-depth dynamic biomarkers, treatments switched in response, mixed final population converging on clearance."}
-
-::: {style="margin-top: 0.2em; text-align: center; font-size: 0.7em; color: #5B6670; font-style: italic;"}
-ARPA-H ADAPT program overview — current static-biomarker state (top) vs dynamic-biomarker state ADAPT enables (bottom).
+::: {style="margin-top: 0.3em; font-size: 0.92em; line-height: 1.4;"}
+- Longitudinal resistance detection
+- Biomarker-guided adaptation
+- Template ports directly to PDAC (next slide)
 :::
 
-::: {.fragment style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
-This is happening, federally funded, enrolling.
+![](images/adapt_goal_dynamic.jpg){width=80% fig-align="center" fig-alt="Two-panel ARPA-H ADAPT schematic: current static-biomarker state (top) vs dynamic-biomarker state (bottom)."}
+
+::: {.fragment style="margin-top: 0.3em; text-align: center; font-size: 0.82em; color: #13294B; font-style: italic;"}
+ARPA-H **ADAPT** → **EVOLVE** (UNC-led; Carey PI, Rashid co-PI). Enrolling.
 :::
 
 ::: {.notes}
@@ -557,25 +653,60 @@ Four axes that operationalize the resistance-aware trial template. I am showing 
 
 ## Why don't we see more of these trials? {.smaller}
 
-::: {style="font-size: 0.9em; margin-top: 0.3em; color: #5B6670; font-style: italic;"}
+::: {style="font-size: 0.9em; margin-top: 0.3em; color: #5B6670; font-style: italic; text-align: center;"}
 Funding, accrual, and biopsy logistics are real.
 :::
 
-::: {style="font-size: 0.95em; margin-top: 0.2em;"}
+::: {style="font-size: 1.0em; margin-top: 0.2em; text-align: center;"}
 **But the barrier that quietly kills good designs — and the one we can actually remove — is calibration.**
 :::
 
-::: {.fragment style="margin-top: 0.4em; font-size: 0.88em; line-height: 1.35;"}
-- Modern designs have many parameters: DLT/efficacy targets, utility weights, stopping rules
-- Operating characteristics (Type I, power, N, duration) depend on every parameter, **in interaction**
-- Each candidate: thousands of simulated trials × scenarios
-- Design space: **8–13 dimensions** for the trials we've calibrated, more for combined dose + resistance. Grid search is infeasible.
+:::: {.columns}
+
+::: {.column width="42%"}
+```{r}
+#| fig.height: 4.6
+#| fig.width: 4.2
+#| fig.align: center
+library(ggplot2)
+funnel <- data.frame(
+  y = 6:1,
+  x = rep(1, 6),
+  label = c("Clinical question",
+            "Adaptive design",
+            "10+ interacting\nparameters",
+            "Thousands of\nsimulations × scenarios",
+            "Calibration\nbottleneck",
+            "BATON"),
+  fill = c("#13294B", "#13294B", "#4B9CD3", "#4B9CD3", "#C75050", "#4B9CD3"),
+  width = c(2.6, 2.4, 2.0, 1.6, 1.1, 2.0)
+)
+ggplot() +
+  geom_tile(data = funnel, aes(x = x, y = y, fill = fill, width = width),
+            height = 0.72, color = "white", linewidth = 2) +
+  scale_fill_identity() +
+  geom_text(data = funnel, aes(x = x, y = y, label = label),
+            color = "white", size = 4.0, fontface = "bold", lineheight = 0.92) +
+  geom_segment(data = data.frame(x = 1, xend = 1, y = 6:2 - 0.4, yend = 5:1 + 0.4),
+               aes(x = x, xend = xend, y = y, yend = yend),
+               arrow = arrow(length = unit(0.22, "cm"), type = "closed"),
+               color = "#5B6670", linewidth = 1.4) +
+  scale_x_continuous(limits = c(-0.6, 2.6), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.3, 6.7), expand = c(0, 0)) +
+  theme_void()
+```
 :::
 
-::: {.fragment style="margin-top: 0.4em;"}
+::: {.column width="58%"}
+::: {.fragment style="margin-top: 0.6em; font-size: 0.92em; line-height: 1.45;"}
+- Operating characteristics (Type I, power, N, duration) depend on every parameter, **in interaction**
+- Design space: **8–13 dimensions** for trials we've calibrated; **20+** for combined dose + resistance. Grid search is infeasible.
+:::
+
+::: {.fragment style="margin-top: 0.6em;"}
 ```{r}
-#| fig.height: 1.5
-#| fig.width: 8
+#| fig.height: 1.4
+#| fig.width: 5.2
 #| fig.align: center
 library(ggplot2)
 adopt <- data.frame(
@@ -587,28 +718,29 @@ adopt <- data.frame(
 ggplot(adopt, aes(x = metric, y = pct, fill = fill)) +
   geom_col(width = 0.5) +
   geom_text(aes(label = paste0(pct, "%")),
-            hjust = -0.2, size = 4.5, fontface = "bold", color = "#13294B") +
+            hjust = -0.2, size = 4, fontface = "bold", color = "#13294B") +
   scale_fill_identity() +
   scale_y_continuous(limits = c(0, 95), expand = c(0, 0)) +
   coord_flip() +
-  labs(x = NULL, y = NULL,
-       caption = "Phase I protocols, 2021–2024 (FDA–AACR Project Optimus impact review)") +
-  theme_minimal(base_size = 10) +
+  labs(x = NULL, y = NULL) +
+  theme_minimal(base_size = 9) +
   theme(panel.grid = element_blank(),
         axis.text.x = element_blank(),
         axis.ticks = element_blank(),
-        axis.text.y = element_text(face = "bold", color = "#13294B", size = 10),
-        plot.caption = element_text(color = "#5B6670", size = 7, hjust = 0))
+        axis.text.y = element_text(face = "bold", color = "#13294B", size = 9))
 ```
 
-::: {style="margin-top: -0.1em; text-align: center; font-size: 0.85em; color: #13294B; font-style: italic;"}
-Methods adopted. Dose-optimization plans — where calibration cost bites — not. [@optimus_impact2025]
+::: {style="margin-top: -0.2em; text-align: center; font-size: 0.78em; color: #13294B; font-style: italic;"}
+Methods adopted. Dose-optimization plans — where calibration cost bites — not [@optimus_impact2025].
 :::
 :::
 
-::: {.fragment style="margin-top: 0.4em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.88em;"}
-**In our group's experience, several months per design.** For combined dose + resistance designs (20+ parameters), hand-tuning is infeasible.
+::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.85em;"}
+**Our group: several months per design.** For combined dose + resistance designs, hand-tuning is infeasible.
 :::
+:::
+
+::::
 
 ::: {.slide-refs}
 FDA–AACR Project Optimus impact review, *JCO Onc Adv* 2025 (367 Phase I protocols)
