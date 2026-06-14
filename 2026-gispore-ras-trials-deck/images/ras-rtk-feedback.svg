@@ -2,31 +2,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360"
      font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
   <defs>
-    <!-- Cell gradient -->
-    <radialGradient id="cellFill" cx="50%" cy="45%" r="55%">
-      <stop offset="0%"  stop-color="#FDFEFE"/>
-      <stop offset="70%" stop-color="#F4F6F8"/>
-      <stop offset="100%" stop-color="#E6EAEF"/>
+    <!-- Cell gradients -->
+    <radialGradient id="cellFill" cx="50%" cy="42%" r="60%">
+      <stop offset="0%"   stop-color="#FDFEFE"/>
+      <stop offset="60%"  stop-color="#F4F6F8"/>
+      <stop offset="100%" stop-color="#DDE3EB"/>
     </radialGradient>
-    <!-- Treated cell gradient (slightly more saturated) -->
-    <radialGradient id="cellFillTreated" cx="50%" cy="45%" r="55%">
-      <stop offset="0%"  stop-color="#FDFEFE"/>
-      <stop offset="70%" stop-color="#EEF4FA"/>
-      <stop offset="100%" stop-color="#D6E5F2"/>
+    <radialGradient id="cellFillTreated" cx="50%" cy="42%" r="60%">
+      <stop offset="0%"   stop-color="#FDFEFE"/>
+      <stop offset="55%"  stop-color="#E8F1FA"/>
+      <stop offset="100%" stop-color="#C2D9EC"/>
+    </radialGradient>
+    <!-- Diffuse RTK glow (radial gradient that fades to transparent) -->
+    <radialGradient id="rtkGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#4B9CD3" stop-opacity="0.55"/>
+      <stop offset="55%"  stop-color="#4B9CD3" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#4B9CD3" stop-opacity="0"/>
     </radialGradient>
     <!-- Arrowheads -->
     <marker id="arrowNavy" viewBox="0 0 10 10" refX="9" refY="5"
             markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="#13294B"/>
     </marker>
-    <marker id="arrowAlert" viewBox="0 0 10 10" refX="9" refY="5"
-            markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 Z" fill="#C75050"/>
-    </marker>
     <marker id="arrowDeep" viewBox="0 0 10 10" refX="9" refY="5"
             markerWidth="5" markerHeight="5" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="#2E6A9F"/>
     </marker>
+    <!-- Receptor: a small "T" head atop a stalk; oriented "up" by default
+         (anchor point is at the base of the stalk where it meets the membrane) -->
+    <symbol id="rtk" overflow="visible">
+      <line x1="0" y1="0" x2="0" y2="-10" stroke="#2E6A9F" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="-6" y1="-11" x2="6" y2="-11" stroke="#4B9CD3" stroke-width="3.4" stroke-linecap="round"/>
+    </symbol>
   </defs>
 
   <!-- ====================================================================
@@ -34,54 +41,40 @@
        ==================================================================== -->
   <g>
     <text x="120" y="32" text-anchor="middle" font-size="14" fill="#5B6670"
-          font-weight="500" letter-spacing="0.05em">UNTREATED</text>
+          font-weight="500" letter-spacing="0.08em">UNTREATED</text>
 
     <!-- Cell body -->
     <ellipse cx="120" cy="190" rx="95" ry="115" fill="url(#cellFill)"
-             stroke="#5B6670" stroke-width="2"/>
+             stroke="#5B6670" stroke-width="2.4"/>
 
-    <!-- RTKs on membrane: ~6 receptors -->
-    <g fill="#4B9CD3" stroke="#2E6A9F" stroke-width="1.5">
-      <circle cx="55"  cy="155" r="6"/>
-      <circle cx="65"  cy="220" r="6"/>
-      <circle cx="120" cy="76"  r="6"/>
-      <circle cx="120" cy="304" r="6"/>
-      <circle cx="180" cy="138" r="6"/>
-      <circle cx="180" cy="240" r="6"/>
-    </g>
-    <!-- Receptor stalks (small lines into cell) -->
-    <g stroke="#2E6A9F" stroke-width="1.2" opacity="0.6">
-      <line x1="60"  y1="158" x2="72"  y2="170"/>
-      <line x1="70"  y1="218" x2="82"  y2="206"/>
-      <line x1="120" y1="82"  x2="120" y2="98"/>
-      <line x1="120" y1="298" x2="120" y2="282"/>
-      <line x1="175" y1="142" x2="163" y2="155"/>
-      <line x1="175" y1="236" x2="163" y2="223"/>
-    </g>
+    <!-- RTKs anchored on membrane, oriented outward.
+         (cx_membrane, cy_membrane, rotation_deg from local +y "up") -->
+    <use href="#rtk" transform="translate(48,160)  rotate(-118)"/>
+    <use href="#rtk" transform="translate(58,222)  rotate(-62)"/>
+    <use href="#rtk" transform="translate(120,77)  rotate(180)"/>
+    <use href="#rtk" transform="translate(120,303) rotate(0)"/>
+    <use href="#rtk" transform="translate(190,140) rotate(118)"/>
+    <use href="#rtk" transform="translate(187,238) rotate(62)"/>
 
-    <!-- Active RAS-GTP dots (many — high RAS signaling) -->
+    <!-- Active RAS-GTP dots — slightly varied sizes for organic feel -->
     <g fill="#C75050">
-      <circle cx="95"  cy="160" r="3.5"/>
-      <circle cx="110" cy="145" r="3.5"/>
-      <circle cx="130" cy="170" r="3.5"/>
-      <circle cx="145" cy="155" r="3.5"/>
-      <circle cx="100" cy="195" r="3.5"/>
-      <circle cx="125" cy="210" r="3.5"/>
-      <circle cx="148" cy="200" r="3.5"/>
-      <circle cx="85"  cy="225" r="3.5"/>
-      <circle cx="115" cy="235" r="3.5"/>
-      <circle cx="140" cy="225" r="3.5"/>
+      <circle cx="93"  cy="161" r="3.8"/>
+      <circle cx="111" cy="143" r="3.4"/>
+      <circle cx="132" cy="171" r="4.1"/>
+      <circle cx="146" cy="154" r="3.5"/>
+      <circle cx="99"  cy="196" r="3.9"/>
+      <circle cx="126" cy="211" r="3.6"/>
+      <circle cx="149" cy="201" r="4.0"/>
+      <circle cx="84"  cy="226" r="3.5"/>
+      <circle cx="116" cy="236" r="3.8"/>
+      <circle cx="142" cy="224" r="3.4"/>
     </g>
 
     <!-- Inner label -->
-    <text x="120" y="280" text-anchor="middle" font-size="11"
-          fill="#13294B" font-weight="600">
-      Active RAS-GTP
-    </text>
-    <text x="120" y="295" text-anchor="middle" font-size="10" fill="#5B6670"
-          font-style="italic">
-      driving proliferation
-    </text>
+    <text x="120" y="278" text-anchor="middle" font-size="11"
+          fill="#13294B" font-weight="600">Active RAS-GTP</text>
+    <text x="120" y="293" text-anchor="middle" font-size="10" fill="#5B6670"
+          font-style="italic">driving proliferation</text>
   </g>
 
   <!-- ====================================================================
@@ -90,8 +83,7 @@
   <g>
     <line x1="225" y1="190" x2="395" y2="190" stroke="#13294B"
           stroke-width="3" marker-end="url(#arrowNavy)"/>
-    <rect x="245" y="160" width="130" height="42" rx="6"
-          fill="#13294B"/>
+    <rect x="245" y="160" width="130" height="42" rx="7" fill="#13294B"/>
     <text x="310" y="180" text-anchor="middle" font-size="13" fill="#FFFFFF"
           font-weight="600">Daraxonrasib</text>
     <text x="310" y="195" text-anchor="middle" font-size="10" fill="#D6E5F2"
@@ -103,64 +95,63 @@
        ==================================================================== -->
   <g>
     <text x="600" y="32" text-anchor="middle" font-size="14" fill="#13294B"
-          font-weight="500" letter-spacing="0.05em">UNDER DARAXONRASIB</text>
+          font-weight="500" letter-spacing="0.08em">UNDER DARAXONRASIB</text>
 
     <!-- Cell body -->
     <ellipse cx="600" cy="190" rx="95" ry="115" fill="url(#cellFillTreated)"
-             stroke="#5B6670" stroke-width="2"/>
+             stroke="#5B6670" stroke-width="2.4"/>
 
-    <!-- RTKs on membrane — MORE than untreated (~10 receptors, upregulated) -->
-    <g fill="#4B9CD3" stroke="#2E6A9F" stroke-width="1.5">
-      <!-- Original positions -->
-      <circle cx="535" cy="155" r="7"/>
-      <circle cx="545" cy="220" r="7"/>
-      <circle cx="600" cy="76"  r="7"/>
-      <circle cx="600" cy="304" r="7"/>
-      <circle cx="660" cy="138" r="7"/>
-      <circle cx="660" cy="240" r="7"/>
-      <!-- Additional upregulated RTKs -->
-      <circle cx="540" cy="115" r="7"/>
-      <circle cx="585" cy="80"  r="7"/>
-      <circle cx="618" cy="80"  r="7"/>
-      <circle cx="650" cy="105" r="7"/>
-      <circle cx="540" cy="265" r="7"/>
-      <circle cx="660" cy="265" r="7"/>
+    <!-- Diffuse glow halos behind upregulated RTKs (drawn FIRST so receptors sit on top) -->
+    <g>
+      <circle cx="528" cy="158"  r="18" fill="url(#rtkGlow)"/>
+      <circle cx="538" cy="222"  r="18" fill="url(#rtkGlow)"/>
+      <circle cx="600" cy="77"   r="18" fill="url(#rtkGlow)"/>
+      <circle cx="600" cy="303"  r="18" fill="url(#rtkGlow)"/>
+      <circle cx="670" cy="140"  r="18" fill="url(#rtkGlow)"/>
+      <circle cx="667" cy="238"  r="18" fill="url(#rtkGlow)"/>
+      <circle cx="538" cy="117"  r="18" fill="url(#rtkGlow)"/>
+      <circle cx="582" cy="82"   r="18" fill="url(#rtkGlow)"/>
+      <circle cx="620" cy="80"   r="18" fill="url(#rtkGlow)"/>
+      <circle cx="655" cy="103"  r="18" fill="url(#rtkGlow)"/>
+      <circle cx="542" cy="267"  r="18" fill="url(#rtkGlow)"/>
+      <circle cx="660" cy="267"  r="18" fill="url(#rtkGlow)"/>
     </g>
-    <!-- Halo glow on receptors to suggest active signaling -->
-    <g fill="none" stroke="#4B9CD3" stroke-width="2" opacity="0.35">
-      <circle cx="540" cy="115" r="12"/>
-      <circle cx="585" cy="80"  r="12"/>
-      <circle cx="618" cy="80"  r="12"/>
-      <circle cx="650" cy="105" r="12"/>
-      <circle cx="540" cy="265" r="12"/>
-      <circle cx="660" cy="265" r="12"/>
-    </g>
+
+    <!-- RTKs anchored on membrane (12 — more than untreated) -->
+    <use href="#rtk" transform="translate(528,158) rotate(-118)"/>
+    <use href="#rtk" transform="translate(538,222) rotate(-62)"/>
+    <use href="#rtk" transform="translate(600,77)  rotate(180)"/>
+    <use href="#rtk" transform="translate(600,303) rotate(0)"/>
+    <use href="#rtk" transform="translate(670,140) rotate(118)"/>
+    <use href="#rtk" transform="translate(667,238) rotate(62)"/>
+    <use href="#rtk" transform="translate(538,117) rotate(-150)"/>
+    <use href="#rtk" transform="translate(582,82)  rotate(-165)"/>
+    <use href="#rtk" transform="translate(620,80)  rotate(165)"/>
+    <use href="#rtk" transform="translate(655,103) rotate(150)"/>
+    <use href="#rtk" transform="translate(542,267) rotate(-35)"/>
+    <use href="#rtk" transform="translate(660,267) rotate(35)"/>
 
     <!-- Active RAS-GTP dots (FEW — RAS inhibited) -->
     <g fill="#C75050" opacity="0.5">
-      <circle cx="595" cy="180" r="3"/>
-      <circle cx="610" cy="200" r="3"/>
+      <circle cx="594" cy="180" r="3"/>
+      <circle cx="611" cy="200" r="3"/>
     </g>
 
-    <!-- Inner label -->
-    <text x="600" y="180" text-anchor="middle" font-size="11"
-          fill="#13294B" font-weight="600">
-      ↓ Active RAS-GTP
-    </text>
-    <text x="600" y="220" text-anchor="middle" font-size="11"
-          fill="#2E6A9F" font-weight="600">
-      ↑ RTK upregulation
-    </text>
+    <!-- Inner labels -->
+    <text x="600" y="175" text-anchor="middle" font-size="11"
+          fill="#13294B" font-weight="600">↓ Active RAS-GTP</text>
+    <text x="600" y="215" text-anchor="middle" font-size="11"
+          fill="#2E6A9F" font-weight="600">↑ RTK upregulation</text>
   </g>
 
   <!-- ====================================================================
-       FEEDBACK ARROW (curving from right cell back upward)
+       FEEDBACK ARROW (curving from right cell back to left)
        ==================================================================== -->
   <g>
-    <path d="M 600 60 Q 600 5 360 20 Q 220 30 230 95"
-          fill="none" stroke="#2E6A9F" stroke-width="2"
+    <path d="M 600 52 C 600 4, 360 4, 200 92"
+          fill="none" stroke="#2E6A9F" stroke-width="2.5"
           stroke-dasharray="6,4" marker-end="url(#arrowDeep)"/>
-    <text x="430" y="14" text-anchor="middle" font-size="11" fill="#2E6A9F"
+    <text x="400" y="11" text-anchor="middle" font-size="11" fill="#2E6A9F"
           font-style="italic" font-weight="500">
       Compensatory feedback: RTKs rise as RAS signaling drops
     </text>
@@ -170,8 +161,7 @@
        BOTTOM CAPTION
        ==================================================================== -->
   <g>
-    <line x1="40" y1="335" x2="680" y2="335" stroke="#E6EAEF"
-          stroke-width="1"/>
+    <line x1="40" y1="335" x2="680" y2="335" stroke="#E6EAEF" stroke-width="1"/>
     <text x="360" y="352" text-anchor="middle" font-size="12" fill="#13294B"
           font-weight="600">
       RTK upregulation is simultaneously a resistance mechanism and a rational combination target

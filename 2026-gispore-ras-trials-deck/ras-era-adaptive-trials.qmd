@@ -162,7 +162,7 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 # The dose-finding problem {.center background-color="#13294B"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
-*Why MTD fails, and what replaces it*
+***Phase 1:*** *why MTD fails for RAS combinations, and what replaces it*
 :::
 
 
@@ -383,7 +383,7 @@ Here's the design in a real PDAC trial at UNC. PANGEA, led by Ashwin Somasundara
 # Resistance is the next problem {.center background-color="#13294B"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
-*Each patient is a moving target.*
+***Phase 2 onward:*** *each patient is a moving target*
 :::
 
 
