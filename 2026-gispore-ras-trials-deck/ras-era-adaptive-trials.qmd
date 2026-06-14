@@ -273,72 +273,45 @@ This is the bridge from the empirical cost — sotorasib at the MTD-only dose, d
 :::
 
 
-## Why Bayesian adaptive designs, and a primer on BOIN {.smaller}
+## Modern dose-finding: OBD instead of MTD {.smaller}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-**Why Bayesian / model-assisted:**
-
-::: {.incremental}
-- Well suited to **small, sequential Phase I decision-making**
-- Decision-theoretic framework supports **utility-based dosing**
-:::
+::: {style="margin-top: 0.2em; font-size: 1.0em;"}
+**Phase I no longer ends with a single MTD — it ends with an OBD.**
 :::
 
-::: {.column width="50%"}
-**BOIN family** [@liu2015boin]:
-
-::: {.incremental}
-- Simple as 3+3 (printed decision table)
-- Statistically matches model-based designs
-- **Targets a specific DLT rate** (e.g., 25%)
-- Extends to **BOIN-COMB** [@lin2017boincomb], **TITE-BOIN** [@yuan2018titeboin], **BOIN12** [@lin2020boin12]
-- **POCRM** [@wages2011pocrm] and **BLRM** [@neuenschwander2008blrm] are common combination alternatives
-:::
+::: {style="margin-top: 0.5em; color: #5B6670; font-style: italic; font-size: 0.88em;"}
+The Bayesian model-assisted toolkit replaces 3+3:
 :::
 
-::::
-
-::: {style="margin-top: 0.4em; font-size: 0.78em; color: #5B6670; font-style: italic; text-align: center;"}
-RAS adoption: sotorasib BLRM [@hong2020sotorasib], adagrasib mTPI (KRYSTAL-1) [@ou2022adagrasib].
+::: {.incremental style="margin-top: 0.4em; font-size: 0.86em; line-height: 1.5;"}
+- **BOIN family** [@liu2015boin] — simple as 3+3 (printed decision table), statistically matches model-based designs. Extensions: combinations (**BOIN-COMB** [@lin2017boincomb]), late-onset toxicity (**TITE-BOIN** [@yuan2018titeboin]), benefit-risk (**BOIN12** [@lin2020boin12]). **POCRM** [@wages2011pocrm] and **BLRM** [@neuenschwander2008blrm] are common combination alternatives.
+- **U-BOIN** [@zhou2019uboin] — *"a response is worth this; a Grade 3 toxicity costs this."* Stage 1 BOIN safety envelope, Stage 2 utility-guided OBD allocation.
 :::
 
-::: {.slide-refs}
-Liu & Yuan 2015 (BOIN) · Lin & Yin 2017 (BOIN-COMB) · Yuan 2018 (TITE-BOIN) · Lin 2020 (BOIN12) · Wages 2011 (POCRM) · Neuenschwander 2008 (BLRM)
-:::
-
-::: {.notes}
-Brief framing of the toolkit that replaces 3+3. Two reasons Bayesian/model-assisted designs fit modern Phase I. First, they handle small sequential sample sizes by design — cohort-by-cohort posterior updates are the natural framework for Phase I decision-making. Second, they support utility-based dosing, which is how the OBD paradigm becomes operational: tell the trial up front how to trade off response against toxicity. BOIN, from Liu and Yuan in 2015, is the workhorse of the family. Operationally as simple as 3+3 — printed decision table at the bedside, PI reads off escalate/stay/de-escalate. Statistically matches the best fully model-based designs. And the family extends naturally: BOIN-COMB for drug combinations, TITE-BOIN for late-onset toxicity, BOIN12 for joint toxicity-efficacy. POCRM (Wages and Conaway) and BLRM are the common alternatives for combinations specifically. The bottom note is the credibility line: the leading RAS Phase I programs are already running on Bayesian designs. Sotorasib used a Bayesian Logistic Regression Model (Hong et al. NEJM 2020). Adagrasib used accelerated titration into mTPI in KRYSTAL-1 (Ou et al. JCO 2022 — citation TODO, add when verified). The methodological shift Project Optimus formalized is already industry standard for RAS monotherapy — the question is whether combinations follow.
-:::
-
-
-## The new paradigm: OBD instead of MTD {.smaller}
-
-:::: {.columns}
-
-::: {.column width="45%"}
-**Phase I no longer ends with a single MTD; it ends with an OBD.**
-
-**U-BOIN** [@zhou2019uboin]:
-
-- Up front: *"a response is worth this; a Grade 3 toxicity costs this"*
-- **Stage 1:** BOIN rules establish the safe envelope (toxicity)
-- **Stage 2:** utility-guided allocation finds the OBD *within* that envelope
-
-::: {.fragment style="margin-top: 0.7em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
+::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.85em; color: #13294B;"}
 Delivers the OBD Project Optimus calls for [@fda_optimus_guidance] — and reaches it where randomized dose comparison does not scale to combinations.
 :::
+
+::: {style="margin-top: 0.4em; font-size: 0.76em; color: #5B6670; font-style: italic;"}
+RAS adoption: sotorasib BLRM [@hong2020sotorasib], adagrasib mTPI in KRYSTAL-1 [@ou2022adagrasib].
+:::
 :::
 
-::: {.column width="55%"}
+::: {.column width="50%"}
 ![](images/uboin-utility-heatmap.svg){fig-alt="U-BOIN utility heatmap: toxicity × efficacy plane with admissibility lines and OBD region marked"}
 :::
 
 ::::
 
+::: {.slide-refs}
+Liu & Yuan 2015 (BOIN) · Zhou, Lee & Yuan 2019 (U-BOIN) · FDA Optimus Guidance · Wages 2011 (POCRM) · Neuenschwander 2008 (BLRM)
+:::
+
 ::: {.notes}
-This is the new paradigm in one slide. Phase I trials no longer end with a single MTD that you carry into Phase II hoping for the best. They end with an OBD — an optimal biological dose — that has been characterized for both safety and efficacy during Phase I. U-BOIN is the cleanest example of what this looks like operationally. Before the trial starts, your team sits down and answers a question: how do you trade off response against severe toxicity? Response with no toxicity is the best outcome; severe toxicity without response is the worst; the intermediate combinations get scored in between. Those scores become the navigation system. Stage one uses BOIN's toxicity rules to establish the safe envelope. Stage two — the new part — allocates patients within that envelope to find the dose that maximizes the benefit-risk utility you specified. What comes out of Phase I is not the MTD. It's the OBD — a dose with a characterized benefit-risk profile. That's the dose you carry into Phase II combinations. That's what Project Optimus is asking sponsors to deliver. And in practice, this paradigm is increasingly the expected approach in modern oncology Phase I/II design.
+The toolkit that replaces 3+3 — and the paradigm shift that goes with it. Two reasons Bayesian and model-assisted designs fit modern Phase I: they handle small sequential sample sizes by cohort-by-cohort posterior updates, and they support utility-based dosing — which is how the OBD paradigm becomes operational. BOIN, from Liu and Yuan 2015, is the workhorse: operationally as simple as 3+3 with a printed decision table at the bedside, but statistically matches the best fully model-based designs. The family extends naturally: BOIN-COMB for combinations, TITE-BOIN for late-onset toxicity, BOIN12 for joint toxicity-efficacy. POCRM (Wages and Conaway) and BLRM are the common combination alternatives. U-BOIN is the cleanest example of operationalizing the OBD paradigm. Before the trial starts, your team scores the trade-off: how do you weigh a response against a Grade 3 toxicity? Those scores become the navigation system. Stage one uses BOIN rules to establish the safe envelope. Stage two allocates patients within that envelope to maximize the benefit-risk utility you specified. What comes out of Phase I is not an MTD — it's an OBD, a dose with a characterized benefit-risk profile. That's the dose you carry into Phase II combinations. That's what Project Optimus is asking sponsors to deliver. Credibility line: leading RAS Phase I programs already run on Bayesian designs — sotorasib used BLRM in CodeBreaK 100, adagrasib used mTPI in KRYSTAL-1. The shift Project Optimus formalized is already industry standard for RAS monotherapy. For a GI clinical audience, the key message is one sentence: modern Phase I optimizes benefit-risk instead of maximizing toxicity. The acronym soup is secondary.
 :::
 
 
@@ -422,35 +395,23 @@ Classical trial design treats patients as if they're draws from a fixed distribu
 
 ## Why classical trial designs miss resistance {.smaller}
 
-:::: {.columns}
-
-::: {.column width="60%"}
-![](images/baseline_static.jpg){width=100% fig-alt="Real patient trajectory from Coombes 2019: ctDNA variant allele frequency rises starting day 470 and climbs two orders of magnitude by day 1246, while CA 15-3 stays at baseline until day 1078. Annotated lead time: 611 days between molecular signal and clinical detection."}
-
-::: {style="margin-top: 0.3em; font-size: 0.7em; color: #5B6670; font-style: italic;"}
-Coombes et al., *Clin Cancer Res* 2019 [@coombes2019ctdna] — personalized ctDNA detected metastatic relapse a median **8.9 months ahead of clinical/radiologic detection** across 49 adjuvant breast cancer patients; this HR+ case (E026) shows a 611-day lead time. Same structural principle applies to active-therapy resistance — see notes.
-:::
-:::
-
-::: {.column width="40%"}
-::: {.r-fit-text}
+::: {style="margin-top: 0.4em; font-size: 1.0em;"}
 **Traditional trials fail to capture this:**
-
-- Fixed regimens miss the interception window
-- Baseline-only biomarkers can't track evolution under therapy
-- Resistance is characterized retrospectively — only after progression and closure [@awad2021resistance; @aguirre2024resistance]
-- The temporal surface (when resistance emerges, in which patients) is never characterized
-
-::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.7em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
-**Genomic → ctDNA · non-genomic → biopsies, transcriptomics, imaging — *do both* during enrollment.** Same structural failure as combination dose-finding: static designs for a dynamic problem.
-:::
-:::
 :::
 
-::::
+::: {.incremental style="margin-top: 0.5em; font-size: 0.95em; line-height: 1.55;"}
+- **Fixed regimens miss the interception window.** By the time the trial reads out, the biology has changed.
+- **Baseline-only biomarkers can't track evolution under therapy.** You measured the wrong thing at the wrong time.
+- **Resistance is characterized retrospectively** — only after progression and trial closure [@awad2021resistance; @aguirre2024resistance]. The field's best resistance knowledge was generated exactly the way I'm criticizing.
+- **The temporal surface** — when resistance emerges, in which patients, by which mechanism — **is never characterized.**
+:::
+
+::: {.fragment style="margin-top: 0.8em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.95em;"}
+**Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging — a resistance-aware trial has to *do both* during enrollment.** Same structural failure as combination dose-finding: static designs for a dynamic problem.
+:::
 
 ::: {.slide-refs}
-Coombes et al., *Clin Cancer Res* 2019 · Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024 (both post-progression analyses)
+Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024 (both post-progression analyses)
 :::
 
 ::: {.notes}
@@ -531,16 +492,27 @@ Funding, accrual, and biopsy logistics are real.
 **In our group's experience, several months per design.** For combined dose + resistance designs (20+ parameters), hand-tuning is infeasible.
 :::
 
-::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.05em; color: #13294B; font-style: italic;"}
-> *We could design the science. We could not design the trial.*
-:::
-
 ::: {.slide-refs}
 FDA–AACR Project Optimus impact review, *JCO Onc Adv* 2025 (367 Phase I protocols)
 :::
 
 ::: {.notes}
-This is the slide that opens the BATON section, and I want to land it carefully. Open with the concession explicitly: funding, accrual, biopsy logistics — these are real, and this room has lived them. I am not standing up here telling you the barrier to better trials is statistics, because that would be a biostatistician naming his own contribution as the field's central obstacle, and you would be right to push back. What I am claiming is narrower and more specific: among the barriers, calibration is the one that quietly kills good designs and the one we can actually remove. You have all watched PIs default back to 3+3 even when they knew a better design existed — the calibration cost was the hidden reason, and that is the gap BATON closes. Now the body. The methods I just walked through — modern dose-finding for combinations, longitudinal biomarker-aware adaptive designs — exist. The reason every clinical trial isn't using them is calibration cost. Every modern design has knobs: target DLT and efficacy rates, utility weights, cohort sizes, stopping rules, sample-size caps. Operating characteristics depend on every knob, in interaction. To know whether a design meets Type I, power, expected N, expected duration, OBD-selection accuracy, and biomarker-promotion error control, you simulate thousands of trial replicates per candidate. And you do this across plausible scenarios. The design space is eight to thirteen dimensions for the trials we've calibrated, and twenty-plus when you combine dose-finding with resistance tracking. A grid search is hopeless — both computationally infeasible and statistically wasteful, because most of the parameter space gives bad designs. In my group, calibrating a single modern combination Phase I/II design by hand takes a senior statistician several months of focused work. For trials that handle dose-finding AND resistance tracking simultaneously, you're at twenty-plus parameters with even more constraints. Hand-tuning doesn't just get slower; it gets infeasible. That's the gap BATON closes.
+This is the slide that opens the BATON section, and I want to land it carefully. Open with the concession explicitly: funding, accrual, biopsy logistics — these are real, and this room has lived them. I am not standing up here telling you the barrier to better trials is statistics, because that would be a biostatistician naming his own contribution as the field's central obstacle, and you would be right to push back. What I am claiming is narrower and more specific: among the barriers, calibration is the one that quietly kills good designs and the one we can actually remove. You have all watched PIs default back to 3+3 even when they knew a better design existed — the calibration cost was the hidden reason, and that is the gap BATON closes. Now the body. The methods I just walked through — modern dose-finding for combinations, longitudinal biomarker-aware adaptive designs — exist. The reason every clinical trial isn't using them is calibration cost. Every modern design has knobs: target DLT and efficacy rates, utility weights, cohort sizes, stopping rules, sample-size caps. Operating characteristics depend on every knob, in interaction. To know whether a design meets Type I, power, expected N, expected duration, OBD-selection accuracy, and biomarker-promotion error control, you simulate thousands of trial replicates per candidate. And you do this across plausible scenarios. The design space is eight to thirteen dimensions for the trials we've calibrated, and twenty-plus when you combine dose-finding with resistance tracking. A grid search is hopeless — both computationally infeasible and statistically wasteful, because most of the parameter space gives bad designs. In my group, calibrating a single modern combination Phase I/II design by hand takes a senior statistician several months of focused work. For trials that handle dose-finding AND resistance tracking simultaneously, you're at twenty-plus parameters with even more constraints. Hand-tuning doesn't just get slower; it gets infeasible. That sets up the pivot — the next slide.
+:::
+
+
+## &nbsp; {.center}
+
+::: {style="text-align: center; padding-top: 2em; font-size: 2.0em; color: #13294B; font-style: italic; font-weight: 700; line-height: 1.5;"}
+"We could design the science.
+:::
+
+::: {style="text-align: center; font-size: 2.0em; color: #13294B; font-style: italic; font-weight: 700; line-height: 1.5; margin-top: 0.2em;"}
+We could not design the trial."
+:::
+
+::: {.notes}
+Pause. Let the line land. This is the pivot of the talk. Everything before this slide has been about establishing that the methods exist — combination dose-finding, OBD selection, resistance-aware longitudinal designs. ADAPT and EVOLVE prove these methods are deployable. But during EVOLVE's activation, the team kept running into the same wall: we knew what trial we wanted to run, we knew the statistical machinery existed, and we still could not get a calibrated, FDA-defensible design out the door. The methods existed. Deploying them did not. That is the gap. Pause briefly. Then move on to what closes it: BATON.
 :::
 
 
@@ -904,21 +876,24 @@ This is what calibrated PANGEA Phase II means for a real patient. Pick someone i
 :::
 
 
-## An unexpected finding {.smaller .center}
+## An unexpected finding {.center}
 
-::: {style="max-width: 85%; margin: 0 auto;"}
-BATON surfaced a hidden trade-off during PANGEA Phase II calibration:
+::: {style="max-width: 90%; margin: 0 auto;"}
 
-::: {.fragment style="margin-top: 0.6em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-style: italic;"}
-> Pushing the max N too low can *prevent* patients from learning sooner that the treatment works.
+::: {style="margin-top: 0.3em; padding: 1em 1.2em; background-color: #F8F9FA; border-left: 5px solid #4B9CD3; color: #13294B; font-weight: 700; font-style: italic; font-size: 1.5em; line-height: 1.4; text-align: center;"}
+Smaller trials are not always better.
 :::
 
-::: {.fragment style="margin-top: 0.6em; font-size: 0.95em;"}
-Caps set too aggressively suppress early-efficacy declarations — patients wait until the final analysis for an answer.
+::: {.fragment style="margin-top: 0.6em; padding: 0.8em 1em; background-color: #EDF0F2; color: #13294B; font-weight: 600; font-size: 1.1em; line-height: 1.4; text-align: center;"}
+Over-constraining the max N can *prevent* patients from learning sooner that the treatment works.
 :::
 
-::: {.fragment style="margin-top: 0.6em; font-size: 0.95em;"}
-**Why it matters:** BATON surfaced this *before* the design was finalized, recommending a slightly higher cap that preserves early efficacy stopping while still bounding worst-case enrollment.
+::: {.fragment style="margin-top: 0.8em; font-size: 0.92em; text-align: center; color: #13294B;"}
+**BATON surfaced this hidden trade-off during PANGEA Phase II calibration — *before* the design was finalized.** Caps too low → early-efficacy declarations suppressed → patients wait until the final analysis for an answer.
+:::
+
+::: {.fragment style="margin-top: 0.5em; font-size: 0.88em; text-align: center; color: #5B6670; font-style: italic;"}
+The fix: a slightly higher cap that preserves early efficacy stopping while still bounding worst-case enrollment. Manual calibration would have anchored on the first feasible design; BATON returned the Pareto frontier.
 :::
 :::
 
