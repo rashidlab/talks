@@ -164,14 +164,10 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 ## Why combinations break the rules you grew up on {.smaller}
 
 - **3+3 was built for single-agent chemo** [@letourneau2009]. It assumes monotonic dose-toxicity, additive joint toxicity, Cycle-1 DLTs, and one-drug-at-a-time titration. **Combinations violate all four.**
-- **In practice, combination dose-finding collapses to one drug.** Pick agent A's dose, fix it, add agent B. The joint efficacy-toxicity surface is **almost never searched** — in 162 combination trials, **88% used 3+3 and all but one used a single-agent design** [@riviere2015combo; @harrington2013dual].
-
-::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
-**Thall et al.** (*Clinical Trials* 2024, methodologists' response to Project Optimus): conventional Phase I designs cannot reliably identify safe and effective doses [@thall2024optimus].
-:::
+- **In practice, combination dose-finding collapses to one drug.** Pick agent A's dose, fix it, add agent B — the dominant pattern. Even when both drugs *are* dose-escalated, designs treat the combinations as independent: in Rivière's review of 162 such trials, **88% used 3+3 designs developed for single-agent evaluation** — no joint-surface modeling [@riviere2015combo; @harrington2013dual].
 
 ::: {.slide-refs}
-Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015 · Thall et al., *Clin Trials* 2024
+Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
 :::
 
 ::: {.notes}
@@ -191,12 +187,12 @@ Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015 · Thall et
 ::: {.fragment style="margin-top: 0.6em;"}
 The defining toxicity proved the assumptions wrong twice:
 
-- **Severe hepatotoxicity, not predictable from the single agent**
-- **88% of Grade 3-4 events fell outside the Cycle 1 DLT window** [@codebreak_io2022] — a Cycle-1 design would have missed most of it.
+- **Severe *immune-mediated* hepatotoxicity, not predictable from the single agent** — sotorasib's pro-inflammatory TME effect potentiates pembro's latent T-cell response
+- **88% of Grade 3-4 events fell outside the Cycle 1 DLT window** [@codebreak_io2022] — ICI-toxicity kinetics, not cytotoxic kinetics; same mechanism, second visible failure
 :::
 
-::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; color: #13294B; font-size: 0.95em; text-align: center; font-weight: 600;"}
-Three of the four 3+3 assumptions failing at once: joint surface unsearched, toxicity non-additive, toxicity late-onset.
+::: {.fragment style="margin-top: 0.5em; margin-bottom: 0.4em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; color: #13294B; font-size: 0.85em; text-align: center;"}
+**Three of the four 3+3 assumptions fail at once:** non-additive toxicity, late-onset toxicity, one-drug-at-a-time titration.
 :::
 
 ::: {.slide-refs}
@@ -204,7 +200,7 @@ Hong et al., *NEJM* 2020 (CodeBreaK 100) · Li et al., *JTO* 2022 (WCLC OA03.06)
 :::
 
 ::: {.notes}
-This is the worked example of the principle on the previous slide. The Amgen case is the clean one — and notice it is not a competence problem. Same sponsor used a model-based Bayesian logistic regression for sotorasib monotherapy in CodeBreaK 100. But for the sotorasib + pembrolizumab combination in CodeBreaK 100/101, they fixed the IO dose, explored only sotorasib across cohorts, and never modeled the two-drug surface. Even the most sophisticated sponsors collapse the combination to a one-drug search — which is the gap BATON closes. The combination's defining toxicity proved the point twice over: severe hepatotoxicity you could not predict from the single agent, and 88% of the Grade 3-4 events landed outside the 21-day DLT window — so a Cycle 1 design would have missed most of it. Q&A POCKET — where 88% comes from. The 22 of 25 numerator and denominator is the audit-ready figure. Source: Li et al WCLC 2022 OA03.06 / JTO 2022 supplement. If pressed, this single example demonstrates three of the four 3+3 assumptions failing at once: joint surface unsearched (combination not modeled), toxicity non-additive (synergistic hepatotoxicity), and late-onset toxicity outside Cycle 1 (88% out-of-window). The fourth assumption — monotonic dose-toxicity — wasn't directly tested here because they didn't search the surface.
+This is the worked example of the principle on the previous slide. The Amgen case is the clean one — and notice it is not a competence problem. Same sponsor used a model-based Bayesian logistic regression for sotorasib monotherapy in CodeBreaK 100. But for the sotorasib + pembrolizumab combination in CodeBreaK 100/101, they fixed the IO dose, explored only sotorasib across cohorts, and never modeled the two-drug surface. Even the most sophisticated sponsors collapse the combination to a one-drug search — which is the gap BATON closes. The combination's defining toxicity proved the point twice over: severe hepatotoxicity you could not predict from the single agent, and 88% of the Grade 3-4 events landed outside the 21-day DLT window — so a Cycle 1 design would have missed most of it. Q&A POCKET — where 88% comes from. The 22 of 25 numerator and denominator is the audit-ready figure. Source: Li et al WCLC 2022 OA03.06 / JTO 2022 supplement. If pressed, this single example demonstrates three of the four 3+3 assumptions failing at once: joint surface unsearched (combination not modeled), toxicity non-additive (synergistic hepatotoxicity), and late-onset toxicity outside Cycle 1 (88% out-of-window). The fourth assumption — monotonic dose-toxicity — wasn't directly tested here because they didn't search the surface. Q&A POCKET — "Why didn't they use a late-onset-aware design?" TITE-BOIN (Yuan 2018) and TITE-CRM (Cheung 2000) handle late-onset toxicity by extending the assessment window beyond Cycle 1 and allowing dose decisions while earlier cohorts' toxicity data are still pending. The methods have existed for over five years. But no published RAS Phase I trial has adopted them: sotorasib (CodeBreaK 100) used BLRM with 21-day cycles; adagrasib (KRYSTAL-1) used mTPI with standard Cycle-1; daraxonrasib (RMC-6236) uses standard Bayesian dose-escalation with 21-day cycles. This is the design-framework layer of the deck's deployment-gap thesis: the tool exists, the empirical case for needing it is well-established, adoption is the gap. Q&A POCKET — mechanism. The severe hepatotox is hypothesized to be immune-mediated, not pharmacologic. Sotorasib's pro-inflammatory effect on the tumor microenvironment can re-activate the latent T-cell response that pembro left in place — biopsies in patients with severe sotorasib + ICI hepatotox show patterns consistent with ICI-induced hepatitis. Sequencing matters: in a real-world series, 58% Grade ≥3 hepatotox occurred when sotorasib started within 30 days of prior ICI. Same immune mechanism explains both "unpredictable from single agent" and "late-onset" — ICI-mediated toxicity has weeks-to-months kinetics, not days. Sources: JTO 2023 brief report (Begum et al), JCO PO 2024 case series (Adagrasib after sotorasib-related hepatotox).
 :::
 
 
@@ -214,12 +210,16 @@ This is the worked example of the principle on the previous slide. The Amgen cas
 - **Maximum Tolerated Dose → a dose optimized on benefit-risk (the OBD).**
 - The expectation now is to **study more than one dose and justify the choice on efficacy and safety**, with **randomized dosage comparison** as the FDA's recommended approach.
 
-::: {.fragment style="margin-top: 1.2em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
+::: {.fragment style="margin-top: 1.0em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
 This is no longer a methodological preference. It's the regulatory baseline.
 :::
 
+::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
+**Thall et al.** (*Clinical Trials* 2024, methodologists' response to Project Optimus): conventional Phase I designs cannot reliably identify safe and effective doses [@thall2024optimus].
+:::
+
 ::: {.slide-refs}
-FDA Guidance for Industry, 2024 (Project Optimus)
+FDA Guidance for Industry, 2024 (Project Optimus) · Thall et al., *Clin Trials* 2024
 :::
 
 ::: {.notes}
@@ -380,7 +380,7 @@ Delivers the OBD Project Optimus calls for [@fda_optimus_guidance] — where ran
 :::
 
 ::: {style="margin-top: 0.5em; font-size: 0.72em; color: #5B6670; font-style: italic;"}
-Implementations: BOIN family [@liu2015boin; @zhou2019uboin] for printed-decision-table simplicity; POCRM, BLRM for combinations [@wages2011pocrm; @neuenschwander2008blrm]. RAS Phase I already runs on these (sotorasib BLRM [@hong2020sotorasib], adagrasib mTPI in KRYSTAL-1 [@ou2022adagrasib]).
+Implementations: BOIN family [@liu2015boin; @zhou2019uboin] for printed-decision-table simplicity; POCRM, BLRM for combinations [@wages2011pocrm; @neuenschwander2008blrm]; **TITE-BOIN** [@yuan2018titeboin] for late-onset toxicity. RAS Phase I uniformly uses Cycle-1 windows — sotorasib BLRM [@hong2020sotorasib], adagrasib mTPI in KRYSTAL-1 [@ou2022adagrasib] — none have adopted TITE-variants despite the sotorasib + pembro late-tox finding.
 :::
 :::
 
@@ -667,7 +667,7 @@ ggplot() +
 :::
 
 ::: {.fragment style="margin-top: 0.6em; padding: 0.8em 1em; background-color: #13294B; color: #FFFFFF; font-size: 1.05em; text-align: center; font-weight: 600;"}
-The methods exist.<br>**Calibrating them to actually launch is the gap.**
+Methods exist. **We're closing the deployment gap now.**
 :::
 
 ::: {.notes}
@@ -895,10 +895,44 @@ ggplot(steps, aes(x = x, y = y)) +
 
 ::: {.column width="62%"}
 ::: {.fragment}
-![](images/baton-acquisition-cartoon.svg){fig-alt="BATON acquisition surface: bowl-shaped objective with two constraint boundaries and feasible region; sequential evaluations converging to the constrained optimum"}
+```{r}
+#| fig.height: 4.2
+#| fig.width: 5.6
+#| fig.align: center
+library(ggplot2)
+flow <- data.frame(
+  y = c(5, 3.5, 2, 0.5),
+  x = rep(1, 4),
+  label = c("Design template\n+ scenario grid",
+            "OC targets\n(Type I ≤ 0.10, Power ≥ 0.80,\nmin N)",
+            "BATON",
+            "Calibrated design\n+ FDA audit trail"),
+  fill = c("#5B6670", "#5B6670", "#13294B", "#4B9CD3"),
+  is_baton = c(FALSE, FALSE, TRUE, FALSE)
+)
+ggplot() +
+  geom_tile(data = flow, aes(x = x, y = y, fill = fill,
+                              width = ifelse(is_baton, 1.5, 2.2),
+                              height = ifelse(is_baton, 0.95, 1.0)),
+            color = "white", linewidth = 2.5) +
+  scale_fill_identity() +
+  geom_text(data = flow, aes(x = x, y = y, label = label),
+            color = "white", size = ifelse(flow$is_baton, 5.6, 3.8),
+            fontface = ifelse(flow$is_baton, "bold", "plain"),
+            lineheight = 0.95) +
+  geom_segment(data = data.frame(x = rep(1, 3), xend = rep(1, 3),
+                                  y = c(5, 3.5, 2) - 0.55,
+                                  yend = c(3.5, 2, 0.5) + 0.55),
+               aes(x = x, xend = xend, y = y, yend = yend),
+               arrow = arrow(length = unit(0.30, "cm"), type = "closed"),
+               color = "#13294B", linewidth = 1.8) +
+  scale_x_continuous(limits = c(-0.6, 2.6), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(-0.2, 5.7), expand = c(0, 0)) +
+  theme_void()
+```
 
-::: {style="margin-top: 0.3em; font-size: 0.72em; color: #5B6670; font-style: italic; text-align: center; line-height: 1.3;"}
-Red = high expected N (bad); blue = low. Dashed lines = Type I and Power constraints. Numbered points = sequential evaluations converging to the constrained optimum (★).
+::: {style="margin-top: 0.2em; font-size: 0.72em; color: #5B6670; font-style: italic; text-align: center; line-height: 1.3;"}
+You bring the clinical inputs; BATON returns the calibration.
 :::
 :::
 :::
@@ -1125,10 +1159,9 @@ This is the same BATON convergence story you just saw on the grid-vs-BATON slide
 :::: {.columns}
 
 ::: {.column width="55%"}
-- After Phase I identifies the OBD, PANGEA continues into a **Phase II Bayesian adaptive randomized trial**: GnP + erlotinib (at OBD) vs GnP alone
-- Primary endpoint: PFS. **Design assumes** reference median 5.5 mo [@vonhoff2013mpact]; powered to detect 9.2 mo under H₁ (HR 0.58)
-- **BATON-calibrated** four parameters (N, efficacy threshold, futility threshold, futility margin) [@baton2026]
-- **Constraints met:** Type I ≤ 0.10, Power ≥ 0.80
+- After Phase I OBD → **Phase II Bayesian adaptive RCT:** GnP + erlotinib (at OBD) vs GnP alone, primary PFS
+- **Design assumes** reference 5.5 mo → 9.2 mo (HR 0.58) [@vonhoff2013mpact]
+- **BATON-calibrated** four parameters under Type I ≤ 0.10, Power ≥ 0.80 [@baton2026]
 :::
 
 ::: {.column width="45%"}
@@ -1175,11 +1208,10 @@ Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptiv
 Without BATON
 :::
 
-::: {style="font-size: 0.86em; line-height: 1.55;"}
+::: {style="font-size: 0.92em; line-height: 1.7;"}
 - Months of senior-statistician hand-tuning
-- Four interacting parameters; designs typically fail Type I ≤ 0.10 **and** Power ≥ 0.80 simultaneously
-- No reproducibility guarantee; no audit trail
-- Activation slips, *or* design ships under-validated
+- Four interacting parameters rarely hit both constraints simultaneously
+- No reproducibility, no audit trail
 :::
 :::
 
@@ -1189,11 +1221,10 @@ Without BATON
 With BATON
 :::
 
-::: {style="font-size: 0.86em; line-height: 1.55;"}
+::: {style="font-size: 0.92em; line-height: 1.7;"}
 - **150–200 evaluations**, hours wall-clock
-- All four parameters jointly calibrated against both constraints
+- Four parameters jointly calibrated; both constraints met
 - Deterministic, FDA-grade audit trail
-- Achieved OCs from the previous slide — power 82.2%, type I 7.0%, expected duration 27.3 mo
 :::
 :::
 :::
@@ -1215,35 +1246,37 @@ This is the practical-impact slide. Without BATON: months of a senior statistici
 
 ## What this means for a PDAC patient {.smaller}
 
-::: {style="font-size: 0.85em;"}
+::: {style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B; font-style: italic;"}
+Mr. Hernandez, 62, mPDAC, basal-like by PurIST, progressed on 1L GnP.
+:::
+
+::: {style="font-size: 0.9em;"}
 :::: {.columns}
 
 ::: {.column width="50%" .fragment}
-**Traditional fixed Phase II**
+::: {style="text-align: center; font-weight: 600; color: #5B6670; margin-bottom: 0.3em;"}
+Traditional fixed Phase II
+:::
 
-*Mr. Hernandez, 62, mPDAC, basal-like by PurIST, progressed on 1L GnP*
-
-- Enrolls in standard randomized Phase II of GnP + erlotinib vs GnP alone
-- Trial enrolls all **76 patients** before final analysis
-- Three-plus years to read out
-- Drug effect (if any) discovered only at study end
+- All **76 patients** enrolled before any look
+- Drug effect discovered only at study end
+- **~36+ months** to read out
 :::
 
 ::: {.column width="50%" .fragment}
-**PANGEA Phase II (BATON-calibrated)**
+::: {style="text-align: center; font-weight: 600; color: #4B9CD3; margin-bottom: 0.3em;"}
+PANGEA Phase II (BATON-calibrated)
+:::
 
-*Mr. Hernandez, 62, mPDAC, basal-like by PurIST, progressed on 1L GnP*
-
-- Same randomization; interim analyses on accumulating PFS events
-- **78% chance** of early futility stop if erlotinib adds nothing
-- Expected enrollment: **~53 patients** (H₀) / **~58** (H₁)
-- Expected duration: **27.3 months**
+- **78% chance** of early futility stop
+- E[N]: **~53** (H₀) / **~58** (H₁)
+- **27.3 months** expected duration
 :::
 ::::
 :::
 
-::: {.fragment style="margin-top: 0.6em; padding: 0.6em 1em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; text-align: center;"}
-**Bottom line:** ~23 fewer patients on potentially-ineffective therapy. Answer in 27.3 months instead of 36+.
+::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; text-align: center;"}
+**~23 fewer patients on potentially-ineffective therapy. Answer in 27.3 months, not 36+.**
 :::
 
 ::: {.notes}
