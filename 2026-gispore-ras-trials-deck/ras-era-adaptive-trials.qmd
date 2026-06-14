@@ -398,16 +398,41 @@ Schematic adapted from ARPA-H ADAPT program overview materials.
 :::
 
 ::: {.column width="40%"}
-::: {.r-fit-text}
 **Resistance mechanisms emerge under RAS-inhibitor pressure**
 
 ::: {style="margin-top: 0.4em; padding: 0.5em 0.7em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.92em;"}
 **Daraxonrasib monotherapy in mPDAC** (n=44, paired ctDNA): **59% show RAS-pathway resistance at progression — KRAS amplification in 36%** [@aronchik2025ena]
 :::
 
-- Pathway reactivation and downstream amplification: KRAS amp, NRAS / BRAF / MAP2K1, MYC, PI3K family [@aguirre2024resistance; @awad2021resistance; @wasko2024rmc7977]
-- RTK upregulation and bypass signaling [@zhuang2026rtk]
-- Cell-state plasticity (basal ↔ classical, partial EMT) [@aguirre2024resistance; @xu2025kinome]
+```{r}
+#| fig.height: 2.4
+#| fig.width: 5
+#| fig.align: center
+library(ggplot2)
+buckets <- data.frame(
+  x = c(1, 3, 5),
+  y = rep(1, 3),
+  header = c("Genetic", "RTK bypass", "Non-genetic"),
+  detail = c("KRAS amp\nNRAS / BRAF /\nMAP2K1\nMYC, PI3K",
+             "RTK\nupregulation\nbypass\nsignaling",
+             "Basal ↔ classical\npartial EMT"),
+  fill = c("#13294B", "#4B9CD3", "#13294B")
+)
+ggplot() +
+  geom_tile(data = buckets, aes(x = x, y = y, fill = fill),
+            width = 1.5, height = 1.05, color = "white", linewidth = 1.5) +
+  scale_fill_identity() +
+  geom_text(data = buckets, aes(x = x, y = y + 0.32, label = header),
+            color = "white", size = 4.5, fontface = "bold") +
+  geom_text(data = buckets, aes(x = x, y = y - 0.10, label = detail),
+            color = "white", size = 3.0, lineheight = 0.95) +
+  scale_x_continuous(limits = c(0.1, 5.9), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.3, 1.7), expand = c(0, 0)) +
+  theme_void()
+```
+
+::: {style="margin-top: 0.2em; font-size: 0.68em; color: #5B6670; text-align: center;"}
+[@aguirre2024resistance; @awad2021resistance; @wasko2024rmc7977; @zhuang2026rtk; @xu2025kinome]
 :::
 :::
 
@@ -424,19 +449,21 @@ Classical trial design treats patients as if they're draws from a fixed distribu
 **Traditional trials fail to capture this:**
 :::
 
-::: {.incremental style="margin-top: 0.5em; font-size: 0.95em; line-height: 1.55;"}
-- **Fixed regimens miss the interception window.** By the time the trial reads out, the biology has changed.
-- **Baseline-only biomarkers can't track evolution under therapy.** You measured the wrong thing at the wrong time.
-- **Resistance is characterized retrospectively** — only after progression and trial closure [@awad2021resistance; @aguirre2024resistance]. The field's best resistance knowledge was generated exactly the way I'm criticizing.
-- **The temporal surface** — when resistance emerges, in which patients, by which mechanism — **is never characterized.**
+::: {style="margin-top: 0.4em; font-size: 0.95em;"}
+| Failure mode | Why it breaks under RAS-era biology |
+|:---|:---|
+| **Fixed regimens** | Miss the interception window — biology has changed by readout |
+| **Baseline-only biomarkers** | Can't track evolution under therapy |
+| **Retrospective characterization** | Resistance known only after progression [@awad2021resistance; @aguirre2024resistance] |
+| **Temporal surface** | When / who / how resistance emerges → never characterized |
 :::
 
 ::: {.fragment style="margin-top: 0.8em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.95em;"}
-**Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging — a resistance-aware trial has to *do both* during enrollment.** Same structural failure as combination dose-finding: static designs for a dynamic problem.
+**Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging.** A resistance-aware trial has to **do both** during enrollment.
 :::
 
 ::: {.slide-refs}
-Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024 (both post-progression analyses)
+Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024
 :::
 
 ::: {.notes}
@@ -555,7 +582,40 @@ Funding, accrual, and biopsy logistics are real.
 - Operating characteristics (Type I, power, N, duration) depend on every parameter, **in interaction**
 - Each candidate: thousands of simulated trials × scenarios
 - Design space: **8–13 dimensions** for the trials we've calibrated, more for combined dose + resistance. Grid search is infeasible.
-- Field has adopted the machinery: Bayesian designs in **48% → 75% of Phase I protocols (2021–2024)**, but dose-optimization plans in only **30%** [@optimus_impact2025]
+:::
+
+::: {.fragment style="margin-top: 0.4em;"}
+```{r}
+#| fig.height: 1.5
+#| fig.width: 8
+#| fig.align: center
+library(ggplot2)
+adopt <- data.frame(
+  metric = factor(c("Bayesian designs adopted", "Dose-optimization plans"),
+                  levels = c("Dose-optimization plans", "Bayesian designs adopted")),
+  pct = c(75, 30),
+  fill = c("#4B9CD3", "#13294B")
+)
+ggplot(adopt, aes(x = metric, y = pct, fill = fill)) +
+  geom_col(width = 0.5) +
+  geom_text(aes(label = paste0(pct, "%")),
+            hjust = -0.2, size = 4.5, fontface = "bold", color = "#13294B") +
+  scale_fill_identity() +
+  scale_y_continuous(limits = c(0, 95), expand = c(0, 0)) +
+  coord_flip() +
+  labs(x = NULL, y = NULL,
+       caption = "Phase I protocols, 2021–2024 (FDA–AACR Project Optimus impact review)") +
+  theme_minimal(base_size = 10) +
+  theme(panel.grid = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text.y = element_text(face = "bold", color = "#13294B", size = 10),
+        plot.caption = element_text(color = "#5B6670", size = 7, hjust = 0))
+```
+
+::: {style="margin-top: -0.1em; text-align: center; font-size: 0.85em; color: #13294B; font-style: italic;"}
+Methods adopted. Dose-optimization plans — where calibration cost bites — not. [@optimus_impact2025]
+:::
 :::
 
 ::: {.fragment style="margin-top: 0.4em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.88em;"}
@@ -599,17 +659,40 @@ Pause. Let the line land. This is the pivot of the talk. Everything before this 
 BATON turns clinically necessary trial complexity into calibrated, launchable designs.
 :::
 
-::: {style="margin-top: 0.4em; color: #5B6670; font-style: italic; font-size: 0.85em;"}
+::: {style="margin-top: 0.3em; color: #5B6670; font-style: italic; font-size: 0.82em;"}
 Think of BATON as a navigation system for trial design:
 :::
 
-::: {.incremental style="margin-top: 0.4em; font-size: 0.88em; line-height: 1.4;"}
-1. **GOAL** — Type I ≤ 0.10, Power ≥ 0.80, minimum N
-2. **EXPLORE** — sample candidate designs
-3. **LEARN** — model which regions of design space satisfy constraints
-4. **FOCUS** — concentrate search on the feasible region
-5. **ARRIVE** — calibrated design that meets all targets
-:::
+```{r}
+#| fig.height: 4.4
+#| fig.width: 2.4
+#| fig.align: center
+library(ggplot2)
+steps <- data.frame(
+  x = rep(1.0, 5),
+  y = 5:1,
+  step = c("GOAL", "EXPLORE", "LEARN", "FOCUS", "ARRIVE"),
+  detail = c("Type I ≤ 0.10\nPower ≥ 0.80\nmin N",
+             "Sample\ncandidate\ndesigns",
+             "Map what\nworks",
+             "Search the\nfeasible region",
+             "Calibrated\ndesign")
+)
+ggplot(steps, aes(x = x, y = y)) +
+  geom_segment(data = data.frame(x = 1.0, xend = 1.0,
+                                 y = 5:2 - 0.42, yend = 4:1 + 0.42),
+               aes(x = x, xend = xend, y = y, yend = yend),
+               arrow = arrow(length = unit(0.22, "cm"), type = "closed"),
+               color = "#4B9CD3", linewidth = 1.6) +
+  geom_tile(aes(width = 0.9, height = 0.7), fill = "#EDF0F2",
+            color = "#4B9CD3", linewidth = 1.5) +
+  geom_text(aes(label = step), size = 5, fontface = "bold", color = "#4B9CD3") +
+  geom_text(aes(label = detail, x = 1.55), size = 3.8, color = "#444444",
+            hjust = 0, lineheight = 0.85) +
+  scale_x_continuous(limits = c(0.45, 2.3), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.4, 5.6), expand = c(0, 0)) +
+  theme_void()
+```
 
 ::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B; font-style: italic;"}
 Designs that would have taken months to discover — or never been found at all.
@@ -992,18 +1075,41 @@ A discovery story from PANGEA's BATON calibration. We started this design with a
 Every point on the Pareto frontier is a valid design. The choice is about what your program needs most.
 :::
 
-::: {.fragment style="margin-top: 0.6em; font-size: 0.88em;"}
+::: {.fragment style="margin-top: 0.5em; font-size: 0.88em;"}
 **Where this lands in GI:**
 :::
 
-::: {.incremental style="margin-top: 0.3em; font-size: 0.82em; line-height: 1.45;"}
-- **PDAC** — RAS-backbone combinations; U-BOIN / BOIN12 Phase I OBD selection
-- **CRC** — joint-surface combinations (POCRM [@wages2011pocrm], BOIN-COMB [@lin2017boincomb], BLRM [@neuenschwander2008blrm]) for novel-novel RAS doublets (e.g., daraxonrasib + elironrasib)
-- **Basket / umbrella / platform** — biomarker-stratified subtrials with shared decision rules
-- **Robust calibration (CARBO)** — designs that hold up when trial assumptions are uncertain
-:::
+```{r}
+#| fig.height: 2.8
+#| fig.width: 9
+#| fig.align: center
+library(ggplot2)
+gi <- data.frame(
+  x = c(1, 2, 1, 2),
+  y = c(2, 2, 1, 1),
+  header = c("PDAC", "CRC",
+             "Basket / umbrella", "Robust calibration"),
+  detail = c("RAS-backbone\ncombinations\nU-BOIN / BOIN12",
+             "Joint-surface\nnovel-novel doublets\nPOCRM · BOIN-COMB · BLRM",
+             "Biomarker-stratified\nsubtrials\nshared decision rules",
+             "CARBO — designs\nrobust to uncertain\nassumptions"),
+  fill = c("#13294B", "#4B9CD3", "#4B9CD3", "#13294B")
+)
+ggplot() +
+  geom_tile(data = gi, aes(x = x, y = y, fill = fill),
+            width = 0.92, height = 0.85, color = "white", linewidth = 2) +
+  scale_fill_identity() +
+  geom_text(data = gi, aes(x = x, y = y + 0.25, label = header),
+            color = "white", size = 4.8, fontface = "bold") +
+  geom_text(data = gi, aes(x = x, y = y - 0.10, label = detail),
+            color = "white", size = 3.4, lineheight = 1.0) +
+  coord_fixed(ratio = 0.55) +
+  scale_x_continuous(limits = c(0.4, 2.6), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.4, 2.6), expand = c(0, 0)) +
+  theme_void()
+```
 
-::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
 Could BATON become standard infrastructure for adaptive trial design in GI oncology?
 :::
 
