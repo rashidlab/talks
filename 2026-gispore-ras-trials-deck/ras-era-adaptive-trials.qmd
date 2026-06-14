@@ -440,46 +440,76 @@ Classical trial design treats patients as if they're draws from a fixed distribu
 
 ## Why classical trial designs miss resistance {.smaller}
 
+:::: {.columns}
+
+::: {.column width="60%"}
+![](images/baseline_static.jpg){width=100% fig-alt="Real patient trajectory from Coombes 2019: ctDNA variant allele frequency rises starting day 470 and climbs two orders of magnitude by day 1246, while CA 15-3 stays at baseline until day 1078. Annotated lead time: 611 days between molecular signal and clinical detection."}
+
+::: {style="margin-top: 0.3em; font-size: 0.7em; color: #5B6670; font-style: italic;"}
+Coombes et al., *Clin Cancer Res* 2019 — ctDNA VAF rises ~611 days before CA 15-3 crosses baseline in this HR+ breast case [@coombes2019ctdna].
+:::
+:::
+
+::: {.column width="40%"}
+::: {.r-fit-text}
 **Traditional trials fail to capture this:**
 
 - Fixed regimens miss the interception window
 - Baseline-only biomarkers can't track evolution under therapy
-- Resistance is characterized retrospectively — only after progression and trial closure [@awad2021resistance; @aguirre2024resistance]
+- Resistance is characterized retrospectively — only after progression and closure [@awad2021resistance; @aguirre2024resistance]
 - The temporal surface (when resistance emerges, in which patients) is never characterized
 
-::: {.fragment style="margin-top: 0.6em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
-**Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging — a resistance-aware trial has to *do both* during enrollment.** Same structural failure as combination dose-finding: static designs for a dynamic problem.
+::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.7em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
+**Genomic → ctDNA · non-genomic → biopsies, transcriptomics, imaging — *do both* during enrollment.** Same structural failure as combination dose-finding: static designs for a dynamic problem.
+:::
+:::
 :::
 
+::::
+
 ::: {.slide-refs}
-Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024 (both post-progression analyses)
+Coombes et al., *Clin Cancer Res* 2019 · Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024 (both post-progression analyses)
 :::
 
 ::: {.notes}
-This is the design-implications side of the previous slide. Traditional trials fail to capture resistance for four interlocking reasons. First, fixed regimens miss the interception window — by the time the trial reads out, the biology has changed. Second, baseline-only biomarkers can't track evolution under therapy — you measured the wrong thing at the wrong time. Third, resistance is characterized retrospectively, only after progression and trial closure. The Awad and Aguirre papers cited on the previous slide are themselves post-progression analyses — ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Fourth, the temporal surface — when resistance emerges, in which patients, by which mechanism — is never characterized. Early signals in molecular subsets dilute into the overall Kaplan-Meier; heterogeneous response trajectories collapse into summary statistics. None of that is useful for designing the next trial in real time. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both, during enrollment, not after. Same structural failure as the combination dose-finding critique two sections ago: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
+This is the design-implications side of the previous slide. The Coombes 2019 figure on the left is the most concrete illustration of the problem — a real HR+ breast cancer patient. ctDNA variant allele frequency starts rising around day 470, climbs steeply through day 1078, and ends two orders of magnitude above baseline at day 1246. CA 15-3 — the conventional clinical biomarker — stays at baseline until day 1078, then finally moves. Annotated lead time: 611 days. Six hundred and eleven days during which the resistance signal was present and a baseline-biomarker design could not see it. The same pattern shows up in RAS-inhibitor trials when ctDNA is captured longitudinally — Aronchik's ENA 2025 paired-ctDNA work on daraxonrasib shows RAS-pathway mutations emerging weeks to months before clinical progression. The four bullets on the right name the four interlocking failure modes. First, fixed regimens miss the interception window — by the time the trial reads out, the biology has changed. Second, baseline-only biomarkers can't track evolution under therapy — you measured the wrong thing at the wrong time. Third, resistance is characterized retrospectively, only after progression and trial closure. The Awad and Aguirre papers cited on the previous slide are themselves post-progression analyses — ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Fourth, the temporal surface — when resistance emerges, in which patients, by which mechanism — is never characterized. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both, during enrollment, not after. Same structural failure as the combination dose-finding critique two sections ago: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
 :::
 
 
 ## ADAPT / EVOLVE: what a resistance-aware trial looks like {.smaller}
 
 - ARPA-H **ADAPT** program → **EVOLVE trial** in metastatic breast cancer (UNC-led; PI: Carey, Rashid co-PI)
-- **Different disease, same design problem:** longitudinal resistance detection + biomarker-guided adaptation. The four axes below are disease-agnostic; a RAS-backbone PDAC combination would need all four for the same reasons.
+- **Different disease, same design problem:** longitudinal resistance detection + biomarker-guided adaptation. The four axes are disease-agnostic; a RAS-backbone PDAC combination would need all four for the same reasons.
 
-::: {.fragment style="margin-top: 0.3em; font-size: 0.82em;"}
+:::: {.columns}
+
+::: {.column width="55%"}
+![](images/adapt_goal_dynamic.jpg){width=100% fig-alt="Two-panel ARPA-H ADAPT schematic. Top current state: single static biomarker, sequential treatments, resistant subclones persist. Bottom ADAPT future state: in-depth dynamic biomarkers, treatments switched in response, mixed final population converging on clearance."}
+
+::: {style="margin-top: 0.25em; font-size: 0.65em; color: #5B6670; font-style: italic; text-align: center;"}
+ARPA-H ADAPT program overview — current static-biomarker state (top) vs dynamic-biomarker state ADAPT enables (bottom).
+:::
+:::
+
+::: {.column width="45%"}
+::: {.fragment style="font-size: 0.74em;"}
 | Axis | Operationalized as |
 |---|---|
-| Adaptive stopping | Bayesian futility/efficacy boundaries updated at each interim |
+| Adaptive stopping | Bayesian futility/efficacy boundaries at each interim |
 | Real-time biomarker discovery | Pre-specified candidate signatures + agnostic discovery window |
 | Longitudinal monitoring | Serial ctDNA, imaging, biopsies on every patient — *the "do both" requirement* |
 | In-trial evaluation | Biomarker-guided cohorts within the same protocol — *characterize the temporal surface and act on it* |
 :::
+:::
 
-::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
+::::
+
+::: {.fragment style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
 This is happening, federally funded, enrolling.
 :::
 
 ::: {.notes}
-This is what a resistance-aware trial actually looks like operationally. ARPA-H — the new Advanced Research Projects Agency for Health — has funded a program called ADAPT specifically to build trials of this kind. Our EVOLVE trial in metastatic breast cancer is one of the first, and the design template generalizes directly to the kind of RAS-backbone combination trial you all are going to be running for PDAC in the next few years. I am showing a breast cancer trial to GI SPORE leaders because the four axes below are disease-agnostic — they're requirements for any resistance-aware trial, not properties of breast biology. A RAS-backbone PDAC combination would need all four for the same reasons. Four axes. Adaptive stopping rules — Bayesian futility and efficacy boundaries that update at every interim look. Real-time biomarker discovery — pre-specified candidate signatures plus an agnostic discovery window so you're not locked into your initial hypothesis. Longitudinal monitoring — serial ctDNA, imaging, biopsies on every patient. This is the "do both" requirement from the mechanisms slide made concrete: ctDNA for the genomic side, biopsies and transcriptomics for the non-genomic plasticity side, on every patient throughout the trial. And in-trial evaluation — biomarker-guided cohorts opened within the same protocol, so when you find a resistance signature you can test the strategy that addresses it during the trial, not as a follow-on study three years later. This is the answer to "characterize the temporal surface and act on it during enrollment" that I named two slides ago. CRITICAL FRAMING DISCIPLINE: the box says "enrolling," not "EVOLVE shows" or "EVOLVE works." This is the resistance-side honesty I committed to in the opening — methods exist and are deployed, not yet completed. If a trialist asks for the readout, the answer is the design exists and is accruing; the readout is what we will report when interim looks are run. Do not let the live delivery drift toward an implied result.
+This is what a resistance-aware trial actually looks like operationally. ARPA-H — the new Advanced Research Projects Agency for Health — has funded a program called ADAPT specifically to build trials of this kind. The ARPA-H figure on the left tells the story in two panels. Top: current state. A single static biomarker, sequential treatments — Tx 1, then Tx 1 continued, then Tx 2 — and the resistant subclones persist into the final cell mix. Bottom: ADAPT's future state. In-depth dynamic biomarkers, treatments switched in response to observed resistance traits, eventual clearance. Our EVOLVE trial in metastatic breast cancer is one of the first to operationalize this, and the design template generalizes directly to the kind of RAS-backbone combination trial you all are going to be running for PDAC in the next few years. I am showing a breast cancer trial to GI SPORE leaders because the four axes on the right are disease-agnostic — they're requirements for any resistance-aware trial, not properties of breast biology. A RAS-backbone PDAC combination would need all four for the same reasons. Four axes. Adaptive stopping rules — Bayesian futility and efficacy boundaries that update at every interim look. Real-time biomarker discovery — pre-specified candidate signatures plus an agnostic discovery window so you're not locked into your initial hypothesis. Longitudinal monitoring — serial ctDNA, imaging, biopsies on every patient. This is the "do both" requirement from the mechanisms slide made concrete: ctDNA for the genomic side, biopsies and transcriptomics for the non-genomic plasticity side, on every patient throughout the trial. And in-trial evaluation — biomarker-guided cohorts opened within the same protocol, so when you find a resistance signature you can test the strategy that addresses it during the trial, not as a follow-on study three years later. CRITICAL FRAMING DISCIPLINE: the box says "enrolling," not "EVOLVE shows" or "EVOLVE works." This is the resistance-side honesty I committed to in the opening — methods exist and are deployed, not yet completed. If a trialist asks for the readout, the answer is the design exists and is accruing; the readout is what we will report when interim looks are run. Do not let the live delivery drift toward an implied result.
 :::
 
 
