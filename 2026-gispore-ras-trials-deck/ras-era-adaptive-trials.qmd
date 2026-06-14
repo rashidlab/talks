@@ -49,7 +49,7 @@ Methods to optimize combination doses are established. Designs that track resist
 :::
 
 ::: {.fragment style="margin-top: 1.2em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600;"}
-What's missing is making those designs practical to calibrate and run.
+What's missing is making those designs practical to calibrate and run — **the gap BATON is built to close.**
 :::
 
 ::: {.notes}
@@ -168,20 +168,48 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 
 ## Why combinations break the rules you grew up on {.smaller}
 
-- **3+3 was built for single-agent chemo** [@letourneau2009]. Combinations break its assumptions. Non-monotonic dose-efficacy, joint toxicity, late-onset DLTs.
-- **In practice, combination dose-finding collapses to one drug.** Pick agent A's dose, fix it, add agent B. The joint efficacy-toxicity surface is **almost never searched** — in a systematic review of 162 combination trials, **88% used 3+3 and all but one used a single-agent design** [@riviere2015combo; @harrington2013dual].
-- **Amgen did exactly this with sotorasib + pembrolizumab.** A Bayesian model guided escalation for the single agent [@hong2020sotorasib]. For the combination they fixed the IO dose, varied only sotorasib, and never modeled the joint surface. The defining toxicity was synergistic and mostly late: **88% of Grade 3-4 hepatotoxicity fell outside the Cycle 1 DLT window** [@codebreak_io2022].
+- **3+3 was built for single-agent chemo** [@letourneau2009]. Combinations violate its three core assumptions: **monotonic dose-toxicity, additive joint toxicity, Cycle-1-observable DLTs.**
+- **In practice, combination dose-finding collapses to one drug.** Pick agent A's dose, fix it, add agent B. The joint efficacy-toxicity surface is **almost never searched** — in 162 combination trials, **88% used 3+3 and all but one used a single-agent design** [@riviere2015combo; @harrington2013dual].
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
 **Thall et al.** (*Clinical Trials* 2024, methodologists' response to Project Optimus): conventional Phase I designs cannot reliably identify safe and effective doses [@thall2024optimus].
 :::
 
 ::: {.slide-refs}
-Le Tourneau et al., *JNCI* 2009 · Hong et al., *NEJM* 2020 · Li et al., *JTO* 2022 · Thall et al., *Clin Trials* 2024 · Rivière et al., *Ann Oncol* 2015
+Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015 · Thall et al., *Clin Trials* 2024
 :::
 
 ::: {.notes}
-Q&A POCKET — frequentist alternatives. If a methodologist asks "what about non-Bayesian combination designs?" the honest answer is that very few practical, deployed frequentist combination designs exist. The field has converged on Bayesian / model-assisted designs (POCRM, BOIN-COMB, BLRM, PIPE, surface-free) because combinations require borrowing strength across dose pairs and partial-order constraints — naturally handled by priors and posterior updating, awkwardly handled without them. The cleanest frequentist alternative in the literature is Conaway, Dunbar, & Peddada 2004 (Biometrics 60:661-669), order-restricted isotonic regression for combinations — theoretically clean but not widely deployed. 3+3 generalizations to combinations exist but inherit all the original problems plus combinatorial explosion. Sequential lead-in (find A then add B) is the dominant industry practice — that is what we are criticizing. Q&A POCKET — Rivière backup. The Rivière et al 2015 systematic review of 162 combination phase I trials gives the "almost never" claim a documented count: 88% used 3+3, all but one used a design developed for single-agent evaluation. If anyone challenges "almost never" as an unsupported universal, that is your number. 3+3 answered the question it was built for — the MTD of a cytotoxic under a monotonic toxicity assumption. For RAS combinations none of those assumptions hold. The deeper problem is structural and operational. In practice almost no one searches the joint dose surface. The protocol fixes agent A's dose and adds agent B, so two monotherapy designs run in series and the joint surface is never characterized. The Amgen example is the clean one, and notice it is not a competence problem. Same sponsor used a model-based Bayesian logistic regression for sotorasib monotherapy in CodeBreaK 100, but for the sotorasib + pembrolizumab combination in CodeBreaK 100/101 they fixed the IO dose, explored only sotorasib across cohorts, and never modeled the two-drug surface. And the combination's defining toxicity proved the point twice over: it was severe hepatotoxicity you could not predict from the single agent, and 88% of the Grade 3-4 events landed outside the 21-day DLT window — so a Cycle 1 design would have missed most of it. This single example demonstrates three of the four assumptions failing at once: joint surface unsearched, toxicity non-additive, late-onset toxicity outside Cycle 1. Even sophisticated sponsors collapse the combination to a one-drug search. Thall, Garrett-Mayer, Wages, Halabi, and Cheung made the formal version of this argument in their 2024 *Clinical Trials* paper, the SCT response to Project Optimus: conventional Phase I designs cannot reliably identify safe and effective doses. Next slide covers what replaces 3+3 in the toolkit.
+3+3 answered the question it was built for — the MTD of a cytotoxic under a monotonic toxicity assumption. For RAS combinations none of those assumptions hold. The deeper problem is structural and operational. In practice almost no one searches the joint dose surface. The protocol fixes agent A's dose and adds agent B, so two monotherapy designs run in series and the joint surface is never characterized. Thall, Garrett-Mayer, Wages, Halabi, and Cheung made the formal version of this argument in their 2024 *Clinical Trials* paper, the SCT response to Project Optimus: conventional Phase I designs cannot reliably identify safe and effective doses. Q&A POCKET — frequentist alternatives. If a methodologist asks "what about non-Bayesian combination designs?" the honest answer is that very few practical, deployed frequentist combination designs exist. The field has converged on Bayesian / model-assisted designs (POCRM, BOIN-COMB, BLRM, PIPE, surface-free) because combinations require borrowing strength across dose pairs and partial-order constraints — naturally handled by priors and posterior updating, awkwardly handled without them. The cleanest frequentist alternative in the literature is Conaway, Dunbar, & Peddada 2004 (Biometrics 60:661-669), order-restricted isotonic regression for combinations — theoretically clean but not widely deployed. 3+3 generalizations to combinations exist but inherit all the original problems plus combinatorial explosion. Sequential lead-in (find A then add B) is the dominant industry practice — that is what we are criticizing. Q&A POCKET — Rivière backup. The Rivière et al 2015 systematic review of 162 combination phase I trials gives the "almost never" claim a documented count: 88% used 3+3, all but one used a design developed for single-agent evaluation. If anyone challenges "almost never" as an unsupported universal, that is your number. Next slide makes the abstract failure concrete with the Amgen sotorasib + pembrolizumab case.
+:::
+
+
+## The Amgen case: sotorasib + pembrolizumab {.smaller}
+
+::: {style="margin-top: 0.4em; font-size: 1.0em;"}
+**Same sponsor, two different designs.**
+:::
+
+- **Monotherapy (CodeBreaK 100):** Bayesian model-based design, escalation guided across the single-agent dose-response surface.
+- **Combination (sotorasib + pembrolizumab):** IO dose fixed at standard, only sotorasib varied across cohorts. The joint surface was never modeled.
+
+::: {.fragment style="margin-top: 0.6em;"}
+The defining toxicity proved the assumptions wrong twice:
+
+- **Severe hepatotoxicity, not predictable from the single agent**
+- **88% of Grade 3-4 events fell outside the Cycle 1 DLT window** [@codebreak_io2022] — a Cycle-1 design would have missed most of it.
+:::
+
+::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; color: #13294B; font-size: 0.95em; text-align: center; font-weight: 600;"}
+Three of the four 3+3 assumptions failing at once: joint surface unsearched, toxicity non-additive, toxicity late-onset.
+:::
+
+::: {.slide-refs}
+Li et al., *JTO* 2022 (WCLC OA03.06)
+:::
+
+::: {.notes}
+This is the worked example of the principle on the previous slide. The Amgen case is the clean one — and notice it is not a competence problem. Same sponsor used a model-based Bayesian logistic regression for sotorasib monotherapy in CodeBreaK 100. But for the sotorasib + pembrolizumab combination in CodeBreaK 100/101, they fixed the IO dose, explored only sotorasib across cohorts, and never modeled the two-drug surface. Even the most sophisticated sponsors collapse the combination to a one-drug search — which is the gap BATON closes. The combination's defining toxicity proved the point twice over: severe hepatotoxicity you could not predict from the single agent, and 88% of the Grade 3-4 events landed outside the 21-day DLT window — so a Cycle 1 design would have missed most of it. Q&A POCKET — where 88% comes from. The 22 of 25 numerator and denominator is the audit-ready figure. Source: Li et al WCLC 2022 OA03.06 / JTO 2022 supplement. If pressed, this single example demonstrates three of the four 3+3 assumptions failing at once: joint surface unsearched (combination not modeled), toxicity non-additive (synergistic hepatotoxicity), and late-onset toxicity outside Cycle 1 (88% out-of-window). The fourth assumption — monotonic dose-toxicity — wasn't directly tested here because they didn't search the surface.
 :::
 
 
@@ -418,6 +446,10 @@ This is the design-implications side of the previous slide. The Coombes 2019 fig
 
 ## ADAPT / EVOLVE: what a resistance-aware trial looks like {.smaller}
 
+::: {style="margin-bottom: 0.4em; text-align: center; font-size: 0.95em; color: #5B6670; font-style: italic;"}
+Pulled from breast cancer to make the design problem concrete. The template ports directly to PDAC — shown on the next slide.
+:::
+
 - ARPA-H **ADAPT** program → **EVOLVE trial** in metastatic breast cancer (UNC-led; PI: Carey, Rashid co-PI)
 - **Different disease, same design problem:** longitudinal resistance detection + biomarker-guided adaptation. The design template generalizes directly to a RAS-backbone PDAC combination.
 
@@ -489,7 +521,11 @@ This is the load-bearing slide for "could we actually do this in PDAC?" The figu
 :::
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.92em;"}
-**Continual learning during enrollment is not a tweak to a Phase II — it is a structurally different trial.** Each axis adds interacting parameters: interim timing, posterior-probability thresholds, biomarker decision rules, randomization-weight updates, cohort-opening logic. **The Bayesian adaptive methodology exists. Making it deployable — calibrating it to the operating-characteristic targets the team and the FDA agree on — is the gap.**
+**Continual learning during enrollment is not a tweak to a Phase II — it is a structurally different trial.** Each axis adds interacting parameters: interim timing, posterior-probability thresholds, biomarker decision rules, randomization-weight updates, cohort-opening logic.
+:::
+
+::: {.fragment style="margin-top: 0.8em; padding: 0.8em 1em; background-color: #13294B; color: #FFFFFF; font-size: 1.05em; text-align: center; font-weight: 600;"}
+The methods exist.<br>**Calibrating them to actually launch is the gap.**
 :::
 
 ::: {.notes}
@@ -559,6 +595,10 @@ Pause. Let the line land. This is the pivot of the talk. Everything before this 
 **BATON** = **B**ayesian **A**daptive **T**rial **O**ptimizatio**N** [@baton2026]
 :::
 
+::: {style="margin-top: 0.4em; font-size: 1.0em; color: #13294B; font-weight: 600; font-style: italic;"}
+BATON turns clinically necessary trial complexity into calibrated, launchable designs.
+:::
+
 ::: {style="margin-top: 0.4em; color: #5B6670; font-style: italic; font-size: 0.85em;"}
 Think of BATON as a navigation system for trial design:
 :::
@@ -576,7 +616,7 @@ Designs that would have taken months to discover — or never been found at all.
 :::
 
 ::: {.fragment style="margin-top: 0.4em; font-size: 0.72em; color: #5B6670;"}
-Under the hood: constrained Bayesian optimization with Gaussian process surrogates. You bring the clinical design; BATON finds the parameter settings that meet your targets. R package: [github.com/naimurashid/BATON](https://github.com/naimurashid/BATON)
+You bring the clinical design; BATON evaluates hundreds of candidate parameter settings *in silico* and returns the ones that meet your targets. R package: [github.com/naimurashid/BATON](https://github.com/naimurashid/BATON)
 :::
 :::
 
@@ -595,7 +635,7 @@ Young et al., 2026 (BATON manuscript) · github.com/naimurashid/BATON
 ::::
 
 ::: {.notes}
-Think of BATON as GPS for trial design. You tell it the destination — power, type-I error, sample-size targets, expected duration. It explores candidate designs by Monte Carlo simulation. It learns which regions of the parameter space satisfy your constraints. It focuses the search on the feasible region. And it arrives at a calibrated design. Hours instead of months. Under the hood: constrained Bayesian optimization with Gaussian process surrogates, but for this audience what matters is the input and the output. You give BATON a design template, a set of operating-characteristic targets, and a scenario grid. BATON returns a calibrated design that meets your targets. FRAMING DISCIPLINE — and this matters because the next slide is PANGEA: in the BATON manuscript, the worked example is EVOLVE, not PANGEA. BATON was developed and validated during EVOLVE activation, across breast cancer subtrials at 8 to 13 parameters. PANGEA is an application of the same tool, not what the paper reports. If anyone asks "is this published," the clean answer is: the method and its validation are under review at JASA Applications and Case Studies; PANGEA is one application of the same software. Q&A POCKETS, in order of likelihood. (1) "Is BATON really optimal?" Manuscript benchmarked it against Simon two-stage designs where the optimum is known analytically; BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. So the answer is: it recovers the analytically optimal design on problems where we can check. (2) "Can we use it?" Yes — open-source R package at github.com/naimurashid/BATON, with the companion evolveTrial package. (3) "What's the gain over grid or random search?" The paper has a head-to-head: BATON found feasible designs in 150–200 evaluations where grid and random search often found none at all.
+Think of BATON as GPS for trial design. You tell it the destination — power, type-I error, sample-size targets, expected duration. It explores candidate designs by Monte Carlo simulation. It learns which regions of the parameter space satisfy your constraints. It focuses the search on the feasible region. And it arrives at a calibrated design. Hours instead of months. Under the hood: constrained Bayesian optimization with Gaussian process surrogates, but for this audience what matters is the input and the output. You give BATON a design template, a set of operating-characteristic targets, and a scenario grid. BATON returns a calibrated design that meets your targets. FRAMING DISCIPLINE — and this matters because the next slide is PANGEA: in the BATON manuscript, the worked example is EVOLVE, not PANGEA. BATON was developed and validated during EVOLVE activation, across breast cancer subtrials at 8 to 13 parameters. PANGEA is an application of the same tool, not what the paper reports. If anyone asks "is this published," the clean answer is: the method and its validation are under review at JASA Applications and Case Studies; PANGEA is one application of the same software. Q&A POCKETS, in order of likelihood. (1) "Is BATON really optimal?" Manuscript benchmarked it against Simon two-stage designs where the optimum is known analytically; BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. So the answer is: it recovers the analytically optimal design on problems where we can check. (2) "Can we use it?" Yes — open-source R package at github.com/naimurashid/BATON, with the companion evolveTrial package. (3) "What's the gain over grid or random search?" The paper has a head-to-head: BATON found feasible designs in 150–200 evaluations where grid and random search often found none at all. (4) "Why isn't a good statistician enough?" Honest answer: BATON IS the statistician's tool. A senior statistician with BATON > the same statistician without it. What BATON removes is the months-of-recalibration tax that currently makes the right designs operationally infeasible — the team can't commit to deliver a calibrated, defensible design within the trial timeline. Manual calibration also returns one design and you hope it's robust; BATON returns the feasible region and lets you pick the most defensible point in it. Under the hood for the methodologist who asks: constrained Bayesian optimization with Gaussian process surrogates over the operating-characteristic landscape.
 :::
 
 
