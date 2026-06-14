@@ -649,7 +649,7 @@ pillars <- data.frame(
              "In-trial\nevaluation"),
   detail = c("Bayesian futility /\nefficacy boundaries\nat each interim",
              "Pre-specified signatures\n+ agnostic\ndiscovery window",
-             "Serial ctDNA, imaging,\nbiopsies on every\npatient — *do both*",
+             "Serial ctDNA, imaging,\nbiopsies on every\npatient — do both",
              "Biomarker-guided\ncohorts within the\nsame protocol"),
   fill = c("#13294B", "#4B9CD3", "#13294B", "#4B9CD3")
 )
