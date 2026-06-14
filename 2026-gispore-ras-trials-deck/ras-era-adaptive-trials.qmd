@@ -731,8 +731,8 @@ ggplot() +
 :::
 
 ::: {.column width="58%"}
-::: {.fragment style="margin-top: 0.6em; font-size: 0.92em; line-height: 1.45;"}
-- Operating characteristics (Type I, power, N, duration) depend on every parameter, **in interaction**
+::: {.fragment style="margin-top: 0.6em; font-size: 0.92em; line-height: 1.5;"}
+- **No closed-form for adaptive designs.** Unlike Simon two-stage — where Type I, power, and N come from a formula — adaptive Bayesian designs need *thousands of simulated trials per candidate*: pick parameters (efficacy thresholds, max N, cohort size, H₀ / H₁ assumptions), simulate, read off OCs. **Comparing candidates means simulating each.**
 - Design space: **8–13 dimensions** for trials we've calibrated; **20+** for combined dose + resistance. Grid search is infeasible.
 :::
 
@@ -780,7 +780,7 @@ FDA–AACR Project Optimus impact review, *JCO Onc Adv* 2025 (367 Phase I protoc
 :::
 
 ::: {.notes}
-This is the slide that opens the BATON section, and I want to land it carefully. Open with the concession explicitly: funding, accrual, biopsy logistics — these are real, and this room has lived them. I am not standing up here telling you the barrier to better trials is statistics, because that would be a biostatistician naming his own contribution as the field's central obstacle, and you would be right to push back. What I am claiming is narrower and more specific: among the barriers, calibration is the one that quietly kills good designs and the one we can actually remove. You have all watched PIs default back to 3+3 even when they knew a better design existed — the calibration cost was the hidden reason, and that is the gap BATON closes. Now the body. The methods I just walked through — modern dose-finding for combinations, longitudinal biomarker-aware adaptive designs — exist. The reason every clinical trial isn't using them is calibration cost. Every modern design has knobs: target DLT and efficacy rates, utility weights, cohort sizes, stopping rules, sample-size caps. Operating characteristics depend on every knob, in interaction. To know whether a design meets Type I, power, expected N, expected duration, OBD-selection accuracy, and biomarker-promotion error control, you simulate thousands of trial replicates per candidate. And you do this across plausible scenarios. The design space is eight to thirteen dimensions for the trials we've calibrated, and twenty-plus when you combine dose-finding with resistance tracking. A grid search is hopeless — both computationally infeasible and statistically wasteful, because most of the parameter space gives bad designs. In my group, calibrating a single modern combination Phase I/II design by hand takes a senior statistician several months of focused work. For trials that handle dose-finding AND resistance tracking simultaneously, you're at twenty-plus parameters with even more constraints. Hand-tuning doesn't just get slower; it gets infeasible. That sets up the pivot — the next slide.
+This is the slide that opens the BATON section, and I want to land it carefully. Open with the concession explicitly: funding, accrual, biopsy logistics — these are real, and this room has lived them. I am not standing up here telling you the barrier to better trials is statistics, because that would be a biostatistician naming his own contribution as the field's central obstacle, and you would be right to push back. What I am claiming is narrower and more specific: among the barriers, calibration is the one that quietly kills good designs and the one we can actually remove. You have all watched PIs default back to 3+3 even when they knew a better design existed — the calibration cost was the hidden reason, and that is the gap BATON closes. Now the body. The methods I just walked through — modern dose-finding for combinations, longitudinal biomarker-aware adaptive designs — exist. The reason every clinical trial isn't using them is calibration cost. Every modern design has knobs: target DLT and efficacy rates, utility weights, cohort sizes, stopping rules, sample-size caps. Operating characteristics depend on every knob, in interaction. To know whether a design meets Type I, power, expected N, expected duration, OBD-selection accuracy, and biomarker-promotion error control, you simulate thousands of trial replicates per candidate. And you do this across plausible scenarios. The design space is eight to thirteen dimensions for the trials we've calibrated, and twenty-plus when you combine dose-finding with resistance tracking. A grid search is hopeless — both computationally infeasible and statistically wasteful, because most of the parameter space gives bad designs. In my group, calibrating a single modern combination Phase I/II design by hand takes a senior statistician several months of focused work. For trials that handle dose-finding AND resistance tracking simultaneously, you're at twenty-plus parameters with even more constraints. Hand-tuning doesn't just get slower; it gets infeasible. CLINICAL CONTRAST TO LAND VERBALLY: Most clinicians in the room are familiar with Simon two-stage and similar frequentist designs where you can write down Type I, power, and sample size from a closed-form calculation — plug in the assumptions and out comes the design. For adaptive Bayesian designs there is no such formula. You pick a candidate design — a specific combination of efficacy thresholds, maximum sample size, cohort size, futility/efficacy stopping rules, null and alternative assumptions — then run thousands of simulated trials at that configuration to measure its actual Type I error and power. That's just ONE candidate. To compare candidates and find a good one, you simulate each. And the OCs you measure depend on all the parameters in interaction, so you can't isolate one knob and tune it. This is what makes "complex designs" actually complex — not the underlying math but the lack of a single formula. That's the cost calibration removes, and it's why BATON exists. That sets up the pivot — the next slide.
 :::
 
 
@@ -1308,22 +1308,8 @@ A discovery story from PANGEA's BATON calibration. We started this design with a
 
 ## Where this is going {.smaller}
 
-::: {style="margin-top: 0.2em; font-size: 0.9em;"}
-**Three design philosophies, in plain language.** BATON calibrates each:
-:::
-
-::: {.incremental style="margin-top: 0.4em; font-size: 0.85em; line-height: 1.45;"}
-- **Aggressive** — minimize expected N; find active drugs fastest *(statistical name: Optimal / Fleming)*
-- **Conservative** — bounded max N; strict capacity *(Minimax)*
-- **Balanced** — Pareto-optimal compromise between the two *(Admissible)*
-:::
-
-::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B; font-style: italic;"}
-Every point on the Pareto frontier is a valid design. The choice is about what your program needs most.
-:::
-
-::: {.fragment style="margin-top: 0.5em; font-size: 0.88em;"}
-**Where this lands in GI:**
+::: {style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B;"}
+BATON calibrates **aggressive**, **conservative**, or **balanced** designs — and ports across GI applications:
 :::
 
 ```{r}
@@ -1356,12 +1342,12 @@ ggplot() +
   theme_void()
 ```
 
-::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+::: {.fragment style="margin-top: 0.4em; margin-bottom: 0.5em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
 Could BATON become standard infrastructure for adaptive trial design in GI oncology?
 :::
 
 ::: {.slide-refs}
-Young et al., 2026 (BATON) · Wages 2011 (POCRM) · Lin & Yin 2017 (BOIN-COMB) · Neuenschwander 2008 (BLRM)
+Young et al., 2026 (BATON) · Wages 2011 · Lin & Yin 2017 · Neuenschwander 2008
 :::
 
 ::: {.notes}
@@ -1415,14 +1401,10 @@ Visual summary of the talk in four boxes. DOSE — select on biology and benefit
 
 ## Take-home {.smaller}
 
-::: {style="margin-top: 0.4em;"}
-1. **The RAS era needs new kinds of trials.** Biomarker-guided, dose-optimized below MTD, resistance-aware.
-2. **The methods exist.** Bayesian adaptive designs handle non-monotonic dosing, combinations, and biomarker-guided adaptation.
-3. **BATON closes the deployment gap.** Days instead of months.
-:::
-
-::: {.fragment style="margin-top: 1.2em; padding: 0.8em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-style: italic;"}
-*New RAS therapies need new kinds of trials. Methods to optimize combination doses are established. Designs that track resistance and adapt the trial in response are enrolling. What's missing is making them practical to calibrate and run.*
+::: {.incremental style="margin-top: 0.6em; font-size: 1.05em; line-height: 1.7;"}
+1. **The RAS era needs new kinds of trials** — biomarker-guided, dose-optimized, resistance-aware.
+2. **The methods exist.** Bayesian adaptive designs handle all three.
+3. **BATON makes them practical to calibrate and launch.**
 :::
 
 ::: {.notes}
