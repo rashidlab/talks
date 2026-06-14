@@ -319,90 +319,142 @@ What you may not have caught is that the FDA has formalized this — and it land
 **Utility-based dose-finding, in one sentence.**
 :::
 
-::: {style="margin-top: 0.7em; font-size: 0.95em; color: #13294B;"}
+::: {style="margin-top: 0.6em; font-size: 0.95em; color: #13294B;"}
 *"A response is worth this; a Grade 3 toxicity costs this."*
 :::
 
-::: {style="margin-top: 0.4em; font-size: 0.92em; line-height: 1.5;"}
-The team writes that utility down up front. The design — Bayesian, model-assisted — searches inside the safe envelope for the dose that **maximizes benefit-risk**, not toxicity.
+::: {style="margin-top: 0.4em; font-size: 0.88em; line-height: 1.45;"}
+The team writes that utility table down up front. Bayesian, model-assisted design then searches inside the safe envelope for the dose that **maximizes benefit-risk**, not toxicity.
 :::
 
-::: {.fragment style="margin-top: 0.8em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
-These methods predate Optimus by 5–15 years. Optimus made what they deliver the regulatory standard [@fda_optimus_guidance].
+::: {.fragment style="margin-top: 0.5em; font-size: 0.78em;"}
+**Elicited utility table** (Zhou 2019 framework) [@zhou2019uboin]:
+
+|              |   Tox  | No tox |
+|:-------------|:------:|:------:|
+| **Response** |  40    | **100** |
+| No response  |   **0**   |  60    |
 :::
 
-::: {style="margin-top: 0.5em; font-size: 0.72em; color: #5B6670; font-style: italic;"}
+::: {style="margin-top: 1.0em; font-size: 0.72em; color: #5B6670; font-style: italic;"}
 Implementations: **BOIN family** for printed decision tables [@liu2015boin; @zhou2019uboin]; **POCRM, BLRM** for combinations [@wages2011pocrm; @neuenschwander2008blrm]; **TITE-BOIN** for late-onset toxicity [@yuan2018titeboin].
 :::
 :::
 
 ::: {.column width="50%"}
 ```{r}
-#| fig.height: 4.6
-#| fig.width: 5.0
+#| fig.height: 5.4
+#| fig.width: 6.6
 #| fig.align: center
-#| fig.alt: "U-BOIN utility surface: toxicity probability (x-axis) vs efficacy probability (y-axis). Red dashed lines mark admissibility cutoffs (max acceptable toxicity 25%, min required efficacy 20%). Six dose levels DL1-DL6 plotted as points; admissible doses (inside both cutoffs) are navy, inadmissible doses are gray, and the OBD (admissible dose with highest utility) is a red diamond."
+#| fig.alt: "U-BOIN utility surface: toxicity probability (x-axis) vs efficacy probability (y-axis). Background heatmap shows utility from 0 (lower-right corner: response/no/DLT/yes) to 100 (upper-left: response/yes/DLT/no), with side bar legend. Red dashed lines mark admissibility cutoffs (max acceptable toxicity 25%, min required efficacy 20%). Six dose levels DL1-DL6 plotted as points; admissible doses are navy, inadmissible doses are gray, and the OBD (admissible dose with highest utility) is highlighted as a red diamond with an OBD label and leader arrow to the northwest."
 library(ggplot2)
 
-# Utility surface
-tox_seq <- seq(0, 0.45, length = 60)
-eff_seq <- seq(0, 0.55, length = 60)
+# Elicited utilities (per U-BOIN framework, Zhou 2019)
+u_no_no   <- 60    # no response, no DLT
+u_yes_no  <- 100   # response, no DLT  <- best
+u_no_yes  <- 0     # no response, DLT  <- worst
+u_yes_yes <- 40    # response, DLT
+
+# Utility surface u(tox_prob, eff_prob) under outcome independence
+util_fn <- function(tox, eff) {
+  (1 - eff) * (1 - tox) * u_no_no +
+  eff * (1 - tox) * u_yes_no +
+  (1 - eff) * tox * u_no_yes +
+  eff * tox * u_yes_yes
+}
+
+tox_seq <- seq(0, 0.5, length = 100)
+eff_seq <- seq(0, 0.6, length = 100)
 util_grid <- expand.grid(tox = tox_seq, eff = eff_seq)
-util_grid$utility <- pmax(0, util_grid$eff - 0.5 * util_grid$tox)
+util_grid$utility <- util_fn(util_grid$tox, util_grid$eff)
 
 # Candidate dose levels
 doses <- data.frame(
   dl  = c("DL1", "DL2", "DL3", "DL4", "DL5", "DL6"),
   tox = c(0.05, 0.10, 0.18, 0.27, 0.35, 0.42),
-  eff = c(0.10, 0.22, 0.35, 0.42, 0.40, 0.32)
+  eff = c(0.10, 0.26, 0.40, 0.45, 0.42, 0.34)
 )
 tox_max <- 0.25
 eff_min <- 0.20
 doses$admissible <- doses$tox <= tox_max & doses$eff >= eff_min
-doses$utility    <- doses$eff - 0.5 * doses$tox
+doses$utility    <- util_fn(doses$tox, doses$eff)
 doses$is_obd     <- FALSE
-doses$is_obd[ which(doses$admissible)[which.max(doses$utility[doses$admissible])] ] <- TRUE
+if (any(doses$admissible)) {
+  doses$is_obd[ which(doses$admissible)[which.max(doses$utility[doses$admissible])] ] <- TRUE
+}
+
+obd_x <- doses$tox[doses$is_obd]
+obd_y <- doses$eff[doses$is_obd]
 
 ggplot() +
-  geom_tile(data = util_grid, aes(x = tox, y = eff, fill = utility), alpha = 0.85) +
-  scale_fill_gradient(low = "#FFFFFF", high = "#4B9CD3", guide = "none") +
+  geom_tile(data = util_grid, aes(x = tox, y = eff, fill = utility)) +
+  scale_fill_gradientn(
+    colors  = c("#FFFFFF", "#FFFFFF", "#E0EDF6", "#A4C8E1", "#1F4E79", "#0A1F38"),
+    values  = c(0.00, 0.42, 0.48, 0.66, 0.88, 1.00),
+    name    = "Utility",
+    limits  = c(0, 100), breaks = c(0, 25, 50, 75, 100)
+  ) +
+  # Admissibility lines
   geom_vline(xintercept = tox_max, color = "#C75050",
-             linewidth = 1.1, linetype = "dashed") +
+             linewidth = 1.3, linetype = "dashed") +
   geom_hline(yintercept = eff_min, color = "#C75050",
-             linewidth = 1.1, linetype = "dashed") +
-  annotate("text", x = tox_max + 0.008, y = 0.55,
-           label = "Max acceptable\ntoxicity (25%)",
-           color = "#C75050", hjust = 0, fontface = "bold",
-           size = 3.2, lineheight = 0.9) +
-  annotate("text", x = 0.44, y = eff_min - 0.025,
+             linewidth = 1.3, linetype = "dashed") +
+  annotate("label", x = tox_max - 0.005, y = 0.595,
+           label = "Max acceptable toxicity (25%)",
+           color = "#C75050", hjust = 1, fontface = "bold",
+           size = 3.0, label.size = 0, fill = "#FFFFFF") +
+  annotate("label", x = 0.495, y = eff_min - 0.005,
            label = "Min required efficacy (20%)",
-           color = "#C75050", hjust = 1, fontface = "bold", size = 3.2) +
+           color = "#C75050", hjust = 1, vjust = 1, fontface = "bold",
+           size = 3.0, label.size = 0, fill = "#FFFFFF") +
+  # Non-OBD dose points
   geom_point(data = doses[!doses$is_obd, ],
              aes(x = tox, y = eff, color = admissible),
-             shape = 19, size = 9) +
+             shape = 19, size = 10) +
   scale_color_manual(values = c("TRUE" = "#13294B", "FALSE" = "#5B6670"),
                      guide = "none") +
+  # OBD diamond
   geom_point(data = doses[doses$is_obd, ],
              aes(x = tox, y = eff),
-             shape = 18, color = "#C75050", size = 13) +
+             shape = 23, fill = "#C75050", color = "white",
+             size = 14, stroke = 2) +
+  # Dose-level labels inside each point
   geom_text(data = doses, aes(x = tox, y = eff, label = dl),
-            color = "white", size = 2.8, fontface = "bold") +
-  annotate("text",
-           x = doses$tox[doses$is_obd] + 0.025,
-           y = doses$eff[doses$is_obd] + 0.035,
+            color = "white", size = 3.2, fontface = "bold") +
+  # OBD leader arrow + label, NW of DL3 (away from DL4)
+  annotate("segment",
+           x = obd_x - 0.07, y = obd_y + 0.085,
+           xend = obd_x - 0.02, yend = obd_y + 0.022,
+           color = "#C75050", linewidth = 0.9,
+           arrow = arrow(length = unit(0.25, "cm"), type = "closed")) +
+  annotate("label",
+           x = obd_x - 0.075, y = obd_y + 0.090,
            label = "OBD", color = "#C75050",
-           size = 5.4, fontface = "bold", hjust = 0) +
+           size = 6.5, fontface = "bold", hjust = 1,
+           label.size = 0, fill = "#FFFFFF") +
   labs(x = "Toxicity probability",
        y = "Efficacy probability") +
-  scale_x_continuous(limits = c(0, 0.5), expand = c(0, 0)) +
-  scale_y_continuous(limits = c(0, 0.62), expand = c(0, 0)) +
-  theme_minimal(base_size = 11) +
+  scale_x_continuous(limits = c(0, 0.5), expand = c(0, 0),
+                     breaks = seq(0, 0.5, by = 0.1)) +
+  scale_y_continuous(limits = c(0, 0.62), expand = c(0, 0),
+                     breaks = seq(0, 0.6, by = 0.1)) +
+  theme_minimal(base_size = 12) +
   theme(panel.grid = element_blank(),
-        axis.title = element_text(face = "bold", color = "#13294B"))
+        # Solid black axes + prominent tick marks
+        axis.line = element_line(color = "#000000", linewidth = 0.7),
+        axis.ticks = element_line(color = "#000000", linewidth = 0.6),
+        axis.ticks.length = unit(0.18, "cm"),
+        axis.title = element_text(face = "bold", color = "#13294B", size = 12),
+        axis.text = element_text(color = "#13294B", size = 10),
+        legend.position = "right",
+        legend.title = element_text(face = "bold", color = "#13294B", size = 11),
+        legend.text = element_text(color = "#13294B", size = 9),
+        legend.key.height = unit(1.1, "cm"),
+        legend.key.width = unit(0.45, "cm"))
 ```
 
 ::: {style="margin-top: 0.2em; font-size: 0.7em; color: #5B6670; font-style: italic; text-align: center; line-height: 1.3;"}
-Each dose-level plots on the toxicity × efficacy plane. Admissible doses (inside the red dashed lines) are evaluated for utility; the **OBD** is the admissible dose with the highest utility.
+**OBD** = admissible dose (inside red lines) with the highest utility.
 :::
 :::
 
@@ -553,7 +605,7 @@ Here's the design in a real PDAC trial at UNC. PANGEA, led by Ashwin Somasundara
 ![](images/resistance_evolution.png){width=100% fig-alt="Tumor growth, intra-tumoral heterogeneity, therapy, and drug resistance: clonal expansion under selection pressure (genetic and non-genetic mechanisms)"}
 
 ::: {style="margin-top: 0.3em; font-size: 0.7em; color: #5B6670; font-style: italic;"}
-Schematic adapted from ARPA-H ADAPT program overview materials.
+Adapted from Karagiannis & Rampias, *Cancers* 2022 [@karagiannis2022cancer].
 :::
 :::
 
@@ -564,36 +616,6 @@ Schematic adapted from ARPA-H ADAPT program overview materials.
 **Daraxonrasib monotherapy in mPDAC** (n=44, paired ctDNA): **59% show RAS-pathway resistance at progression — KRAS amplification in 36%** [@aronchik2025ena]
 :::
 
-```{r}
-#| fig.height: 2.4
-#| fig.width: 5
-#| fig.align: center
-library(ggplot2)
-buckets <- data.frame(
-  x = c(1, 3, 5),
-  y = rep(1, 3),
-  header = c("Genetic", "RTK bypass", "Non-genetic"),
-  detail = c("KRAS amp\nNRAS / BRAF /\nMAP2K1\nMYC, PI3K",
-             "RTK\nupregulation\nbypass\nsignaling",
-             "Basal ↔ classical\npartial EMT"),
-  fill = c("#13294B", "#4B9CD3", "#13294B")
-)
-ggplot() +
-  geom_tile(data = buckets, aes(x = x, y = y, fill = fill),
-            width = 1.5, height = 1.05, color = "white", linewidth = 1.5) +
-  scale_fill_identity() +
-  geom_text(data = buckets, aes(x = x, y = y + 0.32, label = header),
-            color = "white", size = 4.5, fontface = "bold") +
-  geom_text(data = buckets, aes(x = x, y = y - 0.10, label = detail),
-            color = "white", size = 3.0, lineheight = 0.95) +
-  scale_x_continuous(limits = c(0.1, 5.9), expand = c(0, 0)) +
-  scale_y_continuous(limits = c(0.3, 1.7), expand = c(0, 0)) +
-  theme_void()
-```
-
-::: {style="margin-top: 0.2em; font-size: 0.68em; color: #5B6670; text-align: center;"}
-[@aguirre2024resistance; @awad2021resistance; @wasko2024rmc7977; @zhuang2026rtk; @xu2025kinome]
-:::
 :::
 
 ::::
@@ -680,7 +702,7 @@ ARPA-H's resistance-tracking template.
 :::
 
 ::: {.fragment style="margin-top: 0.9em; font-size: 0.8em; color: #13294B; font-style: italic;"}
-ARPA-H **ADAPT** → **EVOLVE** (UNC-led; Carey PI, Rashid co-PI). **Enrolling.**
+ARPA-H **ADAPT** → **EVOLVE** (UNC-led; Carey MPI, Rashid MPI). **Enrolling.**
 :::
 :::
 
@@ -701,7 +723,7 @@ This is what a resistance-aware trial actually looks like operationally. ARPA-H 
 
 ## EVOLVE-BDT — and what this would look like in PDAC {.smaller}
 
-![](images/evolve_flow.jpg){width=92% fig-align="center" fig-alt="EVOLVE-BDT flow chart: 2L MBC patients enter, biopsy stratifies into Subgroup A-D, subgroup-stratified adaptive randomization assigns to 2L Arm 1 or Arm 2, progression triggers re-subgrouping via liquid biopsy for 3L Arm 1 or Arm 2, arms are replaced if futility or efficacy is determined and a new arm enters."}
+![](images/evolve_flow.jpg){width=100% fig-align="center" fig-alt="EVOLVE-BDT flow chart: 2L MBC patients enter, biopsy stratifies into Subgroup A-D, subgroup-stratified adaptive randomization assigns to 2L Arm 1 or Arm 2, progression triggers re-subgrouping via liquid biopsy for 3L Arm 1 or Arm 2, arms are replaced if futility or efficacy is determined and a new arm enters."}
 
 ::: {style="margin-top: 0.2em; text-align: center; font-size: 0.7em; color: #5B6670; font-style: italic;"}
 TBCRC EVOLVE-BDT flow — biomarker-stratified subtrials, adaptive randomization, in-trial arm replacement on futility or efficacy.
