@@ -163,7 +163,7 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 
 ## Why combinations break the rules you grew up on {.smaller}
 
-- **3+3 was built for single-agent chemo** [@letourneau2009]. It assumes monotonic dose-toxicity, additive joint toxicity, Cycle-1 DLTs, and one-drug-at-a-time titration. **Combinations violate all four.**
+- **3+3 was built for single-agent cytotoxics** [@letourneau2009] — assuming monotonic dose-toxicity, Cycle-1-observable DLTs, and a single dose dimension. **Combinations break all three, and 3+3 has no joint-surface model at all.**
 - **In practice, combination dose-finding collapses to one drug.** Pick agent A's dose, fix it, add agent B — the dominant pattern. Even when both drugs *are* dose-escalated, designs treat the combinations as independent: in Rivière's review of 162 such trials, **88% used 3+3 designs developed for single-agent evaluation** — no joint-surface modeling [@riviere2015combo; @harrington2013dual].
 
 ::: {.slide-refs}
@@ -178,21 +178,21 @@ Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
 ## The Amgen case: sotorasib + pembrolizumab {.smaller}
 
 ::: {style="margin-top: 0.4em; font-size: 1.0em;"}
-**Same sponsor, two different designs.**
+**Same sponsor, two different designs:**
 :::
 
-- **Monotherapy (CodeBreaK 100):** Bayesian model-based design, escalation guided across the single-agent dose-response surface.
-- **Combination (sotorasib + pembrolizumab):** IO dose fixed at standard, only sotorasib varied across cohorts. The joint surface was never modeled.
+- **Monotherapy (CodeBreaK 100):** Bayesian model-based, single-agent surface
+- **Combination:** IO dose fixed, only sotorasib varied — joint surface never modeled
 
 ::: {.fragment style="margin-top: 0.6em;"}
-The defining toxicity proved the assumptions wrong twice:
+The defining toxicity:
 
-- **Severe *immune-mediated* hepatotoxicity, not predictable from the single agent** — sotorasib's pro-inflammatory TME effect potentiates pembro's latent T-cell response
-- **88% of Grade 3-4 events fell outside the Cycle 1 DLT window** [@codebreak_io2022] — ICI-toxicity kinetics, not cytotoxic kinetics; same mechanism, second visible failure
+- Severe **immune-mediated** hepatotoxicity, not predictable from the single agent
+- **88%** of Grade 3-4 events outside the Cycle 1 DLT window [@codebreak_io2022]
 :::
 
 ::: {.fragment style="margin-top: 0.5em; margin-bottom: 0.4em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; color: #13294B; font-size: 0.85em; text-align: center;"}
-**Three of the four 3+3 assumptions fail at once:** non-additive toxicity, late-onset toxicity, one-drug-at-a-time titration.
+**What 3+3 was never built to handle, all at once:** joint surface unsearched, non-additive toxicity, late-onset toxicity.
 :::
 
 ::: {.slide-refs}
@@ -200,7 +200,7 @@ Hong et al., *NEJM* 2020 (CodeBreaK 100) · Li et al., *JTO* 2022 (WCLC OA03.06)
 :::
 
 ::: {.notes}
-This is the worked example of the principle on the previous slide. The Amgen case is the clean one — and notice it is not a competence problem. Same sponsor used a model-based Bayesian logistic regression for sotorasib monotherapy in CodeBreaK 100. But for the sotorasib + pembrolizumab combination in CodeBreaK 100/101, they fixed the IO dose, explored only sotorasib across cohorts, and never modeled the two-drug surface. Even the most sophisticated sponsors collapse the combination to a one-drug search — which is the gap BATON closes. The combination's defining toxicity proved the point twice over: severe hepatotoxicity you could not predict from the single agent, and 88% of the Grade 3-4 events landed outside the 21-day DLT window — so a Cycle 1 design would have missed most of it. Q&A POCKET — where 88% comes from. The 22 of 25 numerator and denominator is the audit-ready figure. Source: Li et al WCLC 2022 OA03.06 / JTO 2022 supplement. If pressed, this single example demonstrates three of the four 3+3 assumptions failing at once: joint surface unsearched (combination not modeled), toxicity non-additive (synergistic hepatotoxicity), and late-onset toxicity outside Cycle 1 (88% out-of-window). The fourth assumption — monotonic dose-toxicity — wasn't directly tested here because they didn't search the surface. Q&A POCKET — "Why didn't they use a late-onset-aware design?" TITE-BOIN (Yuan 2018) and TITE-CRM (Cheung 2000) handle late-onset toxicity by extending the assessment window beyond Cycle 1 and allowing dose decisions while earlier cohorts' toxicity data are still pending. The methods have existed for over five years. But no published RAS Phase I trial has adopted them: sotorasib (CodeBreaK 100) used BLRM with 21-day cycles; adagrasib (KRYSTAL-1) used mTPI with standard Cycle-1; daraxonrasib (RMC-6236) uses standard Bayesian dose-escalation with 21-day cycles. This is the design-framework layer of the deck's deployment-gap thesis: the tool exists, the empirical case for needing it is well-established, adoption is the gap. Q&A POCKET — mechanism. The severe hepatotox is hypothesized to be immune-mediated, not pharmacologic. Sotorasib's pro-inflammatory effect on the tumor microenvironment can re-activate the latent T-cell response that pembro left in place — biopsies in patients with severe sotorasib + ICI hepatotox show patterns consistent with ICI-induced hepatitis. Sequencing matters: in a real-world series, 58% Grade ≥3 hepatotox occurred when sotorasib started within 30 days of prior ICI. Same immune mechanism explains both "unpredictable from single agent" and "late-onset" — ICI-mediated toxicity has weeks-to-months kinetics, not days. Sources: JTO 2023 brief report (Begum et al), JCO PO 2024 case series (Adagrasib after sotorasib-related hepatotox).
+This is the worked example of the principle on the previous slide. The Amgen case is the clean one — and notice it is not a competence problem. Same sponsor used a model-based Bayesian logistic regression for sotorasib monotherapy in CodeBreaK 100. But for the sotorasib + pembrolizumab combination in CodeBreaK 100/101, they fixed the IO dose, explored only sotorasib across cohorts, and never modeled the two-drug surface. Even the most sophisticated sponsors collapse the combination to a one-drug search — which is the gap BATON closes. The combination's defining toxicity proved the point twice over: severe hepatotoxicity you could not predict from the single agent, and 88% of the Grade 3-4 events landed outside the 21-day DLT window — so a Cycle 1 design would have missed most of it. Q&A POCKET — where 88% comes from. The 22 of 25 numerator and denominator is the audit-ready figure. Source: Li et al WCLC 2022 OA03.06 / JTO 2022 supplement. If pressed, this single example demonstrates everything 3+3 was never built to handle, all at once: joint surface unsearched (combination not modeled — 3+3 has no joint-surface model), toxicity non-additive (synergistic hepatotoxicity), and late-onset toxicity outside Cycle 1 (88% out-of-window — 3+3 assumes Cycle-1-observable DLTs). Note: don't claim this violates monotonic dose-toxicity — they didn't search the surface, so we can't show non-monotonicity here. Q&A POCKET — "Why didn't they use a late-onset-aware design?" TITE-BOIN (Yuan 2018) and TITE-CRM (Cheung 2000) handle late-onset toxicity by extending the assessment window beyond Cycle 1 and allowing dose decisions while earlier cohorts' toxicity data are still pending. The methods have existed for over five years. But no published RAS Phase I trial has adopted them: sotorasib (CodeBreaK 100) used BLRM with 21-day cycles; adagrasib (KRYSTAL-1) used mTPI with standard Cycle-1; daraxonrasib (RMC-6236) uses standard Bayesian dose-escalation with 21-day cycles. This is the design-framework layer of the deck's deployment-gap thesis: the tool exists, the empirical case for needing it is well-established, adoption is the gap. Q&A POCKET — mechanism. The severe hepatotox is hypothesized to be immune-mediated, not pharmacologic. Sotorasib's pro-inflammatory effect on the tumor microenvironment can re-activate the latent T-cell response that pembro left in place — biopsies in patients with severe sotorasib + ICI hepatotox show patterns consistent with ICI-induced hepatitis. Sequencing matters: in a real-world series, 58% Grade ≥3 hepatotox occurred when sotorasib started within 30 days of prior ICI. Same immune mechanism explains both "unpredictable from single agent" and "late-onset" — ICI-mediated toxicity has weeks-to-months kinetics, not days. Sources: JTO 2023 brief report (Begum et al), JCO PO 2024 case series (Adagrasib after sotorasib-related hepatotox).
 :::
 
 
