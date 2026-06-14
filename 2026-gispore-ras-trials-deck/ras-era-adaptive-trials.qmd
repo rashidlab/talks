@@ -150,26 +150,26 @@ Three numbers worth keeping in mind. Across the full cohort of 168 patients on d
 
 ## Biomarker-driven combinations are the next move {.smaller}
 
-![](images/ras-rtk-feedback.svg){width=82% fig-align="center" fig-alt="Schematic: daraxonrasib drives RTK upregulation on PDAC cell surface, a compensatory feedback that is both a resistance mechanism and a combination target"}
-
 :::: {.columns}
 
-::: {.column width="55%"}
-::: {style="font-size: 0.92em; line-height: 1.45;"}
-Daraxonrasib drives **RTK upregulation** on PDAC cell surface — the mechanistic case for biomarker-driven, resistance-preemptive combinations [@zhuang2026rtk].
+::: {.column width="50%"}
+::: {.incremental style="font-size: 0.92em; line-height: 1.5;"}
+- Daraxonrasib drives **RTK upregulation** on PDAC cell surface — the mechanistic case for biomarker-driven, resistance-preemptive combinations [@zhuang2026rtk]
+- **1L combination cohort** (daraxonrasib **200 mg** + GnP, n=40) [@rmcgi102]:
+  - ORR: **58%** · DCR: **90%** · 6-mo PFS: **84%** · 6-mo OS: **90%**
 :::
 :::
 
-::: {.column width="45%"}
-::: {style="font-size: 0.92em; line-height: 1.45;"}
-**1L combination cohort** (daraxonrasib **200 mg** + GnP, n=40) [@rmcgi102]: ORR **58%** · DCR **90%** · 6-mo PFS **84%** · 6-mo OS **90%**.
-:::
+::: {.column width="50%"}
+![](images/ras-rtk-feedback.svg){width=100% fig-align="center" fig-alt="Schematic: daraxonrasib drives RTK upregulation on PDAC cell surface, a compensatory feedback that is both a resistance mechanism and a combination target"}
 :::
 
 ::::
 
+::: {style="margin-top: 0.6em;"}
 ::: {.slide-refs}
 Zhuang et al., *Cancer Res* 2026 (AACR RAS) · Wolpin et al., AACR 2026 LB407
+:::
 :::
 
 ::: {.notes}
@@ -186,12 +186,14 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 
 ## Why combinations break the rules you grew up on {.smaller}
 
-- **3+3 was built for single-agent cytotoxics** [@letourneau2009]:
+::: {.incremental}
+- **MTD-only dose-finding was built for single-agent cytotoxics** [@letourneau2009] — 3+3 is the canonical example; CRM, BLRM, mTPI, BOIN all share the paradigm. Assumptions:
   - Monotonic dose-toxicity
   - Cycle-1-observable DLTs
   - Single dose dimension
-- **3+3 has no joint-surface model.** Combinations strain all three assumptions; the structural failure is the missing model.
+- **No joint-surface model.** Combinations strain all three assumptions; the structural failure is the missing model.
 - **In practice:** pick A's dose, fix it, add B — the dominant pattern. Rivière's review of 162 combination trials: **88% used 3+3 designs** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
+:::
 
 ::: {.slide-refs}
 Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
@@ -219,7 +221,7 @@ The defining toxicity:
 :::
 
 ::: {.fragment style="margin-top: 0.5em; margin-bottom: 0.4em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; color: #13294B; font-size: 0.85em; text-align: center;"}
-**What 3+3 was never built to handle, all at once:** joint surface unsearched, non-additive toxicity, late-onset toxicity.
+**What MTD-only dose-finding was never built to handle, all at once:** joint surface unsearched, non-additive toxicity, late-onset toxicity.
 :::
 
 ::: {.slide-refs}
@@ -231,7 +233,7 @@ This is the worked example of the principle on the previous slide. The Amgen cas
 :::
 
 
-## Why MTD doesn't fit targeted agents and immunotherapies {.smaller}
+## Why MTD-only dose-finding doesn't fit targeted agents and immunotherapies {.smaller}
 
 ::: {style="text-align: center; margin-top: 0em;"}
 <img src="images/dose-response-trio.svg" style="width: 90%; max-width: 1080px; height: auto;" alt="Three dose-response shapes side by side: cytotoxic chemo (monotone), targeted agent (plateau), IO/CAR-T/bispecific (umbrella)"/>
@@ -248,7 +250,7 @@ The reason MTD fails for these agents is mechanistic, and it has two flavors. I'
 :::
 
 
-## The cost of MTD-only thinking {.smaller}
+## The cost of MTD-only dose-finding {.smaller}
 
 ::: {.incremental style="margin-top: 0.5em;"}
 - **Sotorasib** (KRAS G12C, first-in-class, approved 2021) [@hong2020sotorasib]:
@@ -277,11 +279,11 @@ The empirical evidence that this is not just theoretical. The FDA-AACR Strategie
 
 ::: {.column width="55%"}
 - FDA final guidance, 2024 [@fda_optimus_guidance]
-- **MTD → an OBD optimized on benefit-risk**
 - Sponsors must **study more than one dose** and justify on efficacy and safety
+- **Maximum Tolerated Dose → Optimal Biological Dose (OBD)** — a dose optimized on benefit-risk
 
-::: {.fragment style="margin-top: 0.8em; padding: 0.55em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
-Not just a methodological choice — the FDA's stated preference.
+::: {.fragment style="margin-top: 0.8em; padding: 0.55em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
+**OBD** = the dose that **optimizes the efficacy–toxicity trade-off** — chosen by weighing the value of a response against the cost of toxicity, not by escalating until DLTs cap the dose [@zhou2019uboin; @lin2020boin12].
 :::
 
 ::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.8em; color: #13294B;"}
@@ -308,10 +310,117 @@ What you may not have caught is that the FDA has formalized this — and it land
 :::
 
 
+## How OBD selection actually works {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {style="margin-top: 0.4em; font-size: 1.05em; color: #13294B; font-weight: 600;"}
+**Utility-based dose-finding, in one sentence.**
+:::
+
+::: {style="margin-top: 0.7em; font-size: 0.95em; color: #13294B;"}
+*"A response is worth this; a Grade 3 toxicity costs this."*
+:::
+
+::: {style="margin-top: 0.4em; font-size: 0.92em; line-height: 1.5;"}
+The team writes that utility down up front. The design — Bayesian, model-assisted — searches inside the safe envelope for the dose that **maximizes benefit-risk**, not toxicity.
+:::
+
+::: {.fragment style="margin-top: 0.8em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
+These methods predate Optimus by 5–15 years. Optimus made what they deliver the regulatory standard [@fda_optimus_guidance].
+:::
+
+::: {style="margin-top: 0.5em; font-size: 0.72em; color: #5B6670; font-style: italic;"}
+Implementations: **BOIN family** for printed decision tables [@liu2015boin; @zhou2019uboin]; **POCRM, BLRM** for combinations [@wages2011pocrm; @neuenschwander2008blrm]; **TITE-BOIN** for late-onset toxicity [@yuan2018titeboin].
+:::
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig.height: 4.6
+#| fig.width: 5.0
+#| fig.align: center
+#| fig.alt: "U-BOIN utility surface: toxicity probability (x-axis) vs efficacy probability (y-axis). Red dashed lines mark admissibility cutoffs (max acceptable toxicity 25%, min required efficacy 20%). Six dose levels DL1-DL6 plotted as points; admissible doses (inside both cutoffs) are navy, inadmissible doses are gray, and the OBD (admissible dose with highest utility) is a red diamond."
+library(ggplot2)
+
+# Utility surface
+tox_seq <- seq(0, 0.45, length = 60)
+eff_seq <- seq(0, 0.55, length = 60)
+util_grid <- expand.grid(tox = tox_seq, eff = eff_seq)
+util_grid$utility <- pmax(0, util_grid$eff - 0.5 * util_grid$tox)
+
+# Candidate dose levels
+doses <- data.frame(
+  dl  = c("DL1", "DL2", "DL3", "DL4", "DL5", "DL6"),
+  tox = c(0.05, 0.10, 0.18, 0.27, 0.35, 0.42),
+  eff = c(0.10, 0.22, 0.35, 0.42, 0.40, 0.32)
+)
+tox_max <- 0.25
+eff_min <- 0.20
+doses$admissible <- doses$tox <= tox_max & doses$eff >= eff_min
+doses$utility    <- doses$eff - 0.5 * doses$tox
+doses$is_obd     <- FALSE
+doses$is_obd[ which(doses$admissible)[which.max(doses$utility[doses$admissible])] ] <- TRUE
+
+ggplot() +
+  geom_tile(data = util_grid, aes(x = tox, y = eff, fill = utility), alpha = 0.85) +
+  scale_fill_gradient(low = "#FFFFFF", high = "#4B9CD3", guide = "none") +
+  geom_vline(xintercept = tox_max, color = "#C75050",
+             linewidth = 1.1, linetype = "dashed") +
+  geom_hline(yintercept = eff_min, color = "#C75050",
+             linewidth = 1.1, linetype = "dashed") +
+  annotate("text", x = tox_max + 0.008, y = 0.55,
+           label = "Max acceptable\ntoxicity (25%)",
+           color = "#C75050", hjust = 0, fontface = "bold",
+           size = 3.2, lineheight = 0.9) +
+  annotate("text", x = 0.44, y = eff_min - 0.025,
+           label = "Min required efficacy (20%)",
+           color = "#C75050", hjust = 1, fontface = "bold", size = 3.2) +
+  geom_point(data = doses[!doses$is_obd, ],
+             aes(x = tox, y = eff, color = admissible),
+             shape = 19, size = 9) +
+  scale_color_manual(values = c("TRUE" = "#13294B", "FALSE" = "#5B6670"),
+                     guide = "none") +
+  geom_point(data = doses[doses$is_obd, ],
+             aes(x = tox, y = eff),
+             shape = 18, color = "#C75050", size = 13) +
+  geom_text(data = doses, aes(x = tox, y = eff, label = dl),
+            color = "white", size = 2.8, fontface = "bold") +
+  annotate("text",
+           x = doses$tox[doses$is_obd] + 0.025,
+           y = doses$eff[doses$is_obd] + 0.035,
+           label = "OBD", color = "#C75050",
+           size = 5.4, fontface = "bold", hjust = 0) +
+  labs(x = "Toxicity probability",
+       y = "Efficacy probability") +
+  scale_x_continuous(limits = c(0, 0.5), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 0.62), expand = c(0, 0)) +
+  theme_minimal(base_size = 11) +
+  theme(panel.grid = element_blank(),
+        axis.title = element_text(face = "bold", color = "#13294B"))
+```
+
+::: {style="margin-top: 0.2em; font-size: 0.7em; color: #5B6670; font-style: italic; text-align: center; line-height: 1.3;"}
+Each dose-level plots on the toxicity × efficacy plane. Admissible doses (inside the red dashed lines) are evaluated for utility; the **OBD** is the admissible dose with the highest utility.
+:::
+:::
+
+::::
+
+::: {.slide-refs}
+Liu & Yuan 2015 · Zhou, Lee & Yuan 2019 (U-BOIN) · FDA Optimus Guidance
+:::
+
+::: {.notes}
+The how, in one sentence: before the trial starts, the team writes down a utility — how do you weigh a response against a Grade 3 toxicity? — and the design searches inside the safe toxicity envelope for the dose that maximizes that utility. (Optimus already established the WHAT on the previous regulatory slide; this slide answers HOW.) The utility becomes the navigation system. The design uses Bayesian / model-assisted rules to keep the trial inside a safe toxicity envelope while searching for the dose that maximizes the agreed-upon benefit-risk utility. What comes out is not a maximum tolerated dose — it's an OBD with a characterized benefit-risk profile. That's the dose Project Optimus is asking sponsors to deliver. PREDATES OPTIMUS — important to land verbally: U-BOIN was published in 2019, BOIN in 2015, TITE-BOIN in 2018, POCRM in 2011, BLRM in 2008. Optimus is 2021/2024. So Optimus didn't create these designs — it codified what they were already doing. The regulatory shift validated 5-15 years of methodological work. ACRONYM POCKETS for Q&A — keep them OFF the visible slide. The BOIN family is the workhorse implementation: BOIN itself for single-agent (Liu and Yuan 2015), BOIN-COMB for drug combinations, TITE-BOIN for late-onset toxicity, BOIN12 for utility-based phase I/II, U-BOIN for the explicit two-stage utility design. POCRM (Wages and Conaway) and BLRM (Neuenschwander, Branson, Gsponer) are the established combination alternatives. mTPI is another common model-assisted variant; PIPE is a dual-agent product-of-independent-Beta-probabilities design (Mander 2015) for completeness. If a methodologist asks "which one?" the answer is: in the U.S. and academic groups, BOIN/U-BOIN dominate for the printed-decision-table operational simplicity; Novartis uses BLRM by default; the rest are specialty tools picked for specific constraints. Credibility line — leading RAS Phase I programs already run on Bayesian designs: sotorasib used BLRM in CodeBreaK 100, adagrasib used mTPI in KRYSTAL-1. RAS Phase I uniformly uses Cycle-1 windows; none have adopted TITE-variants despite the sotorasib + pembro late-tox finding — that's a Q&A pocket from slide 9. For this audience the one-sentence takeaway is: modern Phase I optimizes benefit-risk instead of maximizing toxicity. Don't recite the acronym list out loud; only deploy it if a methodologist asks. Next slide extends this from single-agent to combinations.
+:::
+
+
 ## Combination dose selection in RAS is harder {.smaller}
 
 ::: {style="margin-top: 0.3em; font-size: 1.1em; text-align: center; color: #13294B; font-weight: 700;"}
-**Combinations make MTD logic worse on every axis.**
+**Combinations make MTD-only dose-finding worse on every axis.**
 :::
 
 :::: {.columns}
@@ -325,9 +434,9 @@ library(ggplot2)
 n <- 60
 grid <- expand.grid(A = seq(0, 1, length = n), B = seq(0, 1, length = n))
 grid$eff <- pmax(0, 0.85 - 1.6 * ((grid$A - 0.32)^2 + (grid$B - 0.42)^2))
-mono_A <- data.frame(A = 0.68, B = 0.02, lab = "Monotherapy A\noptimum")
-mono_B <- data.frame(A = 0.02, B = 0.75, lab = "Monotherapy B\noptimum")
-combo  <- data.frame(A = 0.32, B = 0.42, lab = "Combination\noptimum")
+mono_A <- data.frame(A = 0.68, B = 0.02, lab = "Monotherapy A\nOBD")
+mono_B <- data.frame(A = 0.02, B = 0.75, lab = "Monotherapy B\nOBD")
+combo  <- data.frame(A = 0.32, B = 0.42, lab = "Combination\nOBD")
 
 ggplot() +
   geom_tile(data = grid, aes(x = A, y = B, fill = eff)) +
@@ -368,15 +477,15 @@ ggplot() +
 ```
 
 ::: {style="margin-top: 0.1em; font-size: 0.7em; color: #5B6670; font-style: italic; text-align: center;"}
-Schematic. The combination optimum sits below both single-agent doses; single-agent data alone cannot reconstruct the contour.
+Conceptual schematic of the benefit-risk surface. The combination OBD sits below both single-agent OBDs; single-agent data alone cannot reconstruct the contour.
 :::
 :::
 
 ::: {.column width="45%"}
 ::: {.fragment style="margin-top: 0.6em; font-size: 0.92em; line-height: 1.5;"}
-- The optimum can sit **below both single-agent doses**
+- The combination OBD can sit **below both single-agent OBDs**
 - Single-agent data **cannot reconstruct** the joint surface
-- For RAS, the **toxicity headroom is already spent** at the monotherapy dose
+- For RAS, the **toxicity margin is already spent** at the monotherapy dose
 :::
 
 ::: {.fragment style="margin-top: 0.8em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.95em; text-align: center;"}
@@ -395,48 +504,7 @@ Hong et al., *NEJM* 2020 · Wolpin et al., *NEJM* 2026 (RMC-6236-001) [@hong2020
 :::
 
 ::: {.notes}
-This is the bridge from the empirical cost — sotorasib at the MTD-only dose, daraxonrasib's already-spent headroom at 300 mg — into the methodological answer that follows. I am deliberately not re-establishing single-agent MTD failure here; the last three slides have already done that work. The job of this slide is to name what changes when you go from one drug to two. Three things to land verbally, supporting the one visible sentence. First, you are no longer choosing one dose, you are choosing a joint pair, and the single-agent margins do not reconstruct the surface — sotorasib's 960-versus-240 result tells you the surface looks different from what the single-dose escalation suggested. Second, effects interact on both efficacy and toxicity — the synergy point from assumption 4 — so the joint optimum can sit below either monotherapy dose. Third, and this is the RAS-specific part: the monotherapy toxicity is already substantial, 34% G≥3 at 300 mg, 48% dose modification, so you start the combination with less headroom to spend. The first combination cohort already moved daraxonrasib down to 200 mg with GnP, but we do not know whether 200 mg is right or whether 150 mg or some other dose is right given other partners. The "fix what you know, search what you don't" callout is the operational rule: reduce to one drug only when the fixed component's dose is externally established — spend the search on the drug whose combination-optimal dose is genuinely uncertain. That is a dose-finding question that requires designs built for it. Which leads into the next slide.
-:::
-
-
-## How OBD selection actually works {.smaller}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-::: {style="margin-top: 0.4em; font-size: 1.05em; color: #13294B; font-weight: 600;"}
-**Utility-based dose-finding, in one sentence.**
-:::
-
-::: {style="margin-top: 0.7em; font-size: 0.95em; color: #13294B;"}
-*"A response is worth this; a Grade 3 toxicity costs this."*
-:::
-
-::: {style="margin-top: 0.4em; font-size: 0.92em; line-height: 1.5;"}
-The team writes that utility down up front. The design — Bayesian, model-assisted — searches inside the safe envelope for the dose that **maximizes benefit-risk**, not toxicity.
-:::
-
-::: {.fragment style="margin-top: 0.8em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
-Delivers the OBD Project Optimus calls for [@fda_optimus_guidance] — where randomized dose comparison can't scale to combinations.
-:::
-
-::: {style="margin-top: 0.5em; font-size: 0.72em; color: #5B6670; font-style: italic;"}
-Implementations: BOIN family [@liu2015boin; @zhou2019uboin] for printed-decision-table simplicity; POCRM, BLRM for combinations [@wages2011pocrm; @neuenschwander2008blrm]; **TITE-BOIN** [@yuan2018titeboin] for late-onset toxicity. RAS Phase I uniformly uses Cycle-1 windows — sotorasib BLRM [@hong2020sotorasib], adagrasib mTPI in KRYSTAL-1 [@ou2022adagrasib] — none have adopted TITE-variants despite the sotorasib + pembro late-tox finding.
-:::
-:::
-
-::: {.column width="50%"}
-![](images/uboin-utility-heatmap.svg){fig-alt="U-BOIN utility heatmap: toxicity × efficacy plane with admissibility lines and OBD region marked"}
-:::
-
-::::
-
-::: {.slide-refs}
-Liu & Yuan 2015 · Zhou, Lee & Yuan 2019 (U-BOIN) · FDA Optimus Guidance
-:::
-
-::: {.notes}
-The how, in one sentence: before the trial starts, the team writes down a utility — how do you weigh a response against a Grade 3 toxicity? — and the design searches inside the safe toxicity envelope for the dose that maximizes that utility. (Optimus already established the WHAT on the previous regulatory slide; this slide answers HOW.) The utility becomes the navigation system. The design uses Bayesian / model-assisted rules to keep the trial inside a safe toxicity envelope while searching for the dose that maximizes the agreed-upon benefit-risk utility. What comes out is not a maximum tolerated dose — it's an OBD with a characterized benefit-risk profile. That's the dose Project Optimus is asking sponsors to deliver, and it's what you carry into Phase II combinations. ACRONYM POCKETS for Q&A — keep them OFF the visible slide. The BOIN family is the workhorse implementation: BOIN itself for single-agent (Liu and Yuan 2015), BOIN-COMB for drug combinations, TITE-BOIN for late-onset toxicity, BOIN12 for utility-based phase I/II, U-BOIN for the explicit two-stage utility design. POCRM (Wages and Conaway) and BLRM (Neuenschwander, Branson, Gsponer) are the established combination alternatives. mTPI is another common model-assisted variant; PIPE is a dual-agent product-of-independent-Beta-probabilities design (Mander 2015) for completeness. If a methodologist asks "which one?" the answer is: in the U.S. and academic groups, BOIN/U-BOIN dominate for the printed-decision-table operational simplicity; Novartis uses BLRM by default; the rest are specialty tools picked for specific constraints. Credibility line — leading RAS Phase I programs already run on Bayesian designs: sotorasib used BLRM in CodeBreaK 100, adagrasib used mTPI in KRYSTAL-1. The shift Project Optimus formalized is already industry standard for RAS monotherapy. For this audience the one-sentence takeaway is: modern Phase I optimizes benefit-risk instead of maximizing toxicity. Don't recite the acronym list out loud; only deploy it if a methodologist asks.
+The previous slide showed HOW OBD selection works for a single agent. This slide extends it to combinations. The job of this slide is to name what changes when you go from one drug to two. Three things to land verbally. First, you are no longer choosing one dose, you are choosing a joint pair (A, B), and the single-agent OBDs do not reconstruct the joint surface — sotorasib's 960-versus-240 result tells you the surface looks different from what the single-dose escalation suggested. Second, effects interact on both efficacy and toxicity, so the joint OBD can sit BELOW either monotherapy OBD on each axis (shown by the dotted projections in the schematic). Third, and this is the RAS-specific part: the monotherapy toxicity is already substantial — 34% G≥3 at 300 mg, 48% dose modification — so you start the combination with less margin to spend. The first combination cohort already moved daraxonrasib down to 200 mg with GnP, but we do not know whether 200 mg is right or whether 150 mg or some other dose is right given other partners. The "fix what you know, search what you don't" callout is the operational rule: reduce to one drug only when the fixed component's dose is externally established — spend the search on the drug whose combination-optimal dose is genuinely uncertain. SCHEMATIC DISCIPLINE: the chart shows efficacy contours only as a conceptual proxy for benefit-risk. The actual OBD is on a benefit-risk surface (efficacy AND toxicity, per slide 13). Don't claim the chart shows the literal joint efficacy-toxicity utility; it's a one-dimensional reduction for visual purposes. Next slide: PANGEA as the applied trial.
 :::
 
 
