@@ -168,8 +168,8 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
   - Monotonic dose-toxicity
   - Cycle-1-observable DLTs
   - Single dose dimension
-- **Combinations break all three** — and 3+3 has no joint-surface model at all.
-- **In practice:** pick A's dose, fix it, add B — the dominant pattern. Rivière's review of 162 combination trials: **88% used single-agent designs** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
+- **3+3 has no joint-surface model.** Combinations strain all three assumptions; the structural failure is the missing model.
+- **In practice:** pick A's dose, fix it, add B — the dominant pattern. Rivière's review of 162 combination trials: **88% used 3+3 designs** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
 
 ::: {.slide-refs}
 Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
@@ -1024,63 +1024,24 @@ p_baton <- ggplot() +
 grid.arrange(p_grid, p_baton, ncol = 2)
 ```
 
-::: {style="margin-top: 0.4em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-**70% fewer evaluations** — minutes instead of days.
+::: {style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
+**70% fewer evaluations** — and the same optimum.
 :::
 
-::: {style="margin-top: 0.3em; text-align: center; font-size: 0.75em; color: #5B6670; font-style: italic;"}
-Color: design quality at each parameter combination (green = meets OC targets, red = does not). Path: BATON's sequential evaluations converging on the feasible optimum.
+::: {.fragment style="margin-top: 0.4em; font-size: 0.88em;"}
+| | Manual | BATON |
+|:---|:---|:---|
+| **Process** | Trial-and-error | Systematic search |
+| **Wall-clock** | Weeks to months | Hours |
+| **Output** | One design, often under-validated | Full feasible region + FDA-grade audit trail |
 :::
 
-::: {.notes}
-This is what's happening underneath the GPS metaphor. On the left: a grid search — 100 designs evaluated on a 10-by-10 lattice across two parameters. Most are nowhere near the feasible region. On the right: BATON. Same parameter space, same quality landscape underneath, but BATON only evaluates 30 designs — and it converges on the same optimum because each design choice is informed by what the previous evaluations revealed. Seventy percent fewer evaluations. Each evaluation is thousands of Monte Carlo trial replicates, so saving 70 percent of the search is the difference between hours and weeks. This is a 2D illustration; PANGEA Phase II's design space is 4-dimensional and the EVOLVE designs go up to 8 or 13 dimensions, where the search-efficiency advantage compounds rapidly.
-:::
-
-
-## Traditional calibration vs BATON {.smaller}
-
-:::: {.columns}
-
-::: {.column width="48%"}
-::: {style="text-align: center; font-weight: 600; color: #13294B; font-size: 1.0em; margin-bottom: 0.4em;"}
-Manual approach
-:::
-
-| Aspect | Limitation |
-|:---|:---|
-| Process | Trial-and-error |
-| Duration | Weeks to months |
-| Scope | One design at a time |
-| Reproducibility | Statistician-dependent |
-| Documentation | Often incomplete |
-| Regulatory risk | Variable |
-:::
-
-::: {.column width="48%"}
-::: {.fragment}
-::: {style="text-align: center; font-weight: 600; color: #4B9CD3; font-size: 1.0em; margin-bottom: 0.4em;"}
-BATON
-:::
-
-| Aspect | Capability |
-|:---|:---|
-| Process | Systematic search |
-| Duration | Hours wall-clock |
-| Scope | Hundreds evaluated |
-| Reproducibility | Deterministic (seeded) |
-| Documentation | Complete FDA audit trail |
-| Regulatory risk | Documented |
-:::
-:::
-
-::::
-
-::: {.fragment style="margin-top: 0.9em; text-align: center; font-style: italic; color: #13294B; font-size: 0.95em;"}
-Same clinical question. Same statistical constraints. The bottleneck wasn't the design — it was the calibration.
+::: {.fragment style="margin-top: 0.5em; text-align: center; font-style: italic; color: #13294B; font-size: 0.9em;"}
+Same clinical question. Same statistical constraints. The bottleneck was the calibration.
 :::
 
 ::: {.notes}
-Same clinical question. Same statistical constraints. The bottleneck was never the design itself — it was the calibration. Hand-tuning is trial-and-error: takes days to weeks of a senior statistician's time, varies by who's doing it, produces incomplete documentation, leaves regulatory risk on the table. BATON systematically searches hundreds of designs in hours, with deterministic seeding and a complete FDA audit trail. The methodology shift Project Optimus formalized — adaptive Bayesian designs as the standard — is the destination. BATON is what makes getting there feasible at scale.
+The heatmap is the visual proof: grid search evaluates 100 designs spread across a 10x10 lattice; BATON evaluates 30 sequentially and converges on the same optimum because each evaluation informs the next. 70% fewer evaluations. Each evaluation is thousands of Monte Carlo trial replicates, so saving 70% of the search is the difference between hours and weeks. This is a 2D illustration; PANGEA Phase II's design space is 4-dimensional and EVOLVE designs go up to 8-13 dimensions, where the efficiency advantage compounds. The comparison row below tells the operational story: manual is trial-and-error with one design at a time, no reproducibility guarantee, often-incomplete documentation, variable regulatory risk; BATON is systematic, deterministic (seeded), hundreds evaluated, complete FDA audit trail. Same clinical question, same statistical constraints — the bottleneck was never the design itself, it was the calibration. The methodology shift Project Optimus formalized — adaptive Bayesian designs as the standard — is the destination. BATON is what makes getting there feasible at scale.
 :::
 
 
@@ -1204,12 +1165,20 @@ This is the same BATON convergence story you just saw on the grid-vs-BATON slide
 
 ::::
 
+::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.88em;"}
+**Without BATON:** months of hand-tuning; four interacting parameters rarely hit both constraints. **With BATON:** ~200 evaluations in hours, jointly calibrated, deterministic FDA-grade audit trail.
+:::
+
+::: {.fragment style="margin-top: 0.4em; padding: 0.5em 0.9em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.85em; font-style: italic;"}
+**An unexpected finding:** caps set too low suppress early-efficacy declarations. BATON returned the **Pareto frontier**; we chose 76 to preserve early-efficacy stopping. Manual calibration would have anchored on the first feasible design.
+:::
+
 ::: {.slide-refs}
 Von Hoff et al., *NEJM* 2013 (MPACT) · Young et al., 2026 (BATON manuscript)
 :::
 
 ::: {.notes}
-Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial — basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. TENSE DISCIPLINE — this is critical and the slide structure protects it but the live delivery needs to as well. The 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect a hazard ratio of 0.58, not showing one. The operating characteristics in the right column ARE achieved, because they are the outputs of BATON's calibration — Type I at 7.0%, power at 82.2%, those are properties of the design that BATON found, computed over 10,000 simulated trials per scenario. So: design assumptions on the left, calibrated achievements on the right. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." The design uses a Bayesian piecewise exponential survival model with interim analyses for early stopping on futility or efficacy. Four design parameters had to be set jointly to meet operating characteristics — the maximum sample size, the efficacy stopping threshold, the futility stopping threshold, and the futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT before delivery which exact four BATON searched versus which were fixed by clinical/modeling choice, since a methodologist may ask. BATON found a configuration that meets Type I error at most 0.10 and power at least 0.80, simultaneously. The achieved characteristics are on the slide. Three numbers I want to draw your attention to. First, the power is eighty-two percent at a Type I error of seven percent — solidly within the targets. Second — and this is the clinical payoff — the trial stops early for futility seventy-eight percent of the time when the drug doesn't work. Patients are not being randomized to a losing arm waiting for the readout. Third, the trial stops early for efficacy eighty-one percent of the time when the drug does work. That's how quickly modern adaptive designs can deliver an answer when there's signal. Expected trial duration is twenty-seven months, with expected enrollment of fifty-three patients under the null and fifty-eight under the alternative — well below the calibrated max of seventy-six. (Note: the protocol narrative carries 82 as the accrual target with buffer; 76 is the calibrated design maximum. If anyone asks, "76 is the calibrated maximum, 82 is the accrual goal." Action item for me separately: reconcile the protocol so a reader does not catch the discrepancy.) This entire calibration was done by BATON. Hand-tuning a design with these four interacting parameters against two simultaneous operating-characteristic constraints, across thousands of simulated trials, is the work I was describing earlier as several months of senior statistician time. BATON delivered this configuration in hours.
+Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial — basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. TENSE DISCIPLINE — critical, and the slide structure protects it: the 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect HR 0.58, not showing one. The OCs in the right column ARE achieved, because they are outputs of BATON's calibration — Type I at 7.0%, power at 82.2%, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." Four design parameters had to be set jointly to meet OCs — max sample size, efficacy stopping threshold, futility stopping threshold, and futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT which exact four BATON searched vs which were fixed by clinical/modeling choice. Three numbers to land: power 82% at Type I 7%; trial stops early for futility 78% of the time under H₀ — patients are not randomized to a losing arm waiting for the readout; trial stops early for efficacy 81% of the time under H₁. Expected duration: 27.3 months; expected N: 53 under H₀, 58 under H₁, well below max 76. (Protocol carries 82 as accrual target with buffer; 76 is the calibrated max. If asked: "76 is calibrated max, 82 is accrual goal.") UNEXPECTED FINDING — the Pareto callout. We started with an instinct toward a tight max N to minimize regret if the drug doesn't work. BATON identified a non-obvious trade-off: pushing the cap too low actively SUPPRESSED early-efficacy declarations — patients wait until the final analysis for an answer even when the drug DOES work. The recommendation was a slightly higher cap (76 vs the tighter cap we were instinctively heading toward) that preserves both early-futility stopping AND early-efficacy stopping. Manual calibration would have anchored on the first feasible design it found. BATON returned the Pareto frontier; we chose where to land. This is the kind of insight manual calibration misses. WITHOUT/WITH BATON — quick read for the callout above. Without BATON: months of hand-tuning, four interacting parameters that rarely hit both constraints simultaneously, no reproducibility, no audit trail. With BATON: ~200 evaluations in hours, joint calibration against both constraints, deterministic seeded output, FDA-grade audit trail. The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
 :::
 
 
@@ -1218,51 +1187,6 @@ Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptiv
      If reinstated, mirror the PANGEA Phase II structure (design params → OC constraints
      → achieved characteristics table) and add an entry to the acknowledgments
      funding line if needed. -->
-
-
-## What BATON changed for PANGEA Phase II {.smaller}
-
-:::: {.columns}
-
-::: {.column width="48%"}
-::: {style="text-align: center; font-weight: 600; color: #5B6670; font-size: 0.95em; margin-bottom: 0.4em;"}
-Without BATON
-:::
-
-::: {style="font-size: 0.92em; line-height: 1.7;"}
-- Months of senior-statistician hand-tuning
-- Four interacting parameters rarely hit both constraints simultaneously
-- No reproducibility, no audit trail
-:::
-:::
-
-::: {.column width="48%"}
-::: {.fragment}
-::: {style="text-align: center; font-weight: 600; color: #4B9CD3; font-size: 0.95em; margin-bottom: 0.4em;"}
-With BATON
-:::
-
-::: {style="font-size: 0.92em; line-height: 1.7;"}
-- **150–200 evaluations**, hours wall-clock
-- Four parameters jointly calibrated; both constraints met
-- Deterministic, FDA-grade audit trail
-:::
-:::
-:::
-
-::::
-
-::: {.fragment style="margin-top: 0.9em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; text-align: center; font-weight: 600;"}
-PANGEA Phase II is the proof: a calibrated, FDA-defensible adaptive design — delivered in days, not months.
-:::
-
-::: {.slide-refs}
-Young et al., 2026 (BATON)
-:::
-
-::: {.notes}
-This is the practical-impact slide. Without BATON: months of a senior statistician's time hand-tuning, designs that typically fail to hit Type I ≤ 0.10 AND Power ≥ 0.80 simultaneously across the four interacting parameters, no reproducibility guarantee, no audit trail — so either activation slips or the design ships under-validated. With BATON: 150 to 200 evaluations, hours of wall-clock time, all four parameters jointly calibrated against both constraints, deterministic seeded output, FDA-grade audit trail. The achieved operating characteristics on the previous slide — power 82.2%, type I 7.0%, expected duration 27.3 months — those came out of BATON, not out of months of manual iteration. Delivered in days, not months. The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
-:::
 
 
 ## What this means for a PDAC patient {.smaller}
@@ -1302,28 +1226,6 @@ PANGEA Phase II (BATON-calibrated)
 
 ::: {.notes}
 This is what calibrated PANGEA Phase II means for a real patient. Pick someone in your clinic. A 62-year-old with metastatic PDAC, basal-like by PurIST, progressed on first-line gemcitabine plus nab-paclitaxel. In a traditional fixed Phase II of GnP plus erlotinib versus GnP alone, that patient enrolls into a trial that will run all 76 patients before anyone learns whether erlotinib adds anything. Three-plus years to read out. In PANGEA Phase II, calibrated by BATON: same randomization, but interim analyses run as PFS events accumulate. The design has a seventy-eight percent chance of stopping early for futility if erlotinib adds nothing — patients are not randomized to an inactive arm beyond what's needed to learn that. Expected enrollment is around 53 patients under H0 and 58 under H1. Expected duration: 27.3 months, not 36-plus. About 23 fewer patients exposed to a potentially-ineffective therapy. That is the clinical payoff of calibrating with BATON instead of shipping a fixed-N design that learns slowly. This is one trial. When the calibration becomes routine for the GI portfolio, the savings compound across every adaptive trial we activate.
-:::
-
-
-## An unexpected finding {.center}
-
-::: {style="max-width: 90%; margin: 0 auto;"}
-
-::: {style="margin-top: 0.3em; padding: 1em 1.2em; background-color: #F8F9FA; border-left: 5px solid #4B9CD3; color: #13294B; font-weight: 700; font-style: italic; font-size: 1.5em; line-height: 1.4; text-align: center;"}
-Smaller trials are not always better.
-:::
-
-::: {.fragment style="margin-top: 0.6em; padding: 0.8em 1em; background-color: #EDF0F2; color: #13294B; font-weight: 600; font-size: 1.1em; line-height: 1.4; text-align: center;"}
-Over-constraining the max N can *prevent* patients from learning sooner that the treatment works.
-:::
-
-::: {.fragment style="margin-top: 0.8em; font-size: 0.92em; text-align: center; color: #13294B;"}
-**BATON surfaced this during PANGEA Phase II calibration:** caps set too low suppress early-efficacy declarations. Manual calibration anchors on the first feasible design; BATON returned the Pareto frontier.
-:::
-:::
-
-::: {.notes}
-A discovery story from PANGEA's BATON calibration. We started this design with an instinct toward a tight max N — strict capacity, minimize regret if the drug doesn't work. BATON identified a non-obvious trade-off: pushing the cap too aggressively didn't just constrain the worst case, it actively suppressed the early-efficacy declarations. Caps set too low force the trial to wait for the final analysis before being able to claim efficacy. Patients wait longer for an answer when the drug DOES work. This was not a tuning preference; it was a structural property of the design space that BATON surfaced because it explored the full feasible region, not just one corner of it. The recommendation was a slightly higher cap that preserves the futility-stopping rate while also preserving early-efficacy declarations. This is the kind of insight manual calibration misses because manual calibration anchors on the first feasible design it finds. BATON returns the Pareto frontier; you choose where on it to land. The 76 you saw on the PANGEA OCs slide is that choice.
 :::
 
 
