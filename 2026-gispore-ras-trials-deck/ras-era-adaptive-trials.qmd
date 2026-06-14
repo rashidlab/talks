@@ -324,7 +324,7 @@ ggplot() +
   labs(x = "Drug A dose →", y = "Drug B dose →") +
   scale_x_continuous(limits = c(0, 1), breaks = NULL, expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 1), breaks = NULL, expand = c(0, 0)) +
-  coord_fixed() +
+  coord_fixed(clip = "off") +
   theme_minimal(base_size = 11) +
   theme(panel.grid = element_blank(),
         axis.title.x = element_text(face = "bold", color = "#13294B", size = 11),
@@ -530,15 +530,15 @@ ggplot() +
   geom_segment(data = arrows, aes(x = x, xend = xend, y = y, yend = yend),
                arrow = arrow(length = unit(0.22, "cm"), type = "closed"),
                color = "#5B6670", linewidth = 1.3) +
-  geom_text(aes(x = -0.25, y = 2.2), label = "Traditional",
-            color = "#5B6670", size = 4.5, fontface = "bold", hjust = 0) +
-  geom_text(aes(x = -0.25, y = 0.8), label = "Adaptive",
+  geom_text(aes(x = -1.05, y = 2.2), label = "Traditional",
+            color = "#13294B", size = 4.5, fontface = "bold", hjust = 0) +
+  geom_text(aes(x = -1.05, y = 0.8), label = "Adaptive",
             color = "#13294B", size = 4.5, fontface = "bold", hjust = 0) +
   geom_text(aes(x = 7.4, y = 2.85), label = "biology has\nalready changed",
             color = "#C75050", size = 3.2, fontface = "italic", lineheight = 0.9) +
   geom_text(aes(x = 4.2, y = 0.15), label = "in time to act",
             color = "#13294B", size = 3.2, fontface = "italic") +
-  scale_x_continuous(limits = c(-0.4, 8.2), expand = c(0, 0)) +
+  scale_x_continuous(limits = c(-1.2, 8.2), expand = c(0, 0)) +
   scale_y_continuous(limits = c(-0.2, 3.3), expand = c(0, 0)) +
   theme_void()
 ```
