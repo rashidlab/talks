@@ -1,6 +1,5 @@
 ---
 title: "Adaptive Trial Design for the RAS-Inhibitor Era"
-subtitle: "How can we evaluate hundreds of RAS-directed trial designs before patients are enrolled?"
 author: "Naim Rashid, PhD"
 institute: |
   Department of Biostatistics · Lineberger Comprehensive Cancer Center · UNC
@@ -49,7 +48,7 @@ Methods to optimize combination doses are established. Designs that track resist
 :::
 
 ::: {.fragment style="margin-top: 1.2em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600;"}
-What's missing is making those designs practical to calibrate and run — **the gap BATON is built to close.**
+What's missing is making those designs practical to calibrate and run.
 :::
 
 ::: {.notes}
