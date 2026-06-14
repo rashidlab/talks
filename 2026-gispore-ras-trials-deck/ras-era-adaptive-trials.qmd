@@ -483,20 +483,30 @@ This is the design-implications side of the previous slide. The Coombes 2019 fig
 ## ADAPT / EVOLVE: what a resistance-aware trial looks like {.smaller}
 
 - ARPA-H **ADAPT** program → **EVOLVE trial** in metastatic breast cancer (UNC-led; PI: Carey, Rashid co-PI)
-- **Different disease, same design problem:** longitudinal resistance detection + biomarker-guided adaptation. The four axes are disease-agnostic; a RAS-backbone PDAC combination would need all four for the same reasons.
+- **Different disease, same design problem:** longitudinal resistance detection + biomarker-guided adaptation. The design template generalizes directly to a RAS-backbone PDAC combination.
 
-:::: {.columns}
+![](images/adapt_goal_dynamic.jpg){width=82% fig-align="center" fig-alt="Two-panel ARPA-H ADAPT schematic. Top current state: single static biomarker, sequential treatments, resistant subclones persist. Bottom ADAPT future state: in-depth dynamic biomarkers, treatments switched in response, mixed final population converging on clearance."}
 
-::: {.column width="55%"}
-![](images/adapt_goal_dynamic.jpg){width=100% fig-alt="Two-panel ARPA-H ADAPT schematic. Top current state: single static biomarker, sequential treatments, resistant subclones persist. Bottom ADAPT future state: in-depth dynamic biomarkers, treatments switched in response, mixed final population converging on clearance."}
-
-::: {style="margin-top: 0.25em; font-size: 0.65em; color: #5B6670; font-style: italic; text-align: center;"}
+::: {style="margin-top: 0.2em; text-align: center; font-size: 0.7em; color: #5B6670; font-style: italic;"}
 ARPA-H ADAPT program overview — current static-biomarker state (top) vs dynamic-biomarker state ADAPT enables (bottom).
 :::
+
+::: {.fragment style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
+This is happening, federally funded, enrolling.
 :::
 
-::: {.column width="45%"}
-::: {.fragment style="font-size: 0.74em;"}
+::: {.notes}
+This is what a resistance-aware trial actually looks like operationally. ARPA-H — the new Advanced Research Projects Agency for Health — has funded a program called ADAPT specifically to build trials of this kind. The ARPA-H figure tells the story in two panels. Top: current state. A single static biomarker, sequential treatments — Tx 1, then Tx 1 continued, then Tx 2 — and the resistant subclones persist into the final cell mix. Bottom: ADAPT's future state. In-depth dynamic biomarkers, treatments switched in response to observed resistance traits, eventual clearance. Our EVOLVE trial in metastatic breast cancer is one of the first to operationalize this, and the design template generalizes directly to the kind of RAS-backbone combination trial you all are going to be running for PDAC in the next few years. CRITICAL FRAMING DISCIPLINE: the closer says "enrolling," not "EVOLVE shows" or "EVOLVE works." This is the resistance-side honesty I committed to in the opening — methods exist and are deployed, not yet completed. If a trialist asks for the readout, the answer is the design exists and is accruing; the readout is what we will report when interim looks are run. Do not let the live delivery drift toward an implied result. The next slide names what this demands of the statistical design — and why deploying it is the gap the rest of the talk is about.
+:::
+
+
+## What this demands of the statistical design {.smaller}
+
+::: {style="margin-top: 0.2em; font-size: 0.92em;"}
+**Four design axes — each disease-agnostic.** A RAS-backbone PDAC combination would need all four for the same reasons.
+:::
+
+::: {.fragment style="margin-top: 0.4em; font-size: 0.82em;"}
 | Axis | Operationalized as |
 |---|---|
 | Adaptive stopping | Bayesian futility/efficacy boundaries at each interim |
@@ -504,16 +514,13 @@ ARPA-H ADAPT program overview — current static-biomarker state (top) vs dynami
 | Longitudinal monitoring | Serial ctDNA, imaging, biopsies on every patient — *the "do both" requirement* |
 | In-trial evaluation | Biomarker-guided cohorts within the same protocol — *characterize the temporal surface and act on it* |
 :::
-:::
 
-::::
-
-::: {.fragment style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
-This is happening, federally funded, enrolling.
+::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.92em;"}
+**Continual learning during enrollment is not a tweak to a Phase II — it is a structurally different trial.** Each axis adds interacting parameters: interim timing, posterior-probability thresholds, biomarker decision rules, randomization-weight updates, cohort-opening logic. **The Bayesian adaptive methodology exists. Making it deployable — calibrating it to the operating-characteristic targets the team and the FDA agree on — is the gap.**
 :::
 
 ::: {.notes}
-This is what a resistance-aware trial actually looks like operationally. ARPA-H — the new Advanced Research Projects Agency for Health — has funded a program called ADAPT specifically to build trials of this kind. The ARPA-H figure on the left tells the story in two panels. Top: current state. A single static biomarker, sequential treatments — Tx 1, then Tx 1 continued, then Tx 2 — and the resistant subclones persist into the final cell mix. Bottom: ADAPT's future state. In-depth dynamic biomarkers, treatments switched in response to observed resistance traits, eventual clearance. Our EVOLVE trial in metastatic breast cancer is one of the first to operationalize this, and the design template generalizes directly to the kind of RAS-backbone combination trial you all are going to be running for PDAC in the next few years. I am showing a breast cancer trial to GI SPORE leaders because the four axes on the right are disease-agnostic — they're requirements for any resistance-aware trial, not properties of breast biology. A RAS-backbone PDAC combination would need all four for the same reasons. Four axes. Adaptive stopping rules — Bayesian futility and efficacy boundaries that update at every interim look. Real-time biomarker discovery — pre-specified candidate signatures plus an agnostic discovery window so you're not locked into your initial hypothesis. Longitudinal monitoring — serial ctDNA, imaging, biopsies on every patient. This is the "do both" requirement from the mechanisms slide made concrete: ctDNA for the genomic side, biopsies and transcriptomics for the non-genomic plasticity side, on every patient throughout the trial. And in-trial evaluation — biomarker-guided cohorts opened within the same protocol, so when you find a resistance signature you can test the strategy that addresses it during the trial, not as a follow-on study three years later. CRITICAL FRAMING DISCIPLINE: the box says "enrolling," not "EVOLVE shows" or "EVOLVE works." This is the resistance-side honesty I committed to in the opening — methods exist and are deployed, not yet completed. If a trialist asks for the readout, the answer is the design exists and is accruing; the readout is what we will report when interim looks are run. Do not let the live delivery drift toward an implied result.
+Four axes that operationalize the resistance-aware trial template. I am showing them to GI SPORE leaders because they are disease-agnostic — requirements for any resistance-aware trial, not properties of breast biology. A RAS-backbone PDAC combination would need all four for the same reasons. Adaptive stopping rules — Bayesian futility and efficacy boundaries that update at every interim look. Real-time biomarker discovery — pre-specified candidate signatures plus an agnostic discovery window so you're not locked into your initial hypothesis. Longitudinal monitoring — serial ctDNA, imaging, biopsies on every patient. This is the "do both" requirement from the mechanisms slide made concrete: ctDNA for the genomic side, biopsies and transcriptomics for the non-genomic plasticity side, on every patient throughout the trial. And in-trial evaluation — biomarker-guided cohorts opened within the same protocol, so when you find a resistance signature you can test the strategy that addresses it during the trial, not as a follow-on study three years later. Now the load-bearing point that sets up the rest of the talk. Continual learning during enrollment is not a tweak to a Phase II — it is a structurally different kind of trial. Each axis adds interacting parameters to the design: interim look timing, posterior-probability thresholds for stopping, biomarker decision rules, randomization-weight updating, cohort-opening logic. Bayesian adaptive designs that handle all of this exist — posterior-probability monitoring, simulation-based operating characteristics, the whole toolkit. What does NOT yet exist routinely is the infrastructure to make those designs deployable — to calibrate them against the operating-characteristic targets that the trial team and the FDA agree on. That's the gap. The next section is about closing it.
 :::
 
 
