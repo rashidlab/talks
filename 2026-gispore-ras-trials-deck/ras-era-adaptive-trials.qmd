@@ -808,6 +808,9 @@ Four axes that operationalize the resistance-aware trial template. I am showing 
 :::
 
 
+# Putting these into practice {.center background-color="#13294B"}
+
+
 ## Why don't we see more of these trials? {.smaller}
 
 ::: {style="font-size: 0.9em; margin-top: 0.3em; color: #5B6670; font-style: italic; text-align: center;"}
