@@ -48,7 +48,7 @@ Methods to optimize combination doses are established. Designs that track resist
 :::
 
 ::: {.fragment style="margin-top: 1.2em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600;"}
-What's missing is making those designs practical to calibrate and run.
+What's missing is making those designs practical to calibrate and launch.
 :::
 
 ::: {.notes}
@@ -732,7 +732,7 @@ ggplot() +
 
 ::: {.column width="58%"}
 ::: {.fragment style="margin-top: 0.6em; font-size: 0.92em; line-height: 1.5;"}
-- **No closed-form for adaptive designs.** Unlike Simon two-stage — where Type I, power, and N come from a formula — adaptive Bayesian designs need *thousands of simulated trials per candidate*: pick parameters (efficacy thresholds, max N, cohort size, H₀ / H₁ assumptions), simulate, read off OCs. **Comparing candidates means simulating each.**
+- **No closed-form for adaptive designs.** Unlike Simon two-stage — where Type I, power, and N come from a formula — adaptive Bayesian designs need *thousands of simulated trials per candidate*: pick parameters (efficacy/futility thresholds, max N, interim timing, H₀ / H₁ assumptions), simulate, read off OCs. **Comparing candidates means simulating each.**
 - Design space: **8–13 dimensions** for trials we've calibrated; **20+** for combined dose + resistance. Grid search is infeasible.
 :::
 
