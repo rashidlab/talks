@@ -150,7 +150,7 @@
        FEEDBACK ARROW (curving from right cell back to left)
        ==================================================================== -->
   <g>
-    <path d="M 600 52 C 600 4, 360 4, 200 92"
+    <path d="M 665 90 C 665 4, 360 4, 200 92"
           fill="none" stroke="#2E6A9F" stroke-width="2.5"
           stroke-dasharray="6,4" marker-end="url(#arrowDeep)"/>
     <text x="400" y="11" text-anchor="middle" font-size="11" fill="#2E6A9F"
