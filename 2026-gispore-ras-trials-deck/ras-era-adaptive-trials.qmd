@@ -250,26 +250,24 @@ The empirical evidence that this is not just theoretical. The FDA-AACR Strategie
 
 ## Combination dose selection in RAS is harder {.smaller}
 
-::: {style="margin-top: 0.4em; font-size: 1.0em;"}
-**Single agents already broke MTD logic. Combinations make it worse on every axis.**
+::: {style="margin-top: 0.6em; font-size: 1.15em; text-align: center; color: #13294B; font-weight: 700;"}
+**Combinations make MTD logic worse on every axis.**
 :::
 
-::: {.incremental style="margin-top: 0.8em;"}
-- You are no longer choosing one dose. You are choosing a **joint pair on a surface the single-agent data cannot reconstruct** [@hong2020sotorasib]
-- Effects interact on both efficacy and toxicity — the optimum can sit **below either single-agent dose**
-- And for RAS, the **toxicity headroom is already spent** at the monotherapy dose [@daraxonrasib_mono]
+::: {.fragment style="margin-top: 1.2em; font-size: 1.0em; text-align: center; line-height: 1.6;"}
+You search a 2-D surface single-agent data can't reconstruct, the optimum can sit **below both single-agent doses**, and for RAS the **toxicity headroom is already spent** at the monotherapy dose.
 :::
 
-::: {.fragment style="margin-top: 0.9em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.95em;"}
-**Fix what you know. Search what you don't.** Reduce to one drug only when the fixed component's dose is externally established — spend the search on the drug whose combination-optimal dose is genuinely uncertain.
+::: {.fragment style="margin-top: 1.0em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.95em; text-align: center;"}
+**Fix what you know. Search what you don't.**
 :::
 
 ::: {.slide-refs}
-Hong et al., *NEJM* 2020 · Wolpin et al., *NEJM* 2026 (RMC-6236-001)
+Hong et al., *NEJM* 2020 · Wolpin et al., *NEJM* 2026 (RMC-6236-001) [@hong2020sotorasib; @daraxonrasib_mono]
 :::
 
 ::: {.notes}
-This is the bridge from the empirical cost — sotorasib at the MTD-only dose, daraxonrasib's already-spent headroom at 300 mg — into the methodological answer that follows. I am deliberately not re-establishing single-agent MTD failure here; the last three slides have already done that work. The job of this slide is to name what changes when you go from one drug to two. Three things. First, you are no longer choosing one dose, you are choosing a joint pair, and the single-agent margins do not reconstruct the surface — sotorasib's 960-versus-240 result tells you the surface looks different from what the single-dose escalation suggested. Second, effects interact on both efficacy and toxicity — the synergy point from assumption 4 — so the joint optimum can sit below either monotherapy dose. Third, and this is the RAS-specific part: the monotherapy toxicity is already substantial, 34% G≥3 at 300 mg, 48% dose modification, so you start the combination with less headroom to spend. The first combination cohort already moved daraxonrasib down to 200 mg with GnP, but we do not know whether 200 mg is right or whether 150 mg or some other dose is right given other partners. That is a dose-finding question that requires designs built for it. Which leads into the next slide.
+This is the bridge from the empirical cost — sotorasib at the MTD-only dose, daraxonrasib's already-spent headroom at 300 mg — into the methodological answer that follows. I am deliberately not re-establishing single-agent MTD failure here; the last three slides have already done that work. The job of this slide is to name what changes when you go from one drug to two. Three things to land verbally, supporting the one visible sentence. First, you are no longer choosing one dose, you are choosing a joint pair, and the single-agent margins do not reconstruct the surface — sotorasib's 960-versus-240 result tells you the surface looks different from what the single-dose escalation suggested. Second, effects interact on both efficacy and toxicity — the synergy point from assumption 4 — so the joint optimum can sit below either monotherapy dose. Third, and this is the RAS-specific part: the monotherapy toxicity is already substantial, 34% G≥3 at 300 mg, 48% dose modification, so you start the combination with less headroom to spend. The first combination cohort already moved daraxonrasib down to 200 mg with GnP, but we do not know whether 200 mg is right or whether 150 mg or some other dose is right given other partners. The "fix what you know, search what you don't" callout is the operational rule: reduce to one drug only when the fixed component's dose is externally established — spend the search on the drug whose combination-optimal dose is genuinely uncertain. That is a dose-finding question that requires designs built for it. Which leads into the next slide.
 :::
 
 
@@ -278,25 +276,24 @@ This is the bridge from the empirical cost — sotorasib at the MTD-only dose, d
 :::: {.columns}
 
 ::: {.column width="50%"}
-::: {style="margin-top: 0.2em; font-size: 1.0em;"}
-**Phase I no longer ends with a single MTD — it ends with an OBD.**
+::: {style="margin-top: 0.4em; font-size: 1.05em; color: #13294B; font-weight: 600;"}
+**Phase I now ends with an OBD, not an MTD.**
 :::
 
-::: {style="margin-top: 0.5em; color: #5B6670; font-style: italic; font-size: 0.88em;"}
-The Bayesian model-assisted toolkit replaces 3+3:
+::: {style="margin-top: 0.7em; font-size: 0.95em; color: #13294B;"}
+*"A response is worth this; a Grade 3 toxicity costs this."*
 :::
 
-::: {.incremental style="margin-top: 0.4em; font-size: 0.86em; line-height: 1.5;"}
-- **BOIN family** [@liu2015boin] — simple as 3+3 (printed decision table), statistically matches model-based designs. Extensions: combinations (**BOIN-COMB** [@lin2017boincomb]), late-onset toxicity (**TITE-BOIN** [@yuan2018titeboin]), benefit-risk (**BOIN12** [@lin2020boin12]). **POCRM** [@wages2011pocrm] and **BLRM** [@neuenschwander2008blrm] are common combination alternatives.
-- **U-BOIN** [@zhou2019uboin] — *"a response is worth this; a Grade 3 toxicity costs this."* Stage 1 BOIN safety envelope, Stage 2 utility-guided OBD allocation.
+::: {style="margin-top: 0.4em; font-size: 0.92em; line-height: 1.5;"}
+The team writes that utility down up front. The design — Bayesian, model-assisted — searches inside the safe envelope for the dose that **maximizes benefit-risk**, not toxicity.
 :::
 
-::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.85em; color: #13294B;"}
-Delivers the OBD Project Optimus calls for [@fda_optimus_guidance] — and reaches it where randomized dose comparison does not scale to combinations.
+::: {.fragment style="margin-top: 0.8em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
+Delivers the OBD Project Optimus calls for [@fda_optimus_guidance] — where randomized dose comparison can't scale to combinations.
 :::
 
-::: {style="margin-top: 0.4em; font-size: 0.76em; color: #5B6670; font-style: italic;"}
-RAS adoption: sotorasib BLRM [@hong2020sotorasib], adagrasib mTPI in KRYSTAL-1 [@ou2022adagrasib].
+::: {style="margin-top: 0.5em; font-size: 0.72em; color: #5B6670; font-style: italic;"}
+Implementations: BOIN family [@liu2015boin; @zhou2019uboin] for printed-decision-table simplicity; POCRM, BLRM for combinations [@wages2011pocrm; @neuenschwander2008blrm]. RAS Phase I already runs on these (sotorasib BLRM [@hong2020sotorasib], adagrasib mTPI in KRYSTAL-1 [@ou2022adagrasib]).
 :::
 :::
 
@@ -307,11 +304,11 @@ RAS adoption: sotorasib BLRM [@hong2020sotorasib], adagrasib mTPI in KRYSTAL-1 [
 ::::
 
 ::: {.slide-refs}
-Liu & Yuan 2015 (BOIN) · Zhou, Lee & Yuan 2019 (U-BOIN) · FDA Optimus Guidance · Wages 2011 (POCRM) · Neuenschwander 2008 (BLRM)
+Liu & Yuan 2015 · Zhou, Lee & Yuan 2019 (U-BOIN) · FDA Optimus Guidance
 :::
 
 ::: {.notes}
-The toolkit that replaces 3+3 — and the paradigm shift that goes with it. Two reasons Bayesian and model-assisted designs fit modern Phase I: they handle small sequential sample sizes by cohort-by-cohort posterior updates, and they support utility-based dosing — which is how the OBD paradigm becomes operational. BOIN, from Liu and Yuan 2015, is the workhorse: operationally as simple as 3+3 with a printed decision table at the bedside, but statistically matches the best fully model-based designs. The family extends naturally: BOIN-COMB for combinations, TITE-BOIN for late-onset toxicity, BOIN12 for joint toxicity-efficacy. POCRM (Wages and Conaway) and BLRM are the common combination alternatives. U-BOIN is the cleanest example of operationalizing the OBD paradigm. Before the trial starts, your team scores the trade-off: how do you weigh a response against a Grade 3 toxicity? Those scores become the navigation system. Stage one uses BOIN rules to establish the safe envelope. Stage two allocates patients within that envelope to maximize the benefit-risk utility you specified. What comes out of Phase I is not an MTD — it's an OBD, a dose with a characterized benefit-risk profile. That's the dose you carry into Phase II combinations. That's what Project Optimus is asking sponsors to deliver. Credibility line: leading RAS Phase I programs already run on Bayesian designs — sotorasib used BLRM in CodeBreaK 100, adagrasib used mTPI in KRYSTAL-1. The shift Project Optimus formalized is already industry standard for RAS monotherapy. For a GI clinical audience, the key message is one sentence: modern Phase I optimizes benefit-risk instead of maximizing toxicity. The acronym soup is secondary.
+The paradigm shift in one sentence: Phase I now ends with an OBD, not an MTD. The how: before the trial starts, the team scores the trade-off — how do you weigh a response against a Grade 3 toxicity? That scoring becomes the navigation system. The design uses Bayesian / model-assisted rules to keep the trial inside a safe toxicity envelope while searching for the dose that maximizes the agreed-upon benefit-risk utility. What comes out is not a maximum tolerated dose — it's an OBD with a characterized benefit-risk profile. That's the dose Project Optimus is asking sponsors to deliver, and it's what you carry into Phase II combinations. ACRONYM POCKETS for Q&A — keep them OFF the visible slide. The BOIN family is the workhorse implementation: BOIN itself for single-agent (Liu and Yuan 2015), BOIN-COMB for drug combinations, TITE-BOIN for late-onset toxicity, BOIN12 for utility-based phase I/II, U-BOIN for the explicit two-stage utility design. POCRM (Wages and Conaway) and BLRM (Neuenschwander, Branson, Gsponer) are the established combination alternatives. mTPI is another common model-assisted variant; PIPE is a dual-agent product-of-independent-Beta-probabilities design (Mander 2015) for completeness. If a methodologist asks "which one?" the answer is: in the U.S. and academic groups, BOIN/U-BOIN dominate for the printed-decision-table operational simplicity; Novartis uses BLRM by default; the rest are specialty tools picked for specific constraints. Credibility line — leading RAS Phase I programs already run on Bayesian designs: sotorasib used BLRM in CodeBreaK 100, adagrasib used mTPI in KRYSTAL-1. The shift Project Optimus formalized is already industry standard for RAS monotherapy. For this audience the one-sentence takeaway is: modern Phase I optimizes benefit-risk instead of maximizing toxicity. Don't recite the acronym list out loud; only deploy it if a methodologist asks.
 :::
 
 
@@ -450,31 +447,25 @@ TBCRC EVOLVE-BDT flow — biomarker-stratified subtrials, adaptive randomization
 :::: {.columns}
 
 ::: {.column width="50%"}
-::: {style="margin-top: 0.4em; font-size: 0.82em; line-height: 1.45;"}
-**EVOLVE-BDT (real, enrolling)** — 2L MBC, ~700 pts
+::: {style="margin-top: 0.5em; font-size: 0.92em; line-height: 1.5;"}
+**EVOLVE-BDT (real, enrolling)**
 
-- ER+/HER2− and TNBC subtrials
-- Subgroups A–D by **ESR1**, **PI3K/AKT/PTEN**, **PD-L1**, **AR** status
-- Serial tumor + blood at every visit
-- Arms swap on Bayesian futility/efficacy
+ER+/HER2− and TNBC, biomarker-stratified subtrials with Bayesian arm-swap on futility/efficacy.
 :::
 :::
 
 ::: {.column width="50%"}
-::: {style="margin-top: 0.4em; font-size: 0.82em; line-height: 1.45;"}
-**PDAC analog (hypothetical)** — 2L mPDAC on daraxonrasib + GnP
+::: {style="margin-top: 0.5em; font-size: 0.92em; line-height: 1.5;"}
+**PDAC analog (hypothetical)**
 
-- **Basal-like vs classical by PurIST** [@purist_rashid2020]
-- Subgroups by **KRAS amp / RTK upregulation / pEMT** [@aronchik2025ena]
-- Serial **ctDNA + biopsies** at every visit
-- Arms: + EGFR-i, + SHP2-i, classical-state shifters
+Basal-like vs classical by PurIST [@purist_rashid2020], same Bayesian arm-swap logic on daraxonrasib-combination arms.
 :::
 :::
 
 ::::
 
-::: {.fragment style="margin-top: 0.4em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.95em; text-align: center;"}
-**Same architecture, different disease.** Every row of the right column has a real biomarker, a real assay, and a real combination partner already in or entering the clinic.
+::: {.fragment style="margin-top: 0.6em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.95em; text-align: center;"}
+**Same architecture, different disease.**
 :::
 
 ::: {.notes}
