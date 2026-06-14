@@ -440,7 +440,7 @@ Here's the design in a real PDAC trial at UNC. PANGEA, led by Ashwin Somasundara
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="70%"}
 ![](images/resistance_evolution.png){width=100% fig-alt="Tumor growth, intra-tumoral heterogeneity, therapy, and drug resistance: clonal expansion under selection pressure (genetic and non-genetic mechanisms)"}
 
 ::: {style="margin-top: 0.3em; font-size: 0.7em; color: #5B6670; font-style: italic;"}
@@ -448,7 +448,7 @@ Schematic adapted from ARPA-H ADAPT program overview materials.
 :::
 :::
 
-::: {.column width="40%"}
+::: {.column width="30%"}
 **Resistance mechanisms emerge under RAS-inhibitor pressure**
 
 ::: {style="margin-top: 0.4em; padding: 0.5em 0.7em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.92em;"}
@@ -559,15 +559,15 @@ This is the design-implications side of the previous slide. The two-row timeline
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="30%"}
 ::: {style="margin-top: 0.6em; text-align: left; font-size: 1.05em; color: #13294B; font-weight: 700;"}
-Different disease, same design problem.
+ARPA-H's resistance-tracking template.
 :::
 
 ::: {.incremental style="margin-top: 0.7em; font-size: 0.92em; line-height: 1.6;"}
 - Longitudinal resistance detection
 - Biomarker-guided adaptation
-- Template ports directly to PDAC *(next slide)*
+- Adaptive arm-swaps on emerging biology
 :::
 
 ::: {.fragment style="margin-top: 0.9em; font-size: 0.8em; color: #13294B; font-style: italic;"}
@@ -575,7 +575,7 @@ ARPA-H **ADAPT** → **EVOLVE** (UNC-led; Carey PI, Rashid co-PI). **Enrolling.*
 :::
 :::
 
-::: {.column width="60%"}
+::: {.column width="70%"}
 ![](images/adapt_goal_dynamic.jpg){fig-align="center" fig-alt="Two-panel ARPA-H ADAPT schematic: current static-biomarker state (top) vs dynamic-biomarker state (bottom)."}
 
 ::: {style="margin-top: 0.2em; text-align: center; font-size: 0.68em; color: #5B6670; font-style: italic;"}
@@ -629,8 +629,8 @@ This is the load-bearing slide for "could we actually do this in PDAC?" The figu
 
 ## What this demands of the statistical design {.smaller}
 
-::: {style="margin-top: 0.3em; font-size: 0.95em; text-align: center;"}
-**Four design axes — disease-agnostic.** A RAS-backbone PDAC combination would need all four.
+::: {style="margin-top: 0.3em; font-size: 1.0em; text-align: center; color: #13294B; font-weight: 600;"}
+Four design axes any such trial needs.
 :::
 
 ::: {.fragment}
@@ -648,7 +648,7 @@ pillars <- data.frame(
              "In-trial\nevaluation"),
   detail = c("Bayesian futility /\nefficacy boundaries\nat each interim",
              "Pre-specified signatures\n+ agnostic\ndiscovery window",
-             "Serial ctDNA, imaging,\nbiopsies on every\npatient — do both",
+             "Serial ctDNA,\nimaging, biopsies\non every patient",
              "Biomarker-guided\ncohorts within the\nsame protocol"),
   fill = c("#13294B", "#4B9CD3", "#13294B", "#4B9CD3")
 )
@@ -666,8 +666,10 @@ ggplot() +
 ```
 :::
 
-::: {.fragment style="margin-top: 0.6em; padding: 0.8em 1em; background-color: #13294B; color: #FFFFFF; font-size: 1.05em; text-align: center; font-weight: 600;"}
-Methods exist. **We're closing the deployment gap now.**
+::: {.fragment}
+<div style="margin-top: 0.6em; padding: 0.8em 1em; background-color: #13294B; color: #FFFFFF; font-size: 1.05em; text-align: center; font-weight: 600;">
+<span style="color: #FFFFFF;">We have the methods.</span> <strong style="color: #FFFFFF;">Deployment is the active work — now.</strong>
+</div>
 :::
 
 ::: {.notes}
