@@ -204,30 +204,7 @@ This is the worked example of the principle on the previous slide. The Amgen cas
 :::
 
 
-## Project Optimus: the regulatory ground has shifted {.smaller}
-
-- FDA final guidance, 2024 [@fda_optimus_guidance]: *Optimizing the Dosage of Human Prescription Drugs… for the Treatment of Oncologic Diseases*
-- **Maximum Tolerated Dose → a dose optimized on benefit-risk (the OBD).**
-- The expectation now is to **study more than one dose and justify the choice on efficacy and safety**, with **randomized dosage comparison** as the FDA's recommended approach.
-
-::: {.fragment style="margin-top: 1.0em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
-This is no longer a methodological preference. It's the regulatory baseline.
-:::
-
-::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
-**Thall et al.** (*Clinical Trials* 2024, methodologists' response to Project Optimus): conventional Phase I designs cannot reliably identify safe and effective doses [@thall2024optimus].
-:::
-
-::: {.slide-refs}
-FDA Guidance for Industry, 2024 (Project Optimus) · Thall et al., *Clin Trials* 2024
-:::
-
-::: {.notes}
-What you may not have caught is that the FDA has formalized this. The 2024 Project Optimus guidance moves oncology dose-finding from "maximum tolerated dose" to a dose optimized on benefit-risk — what the field calls the OBD. The guidance language is "optimized dosage," and the field's OBD shorthand maps to it directly. If you submit a Phase I protocol today that only characterizes the MTD, your reviewers are going to push back. This is no longer a methodological preference held by biostatisticians; it's the regulatory baseline. Now, on what the guidance actually expects: the FDA's stated default is to take two doses into Phase II — the MTD and a dose below it — and use a randomized comparison to determine which is better on benefit-risk. For a single agent that works. It does not scale to combinations, because you cannot randomize across a two-dimensional joint dose grid. That is exactly where model-based joint designs stop being a preference and start being the only practical way to meet the benefit-risk standard, which is where the rest of this section goes.
-:::
-
-
-## Why MTD fails for targeted agents and immunotherapies {.smaller}
+## Why MTD doesn't fit targeted agents and immunotherapies {.smaller}
 
 ::: {style="text-align: center; margin-top: 0em;"}
 <img src="images/dose-response-trio.svg" style="width: 90%; max-width: 1080px; height: auto;" alt="Three dose-response shapes side by side: cytotoxic chemo (monotone), targeted agent (plateau), IO/CAR-T/bispecific (umbrella)"/>
@@ -264,6 +241,29 @@ Hong et al., *NEJM* 2020 (CodeBreaK 100) · Hochmair et al., *Eur J Cancer* 2024
 
 ::: {.notes}
 The empirical evidence that this is not just theoretical. The FDA-AACR Strategies for Optimizing Dosages series, published in Clinical Cancer Research in 2025, reports that more than 40% of patients in small-molecule registrational trials require dose reductions or interruptions due to overly aggressive dosing — and links that pattern to potentially accelerated emergence of drug resistance, which quietly foreshadows the back half of this talk. The case you all know best is sotorasib, the first-in-class KRAS G12C inhibitor, approved in 2021. The Phase I program never reached an MTD because there were no DLTs; 960 mg was simply the highest dose tested, a more-is-better default rather than an MTD-driven choice. The FDA later required a post-marketing comparison against 240 mg, a fourfold lower dose. PFS at 240 mg was similar to PFS at 960 mg — the clean evidence that the approved dose was four times higher than needed on the primary endpoint. Note: I am deliberately not folding in the October 2023 ODAC vote on CodeBreaK 200 here. That 10-2 vote was about whether the confirmatory PFS read-out could be reliably interpreted given trial-conduct issues — informative censoring, imbalanced early dropout, investigator-assessed imaging — not about the dose. Conflating it with the dose story is the move a regulatory-savvy attendee will flag. The dose story alone is airtight; keep it that way. For daraxonrasib — same drug class — getting this wrong in Phase I means every combination on top of it inherits an unnecessarily toxic starting point.
+:::
+
+
+## Project Optimus: the regulatory ground has shifted {.smaller}
+
+- FDA final guidance, 2024 [@fda_optimus_guidance]: *Optimizing the Dosage of Human Prescription Drugs… for the Treatment of Oncologic Diseases*
+- **Maximum Tolerated Dose → a dose optimized on benefit-risk (the OBD).**
+- The expectation now is to **study more than one dose and justify the choice on efficacy and safety**, with **randomized dosage comparison** as the FDA's recommended approach.
+
+::: {.fragment style="margin-top: 1.0em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
+This is no longer a methodological choice — it's the FDA's stated preference.
+:::
+
+::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
+**Thall et al.** (*Clinical Trials* 2024, methodologists' response to Project Optimus): conventional Phase I designs cannot reliably identify safe and effective doses [@thall2024optimus].
+:::
+
+::: {.slide-refs}
+FDA Guidance for Industry, 2024 (Project Optimus) · Thall et al., *Clin Trials* 2024
+:::
+
+::: {.notes}
+What you may not have caught is that the FDA has formalized this — and it lands directly on the MTD problems we've just walked through (shapes don't fit MTD logic; the sotorasib 960-vs-240 case shows the cost). The 2024 Project Optimus guidance moves oncology dose-finding from "maximum tolerated dose" to a dose optimized on benefit-risk — what the field calls the OBD. The guidance language is "optimized dosage," and the field's OBD shorthand maps to it directly. If you submit a Phase I protocol today that only characterizes the MTD, your reviewers are going to push back. This is no longer a methodological preference held by biostatisticians; it's the FDA's stated preference. Now, on what the guidance actually expects: the FDA's stated default is to take two doses into Phase II — the MTD and a dose below it — and use a randomized comparison to determine which is better on benefit-risk. For a single agent that works. It does not scale to combinations, because you cannot randomize across a two-dimensional joint dose grid. That is exactly where model-based joint designs stop being a preference and start being the only practical way to meet the benefit-risk standard, which is where the next slide goes.
 :::
 
 
@@ -358,13 +358,13 @@ This is the bridge from the empirical cost — sotorasib at the MTD-only dose, d
 :::
 
 
-## Modern dose-finding: OBD instead of MTD {.smaller}
+## How OBD selection actually works {.smaller}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 ::: {style="margin-top: 0.4em; font-size: 1.05em; color: #13294B; font-weight: 600;"}
-**Phase I now ends with an OBD, not an MTD.**
+**Utility-based dose-finding, in one sentence.**
 :::
 
 ::: {style="margin-top: 0.7em; font-size: 0.95em; color: #13294B;"}
