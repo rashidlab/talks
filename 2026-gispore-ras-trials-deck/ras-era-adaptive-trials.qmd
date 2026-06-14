@@ -1,5 +1,5 @@
 ---
-title: "Adaptive Trial Design for the RAS-Inhibitor Era"
+title: "Adaptive Trial Design for the RAS-Inhibitor Era: Combinations, Resistance, and Biomarker-Guided Therapy in GI Oncology"
 author: "Naim Rashid, PhD"
 institute: |
   Department of Biostatistics · Lineberger Comprehensive Cancer Center · UNC
@@ -187,12 +187,9 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 ## Why combinations break the rules you grew up on {.smaller}
 
 ::: {.incremental}
-- **MTD-only dose-finding was built for single-agent cytotoxics** [@letourneau2009] — 3+3 is the canonical example; CRM, BLRM, mTPI, BOIN all share the paradigm. Assumptions:
-  - Monotonic dose-toxicity
-  - Cycle-1-observable DLTs
-  - Single dose dimension
-- **No joint-surface model.** Combinations strain all three assumptions; the structural failure is the missing model.
-- **In practice:** pick A's dose, fix it, add B — the dominant pattern. Rivière's review of 162 combination trials: **88% used 3+3 designs** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
+- **Rivière's review of 162 combination Phase I trials: 88% used 3+3** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
+- **Why 3+3 doesn't fit combinations.** Built for single-agent cytotoxics [@letourneau2009], it assumes monotonic dose-toxicity, Cycle-1-observable DLTs, and a single dose dimension — combinations strain all three.
+- **No joint-surface model.** In practice: pick A's dose, fix it, add B. Two monotherapy escalations run in series; the two-drug surface is never characterized.
 :::
 
 ::: {.slide-refs}
@@ -200,7 +197,7 @@ Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
 :::
 
 ::: {.notes}
-3+3 answered the question it was built for — the MTD of a cytotoxic under a monotonic toxicity assumption. For RAS combinations none of those assumptions hold. The deeper problem is structural and operational. In practice almost no one searches the joint dose surface. The protocol fixes agent A's dose and adds agent B, so two monotherapy designs run in series and the joint surface is never characterized. Thall, Garrett-Mayer, Wages, Halabi, and Cheung made the formal version of this argument in their 2024 *Clinical Trials* paper, the SCT response to Project Optimus: conventional Phase I designs cannot reliably identify safe and effective doses. Q&A POCKET — frequentist alternatives. If a methodologist asks "what about non-Bayesian combination designs?" the honest answer is that very few practical, deployed frequentist combination designs exist. The field has converged on Bayesian / model-assisted designs (POCRM, BOIN-COMB, BLRM, PIPE, surface-free) because combinations require borrowing strength across dose pairs and partial-order constraints — naturally handled by priors and posterior updating, awkwardly handled without them. The cleanest frequentist alternative in the literature is Conaway, Dunbar, & Peddada 2004 (Biometrics 60:661-669), order-restricted isotonic regression for combinations — theoretically clean but not widely deployed. 3+3 generalizations to combinations exist but inherit all the original problems plus combinatorial explosion. Sequential lead-in (find A then add B) is the dominant industry practice — that is what we are criticizing. Q&A POCKET — Rivière backup. The Rivière et al 2015 systematic review of 162 combination phase I trials gives the "almost never" claim a documented count: 88% used 3+3, all but one used a design developed for single-agent evaluation. If anyone challenges "almost never" as an unsupported universal, that is your number. Next slide makes the abstract failure concrete with the Amgen sotorasib + pembrolizumab case.
+3+3 answered the question it was built for — the MTD of a cytotoxic under a monotonic toxicity assumption. For RAS combinations none of those assumptions hold. NOTE on terminology — when I say "MTD paradigm" I'm describing the broader optimize-against-toxicity framework, not just 3+3. CRM, BLRM, mTPI, BOIN are more sophisticated and target a toxicity interval rather than a single point — BLRM especially — but they still drive selection by toxicity rather than benefit-risk, which is the framing this section is contrasting against OBD. Q&A pocket if anyone pushes on the lump-together. The deeper problem is structural and operational. In practice almost no one searches the joint dose surface. The protocol fixes agent A's dose and adds agent B, so two monotherapy designs run in series and the joint surface is never characterized. Thall, Garrett-Mayer, Wages, Halabi, and Cheung made the formal version of this argument in their 2024 *Clinical Trials* paper, the SCT response to Project Optimus: conventional Phase I designs cannot reliably identify safe and effective doses. Q&A POCKET — frequentist alternatives. If a methodologist asks "what about non-Bayesian combination designs?" the honest answer is that very few practical, deployed frequentist combination designs exist. The field has converged on Bayesian / model-assisted designs (POCRM, BOIN-COMB, BLRM, PIPE, surface-free) because combinations require borrowing strength across dose pairs and partial-order constraints — naturally handled by priors and posterior updating, awkwardly handled without them. The cleanest frequentist alternative in the literature is Conaway, Dunbar, & Peddada 2004 (Biometrics 60:661-669), order-restricted isotonic regression for combinations — theoretically clean but not widely deployed. 3+3 generalizations to combinations exist but inherit all the original problems plus combinatorial explosion. Sequential lead-in (find A then add B) is the dominant industry practice — that is what we are criticizing. Q&A POCKET — Rivière backup. The Rivière et al 2015 systematic review of 162 combination phase I trials gives the "almost never" claim a documented count: 88% used 3+3, all but one used a design developed for single-agent evaluation. If anyone challenges "almost never" as an unsupported universal, that is your number. Next slide makes the abstract failure concrete with the Amgen sotorasib + pembrolizumab case.
 :::
 
 
@@ -336,9 +333,6 @@ The team writes that utility table down up front. Bayesian, model-assisted desig
 | No response  |   **0**   |  60    |
 :::
 
-::: {style="margin-top: 1.0em; font-size: 0.72em; color: #5B6670; font-style: italic;"}
-Implementations: **BOIN family** for printed decision tables [@liu2015boin; @zhou2019uboin]; **POCRM, BLRM** for combinations [@wages2011pocrm; @neuenschwander2008blrm]; **TITE-BOIN** for late-onset toxicity [@yuan2018titeboin].
-:::
 :::
 
 ::: {.column width="50%"}
@@ -346,7 +340,7 @@ Implementations: **BOIN family** for printed decision tables [@liu2015boin; @zho
 #| fig.height: 5.4
 #| fig.width: 6.6
 #| fig.align: center
-#| fig.alt: "U-BOIN utility surface: toxicity probability (x-axis) vs efficacy probability (y-axis). Background heatmap shows utility from 0 (lower-right corner: response/no/DLT/yes) to 100 (upper-left: response/yes/DLT/no), with side bar legend. Red dashed lines mark admissibility cutoffs (max acceptable toxicity 25%, min required efficacy 20%). Six dose levels DL1-DL6 plotted as points; admissible doses are navy, inadmissible doses are gray, and the OBD (admissible dose with highest utility) is highlighted as a red diamond with an OBD label and leader arrow to the northwest."
+#| fig.alt: "U-BOIN utility surface: toxicity probability (x-axis, 0-0.5) vs efficacy probability (y-axis, 0-0.6). Background heatmap shades utility across the plotted region from ~30 at the lower-right (high toxicity, low efficacy) to ~84 at the upper-left (low toxicity, high efficacy); the legend extends 0-100 to anchor the full elicited utility range. Red dashed lines mark admissibility cutoffs (max acceptable toxicity 25%, min required efficacy 20%). Six dose levels DL1-DL6 plotted as points; admissible doses are navy, inadmissible doses are gray, and the OBD (admissible dose with highest utility) is highlighted as a red diamond with an OBD label and leader arrow to the northwest."
 library(ggplot2)
 
 # Elicited utilities (per U-BOIN framework, Zhou 2019)
@@ -560,7 +554,7 @@ The previous slide showed HOW OBD selection works for a single agent. This slide
 :::
 
 
-## PANGEA: U-BOIN in basal-like PDAC {.smaller}
+## Finding the right erlotinib dose in basal-like PDAC {.smaller}
 
 :::: {.columns}
 
@@ -571,7 +565,7 @@ The previous slide showed HOW OBD selection works for a single agent. This slide
 - **Six dose levels:** 25 mg QOD → 25 / 50 / 75 / 100 / 150 mg QD; **start at DL3**
 
 ::: {.fragment style="margin-top: 0.3em; font-size: 0.82em; line-height: 1.35;"}
-**Design:** *Stage 1 BOIN* [@liu2015boin] (target DLT ≤25%, cohorts of 4) → *Stage 2 BOIN12-like utility within U-BOIN* [@zhou2019uboin] (tox ≤25%, eff ≥20%). **Up to 52 patients; ~28 at OBD** (Scenario 1).
+**Design:** *Stage 1: establish safety envelope* [@liu2015boin] (target DLT ≤25%, cohorts of 4). *Stage 2: find the dose with the best response/toxicity trade-off* [@zhou2019uboin] (tox ≤25%, eff ≥20%). **Up to 52 patients; ~28 at OBD** (Scenario 1).
 :::
 
 ::: {.slide-refs}
@@ -612,7 +606,7 @@ Adapted from Karagiannis & Rampias, *Cancers* 2022 [@karagiannis2022cancer].
 ::: {.column width="30%"}
 **Resistance mechanisms emerge under RAS-inhibitor pressure**
 
-::: {style="margin-top: 0.4em; padding: 0.5em 0.7em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.92em;"}
+::: {.fragment style="margin-top: 0.4em; padding: 0.5em 0.7em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.92em;"}
 **Daraxonrasib monotherapy in mPDAC** (n=44, paired ctDNA): **59% show RAS-pathway resistance at progression — KRAS amplification in 36%** [@aronchik2025ena]
 :::
 
@@ -723,7 +717,9 @@ This is what a resistance-aware trial actually looks like operationally. ARPA-H 
 
 ## EVOLVE-BDT — and what this would look like in PDAC {.smaller}
 
-![](images/evolve_flow.jpg){width=100% fig-align="center" fig-alt="EVOLVE-BDT flow chart: 2L MBC patients enter, biopsy stratifies into Subgroup A-D, subgroup-stratified adaptive randomization assigns to 2L Arm 1 or Arm 2, progression triggers re-subgrouping via liquid biopsy for 3L Arm 1 or Arm 2, arms are replaced if futility or efficacy is determined and a new arm enters."}
+::: {style="margin: 0 -2em;"}
+<img src="images/evolve_flow.jpg" style="width: 100%; max-width: none; display: block;" alt="EVOLVE-BDT flow chart: 2L MBC patients enter, biopsy stratifies into Subgroup A-D, subgroup-stratified adaptive randomization assigns to 2L Arm 1 or Arm 2, progression triggers re-subgrouping via liquid biopsy for 3L Arm 1 or Arm 2, arms are replaced if futility or efficacy is determined and a new arm enters." />
+:::
 
 ::: {style="margin-top: 0.2em; text-align: center; font-size: 0.7em; color: #5B6670; font-style: italic;"}
 TBCRC EVOLVE-BDT flow — biomarker-stratified subtrials, adaptive randomization, in-trial arm replacement on futility or efficacy.
@@ -799,7 +795,7 @@ ggplot() +
 
 ::: {.fragment}
 <div style="margin-top: 0.6em; padding: 0.8em 1em; background-color: #13294B; color: #FFFFFF; font-size: 1.05em; text-align: center; font-weight: 600;">
-<span style="color: #FFFFFF;">We have the methods.</span> <strong style="color: #FFFFFF;">Deployment is the active work — now.</strong>
+<span style="color: #FFFFFF;">Methods are ready.</span> <strong style="color: #FFFFFF;">We're operationalizing them in PDAC trials — starting with PANGEA.</strong>
 </div>
 :::
 
@@ -864,15 +860,10 @@ ggplot() +
 :::
 
 ::: {.column width="58%"}
-::: {.fragment style="margin-top: 0.6em; font-size: 0.92em; line-height: 1.5;"}
-- **No closed-form for adaptive designs.** Unlike Simon two-stage — where Type I, power, and N come from a formula — adaptive Bayesian designs need *thousands of simulated trials per candidate*: pick parameters (efficacy/futility thresholds, max N, interim timing, H₀ / H₁ assumptions), simulate, read off OCs. **Comparing candidates means simulating each.**
-- Design space: **8–13 dimensions** for trials we've calibrated; **20+** for combined dose + resistance. Grid search is infeasible.
-:::
-
 ::: {.fragment style="margin-top: 0.6em;"}
 ```{r}
-#| fig.height: 1.4
-#| fig.width: 5.2
+#| fig.height: 1.8
+#| fig.width: 5.6
 #| fig.align: center
 library(ggplot2)
 adopt <- data.frame(
@@ -884,29 +875,29 @@ adopt <- data.frame(
 ggplot(adopt, aes(x = metric, y = pct, fill = fill)) +
   geom_col(width = 0.5) +
   geom_text(aes(label = paste0(pct, "%")),
-            hjust = -0.2, size = 4, fontface = "bold", color = "#13294B") +
+            hjust = -0.2, size = 4.5, fontface = "bold", color = "#13294B") +
   scale_fill_identity() +
   scale_y_continuous(limits = c(0, 95), expand = c(0, 0)) +
   coord_flip() +
   labs(x = NULL, y = NULL) +
-  theme_minimal(base_size = 9) +
+  theme_minimal(base_size = 11) +
   theme(panel.grid = element_blank(),
         axis.text.x = element_blank(),
         axis.ticks = element_blank(),
-        axis.text.y = element_text(face = "bold", color = "#13294B", size = 9))
+        axis.text.y = element_text(face = "bold", color = "#13294B", size = 11))
 ```
 
-::: {style="margin-top: -0.2em; text-align: center; font-size: 0.78em; color: #13294B; font-style: italic;"}
+::: {style="margin-top: -0.2em; text-align: center; font-size: 0.85em; color: #13294B; font-style: italic;"}
 Methods adopted. Dose-optimization plans — where calibration cost bites — not [@optimus_impact2025].
 :::
-:::
-
-::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.85em;"}
-**Our group: several months per design.** For combined dose + resistance designs, hand-tuning is infeasible.
 :::
 :::
 
 ::::
+
+::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.95em; text-align: center;"}
+**Our group: several months per design.** For combined dose + resistance designs, hand-tuning is infeasible.
+:::
 
 ::: {.slide-refs}
 FDA–AACR Project Optimus impact review, *JCO Onc Adv* 2025 (367 Phase I protocols)
@@ -1248,6 +1239,46 @@ This is the same BATON convergence story you just saw on the grid-vs-BATON slide
 :::
 
 
+## What this means for a PDAC patient {.smaller}
+
+::: {style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B; font-style: italic;"}
+Mr. Hernandez, 62, mPDAC, basal-like by PurIST, progressed on 1L GnP.
+:::
+
+::: {style="font-size: 0.9em;"}
+:::: {.columns}
+
+::: {.column width="50%" .fragment}
+::: {style="text-align: center; font-weight: 600; color: #5B6670; margin-bottom: 0.3em;"}
+Traditional fixed Phase II
+:::
+
+- All **76 patients** enrolled before any look
+- Drug effect discovered only at study end
+- **~36+ months** to read out
+:::
+
+::: {.column width="50%" .fragment}
+::: {style="text-align: center; font-weight: 600; color: #4B9CD3; margin-bottom: 0.3em;"}
+PANGEA Phase II (BATON-calibrated)
+:::
+
+- **78% chance** of early futility stop **when the drug is inactive**
+- Average patients enrolled: **~53** if inactive / **~58** if active
+- **27.3 months** expected duration
+:::
+::::
+:::
+
+::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; text-align: center;"}
+**Sooner answer, fewer patients on a losing arm — without losing power.**
+:::
+
+::: {.notes}
+This is what calibrated PANGEA Phase II means for a real patient. Pick someone in your clinic. A 62-year-old with metastatic PDAC, basal-like by PurIST, progressed on first-line gemcitabine plus nab-paclitaxel. In a traditional fixed Phase II of GnP plus erlotinib versus GnP alone, that patient enrolls into a trial that will run all 76 patients before anyone learns whether erlotinib adds anything. Three-plus years to read out. In PANGEA Phase II, calibrated by BATON: same randomization, but interim analyses run as PFS events accumulate. The design has a seventy-eight percent chance of stopping early for futility if erlotinib adds nothing — patients are not randomized to an inactive arm beyond what's needed to learn that. Expected enrollment is around 53 patients under H0 and 58 under H1. Expected duration: 27.3 months, not 36-plus. About 23 fewer patients exposed to a potentially-ineffective therapy. That is the clinical payoff of calibrating with BATON instead of shipping a fixed-N design that learns slowly. The OC table on the next slide is the underlying design BATON produced. This is one trial. When the calibration becomes routine for the GI portfolio, the savings compound across every adaptive trial we activate.
+:::
+
+
 ## PANGEA Phase II: calibrated by BATON {.smaller}
 
 :::: {.columns}
@@ -1277,12 +1308,16 @@ This is the same BATON convergence story you just saw on the grid-vs-BATON slide
 
 ::::
 
+::: {style="margin-top: 0.3em; font-size: 0.72em; color: #5B6670; font-style: italic; text-align: center;"}
+H₀ = drug inactive (no PFS benefit over GnP alone)  ·  H₁ = drug active at the assumed effect size (HR 0.58)
+:::
+
 ::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.88em;"}
 **Without BATON:** four interacting parameters rarely hit both constraints simultaneously. **With BATON:** joint calibration against both constraints, ~200 evaluations.
 :::
 
 ::: {.fragment style="margin-top: 0.4em; padding: 0.5em 0.9em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.85em; font-style: italic;"}
-**An unexpected finding:** caps set too low suppress early-efficacy declarations. BATON returned the **Pareto frontier**; we chose 76 to preserve early-efficacy stopping. Manual calibration would have anchored on the first feasible design.
+**An unexpected finding:** caps set too low suppress early-efficacy declarations — even when the drug works, the trial waits for the final analysis to say so. BATON returned the **best trade-off curve** across candidate caps; we chose 76 to preserve early-efficacy stopping. Manual calibration would have anchored on the first feasible design.
 :::
 
 ::: {.slide-refs}
@@ -1290,7 +1325,7 @@ Von Hoff et al., *NEJM* 2013 (MPACT) · Young et al., 2026 (BATON manuscript)
 :::
 
 ::: {.notes}
-Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial — basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. TENSE DISCIPLINE — critical, and the slide structure protects it: the 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect HR 0.58, not showing one. The OCs in the right column ARE achieved, because they are outputs of BATON's calibration — Type I at 7.0%, power at 82.2%, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." Four design parameters had to be set jointly to meet OCs — max sample size, efficacy stopping threshold, futility stopping threshold, and futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT which exact four BATON searched vs which were fixed by clinical/modeling choice. Three numbers to land: power 82% at Type I 7%; trial stops early for futility 78% of the time under H₀ — patients are not randomized to a losing arm waiting for the readout; trial stops early for efficacy 81% of the time under H₁. Expected duration: 27.3 months; expected N: 53 under H₀, 58 under H₁, well below max 76. (Protocol carries 82 as accrual target with buffer; 76 is the calibrated max. If asked: "76 is calibrated max, 82 is accrual goal.") UNEXPECTED FINDING — the Pareto callout. We started with an instinct toward a tight max N to minimize regret if the drug doesn't work. BATON identified a non-obvious trade-off: pushing the cap too low actively SUPPRESSED early-efficacy declarations — patients wait until the final analysis for an answer even when the drug DOES work. The recommendation was a slightly higher cap (76 vs the tighter cap we were instinctively heading toward) that preserves both early-futility stopping AND early-efficacy stopping. Manual calibration would have anchored on the first feasible design it found. BATON returned the Pareto frontier; we chose where to land. This is the kind of insight manual calibration misses. WITHOUT/WITH BATON — quick read for the callout above. Without BATON: months of hand-tuning, four interacting parameters that rarely hit both constraints simultaneously, no reproducibility, no audit trail. With BATON: ~200 evaluations in hours, joint calibration against both constraints, deterministic seeded output, FDA-grade audit trail. The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
+This is the underlying design that produced the patient-facing numbers on the previous slide. Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial — basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. TENSE DISCIPLINE — critical, and the slide structure protects it: the 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect HR 0.58, not showing one. The OCs in the right column ARE achieved, because they are outputs of BATON's calibration — Type I at 7.0%, power at 82.2%, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." Four design parameters had to be set jointly to meet OCs — max sample size, efficacy stopping threshold, futility stopping threshold, and futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT which exact four BATON searched vs which were fixed by clinical/modeling choice. Three numbers to land: power 82% at Type I 7%; trial stops early for futility 78% of the time under H₀ — patients are not randomized to a losing arm waiting for the readout; trial stops early for efficacy 81% of the time under H₁. Expected duration: 27.3 months; expected N: 53 under H₀, 58 under H₁, well below max 76. (Protocol carries 82 as accrual target with buffer; 76 is the calibrated max. If asked: "76 is calibrated max, 82 is accrual goal.") UNEXPECTED FINDING — the Pareto callout. We started with an instinct toward a tight max N to minimize regret if the drug doesn't work. BATON identified a non-obvious trade-off: pushing the cap too low actively SUPPRESSED early-efficacy declarations — patients wait until the final analysis for an answer even when the drug DOES work. The recommendation was a slightly higher cap (76 vs the tighter cap we were instinctively heading toward) that preserves both early-futility stopping AND early-efficacy stopping. Manual calibration would have anchored on the first feasible design it found. BATON returned the Pareto frontier; we chose where to land. This is the kind of insight manual calibration misses. WITHOUT/WITH BATON — quick read for the callout above. Without BATON: months of hand-tuning, four interacting parameters that rarely hit both constraints simultaneously, no reproducibility, no audit trail. With BATON: ~200 evaluations in hours, joint calibration against both constraints, deterministic seeded output, FDA-grade audit trail. The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
 :::
 
 
@@ -1299,46 +1334,6 @@ Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptiv
      If reinstated, mirror the PANGEA Phase II structure (design params → OC constraints
      → achieved characteristics table) and add an entry to the acknowledgments
      funding line if needed. -->
-
-
-## What this means for a PDAC patient {.smaller}
-
-::: {style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B; font-style: italic;"}
-Mr. Hernandez, 62, mPDAC, basal-like by PurIST, progressed on 1L GnP.
-:::
-
-::: {style="font-size: 0.9em;"}
-:::: {.columns}
-
-::: {.column width="50%" .fragment}
-::: {style="text-align: center; font-weight: 600; color: #5B6670; margin-bottom: 0.3em;"}
-Traditional fixed Phase II
-:::
-
-- All **76 patients** enrolled before any look
-- Drug effect discovered only at study end
-- **~36+ months** to read out
-:::
-
-::: {.column width="50%" .fragment}
-::: {style="text-align: center; font-weight: 600; color: #4B9CD3; margin-bottom: 0.3em;"}
-PANGEA Phase II (BATON-calibrated)
-:::
-
-- **78% chance** of early futility stop
-- E[N]: **~53** (H₀) / **~58** (H₁)
-- **27.3 months** expected duration
-:::
-::::
-:::
-
-::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; text-align: center;"}
-**Sooner answer, fewer patients on a losing arm — without losing power.**
-:::
-
-::: {.notes}
-This is what calibrated PANGEA Phase II means for a real patient. Pick someone in your clinic. A 62-year-old with metastatic PDAC, basal-like by PurIST, progressed on first-line gemcitabine plus nab-paclitaxel. In a traditional fixed Phase II of GnP plus erlotinib versus GnP alone, that patient enrolls into a trial that will run all 76 patients before anyone learns whether erlotinib adds anything. Three-plus years to read out. In PANGEA Phase II, calibrated by BATON: same randomization, but interim analyses run as PFS events accumulate. The design has a seventy-eight percent chance of stopping early for futility if erlotinib adds nothing — patients are not randomized to an inactive arm beyond what's needed to learn that. Expected enrollment is around 53 patients under H0 and 58 under H1. Expected duration: 27.3 months, not 36-plus. About 23 fewer patients exposed to a potentially-ineffective therapy. That is the clinical payoff of calibrating with BATON instead of shipping a fixed-N design that learns slowly. This is one trial. When the calibration becomes routine for the GI portfolio, the savings compound across every adaptive trial we activate.
-:::
 
 
 ## Where this is going {.smaller}
@@ -1357,10 +1352,10 @@ gi <- data.frame(
   y = c(2, 2, 1, 1),
   header = c("PDAC", "CRC",
              "Basket / umbrella", "Robust calibration"),
-  detail = c("RAS-backbone\ncombinations\nU-BOIN / BOIN12",
-             "Joint-surface\nnovel-novel doublets\nPOCRM · BOIN-COMB · BLRM",
+  detail = c("RAS-backbone\ncombinations\nOBD selection",
+             "Joint-surface\nnovel-novel\ndoublets",
              "Biomarker-stratified\nsubtrials\nshared decision rules",
-             "CARBO — designs\nrobust to uncertain\nassumptions"),
+             "Designs robust to\nuncertain trial\nassumptions"),
   fill = c("#13294B", "#4B9CD3", "#4B9CD3", "#13294B")
 )
 ggplot() +
@@ -1378,7 +1373,7 @@ ggplot() +
 ```
 
 ::: {.fragment style="margin-top: 0.4em; margin-bottom: 0.5em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
-Could BATON become standard infrastructure for adaptive trial design in GI oncology?
+BATON is the infrastructure that makes adaptive trial design routine across the GI portfolio.
 :::
 
 ::: {.slide-refs}
