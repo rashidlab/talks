@@ -48,7 +48,7 @@ Methods to optimize combination doses are established. Designs that adapt to eme
 :::
 
 ::: {.fragment style="margin-top: 1.2em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600;"}
-The hold-up: getting them calibrated and launched.
+The difficulty: getting them calibrated and launched.
 :::
 
 ::: {.notes}
@@ -136,7 +136,7 @@ ggplot(toxdata, aes(x = metric, y = pct, fill = fill)) +
 :::
 
 ::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.9em; color: #13294B;"}
-**48% is the headroom number.** Every combination partner you add is dose-modification room you no longer have.
+**Half of patients on monotherapy at 300 mg already need dose adjustments.** Combinations layer on top — with less room to spare.
 :::
 
 ::: {.slide-refs}
