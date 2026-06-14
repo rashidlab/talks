@@ -1213,7 +1213,7 @@ display:block!important;
 <section id="why-combinations-break-the-rules-you-grew-up-on" class="slide level2 smaller">
 <h2>Why combinations break the rules you grew up on</h2>
 <ul>
-<li><strong>3+3 was built for single-agent chemo</strong><span class="citation" data-cites="letourneau2009"><sup><a href="#/references" role="doc-biblioref" onclick>5</a></sup></span>. Combinations violate its three core assumptions: <strong>monotonic dose-toxicity, additive joint toxicity, Cycle-1-observable DLTs.</strong></li>
+<li><strong>3+3 was built for single-agent chemo</strong><span class="citation" data-cites="letourneau2009"><sup><a href="#/references" role="doc-biblioref" onclick>5</a></sup></span>. Combinations violate its four core assumptions: <strong>monotonic dose-toxicity, additive joint toxicity, Cycle-1-observable DLTs, and a joint surface that can be characterized by titrating one drug at a time.</strong></li>
 <li><strong>In practice, combination dose-finding collapses to one drug.</strong> Pick agent A’s dose, fix it, add agent B. The joint efficacy-toxicity surface is <strong>almost never searched</strong> — in 162 combination trials, <strong>88% used 3+3 and all but one used a single-agent design</strong><span class="citation" data-cites="riviere2015combo harrington2013dual"><sup><a href="#/references" role="doc-biblioref" onclick>6</a>,<a href="#/references" role="doc-biblioref" onclick>7</a></sup></span>.</li>
 </ul>
 <div class="fragment" style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;">
@@ -1256,7 +1256,7 @@ display:block!important;
 <p>Three of the four 3+3 assumptions failing at once: joint surface unsearched, toxicity non-additive, toxicity late-onset.</p>
 </div>
 <div class="slide-refs">
-<p>Li et al., <em>JTO</em> 2022 (WCLC OA03.06)</p>
+<p>Hong et al., <em>NEJM</em> 2020 (CodeBreaK 100) · Li et al., <em>JTO</em> 2022 (WCLC OA03.06)</p>
 </div>
 <aside class="notes">
 <p>This is the worked example of the principle on the previous slide. The Amgen case is the clean one — and notice it is not a competence problem. Same sponsor used a model-based Bayesian logistic regression for sotorasib monotherapy in CodeBreaK 100. But for the sotorasib + pembrolizumab combination in CodeBreaK 100/101, they fixed the IO dose, explored only sotorasib across cohorts, and never modeled the two-drug surface. Even the most sophisticated sponsors collapse the combination to a one-drug search — which is the gap BATON closes. The combination’s defining toxicity proved the point twice over: severe hepatotoxicity you could not predict from the single agent, and 88% of the Grade 3-4 events landed outside the 21-day DLT window — so a Cycle 1 design would have missed most of it. Q&amp;A POCKET — where 88% comes from. The 22 of 25 numerator and denominator is the audit-ready figure. Source: Li et al WCLC 2022 OA03.06 / JTO 2022 supplement. If pressed, this single example demonstrates three of the four 3+3 assumptions failing at once: joint surface unsearched (combination not modeled), toxicity non-additive (synergistic hepatotoxicity), and late-onset toxicity outside Cycle 1 (88% out-of-window). The fourth assumption — monotonic dose-toxicity — wasn’t directly tested here because they didn’t search the surface.</p>

@@ -168,7 +168,7 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 
 ## Why combinations break the rules you grew up on {.smaller}
 
-- **3+3 was built for single-agent chemo** [@letourneau2009]. Combinations violate its three core assumptions: **monotonic dose-toxicity, additive joint toxicity, Cycle-1-observable DLTs.**
+- **3+3 was built for single-agent chemo** [@letourneau2009]. Combinations violate its four core assumptions: **monotonic dose-toxicity, additive joint toxicity, Cycle-1-observable DLTs, and a joint surface that can be characterized by titrating one drug at a time.**
 - **In practice, combination dose-finding collapses to one drug.** Pick agent A's dose, fix it, add agent B. The joint efficacy-toxicity surface is **almost never searched** — in 162 combination trials, **88% used 3+3 and all but one used a single-agent design** [@riviere2015combo; @harrington2013dual].
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
@@ -205,7 +205,7 @@ Three of the four 3+3 assumptions failing at once: joint surface unsearched, tox
 :::
 
 ::: {.slide-refs}
-Li et al., *JTO* 2022 (WCLC OA03.06)
+Hong et al., *NEJM* 2020 (CodeBreaK 100) · Li et al., *JTO* 2022 (WCLC OA03.06)
 :::
 
 ::: {.notes}
