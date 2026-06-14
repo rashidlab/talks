@@ -159,28 +159,6 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 :::
 
 
-## What 3+3 assumes, and where each breaks for combinations {.smaller}
-
-::: {style="font-size: 1.05em; margin-top: 0.5em;"}
-Four assumptions underneath conventional dose-finding. None survive RAS combinations:
-:::
-
-::: {.fragment style="margin-top: 0.8em;"}
-1. **More is better.** *Often it isn't.*
-2. **Toxicity comes from one drug.** *Combinations don't work that way.*
-3. **DLTs in Cycle 1 define safety.** *Late-onset toxicity governs long-term tolerability.*
-4. **A combination behaves like the sum of its parts.** *It doesn't, on either axis. Synergy can put the optimum below both single-agent doses.*
-:::
-
-::: {.fragment style="margin-top: 1.0em; text-align: center; color: #13294B; font-weight: 600; font-size: 0.95em;"}
-The next section walks through what replaces each.
-:::
-
-::: {.notes}
-DELIVERY: this is a ten-second roadmap slide, not a verdict. Move through it fast. The convincing happens on the next slides where I have the examples — sotorasib + pembrolizumab, RMC-GI-102, PANGEA's OBD-below-MTD hypothesis. This slide just tells the audience the shape of the next ten minutes. Frame it as a preview: four assumptions, four places they break for combinations, each one mapped to a slide that replaces it. Assumption 1 maps to Project Optimus and the OBD paradigm. Assumption 2 maps to the sotorasib + pembrolizumab hepatotoxicity story. Assumption 3 maps to the late-onset toxicity finding on the same slide — 88% outside Cycle 1. Assumption 4 maps to PANGEA's central hypothesis, that the optimum sits below both single-agent doses. WHY THIS SCOPING: 3+3 is fine for a cytotoxic — it answered the question it was built to answer. The point is not that it is wrong, it is that the assumptions it rests on mis-specify the problem for RAS combinations. Specifically: "more is better" — the conventional heuristic that MTD is the dose to carry forward — is the one a clinical audience knows is unreliable; OBD on the next slide is what replaces it. The genuinely counterintuitive one is assumption 4. That the combination optimum can sit below both single-agent doses runs against intuition — less of each than you'd give alone — and that is the payload of this slide. The other three are scaffolding. For RAS specifically, the RTK feedback we saw two slides ago is a mechanism for non-additive interaction, so the synergy claim is biologically grounded, not just statistical caution. PANGEA's hypothesis is the local case-study version of assumption 4.
-:::
-
-
 # The dose-finding problem {.center background-color="#13294B"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
