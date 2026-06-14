@@ -2000,7 +2000,7 @@ display:block!important;
 </div>
 </div></div>
 <div class="fragment" style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.88em;">
-<p><strong>Without BATON:</strong> months of hand-tuning; four interacting parameters rarely hit both constraints. <strong>With BATON:</strong> ~200 evaluations in hours, jointly calibrated, deterministic FDA-grade audit trail.</p>
+<p><strong>Without BATON:</strong> four interacting parameters rarely hit both constraints simultaneously. <strong>With BATON:</strong> joint calibration against both constraints, ~200 evaluations.</p>
 </div>
 <div class="fragment" style="margin-top: 0.4em; padding: 0.5em 0.9em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.85em; font-style: italic;">
 <p><strong>An unexpected finding:</strong> caps set too low suppress early-efficacy declarations. BATON returned the <strong>Pareto frontier</strong>; we chose 76 to preserve early-efficacy stopping. Manual calibration would have anchored on the first feasible design.</p>
@@ -2055,7 +2055,7 @@ display:block!important;
 </div></div>
 </div>
 <div class="fragment" style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; text-align: center;">
-<p><strong>~23 fewer patients on potentially-ineffective therapy. Answer in 27.3 months, not 36+.</strong></p>
+<p><strong>Sooner answer, fewer patients on a losing arm — without losing power.</strong></p>
 </div>
 <aside class="notes">
 <p>This is what calibrated PANGEA Phase II means for a real patient. Pick someone in your clinic. A 62-year-old with metastatic PDAC, basal-like by PurIST, progressed on first-line gemcitabine plus nab-paclitaxel. In a traditional fixed Phase II of GnP plus erlotinib versus GnP alone, that patient enrolls into a trial that will run all 76 patients before anyone learns whether erlotinib adds anything. Three-plus years to read out. In PANGEA Phase II, calibrated by BATON: same randomization, but interim analyses run as PFS events accumulate. The design has a seventy-eight percent chance of stopping early for futility if erlotinib adds nothing — patients are not randomized to an inactive arm beyond what’s needed to learn that. Expected enrollment is around 53 patients under H0 and 58 under H1. Expected duration: 27.3 months, not 36-plus. About 23 fewer patients exposed to a potentially-ineffective therapy. That is the clinical payoff of calibrating with BATON instead of shipping a fixed-N design that learns slowly. This is one trial. When the calibration becomes routine for the GI portfolio, the savings compound across every adaptive trial we activate.</p>
