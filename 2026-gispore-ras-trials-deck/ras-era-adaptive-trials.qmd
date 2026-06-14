@@ -428,32 +428,27 @@ Schematic adapted from ARPA-H ADAPT program overview materials.
 - Pathway reactivation and downstream amplification: KRAS amp, NRAS / BRAF / MAP2K1, MYC, PI3K family [@aguirre2024resistance; @awad2021resistance; @wasko2024rmc7977]
 - RTK upregulation and bypass signaling [@zhuang2026rtk]
 - Cell-state plasticity (basal ↔ classical, partial EMT) [@aguirre2024resistance; @xu2025kinome]
-
-::: {.fragment}
-**Traditional trials fail to capture this**
-
-- Fixed regimens miss the interception window
-- Baseline-only biomarkers can't track evolution under therapy
-- **Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging — a resistance-aware trial has to *do both***
-:::
 :::
 :::
 
 ::::
 
 ::: {.notes}
-Classical trial design treats patients as if they're draws from a fixed distribution — enroll, randomize, administer the regimen, measure outcomes at predefined timepoints. That logic works when the underlying biology is static. Under sustained RAS-inhibitor pressure it doesn't. The tumor evolves. Each patient is a moving target. Resistance signals start appearing weeks into therapy — sometimes earlier. The mechanisms split into a few buckets. Pathway reactivation through KRAS amplification or downstream NRAS, BRAF, MAP2K1 mutations — Aguirre's PDAC clinical work and Awad's adagrasib resistance series. Downstream amplification — MYC and PI3K family — is Wasko's preclinical RMC-7977 finding (the prevalent in-vivo resistance mechanism in KPC tumours, not pathway reactivation per se since pERK remained suppressed in resistant tumours). RTK upregulation and bypass signaling — the Zhuang and Aronchik mechanistic case for combinations. Cell-state plasticity between basal-like and classical with partial EMT — Aguirre again, plus the Yeh and Johnson labs' kinome work at UNC. None of these are baseline phenotypes. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add to a trial. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both. A fixed-regimen trial with baseline-only biomarkers cannot see either, and even when it captures them retrospectively at progression, it cannot act on them. The design has to become temporal too — that's what the next few slides are about.
+Classical trial design treats patients as if they're draws from a fixed distribution — enroll, randomize, administer the regimen, measure outcomes at predefined timepoints. That logic works when the underlying biology is static. Under sustained RAS-inhibitor pressure it doesn't. The tumor evolves. Each patient is a moving target. Resistance signals start appearing weeks into therapy — sometimes earlier. The mechanisms split into a few buckets. Pathway reactivation through KRAS amplification or downstream NRAS, BRAF, MAP2K1 mutations — Aguirre's PDAC clinical work and Awad's adagrasib resistance series. Downstream amplification — MYC and PI3K family — is Wasko's preclinical RMC-7977 finding (the prevalent in-vivo resistance mechanism in KPC tumours, not pathway reactivation per se since pERK remained suppressed in resistant tumours). RTK upregulation and bypass signaling — the Zhuang and Aronchik mechanistic case for combinations. Cell-state plasticity between basal-like and classical with partial EMT — Aguirre again, plus the Yeh and Johnson labs' kinome work at UNC. None of these are baseline phenotypes. The biology is genuinely dynamic — and that's the setup for what trials need to do differently, which is the next slide.
 :::
 
 
 ## Why classical trial designs miss resistance {.smaller}
 
-- **Classical design was built for static biology** — fixed regimen, fixed endpoint.
-- **In practice, resistance is studied retrospectively** — emerging signatures are characterized only after progression and trial closure [@awad2021resistance; @aguirre2024resistance]
-- The temporal surface (when resistance emerges, in which patients) is never characterized.
+**Traditional trials fail to capture this:**
+
+- Fixed regimens miss the interception window
+- Baseline-only biomarkers can't track evolution under therapy
+- Resistance is characterized retrospectively — only after progression and trial closure [@awad2021resistance; @aguirre2024resistance]
+- The temporal surface (when resistance emerges, in which patients) is never characterized
 
 ::: {.fragment style="margin-top: 0.6em; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em; color: #13294B;"}
-**Same structural failure as combination dose-finding:** static designs for a dynamic problem. A resistance-aware trial has to learn during enrollment.
+**Genomic → ctDNA · non-genomic / plasticity → biopsies, transcriptomics, imaging — a resistance-aware trial has to *do both* during enrollment.** Same structural failure as combination dose-finding: static designs for a dynamic problem.
 :::
 
 ::: {.slide-refs}
@@ -461,7 +456,7 @@ Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024 (both post-prog
 :::
 
 ::: {.notes}
-The resistance-side parallel to the combination dose-finding critique two sections ago. There, the problem was that 3+3 searches one dose at a time and never characterizes the joint dose surface. Here, the problem is that classical designs measure outcome at fixed endpoints and never characterize the temporal surface — when resistance emerges, in which patients, by which mechanism. The retrospective bullet is itself the evidence: the Awad and Aguirre papers I just cited on the previous slide are post-progression analyses, ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Early signals in molecular subsets dilute into the overall Kaplan-Meier. Heterogeneous response trajectories collapse into summary statistics. None of that is useful for designing the next trial in real time. The same structural failure as the dose problem: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
+This is the design-implications side of the previous slide. Traditional trials fail to capture resistance for four interlocking reasons. First, fixed regimens miss the interception window — by the time the trial reads out, the biology has changed. Second, baseline-only biomarkers can't track evolution under therapy — you measured the wrong thing at the wrong time. Third, resistance is characterized retrospectively, only after progression and trial closure. The Awad and Aguirre papers cited on the previous slide are themselves post-progression analyses — ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Fourth, the temporal surface — when resistance emerges, in which patients, by which mechanism — is never characterized. Early signals in molecular subsets dilute into the overall Kaplan-Meier; heterogeneous response trajectories collapse into summary statistics. None of that is useful for designing the next trial in real time. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both, during enrollment, not after. Same structural failure as the combination dose-finding critique two sections ago: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
 :::
 
 
