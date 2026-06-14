@@ -82,12 +82,12 @@
        DARAXONRASIB ARROW (middle)
        ==================================================================== -->
   <g>
-    <line x1="225" y1="190" x2="395" y2="190" stroke="#13294B"
+    <line x1="220" y1="190" x2="500" y2="190" stroke="#13294B"
           stroke-width="3" marker-end="url(#arrowNavy)"/>
-    <rect x="245" y="160" width="130" height="42" rx="7" fill="#13294B"/>
-    <text x="310" y="180" text-anchor="middle" font-size="13" fill="#FFFFFF"
+    <rect x="295" y="160" width="130" height="42" rx="7" fill="#13294B"/>
+    <text x="360" y="180" text-anchor="middle" font-size="13" fill="#FFFFFF"
           font-weight="600">Daraxonrasib</text>
-    <text x="310" y="195" text-anchor="middle" font-size="10" fill="#D6E5F2"
+    <text x="360" y="195" text-anchor="middle" font-size="10" fill="#D6E5F2"
           font-style="italic">RAS(ON) multi-selective</text>
   </g>
 
@@ -144,19 +144,6 @@
           fill="#13294B" font-weight="600">↓ Active RAS-GTP</text>
     <text x="600" y="215" text-anchor="middle" font-size="11"
           fill="#2E6A9F" font-weight="600">↑ RTK upregulation</text>
-  </g>
-
-  <!-- ====================================================================
-       FEEDBACK ARROW (curving from right cell back to left)
-       ==================================================================== -->
-  <g>
-    <path d="M 665 90 C 665 4, 360 4, 200 92"
-          fill="none" stroke="#2E6A9F" stroke-width="2.5"
-          stroke-dasharray="6,4" marker-end="url(#arrowDeep)"/>
-    <text x="400" y="11" text-anchor="middle" font-size="11" fill="#2E6A9F"
-          font-style="italic" font-weight="500">
-      Compensatory feedback: RTKs rise as RAS signaling drops
-    </text>
   </g>
 
   <!-- ====================================================================

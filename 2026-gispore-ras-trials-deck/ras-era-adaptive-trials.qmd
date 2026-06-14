@@ -246,17 +246,31 @@ The empirical evidence that this is not just theoretical. The FDA-AACR Strategie
 
 ## Project Optimus: the regulatory ground has shifted {.smaller}
 
-- FDA final guidance, 2024 [@fda_optimus_guidance]: *Optimizing the Dosage of Human Prescription Drugs… for the Treatment of Oncologic Diseases*
-- **Maximum Tolerated Dose → a dose optimized on benefit-risk (the OBD).**
-- The expectation now is to **study more than one dose and justify the choice on efficacy and safety**, with **randomized dosage comparison** as the FDA's recommended approach.
+:::: {.columns}
 
-::: {.fragment style="margin-top: 1.0em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
-This is no longer a methodological choice — it's the FDA's stated preference.
+::: {.column width="55%"}
+- FDA final guidance, 2024 [@fda_optimus_guidance]
+- **MTD → an OBD optimized on benefit-risk**
+- Sponsors must **study more than one dose** and justify on efficacy and safety
+
+::: {.fragment style="margin-top: 0.8em; padding: 0.55em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
+Not just a methodological choice — the FDA's stated preference.
 :::
 
-::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.82em; color: #13294B;"}
-**Thall et al.** (*Clinical Trials* 2024, methodologists' response to Project Optimus): conventional Phase I designs cannot reliably identify safe and effective doses [@thall2024optimus].
+::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.8em; color: #13294B;"}
+**Thall et al.** *Clin Trials* 2024: conventional Phase I designs cannot reliably identify safe and effective doses [@thall2024optimus].
 :::
+:::
+
+::: {.column width="45%"}
+![](images/optimus-banner.jpg){width=100% fig-alt="FDA Project Optimus banner: stylized pill capsule on a dark blue background, representing the oncology dose-optimization paradigm shift."}
+
+::: {style="margin-top: 0.3em; text-align: center; font-size: 0.72em; color: #5B6670; font-style: italic;"}
+FDA Project Optimus · Oncology Center of Excellence
+:::
+:::
+
+::::
 
 ::: {.slide-refs}
 FDA Guidance for Industry, 2024 (Project Optimus) · Thall et al., *Clin Trials* 2024
