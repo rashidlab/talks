@@ -72,11 +72,11 @@ Three slides on the clinical pressure before we get to design problems.
 :::: {.columns}
 
 ::: {.column width="55%"}
-- Daraxonrasib (RMC-6236): oral, multi-selective RAS(ON) inhibitor
-- **RASolute 302** (2L mPDAC) [@rasolute302]:
+- **RASolute 302** (2L mPDAC, *NEJM* 2026) [@rasolute302]:
   - **Median OS: 13.2 vs 6.7 months**
   - **HR 0.40 — 60% reduction in risk of death** (p < 0.0001)
-- ASCO 2026 Plenary, May 31 (Wolpin); *NEJM* same day
+- Daraxonrasib (RMC-6236) — oral, multi-selective RAS(ON) inhibitor
+- ASCO 2026 Plenary, May 31 (Wolpin)
 
 ::: {.slide-refs}
 O'Reilly et al., *NEJM* 2026 (RASolute 302) · ASCO Plenary Abstr LBA5
@@ -96,27 +96,45 @@ For pancreatic cancer this is the largest survival signal in a generation. Final
 
 ## …but monotherapy has visible ceilings {.smaller}
 
-RMC-6236-001 (NEJM 2026) [@daraxonrasib_mono]
-
-::: {.fragment style="margin-top: 0.6em;"}
-**Full cohort (n=168 PDAC, doses ≤300 mg):**
-
-| Metric | Value |
-|---|---|
-| Grade ≥3 TRAEs | **30%** |
+::: {style="margin-top: 0.2em; text-align: center; font-size: 0.9em; color: #5B6670; font-style: italic;"}
+RMC-6236-001 (PDAC cohort, *NEJM* 2026) [@daraxonrasib_mono]
 :::
 
-::: {.fragment style="margin-top: 0.6em;"}
-**At 300 mg (the Phase 3 monotherapy dose):**
-
-| Metric | Value |
-|---|---|
-| Grade ≥3 TRAEs | **~34%** |
-| Required dose modification | **48%** |
-| TRAE-related discontinuation | **0%** |
+::: {.fragment style="margin-top: 0.5em;"}
+```{r}
+#| fig.height: 3.0
+#| fig.width: 9
+#| fig.align: center
+library(ggplot2)
+toxdata <- data.frame(
+  metric = factor(c("TRAE-related discontinuation\n(300 mg)",
+                    "Grade ≥3 TRAEs\n(full cohort, n=168, ≤300 mg)",
+                    "Grade ≥3 TRAEs\n(300 mg)",
+                    "Required dose modification\n(300 mg)"),
+                  levels = c("Required dose modification\n(300 mg)",
+                             "Grade ≥3 TRAEs\n(300 mg)",
+                             "Grade ≥3 TRAEs\n(full cohort, n=168, ≤300 mg)",
+                             "TRAE-related discontinuation\n(300 mg)")),
+  pct = c(0, 30, 34, 48),
+  fill = c("#4B9CD3", "#5B6670", "#5B6670", "#C75050")
+)
+ggplot(toxdata, aes(x = metric, y = pct, fill = fill)) +
+  geom_col(width = 0.6) +
+  geom_text(aes(label = paste0(pct, "%")),
+            hjust = -0.2, size = 5, fontface = "bold", color = "#13294B") +
+  scale_fill_identity() +
+  scale_y_continuous(limits = c(0, 65), expand = c(0, 0)) +
+  coord_flip() +
+  labs(x = NULL, y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(panel.grid = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text.y = element_text(face = "bold", color = "#13294B", size = 11))
+```
 :::
 
-::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.85em; color: #13294B;"}
+::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.9em; color: #13294B;"}
 **48% is the headroom number.** Every combination partner you add is dose-modification room you no longer have.
 :::
 
@@ -134,8 +152,7 @@ Three numbers worth keeping in mind. Across the full cohort of 168 patients on d
 :::: {.columns}
 
 ::: {.column width="50%"}
-- Daraxonrasib drives **RTK upregulation** on PDAC cell surface (Zhuang/Singh/Aronchik, Revolution Medicines, AACR RAS 2026) [@zhuang2026rtk]
-- Their framing: rational, biomarker-driven combinations to *pre-empt or overcome emergent resistance* [@zhuang2026rtk]
+- Daraxonrasib drives **RTK upregulation** on PDAC cell surface — the mechanistic case for biomarker-driven, resistance-preemptive combinations (Zhuang/Singh/Aronchik, Revolution Medicines, AACR RAS 2026) [@zhuang2026rtk]
 - **1L combination cohort** (daraxonrasib **200 mg** + GnP, n=40, AACR 2026) [@rmcgi102]:
   - ORR: **58%** · DCR: **90%** · 6-mo PFS: **84%** · 6-mo OS: **90%**
 :::
