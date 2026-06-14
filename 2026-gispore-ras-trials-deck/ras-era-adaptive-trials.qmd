@@ -105,6 +105,7 @@ RMC-6236-001 (PDAC cohort, *NEJM* 2026) [@daraxonrasib_mono]
 #| fig.height: 3.0
 #| fig.width: 9
 #| fig.align: center
+#| fig.alt: "Horizontal bar chart of daraxonrasib monotherapy tolerability (RMC-6236-001 PDAC cohort): 0% TRAE-related discontinuation at 300 mg; 30% Grade ≥3 TRAEs in the full cohort (n=168, doses ≤300 mg); 34% Grade ≥3 TRAEs at 300 mg; 48% required dose modification at 300 mg."
 library(ggplot2)
 toxdata <- data.frame(
   metric = factor(c("TRAE-related discontinuation\n(300 mg)",
