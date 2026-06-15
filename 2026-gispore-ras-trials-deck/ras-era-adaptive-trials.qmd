@@ -56,7 +56,18 @@ The challenge is making these designs practical enough to launch.
 :::
 
 ::: {.notes}
-The argument of the talk. The science of RAS-era combinations puts real demands on trial design, combination dose-finding under non-monotonic dose-response, and resistance tracking with in-trial adaptation. Modern Bayesian adaptive designs answer both, at different maturity levels: dose-optimization methods are established, resistance-tracking designs are enrolling. What's been missing is the infrastructure to make them practical, and that's where BATON closes the gap. BATON is the closing tool, not the headline. Note the deliberate asymmetry in the fragment, "established" vs "enrolling", this prevents the resistance-side overclaim that would land badly with a SPORE audience who knows EVOLVE hasn't yet reported.
+**Pull-from-if-needed**
+
+- Argument: RAS-era combinations create two trial-design demands — combination dose-finding under non-monotonic dose-response, and resistance tracking with in-trial adaptation
+- Bayesian adaptive designs answer both, at different maturity: dose-optimization methods **established**; resistance-tracking designs **enrolling**
+- BATON is the closing tool, not the headline — what's been missing is the infrastructure to make these designs practical
+
+**Q&A pockets**
+
+- *Q: Has EVOLVE reported yet?*
+  A: No — it's enrolling. The "established vs enrolling" asymmetry is deliberate. Don't let live delivery drift toward an implied result; the readout is what we'll report when interim looks are run.
+
+**Delivery**: The asymmetry is on purpose for this SPORE audience. Methods *established* vs designs *enrolling* — don't overclaim the resistance side.
 :::
 
 
@@ -67,7 +78,12 @@ The argument of the talk. The science of RAS-era combinations puts real demands 
 :::
 
 ::: {.notes}
-Three slides on the clinical pressure before we get to design problems.
+**Pull-from-if-needed**
+
+- Three-slide arc: largest PDAC survival signal in a generation (RASolute) → narrow tolerability margin → biomarker-driven combinations are the next move
+- Establishes clinical pressure before pivoting to design problems
+
+**Delivery**: One-line transition. Don't linger.
 :::
 
 
@@ -98,7 +114,25 @@ O'Reilly et al., *NEJM* 2026 (RASolute 302) · ASCO Plenary Abstr LBA5
 ::::
 
 ::: {.notes}
-For pancreatic cancer this is the largest survival signal in a generation. Final analysis was presented at the ASCO Plenary on May 31 and published in *NEJM* the same day. Cite the NEJM paper, not a press release, this room will care about that. Two numbers to have in your pocket for Q&A. Median follow-up was 8.5 months at the February 10 data cutoff, so if anyone presses on maturity that's your number. And the 13.2 vs 6.7 figure is overall ITT; the dual primary endpoint was OS and PFS in the RAS G12-mutant subgroup (228 vs 231 patients), where HR was also 0.40 (P = 5.9e-10). If a discussant draws the ITT-vs-primary distinction, the answer is that the 0.40 benefit held in both, robustness across RAS mutation status is the whole point of a multi-selective RAS(ON) inhibitor. That robustness is a strength to lean on, not a vulnerability. Whatever else you take from this talk, this result will reshape the GI oncology trial landscape over the next two to three years, every program in this room will soon be deciding what to combine with this drug, in which biomarker-defined patients.
+**Pull-from-if-needed**
+
+- Largest PDAC survival signal in a generation. Cite NEJM, not press release — this room will care
+- Final analysis presented at ASCO Plenary May 31, *NEJM* same day
+- 13.2 vs 6.7 mo OS is the overall **ITT** figure
+- Dual primary endpoint = OS + PFS in the RAS G12-mutant subgroup (228 vs 231 patients); HR also 0.40, P = 5.9e-10
+- Median follow-up 8.5 months at Feb 10 data cutoff (use this if anyone presses on maturity)
+- Implication for the room: every program here will soon be deciding what to combine and in which biomarker-defined patients
+
+**Q&A pockets**
+
+- *Q: How mature is the follow-up?*
+  A: 8.5 months median at the Feb 10 cutoff.
+- *Q: Is 13.2 vs 6.7 the primary endpoint?*
+  A: That's ITT. Dual primary was OS + PFS in the RAS G12-mutant subgroup (228 vs 231), where HR was also 0.40 (P = 5.9e-10).
+- *Q: Doesn't the ITT-vs-primary distinction weaken it?*
+  A: No. The 0.40 benefit held in both. Robustness across RAS mutation status is the whole point of a multi-selective RAS(ON) inhibitor — a strength to lean on, not a vulnerability.
+
+**Delivery**: Don't undersell. This reshapes the GI oncology trial landscape over the next 2-3 years.
 :::
 
 
@@ -152,7 +186,21 @@ Wolpin et al., *NEJM* 2026 (RMC-6236-001 PDAC cohort)
 :::
 
 ::: {.notes}
-Three numbers worth keeping in mind. Across the full cohort of 168 patients on doses up to 300 mg, about a third have Grade 3 or worse toxicity. No patient discontinued because of drug toxicity, that's genuinely remarkable for an active drug in this disease. The qualifier matters; everyone with metastatic PDAC eventually comes off for progression, but nobody had to come off this drug for tolerability. Now narrow to the 300 mg dose specifically, which is the Phase 3 monotherapy dose: Grade ≥3 toxicity is closer to 34%, and forty-eight percent of patients required dose modifications. That 48% is the load-bearing number for the rest of this talk. For a drug being positioned as the backbone of future combinations, that's the headroom you start spending the moment you add a partner. The combination already moved to 200 mg, informally acknowledging the same headroom problem without searching for the actual optimum, which is the next slide. The question isn't "is daraxonrasib tolerable as monotherapy?", clearly it is. The question is "at what dose, on what schedule, with what partners, in which patients?" That's a trial-design question, and the rest of this talk is about answering it.
+**Pull-from-if-needed**
+
+- Full cohort (n=168, ≤300 mg): ~30% Grade ≥3 toxicity
+- 0% TRAE-related discontinuation — remarkable for an active PDAC drug. Qualifier: progression eventually pulls everyone off; nobody pulled off for tolerability
+- **At 300 mg** (Phase 3 monotherapy dose): G≥3 ~34%, **48% required dose modification** — the load-bearing number for the rest of the talk
+- Combination already moved to 200 mg — informally acknowledging the same headroom problem without searching for the optimum (sets up next slide)
+
+**Q&A pockets**
+
+- *Q: So is daraxonrasib tolerable?*
+  A: As monotherapy, yes — clearly. The real question is at what dose, what schedule, what partners, in which patients. That's a trial-design question; the rest of the talk answers it.
+- *Q: Why anchor on 48%?*
+  A: It's the headroom you start spending the moment you add a partner. For a drug positioned as the combination backbone, 48% dose-modification at the monotherapy dose is the load-bearing tolerability signal.
+
+**Delivery**: 48% is the load-bearing number. Don't lead with 0% discontinuation — acknowledge in passing, don't headline.
 :::
 
 
@@ -185,7 +233,21 @@ Zhuang et al., *Cancer Res* 2026 (AACR RAS) · Aguirre et al., *Cancer Discov* 2
 :::
 
 ::: {.notes}
-Mallika Singh's group at Revolution Medicines has published the mechanistic case for what comes next. Inhibiting active RAS upregulates receptor tyrosine kinases on the cell surface, which is simultaneously a resistance mechanism and a rational combination target. Their explicit framing is that combinations should be biomarker-driven and resistance-preemptive. This is the manufacturer staking out the next decade of the program. And the first combination cohort has already delivered, 58% ORR with gemcitabine/nab-paclitaxel in first-line metastatic PDAC, 90% disease control, 84% six-month PFS. The combinations are coming. Many of them.
+**Pull-from-if-needed**
+
+- Mallika Singh's group at Revolution Medicines made the mechanistic case for what comes next
+- RAS inhibition upregulates RTKs on the cell surface — simultaneously a resistance mechanism AND a rational combination target
+- Manufacturer's explicit framing: combinations should be biomarker-driven and resistance-preemptive — they're staking out the next decade
+- First combination cohort (daraxonrasib 200 mg + GnP, 1L mPDAC, n=40): **58% ORR, 90% DCR, 84% 6-mo PFS, 90% 6-mo OS**
+
+**Q&A pockets**
+
+- *Q: Is RTK upregulation well-supported as a mechanism?*
+  A: Two complementary streams — cell-surface upregulation (Zhuang 2026 AACR RAS) and recurrent genomic alterations (Aguirre 2024). Same combination rationale from both angles.
+- *Q: Why qualify "RTK pathway activation" instead of just "RTK upregulation"?*
+  A: Because the mechanism is broader than cell-surface upregulation alone — the pathway is activated by multiple resistance routes (cell-surface, genomic, ligand). Yeh flagged this; the slide language carries the qualifier.
+
+**Delivery**: The combinations are coming. Many of them.
 :::
 
 
@@ -213,7 +275,23 @@ Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
 :::
 
 ::: {.notes}
-3+3 answered the question it was built for, the MTD of a cytotoxic under a monotonic toxicity assumption. For RAS combinations none of those assumptions hold. VERBAL TRANSLATION for "the two-drug dose map is never built", say it as: *"In other words, we often never learn where the best combination actually is."* The slide phrasing is methodologist-friendly; the spoken line lands it for clinicians. NOTE on terminology, when I say "MTD paradigm" I'm describing the broader optimize-against-toxicity framework, not just 3+3. CRM, BLRM, mTPI, BOIN are more sophisticated and target a toxicity interval rather than a single point, BLRM especially, but they still drive selection by toxicity rather than benefit-risk, which is the framing this section is contrasting against OBD. Q&A pocket if anyone pushes on the lump-together. The deeper problem is structural and operational. In practice almost no one searches the joint dose surface. The protocol fixes agent A's dose and adds agent B, so two monotherapy designs run in series and the joint surface is never characterized. Thall, Garrett-Mayer, Wages, Halabi, and Cheung made the formal version of this argument in their 2024 *Clinical Trials* paper, the SCT response to Project Optimus: conventional Phase I designs cannot reliably identify safe and effective doses. Q&A POCKET, frequentist alternatives. If a methodologist asks "what about non-Bayesian combination designs?" the honest answer is that very few practical, deployed frequentist combination designs exist. The field has converged on Bayesian / model-assisted designs (POCRM, BOIN-COMB, BLRM, PIPE, surface-free) because combinations require borrowing strength across dose pairs and partial-order constraints, naturally handled by priors and posterior updating, awkwardly handled without them. The cleanest frequentist alternative in the literature is Conaway, Dunbar, & Peddada 2004 (Biometrics 60:661-669), order-restricted isotonic regression for combinations, theoretically clean but not widely deployed. 3+3 generalizations to combinations exist but inherit all the original problems plus combinatorial explosion. Sequential lead-in (find A then add B) is the dominant industry practice, that is what we are criticizing. Q&A POCKET, Rivière backup. The Rivière et al 2015 systematic review of 162 combination phase I trials gives the "almost never" claim a documented count: 88% used 3+3, all but one used a design developed for single-agent evaluation. If anyone challenges "almost never" as an unsupported universal, that is your number. Next slide makes the abstract failure concrete with the Amgen sotorasib + pembrolizumab case.
+**Pull-from-if-needed**
+
+- 3+3 answered the question it was built for — MTD of a cytotoxic under monotonic toxicity. For RAS combinations none of those assumptions hold
+- **Verbal translation** for "the two-drug dose map is rarely built": *"In other words, we often never learn where the best combination actually is."* Slide phrasing is methodologist-friendly; spoken line lands it for clinicians
+- Structural problem: protocol fixes A and adds B → two monotherapy designs run in series; joint surface never characterized
+- Formal argument: Thall, Garrett-Mayer, Wages, Halabi, Cheung (*Clin Trials* 2024, SCT response to Optimus): conventional Phase I designs cannot reliably identify safe and effective doses
+
+**Q&A pockets**
+
+- *Q: You're lumping CRM/BLRM/mTPI/BOIN with 3+3 — they're more sophisticated.*
+  A: Agree they target a toxicity interval rather than a single point (BLRM especially), but they still drive selection by toxicity rather than benefit-risk. That's the framing this section contrasts against OBD. The MTD paradigm = optimize-against-toxicity, not just 3+3.
+- *Q: What about non-Bayesian / frequentist combination designs?*
+  A: Few practical deployed ones exist. Field converged on Bayesian / model-assisted (POCRM, BOIN-COMB, BLRM, PIPE, surface-free) because combinations need strength borrowed across dose pairs and partial-order constraints — natural with priors. Cleanest frequentist alternative: Conaway, Dunbar & Peddada 2004 (Biometrics 60:661-669), order-restricted isotonic regression — theoretically clean but not widely deployed. Sequential lead-in (find A, add B) is dominant industry practice — that's what we're criticizing.
+- *Q: "Almost never" — is that documented?*
+  A: Rivière et al 2015 systematic review of 162 combination Phase I trials: 88% used 3+3; all but one used a design developed for single-agent evaluation.
+
+**Delivery**: Land the verbal translation: "*we often never learn where the best combination actually is.*" Next slide makes it concrete with Amgen.
 :::
 
 
@@ -246,7 +324,29 @@ Hong et al., *NEJM* 2020 (CodeBreaK 100) · Li et al., *JTO* 2022 (WCLC OA03.06)
 :::
 
 ::: {.notes}
-This is the worked example of the principle on the previous slide. The Amgen case is the clean one, and notice it is not a competence problem. Same sponsor used a model-based Bayesian logistic regression for sotorasib monotherapy in CodeBreaK 100. But for the sotorasib + pembrolizumab combination in CodeBreaK 100/101, they fixed the IO dose, explored only sotorasib across cohorts, and never modeled the two-drug surface. Even the most sophisticated sponsors collapse the combination to a one-drug search, which is the gap BATON closes. The combination's defining toxicity proved the point twice over: severe hepatotoxicity you could not predict from the single agent, and 88% of the Grade 3-4 events landed outside the 21-day DLT window, so a Cycle 1 design would have missed most of it. Q&A POCKET, where 88% comes from. The 22 of 25 numerator and denominator is the audit-ready figure. Source: Li et al WCLC 2022 OA03.06 / JTO 2022 supplement. If pressed, this single example demonstrates everything 3+3 was never built to handle, all at once: joint surface unsearched (combination not modeled, 3+3 has no joint-surface model), toxicity non-additive (synergistic hepatotoxicity), and late-onset toxicity outside Cycle 1 (88% out-of-window, 3+3 assumes Cycle-1-observable DLTs). Note: don't claim this violates monotonic dose-toxicity, they didn't search the surface, so we can't show non-monotonicity here. Q&A POCKET, "Why didn't they use a late-onset-aware design?" TITE-BOIN (Yuan 2018) and TITE-CRM (Cheung 2000) handle late-onset toxicity by extending the assessment window beyond Cycle 1 and allowing dose decisions while earlier cohorts' toxicity data are still pending. The methods have existed for over five years. But no published RAS Phase I trial has adopted them: sotorasib (CodeBreaK 100) used BLRM with 21-day cycles; adagrasib (KRYSTAL-1) used mTPI with standard Cycle-1; daraxonrasib (RMC-6236) uses standard Bayesian dose-escalation with 21-day cycles. This is the design-framework layer of the deck's deployment-gap thesis: the tool exists, the empirical case for needing it is well-established, adoption is the gap. Q&A POCKET, mechanism. The severe hepatotox is hypothesized to be immune-mediated, not pharmacologic. Sotorasib's pro-inflammatory effect on the tumor microenvironment can re-activate the latent T-cell response that pembro left in place, biopsies in patients with severe sotorasib + ICI hepatotox show patterns consistent with ICI-induced hepatitis. Sequencing matters: in a real-world series, 58% Grade ≥3 hepatotox occurred when sotorasib started within 30 days of prior ICI. Same immune mechanism explains both "unpredictable from single agent" and "late-onset", ICI-mediated toxicity has weeks-to-months kinetics, not days. Sources: JTO 2023 brief report (Begum et al), JCO PO 2024 case series (Adagrasib after sotorasib-related hepatotox). Q&A POCKET, "Doesn't BLRM handle combinations?" Yes. Neuenschwander 2015 and Cotterill 2015 publish dual-agent BLRM extensions with an interaction term capturing synergy/antagonism, plus EWOC overdose control on the joint surface. Amgen didn't deploy the dual-agent extension for sotorasib + pembro because pembrolizumab's 200 mg label is the regulatory anchor, sponsors don't routinely re-derive approved IO doses in a combination. That's a sponsor-FDA conversation, not a methodology problem, and BATON doesn't change it. Where BATON's dual-agent value lands cleanly is novel-novel doublets (elironrasib + daraxonrasib, the CRC tile on slide 32), where neither drug has a regulatory anchor and the only barrier left is calibration cost, which BATON does solve.
+**Pull-from-if-needed**
+
+- Same sponsor (Amgen) used model-based BLRM for sotorasib monotherapy (CodeBreaK 100) — not a competence problem
+- Combination (sotorasib + pembro, CodeBreaK 100/101): fixed IO dose, explored only sotorasib across cohorts, never modeled the two-drug surface
+- Severe hepatotox: 22/25 (88%) Grade 3-4 events landed *outside* the 21-day DLT window — a Cycle 1 design would have missed most of it
+- Hypothesized mechanism: **immune-mediated**, not pharmacologic. Sotorasib's pro-inflammatory effect on the TME re-activates the latent T-cell response pembro left in place. Biopsies: patterns consistent with ICI-induced hepatitis
+- Sequencing matters: real-world series shows 58% Grade ≥3 hepatotox when sotorasib started within 30 days of prior ICI
+- Same immune mechanism explains *both* "unpredictable from single agent" and "late-onset" — ICI-mediated toxicity has weeks-to-months kinetics, not days
+
+**Q&A pockets**
+
+- *Q: Where does 88% come from?*
+  A: Li et al., WCLC 2022 OA03.06 / JTO 2022 supplement. 22/25 is the audit-ready numerator/denominator.
+- *Q: Why didn't they use a late-onset-aware design?*
+  A: TITE-BOIN (Yuan 2018) and TITE-CRM (Cheung 2000) have existed >5 yrs. No published RAS Phase I has adopted them: sotorasib BLRM/21-day; adagrasib mTPI/Cycle-1; daraxonrasib standard Bayesian/21-day. Adoption is the gap, not method.
+- *Q: Doesn't BLRM handle combinations?*
+  A: Yes — Neuenschwander 2015 / Cotterill 2015 dual-agent extensions with interaction term + EWOC overdose control. Amgen didn't deploy it for sotorasib+pembro because pembro 200 mg is the **regulatory anchor**; sponsors don't routinely re-derive approved IO doses. That's a sponsor-FDA conversation, not a methodology problem. BATON's dual-agent value lands cleanly in **novel-novel doublets** (e.g., elironrasib + daraxonrasib, slide 32 CRC tile), where neither drug has a regulatory anchor and the barrier left is calibration cost.
+- *Q: Does this violate monotonic dose-toxicity?*
+  A: Don't claim that — they didn't search the surface, so non-monotonicity isn't demonstrable here. Stick to joint-surface-unsearched + non-additive + late-onset.
+- *Q: What's the mechanism for the hepatotox?*
+  A: Immune-mediated. Sources: Begum et al *JTO* 2023 brief report; *JCO PO* 2024 case series on adagrasib after sotorasib-related hepatotox.
+
+**Delivery**: One example demonstrates everything 3+3 was never built for, all at once: joint surface unsearched, toxicity non-additive, late-onset outside Cycle 1.
 :::
 
 
@@ -263,7 +363,22 @@ This is the worked example of the principle on the previous slide. The Amgen cas
 :::
 
 ::: {.notes}
-The reason MTD fails for these agents is mechanistic, and it has two flavors. I'll illustrate with pembrolizumab and CAR-T, non-RAS examples, but the cleanest in the literature, and the same dose-response shapes show up in the IO and bispecific partners daraxonrasib is going to be combined with. The first flavor you all know from pembrolizumab, the efficacy curve plateaus very early. In the original pembrolizumab studies, response rates across 2 mg/kg, 10 mg/kg every three weeks, and 10 mg/kg every two weeks were statistically indistinguishable. The exposure-response curve was flat. The MTD was never reached because efficacy never improved with dose. The 200 mg flat dose used today was selected by population PK modeling to reproduce the exposures seen at 2 mg/kg in a typical patient, a weight-based-to-flat conversion of the lowest active dose, not a search for the optimum. The second flavor is the umbrella. CAR-T is the canonical case. Very high cell doses unambiguously drive severe CRS and ICANS without proportional benefit. The downslope itself is product-specific, some show a true decline, others a plateau or threshold, but what is universal across CAR-T and bispecifics is the absence of a monotonic increase, and that alone is enough to break titrate-to-toxicity. These are not RAS drugs, but they are the cleanest pictures of the two shapes, and they are the shapes your RAS combinations will actually have. Daraxonrasib is the plateau, its monotherapy program never cleanly reached an MTD, had no DLTs, and 300 mg was selected on tolerability, which is exactly why 300 versus 200 is still a live question. The partners you'll add bring the umbrella. A RAS combination lives across both panels, and that is the whole reason MTD logic cannot find its optimal dose. You need a design that watches both dimensions.
+**Pull-from-if-needed**
+
+- MTD fails for two mechanistic reasons, both visible in the trio
+- **Plateau** (pembrolizumab): RR across 2 mg/kg, 10 mg/kg q3w, 10 mg/kg q2w were statistically indistinguishable; exposure-response flat; MTD never reached. 200 mg flat dose was PK-derived to reproduce 2 mg/kg exposures in a typical patient — weight-based-to-flat conversion of the lowest active dose, not a search for the optimum
+- **Umbrella** (CAR-T): very high cell doses drive severe CRS/ICANS without proportional benefit. Downslope is product-specific (true decline, plateau, or threshold) but absence of monotonic increase is universal across CAR-T and bispecifics — enough to break titrate-to-toxicity
+- Daraxonrasib = plateau (monotherapy never cleanly reached MTD, no DLTs, 300 mg selected on tolerability — exactly why 300 vs 200 is still a live question)
+- Partners bring the umbrella
+
+**Q&A pockets**
+
+- *Q: Why use non-RAS examples to make a RAS point?*
+  A: Pembro and CAR-T are the cleanest published examples of the two shapes. The same shapes show up in the IO and bispecific partners daraxonrasib will be combined with.
+- *Q: Where was the pembro flat exposure-response documented?*
+  A: Patnaik et al 2015 — the original dose-finding studies.
+
+**Delivery**: A RAS combination lives across both panels. That alone breaks titrate-to-toxicity. You need a design that watches both dimensions.
 :::
 
 
@@ -292,7 +407,20 @@ Hong et al., *NEJM* 2020 (CodeBreaK 100) · Hochmair et al., *Eur J Cancer* 2024
 :::
 
 ::: {.notes}
-The empirical evidence that this is not just theoretical. The FDA-AACR Strategies for Optimizing Dosages series, published in Clinical Cancer Research in 2025, reports that more than 40% of patients in small-molecule registrational trials require dose reductions or interruptions due to overly aggressive dosing, and links that pattern to potentially accelerated emergence of drug resistance, which quietly foreshadows the back half of this talk. The case you all know best is sotorasib, the first-in-class KRAS G12C inhibitor, approved in 2021. The Phase I program never reached an MTD because there were no DLTs; 960 mg was simply the highest dose tested, a more-is-better default rather than an MTD-driven choice. The FDA later required a post-marketing comparison against 240 mg, a fourfold lower dose. PFS at 240 mg was similar to PFS at 960 mg, the clean evidence that the approved dose was four times higher than needed on the primary endpoint. Note: I am deliberately not folding in the October 2023 ODAC vote on CodeBreaK 200 here. That 10-2 vote was about whether the confirmatory PFS read-out could be reliably interpreted given trial-conduct issues, informative censoring, imbalanced early dropout, investigator-assessed imaging, not about the dose. Conflating it with the dose story is the move a regulatory-savvy attendee will flag. The dose story alone is airtight; keep it that way. For daraxonrasib, same drug class, getting this wrong in Phase I means every combination on top of it inherits an unnecessarily toxic starting point.
+**Pull-from-if-needed**
+
+- FDA-AACR *Clin Cancer Res* 2025: >40% of patients in small-molecule registrational trials require dose reductions/interruptions from overly aggressive dosing
+- Same series links that pattern to potentially accelerated emergence of drug resistance — quietly foreshadows the back half
+- Sotorasib (first-in-class KRAS G12C, 2021): Phase I never reached MTD because no DLTs; 960 mg was simply the highest dose tested — more-is-better default
+- FDA post-marketing requirement: 240 mg vs 960 mg head-to-head. PFS similar at 240 mg, i.e. approved dose was 4× higher than needed on the primary endpoint
+- Daraxonrasib is the same drug class — getting this wrong in Phase I means every combination on top inherits an unnecessarily toxic starting point
+
+**Q&A pockets**
+
+- *Q: Doesn't the October 2023 ODAC vote on CodeBreaK 200 muddy this?*
+  A: Deliberately not folding it in. The 10-2 vote was about whether the confirmatory PFS read-out could be reliably interpreted given trial-conduct issues (informative censoring, imbalanced early dropout, investigator-assessed imaging) — **not** about the dose. Conflating them is the move a regulatory-savvy attendee will flag. The dose story alone is airtight; keep it that way.
+
+**Delivery**: The 240 vs 960 PFS-similar comparison is the clean evidence. Don't drift into ODAC territory unless asked.
 :::
 
 
@@ -317,7 +445,22 @@ FDA Guidance for Industry, 2024 (Project Optimus) · Thall et al., *Clin Trials*
 :::
 
 ::: {.notes}
-What you may not have caught is that the FDA has formalized this, and it lands directly on the MTD problems we've just walked through (shapes don't fit MTD logic; the sotorasib 960-vs-240 case shows the cost). The 2024 Project Optimus guidance moves oncology dose-finding from "maximum tolerated dose" to a dose optimized on benefit-risk, what the field calls the OBD. The guidance language is "optimized dosage," and the field's OBD shorthand maps to it directly. If you submit a Phase I protocol today that only characterizes the MTD, your reviewers are going to push back. This is no longer a methodological preference held by biostatisticians; it's the FDA's stated preference. Now, on what the guidance actually expects: the FDA's stated default is to take two doses into Phase II, the MTD and a dose below it, and use a randomized comparison to determine which is better on benefit-risk. For a single agent that works. It does not scale to combinations, because you cannot randomize across a two-dimensional joint dose grid. That is exactly where model-based joint designs stop being a preference and start being the only practical way to meet the benefit-risk standard, which is where the next slide goes.
+**Pull-from-if-needed**
+
+- 2024 Project Optimus guidance formalized the move from "maximum tolerated dose" to a dose optimized on benefit-risk
+- Guidance language is "optimized dosage"; field's OBD shorthand maps to it directly
+- No longer a biostatistician preference — it's the FDA's stated preference. Submit an MTD-only Phase I today, your reviewers will push back
+- FDA's stated default: take two doses into Phase II (MTD + one below), randomize, compare benefit-risk
+- Works for single agent. Does **not** scale to combinations — you can't randomize across a 2D joint dose grid
+
+**Q&A pockets**
+
+- *Q: Doesn't FDA's two-dose default solve this?*
+  A: For single agents, yes. For combinations, no — you can't randomize across the joint grid. That's where model-based joint designs stop being a preference and become the only practical way to meet the benefit-risk standard. Next slide goes there.
+- *Q: Is OBD the same as the FDA's "optimized dosage"?*
+  A: Yes — the field's OBD is shorthand for what the guidance calls "optimized dosage."
+
+**Delivery**: Lands directly on the MTD problems we just walked through. This is the regulatory ground shifting under sponsors who only characterize MTD.
 :::
 
 
@@ -477,7 +620,25 @@ Liu & Yuan 2015 · Zhou, Lee & Yuan 2019 (U-BOIN) · FDA Optimus Guidance
 :::
 
 ::: {.notes}
-The how, in one sentence: before the trial starts, the team writes down a utility, how do you weigh a response against a Grade 3 toxicity?, and the design searches inside the safe toxicity envelope for the dose that maximizes that utility. (Optimus already established the WHAT on the previous regulatory slide; this slide answers HOW.) The utility becomes the navigation system. The design uses Bayesian / model-assisted rules to keep the trial inside a safe toxicity envelope while searching for the dose that maximizes the agreed-upon benefit-risk utility. What comes out is not a maximum tolerated dose, it's an OBD with a characterized benefit-risk profile. That's the dose Project Optimus is asking sponsors to deliver. PREDATES OPTIMUS, important to land verbally: U-BOIN was published in 2019, BOIN in 2015, TITE-BOIN in 2018, POCRM in 2011, BLRM in 2008. Optimus is 2021/2024. So Optimus didn't create these designs, it codified what they were already doing. The regulatory shift validated 5-15 years of methodological work. ACRONYM POCKETS for Q&A, keep them OFF the visible slide. The BOIN family is the workhorse implementation: BOIN itself for single-agent (Liu and Yuan 2015), BOIN-COMB for drug combinations, TITE-BOIN for late-onset toxicity, BOIN12 for utility-based phase I/II, U-BOIN for the explicit two-stage utility design. POCRM (Wages and Conaway) and BLRM (Neuenschwander, Branson, Gsponer) are the established combination alternatives. mTPI is another common model-assisted variant; PIPE is a dual-agent product-of-independent-Beta-probabilities design (Mander 2015) for completeness. If a methodologist asks "which one?" the answer is: in the U.S. and academic groups, BOIN/U-BOIN dominate for the printed-decision-table operational simplicity; Novartis uses BLRM by default; the rest are specialty tools picked for specific constraints. Credibility line, leading RAS Phase I programs already run on Bayesian designs: sotorasib used BLRM in CodeBreaK 100, adagrasib used mTPI in KRYSTAL-1. RAS Phase I uniformly uses Cycle-1 windows; none have adopted TITE-variants despite the sotorasib + pembro late-tox finding, that's a Q&A pocket from slide 9. For this audience the one-sentence takeaway is: modern Phase I optimizes benefit-risk instead of maximizing toxicity. Don't recite the acronym list out loud; only deploy it if a methodologist asks. Next slide extends this from single-agent to combinations.
+**Pull-from-if-needed**
+
+- One-sentence how: before the trial starts, the team writes down a **utility** (how to weigh a response against a Grade 3 toxicity), and the design searches inside the safe toxicity envelope for the dose that maximizes that utility
+- Previous slide established the **what** (Optimus); this slide answers the **how**
+- The utility is the navigation system. Bayesian / model-assisted rules keep the trial inside the safe envelope. Output: an OBD with a characterized benefit-risk profile, not an MTD
+- **Predates Optimus** — important to land verbally: U-BOIN 2019, BOIN 2015, TITE-BOIN 2018, POCRM 2011, BLRM 2008. Optimus is 2021/2024. Optimus didn't create these designs; it codified what the field was already doing. The regulatory shift validated 5–15 years of methodological work
+- **Credibility line**: leading RAS Phase I programs already run on Bayesian designs — sotorasib BLRM in CodeBreaK 100; adagrasib mTPI in KRYSTAL-1
+- One-sentence takeaway: modern Phase I optimizes benefit-risk instead of maximizing toxicity. Don't recite the acronym list out loud
+
+**Q&A pockets**
+
+- *Q: Which design family — be specific?*
+  A: BOIN family is the workhorse. BOIN (Liu & Yuan 2015) single-agent; BOIN-COMB combinations; TITE-BOIN late-onset toxicity; BOIN12 utility-based Phase I/II; U-BOIN two-stage utility. POCRM (Wages & Conaway) and BLRM (Neuenschwander, Branson, Gsponer) are the established combination alternatives. mTPI another model-assisted variant; PIPE (Mander 2015) dual-agent product-of-independent-Betas.
+- *Q: Which one is actually used?*
+  A: In U.S. / academic, BOIN/U-BOIN dominate for the printed-decision-table operational simplicity. Novartis uses BLRM by default. The rest are specialty tools for specific constraints.
+- *Q: Why aren't RAS Phase I trials using TITE-variants given the sotorasib+pembro late-tox finding?*
+  A: They're not — all RAS Phase I uses Cycle-1 windows. That's the deployment-gap thesis: tools exist, adoption lags. Connects to slide 9 Q&A.
+
+**Delivery**: One-sentence takeaway only. Acronyms are Q&A pockets, not slide content.
 :::
 
 
@@ -577,7 +738,25 @@ Hong et al., *NEJM* 2020 · Wolpin et al., *NEJM* 2026 (RMC-6236-001) [@hong2020
 :::
 
 ::: {.notes}
-The previous slide showed HOW OBD selection works for a single agent. This slide extends it to combinations. The job of this slide is to name what changes when you go from one drug to two. Three things to land verbally. First, you are no longer choosing one dose, you are choosing a joint pair (A, B), and the single-agent OBDs do not reconstruct the joint surface, sotorasib's 960-versus-240 result tells you the surface looks different from what the single-dose escalation suggested. Second, effects interact on both efficacy and toxicity, so the joint OBD can sit BELOW either monotherapy OBD on each axis (shown by the dotted projections in the schematic). Third, and this is the RAS-specific part: the monotherapy toxicity is already substantial, 34% G≥3 at 300 mg, 48% dose modification, so you start the combination with less margin to spend. The first combination cohort already moved daraxonrasib down to 200 mg with GnP, but we do not know whether 200 mg is right or whether 150 mg or some other dose is right given other partners. The "fix what you know, search what you don't" callout is the operational rule: reduce to one drug only when the fixed component's dose is externally established, spend the search on the drug whose combination-optimal dose is genuinely uncertain. CLARIFY VERBALLY, "what you know" can include an approved-label dose (regulatory anchor on the fixed agent), not just biology. PANGEA's GnP backbone is the FDA-approved SoC dose; that's the legitimate anchor. The antipattern is fixing a drug whose combination dose is NOT externally established, just because escalating both is harder. With a regulatory anchor on one drug, single-axis search is justified. Without one, joint-surface search is the right move, and BATON's dual-agent calibration is what makes it operationally tractable. SCHEMATIC DISCIPLINE: the chart shows efficacy contours only as a conceptual proxy for benefit-risk. The actual OBD is on a benefit-risk surface (efficacy AND toxicity, per slide 13). Don't claim the chart shows the literal joint efficacy-toxicity utility; it's a one-dimensional reduction for visual purposes. Next slide: PANGEA as the applied trial.
+**Pull-from-if-needed**
+
+- Three things to land verbally:
+  1. You're no longer choosing one dose — you're choosing a joint pair (A, B). Single-agent OBDs do not reconstruct the joint surface (sotorasib 960-vs-240 already showed the surface differs from what single-dose escalation suggested)
+  2. Effects interact on both efficacy and toxicity, so the joint OBD can sit **below** either monotherapy OBD on each axis (dotted projections in the schematic)
+  3. RAS-specific: monotherapy toxicity is already substantial (34% G≥3 at 300 mg, 48% dose mod) — you start the combination with less margin to spend
+- First combination cohort moved daraxonrasib to 200 mg with GnP, but we don't know whether 200 mg is right vs 150 mg or other partners
+- **"Fix what you know, search what you don't"** = operational rule. Reduce to one drug *only* when the fixed component's dose is externally established
+- PANGEA's GnP backbone = FDA-approved SoC dose = legitimate regulatory anchor → single-axis search justified
+- **Schematic discipline**: chart shows efficacy contours only as a conceptual proxy for benefit-risk. Actual OBD is on the benefit-risk surface (slide 13). Don't claim the chart shows literal joint efficacy-toxicity utility — it's a 1D visual reduction
+
+**Q&A pockets**
+
+- *Q: Isn't fixing one drug exactly what you criticized two slides ago?*
+  A: Two cases. **With** a regulatory or externally-established anchor on one drug (PANGEA: GnP at FDA-approved SoC) → single-axis search is justified. **Without** one → joint-surface search is the right move. The antipattern is fixing a drug whose combination dose is *not* externally established just because escalating both is harder. BATON's dual-agent calibration makes joint-surface search operationally tractable for the case without an anchor.
+- *Q: Why isn't the schematic showing the actual benefit-risk surface?*
+  A: One-dimensional reduction for visual purposes — efficacy contour as proxy. The real OBD is on the joint efficacy-toxicity utility (slide 13's heatmap), not this one.
+
+**Delivery**: Verbal callout for the rule: "Fix what you know, search what you don't" — and clarify "what you know" can be a regulatory anchor.
 :::
 
 
@@ -608,7 +787,27 @@ Rashid et al., *Clin Cancer Res* 2020 (PurIST) · Cohen et al., *Cancer Chemo Ph
 ::::
 
 ::: {.notes}
-Here's the design in a real PDAC trial at UNC. PANGEA, led by Ashwin Somasundaram. DESIGN PARAMETERS Q&A POCKET, pulled off the visible slide for accessibility, ready to recite if a methodologist asks: Stage 1 BOIN cohorts of 4 with target DLT ≤25%; Stage 2 U-BOIN admissibility tox ≤25% AND eff ≥20%; six dose levels 25 mg QOD → 25/50/75/100/150 mg QD starting at DL3; max 52 patients with ~28 expected at OBD under Scenario 1. The population is biomarker-defined, basal-like PDAC by PurIST, a subtype that has historically responded poorly to gemcitabine/nab-paclitaxel. The intervention is adding low-dose erlotinib to that backbone. And here's where the talk's argument lands on a real protocol: the central biological hypothesis of PANGEA is that lower doses of erlotinib may be more efficacious than the labeled dose, when given in combination with chemotherapy. The full-label dose of erlotinib is 150 mg daily. PANGEA tests six dose levels going down to 25 mg every other day. This is the OBD-below-MTD case made concrete, exactly the kind of question 3+3 cannot answer, and exactly the kind of question U-BOIN was built for. Stage 1 uses BOIN-style toxicity rules to establish the safe envelope, with a target DLT rate of 25%. Once we have enough data at any dose, we transition to Stage 2, which uses a utility function, elicited from our clinical team, to find the dose that maximizes the benefit-risk tradeoff. Doses have to clear both toxicity admissibility, no more than 25% DLT, and efficacy admissibility, at least 20% response rate. The trial ends when twenty patients have accumulated at any one dose, or when fifty-two patients have been treated total. Under the most plausible scenario from our simulations, we expect about thirty-eight patients in the U-BOIN phase, with about twenty-eight ultimately treated at the OBD. Q&A POCKET, justified dimensionality reduction. If a methodologist asks "why are you only searching erlotinib, not the joint surface?": GnP is fixed because the FDA-approved standard-of-care dose is established (MPACT); erlotinib is searched because its combination OBD-below-MTD is the genuinely open question. This is a justified single-axis search inside a two-drug regimen, not a regression to the fix-A-add-B antipattern. This is what an OBD-paradigm Phase I trial looks like in basal-like PDAC.
+**Pull-from-if-needed**
+
+- PANGEA = real PDAC trial at UNC, led by Ashwin Somasundaram
+- Population: biomarker-defined basal-like PDAC by PurIST — subtype that has historically responded poorly to GnP
+- Intervention: adding low-dose erlotinib to GnP backbone
+- Central biological hypothesis: *lower* doses of erlotinib may be more efficacious than the labeled dose when given in combination with chemo. Label is 150 mg daily; PANGEA tests down to 25 mg every other day
+- This is the **OBD-below-MTD case made concrete** — exactly what 3+3 cannot answer and what U-BOIN was built for
+
+**Q&A pockets — DESIGN PARAMETERS (ready to recite)**
+
+- *Q: What are the design parameters?*
+  A: **Stage 1**: BOIN, cohorts of 4, target DLT ≤25%. **Stage 2**: U-BOIN admissibility tox ≤25% AND eff ≥20%. **Six dose levels**: 25 mg QOD → 25/50/75/100/150 mg QD, starting at DL3. **Stopping**: 20 patients at any one dose OR 52 total. **Expected**: ~38 in U-BOIN phase; ~28 at OBD under Scenario 1.
+- *Q: How do you transition Stage 1 → Stage 2?*
+  A: Stage 1 establishes the safe envelope (target DLT 25%). When enough data accumulate at any dose, transition to Stage 2 — a utility elicited from the clinical team finds the dose that maximizes benefit-risk. Doses must clear both toxicity (≤25% DLT) and efficacy (≥20% RR) admissibility.
+
+**Q&A pockets — design defense**
+
+- *Q: Why are you only searching erlotinib, not the joint surface?*
+  A: GnP fixed because FDA-approved SoC dose is established (MPACT). Erlotinib searched because its combination OBD-below-MTD is the genuinely open question. Justified single-axis search inside a two-drug regimen — **not** a regression to the fix-A-add-B antipattern.
+
+**Delivery**: This is what an OBD-paradigm Phase I trial looks like in basal-like PDAC.
 :::
 
 
@@ -643,7 +842,25 @@ Adapted from Karagiannis & Rampias, *Cancers* 2022 [@karagiannis2022cancer].
 ::::
 
 ::: {.notes}
-Classical trial design treats patients as if they're draws from a fixed distribution, enroll, randomize, administer the regimen, measure outcomes at predefined timepoints. That logic works when the underlying biology is static. Under sustained RAS-inhibitor pressure it doesn't. The tumor evolves. Each patient is a moving target. Concretely, and this is the headline I want to anchor on, Aronchik's ENA 2025 paired-ctDNA work on the drug we just saw on slide 4, daraxonrasib, shows that 59% of PDAC patients on monotherapy develop detectable RAS-pathway resistance alterations at progression, with KRAS amplification specifically in 36%. Same drug from RASolute 302, same disease, n=44 patients with paired pre- and end-of-treatment ctDNA. That is the dynamic biology the trial design has to be prepared to see. Resistance signals start appearing weeks into therapy, sometimes earlier. The mechanisms split into a few buckets. Pathway reactivation through KRAS amplification or downstream NRAS, BRAF, MAP2K1 mutations, Aguirre's PDAC clinical work and Awad's adagrasib resistance series. Downstream amplification, MYC and PI3K family, is Wasko's preclinical RMC-7977 finding (the prevalent in-vivo resistance mechanism in KPC tumours, not pathway reactivation per se since pERK remained suppressed in resistant tumours). RTK upregulation and bypass signaling, the Zhuang and Aronchik mechanistic case for combinations. Cell-state plasticity between basal-like and classical with partial EMT, Aguirre again, plus the Yeh and Johnson labs' kinome work at UNC. None of these are baseline phenotypes. The biology is genuinely dynamic, and that's the setup for what trials need to do differently, which is the next slide.
+**Pull-from-if-needed**
+
+- Classical design treats patients as draws from a fixed distribution — enroll, randomize, measure at predefined timepoints. Works when biology is static. Under sustained RAS-inhibitor pressure, it doesn't. Each patient is a moving target
+- **Headline anchor**: Aronchik ENA 2025, paired-ctDNA on daraxonrasib (the slide-4 drug). **59% of PDAC monotherapy patients develop detectable RAS-pathway resistance alterations at progression; KRAS amplification in 36%**. n=44 with paired pre/end-of-treatment ctDNA. Same drug from RASolute 302, same disease
+- Resistance signals start appearing weeks into therapy, sometimes earlier
+- **Mechanism buckets**:
+  - **Pathway reactivation**: KRAS amplification, downstream NRAS/BRAF/MAP2K1 (Aguirre PDAC clinical work; Awad adagrasib resistance series)
+  - **Downstream amplification**: MYC, PI3K family — Wasko preclinical RMC-7977 finding (prevalent in-vivo mechanism in KPC tumors; NOT pathway reactivation per se — pERK remained suppressed)
+  - **RTK upregulation & bypass signaling**: Zhuang, Aronchik (mechanistic case for combinations)
+  - **Cell-state plasticity** (basal ↔ classical, partial EMT): Aguirre; Yeh and Johnson labs at UNC
+
+**Q&A pockets**
+
+- *Q: How early do you see resistance signals?*
+  A: Weeks into therapy, sometimes earlier. Not a progression-only phenomenon.
+- *Q: Is any of this baseline (pre-existing) vs acquired?*
+  A: None of these are baseline phenotypes — the biology is genuinely dynamic. That's why a baseline-biomarker trial can't catch it.
+
+**Delivery**: Set up the design problem the next slide solves. Land the 59% / 36% as the empirical anchor.
 :::
 
 
@@ -658,7 +875,24 @@ Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024
 :::
 
 ::: {.notes}
-This is the design-implications side of the previous slide. The schematic names the *timing* failure: top row is the static design (one biomarker read at baseline, treatment, resistance emerges, progression, trial closes with biology already changed); bottom row is the resistance-aware design (serial reads with re-randomization back into the treatment loop on emerging biology, "in time to act"). Three things to land verbally. First, fixed regimens miss the interception window. Second, baseline-only biomarkers can't track evolution under therapy. Third, resistance is characterized retrospectively, only after progression. The Awad and Aguirre papers cited are themselves post-progression analyses. The integrated callout, "A static read measures a moving target; longitudinal detection + biomarker-guided arm-swaps keep the trial in step with the tumor", is the headline. The empirical anchor for this room: Aronchik's ENA 2025 paired-ctDNA work on daraxonrasib [@aronchik2025ena] shows RAS-pathway alterations, KRAS amplification (36% of patients), BRAF, MAP2K1, emerging at progression in 59% of PDAC patients on monotherapy. Mechanisms a baseline-biomarker trial would not catch. The next slide carries the *modality* point: it takes two assays to see all of it.
+**Pull-from-if-needed**
+
+- Schematic names the **timing** failure
+  - Top row (static): one biomarker read at baseline → treatment → resistance emerges → progression → trial closes with biology already changed
+  - Bottom row (resistance-aware): serial reads with re-randomization back into the treatment loop on emerging biology — *"in time to act"*
+- Three things to land verbally:
+  1. Fixed regimens miss the interception window
+  2. Baseline-only biomarkers can't track evolution under therapy
+  3. Resistance is characterized retrospectively — only after progression (the Awad and Aguirre papers cited are themselves post-progression analyses)
+- Integrated callout = the headline: *"A static read measures a moving target; longitudinal detection + biomarker-guided arm-swaps keep the trial in step with the tumor."*
+- Empirical anchor: Aronchik ENA 2025 paired-ctDNA on daraxonrasib — KRAS amplification (36%), BRAF, MAP2K1, emerging at progression in 59% of PDAC monotherapy patients
+
+**Q&A pockets**
+
+- *Q: How is this different from a traditional Phase II with a translational arm?*
+  A: Traditional translational arms collect serial samples but don't act on them mid-trial. Resistance-aware = arm-swap decisions made *during* enrollment using the emerging biology. The schematic's dashed feedback loop is the operational difference.
+
+**Delivery**: Set up next slide — same problem in the **modality** dimension (it takes two assays).
 :::
 
 
@@ -673,7 +907,23 @@ Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024
 :::
 
 ::: {.notes}
-This is the *modality* slide that pairs with the timing slide before it. The previous schematic said: a static read can't catch resistance in time to act. This one says: even if you read serially, no single assay catches everything. Genomic resistance, KRAS amplification, NRAS/BRAF/MAP2K1 alterations from the Awad and Aguirre series, shows up in ctDNA, which is cheap, continuous, minimally invasive. Cell-state/plasticity resistance, basal-to-classical switching, partial EMT, the kind of non-genomic adaptation the Yeh and Johnson labs at UNC have been working on, is invisible to ctDNA and needs serial tumor biopsies, transcriptomics, sometimes imaging. The two assays don't substitute for each other; they don't even see each other's signal. The callout names the deployment requirement: a resistance-aware trial has to run both, prospectively, during enrollment, not after progression. This is the "do both" requirement made concrete, and it's exactly what EVOLVE was built to do, which is the next slide.
+**Pull-from-if-needed**
+
+- This is the **modality** slide that pairs with the timing slide before it
+- Previous slide: a static read can't catch resistance in time to act
+- This slide: even if you read serially, no single assay catches everything
+- **Genomic resistance** (KRAS amp, NRAS/BRAF/MAP2K1 from Awad/Aguirre series) → ctDNA. Cheap, continuous, minimally invasive
+- **Cell-state / plasticity resistance** (basal↔classical, partial EMT — Yeh and Johnson labs at UNC) → serial tumor biopsies, transcriptomics, sometimes imaging
+- The two assays don't substitute. They don't even see each other's signal
+- Deployment requirement (the callout): run both, prospectively, during enrollment — not after progression
+- This is the "do both" requirement made concrete. Exactly what EVOLVE was built to do (next slide)
+
+**Q&A pockets**
+
+- *Q: Can't you wait for biopsy at progression and just intensify ctDNA in the meantime?*
+  A: No — that's exactly the failure mode the previous slide named. Cell-state plasticity is invisible to ctDNA; by progression the biology has already shifted. You need the serial biopsy *during* therapy to catch a non-genomic mechanism while there's still a chance to act on it.
+
+**Delivery**: Land the "two assays, two signals, neither substitutes" point. Sets up EVOLVE.
 :::
 
 
@@ -712,7 +962,21 @@ ARPA-H ADAPT, current state (top) vs dynamic-biomarker state (bottom).
 ::::
 
 ::: {.notes}
-This is what a resistance-aware trial actually looks like operationally. ARPA-H, the new Advanced Research Projects Agency for Health, has funded a program called ADAPT specifically to build trials of this kind. The ARPA-H figure tells the story in two panels. Top: current state. A single static biomarker, sequential treatments, Tx 1, then Tx 1 continued, then Tx 2, and the resistant subclones persist into the final cell mix. Bottom: ADAPT's future state. In-depth dynamic biomarkers, treatments switched in response to observed resistance traits, eventual clearance. Our EVOLVE trial in metastatic breast cancer is one of the first to operationalize this, and the design template generalizes directly to the kind of RAS-backbone combination trial you all are going to be running for PDAC in the next few years. CRITICAL FRAMING DISCIPLINE: the closer says "enrolling," not "EVOLVE shows" or "EVOLVE works." This is the resistance-side honesty I committed to in the opening, methods exist and are deployed, not yet completed. If a trialist asks for the readout, the answer is the design exists and is accruing; the readout is what we will report when interim looks are run. Do not let the live delivery drift toward an implied result. The next slide takes the audience inside the protocol, what EVOLVE actually does, and what the PDAC analog would look like.
+**Pull-from-if-needed**
+
+- ARPA-H = new Advanced Research Projects Agency for Health. Funded the **ADAPT** program specifically to build resistance-aware trials
+- Figure (two panels):
+  - **Top, current state**: single static biomarker; sequential treatments Tx 1 → Tx 1 continued → Tx 2; resistant subclones persist into final cell mix
+  - **Bottom, ADAPT future state**: in-depth dynamic biomarkers; treatments switched in response to observed resistance traits; eventual clearance
+- Our **EVOLVE** trial in metastatic breast cancer is one of the first to operationalize this
+- Template generalizes directly to RAS-backbone PDAC combination trials over the next few years
+
+**Q&A pockets**
+
+- *Q: What's EVOLVE showing?*
+  A: It's enrolling — the readout is what we'll report when interim looks are run. Methods exist and are deployed; the trial hasn't yet completed.
+
+**Delivery — FRAMING DISCIPLINE**: Closer says "enrolling," not "EVOLVE shows" or "EVOLVE works." Don't let live delivery drift toward an implied result. This is the resistance-side honesty committed to in the opening.
 :::
 
 
@@ -723,7 +987,23 @@ This is what a resistance-aware trial actually looks like operationally. ARPA-H,
 :::
 
 ::: {.notes}
-This is the load-bearing slide for "could we actually do this in PDAC?" The architecture spine is in the middle: subgroup determination at enrollment → subgroup-stratified adaptive randomization → arm replacement on futility/efficacy → re-subgroup at progression. Above it, real EVOLVE-BDT, TBCRC's enrolling platform in 2L metastatic breast cancer. ER+/HER2- and TNBC subgroups defined by ESR1, PI3K/AKT/PTEN, PD-L1, androgen receptor, all biomarkers that already drive breast oncology practice. Bayesian arm-swap on the decision rule. Below it, the PDAC translation. Basal-like vs classical by PurIST. Subgroups by KRAS amplification, RTK upregulation, partial EMT, the Aronchik data showing 59% develop measurable resistance gives these subgroups empirical basis. Daraxonrasib + GnP-style combinations on each arm. The architecture is the same; the biomarkers and drugs change. The bottom callout names the principle: swap the biomarker and the drugs; the calibration machinery and decision rules carry over. This is not a hypothetical that needs new science. It's the deployment problem. Which is exactly what BATON solves. Pause briefly before moving on to the statistical-demands slide.
+**Pull-from-if-needed**
+
+- Load-bearing slide for "could we actually do this in PDAC?"
+- **Architecture spine** (middle): subgroup determination at enrollment → subgroup-stratified adaptive randomization → arm replacement on futility/efficacy → re-subgroup at progression
+- **Above** = real **EVOLVE-BDT** (TBCRC's enrolling platform in 2L mBC). ER+/HER2− and TNBC subgroups by ESR1, PI3K/AKT/PTEN, PD-L1, AR — all biomarkers already driving breast oncology practice. Bayesian arm-swap on the decision rule
+- **Below** = PDAC translation. Basal-like vs classical by PurIST. Subgroups by KRAS amp, RTK upregulation, partial EMT — Aronchik's 59% resistance data gives these subgroups empirical basis. Daraxonrasib + GnP-style combinations on each arm
+- Bottom callout names the principle: **swap the biomarker and the drugs; the calibration machinery and decision rules carry over**
+- This is not a hypothetical needing new science. It's the deployment problem — which is exactly what BATON solves
+
+**Q&A pockets**
+
+- *Q: How is this different from a basket trial?*
+  A: Basket = same drug across multiple biomarker subgroups. Here we're inside one disease (PDAC), randomizing within subtype-stratified subgroups across competing combinations, with adaptive arm-swaps on emerging biology. Basket and platform are related but distinct architectures.
+- *Q: Does the PurIST classifier port directly?*
+  A: PurIST is validated in PDAC; the classifier itself ports. What's still under development is the resistance-subgroup biomarker panel — that's where the Aronchik/Aguirre/Yeh work feeds in.
+
+**Delivery**: Pause briefly before moving on. This slide does heavy lifting for the deployment thesis.
 :::
 
 
@@ -773,7 +1053,27 @@ ggplot() +
 :::
 
 ::: {.notes}
-Four axes that operationalize the resistance-aware trial template. I am showing them to GI SPORE leaders because they are disease-agnostic, requirements for any resistance-aware trial, not properties of breast biology. A RAS-backbone PDAC combination would need all four for the same reasons. Adaptive stopping rules, Bayesian futility and efficacy boundaries that update at every interim look. Real-time biomarker discovery, pre-specified candidate signatures plus an agnostic discovery window so you're not locked into your initial hypothesis. Longitudinal monitoring, serial ctDNA, imaging, biopsies on every patient. This is the "do both" requirement from the mechanisms slide made concrete: ctDNA for the genomic side, biopsies and transcriptomics for the non-genomic plasticity side, on every patient throughout the trial. And in-trial evaluation, biomarker-guided cohorts opened within the same protocol, so when you find a resistance signature you can test the strategy that addresses it during the trial, not as a follow-on study three years later. Now the load-bearing point that sets up the rest of the talk. Continual learning during enrollment is not a tweak to a Phase II, it is a structurally different kind of trial. Each axis adds interacting parameters to the design: interim look timing, posterior-probability thresholds for stopping, biomarker decision rules, randomization-weight updating, cohort-opening logic. Bayesian adaptive designs that handle all of this exist, posterior-probability monitoring, simulation-based operating characteristics, the whole toolkit. What does NOT yet exist routinely is the infrastructure to make those designs deployable, to calibrate them against the operating-characteristic targets that the trial team and the FDA agree on. That's the gap. The next section is about closing it.
+**Pull-from-if-needed**
+
+- Four axes are **disease-agnostic** — requirements for any resistance-aware trial, not breast-specific. A RAS-backbone PDAC combination needs all four
+- **(1) Adaptive stopping rules**: Bayesian futility/efficacy boundaries that update at every interim look
+- **(2) Real-time biomarker discovery**: pre-specified candidate signatures + agnostic discovery window so you're not locked into the initial hypothesis
+- **(3) Longitudinal monitoring**: serial ctDNA, imaging, biopsies on every patient — the "do both" requirement from the modality slide made concrete (genomic + plasticity, on every patient throughout)
+- **(4) In-trial evaluation**: biomarker-guided cohorts opened *within* the same protocol — when you find a resistance signature, test the strategy that addresses it *during* the trial, not as a follow-on study three years later
+
+**Setup for the next section (load-bearing)**
+
+- Continual learning during enrollment is not a tweak to a Phase II — it's a structurally different kind of trial
+- Each axis adds interacting parameters: interim look timing, posterior-probability thresholds, biomarker decision rules, randomization-weight updating, cohort-opening logic
+- Bayesian adaptive designs that handle this **exist**: posterior-probability monitoring, simulation-based OCs, the whole toolkit
+- What does NOT routinely exist: the **infrastructure** to make those designs deployable — to calibrate against OC targets the trial team and FDA agree on. That's the gap
+
+**Q&A pockets**
+
+- *Q: Why is "continual learning" structurally different from a Phase II with an interim look?*
+  A: An interim look is one decision point. Continual learning is decisions across multiple correlated dimensions (stopping, randomization weights, cohort opening, biomarker rules) with their joint operating characteristics calibrated against regulatory targets. That joint calibration is the cost driver.
+
+**Delivery**: Land the gap-naming sentence verbally. Next section closes it.
 :::
 
 
@@ -878,7 +1178,33 @@ FDA–AACR Project Optimus impact review, *JCO Onc Adv* 2025 (367 Phase I protoc
 :::
 
 ::: {.notes}
-This is the slide that opens the BATON section, and I want to land it carefully. Open with the concession explicitly: funding, accrual, biopsy logistics, these are real, and this room has lived them. I am not standing up here telling you the barrier to better trials is statistics, because that would be a biostatistician naming his own contribution as the field's central obstacle, and you would be right to push back. What I am claiming is narrower and more specific: among the barriers, calibration is the one that quietly kills good designs and the one we can actually remove. You have all watched PIs default back to 3+3 even when they knew a better design existed, the calibration cost was the hidden reason, and that is the gap BATON closes. Now the body. The methods I just walked through, modern dose-finding for combinations, longitudinal biomarker-aware adaptive designs, exist. The reason every clinical trial isn't using them is calibration cost. Every modern design has knobs: target DLT and efficacy rates, utility weights, cohort sizes, stopping rules, sample-size caps. Operating characteristics depend on every knob, in interaction. To know whether a design meets Type I, power, expected N, expected duration, OBD-selection accuracy, and biomarker-promotion error control, you simulate thousands of trial replicates per candidate. And you do this across plausible scenarios. The design space is eight to thirteen dimensions for the trials we've calibrated, and twenty-plus when you combine dose-finding with resistance tracking. A grid search is hopeless, both computationally infeasible and statistically wasteful, because most of the parameter space gives bad designs. In my group, calibrating a single modern combination Phase I/II design by hand takes a senior statistician several months of focused work. For trials that handle dose-finding AND resistance tracking simultaneously, you're at twenty-plus parameters with even more constraints. Hand-tuning doesn't just get slower; it gets infeasible. CLINICAL CONTRAST TO LAND VERBALLY: Most clinicians in the room are familiar with Simon two-stage and similar frequentist designs where you can write down Type I, power, and sample size from a closed-form calculation, plug in the assumptions and out comes the design. For adaptive Bayesian designs there is no such formula. You pick a candidate design, a specific combination of efficacy thresholds, maximum sample size, cohort size, futility/efficacy stopping rules, null and alternative assumptions, then run thousands of simulated trials at that configuration to measure its actual Type I error and power. That's just ONE candidate. To compare candidates and find a good one, you simulate each. And the OCs you measure depend on all the parameters in interaction, so you can't isolate one knob and tune it. This is what makes "complex designs" actually complex, not the underlying math but the lack of a single formula. That's the cost calibration removes, and it's why BATON exists. That sets up the pivot, the next slide.
+**Pull-from-if-needed — opening concession (delivery script)**
+
+- Open with the concession explicitly: funding, accrual, biopsy logistics are real, and this room has lived them. **I am not claiming the barrier to better trials is statistics** — that would be a biostatistician naming his own contribution as the central obstacle
+- The claim is narrower: among the barriers, **calibration is the one that quietly kills good designs and the one we can actually remove**
+- You have all watched PIs default back to 3+3 even when they knew a better design existed — calibration cost was the hidden reason. That's the gap BATON closes
+
+**Pull-from-if-needed — body**
+
+- Modern dose-finding for combinations and longitudinal biomarker-aware adaptive designs exist. Reason every trial isn't using them: calibration cost
+- Every modern design has knobs: target DLT and efficacy rates, utility weights, cohort sizes, stopping rules, sample-size caps. OCs depend on every knob *in interaction*
+- To verify Type I / power / expected N / expected duration / OBD-selection accuracy / biomarker-promotion error: simulate thousands of trial replicates per candidate, across plausible scenarios
+- Dimensionality: **8–13 dimensions** for the trials we've calibrated; **20+** when you combine dose-finding with resistance tracking
+- Grid search is hopeless — computationally infeasible AND statistically wasteful (most of the parameter space gives bad designs)
+- In my group: calibrating a single modern combination Phase I/II by hand takes a senior statistician **several months** of focused work. For dose-finding + resistance tracking simultaneously, hand-tuning gets infeasible
+
+**Pull-from-if-needed — clinical contrast (verbal landing)**
+
+- Most clinicians know Simon two-stage and frequentist designs where Type I, power, and N come from a closed-form calculation — plug in assumptions, design comes out
+- For adaptive Bayesian designs there is **no such formula**. You pick a candidate (efficacy thresholds, max N, cohort size, stopping rules, null/alternative assumptions), run thousands of simulated trials to measure actual Type I and power. That's just ONE candidate
+- OCs depend on all parameters in interaction — you can't isolate one knob and tune it. This is what makes complex designs actually complex: not the math, the lack of a single formula
+
+**Q&A pockets**
+
+- *Q: Isn't this just a "biostatistics is hard" pitch?*
+  A: No — the concession at the open says explicitly that statistics is not the central obstacle. The narrower claim is that calibration is one specific barrier we can remove. Funding, accrual, and biopsy logistics are still the bigger ones; BATON addresses the one a biostatistician can actually solve.
+
+**Delivery**: Open with the concession. Don't let this come across as a biostatistician inflating his contribution.
 :::
 
 
@@ -944,7 +1270,32 @@ Out of thousands of plausible designs, only a small fraction satisfies all four,
 :::
 
 ::: {.notes}
-This is the slide that names what calibration actually has to do. The four goals come from the design problem itself, not from a methodologist's preference. (1) FDA compliance, the trial has to meet the regulatory floor on Type I error and power. Without this, no IND, no protocol. (2) Minimize patients, the smallest expected N consistent with the other constraints, because pancreatic cancer patients are a scarce, time-critical resource. (3) Stop bad early, when the drug isn't working, futility stopping protects patients from staying on an inactive arm. (4) Accelerate good, when the drug IS working, efficacy stopping gets the answer to the field faster. The visual point: all four at once. A design that hits FDA OCs but enrolls 200 patients fails goal 2. A design that minimizes N but doesn't meet power fails goal 1. A design that stops bad early but never declares efficacy fails goal 4. Calibration is finding the corner of parameter space where ALL four are satisfied simultaneously. Quantitatively, in our experience: of thousands of plausible parameter combinations, only a small fraction, typically 1-10%, meets all four. The exact fraction depends on the design and the OC targets; the symposium slide quotes "out of 1,000 possible designs, only ~70 satisfy all four requirements." Land that as the punchline: this is what BATON has to find. Pivot to next slide.
+**Pull-from-if-needed — the four goals (where they come from)**
+
+- Four goals come from the design problem itself, not a methodologist's preference
+- **(1) FDA compliance**: regulatory floor on Type I and power. Without this, no IND, no protocol
+- **(2) Minimize patients**: smallest expected N consistent with the other constraints — PDAC patients are scarce and time-critical
+- **(3) Stop bad early**: when the drug isn't working, futility stopping protects patients from staying on an inactive arm
+- **(4) Accelerate good**: when the drug works, efficacy stopping gets the answer to the field faster
+
+**Pull-from-if-needed — failure modes (the visual point)**
+
+- Hits FDA OCs but enrolls 200 patients → fails goal 2
+- Minimizes N but doesn't meet power → fails goal 1
+- Stops bad early but never declares efficacy → fails goal 4
+- Calibration = finding the corner of parameter space where ALL four are satisfied simultaneously
+
+**Pull-from-if-needed — the punchline**
+
+- Of thousands of plausible parameter combinations, typically **1–10%** meet all four. Exact fraction depends on the design and OC targets
+- Symposium-version line: "out of 1,000 possible designs, only ~70 satisfy all four requirements"
+
+**Q&A pockets**
+
+- *Q: Aren't the four goals just standard trial-design considerations?*
+  A: Yes — what's new is that they have to be hit *jointly* under realistic interactions among the parameters. Standard practice tunes one at a time; the calibration problem is finding where all four agree at once. That's what BATON has to find.
+
+**Delivery**: Land "out of thousands, only a small fraction." Pivot to BATON.
 :::
 
 
@@ -959,7 +1310,14 @@ We needed a way to make it launchable."
 :::
 
 ::: {.notes}
-Pause. Let the line land. This is the pivot of the talk. Everything before this slide has been about establishing that the methods exist, combination dose-finding, OBD selection, resistance-aware longitudinal designs. ADAPT and EVOLVE prove these methods are deployable. But during EVOLVE's activation, the team kept running into the same wall: we knew what trial we wanted to run, we knew the statistical machinery existed, and we still could not get a calibrated, FDA-defensible design out the door. The methods existed. Deploying them did not. That is the gap. Pause briefly. Then move on to what closes it: BATON.
+**Pull-from-if-needed**
+
+- This is the **pivot of the talk** — pause, let the line land
+- Everything before: methods exist (combination dose-finding, OBD selection, resistance-aware longitudinal designs). ADAPT and EVOLVE prove they're deployable
+- During EVOLVE's activation: team kept hitting the same wall — we knew what trial we wanted, we knew the statistical machinery existed, but we still couldn't get a calibrated, FDA-defensible design out the door
+- Methods existed. Deploying them did not. That's the gap
+
+**Delivery**: Pause. Let it land. Then BATON.
 :::
 
 
@@ -1019,7 +1377,29 @@ You bring the clinical design; BATON evaluates hundreds of candidates *by simula
 :::
 
 ::: {.notes}
-Think of BATON as GPS for trial design. You tell it the destination, power, type-I error, sample-size targets, expected duration. It explores candidate designs by Monte Carlo simulation. It learns which regions of the parameter space satisfy your constraints. It focuses the search on the feasible region. And it arrives at a calibrated design. Hours instead of months. Under the hood: constrained Bayesian optimization with Gaussian process surrogates, but for this audience what matters is the input and the output. You give BATON a design template, a set of operating-characteristic targets, and a scenario grid. BATON returns a calibrated design that meets your targets. FRAMING DISCIPLINE, and this matters because the next slide is PANGEA: in the BATON manuscript, the worked example is EVOLVE, not PANGEA. BATON was developed and validated during EVOLVE activation, across breast cancer subtrials at 8 to 13 parameters. PANGEA is an application of the same tool, not what the paper reports. If anyone asks "is this published," the clean answer is: the method and its validation are under review at JASA Applications and Case Studies; PANGEA is one application of the same software. Q&A POCKETS, in order of likelihood. (1) "Is BATON really optimal?" Manuscript benchmarked it against Simon two-stage designs where the optimum is known analytically; BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. So the answer is: it recovers the analytically optimal design on problems where we can check. (2) "Can we use it?" Yes, open-source R package at github.com/naimurashid/BATON, with the companion evolveTrial package. (3) "What's the gain over grid or random search?" The paper has a head-to-head: BATON found feasible designs in 150–200 evaluations where grid and random search often found none at all. (4) "Why isn't a good statistician enough?" Honest answer: BATON IS the statistician's tool. A senior statistician with BATON > the same statistician without it. What BATON removes is the months-of-recalibration tax that currently makes the right designs operationally infeasible, the team can't commit to deliver a calibrated, defensible design within the trial timeline. Manual calibration also returns one design and you hope it's robust; BATON returns the feasible region and lets you pick the most defensible point in it. Under the hood for the methodologist who asks: constrained Bayesian optimization with Gaussian process surrogates over the operating-characteristic landscape.
+**Pull-from-if-needed**
+
+- BATON = **GPS for trial design**. Tell it the destination (power, Type I, N targets, expected duration); it explores candidates by MC simulation; learns which regions of parameter space satisfy constraints; focuses search on the feasible region; arrives at a calibrated design. Hours instead of months
+- Under the hood: **constrained Bayesian optimization with Gaussian process surrogates** over the OC landscape. For this audience what matters is input → output: design template + OC targets + scenario grid → calibrated design
+
+**Pull-from-if-needed — FRAMING DISCIPLINE (matters because next slide is PANGEA)**
+
+- In the BATON manuscript, the worked example is **EVOLVE**, not PANGEA. BATON was developed and validated during EVOLVE activation across breast cancer subtrials at 8-13 parameters
+- PANGEA is an *application* of the same tool, not what the paper reports
+- If asked "is this published": the method and its validation are **under review at JASA Applications and Case Studies**; PANGEA is one application of the same software
+
+**Q&A pockets (in likelihood order)**
+
+- *Q: Is BATON really optimal?*
+  A: Manuscript benchmarked against Simon two-stage designs where the optimum is known analytically. BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. It recovers the analytically optimal design on problems where we can check.
+- *Q: Can we use it?*
+  A: Yes — open-source R package at github.com/naimurashid/BATON, with companion evolveTrial package.
+- *Q: What's the gain over grid or random search?*
+  A: Head-to-head in the paper: BATON found feasible designs in **150–200 evaluations** where grid and random search often found none at all.
+- *Q: Why isn't a good statistician enough?*
+  A: BATON IS the statistician's tool. Senior statistician with BATON > same statistician without. What BATON removes is the months-of-recalibration tax that makes the right designs operationally infeasible — teams can't commit to deliver a calibrated, defensible design within the trial timeline. Manual calibration also returns one design and you hope it's robust; BATON returns the **feasible region** and lets you pick the most defensible point.
+
+**Delivery**: GPS metaphor first. Constrained-BO / GP surrogate language only for the methodologist who asks.
 :::
 
 
@@ -1144,7 +1524,27 @@ grid.arrange(p_grid, p_baton, ncol = 2)
 :::
 
 ::: {.notes}
-This is the conceptual answer to "how is BATON different from just trying combinations." Three claims to land verbally. First, calibration is a search problem in high-dimensional parameter space: every design you try costs thousands of Monte Carlo simulations. Second, grid search treats every region equally, evenly spaced across the parameter space, no learning between evaluations. So it wastes most of its budget on regions you already know are bad. Third, BATON uses constrained Bayesian optimization. After each evaluation, it updates a probabilistic model (Gaussian process surrogate) of which parameter combinations are likely to meet ALL the operating-characteristic constraints simultaneously. The next evaluation is chosen where the model says feasible designs are most likely to be, an "acquisition function" balancing exploration (try unexplored regions) and exploitation (focus where it's promising). Practical consequence: BATON converges in 150-200 evaluations where grid search often finds zero feasible designs at all in the same budget. The "is it magic" pushback often dissolves when you frame it as: "it's not magic, it's GPS, after a few visits it learns where the destination region is and steers there." Manual tuning is also doing this informally, in a statistician's head, but slowly, irreproducibly, and without returning the feasible region as a set. BATON automates the same logic at machine speed and gives you the whole feasible set to choose from. Q&A POCKET, "Does BATON solve the regulatory hurdle for combinations?" Tight defense for live delivery: *"No, BATON does not solve the regulatory hurdle. If one drug has an approved dose, like pembrolizumab 200 mg, changing that dose in a combination is a sponsor-FDA evidence question. BATON does not change that. What BATON solves is a different barrier: calibration. Even when both agents are investigational and there is no approved-label anchor, sponsors often still fix one drug and vary the other because jointly calibrating a dual-agent design is hard and time-consuming. BATON makes that search tractable. So BATON doesn't decide whether FDA will accept a dose strategy; it makes it practical to evaluate scientifically reasonable dose strategies in the first place."* This separation, regulatory hurdle vs calibration cost, is what makes the dual-agent BATON claim honest. Slide 32's CRC tile (novel-novel doublets) is the case where BATON's combination value lands cleanest, because there's no regulatory anchor to negotiate.
+**Pull-from-if-needed — three claims to land verbally**
+
+1. Calibration is a **search problem in high-dimensional parameter space** — every design tried costs thousands of MC simulations
+2. **Grid search** treats every region equally, evenly spaced, no learning between evaluations — wastes most of its budget on regions you already know are bad
+3. **BATON** uses constrained Bayesian optimization. After each evaluation, updates a probabilistic model (GP surrogate) of which parameter combinations are likely to meet ALL OC constraints simultaneously. Next evaluation chosen where the model says feasible designs are most likely — an acquisition function balancing exploration (try unexplored regions) and exploitation (focus where promising)
+- Practical consequence: BATON converges in 150-200 evaluations where grid search often finds **zero** feasible designs in the same budget
+
+**Pull-from-if-needed — pushback framing**
+
+- "Is it magic?" → *"It's not magic, it's GPS. After a few visits it learns where the destination region is and steers there."*
+- Manual tuning does this informally in a statistician's head — slowly, irreproducibly, without returning the feasible region as a set
+- BATON automates the same logic at machine speed and gives you the whole feasible set to choose from
+
+**Q&A pockets**
+
+- *Q: Does BATON solve the regulatory hurdle for combinations?*
+  A (tight defense, live delivery): *"No, BATON does not solve the regulatory hurdle. If one drug has an approved dose like pembrolizumab 200 mg, changing that dose in a combination is a sponsor-FDA evidence question. BATON does not change that. What BATON solves is a different barrier: calibration. Even when both agents are investigational and there is no approved-label anchor, sponsors often still fix one drug and vary the other because jointly calibrating a dual-agent design is hard and time-consuming. BATON makes that search tractable. So BATON doesn't decide whether FDA will accept a dose strategy; it makes it practical to evaluate scientifically reasonable dose strategies in the first place."*
+- *Q: Why is the regulatory-vs-calibration separation important?*
+  A: It's what makes the dual-agent BATON claim honest. Slide 32's CRC tile (novel-novel doublets) is the case where BATON's combination value lands cleanest — no regulatory anchor to negotiate.
+
+**Delivery**: GPS metaphor first, regulatory-vs-calibration separation if asked. Don't claim BATON is universal.
 :::
 
 
@@ -1192,7 +1592,29 @@ ggplot() +
 :::
 
 ::: {.notes}
-This is the payoff slide for the BATON pitch, and the structural mirror of slide 20. Slide 20 named four competing goals every adaptive trial must satisfy simultaneously; this slide shows the BATON-calibrated PANGEA Phase II design hitting all four. Read out loud, in order: (1) FDA compliance, Type I 7.0%, Power 82.2%, both inside the target boundaries. (2) Minimize patients, about 23 patients spared on average (expected N of 53 against a max of 76) vs a fixed-N trial. (3) Stop bad early, when the drug is inactive, the trial stops early for futility 78% of the time, so patients aren't randomized to a losing arm waiting for the readout. (4) Accelerate good, when the drug works, the trial stops early for efficacy 81% of the time, so the answer reaches the field faster. Land the footer in one beat, with the scope qualifier explicit: "For PANGEA Phase II's four-parameter design, BATON found feasible designs that a grid search would have missed entirely, calibration that took days by hand now runs in minutes, with a regulatory-ready audit trail." Don't walk through a chart; the footer is the line. The scope qualifier matters because slide 19 said calibration takes several months per design, that referred to higher-dim adaptive designs like EVOLVE (8-13 parameters); a 4-param design is the easier end of the spectrum and the days/minutes numbers fit there. BATON's value compounds with dimension. CALIBRATED CLAIM CHECK, earlier drafts used "same optimum" or "converges to the optimum," both of which overstate. The manuscript-supported claims are (a) feasible-design recovery in 150-200 evaluations where grid/random often recover none, and (b) within 1% of Simon-optimal expected N, exact match in 8 of 10 seeded runs. Footer leans on (a) because it's the more clinically meaningful claim for this audience. CREDIT DISCIPLINE, the four achievements are properties of the calibrated adaptive design class; BATON's contribution is finding the parameter configuration that delivers them. Say "the BATON-calibrated design delivers..." not "BATON delivers...", credit the design, not the optimizer. PRIOR STRUCTURE, this used to be two slides: a Grid-vs-BATON heatmap with a manual-vs-BATON comparison table, then a separate "patients spared" slide with three big-number callouts. Merged because the two slides were proving the same thesis; this version ties the proof back to slide 20's four-goal framing and replaces the search-mechanism heatmap with a one-line text statement. If a methodologist asks for the convergence picture or the manual-vs-BATON operational comparison, point them to the BATON manuscript (Young et al., 2026).
+**Pull-from-if-needed — read in order**
+
+- Structural mirror of slide 20 (four competing goals). This slide shows the BATON-calibrated PANGEA Phase II design hitting all four
+- **(1) FDA compliance**: Type I 7.0%, Power 82.2% — both inside target boundaries
+- **(2) Minimize patients**: ~23 patients spared on average (expected N 53 vs max 76) vs a fixed-N trial
+- **(3) Stop bad early**: trial stops early for futility **78%** of the time when the drug is inactive — patients aren't randomized to a losing arm
+- **(4) Accelerate good**: trial stops early for efficacy **81%** of the time when the drug works — answer reaches the field faster
+
+**Pull-from-if-needed — footer scope qualifier**
+
+- Land: *"For PANGEA Phase II's four-parameter design, BATON found feasible designs that a grid search would have missed entirely. Calibration that took days by hand now runs in minutes, with a regulatory-ready audit trail."*
+- Scope qualifier matters: slide 19 said *months* per design — that referred to higher-dim adaptive designs like EVOLVE (8-13 parameters). A 4-param design is the easier end; days/minutes fits there. BATON's value compounds with dimension
+
+**Q&A pockets**
+
+- *Q: When you say "converges to the optimum," what's the supported claim?*
+  A: Two supported claims: (a) feasible-design recovery in 150-200 evaluations where grid/random often recover none, and (b) within 1% of Simon-optimal expected N, exact match in 8 of 10 seeded runs. Footer leans on (a) because it's more clinically meaningful for this audience.
+- *Q: Aren't these four achievements just properties of the adaptive design itself, not BATON?*
+  A: Correct, and that's the credit discipline. The four achievements are properties of the calibrated adaptive design class. BATON's contribution is finding the parameter configuration that delivers them. Say "BATON-calibrated design delivers..." not "BATON delivers..."
+- *Q: Can I see the head-to-head Grid-vs-BATON figure or the manual-vs-BATON table?*
+  A: Both in the BATON manuscript (Young et al., 2026). This slide merged the two previous slides (heatmap + patients-spared) to consolidate around the four-goal frame.
+
+**Delivery**: Don't walk through a chart — the footer is the line. Credit "BATON-calibrated design," not BATON.
 :::
 
 
@@ -1232,7 +1654,26 @@ PANGEA Phase II (BATON-calibrated)
 :::
 
 ::: {.notes}
-This is what calibrated PANGEA Phase II means for a real patient. Pick someone in your clinic. A 62-year-old with metastatic PDAC, basal-like by PurIST, progressed on first-line gemcitabine plus nab-paclitaxel. In a traditional fixed Phase II of GnP plus erlotinib versus GnP alone, that patient enrolls into a trial that will run all 76 patients before anyone learns whether erlotinib adds anything. Three-plus years to read out. In PANGEA Phase II, calibrated by BATON: same randomization, but interim analyses run as PFS events accumulate. The design has a seventy-eight percent chance of stopping early for futility if erlotinib adds nothing, patients are not randomized to an inactive arm beyond what's needed to learn that. Expected enrollment is around 53 patients under H0 and 58 under H1. Expected duration: 27.3 months, not 36-plus. About 23 fewer patients exposed to a potentially-ineffective therapy. That is the clinical payoff of calibrating with BATON instead of shipping a fixed-N design that learns slowly. The OC table on the next slide is the underlying design BATON produced. This is one trial. When the calibration becomes routine for the GI portfolio, the savings compound across every adaptive trial we activate.
+**Pull-from-if-needed**
+
+- Pick someone in your clinic: 62-yr-old mPDAC, basal-like by PurIST, progressed on 1L GnP
+- **Traditional fixed Phase II** (GnP + erlotinib vs GnP alone): enrolls all 76 patients before anyone learns whether erlotinib adds anything. 3+ years to read out
+- **PANGEA Phase II, BATON-calibrated**: same randomization, but interim analyses run as PFS events accumulate
+  - **78%** chance of early futility stop if erlotinib adds nothing → patients not randomized to an inactive arm beyond what's needed to learn that
+  - Expected enrollment: ~53 under H₀, ~58 under H₁
+  - Expected duration: **27.3 months**, not 36+
+  - About **23 fewer patients** exposed to potentially-ineffective therapy
+- Clinical payoff of calibrating with BATON instead of shipping a fixed-N design that learns slowly
+- This is one trial. Routine calibration across the GI portfolio compounds the savings across every adaptive trial activated
+
+**Q&A pockets**
+
+- *Q: How does the 78% early-stop translate to actual patient exposure savings?*
+  A: 78% × (76 − 53) = on average ~18 patients spared when the drug is inactive. The overall ~23 number averages across H₀ and H₁ scenarios.
+- *Q: Does the patient know they're in an adaptive design?*
+  A: Yes — informed consent covers interim analyses and early stopping. The clinical advantage of the design (faster answer, fewer patients on ineffective therapy) is part of the consent discussion.
+
+**Delivery**: Make Mr. Hernandez real. The numbers tell the story; the patient frame makes it land.
 :::
 
 
@@ -1284,7 +1725,34 @@ Von Hoff et al., *NEJM* 2013 (MPACT) · Young et al., 2026 (BATON manuscript)
 :::
 
 ::: {.notes}
-This is the underlying design that produced the patient-facing numbers on the previous slide. Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial, basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. DELIVERY DISCIPLINE, do NOT walk through every operating characteristic; you will lose half the room. Lead with: *"The important point is not the exact numbers. The important point is that BATON found a design that hits power, controls false positives, stops early when the drug fails, and stops early when it succeeds."* Then mention one or two numbers (power 82%, expected duration 27 months). Leave the rest of the table for the methodologists to read on their own. TENSE DISCIPLINE, critical, and the slide structure protects it: the 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect HR 0.58, not showing one. The OCs in the right column ARE achieved, because they are outputs of BATON's calibration, Type I at 7.0%, power at 82.2%, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." Four design parameters had to be set jointly to meet OCs, max sample size, efficacy stopping threshold, futility stopping threshold, and futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT which exact four BATON searched vs which were fixed by clinical/modeling choice. Three numbers to land: power 82% at Type I 7%; trial stops early for futility 78% of the time under H₀, patients are not randomized to a losing arm waiting for the readout; trial stops early for efficacy 81% of the time under H₁. Expected duration: 27.3 months; expected N: 53 under H₀, 58 under H₁, well below max 76. (Protocol carries 82 as accrual target with buffer; 76 is the calibrated max. If asked: "76 is calibrated max, 82 is accrual goal.") UNEXPECTED FINDING, verbal script for the compressed callout. The slide line is intentionally one beat ("Why max N = 76, not lower"); land the rest out loud: "This is the part that surprised us. The intuitive move is to cap enrollment as low as you can to spare patients. But below a certain cap, the design loses the statistical room to declare efficacy early, so even when the drug clearly works, you're stuck waiting for the final analysis to announce it. A hand-tuned search would never have seen this, because you stop the moment you hit a design that meets your constraints. BATON gave us the whole trade-off curve, and the slightly larger cap actually gets patients a faster answer when the drug works." The counterintuitive beat the room remembers is bigger cap → faster answer when the drug works. This is the kind of insight manual calibration misses. WITHOUT/WITH BATON, quick read for the callout above. Without BATON: days of hand-tuning for this 4-parameter design, four interacting parameters that rarely hit both constraints simultaneously, no reproducibility, no audit trail. With BATON: ~200 evaluations in minutes, joint calibration against both constraints, deterministic seeded output, regulatory-ready audit trail. (Higher-dim adaptive designs like EVOLVE at 8-13 parameters take months by hand and hours with BATON, same value, larger problem.) The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
+**Pull-from-if-needed — the design**
+
+- Once U-BOIN selects the OBD, PANGEA transitions to Phase II Bayesian adaptive RCT
+- 1:1 randomization: GnP + erlotinib at OBD vs GnP alone; primary endpoint PFS
+- BATON jointly calibrated 4 parameters: max N, efficacy stopping threshold, futility stopping threshold, futility hazard-ratio margin (confirm against manuscript which exact 4 vs fixed by clinical choice)
+
+**Pull-from-if-needed — three numbers to land**
+
+- Power 82% at Type I 7%
+- 78% early futility stop under H₀ → patients not randomized to a losing arm
+- 81% early efficacy stop under H₁ → answer reaches field faster
+- Expected duration **27.3 months**; expected N 53 under H₀, 58 under H₁, well below max 76
+
+**Pull-from-if-needed — UNEXPECTED FINDING (verbal script for "Why max N = 76, not lower")**
+
+- Land out loud: *"This is the part that surprised us. The intuitive move is to cap enrollment as low as possible to spare patients. But below a certain cap, the design loses the statistical room to declare efficacy early — so even when the drug clearly works, you're stuck waiting for the final analysis to announce it. A hand-tuned search would never have seen this, because you stop the moment you hit a design that meets your constraints. BATON gave us the whole trade-off curve, and the slightly larger cap actually gets patients a faster answer when the drug works."*
+- Counterintuitive beat the room remembers: **bigger cap → faster answer when the drug works**
+
+**Q&A pockets**
+
+- *Q (TENSE DISCIPLINE, critical): Are these results from the trial?*
+  A: **No.** 5.5 mo, 9.2 mo, and HR 0.58 are **design assumptions**, not observed results. 5.5 is the GnP doublet benchmark from MPACT (Von Hoff 2013). The trial is *powered to detect* HR 0.58, not showing one. The right-column OCs ARE achieved — they're outputs of BATON's calibration, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this."
+- *Q: Why is the protocol 82 patients but max N = 76?*
+  A: 76 is the calibrated max; 82 is the accrual goal with buffer.
+- *Q: Without/with BATON, quick comparison?*
+  A: Without: days of hand-tuning for this 4-param design; four interacting parameters that rarely hit both constraints simultaneously; no reproducibility, no audit trail. With: ~200 evaluations in minutes; joint calibration against both constraints; deterministic seeded output; regulatory-ready audit trail. Higher-dim designs like EVOLVE (8-13 params): months by hand, hours with BATON. **The argument isn't "statistics got fancier"; it's "the bottleneck moved."**
+
+**Delivery — DISCIPLINE**: Do NOT walk through every OC — you'll lose half the room. Lead with: *"The important point isn't the exact numbers. The important point is that BATON found a design that hits power, controls false positives, stops early when the drug fails, and stops early when it succeeds."* Then mention 1-2 numbers (power 82%, duration 27 mo). Methodologists can read the rest on their own.
 :::
 
 
@@ -1340,7 +1808,26 @@ Adaptive, resistance-aware trials as the routine standard across GI, not the exc
 :::
 
 ::: {.notes}
-Q&A POCKET, non-RAS examples of joint-surface combination dose-finding. If anyone asks "do any trials actually use joint-surface combination designs": yes, two clean concrete answers. (1) POCRM: the Embolden trial (NCT03240211) at UVA, pembrolizumab + pralatrexate/decitabine combination Phase Ib in T cell lymphomas, published implementation by Mozgunov et al, Stat Med 2022. (2) BLRM: Novartis Oncology has used BLRM as its standard Phase I design for over a decade and now exclusively for Phase 1, including combination trials via the dual-agent extension. So joint-surface designs are not theoretical, they have published RCT deployments and one of the largest oncology developers in the world uses BLRM by default. The RAS-specific gap is that novel-novel RAS doublets like elironrasib + daraxonrasib are in the clinic but have not yet adopted these methods. That gap is exactly where BATON's joint-design extension lands. Where this is going, in two pieces. First, what's done. BATON has calibrated both EVOLVE, the single-arm, between-arm, and seamless two-stage breast cancer subtrials reported in the BATON manuscript, and PANGEA Phase II, the calibration you just saw. Two trials, two diseases, same tool. Second, the extensions in flight. The methodological move that matters most for this audience is bringing BATON's constrained-Bayesian-optimization machinery to the Phase I family, U-BOIN and BOIN12, for OBD selection. PANGEA Phase I uses U-BOIN today, calibrated with the standard online software; the next step is doing that calibration under BATON so the multi-parameter Phase I design space stops being the bottleneck. That's how the calibration cost that has historically pushed PIs back toward 3+3 disappears. The second extension is CARBO, Context-Aware Robust Bayesian Optimization, which calibrates against a range of plausible trial assumptions rather than a single point estimate. This matters when the assumption was X but the trial actually enrolled at half the rate with 60% of the assumed biomarker prevalence; CARBO makes the design robust to that uncertainty. Mention CARBO in Q&A territory if time permits. The bigger point: when a modern Phase I/II design can be calibrated in days instead of months, the design choice becomes about what's right for the trial, not what's feasible in the timeline. The next generation of GI oncology trials should not be limited by what a statistician can hand-tune. We have the methods to do better, and the infrastructure to deploy them.
+**Pull-from-if-needed — what's done**
+
+- BATON has calibrated: **EVOLVE** (single-arm, between-arm, seamless two-stage breast cancer subtrials reported in the manuscript) AND **PANGEA Phase II** (calibration you just saw)
+- Two trials, two diseases, same tool
+
+**Pull-from-if-needed — extensions in flight**
+
+- **Biggest move for this audience**: bringing BATON's constrained-BO machinery to the Phase I family — **U-BOIN and BOIN12 for OBD selection**. PANGEA Phase I uses U-BOIN today, calibrated with standard online software; next step is doing that calibration under BATON so the multi-parameter Phase I design space stops being the bottleneck. That's how the calibration cost that has historically pushed PIs back to 3+3 disappears
+- **CARBO** = Context-Aware Robust Bayesian Optimization. Calibrates against a range of plausible trial assumptions rather than a single point estimate. Matters when the assumption was X but the trial actually enrolled at half the rate with 60% of the assumed biomarker prevalence. Q&A territory if time permits
+
+**Q&A pockets**
+
+- *Q: Do any trials actually use joint-surface combination designs?*
+  A: Yes, two clean concrete answers:
+    1. **POCRM**: Embolden trial (NCT03240211) at UVA — pembrolizumab + pralatrexate/decitabine combination Phase Ib in T cell lymphomas. Published implementation: Mozgunov et al, *Stat Med* 2022.
+    2. **BLRM**: Novartis Oncology has used BLRM as its standard Phase I design for >10 years (now exclusively for Phase 1), including combination trials via the dual-agent extension.
+  - So joint-surface designs aren't theoretical — they have published RCT deployments and one of the largest oncology developers uses BLRM by default
+  - The RAS-specific gap: novel-novel RAS doublets like elironrasib + daraxonrasib are in the clinic but haven't adopted these methods. That gap is exactly where BATON's joint-design extension lands
+
+**Delivery**: The bigger point — when a modern Phase I/II design can be calibrated in days instead of months, the design choice becomes about what's right for the trial, not what's feasible in the timeline. Land the close: methods exist, infrastructure to deploy them exists.
 :::
 
 
@@ -1353,7 +1840,13 @@ Q&A POCKET, non-RAS examples of joint-surface combination dose-finding. If anyon
 :::
 
 ::: {.notes}
-Three things to leave with. First, the RAS era needs a new generation of trials: biomarker-guided combinations, dose-optimized below the MTD where non-monotonic dose-response makes the MTD the wrong target anyway, and resistance-aware because patients fail therapy and we need to see it happen during the trial, not after. Second, the methods to run those trials exist. Bayesian adaptive designs are the tool family, they handle non-monotonic dose-response through utility-based OBD-finding, they handle combinations through joint admissibility on toxicity and efficacy, and they handle in-trial biomarker adaptation through pre-specified rules with simulation-calibrated error control. Third, the bottleneck has been making these designs practical to deploy. BATON is our answer to that. It calibrates the parameter settings against your operating-characteristic targets in days instead of months, so design choices become about what's right for the trial rather than what's feasible in the timeline. The thesis I opened with: new RAS therapies need new kinds of trials. Methods exist. The bottleneck is making those designs practical to calibrate and run. Thank you.
+**Pull-from-if-needed — three things to leave with**
+
+1. **RAS era needs a new generation of trials**: biomarker-guided combinations, dose-optimized below the MTD (non-monotonic dose-response makes the MTD the wrong target anyway), resistance-aware (patients fail therapy; we need to see it happen *during* the trial, not after)
+2. **Methods exist**. Bayesian adaptive designs handle non-monotonic dose-response (utility-based OBD), combinations (joint admissibility on toxicity and efficacy), and in-trial biomarker adaptation (pre-specified rules with simulation-calibrated error control)
+3. **Bottleneck has been deploying them**. BATON is our answer. Calibrates parameters against OC targets in days instead of months → design choices become about what's right for the trial, not what's feasible in the timeline
+
+**Delivery**: Mirror the opening thesis. "New RAS therapies need new kinds of trials. Methods exist. The bottleneck is making those designs practical to calibrate and run. Thank you."
 :::
 
 
@@ -1402,7 +1895,27 @@ Der & Yeh, *NEJM* 2026 (editorial)
 :::
 
 ::: {.notes}
-Acknowledgments. EVOLVE is led by Lisa Carey at UNC, with co-PIs Charles Perou at UNC, Ian Krop and Eric Winer at Yale, Antonio Wolff at Hopkins, and me. PANGEA is Ashwin Somasundaram's trial. Channing Der and Jen Jen Yeh co-authored the NEJM editorial, "Advances in RAS Therapeutics for Pancreatic Cancer," NEJM 394:1857-1861, that accompanied the daraxonrasib monotherapy paper I leaned on for context, and Yeh is also the PI of our SPORE. On the statistical methods side, Stephen Bates at MIT and Ying Yuan at MD Anderson on the BOIN family and anytime-valid inference; Qian Cao at FDA CDRH on regulatory-grade calibration. The EVOLVE Statistical Working Group, Susan Hilsenbeck at Baylor, Nabihah Tayob at DFCI, and Ruizhe Chen at Hopkins, built out the operating characteristics for the trial. My lab, led on the BATON side by Amber Young, did the design and validation. Funding from the Selective Targeting of Pancreatic Cancer (SToP) SPORE, P50-CA257911, Yeh PI, which is the SPORE this audience represents; ARPA-H ADAPT; DOD PCARP; and an NCI U01 on pancreatic methods.
+**Pull-from-if-needed — trial PIs**
+
+- EVOLVE: Lisa Carey at UNC (lead), with co-PIs Charles Perou (UNC), Ian Krop & Eric Winer (Yale), Antonio Wolff (Hopkins), and me
+- PANGEA: Ashwin Somasundaram's trial
+- Jen Jen Yeh: PI of the SPORE this audience represents (SToP, P50-CA257911)
+
+**Pull-from-if-needed — statistical collaborators (informal credits, off-slide)**
+
+- BOIN family and anytime-valid inference: Stephen Bates (MIT), Ying Yuan (MD Anderson)
+- Regulatory-grade calibration perspective: Qian Cao (FDA CDRH)
+- EVOLVE Statistical Working Group built the OCs for the trial: Susan Hilsenbeck (Baylor), Nabihah Tayob (DFCI), Ruizhe Chen (Hopkins)
+- My lab — Amber Young led the BATON design and validation
+
+**Pull-from-if-needed — funding line, in order**
+
+- **NCI P50-CA257911**, UNC SToP SPORE (Yeh PI) — the SPORE this audience represents
+- ARPA-H ADAPT (140D042590009)
+- DOD PCARP (HT9425241103100121)
+- NCI U01 on pancreatic methods (U01-CA274298)
+
+**Delivery**: Name SToP first verbally — this room represents it.
 :::
 
 
@@ -1415,5 +1928,7 @@ Acknowledgments. EVOLVE is led by Lisa Carey at UNC, with co-PIs Charles Perou a
 # Questions {.center .closing-slide background-color="#13294B"}
 
 ::: {.notes}
-Thanks. Happy to take questions.
+**Delivery**: Thanks. Happy to take questions.
+
+(All slide-by-slide Q&A pockets are organized in the speaker notes above. Common cross-slide hits: BLRM-handles-combinations defense → slide 7. TITE-BOIN adoption gap → slide 7. Regulatory-anchor vs calibration-cost distinction → slides 7, 12, 24. "Is BATON optimal?" → slide 23. "Is BATON published?" → slide 23 / under review at JASA ACAS. Joint-surface design real-world deployments (Embolden, Novartis BLRM) → slide 28. EVOLVE readout → slide 17, "enrolling.")
 :::
