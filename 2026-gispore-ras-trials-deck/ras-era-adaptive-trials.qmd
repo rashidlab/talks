@@ -272,7 +272,6 @@ The reason MTD fails for these agents is mechanistic, and it has two flavors. I'
 ::: {.incremental style="margin-top: 0.5em;"}
 - **Sotorasib** (KRAS G12C, first-in-class, approved 2021) [@hong2020sotorasib]:
   - 960 mg selected as the **highest dose tested**, no DLTs, a more-is-better default, not an MTD
-- **MTD ≠ optimal dose** for targeted agents and immunotherapies
 - **More than 40% of patients** in small-molecule registrational trials require dose reductions or interruptions [@fda_aacr_dosing2025]
 :::
 
