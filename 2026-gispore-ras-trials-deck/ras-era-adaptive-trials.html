@@ -1737,9 +1737,6 @@ display:block!important;
 </div>
 </div>
 </div>
-<div style="margin-top: -0.2em; text-align: center; font-size: 0.85em; color: #13294B; font-style: italic;">
-<p>Adaptive designs are being adopted faster than they can be calibrated<span class="citation" data-cites="optimus_impact2025"><sup><a href="#/references" role="doc-biblioref" onclick>22</a></sup></span>.</p>
-</div>
 </div>
 </div></div>
 <div class="fragment" style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600; font-size: 0.95em; text-align: center;">
@@ -1813,7 +1810,7 @@ display:block!important;
 <p>BATON automatically searches thousands of candidate designs and identifies those that meet FDA, efficiency, and scientific goals.</p>
 </div>
 <div style="margin-top: 0.3em; text-align: center; font-size: 0.82em; color: #5B6670;">
-<p><strong>BATON</strong> = <strong>B</strong>ayesian <strong>A</strong>daptive <strong>T</strong>rial <strong>O</strong>ptimizatio<strong>N</strong><span class="citation" data-cites="baton2026"><sup><a href="#/references" role="doc-biblioref" onclick>23</a></sup></span></p>
+<p><strong>BATON</strong> = <strong>B</strong>ayesian <strong>A</strong>daptive <strong>T</strong>rial <strong>O</strong>ptimizatio<strong>N</strong><span class="citation" data-cites="baton2026"><sup><a href="#/references" role="doc-biblioref" onclick>22</a></sup></span></p>
 </div>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
@@ -1830,7 +1827,7 @@ display:block!important;
 </div>
 </div>
 <div class="fragment" style="margin-top: 0.4em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;">
-<p>You bring the clinical design; BATON evaluates hundreds of candidates <em>by simulation</em> and returns the ones that meet your targets. R package: <a href="https://github.com/naimurashid/BATON">github.com/naimurashid/BATON</a><span class="citation" data-cites="baton2026"><sup><a href="#/references" role="doc-biblioref" onclick>23</a></sup></span></p>
+<p>You bring the clinical design; BATON evaluates hundreds of candidates <em>by simulation</em> and returns the ones that meet your targets. R package: <a href="https://github.com/naimurashid/BATON">github.com/naimurashid/BATON</a><span class="citation" data-cites="baton2026"><sup><a href="#/references" role="doc-biblioref" onclick>22</a></sup></span></p>
 </div>
 <aside class="notes">
 <p>Think of BATON as GPS for trial design. You tell it the destination — power, type-I error, sample-size targets, expected duration. It explores candidate designs by Monte Carlo simulation. It learns which regions of the parameter space satisfy your constraints. It focuses the search on the feasible region. And it arrives at a calibrated design. Hours instead of months. Under the hood: constrained Bayesian optimization with Gaussian process surrogates, but for this audience what matters is the input and the output. You give BATON a design template, a set of operating-characteristic targets, and a scenario grid. BATON returns a calibrated design that meets your targets. FRAMING DISCIPLINE — and this matters because the next slide is PANGEA: in the BATON manuscript, the worked example is EVOLVE, not PANGEA. BATON was developed and validated during EVOLVE activation, across breast cancer subtrials at 8 to 13 parameters. PANGEA is an application of the same tool, not what the paper reports. If anyone asks “is this published,” the clean answer is: the method and its validation are under review at JASA Applications and Case Studies; PANGEA is one application of the same software. Q&amp;A POCKETS, in order of likelihood. (1) “Is BATON really optimal?” Manuscript benchmarked it against Simon two-stage designs where the optimum is known analytically; BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. So the answer is: it recovers the analytically optimal design on problems where we can check. (2) “Can we use it?” Yes — open-source R package at github.com/naimurashid/BATON, with the companion evolveTrial package. (3) “What’s the gain over grid or random search?” The paper has a head-to-head: BATON found feasible designs in 150–200 evaluations where grid and random search often found none at all. (4) “Why isn’t a good statistician enough?” Honest answer: BATON IS the statistician’s tool. A senior statistician with BATON &gt; the same statistician without it. What BATON removes is the months-of-recalibration tax that currently makes the right designs operationally infeasible — the team can’t commit to deliver a calibrated, defensible design within the trial timeline. Manual calibration also returns one design and you hope it’s robust; BATON returns the feasible region and lets you pick the most defensible point in it. Under the hood for the methodologist who asks: constrained Bayesian optimization with Gaussian process surrogates over the operating-characteristic landscape.</p>
@@ -1922,8 +1919,8 @@ display:block!important;
 <div class="column" style="width:55%;">
 <ul>
 <li>After Phase I OBD → <strong>Phase II Bayesian adaptive RCT:</strong> GnP + erlotinib (at OBD) vs GnP alone, primary PFS</li>
-<li><strong>Design assumes</strong> reference 5.5 mo → 9.2 mo (HR 0.58)<span class="citation" data-cites="vonhoff2013mpact"><sup><a href="#/references" role="doc-biblioref" onclick>24</a></sup></span></li>
-<li><strong>BATON-calibrated</strong> four parameters under Type I ≤ 0.10, Power ≥ 0.80<span class="citation" data-cites="baton2026"><sup><a href="#/references" role="doc-biblioref" onclick>23</a></sup></span></li>
+<li><strong>Design assumes</strong> reference 5.5 mo → 9.2 mo (HR 0.58)<span class="citation" data-cites="vonhoff2013mpact"><sup><a href="#/references" role="doc-biblioref" onclick>23</a></sup></span></li>
+<li><strong>BATON-calibrated</strong> four parameters under Type I ≤ 0.10, Power ≥ 0.80<span class="citation" data-cites="baton2026"><sup><a href="#/references" role="doc-biblioref" onclick>22</a></sup></span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div class="fragment" style="font-size: 0.78em;">
@@ -2060,7 +2057,7 @@ display:block!important;
 <p><strong>Clinical collaborators</strong></p>
 <ul>
 <li>Lisa Carey (UNC, EVOLVE PI)</li>
-<li>Channing Der (UNC, NEJM editorial<span class="citation" data-cites="der2026editorial"><sup><a href="#/references" role="doc-biblioref" onclick>25</a></sup></span>)</li>
+<li>Channing Der (UNC, NEJM editorial<span class="citation" data-cites="der2026editorial"><sup><a href="#/references" role="doc-biblioref" onclick>24</a></sup></span>)</li>
 <li>Jen Jen Yeh (UNC Surgery, SToP SPORE PI · NEJM editorial · PDAC collaborator)</li>
 <li>Ashwin Somasundaram (PANGEA PI)</li>
 </ul>
@@ -2174,17 +2171,14 @@ display:block!important;
 <div id="ref-aronchik2025ena" class="csl-entry" role="listitem">
 <div class="csl-left-margin">21. </div><div class="csl-right-inline">Ida Aronchik, others. Mechanisms of resistance to the <span>RAS(ON)</span> multi-selective inhibitor daraxonrasib in pancreatic cancer. ENA Symposium 2025, Revolution Medicines poster; 2025.</div>
 </div>
-<div id="ref-optimus_impact2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">22. </div><div class="csl-right-inline">Deepak Bhamidipati, others. Impact of <span>FDA</span> project optimus guidance on the design of early-phase clinical trials. JCO Oncology Advances. 2025. doi:<a href="https://doi.org/10.1200/OA-25-00084">10.1200/OA-25-00084</a></div>
-</div>
 <div id="ref-baton2026" class="csl-entry" role="listitem">
-<div class="csl-left-margin">23. </div><div class="csl-right-inline">Amber M. Young, others. <span>BATON</span>: Constrained <span>Bayesian</span> optimization for calibrating adaptive trials. 2026.</div>
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Amber M. Young, others. <span>BATON</span>: Constrained <span>Bayesian</span> optimization for calibrating adaptive trials. 2026.</div>
 </div>
 <div id="ref-vonhoff2013mpact" class="csl-entry" role="listitem">
-<div class="csl-left-margin">24. </div><div class="csl-right-inline">Daniel D. Von Hoff, others. Increased survival in pancreatic cancer with nab-paclitaxel plus gemcitabine. New England Journal of Medicine. 2013;369(18):1691–703. doi:<a href="https://doi.org/10.1056/NEJMoa1304369">10.1056/NEJMoa1304369</a></div>
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Daniel D. Von Hoff, others. Increased survival in pancreatic cancer with nab-paclitaxel plus gemcitabine. New England Journal of Medicine. 2013;369(18):1691–703. doi:<a href="https://doi.org/10.1056/NEJMoa1304369">10.1056/NEJMoa1304369</a></div>
 </div>
 <div id="ref-der2026editorial" class="csl-entry" role="listitem">
-<div class="csl-left-margin">25. </div><div class="csl-right-inline">Channing J. Der, Jen Jen Yeh. Advances in <span>RAS</span> therapeutics for pancreatic cancer. New England Journal of Medicine. 2026;394(18):1857–61. doi:<a href="https://doi.org/10.1056/NEJMe2600517">10.1056/NEJMe2600517</a></div>
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Channing J. Der, Jen Jen Yeh. Advances in <span>RAS</span> therapeutics for pancreatic cancer. New England Journal of Medicine. 2026;394(18):1857–61. doi:<a href="https://doi.org/10.1056/NEJMe2600517">10.1056/NEJMe2600517</a></div>
 </div>
 </div>
 </section></section>

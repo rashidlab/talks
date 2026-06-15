@@ -877,9 +877,6 @@ ggplot(adopt, aes(x = metric, y = pct, fill = fill)) +
         axis.text.y = element_text(face = "bold", color = "#13294B", size = 11))
 ```
 
-::: {style="margin-top: -0.2em; text-align: center; font-size: 0.85em; color: #13294B; font-style: italic;"}
-Adaptive designs are being adopted faster than they can be calibrated [@optimus_impact2025].
-:::
 :::
 :::
 
