@@ -44,11 +44,11 @@ set.seed(2025)
 :::
 
 ::: {.fragment style="margin-top: 0.8em; color: #13294B;"}
-We know how to **optimize combination doses**.
+The statistical methods exist to **optimize combination doses**.
 :::
 
 ::: {.fragment style="margin-top: 0.4em; color: #13294B;"}
-We know how to **adapt trials to emerging resistance**.
+The statistical methods exist to **adapt trials to emerging resistance**.
 :::
 
 ::: {.fragment style="margin-top: 1.0em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600;"}
@@ -102,7 +102,7 @@ For pancreatic cancer this is the largest survival signal in a generation. Final
 :::
 
 
-## …but monotherapy has visible ceilings {.smaller}
+## …but monotherapy has a narrow tolerability margin {.smaller}
 
 ::: {style="margin-top: 0.2em; text-align: center; font-size: 0.9em; color: #5B6670; font-style: italic;"}
 RMC-6236-001 (PDAC cohort, *NEJM* 2026) [@daraxonrasib_mono]
@@ -204,7 +204,7 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 
 ::: {.incremental}
 - **Rivière's review of 162 combination Phase I trials: 88% used 3+3** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
-- **Why 3+3 doesn't fit combinations.** Built for single-agent cytotoxics [@letourneau2009], it assumes monotonic dose-toxicity, Cycle-1-observable DLTs, and a single dose dimension — combinations strain all three.
+- **Why 3+3 doesn't fit combinations.** Built for single-agent cytotoxics [@letourneau2009], it assumes monotonic dose-toxicity, Cycle-1-observable DLTs, and a single dose dimension — combinations strain all three (e.g., **immune toxicities often emerge weeks later, outside the DLT window**).
 - **The two-drug dose map is never built.** In practice: pick A's dose, fix it, add B. Two monotherapy escalations run in series; the joint efficacy/toxicity behavior across (A, B) pairs (the "joint surface") is never characterized.
 :::
 
@@ -217,7 +217,7 @@ Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
 :::
 
 ::: {.notes}
-3+3 answered the question it was built for — the MTD of a cytotoxic under a monotonic toxicity assumption. For RAS combinations none of those assumptions hold. NOTE on terminology — when I say "MTD paradigm" I'm describing the broader optimize-against-toxicity framework, not just 3+3. CRM, BLRM, mTPI, BOIN are more sophisticated and target a toxicity interval rather than a single point — BLRM especially — but they still drive selection by toxicity rather than benefit-risk, which is the framing this section is contrasting against OBD. Q&A pocket if anyone pushes on the lump-together. The deeper problem is structural and operational. In practice almost no one searches the joint dose surface. The protocol fixes agent A's dose and adds agent B, so two monotherapy designs run in series and the joint surface is never characterized. Thall, Garrett-Mayer, Wages, Halabi, and Cheung made the formal version of this argument in their 2024 *Clinical Trials* paper, the SCT response to Project Optimus: conventional Phase I designs cannot reliably identify safe and effective doses. Q&A POCKET — frequentist alternatives. If a methodologist asks "what about non-Bayesian combination designs?" the honest answer is that very few practical, deployed frequentist combination designs exist. The field has converged on Bayesian / model-assisted designs (POCRM, BOIN-COMB, BLRM, PIPE, surface-free) because combinations require borrowing strength across dose pairs and partial-order constraints — naturally handled by priors and posterior updating, awkwardly handled without them. The cleanest frequentist alternative in the literature is Conaway, Dunbar, & Peddada 2004 (Biometrics 60:661-669), order-restricted isotonic regression for combinations — theoretically clean but not widely deployed. 3+3 generalizations to combinations exist but inherit all the original problems plus combinatorial explosion. Sequential lead-in (find A then add B) is the dominant industry practice — that is what we are criticizing. Q&A POCKET — Rivière backup. The Rivière et al 2015 systematic review of 162 combination phase I trials gives the "almost never" claim a documented count: 88% used 3+3, all but one used a design developed for single-agent evaluation. If anyone challenges "almost never" as an unsupported universal, that is your number. Next slide makes the abstract failure concrete with the Amgen sotorasib + pembrolizumab case.
+3+3 answered the question it was built for — the MTD of a cytotoxic under a monotonic toxicity assumption. For RAS combinations none of those assumptions hold. VERBAL TRANSLATION for "the two-drug dose map is never built" — say it as: *"In other words, we often never learn where the best combination actually is."* The slide phrasing is methodologist-friendly; the spoken line lands it for clinicians. NOTE on terminology — when I say "MTD paradigm" I'm describing the broader optimize-against-toxicity framework, not just 3+3. CRM, BLRM, mTPI, BOIN are more sophisticated and target a toxicity interval rather than a single point — BLRM especially — but they still drive selection by toxicity rather than benefit-risk, which is the framing this section is contrasting against OBD. Q&A pocket if anyone pushes on the lump-together. The deeper problem is structural and operational. In practice almost no one searches the joint dose surface. The protocol fixes agent A's dose and adds agent B, so two monotherapy designs run in series and the joint surface is never characterized. Thall, Garrett-Mayer, Wages, Halabi, and Cheung made the formal version of this argument in their 2024 *Clinical Trials* paper, the SCT response to Project Optimus: conventional Phase I designs cannot reliably identify safe and effective doses. Q&A POCKET — frequentist alternatives. If a methodologist asks "what about non-Bayesian combination designs?" the honest answer is that very few practical, deployed frequentist combination designs exist. The field has converged on Bayesian / model-assisted designs (POCRM, BOIN-COMB, BLRM, PIPE, surface-free) because combinations require borrowing strength across dose pairs and partial-order constraints — naturally handled by priors and posterior updating, awkwardly handled without them. The cleanest frequentist alternative in the literature is Conaway, Dunbar, & Peddada 2004 (Biometrics 60:661-669), order-restricted isotonic regression for combinations — theoretically clean but not widely deployed. 3+3 generalizations to combinations exist but inherit all the original problems plus combinatorial explosion. Sequential lead-in (find A then add B) is the dominant industry practice — that is what we are criticizing. Q&A POCKET — Rivière backup. The Rivière et al 2015 systematic review of 162 combination phase I trials gives the "almost never" claim a documented count: 88% used 3+3, all but one used a design developed for single-agent evaluation. If anyone challenges "almost never" as an unsupported universal, that is your number. Next slide makes the abstract failure concrete with the Amgen sotorasib + pembrolizumab case.
 :::
 
 
@@ -257,7 +257,7 @@ This is the worked example of the principle on the previous slide. The Amgen cas
 ## Why MTD-only dose-finding doesn't fit targeted agents and immunotherapies {.smaller}
 
 ::: {style="text-align: center; margin-top: 0em;"}
-<img src="images/dose-response-trio.svg" style="width: 90%; max-width: 1080px; height: auto;" alt="Three dose-response shapes side by side: cytotoxic chemo (monotone), targeted agent (plateau), IO/CAR-T/bispecific (umbrella)"/>
+<img src="images/dose-response-trio.svg" style="width: 78%; max-width: 920px; height: auto;" alt="Three dose-response shapes side by side: cytotoxic chemo (monotone), targeted agent (plateau), IO/CAR-T/bispecific (umbrella). Each panel is captioned with its drug class at top (CYTOTOXIC / TARGETED / IMMUNE)."/>
 :::
 
 ::: {.incremental style="margin-top: 0.4em; font-size: 0.85em; line-height: 1.35;"}
@@ -362,6 +362,10 @@ The team writes that utility table down up front. The design then searches insid
 |:-------------|:------:|:------:|
 | **Response** |  40    | **100** |
 | No response  |   **0**   |  60    |
+
+::: {style="margin-top: 0.4em; font-size: 0.88em; color: #13294B; font-style: italic; text-align: center;"}
+*A tolerated non-response (60) is preferred to a toxic response (40).*
+:::
 :::
 
 :::
@@ -874,7 +878,7 @@ ggplot(adopt, aes(x = metric, y = pct, fill = fill)) +
 ```
 
 ::: {style="margin-top: -0.2em; text-align: center; font-size: 0.85em; color: #13294B; font-style: italic;"}
-Methods adopted. Dose-optimization plans — where calibration cost bites — not [@optimus_impact2025].
+Adaptive designs are being adopted faster than they can be calibrated [@optimus_impact2025].
 :::
 :::
 :::
@@ -1151,7 +1155,7 @@ Von Hoff et al., *NEJM* 2013 (MPACT) · Young et al., 2026 (BATON manuscript)
 :::
 
 ::: {.notes}
-This is the underlying design that produced the patient-facing numbers on the previous slide. Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial — basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. TENSE DISCIPLINE — critical, and the slide structure protects it: the 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect HR 0.58, not showing one. The OCs in the right column ARE achieved, because they are outputs of BATON's calibration — Type I at 7.0%, power at 82.2%, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." Four design parameters had to be set jointly to meet OCs — max sample size, efficacy stopping threshold, futility stopping threshold, and futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT which exact four BATON searched vs which were fixed by clinical/modeling choice. Three numbers to land: power 82% at Type I 7%; trial stops early for futility 78% of the time under H₀ — patients are not randomized to a losing arm waiting for the readout; trial stops early for efficacy 81% of the time under H₁. Expected duration: 27.3 months; expected N: 53 under H₀, 58 under H₁, well below max 76. (Protocol carries 82 as accrual target with buffer; 76 is the calibrated max. If asked: "76 is calibrated max, 82 is accrual goal.") UNEXPECTED FINDING — verbal script for the compressed callout. The slide line is intentionally one beat ("Why max N = 76, not lower"); land the rest out loud: "This is the part that surprised us. The intuitive move is to cap enrollment as low as you can to spare patients. But below a certain cap, the design loses the statistical room to declare efficacy early — so even when the drug clearly works, you're stuck waiting for the final analysis to announce it. A hand-tuned search would never have seen this, because you stop the moment you hit a design that meets your constraints. BATON gave us the whole trade-off curve, and the slightly larger cap actually gets patients a faster answer when the drug works." The counterintuitive beat the room remembers is bigger cap → faster answer when the drug works. This is the kind of insight manual calibration misses. WITHOUT/WITH BATON — quick read for the callout above. Without BATON: days of hand-tuning for this 4-parameter design, four interacting parameters that rarely hit both constraints simultaneously, no reproducibility, no audit trail. With BATON: ~200 evaluations in minutes, joint calibration against both constraints, deterministic seeded output, regulatory-ready audit trail. (Higher-dim adaptive designs like EVOLVE at 8-13 parameters take months by hand and hours with BATON — same value, larger problem.) The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
+This is the underlying design that produced the patient-facing numbers on the previous slide. Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial — basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. DELIVERY DISCIPLINE — do NOT walk through every operating characteristic; you will lose half the room. Lead with: *"The important point is not the exact numbers. The important point is that BATON found a design that hits power, controls false positives, stops early when the drug fails, and stops early when it succeeds."* Then mention one or two numbers (power 82%, expected duration 27 months). Leave the rest of the table for the methodologists to read on their own. TENSE DISCIPLINE — critical, and the slide structure protects it: the 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect HR 0.58, not showing one. The OCs in the right column ARE achieved, because they are outputs of BATON's calibration — Type I at 7.0%, power at 82.2%, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." Four design parameters had to be set jointly to meet OCs — max sample size, efficacy stopping threshold, futility stopping threshold, and futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT which exact four BATON searched vs which were fixed by clinical/modeling choice. Three numbers to land: power 82% at Type I 7%; trial stops early for futility 78% of the time under H₀ — patients are not randomized to a losing arm waiting for the readout; trial stops early for efficacy 81% of the time under H₁. Expected duration: 27.3 months; expected N: 53 under H₀, 58 under H₁, well below max 76. (Protocol carries 82 as accrual target with buffer; 76 is the calibrated max. If asked: "76 is calibrated max, 82 is accrual goal.") UNEXPECTED FINDING — verbal script for the compressed callout. The slide line is intentionally one beat ("Why max N = 76, not lower"); land the rest out loud: "This is the part that surprised us. The intuitive move is to cap enrollment as low as you can to spare patients. But below a certain cap, the design loses the statistical room to declare efficacy early — so even when the drug clearly works, you're stuck waiting for the final analysis to announce it. A hand-tuned search would never have seen this, because you stop the moment you hit a design that meets your constraints. BATON gave us the whole trade-off curve, and the slightly larger cap actually gets patients a faster answer when the drug works." The counterintuitive beat the room remembers is bigger cap → faster answer when the drug works. This is the kind of insight manual calibration misses. WITHOUT/WITH BATON — quick read for the callout above. Without BATON: days of hand-tuning for this 4-parameter design, four interacting parameters that rarely hit both constraints simultaneously, no reproducibility, no audit trail. With BATON: ~200 evaluations in minutes, joint calibration against both constraints, deterministic seeded output, regulatory-ready audit trail. (Higher-dim adaptive designs like EVOLVE at 8-13 parameters take months by hand and hours with BATON — same value, larger problem.) The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
 :::
 
 
