@@ -653,17 +653,8 @@ Classical trial design treats patients as if they're draws from a fixed distribu
 
 ## Why classical trial designs miss resistance {.smaller}
 
-::: {style="text-align: center; margin-top: 0.1em;"}
-<img src="images/static-vs-resistance-aware.png" style="width: 78%; max-width: 920px; height: auto;" alt="Two-row schematic. Top row: Static design — one biomarker read, before treatment. Boxes: Baseline → Treatment → Resistance emerges → Progression → Trial closes (red, with annotation 'biology has already changed'). Bottom row: Resistance-aware design — serial reads: detect, then act. Boxes: Baseline → Treatment → Resistance detected (dark navy) → Adapt (switch arm) → Continue learning, with a dashed feedback loop labeled 're-randomize on emerging biology' and an annotation 'in time to act'. Bottom callout: A static read measures a moving target. Longitudinal detection + biomarker-guided arm-swaps keep the trial in step with the tumor." />
-:::
-
-::: {.fragment style="margin-top: 0.3em; font-size: 0.82em;"}
-
-| Resistance type | What you need |
-|:---|:---|
-| **Genomic** (KRAS amplification, NRAS/BRAF/MAP2K1) | ctDNA |
-| **Cell-state / plasticity** (basal↔classical, partial EMT) | biopsy + transcriptomics + imaging |
-
+::: {style="text-align: center; margin-top: 0.4em;"}
+<img src="images/static-vs-resistance-aware.png" style="width: 88%; max-width: 1040px; height: auto;" alt="Two-row schematic. Top row: Static design — one biomarker read, before treatment. Boxes: Baseline → Treatment → Resistance emerges → Progression → Trial closes (red, with annotation 'biology has already changed'). Bottom row: Resistance-aware design — serial reads: detect, then act. Boxes: Baseline → Treatment → Resistance detected (dark navy) → Adapt (switch arm) → Continue learning, with a dashed feedback loop labeled 're-randomize on emerging biology' and an annotation 'in time to act'. Bottom callout: A static read measures a moving target. Longitudinal detection + biomarker-guided arm-swaps keep the trial in step with the tumor." />
 :::
 
 ::: {.slide-refs}
@@ -671,7 +662,22 @@ Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024
 :::
 
 ::: {.notes}
-This is the design-implications side of the previous slide. The two-row schematic names the structural failure of classical trial designs under RAS-era biology. Top row — *Static design, one biomarker read before treatment*: Baseline → Treatment → Resistance emerges → Progression → Trial closes (the red box). By the time the trial reads out, the biology has already changed. Bottom row — *Resistance-aware design, serial reads: detect, then act*: Baseline → Treatment → Resistance detected → Adapt (switch arm) → Continue learning, with a dashed re-randomization loop back to Treatment on emerging biology. The adaptive row catches resistance when it emerges, in time to act on it within the same protocol. The integrated callout — "A static read measures a moving target; longitudinal detection + biomarker-guided arm-swaps keep the trial in step with the tumor" — is the headline. Three things to land verbally. First, fixed regimens miss the interception window — by the time the trial reads out, the biology has changed. Second, baseline-only biomarkers can't track evolution under therapy — you measured the wrong thing at the wrong time. Third, resistance is characterized retrospectively, only after progression and trial closure. The Awad and Aguirre papers cited here are themselves post-progression analyses — ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Fourth, the temporal surface — when resistance emerges, in which patients, by which mechanism — is never characterized. The empirical anchor for this room: Aronchik's ENA 2025 paired-ctDNA work on daraxonrasib [@aronchik2025ena] shows RAS-pathway alterations — KRAS amplification (36% of patients), BRAF, MAP2K1 — emerging at progression in 59% of PDAC patients on monotherapy, mechanisms that a baseline-biomarker trial would not catch. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both, during enrollment, not after. Same structural failure as the combination dose-finding critique two sections ago: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
+This is the design-implications side of the previous slide. The schematic names the *timing* failure: top row is the static design (one biomarker read at baseline, treatment, resistance emerges, progression, trial closes with biology already changed); bottom row is the resistance-aware design (serial reads with re-randomization back into the treatment loop on emerging biology, "in time to act"). Three things to land verbally. First, fixed regimens miss the interception window. Second, baseline-only biomarkers can't track evolution under therapy. Third, resistance is characterized retrospectively, only after progression. The Awad and Aguirre papers cited are themselves post-progression analyses. The integrated callout — "A static read measures a moving target; longitudinal detection + biomarker-guided arm-swaps keep the trial in step with the tumor" — is the headline. The empirical anchor for this room: Aronchik's ENA 2025 paired-ctDNA work on daraxonrasib [@aronchik2025ena] shows RAS-pathway alterations — KRAS amplification (36% of patients), BRAF, MAP2K1 — emerging at progression in 59% of PDAC patients on monotherapy. Mechanisms a baseline-biomarker trial would not catch. The next slide carries the *modality* point: it takes two assays to see all of it.
+:::
+
+
+## &nbsp; {.smaller .hide-title}
+
+::: {style="text-align: center; margin-top: -1.5em;"}
+![](images/resistance_table_slide.png){width=98% fig-alt="Title: Detecting resistance takes two reads, not one. Subtitle: Different resistance mechanisms become visible through different assays. Two-row table. Row 1 — Genomic resistance (KRAS amplification, NRAS/BRAF/MAP2K1 alterations): ctDNA — serial liquid biopsy, minimally invasive. Row 2 — Cell-state / plasticity resistance (basal-to-classical switching, partial EMT): biopsy + transcriptomics + imaging. Bottom navy callout: A resistance-aware trial has to run both, during enrollment, not at progression. Genomic and cell-state resistance are invisible to each other's assay."}
+:::
+
+::: {.slide-refs}
+Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024
+:::
+
+::: {.notes}
+This is the *modality* slide that pairs with the timing slide before it. The previous schematic said: a static read can't catch resistance in time to act. This one says: even if you read serially, no single assay catches everything. Genomic resistance — KRAS amplification, NRAS/BRAF/MAP2K1 alterations from the Awad and Aguirre series — shows up in ctDNA, which is cheap, continuous, minimally invasive. Cell-state/plasticity resistance — basal-to-classical switching, partial EMT, the kind of non-genomic adaptation the Yeh and Johnson labs at UNC have been working on — is invisible to ctDNA and needs serial tumor biopsies, transcriptomics, sometimes imaging. The two assays don't substitute for each other; they don't even see each other's signal. The callout names the deployment requirement: a resistance-aware trial has to run both, prospectively, during enrollment, not after progression. This is the "do both" requirement made concrete, and it's exactly what EVOLVE was built to do — which is the next slide.
 :::
 
 
@@ -714,46 +720,14 @@ This is what a resistance-aware trial actually looks like operationally. ARPA-H 
 :::
 
 
-## EVOLVE-BDT — and what this would look like in PDAC {.smaller}
+## &nbsp; {.smaller .hide-title}
 
-::: {style="margin-top: -0.2em; text-align: center; font-size: 0.92em; color: #13294B; font-style: italic;"}
-EVOLVE is the operational template; PDAC is the next application.
-:::
-
-::: {style="margin: 0 -2em;"}
-<img src="images/evolve_flow.jpg" style="width: 100%; max-width: none; display: block;" alt="EVOLVE-BDT flow chart: 2L MBC patients enter, biopsy stratifies into Subgroup A-D, subgroup-stratified adaptive randomization assigns to 2L Arm 1 or Arm 2, progression triggers re-subgrouping via liquid biopsy for 3L Arm 1 or Arm 2, arms are replaced if futility or efficacy is determined and a new arm enters." />
-:::
-
-::: {style="margin-top: 0.2em; text-align: center; font-size: 0.7em; color: #5B6670; font-style: italic;"}
-TBCRC EVOLVE-BDT flow — biomarker-stratified subtrials, adaptive randomization, in-trial arm replacement on futility or efficacy.
-:::
-
-:::: {.columns}
-
-::: {.column width="50%"}
-::: {style="margin-top: 0.5em; font-size: 0.92em; line-height: 1.5;"}
-**EVOLVE-BDT (real, enrolling)**
-
-ER+/HER2− and TNBC, biomarker-stratified subtrials with Bayesian arm-swap on futility/efficacy.
-:::
-:::
-
-::: {.column width="50%"}
-::: {style="margin-top: 0.5em; font-size: 0.92em; line-height: 1.5;"}
-**PDAC analog (hypothetical)**
-
-Basal-like vs classical by PurIST [@purist_rashid2020], same Bayesian arm-swap logic on daraxonrasib-combination arms.
-:::
-:::
-
-::::
-
-::: {.fragment style="margin-top: 0.4em; padding: 0.4em 0.8em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.85em; text-align: center;"}
-**The same adaptive framework could be applied to PurIST-defined PDAC subtypes and evolving resistance biology.**
+::: {style="text-align: center; margin-top: -1.5em;"}
+![](images/evolve_pdac_mapping.png){width=98% fig-alt="Title: Same architecture, different disease. Subtitle: The EVOLVE-BDT flow is reusable; only the biomarker and the drugs change. A four-stage spine of architecture boxes (Subgroup determination at enrollment by biopsy → Subgroup-stratified adaptive randomization between regimens → Arm replacement on futility/efficacy as data accumulate → Re-subgroup at progression by liquid biopsy) with two instantiations layered on top and below. Top row (EVOLVE-BDT, real, breast cancer): ER+/HER2- and TNBC subgroups A-D defined by ESR1/PI3K, randomization to fulvestrant + elacestrant or alpelisib + CDK4/6i + everolimus + CAPI, Bayesian arm-swap on futility/efficacy, re-randomize to available arms on emerging biology. Bottom row (PDAC analog, PurIST-defined, hypothetical): Basal-like vs classical by PurIST, randomization to daraxonrasib + GnP combination arms, same arm-swap logic on resistance biology. Bottom callout: The same adaptive framework applies to PurIST-defined PDAC subtypes and evolving resistance biology. Swap the biomarker and the drugs; the calibration machinery and decision rules carry over."}
 :::
 
 ::: {.notes}
-This is the load-bearing slide for "could we actually do this in PDAC?" The figure is EVOLVE-BDT's flow — TBCRC EVOLVE-BDT, our group's adaptive platform in 2L metastatic breast cancer. Walk it left to right. Second line MBC patient enters. Biopsy. Subgroup determination — molecular profile assigns A through D. Subgroup-stratified adaptive randomization sends the patient to 2L Arm 1 or Arm 2. Patient is treated. At progression, a liquid biopsy re-determines the subgroup — because the biology has changed — and the patient enters 3+L treatment in a subgroup-stratified Arm 1 or Arm 2. Crucially, the dashed boxes mean arms get replaced when the Bayesian decision rule fires futility or efficacy. New arms enter. The trial keeps learning. Now the columns below the figure are the explicit translation. Left: real EVOLVE specs. ER+/HER2- and TNBC parallel platforms, about 700 patients total. Subgroups A through D defined by ESR1 mutations, PI3K/AKT/PTEN status, PD-L1, androgen receptor — all things that already drive treatment decisions in breast clinical practice. Serial tumor and blood at every visit. Arms swap on the Bayesian decision rule. Right: the PDAC translation. Stratify by basal-like versus classical using PurIST. Subgroups by KRAS amplification, RTK upregulation, partial EMT — the Aronchik data shows 59% develop measurable resistance, so these subgroups have empirical basis. Serial ctDNA for the genomic side, serial biopsies for plasticity — the do-both requirement made concrete. Arms include daraxonrasib plus EGFR-inhibitor for RTK-upregulation patients, daraxonrasib plus SHP2-inhibitor for pathway-reactivation patients, classical-state shifters for plasticity-driven failures. The bottom callout makes the point: same architecture. Every row of the right column has a real biomarker, a real assay, and a real combination partner already in or entering the clinic. This is not a hypothetical that needs new science. It's the deployment problem. Which is exactly what BATON solves. Pause briefly before moving on to the statistical-demands slide.
+This is the load-bearing slide for "could we actually do this in PDAC?" The architecture spine is in the middle: subgroup determination at enrollment → subgroup-stratified adaptive randomization → arm replacement on futility/efficacy → re-subgroup at progression. Above it, real EVOLVE-BDT — TBCRC's enrolling platform in 2L metastatic breast cancer. ER+/HER2- and TNBC subgroups defined by ESR1, PI3K/AKT/PTEN, PD-L1, androgen receptor — all biomarkers that already drive breast oncology practice. Bayesian arm-swap on the decision rule. Below it, the PDAC translation. Basal-like vs classical by PurIST. Subgroups by KRAS amplification, RTK upregulation, partial EMT — the Aronchik data showing 59% develop measurable resistance gives these subgroups empirical basis. Daraxonrasib + GnP-style combinations on each arm. The architecture is the same; the biomarkers and drugs change. The bottom callout names the principle: swap the biomarker and the drugs; the calibration machinery and decision rules carry over. This is not a hypothetical that needs new science. It's the deployment problem. Which is exactly what BATON solves. Pause briefly before moving on to the statistical-demands slide.
 :::
 
 
@@ -983,55 +957,17 @@ BATON automatically searches thousands of candidate designs and identifies those
 **BATON** = **B**ayesian **A**daptive **T**rial **O**ptimizatio**N** [@baton2026]
 :::
 
-:::: {.columns}
-
-::: {.column width="38%"}
 ::: {.fragment}
 ```{r}
-#| fig.height: 5.4
-#| fig.width: 4.5
-#| fig.align: center
-library(ggplot2)
-steps <- data.frame(
-  x = rep(1.0, 5),
-  y = 5:1,
-  step = c("GOAL", "EXPLORE", "LEARN", "FOCUS", "ARRIVE"),
-  detail = c("Type I ≤ 0.10\nPower ≥ 0.80\nmin N",
-             "Sample\ncandidate\ndesigns",
-             "Map what\nworks",
-             "Search the\nfeasible region",
-             "Calibrated\ndesign")
-)
-ggplot(steps, aes(x = x, y = y)) +
-  geom_segment(data = data.frame(x = 1.0, xend = 1.0,
-                                 y = 5:2 - 0.42, yend = 4:1 + 0.42),
-               aes(x = x, xend = xend, y = y, yend = yend),
-               arrow = arrow(length = unit(0.28, "cm"), type = "closed"),
-               color = "#4B9CD3", linewidth = 1.9) +
-  geom_tile(aes(width = 0.95, height = 0.7), fill = "#EDF0F2",
-            color = "#4B9CD3", linewidth = 1.8) +
-  geom_text(aes(label = step), size = 6, fontface = "bold", color = "#4B9CD3") +
-  geom_text(aes(label = detail, x = 1.62), size = 4.4, color = "#444444",
-            hjust = 0, lineheight = 0.85) +
-  scale_x_continuous(limits = c(0.45, 2.55), expand = c(0, 0)) +
-  scale_y_continuous(limits = c(0.4, 5.6), expand = c(0, 0)) +
-  theme_void()
-```
-:::
-:::
-
-::: {.column width="62%"}
-::: {.fragment}
-```{r}
-#| fig.height: 5.4
-#| fig.width: 6.8
+#| fig.height: 3.6
+#| fig.width: 11
 #| fig.align: center
 library(ggplot2)
 flow <- data.frame(
-  y = c(5, 3.5, 2, 0.5),
-  x = rep(1, 4),
+  x = c(0.8, 3.0, 5.4, 7.8),
+  y = rep(1, 4),
   label = c("Design template\n+ scenario grid",
-            "OC targets\n(Type I ≤ 0.10, Power ≥ 0.80,\nmin N)",
+            "OC targets\n(Type I, Power, min N)",
             "BATON",
             "Calibrated design\n+ regulatory-ready\naudit trail"),
   fill = c("#5B6670", "#5B6670", "#13294B", "#4B9CD3"),
@@ -1039,32 +975,29 @@ flow <- data.frame(
 )
 ggplot() +
   geom_tile(data = flow, aes(x = x, y = y, fill = fill,
-                              width = ifelse(is_baton, 1.5, 2.2),
-                              height = ifelse(is_baton, 0.95, 1.0)),
+                              width = ifelse(is_baton, 1.7, 2.0),
+                              height = ifelse(is_baton, 1.1, 1.2)),
             color = "white", linewidth = 2.5) +
   scale_fill_identity() +
   geom_text(data = flow, aes(x = x, y = y, label = label),
-            color = "white", size = ifelse(flow$is_baton, 5.6, 3.8),
+            color = "white", size = ifelse(flow$is_baton, 7.5, 4.2),
             fontface = ifelse(flow$is_baton, "bold", "plain"),
             lineheight = 0.95) +
-  geom_segment(data = data.frame(x = rep(1, 3), xend = rep(1, 3),
-                                  y = c(5, 3.5, 2) - 0.55,
-                                  yend = c(3.5, 2, 0.5) + 0.55),
+  geom_segment(data = data.frame(x = c(0.8, 3.0, 5.4) + 1.05,
+                                  xend = c(3.0, 5.4, 7.8) - 1.05,
+                                  y = rep(1, 3), yend = rep(1, 3)),
                aes(x = x, xend = xend, y = y, yend = yend),
-               arrow = arrow(length = unit(0.30, "cm"), type = "closed"),
+               arrow = arrow(length = unit(0.32, "cm"), type = "closed"),
                color = "#13294B", linewidth = 1.8) +
-  scale_x_continuous(limits = c(-0.6, 2.6), expand = c(0, 0)) +
-  scale_y_continuous(limits = c(-0.2, 5.7), expand = c(0, 0)) +
+  scale_x_continuous(limits = c(-0.4, 8.9), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.2, 1.8), expand = c(0, 0)) +
   theme_void()
 ```
 
-::: {style="margin-top: 0.2em; font-size: 0.72em; color: #5B6670; font-style: italic; text-align: center; line-height: 1.3;"}
-You bring the clinical inputs; BATON returns the calibration.
+::: {style="margin-top: 0.4em; text-align: center; font-size: 0.92em; color: #13294B; font-weight: 600;"}
+You bring the clinical inputs. BATON returns the calibration.
 :::
 :::
-:::
-
-::::
 
 ::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
 You bring the clinical design; BATON evaluates hundreds of candidates *by simulation* and returns the ones that meet your targets. R package: [github.com/naimurashid/BATON](https://github.com/naimurashid/BATON) [@baton2026]
@@ -1110,8 +1043,12 @@ ggplot() +
   theme_void()
 ```
 
-::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 0.92em; color: #13294B; font-weight: 600;"}
-**Far fewer evaluations than grid search** — finds feasible designs that grid search often misses entirely. For a 4-parameter design like this one: manual calibration takes days, BATON takes minutes, with a regulatory-ready audit trail.
+::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 0.85em; color: #13294B;"}
+**Far fewer evaluations than grid search** — finds feasible designs grid search often misses entirely.
+:::
+
+::: {.fragment style="margin-top: 0.4em; padding: 0.55em 1em; background-color: #13294B; color: #FFFFFF; text-align: center; font-size: 1.05em; font-weight: 700;"}
+For this 4-parameter design: **manual calibration takes days · BATON takes minutes** — with a regulatory-ready audit trail.
 :::
 
 ::: {.notes}
@@ -1151,7 +1088,7 @@ PANGEA Phase II (BATON-calibrated)
 :::
 
 ::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; text-align: center;"}
-**Sooner answer, fewer patients on a losing arm — without losing power.**
+**Sooner answers. Fewer patients exposed to ineffective therapy. No sacrifice in statistical rigor.**
 :::
 
 ::: {.notes}

@@ -1,5 +1,11 @@
 /*-- scss:rules --*/
 
+/* Slides whose visible header is baked into a full-bleed PNG/SVG.
+   Suppress the Quarto-emitted h2 (and its space) so the slide isn't doubled. */
+.reveal section.hide-title > h2:first-child {
+  display: none;
+}
+
 /* Slide-level citation footer — small grey italic text at the bottom-right
    of slides that carry inline citation superscripts. Sits above the global
    footer band (Quarto positions the global footer at the very bottom of the
