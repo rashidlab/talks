@@ -2146,7 +2146,7 @@ display:block!important;
 </div>
 </div>
 <div class="fragment" style="margin-top: 0.4em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;">
-<p>You bring the clinical design; BATON evaluates hundreds of candidates <em>by simulation</em> and returns the ones that meet your targets. R package: <a href="https://github.com/naimurashid/BATON">github.com/naimurashid/BATON</a><span class="citation" data-cites="baton2026"><sup><a href="#/references" role="doc-biblioref" onclick>23</a></sup></span></p>
+<p>You bring the clinical design; BATON evaluates hundreds of candidates <em>by simulation</em> and returns the ones that meet your targets. R package available with the methods paper (in review).<span class="citation" data-cites="baton2026"><sup><a href="#/references" role="doc-biblioref" onclick>23</a></sup></span></p>
 </div>
 <aside class="notes">
 <p><strong>Pull-from-if-needed</strong></p>
@@ -2163,7 +2163,7 @@ display:block!important;
 <p><strong>Q&amp;A pockets (in likelihood order)</strong></p>
 <ul>
 <li><em>Q: Is BATON really optimal?</em> A: Manuscript benchmarked against Simon two-stage designs where the optimum is known analytically. BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. It recovers the analytically optimal design on problems where we can check.</li>
-<li><em>Q: Can we use it?</em> A: Yes — open-source R package at github.com/naimurashid/BATON, with companion evolveTrial package.</li>
+<li><em>Q: Can we use it / is the package available?</em> A: Not public yet — the R package (with companion evolveTrial package) is being released alongside the methods paper, under review at JASA ACAS. Happy to share early access on request.</li>
 <li><em>Q: What’s the gain over grid or random search?</em> A: Head-to-head in the paper: BATON found feasible designs in <strong>150–200 evaluations</strong> where grid and random search often found none at all.</li>
 <li><em>Q: Why isn’t a good statistician enough?</em> A: BATON IS the statistician’s tool. Senior statistician with BATON &gt; same statistician without. What BATON removes is the months-of-recalibration tax that makes the right designs operationally infeasible — teams can’t commit to deliver a calibrated, defensible design within the trial timeline. Manual calibration also returns one design and you hope it’s robust; BATON returns the <strong>feasible region</strong> and lets you pick the most defensible point.</li>
 </ul>

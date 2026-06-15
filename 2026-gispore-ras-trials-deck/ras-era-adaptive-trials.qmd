@@ -1373,7 +1373,7 @@ You bring the clinical inputs. BATON returns the calibration.
 :::
 
 ::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
-You bring the clinical design; BATON evaluates hundreds of candidates *by simulation* and returns the ones that meet your targets. R package: [github.com/naimurashid/BATON](https://github.com/naimurashid/BATON) [@baton2026]
+You bring the clinical design; BATON evaluates hundreds of candidates *by simulation* and returns the ones that meet your targets. R package available with the methods paper (in review). [@baton2026]
 :::
 
 ::: {.notes}
@@ -1392,8 +1392,8 @@ You bring the clinical design; BATON evaluates hundreds of candidates *by simula
 
 - *Q: Is BATON really optimal?*
   A: Manuscript benchmarked against Simon two-stage designs where the optimum is known analytically. BATON converges to within 1% of Simon-optimal expected N, hitting the optimum exactly in 8 of 10 seeded runs. It recovers the analytically optimal design on problems where we can check.
-- *Q: Can we use it?*
-  A: Yes — open-source R package at github.com/naimurashid/BATON, with companion evolveTrial package.
+- *Q: Can we use it / is the package available?*
+  A: Not public yet — the R package (with companion evolveTrial package) is being released alongside the methods paper, under review at JASA ACAS. Happy to share early access on request.
 - *Q: What's the gain over grid or random search?*
   A: Head-to-head in the paper: BATON found feasible designs in **150–200 evaluations** where grid and random search often found none at all.
 - *Q: Why isn't a good statistician enough?*
