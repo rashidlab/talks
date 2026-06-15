@@ -4,7 +4,7 @@ author: "Naim Rashid, PhD"
 institute: |
   Department of Biostatistics · Lineberger Comprehensive Cancer Center · UNC
 
-  <div class="title-date-inline">NCI GI SPORE Meeting 2026</div>
+  <div class="title-date-inline">NCI GI SPORE Meeting · June 2026</div>
 format:
   revealjs:
     theme: [default, custom.css, title-slide.css, content-slides.css]
