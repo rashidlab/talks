@@ -57,7 +57,7 @@
     <use href="#rtk" transform="translate(190,140) rotate(55)"/>
     <use href="#rtk" transform="translate(187,238) rotate(126)"/>
 
-    <!-- Active RAS-GTP dots — slightly varied sizes for organic feel -->
+    <!-- Active RAS-GTP dots, slightly varied sizes for organic feel -->
     <g fill="#C75050">
       <circle cx="93"  cy="161" r="3.8"/>
       <circle cx="111" cy="143" r="3.4"/>
@@ -118,7 +118,7 @@
       <circle cx="660" cy="267"  r="18" fill="url(#rtkGlow)"/>
     </g>
 
-    <!-- RTKs anchored on membrane (12 — more than untreated).
+    <!-- RTKs anchored on membrane (12, more than untreated).
          Rotation = atan2(P.y - C.y, P.x - C.x) + 90, where C = (600, 190). -->
     <use href="#rtk" transform="translate(528,158) rotate(-66)"/>
     <use href="#rtk" transform="translate(538,222) rotate(-117)"/>
@@ -133,7 +133,7 @@
     <use href="#rtk" transform="translate(542,267) rotate(-143)"/>
     <use href="#rtk" transform="translate(660,267) rotate(142)"/>
 
-    <!-- Active RAS-GTP dots (FEW — RAS inhibited) -->
+    <!-- Active RAS-GTP dots (FEW, RAS inhibited) -->
     <g fill="#C75050" opacity="0.5">
       <circle cx="594" cy="180" r="3"/>
       <circle cx="611" cy="200" r="3"/>

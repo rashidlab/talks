@@ -7,7 +7,7 @@
 
   <!-- Column legend chips -->
   <rect x="64" y="140" width="18" height="18" rx="3" fill="#4A90C2"/>
-  <text x="90" y="155" font-size="17" font-weight="bold" fill="#4A90C2">EVOLVE-BDT — breast (real, enrolling)</text>
+  <text x="90" y="155" font-size="17" font-weight="bold" fill="#4A90C2">EVOLVE-BDT, breast (real, enrolling)</text>
   <rect x="560" y="140" width="18" height="18" rx="3" fill="#C0712E"/>
   <text x="586" y="155" font-size="17" font-weight="bold" fill="#C0712E">PDAC analog (PurIST-defined, hypothetical)</text>
 
