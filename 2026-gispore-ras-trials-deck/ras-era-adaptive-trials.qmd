@@ -1339,10 +1339,6 @@ BATON is the infrastructure that makes adaptive trial design routine across the 
 Adaptive, resistance-aware trials as the routine standard across GI, not the exception.
 :::
 
-::: {.slide-refs}
-Young et al., 2026 (BATON) · Wages 2011 · Lin & Yin 2017 · Neuenschwander 2008
-:::
-
 ::: {.notes}
 Q&A POCKET, non-RAS examples of joint-surface combination dose-finding. If anyone asks "do any trials actually use joint-surface combination designs": yes, two clean concrete answers. (1) POCRM: the Embolden trial (NCT03240211) at UVA, pembrolizumab + pralatrexate/decitabine combination Phase Ib in T cell lymphomas, published implementation by Mozgunov et al, Stat Med 2022. (2) BLRM: Novartis Oncology has used BLRM as its standard Phase I design for over a decade and now exclusively for Phase 1, including combination trials via the dual-agent extension. So joint-surface designs are not theoretical, they have published RCT deployments and one of the largest oncology developers in the world uses BLRM by default. The RAS-specific gap is that novel-novel RAS doublets like elironrasib + daraxonrasib are in the clinic but have not yet adopted these methods. That gap is exactly where BATON's joint-design extension lands. Where this is going, in two pieces. First, what's done. BATON has calibrated both EVOLVE, the single-arm, between-arm, and seamless two-stage breast cancer subtrials reported in the BATON manuscript, and PANGEA Phase II, the calibration you just saw. Two trials, two diseases, same tool. Second, the extensions in flight. The methodological move that matters most for this audience is bringing BATON's constrained-Bayesian-optimization machinery to the Phase I family, U-BOIN and BOIN12, for OBD selection. PANGEA Phase I uses U-BOIN today, calibrated with the standard online software; the next step is doing that calibration under BATON so the multi-parameter Phase I design space stops being the bottleneck. That's how the calibration cost that has historically pushed PIs back toward 3+3 disappears. The second extension is CARBO, Context-Aware Robust Bayesian Optimization, which calibrates against a range of plausible trial assumptions rather than a single point estimate. This matters when the assumption was X but the trial actually enrolled at half the rate with 60% of the assumed biomarker prevalence; CARBO makes the design robust to that uncertainty. Mention CARBO in Q&A territory if time permits. The bigger point: when a modern Phase I/II design can be calibrated in days instead of months, the design choice becomes about what's right for the trial, not what's feasible in the timeline. The next generation of GI oncology trials should not be limited by what a statistician can hand-tune. We have the methods to do better, and the infrastructure to deploy them.
 :::
@@ -1383,16 +1379,12 @@ Three things to leave with. First, the RAS era needs a new generation of trials:
 
 - Susan Hilsenbeck (Baylor) · Nabihah Tayob (DFCI) · Ruizhe Chen (Hopkins)
 
-**Methods collaborators**
-
-- Stephen Bates (MIT) · Ying Yuan (MD Anderson) · Qian Cao (FDA CDRH)
-:::
-
-::: {.column width="33%"}
 **Rashid Lab**
 
 - **Amber Young**, Tyler Humpherys, Dinelka Nanayakkara, Jialiu Xie, Andrew Walther
+:::
 
+::: {.column width="33%"}
 **Funding**
 
 - **NCI P50-CA257911**, UNC **SToP** SPORE
