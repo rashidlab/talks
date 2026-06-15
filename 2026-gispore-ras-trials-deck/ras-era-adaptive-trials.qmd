@@ -916,16 +916,20 @@ ggplot(df, aes(x = x, y = y, color = cls)) +
            label = "Each dot = one candidate trial design",
            color = "#5B6670", fontface = "italic", size = 3.5) +
   coord_fixed() +
-  scale_x_continuous("Calibration parameter A (e.g., futility threshold)",
-                     limits = c(0, 1), expand = c(0.01, 0.01)) +
-  scale_y_continuous("Calibration parameter B (e.g., max N)",
-                     limits = c(0, 1), expand = c(0.01, 0.01)) +
+  scale_x_continuous("Futility threshold",
+                     limits = c(0, 1), expand = c(0.01, 0.01),
+                     breaks = c(0.05, 0.95), labels = c("low", "high")) +
+  scale_y_continuous("Max sample size",
+                     limits = c(0, 1), expand = c(0.01, 0.01),
+                     breaks = c(0.05, 0.95), labels = c("small", "large")) +
   theme_minimal(base_size = 11) +
   theme(panel.grid.minor = element_blank(),
         panel.grid.major = element_line(color = "#EDF0F2"),
         axis.title = element_text(color = "#13294B", face = "bold", size = 10),
-        axis.text = element_blank(),
-        axis.ticks = element_blank())
+        axis.text = element_text(color = "#5B6670", size = 8),
+        axis.ticks = element_line(color = "#5B6670", linewidth = 0.4),
+        axis.ticks.length = unit(0.12, "cm"),
+        axis.line = element_line(color = "#5B6670", linewidth = 0.4))
 ```
 
 ::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.95em; color: #13294B; font-style: italic;"}
@@ -1065,8 +1069,12 @@ p_grid <- ggplot() +
   scale_color_manual(values = c("TRUE" = "#4B9CD3", "FALSE" = "#C8D0D6"),
                      guide = "none") +
   coord_fixed() +
-  scale_x_continuous(limits = c(0, 1), expand = c(0.01, 0.01)) +
-  scale_y_continuous(limits = c(0, 1), expand = c(0.01, 0.01)) +
+  scale_x_continuous("Futility threshold",
+                     limits = c(0, 1), expand = c(0.01, 0.01),
+                     breaks = c(0.05, 0.95), labels = c("low", "high")) +
+  scale_y_continuous("Max sample size",
+                     limits = c(0, 1), expand = c(0.01, 0.01),
+                     breaks = c(0.05, 0.95), labels = c("small", "large")) +
   labs(title = "Grid search",
        subtitle = "~225 designs on a lattice; most wasted") +
   theme_minimal(base_size = 11) +
@@ -1075,8 +1083,11 @@ p_grid <- ggplot() +
                                   color = "#13294B", size = 13),
         plot.subtitle = element_text(hjust = 0.5, color = "#5B6670",
                                      size = 10),
-        axis.title = element_blank(), axis.text = element_blank(),
-        axis.ticks = element_blank())
+        axis.title = element_text(color = "#13294B", face = "bold", size = 10),
+        axis.text = element_text(color = "#5B6670", size = 8),
+        axis.ticks = element_line(color = "#5B6670", linewidth = 0.4),
+        axis.ticks.length = unit(0.12, "cm"),
+        axis.line = element_line(color = "#5B6670", linewidth = 0.4))
 
 p_baton <- ggplot() +
   geom_path(data = feasible_ring, aes(x = x, y = y),
@@ -1086,18 +1097,25 @@ p_baton <- ggplot() +
              size = 2.2, alpha = 0.9) +
   scale_color_gradient(low = "#C8D0D6", high = "#13294B", guide = "none") +
   coord_fixed() +
-  scale_x_continuous(limits = c(0, 1), expand = c(0.01, 0.01)) +
-  scale_y_continuous(limits = c(0, 1), expand = c(0.01, 0.01)) +
+  scale_x_continuous("Futility threshold",
+                     limits = c(0, 1), expand = c(0.01, 0.01),
+                     breaks = c(0.05, 0.95), labels = c("low", "high")) +
+  scale_y_continuous("Max sample size",
+                     limits = c(0, 1), expand = c(0.01, 0.01),
+                     breaks = c(0.05, 0.95), labels = c("small", "large")) +
   labs(title = "BATON search",
-       subtitle = "~30 designs, model-guided; focuses on feasible") +
+       subtitle = "first ~30 designs; model already learning where feasibility lives") +
   theme_minimal(base_size = 11) +
   theme(panel.grid = element_blank(),
         plot.title = element_text(hjust = 0.5, face = "bold",
                                   color = "#4B9CD3", size = 13),
         plot.subtitle = element_text(hjust = 0.5, color = "#5B6670",
                                      size = 10),
-        axis.title = element_blank(), axis.text = element_blank(),
-        axis.ticks = element_blank())
+        axis.title = element_text(color = "#13294B", face = "bold", size = 10),
+        axis.text = element_text(color = "#5B6670", size = 8),
+        axis.ticks = element_line(color = "#5B6670", linewidth = 0.4),
+        axis.ticks.length = unit(0.12, "cm"),
+        axis.line = element_line(color = "#5B6670", linewidth = 0.4))
 
 grid.arrange(p_grid, p_baton, ncol = 2)
 ```
