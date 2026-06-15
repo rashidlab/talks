@@ -919,9 +919,9 @@ ggplot(df, aes(x = x, y = y, color = cls)) +
   scale_x_continuous("Futility threshold",
                      limits = c(0, 1), expand = c(0.01, 0.01),
                      breaks = c(0.05, 0.95), labels = c("low", "high")) +
-  scale_y_continuous("Max sample size",
+  scale_y_continuous("Efficacy threshold",
                      limits = c(0, 1), expand = c(0.01, 0.01),
-                     breaks = c(0.05, 0.95), labels = c("small", "large")) +
+                     breaks = c(0.05, 0.95), labels = c("strict", "lenient")) +
   theme_minimal(base_size = 11) +
   theme(panel.grid.minor = element_blank(),
         panel.grid.major = element_line(color = "#EDF0F2"),
@@ -1072,9 +1072,9 @@ p_grid <- ggplot() +
   scale_x_continuous("Futility threshold",
                      limits = c(0, 1), expand = c(0.01, 0.01),
                      breaks = c(0.05, 0.95), labels = c("low", "high")) +
-  scale_y_continuous("Max sample size",
+  scale_y_continuous("Efficacy threshold",
                      limits = c(0, 1), expand = c(0.01, 0.01),
-                     breaks = c(0.05, 0.95), labels = c("small", "large")) +
+                     breaks = c(0.05, 0.95), labels = c("strict", "lenient")) +
   labs(title = "Grid search",
        subtitle = "~225 designs on a lattice; most wasted") +
   theme_minimal(base_size = 11) +
@@ -1100,9 +1100,9 @@ p_baton <- ggplot() +
   scale_x_continuous("Futility threshold",
                      limits = c(0, 1), expand = c(0.01, 0.01),
                      breaks = c(0.05, 0.95), labels = c("low", "high")) +
-  scale_y_continuous("Max sample size",
+  scale_y_continuous("Efficacy threshold",
                      limits = c(0, 1), expand = c(0.01, 0.01),
-                     breaks = c(0.05, 0.95), labels = c("small", "large")) +
+                     breaks = c(0.05, 0.95), labels = c("strict", "lenient")) +
   labs(title = "BATON search",
        subtitle = "first ~30 designs; model already learning where feasibility lives") +
   theme_minimal(base_size = 11) +
