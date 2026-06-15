@@ -1082,7 +1082,7 @@ Think of BATON as GPS for trial design. You tell it the destination — power, t
 #| fig.height: 4.4
 #| fig.width: 10
 #| fig.align: center
-#| fig.alt: "Four-box layout echoing the calibration-challenge slide, now showing BATON's achieved values for PANGEA Phase II. Box 1: FDA compliance checkmark, Type I 7.0% (target ≤10%) and Power 82.2% (target ≥80%). Box 2: Minimize patients checkmark, ~23 spared, avg N 53 vs Max N 76. Box 3: Stop bad early checkmark, 78% futility stop when drug inactive. Box 4: Accelerate good checkmark, 81% efficacy stop when drug active."
+#| fig.alt: "Four-box layout echoing the calibration-challenge slide, now showing the BATON-calibrated design's achieved values for PANGEA Phase II. Box 1: FDA compliance checkmark, Type I 7.0% (target ≤10%) and Power 82.2% (target ≥80%). Box 2: Minimize patients checkmark, ~23 spared, avg N 53 vs Max N 76. Box 3: Stop bad early checkmark, 78% futility stop when drug inactive. Box 4: Accelerate good checkmark, 81% efficacy stop when drug active."
 library(ggplot2)
 delivered <- data.frame(
   x = c(1, 2, 1, 2),
