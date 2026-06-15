@@ -144,7 +144,7 @@ ggplot(toxdata, aes(x = metric, y = pct, fill = fill)) +
 :::
 
 ::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.9em; color: #13294B;"}
-**You're combining into a toxicity budget that's already nearly spent.** 48% of monotherapy patients already require dose modification at 300 mg. A combination doesn't just add toxicity — it adds **overlapping, non-additive** toxicity that single-agent data can't predict.
+**48% of monotherapy patients require dose modification at 300 mg** — a strong signal of **limited tolerability margin**. Combinations can layer **overlapping, non-additive** toxicity that single-agent data don't reliably predict — which is why the combination needs its own dose-finding.
 :::
 
 ::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
