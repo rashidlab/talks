@@ -199,7 +199,7 @@ Mallika Singh's group at Revolution Medicines has published the mechanistic case
 ## Why combinations break the rules you grew up on {.smaller}
 
 ::: {.incremental}
-- **Rivière's review of 162 combination Phase I trials: 88% used 3+3** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
+- **Rivière's 2015 review of 162 pre-2015 combination Phase I trials: 88% used 3+3** even when both drugs were escalated [@riviere2015combo; @harrington2013dual].
 - **Why 3+3 doesn't fit combinations.** Built for single-agent cytotoxics [@letourneau2009], it assumes monotonic dose-toxicity, Cycle-1-observable DLTs, and a single dose dimension, combinations strain all three (e.g., **immune toxicities often emerge weeks later, outside the DLT window**).
 - **The two-drug dose map is rarely built.** In practice: pick A's dose, fix it, add B. The joint surface goes unexplored for two reasons: **regulatory anchoring** of approved-agent doses, and the **calibration burden** of dual-agent designs.
 :::
@@ -836,8 +836,8 @@ ggplot() +
 #| fig.align: center
 library(ggplot2)
 adopt <- data.frame(
-  metric = factor(c("Bayesian designs adopted", "Dose-optimization plans"),
-                  levels = c("Dose-optimization plans", "Bayesian designs adopted")),
+  metric = factor(c("Use Bayesian dose-escalation", "Include a dose-optimization plan"),
+                  levels = c("Include a dose-optimization plan", "Use Bayesian dose-escalation")),
   pct = c(75, 30),
   fill = c("#4B9CD3", "#13294B")
 )
@@ -848,12 +848,16 @@ ggplot(adopt, aes(x = metric, y = pct, fill = fill)) +
   scale_fill_identity() +
   scale_y_continuous(limits = c(0, 95), expand = c(0, 0)) +
   coord_flip() +
-  labs(x = NULL, y = NULL) +
+  labs(x = NULL, y = NULL,
+       caption = "Phase I protocols, 2021-2024 (n=367)") +
   theme_minimal(base_size = 11) +
   theme(panel.grid = element_blank(),
         axis.text.x = element_blank(),
         axis.ticks = element_blank(),
-        axis.text.y = element_text(face = "bold", color = "#13294B", size = 11))
+        axis.text.y = element_text(face = "bold", color = "#13294B", size = 11),
+        plot.caption = element_text(color = "#5B6670", size = 8,
+                                    face = "italic", hjust = 0.5,
+                                    margin = margin(t = 4)))
 ```
 
 :::
@@ -1237,13 +1241,13 @@ BATON identified a design that preserves power, controls false positives, and al
 
 :::: {.columns}
 
-::: {.column width="55%"}
+::: {.column width="42%"}
 - After Phase I OBD → **Phase II Bayesian adaptive RCT:** GnP + erlotinib (at OBD) vs GnP alone, primary PFS
 - **Design assumes** reference 5.5 mo → 9.2 mo (HR 0.58) [@vonhoff2013mpact]
 - **BATON-calibrated** four parameters under Type I ≤ 0.10, Power ≥ 0.80 [@baton2026]
 :::
 
-::: {.column width="45%"}
+::: {.column width="58%"}
 ::: {.fragment style="font-size: 0.78em;"}
 **Achieved operating characteristics:**
 
@@ -1361,24 +1365,22 @@ Three things to leave with. First, the RAS era needs a new generation of trials:
 ::: {.column width="34%"}
 **Clinical collaborators**
 
-- Lisa Carey (UNC, EVOLVE PI)
-- Channing Der (UNC, NEJM editorial [@der2026editorial])
-- Jen Jen Yeh (UNC Surgery, SToP SPORE PI · NEJM editorial · PDAC collaborator)
+- Jen Jen Yeh (UNC Surgery, SToP SPORE PI · PDAC collaborator)
 - Ashwin Somasundaram (PANGEA PI)
 
 **EVOLVE MPI team**
 
-- Charles Perou (UNC) · Ian Krop, Eric Winer (Yale) · Antonio Wolff (Hopkins)
+- Lisa Carey (UNC) · Charles Perou (UNC) · Ian Krop, Eric Winer (Yale) · Antonio Wolff (Hopkins)
 :::
 
 ::: {.column width="33%"}
-**Methods collaborators**
-
-- Stephen Bates (MIT) · Ying Yuan (MD Anderson) · Qian Cao (FDA CDRH)
-
 **EVOLVE Statistical Working Group**
 
 - Susan Hilsenbeck (Baylor) · Nabihah Tayob (DFCI) · Ruizhe Chen (Hopkins)
+
+**Methods collaborators**
+
+- Stephen Bates (MIT) · Ying Yuan (MD Anderson) · Qian Cao (FDA CDRH)
 :::
 
 ::: {.column width="33%"}
