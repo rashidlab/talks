@@ -522,21 +522,30 @@ ggplot() +
                color = "#13294B", linewidth = 0.3, alpha = 0.4, bins = 6) +
   # mono A on x-axis
   geom_point(data = mono_A, aes(x = A, y = B), shape = 21, fill = "#5B6670",
-             color = "white", size = 5, stroke = 1.8) +
-  geom_text(data = mono_A, aes(x = A, y = B, label = lab),
-            color = "#5B6670", size = 3.3, hjust = 0.5, vjust = 2.0,
+             color = "white", size = 6, stroke = 2) +
+  geom_segment(aes(x = 0.68, xend = 0.68, y = 0.08, yend = 0.02),
+               arrow = arrow(length = unit(0.18, "cm"), type = "closed"),
+               color = "#5B6670", linewidth = 0.8) +
+  geom_text(data = mono_A, aes(x = A, y = B + 0.09, label = lab),
+            color = "#5B6670", size = 4.2, hjust = 0.5, vjust = 0,
             fontface = "bold", lineheight = 0.9) +
   # mono B on y-axis
   geom_point(data = mono_B, aes(x = A, y = B), shape = 21, fill = "#5B6670",
-             color = "white", size = 5, stroke = 1.8) +
-  geom_text(data = mono_B, aes(x = A, y = B, label = lab),
-            color = "#5B6670", size = 3.3, hjust = -0.10, vjust = 0.5,
+             color = "white", size = 6, stroke = 2) +
+  geom_segment(aes(x = 0.08, xend = 0.02, y = 0.75, yend = 0.75),
+               arrow = arrow(length = unit(0.18, "cm"), type = "closed"),
+               color = "#5B6670", linewidth = 0.8) +
+  geom_text(data = mono_B, aes(x = A + 0.10, y = B, label = lab),
+            color = "#5B6670", size = 4.2, hjust = 0, vjust = 0.5,
             fontface = "bold", lineheight = 0.9) +
   # combination optimum
   geom_point(data = combo, aes(x = A, y = B), shape = 23, fill = "#C75050",
-             color = "white", size = 7, stroke = 2.5) +
-  geom_text(data = combo, aes(x = A, y = B, label = lab),
-            color = "#C75050", size = 3.7, hjust = -0.10, vjust = -1.0,
+             color = "white", size = 9, stroke = 3) +
+  geom_segment(aes(x = 0.55, xend = 0.39, y = 0.65, yend = 0.47),
+               arrow = arrow(length = unit(0.22, "cm"), type = "closed"),
+               color = "#C75050", linewidth = 1) +
+  geom_text(aes(x = 0.55, y = 0.69, label = "Combination\nOBD"),
+            color = "#C75050", size = 4.6, hjust = 0, vjust = 0,
             fontface = "bold", lineheight = 0.9) +
   # dotted projections from combo optimum to axes
   geom_segment(aes(x = 0.32, xend = 0.32, y = 0, yend = 0.42),
