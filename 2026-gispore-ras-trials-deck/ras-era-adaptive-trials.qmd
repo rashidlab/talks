@@ -162,14 +162,14 @@ Three numbers worth keeping in mind. Across the full cohort of 168 patients on d
 
 ::: {.column width="50%"}
 ::: {.incremental style="font-size: 0.92em; line-height: 1.5;"}
-- Daraxonrasib drives **RTK upregulation** on PDAC cell surface — the mechanistic case for biomarker-driven, resistance-preemptive combinations [@zhuang2026rtk]
+- Daraxonrasib drives **RTK pathway activation** on PDAC cells — through cell-surface upregulation [@zhuang2026rtk] and recurrent genomic alterations [@aguirre2024resistance] — the mechanistic case for biomarker-driven, resistance-preemptive combinations
 - **1L combination cohort** (daraxonrasib **200 mg** + GnP, n=40) [@rmcgi102]:
   - ORR: **58%** · DCR: **90%** · 6-mo PFS: **84%** · 6-mo OS: **90%**
 :::
 :::
 
 ::: {.column width="50%"}
-![](images/ras-rtk-feedback.svg){width=100% fig-align="center" fig-alt="Schematic: daraxonrasib drives RTK upregulation on PDAC cell surface, a compensatory feedback that is both a resistance mechanism and a combination target"}
+![](images/ras-rtk-feedback.svg){width=100% fig-align="center" fig-alt="Schematic: daraxonrasib drives RTK pathway activation on PDAC cells through cell-surface expression upregulation and recurrent genomic alterations, a compensatory feedback that is both a resistance mechanism and a combination target"}
 :::
 
 ::::
