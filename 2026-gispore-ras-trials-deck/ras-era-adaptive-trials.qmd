@@ -44,11 +44,11 @@ set.seed(2025)
 :::
 
 ::: {.fragment style="margin-top: 0.8em; color: #13294B;"}
-The statistical methods exist to **optimize combination doses**.
+We know how to **optimize combination doses**.
 :::
 
 ::: {.fragment style="margin-top: 0.4em; color: #13294B;"}
-The statistical methods exist to **adapt trials to emerging resistance**.
+We know how to **adapt trials to emerging resistance**.
 :::
 
 ::: {.fragment style="margin-top: 1.0em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600;"}
