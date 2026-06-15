@@ -43,12 +43,16 @@ set.seed(2025)
 > **New RAS therapies in PDAC need new kinds of trials.**
 :::
 
-::: {.fragment style="margin-top: 0.8em; font-style: italic; color: #5B6670;"}
-Methods to optimize combination doses are established. Designs that adapt to emerging resistance are enrolling.
+::: {.fragment style="margin-top: 0.8em; color: #13294B;"}
+We know how to **optimize combination doses**.
 :::
 
-::: {.fragment style="margin-top: 1.2em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600;"}
-The difficulty: getting them calibrated and launched.
+::: {.fragment style="margin-top: 0.4em; color: #13294B;"}
+We know how to **adapt trials to emerging resistance**.
+:::
+
+::: {.fragment style="margin-top: 1.0em; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-weight: 600;"}
+The challenge is making these designs practical enough to launch.
 :::
 
 ::: {.notes}
@@ -68,6 +72,10 @@ Three slides on the clinical pressure before we get to design problems.
 
 
 ## The RAS revolution has arrived for PDAC {.smaller}
+
+::: {style="margin-top: 0.1em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+A major survival signal from direct RAS inhibition in PDAC.
+:::
 
 :::: {.columns}
 
@@ -136,7 +144,11 @@ ggplot(toxdata, aes(x = metric, y = pct, fill = fill)) +
 :::
 
 ::: {.fragment style="margin-top: 0.6em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.9em; color: #13294B;"}
-**Half of patients on monotherapy at 300 mg already need dose adjustments.** Combinations layer on top — with less room to spare.
+**You're combining into a toxicity budget that's already nearly spent.** 48% of monotherapy patients already require dose modification at 300 mg. A combination doesn't just add toxicity — it adds **overlapping, non-additive** toxicity that single-agent data can't predict.
+:::
+
+::: {.fragment style="margin-top: 0.4em; text-align: center; font-size: 0.95em; color: #13294B; font-weight: 600;"}
+Finding the right combination dose becomes the next challenge.
 :::
 
 ::: {.slide-refs}
@@ -166,7 +178,11 @@ Three numbers worth keeping in mind. Across the full cohort of 168 patients on d
 
 ::::
 
-::: {style="margin-top: 0.6em;"}
+::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.8em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.95em; color: #13294B; text-align: center; font-style: italic;"}
+The same adaptation that creates resistance may create a therapeutic vulnerability.
+:::
+
+::: {style="margin-top: 0.4em;"}
 ::: {.slide-refs}
 Zhuang et al., *Cancer Res* 2026 (AACR RAS) · Wolpin et al., AACR 2026 LB407
 :::
@@ -206,6 +222,10 @@ Le Tourneau et al., *JNCI* 2009 · Rivière et al., *Ann Oncol* 2015
 
 
 ## The Amgen case: sotorasib + pembrolizumab {.smaller}
+
+::: {style="margin-top: 0.1em; text-align: center; font-size: 0.95em; color: #13294B; font-style: italic;"}
+A real-world example of why combination toxicity can surprise us.
+:::
 
 ::: {style="margin-top: 0.4em; font-size: 1.0em;"}
 **Same sponsor, two different designs:**
@@ -256,12 +276,19 @@ The reason MTD fails for these agents is mechanistic, and it has two flavors. I'
 ::: {.incremental style="margin-top: 0.5em;"}
 - **Sotorasib** (KRAS G12C, first-in-class, approved 2021) [@hong2020sotorasib]:
   - 960 mg selected as the **highest dose tested**, no DLTs — a more-is-better default, not an MTD
-  - FDA required a **240 mg vs 960 mg** comparison. **PFS was similar** at one-quarter the exposure [@hochmair2024sotorasib]
 - **MTD ≠ optimal dose** for targeted agents and immunotherapies
 - **More than 40% of patients** in small-molecule registrational trials require dose reductions or interruptions [@fda_aacr_dosing2025]
 :::
 
-::: {.fragment style="margin-top: 0.8em; text-align: center; font-size: 1.05em; color: #13294B; font-weight: 600;"}
+::: {.fragment style="margin-top: 0.6em; text-align: center; font-size: 1.6em; color: #C75050; font-weight: 700;"}
+240 mg ≈ 960 mg on PFS
+:::
+
+::: {.fragment style="margin-top: 0.1em; text-align: center; font-size: 0.85em; color: #5B6670; font-style: italic;"}
+FDA-required post-marketing comparison: similar PFS at **one-quarter** the exposure [@hochmair2024sotorasib].
+:::
+
+::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
 *Same drug class as daraxonrasib.*
 :::
 
@@ -321,7 +348,7 @@ What you may not have caught is that the FDA has formalized this — and it land
 :::
 
 ::: {style="margin-top: 0.6em; font-size: 0.95em; color: #13294B;"}
-*"A response is worth this; a Grade 3 toxicity costs this."*
+*"How much efficacy would you trade for additional toxicity?"*
 :::
 
 ::: {style="margin-top: 0.4em; font-size: 0.88em; line-height: 1.45;"}
@@ -626,53 +653,11 @@ Classical trial design treats patients as if they're draws from a fixed distribu
 
 ## Why classical trial designs miss resistance {.smaller}
 
-```{r}
-#| fig.height: 3.6
-#| fig.width: 11
-#| fig.align: center
-library(ggplot2)
-trad <- data.frame(
-  x = c(1, 2.6, 4.2, 5.8, 7.4),
-  y = rep(2.2, 5),
-  label = c("Baseline", "Treatment", "Resistance\nemerges", "Progression", "Trial closes"),
-  fill = c("#5B6670", "#5B6670", "#5B6670", "#5B6670", "#C75050")
-)
-adapt <- data.frame(
-  x = c(1, 2.6, 4.2, 5.8, 7.4),
-  y = rep(0.8, 5),
-  label = c("Baseline", "Treatment", "Resistance\ndetected", "Adapt\n(switch arm)", "Continue\nlearning"),
-  fill = c("#4B9CD3", "#4B9CD3", "#13294B", "#4B9CD3", "#4B9CD3")
-)
-both <- rbind(trad, adapt)
-arrows <- data.frame(
-  x = c(rep(c(1.6, 3.2, 4.8, 6.4), 2)),
-  xend = c(rep(c(2.0, 3.6, 5.2, 6.8), 2)),
-  y = c(rep(2.2, 4), rep(0.8, 4)),
-  yend = c(rep(2.2, 4), rep(0.8, 4))
-)
-ggplot() +
-  geom_tile(data = both, aes(x = x, y = y, fill = fill),
-            width = 1.25, height = 0.65, color = "white", linewidth = 2) +
-  scale_fill_identity() +
-  geom_text(data = both, aes(x = x, y = y, label = label),
-            color = "white", size = 3.7, fontface = "bold", lineheight = 0.95) +
-  geom_segment(data = arrows, aes(x = x, xend = xend, y = y, yend = yend),
-               arrow = arrow(length = unit(0.22, "cm"), type = "closed"),
-               color = "#5B6670", linewidth = 1.3) +
-  geom_text(aes(x = -1.05, y = 2.2), label = "Traditional",
-            color = "#13294B", size = 4.5, fontface = "bold", hjust = 0) +
-  geom_text(aes(x = -1.05, y = 0.8), label = "Adaptive",
-            color = "#13294B", size = 4.5, fontface = "bold", hjust = 0) +
-  geom_text(aes(x = 7.4, y = 2.85), label = "biology has\nalready changed",
-            color = "#C75050", size = 3.2, fontface = "italic", lineheight = 0.9) +
-  geom_text(aes(x = 4.2, y = 0.15), label = "in time to act",
-            color = "#13294B", size = 3.2, fontface = "italic") +
-  scale_x_continuous(limits = c(-1.2, 8.2), expand = c(0, 0)) +
-  scale_y_continuous(limits = c(-0.2, 3.3), expand = c(0, 0)) +
-  theme_void()
-```
+::: {style="text-align: center; margin-top: 0.1em;"}
+<img src="images/static-vs-resistance-aware.png" style="width: 78%; max-width: 920px; height: auto;" alt="Two-row schematic. Top row: Static design — one biomarker read, before treatment. Boxes: Baseline → Treatment → Resistance emerges → Progression → Trial closes (red, with annotation 'biology has already changed'). Bottom row: Resistance-aware design — serial reads: detect, then act. Boxes: Baseline → Treatment → Resistance detected (dark navy) → Adapt (switch arm) → Continue learning, with a dashed feedback loop labeled 're-randomize on emerging biology' and an annotation 'in time to act'. Bottom callout: A static read measures a moving target. Longitudinal detection + biomarker-guided arm-swaps keep the trial in step with the tumor." />
+:::
 
-::: {.fragment style="margin-top: 0.4em; font-size: 0.88em;"}
+::: {.fragment style="margin-top: 0.3em; font-size: 0.82em;"}
 
 | Resistance type | What you need |
 |:---|:---|
@@ -681,16 +666,12 @@ ggplot() +
 
 :::
 
-::: {.fragment style="margin-top: 0.3em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.9em; text-align: center;"}
-A resistance-aware trial has to **do both** during enrollment [@awad2021resistance; @aguirre2024resistance].
-:::
-
 ::: {.slide-refs}
 Awad et al., *NEJM* 2021 · Aguirre et al., *Cancer Discov* 2024
 :::
 
 ::: {.notes}
-This is the design-implications side of the previous slide. The two-row timeline names the structural failure of classical trial designs under RAS-era biology. The traditional row: baseline → treatment → resistance emerges → progression → trial closes — and the red marker on "trial closes" is the point: by the time the trial reads out, the biology has already changed. The adaptive row catches resistance when it emerges, in time to act on it within the same protocol. Three things to land verbally. First, fixed regimens miss the interception window — by the time the trial reads out, the biology has changed. Second, baseline-only biomarkers can't track evolution under therapy — you measured the wrong thing at the wrong time. Third, resistance is characterized retrospectively, only after progression and trial closure. The Awad and Aguirre papers cited here are themselves post-progression analyses — ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Fourth, the temporal surface — when resistance emerges, in which patients, by which mechanism — is never characterized. The empirical anchor for this room: Aronchik's ENA 2025 paired-ctDNA work on daraxonrasib [@aronchik2025ena] shows RAS-pathway alterations — KRAS amplification (36% of patients), BRAF, MAP2K1 — emerging at progression in 59% of PDAC patients on monotherapy, mechanisms that a baseline-biomarker trial would not catch. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both, during enrollment, not after. Same structural failure as the combination dose-finding critique two sections ago: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
+This is the design-implications side of the previous slide. The two-row schematic names the structural failure of classical trial designs under RAS-era biology. Top row — *Static design, one biomarker read before treatment*: Baseline → Treatment → Resistance emerges → Progression → Trial closes (the red box). By the time the trial reads out, the biology has already changed. Bottom row — *Resistance-aware design, serial reads: detect, then act*: Baseline → Treatment → Resistance detected → Adapt (switch arm) → Continue learning, with a dashed re-randomization loop back to Treatment on emerging biology. The adaptive row catches resistance when it emerges, in time to act on it within the same protocol. The integrated callout — "A static read measures a moving target; longitudinal detection + biomarker-guided arm-swaps keep the trial in step with the tumor" — is the headline. Three things to land verbally. First, fixed regimens miss the interception window — by the time the trial reads out, the biology has changed. Second, baseline-only biomarkers can't track evolution under therapy — you measured the wrong thing at the wrong time. Third, resistance is characterized retrospectively, only after progression and trial closure. The Awad and Aguirre papers cited here are themselves post-progression analyses — ctDNA and biopsies collected after patients had already failed therapy. The field's best resistance knowledge was generated exactly the way I'm criticizing — after the fact, outside any prospective design built to catch it. Fourth, the temporal surface — when resistance emerges, in which patients, by which mechanism — is never characterized. The empirical anchor for this room: Aronchik's ENA 2025 paired-ctDNA work on daraxonrasib [@aronchik2025ena] shows RAS-pathway alterations — KRAS amplification (36% of patients), BRAF, MAP2K1 — emerging at progression in 59% of PDAC patients on monotherapy, mechanisms that a baseline-biomarker trial would not catch. The design implication splits with the biology: genomic mechanisms are catchable by ctDNA — cheap, continuous, easy to add. Non-genomic plasticity needs serial biopsies, transcriptomics, sometimes imaging — expensive, episodic, hard. A resistance-aware trial has to do both, during enrollment, not after. Same structural failure as the combination dose-finding critique two sections ago: static designs for a dynamic problem. Just as the dose problem needed Bayesian designs that handle the joint surface, the resistance problem needs designs that learn during enrollment. Next slide shows what those look like.
 :::
 
 
@@ -701,6 +682,10 @@ This is the design-implications side of the previous slide. The two-row timeline
 ::: {.column width="30%"}
 ::: {style="margin-top: 0.6em; text-align: left; font-size: 1.05em; color: #13294B; font-weight: 700;"}
 ARPA-H's resistance-tracking template.
+:::
+
+::: {style="margin-top: 0.2em; text-align: left; font-size: 0.78em; color: #5B6670; font-style: italic;"}
+ARPA-H's flagship adaptive resistance-monitoring platform.
 :::
 
 ::: {.incremental style="margin-top: 0.7em; font-size: 0.92em; line-height: 1.6;"}
@@ -763,8 +748,8 @@ Basal-like vs classical by PurIST [@purist_rashid2020], same Bayesian arm-swap l
 
 ::::
 
-::: {.fragment style="margin-top: 0.6em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.95em; text-align: center;"}
-**Same architecture, different disease.**
+::: {.fragment style="margin-top: 0.4em; padding: 0.4em 0.8em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.85em; text-align: center;"}
+**The same adaptive framework could be applied to PurIST-defined PDAC subtypes and evolving resistance biology.**
 :::
 
 ::: {.notes}
@@ -772,10 +757,10 @@ This is the load-bearing slide for "could we actually do this in PDAC?" The figu
 :::
 
 
-## What this demands of the statistical design {.smaller}
+## What it would take to actually run these trials {.smaller}
 
 ::: {style="margin-top: 0.3em; font-size: 1.0em; text-align: center; color: #13294B; font-weight: 600;"}
-Four design axes any such trial needs.
+Four things any such trial has to do at once.
 :::
 
 ::: {.fragment}
@@ -787,10 +772,10 @@ library(ggplot2)
 pillars <- data.frame(
   x = c(1, 2, 3, 4),
   y = rep(1, 4),
-  header = c("Adaptive\nstopping",
-             "Real-time\nbiomarker\ndiscovery",
-             "Longitudinal\nmonitoring",
-             "In-trial\nevaluation"),
+  header = c("Stop ineffective\ntherapies\nearlier",
+             "Learn who benefits\nwhile the trial\nis running",
+             "Track resistance\nas it\nemerges",
+             "Test several\nbiomarker groups\nunder one protocol"),
   detail = c("Bayesian futility /\nefficacy boundaries\nat each interim",
              "Pre-specified signatures\n+ agnostic\ndiscovery window",
              "Serial ctDNA,\nimaging, biopsies\non every patient",
@@ -802,9 +787,9 @@ ggplot() +
             width = 0.85, height = 1.6, color = "white", linewidth = 2) +
   scale_fill_identity() +
   geom_text(data = pillars, aes(x = x, y = y + 0.45, label = header),
-            color = "white", size = 4.6, fontface = "bold", lineheight = 0.92) +
-  geom_text(data = pillars, aes(x = x, y = y - 0.30, label = detail),
-            color = "white", size = 3.2, lineheight = 1.05) +
+            color = "white", size = 4.0, fontface = "bold", lineheight = 0.95) +
+  geom_text(data = pillars, aes(x = x, y = y - 0.32, label = detail),
+            color = "white", size = 3.0, lineheight = 1.05) +
   scale_x_continuous(limits = c(0.45, 4.55), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0.1, 1.95), expand = c(0, 0)) +
   theme_void()
@@ -813,7 +798,7 @@ ggplot() +
 
 ::: {.fragment}
 <div style="margin-top: 0.6em; padding: 0.8em 1em; background-color: #13294B; color: #FFFFFF; font-size: 1.05em; text-align: center; font-weight: 600;">
-<span style="color: #FFFFFF;">Methods are ready.</span> <strong style="color: #FFFFFF;">We're operationalizing them in PDAC trials — starting with PANGEA.</strong>
+<span style="color: #FFFFFF;">Everything I've just described already exists statistically.</span> <strong style="color: #FFFFFF;">So why don't we see these trials everywhere?</strong>
 </div>
 :::
 
@@ -835,8 +820,8 @@ Funding, accrual, and biopsy logistics are real.
 **But the barrier that quietly kills good designs — and the one we can actually remove — is calibration.**
 :::
 
-::: {style="margin-top: 0.5em; font-size: 0.78em; color: #13294B; font-style: italic; text-align: center;"}
-*Calibration tunes a design to hit its **operating characteristics** — the trial's report card: false-positive control, power, expected enrollment, early stopping, and time to readout.*
+::: {style="margin-top: 0.5em; font-size: 0.82em; color: #13294B; text-align: center; line-height: 1.5;"}
+Before an adaptive trial can open, **thousands of simulations** are needed to prove it is safe, efficient, and scientifically reliable. *That process — not the design itself — is often the bottleneck.*
 :::
 
 :::: {.columns}
@@ -926,7 +911,7 @@ This is the slide that opens the BATON section, and I want to land it carefully.
 :::
 
 
-## The calibration challenge: four competing goals {.smaller}
+## Calibration has to hit four goals at once {.smaller}
 
 ::: {style="margin-top: 0.2em; text-align: center; font-size: 0.95em; font-weight: 600; color: #13294B;"}
 Designing an adaptive trial requires achieving **all four** simultaneously.
@@ -976,11 +961,11 @@ This is the slide that names what calibration actually has to do. The four goals
 ## &nbsp; {.center}
 
 ::: {style="text-align: center; padding-top: 2em; font-size: 2.0em; color: #13294B; font-style: italic; font-weight: 700; line-height: 1.5;"}
-"We could design the science.
+"We knew what trial to run.
 :::
 
 ::: {style="text-align: center; font-size: 2.0em; color: #13294B; font-style: italic; font-weight: 700; line-height: 1.5; margin-top: 0.2em;"}
-We needed a faster way to calibrate the trial."
+We needed a way to make it launchable."
 :::
 
 ::: {.notes}
@@ -988,14 +973,14 @@ Pause. Let the line land. This is the pivot of the talk. Everything before this 
 :::
 
 
-## BATON: the calibration tool {.smaller}
+## BATON: a way to make adaptive trials launchable {.smaller}
 
-::: {style="margin-top: 0.1em; text-align: center; font-size: 0.95em;"}
-**BATON** = **B**ayesian **A**daptive **T**rial **O**ptimizatio**N** [@baton2026]
+::: {style="margin-top: 0.2em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
+BATON automatically searches thousands of candidate designs and identifies those that meet FDA, efficiency, and scientific goals.
 :::
 
-::: {style="margin-top: 0.2em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600; font-style: italic;"}
-BATON turns clinically necessary trial complexity into calibrated, launchable designs.
+::: {style="margin-top: 0.3em; text-align: center; font-size: 0.82em; color: #5B6670;"}
+**BATON** = **B**ayesian **A**daptive **T**rial **O**ptimizatio**N** [@baton2026]
 :::
 
 :::: {.columns}
@@ -1207,20 +1192,12 @@ BATON identified a design that preserves power, controls false positives, and al
 
 ::::
 
-::: {style="margin-top: 0.3em; font-size: 0.72em; color: #5B6670; font-style: italic; text-align: center;"}
-H₀ = drug inactive (no PFS benefit over GnP alone)  ·  H₁ = drug active at the assumed effect size (HR 0.58)
+::: {style="margin-top: 0.3em; font-size: 0.72em; color: #13294B; font-style: italic; text-align: center;"}
+H₀ = drug inactive · H₁ = drug active (HR 0.58). *Read as: 78% early-stop when inactive; 81% early-stop when it works.*
 :::
 
-::: {style="margin-top: 0.3em; font-size: 0.78em; color: #13294B; font-style: italic; text-align: center;"}
-*Read as: 78% chance of stopping early when the drug is inactive; 81% chance of stopping early when it works.*
-:::
-
-::: {.fragment style="margin-top: 0.5em; padding: 0.5em 0.9em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.88em;"}
-**Without BATON:** four interacting parameters rarely hit both constraints simultaneously. **With BATON:** joint calibration against both constraints, ~200 evaluations.
-:::
-
-::: {.fragment style="margin-top: 0.4em; padding: 0.5em 0.9em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.85em; font-style: italic;"}
-**An unexpected finding:** caps set too low suppress early-efficacy declarations — even when the drug works, the trial waits for the final analysis to say so. BATON returned the **best trade-off curve** across candidate caps; we chose 76 to preserve early-efficacy stopping. Manual calibration would have anchored on the first feasible design.
+::: {.fragment style="margin-top: 0.3em; padding: 0.4em 0.8em; background-color: #EDF0F2; border-left: 4px solid #4B9CD3; color: #13294B; font-size: 0.78em; font-style: italic;"}
+**Why max N = 76, not lower:** caps set too low silently suppress early-efficacy stopping. BATON surfaced the trade-off curve; we chose 76 to preserve it.
 :::
 
 ::: {.slide-refs}
@@ -1228,7 +1205,7 @@ Von Hoff et al., *NEJM* 2013 (MPACT) · Young et al., 2026 (BATON manuscript)
 :::
 
 ::: {.notes}
-This is the underlying design that produced the patient-facing numbers on the previous slide. Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial — basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. TENSE DISCIPLINE — critical, and the slide structure protects it: the 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect HR 0.58, not showing one. The OCs in the right column ARE achieved, because they are outputs of BATON's calibration — Type I at 7.0%, power at 82.2%, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." Four design parameters had to be set jointly to meet OCs — max sample size, efficacy stopping threshold, futility stopping threshold, and futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT which exact four BATON searched vs which were fixed by clinical/modeling choice. Three numbers to land: power 82% at Type I 7%; trial stops early for futility 78% of the time under H₀ — patients are not randomized to a losing arm waiting for the readout; trial stops early for efficacy 81% of the time under H₁. Expected duration: 27.3 months; expected N: 53 under H₀, 58 under H₁, well below max 76. (Protocol carries 82 as accrual target with buffer; 76 is the calibrated max. If asked: "76 is calibrated max, 82 is accrual goal.") UNEXPECTED FINDING — the Pareto callout. We started with an instinct toward a tight max N to minimize regret if the drug doesn't work. BATON identified a non-obvious trade-off: pushing the cap too low actively SUPPRESSED early-efficacy declarations — patients wait until the final analysis for an answer even when the drug DOES work. The recommendation was a slightly higher cap (76 vs the tighter cap we were instinctively heading toward) that preserves both early-futility stopping AND early-efficacy stopping. Manual calibration would have anchored on the first feasible design it found. BATON returned the Pareto frontier; we chose where to land. This is the kind of insight manual calibration misses. WITHOUT/WITH BATON — quick read for the callout above. Without BATON: days of hand-tuning for this 4-parameter design, four interacting parameters that rarely hit both constraints simultaneously, no reproducibility, no audit trail. With BATON: ~200 evaluations in minutes, joint calibration against both constraints, deterministic seeded output, regulatory-ready audit trail. (Higher-dim adaptive designs like EVOLVE at 8-13 parameters take months by hand and hours with BATON — same value, larger problem.) The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
+This is the underlying design that produced the patient-facing numbers on the previous slide. Once U-BOIN selects the OBD, PANGEA transitions into a Phase II Bayesian adaptive randomized trial — basal-like PDAC patients randomized one-to-one to GnP plus erlotinib at the OBD versus GnP alone, with PFS as the primary endpoint. TENSE DISCIPLINE — critical, and the slide structure protects it: the 5.5-month reference, the 9.2-month alternative, and the HR 0.58 are DESIGN ASSUMPTIONS, not observed results. The 5.5 is the GnP doublet benchmark from MPACT, Von Hoff 2013. The trial is powered to detect HR 0.58, not showing one. The OCs in the right column ARE achieved, because they are outputs of BATON's calibration — Type I at 7.0%, power at 82.2%, computed over 10,000 simulated trials per scenario. Never let "BATON found a design that achieves these OCs" drift to "the trial showed this." Four design parameters had to be set jointly to meet OCs — max sample size, efficacy stopping threshold, futility stopping threshold, and futility hazard-ratio margin. CONFIRM AGAINST MANUSCRIPT which exact four BATON searched vs which were fixed by clinical/modeling choice. Three numbers to land: power 82% at Type I 7%; trial stops early for futility 78% of the time under H₀ — patients are not randomized to a losing arm waiting for the readout; trial stops early for efficacy 81% of the time under H₁. Expected duration: 27.3 months; expected N: 53 under H₀, 58 under H₁, well below max 76. (Protocol carries 82 as accrual target with buffer; 76 is the calibrated max. If asked: "76 is calibrated max, 82 is accrual goal.") UNEXPECTED FINDING — verbal script for the compressed callout. The slide line is intentionally one beat ("Why max N = 76, not lower"); land the rest out loud: "This is the part that surprised us. The intuitive move is to cap enrollment as low as you can to spare patients. But below a certain cap, the design loses the statistical room to declare efficacy early — so even when the drug clearly works, you're stuck waiting for the final analysis to announce it. A hand-tuned search would never have seen this, because you stop the moment you hit a design that meets your constraints. BATON gave us the whole trade-off curve, and the slightly larger cap actually gets patients a faster answer when the drug works." The counterintuitive beat the room remembers is bigger cap → faster answer when the drug works. This is the kind of insight manual calibration misses. WITHOUT/WITH BATON — quick read for the callout above. Without BATON: days of hand-tuning for this 4-parameter design, four interacting parameters that rarely hit both constraints simultaneously, no reproducibility, no audit trail. With BATON: ~200 evaluations in minutes, joint calibration against both constraints, deterministic seeded output, regulatory-ready audit trail. (Higher-dim adaptive designs like EVOLVE at 8-13 parameters take months by hand and hours with BATON — same value, larger problem.) The argument is not "the statistics got fancier"; the argument is "the bottleneck moved." Calibration used to be the choke point. BATON moves it.
 :::
 
 
@@ -1239,7 +1216,7 @@ This is the underlying design that produced the patient-facing numbers on the pr
      funding line if needed. -->
 
 
-## Where this is going {.smaller}
+## What becomes possible {.smaller}
 
 ::: {style="margin-top: 0.3em; text-align: center; font-size: 0.95em; color: #13294B;"}
 BATON calibrates **aggressive**, **conservative**, or **balanced** designs — and ports across GI applications:
@@ -1279,6 +1256,10 @@ ggplot() +
 BATON is the infrastructure that makes adaptive trial design routine across the GI portfolio.
 :::
 
+::: {.fragment style="margin-top: 0.2em; text-align: center; font-size: 0.88em; color: #13294B; font-style: italic;"}
+Adaptive, resistance-aware trials as the routine standard across GI — not the exception.
+:::
+
 ::: {.slide-refs}
 Young et al., 2026 (BATON) · Wages 2011 · Lin & Yin 2017 · Neuenschwander 2008
 :::
@@ -1293,7 +1274,7 @@ Q&A POCKET — non-RAS examples of joint-surface combination dose-finding. If an
 ::: {.incremental style="margin-top: 0.6em; font-size: 1.05em; line-height: 1.7;"}
 1. **The RAS era needs new kinds of trials** — biomarker-guided, dose-optimized, resistance-aware.
 2. **The methods exist.** Bayesian adaptive designs can handle dose optimization, biomarker guidance, and resistance-aware adaptation.
-3. **BATON makes them practical to calibrate and launch.**
+3. **BATON removes one of the major barriers preventing these designs from reaching patients.**
 :::
 
 ::: {.notes}
