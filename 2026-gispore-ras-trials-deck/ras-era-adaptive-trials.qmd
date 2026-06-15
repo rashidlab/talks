@@ -1047,8 +1047,8 @@ ggplot() +
 **Far fewer evaluations than grid search** — finds feasible designs grid search often misses entirely.
 :::
 
-::: {.fragment style="margin-top: 0.4em; padding: 0.55em 1em; background-color: #13294B; color: #FFFFFF; text-align: center; font-size: 1.05em; font-weight: 700;"}
-For this 4-parameter design: **manual calibration takes days · BATON takes minutes** — with a regulatory-ready audit trail.
+::: {.fragment style="margin-top: 0.4em; padding: 0.55em 1em; background-color: #13294B; text-align: center; font-size: 1.05em;"}
+<span style="color: #FFFFFF; font-weight: 600;">For this 4-parameter design:</span> <strong style="color: #FFFFFF;">manual calibration takes days · BATON takes minutes</strong> <span style="color: #FFFFFF; font-weight: 600;">— with a regulatory-ready audit trail.</span>
 :::
 
 ::: {.notes}
