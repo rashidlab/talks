@@ -1,0 +1,12 @@
+<!--
+CONTROL FOR THE INCLUDE CLASS OF THE RENDER CLOSURE.
+
+The staleness guard has to treat an included partial as a source. With
+embed-resources the partial is inlined at render time and leaves no trace in the
+HTML, so an edit here is invisible to anything that inspects only the output.
+tools/preflight-selftest.sh edits this file and requires the guard to refuse.
+
+Keep it to one short line. It renders on the fixture's deliberately safe slide and
+must not push that slide anywhere near the boundary.
+-->
+<p class="fixture-include-probe">Included partial, one line.</p>

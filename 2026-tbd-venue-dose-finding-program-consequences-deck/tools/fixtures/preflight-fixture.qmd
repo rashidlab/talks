@@ -34,6 +34,11 @@ detecting overflow and if it starts flagging content that fits.
 The block height on slide 3 is expressed in slide-local pixels so the control does
 not depend on font metrics or on anything the real deck may later change.
 
+The include shortcode on slide 2 and the logo in the front matter are here so the
+fixture's render closure contains an embedded image and an included partial, the two
+classes the staleness guard was blind to before. The selftest edits each of them and
+requires a refusal.
+
 Keep any prose comment INSIDE a slide. Markdown ahead of the first heading becomes
 its own untitled slide and shifts every number this fixture asserts.
 -->
@@ -41,6 +46,8 @@ its own untitled slide and shifts every number this fixture asserts.
 This slide holds two short lines and nothing else.
 
 Its content bottom sits far above the footer band, so the gate must not flag it.
+
+{{< include fixture-partial.html >}}
 
 ## Deliberately overfilled by construction
 

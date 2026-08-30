@@ -218,18 +218,47 @@ panel_b_title <- sprintf("With the same %d-patient budget", round(budget))
 #
 # The key rows carry the marks themselves and not just words, so the panel stays readable
 # detached from any caption and survives a greyscale print.
-KEY_Y_UNC <- 1.15
-KEY_Y_ATT <- 1.05
-KEY_TOP <- 1.24
+#
+# SIZED FOR ROOM DISTANCE, not for a laptop. The key was the SMALLEST text on the panel at size
+# 4.6, smaller than the axis categories and well under the bold value labels, while being the only
+# thing on the panel that explains what the pale circles are. On this figure's slide placement, a
+# 13.3 by 7.5 inch canvas shown at 520 of 720 canvas pixels high, size 4.6 lands near 1.7 percent
+# of slide height, and roughly 2 percent is the floor for comfortable reading at the back of a
+# room. Size 6.0 puts the key at parity with the bold attained-power labels, which are legible.
+#
+# The label keeps every word it had. Enlarging it on one line would have run it off the panel, so
+# it wraps to two lines and the rows move apart to make room, rather than the wording being cut
+# down to fit. The mark sizes grow with the text and the open circle now matches the plotted
+# marker's size exactly, so the key mark and the thing it explains are the same object.
+KEY_TEXT_SIZE <- 5.8
+KEY_Y_UNC <- 1.23
+# The lower key row sits clear of the gridline at 1.0 rather than astride it. The swatch is a key
+# mark and a gridline running through it reads as a plotted value.
+KEY_Y_ATT <- 1.06
+KEY_RECT_HALF_H <- 0.033
+KEY_TOP <- 1.36
 KEY_X_MARK <- 0.50
 KEY_X_TEXT <- 0.62
-KEY_UNC_TEXT <- "Power at each strategy's own unconstrained spend"
+KEY_UNC_TEXT <- "Power at each strategy's own\nunconstrained spend"
 KEY_ATT_TEXT <- "Power on the shared budget"
 # Headroom is asserted rather than eyeballed. The key must clear the tallest mark the data draws,
 # which is the open marker and the number printed above it.
+#
+# The upper row is now two lines, so the panel ceiling has to clear the TOP of that text block and
+# not merely its centre, which is what a bare KEY_TOP > KEY_Y_UNC would have checked. The half
+# height is estimated from the point size and the line count, converted through the panel's own
+# y-range, so enlarging the text again cannot silently push the first line off the canvas.
+KEY_PANEL_H_IN <- 5.6          # panel B's drawing height, net of title, caption, axis and margins
+key_lines <- lengths(regmatches(KEY_UNC_TEXT, gregexpr("\n", KEY_UNC_TEXT))) + 1L
+key_half_h <- (key_lines * KEY_TEXT_SIZE * .pt * 1.2 / 72) / KEY_PANEL_H_IN * KEY_TOP / 2
 stopifnot("the key must sit above every plotted marker" =
             KEY_Y_ATT > max(panel_b_data$unconstrained) + 0.06,
-          KEY_TOP > KEY_Y_UNC)
+          "the panel ceiling must clear the top line of the two-line key label" =
+            KEY_TOP > KEY_Y_UNC + key_half_h,
+          "the two key rows must not overlap" =
+            KEY_Y_UNC - key_half_h > KEY_Y_ATT + key_half_h / key_lines,
+          "the lower key swatch must clear the topmost gridline, not straddle it" =
+            KEY_Y_ATT - KEY_RECT_HALF_H > 1.0)
 
 panel_b <- ggplot(panel_b_data, aes(x = arch)) +
   geom_segment(aes(xend = arch, y = unconstrained, yend = attained),
@@ -241,14 +270,20 @@ panel_b <- ggplot(panel_b_data, aes(x = arch)) +
             vjust = -0.7, size = 6.0, color = PAL$ink, fontface = "bold") +
   geom_text(aes(y = unconstrained, label = sprintf("%.2f", unconstrained)),
             vjust = -1.1, size = 4.4, color = PAL$comparator) +
-  annotate("point", x = KEY_X_MARK, y = KEY_Y_UNC, shape = 21, size = 5.0, stroke = 1.2,
+  # The key MARK keeps the plotted marker's exact appearance, same shape, fill, color and alpha,
+  # and now its exact size too, because the mark is what identifies the thing being explained. The
+  # key TEXT is darkened off PAL$comparator, which is a pale gray that survives a laptop and not a
+  # projector. Contrast is a legibility property of the label and carries no encoding, so raising
+  # it costs nothing, and the open circle beside it still carries the identity on its own.
+  annotate("point", x = KEY_X_MARK, y = KEY_Y_UNC, shape = 21, size = 6.4, stroke = 1.2,
            fill = PAL$paper, color = PAL$comparator, alpha = 0.55) +
-  annotate("text", x = KEY_X_TEXT, y = KEY_Y_UNC, label = KEY_UNC_TEXT, hjust = 0,
-           size = 4.6, color = PAL$comparator) +
-  annotate("rect", xmin = KEY_X_MARK - 0.055, xmax = KEY_X_MARK + 0.055,
-           ymin = KEY_Y_ATT - 0.028, ymax = KEY_Y_ATT + 0.028, fill = PAL$retained) +
+  annotate("text", x = KEY_X_TEXT, y = KEY_Y_UNC, label = KEY_UNC_TEXT, hjust = 0, vjust = 0.5,
+           size = KEY_TEXT_SIZE, color = "#5A5A5A", lineheight = 0.95) +
+  annotate("rect", xmin = KEY_X_MARK - 0.062, xmax = KEY_X_MARK + 0.062,
+           ymin = KEY_Y_ATT - KEY_RECT_HALF_H, ymax = KEY_Y_ATT + KEY_RECT_HALF_H,
+           fill = PAL$retained) +
   annotate("text", x = KEY_X_TEXT, y = KEY_Y_ATT, label = KEY_ATT_TEXT, hjust = 0,
-           size = 4.6, color = PAL$ink) +
+           size = KEY_TEXT_SIZE, color = PAL$ink) +
   scale_y_continuous(limits = c(0, KEY_TOP), breaks = seq(0, 1, 0.2),
                       expand = expansion(mult = c(0, 0.02))) +
   labs(title = panel_b_title, x = NULL, y = "Confirmatory power") +

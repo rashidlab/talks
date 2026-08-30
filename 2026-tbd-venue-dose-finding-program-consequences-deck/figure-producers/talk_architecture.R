@@ -25,11 +25,19 @@
 
 RepoRoot <- function() {
   env <- Sys.getenv("BATOND_PAPER_REPO", "")
-  if (nzchar(env)) return(normalizePath(env))
+  if (nzchar(trimws(env))) return(normalizePath(path.expand(trimws(env))))
   rprojroot::find_root(rprojroot::has_file("CLAUDE.md"))
 }
 ROOT <- RepoRoot()
 source(file.path(ROOT, "R", "metrics.R"))
+
+# ONE ROOT, ASSERTED. This script has to resolve a root before it can find the reader, and the
+# reader resolves one of its own to find the artifacts. Two resolutions of one question is how a
+# figure comes to be drawn from one repository and captioned with another's provenance, so they
+# are required to agree rather than assumed to.
+stopifnot("the script's root and the metrics reader's root must be the same repository" =
+            identical(normalizePath(ROOT, winslash = "/", mustWork = FALSE),
+                      normalizePath(batond_root(), winslash = "/", mustWork = FALSE)))
 
 # ---- REPRODUCTION GUARD, IDENTICAL TO THE MANUSCRIPT PRODUCER'S ------------------------------
 M <- metrics()

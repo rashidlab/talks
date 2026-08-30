@@ -28,17 +28,52 @@ node tools/viewport-preflight.mjs \
   --port 9351 --expect-fail 3 --verbose
 
 echo
-echo "=== control 2, the staleness guard must refuse a render older than its source ==="
-touch tools/fixtures/preflight-fixture.qmd
-set +e
-node tools/viewport-preflight.mjs --html tools/fixtures/preflight-fixture.html --port 9352 >/dev/null 2>&1
-STALE_RC=$?
-set -e
-if [ "$STALE_RC" -ne 2 ]; then
-  echo "FAIL: expected exit 2 from the staleness guard, got $STALE_RC"
-  exit 1
-fi
-echo "staleness guard returned 2 as required"
+echo "=== control 2, the staleness guard must refuse a render older than any of its sources ==="
+#
+# WHY THREE SOURCES AND NOT ONE. With embed-resources the figures and the included
+# partials are inlined at render time, so an edit to either leaves the HTML holding
+# stale bytes with nothing in the output to reveal it. A guard watching only the qmd
+# certified that HTML as current, which is the exact failure the guard exists to
+# prevent. Each class below is edited on its own and must produce a refusal on its own.
+#
+# The touches are reverted afterwards, so a passing selftest leaves the tree as it
+# found it and does not itself make the real deck look stale.
+stale_case () {
+  local LABEL="$1" TARGET="$2" PORT="$3"
+  local BEFORE
+  BEFORE=$(stat -c %y "$TARGET")
+  touch "$TARGET"
+  set +e
+  node tools/viewport-preflight.mjs --html tools/fixtures/preflight-fixture.html --port "$PORT" >/dev/null 2>&1
+  local RC=$?
+  set -e
+  touch -d "$BEFORE" "$TARGET"
+  if [ "$RC" -ne 2 ]; then
+    echo "FAIL: $LABEL, expected exit 2 from the staleness guard, got $RC"
+    exit 1
+  fi
+  echo "  $LABEL returned 2 as required"
+}
+
+stale_case "the source qmd"        tools/fixtures/preflight-fixture.qmd  9352
+stale_case "an embedded image"     RLlogoA.png                           9353
+stale_case "an included partial"   tools/fixtures/fixture-partial.html   9354
 
 echo
-echo "SELF-TEST PASSED. The gate fails on overflow, passes on fitting content, and refuses stale renders."
+echo "=== control 3, a clean tree must still pass the staleness guard ==="
+# The negative control for the negative control. A guard that refused everything would
+# satisfy all three cases above and be useless, so it must also let untouched input
+# through. Exit 1 is the overflow verdict on slide 3 and means the guard was cleared.
+set +e
+node tools/viewport-preflight.mjs --html tools/fixtures/preflight-fixture.html --port 9355 >/dev/null 2>&1
+CLEAN_RC=$?
+set -e
+if [ "$CLEAN_RC" -eq 2 ]; then
+  echo "FAIL: the staleness guard refused an untouched tree"
+  exit 1
+fi
+echo "clean tree cleared the staleness guard"
+
+echo
+echo "SELF-TEST PASSED. The gate fails on overflow, passes on fitting content, and refuses a render"
+echo "older than its qmd, its embedded images or its included partials."

@@ -23,6 +23,7 @@
 //     --html <path>     deck HTML to measure. Default dose-finding-program-consequences.html
 //     --source <path>   qmd whose mtime the HTML must postdate. Default matches --html
 //     --allow-stale     measure the HTML even if it is older than its sources
+//     --list-deps       print the derived render closure and exit, without measuring
 //     --verbose         list the five deepest elements on each offending slide
 //     --json            emit machine-readable results on stdout
 //     --expect-fail <n[,n...]>  self-test mode. Exit 0 only if exactly these slide
@@ -34,7 +35,7 @@
 //   2  the gate could not run (no browser, stale render, missing file)
 
 import { existsSync, statSync, readFileSync } from "node:fs";
-import { resolve, dirname, basename, join } from "node:path";
+import { resolve, relative, dirname, basename, extname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { launch, connect, openPage, evalJs } from "./cdp.mjs";
 
@@ -62,6 +63,130 @@ const die = (msg) => { console.error(`viewport-preflight: ${msg}`); process.exit
 if (!existsSync(htmlPath)) die(`no rendered HTML at ${htmlPath}. Run quarto render first.`);
 
 // ---------------------------------------------------------------------------
+// The render closure
+//
+// WHY THE WHOLE CLOSURE AND NOT THE QMD PLUS THE STYLESHEETS. This deck renders with
+// `embed-resources: true`, so every figure, every stylesheet and every included partial
+// is inlined into the HTML at render time. Once inlined they leave no link behind. A
+// regenerated PNG or an edited `{{< include >}}` fragment therefore changes nothing the
+// HTML can be checked against, and a guard watching only the qmd and the CSS certifies
+// that stale HTML as current. Both events are routine here, since the figures are
+// rebuilt from the research repository and the deliverable card is written by a figure
+// producer rather than typed.
+//
+// WHY THE CLOSURE IS DERIVED RATHER THAN LISTED. A hand-written asset list is the next
+// thing to fall out of date, and it falls out of date in the direction that passes, so
+// it would reintroduce exactly the defect being closed. The set is instead read out of
+// the deck itself. Start at the qmd, extract every local path it names, follow
+// `{{< include >}}` partials and stylesheets into their own contents, and repeat until
+// nothing new appears.
+//
+// THE PROMOTION RULE IS "NAMED OUTSIDE A COMMENT, CARRIES AN ASSET EXTENSION, AND IS
+// PRESENT ON DISK". All three tests are grammar rather than inventory. Adding a figure
+// or a partial to the deck never requires editing any of them, which is the property a
+// hand-written asset list does not have.
+//
+// The comment test and the extension test are both here because each catches what the
+// other misses. `content-slides.css` names this very file in a `/* */` comment and
+// `preflight-fixture.qmd` names it in an HTML comment, so without the comment test the
+// gate would declare the deck stale whenever the gate itself was edited. Without the
+// extension test, ordinary speaker-notes prose naming a local script would do the same.
+//
+// Between them the remaining error is inclusive rather than exclusive: a local asset a
+// source merely mentions in prose is treated as a dependency. That costs at most a
+// re-render nobody needed. The opposite error puts a broken deck in front of a room.
+// ---------------------------------------------------------------------------
+
+// Only text is scanned for further references. A PNG is a leaf of the closure, it is a
+// dependency and it names nothing.
+const SCANNABLE = new Set([
+  ".qmd", ".md", ".markdown", ".html", ".htm", ".css", ".scss", ".sass",
+  ".yml", ".yaml", ".lua", ".tex",
+]);
+// What Quarto can pull into a render. Typed by kind, never by name, so the set is stable
+// across every figure this deck will ever gain.
+const ASSET_EXT = new Set([
+  ".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".bmp", ".tif", ".tiff", ".eps", ".pdf",
+  ".css", ".scss", ".sass",
+  ".qmd", ".md", ".markdown", ".html", ".htm", ".tex",
+  ".yml", ".yaml", ".bib", ".csl", ".json",
+  ".woff", ".woff2", ".ttf", ".otf", ".eot",
+  ".js", ".lua",
+]);
+// A source large enough to hit this is a rendered artifact rather than a hand-written
+// one, and scanning it would cost more than the reference it could find is worth.
+const SCAN_LIMIT = 2 * 1024 * 1024;
+
+// Anything carrying a scheme or a protocol-relative prefix lives on another host and
+// cannot go stale on this filesystem. The Google Fonts import in custom.css is the case
+// that matters.
+const isRemote = (s) => /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(s);
+
+// Comments are stripped per grammar and not with one pattern over everything, because
+// `/* */` is a comment in a stylesheet and ordinary punctuation in prose. Applying the
+// stylesheet rule to a qmd could delete real content between two stray delimiters and
+// lose a genuine dependency, which is the failure this whole guard is against.
+const uncomment = (text, ext) => {
+  if (ext === ".css" || ext === ".scss" || ext === ".sass") return text.replace(/\/\*[\s\S]*?\*\//g, " ");
+  if (ext === ".qmd" || ext === ".md" || ext === ".markdown" || ext === ".html" || ext === ".htm") {
+    return text.replace(/<!--[\s\S]*?-->/g, " ");
+  }
+  return text;
+};
+
+const candidatePaths = (text, ext) => {
+  const out = [];
+  // Shortcodes name their target in the deck's own grammar, so they are admitted
+  // unconditionally rather than being filtered by extension.
+  for (const m of text.matchAll(/\{\{<\s*(?:include|embed)\s+([^\s>]+)/g)) out.push(m[1]);
+  const body = uncomment(text, ext);
+  // Everything else is any token shaped like a relative path with a file extension.
+  // Front matter scalars (`logo:`, `bibliography:`, `csl:`, the `theme:` list), markdown
+  // image targets, HTML `src` and `href` attributes and CSS `url()` arguments all reduce
+  // to that shape, so one pattern covers them without enumerating the syntaxes Quarto
+  // accepts.
+  for (const m of body.matchAll(/[\w@.\-/]+\.[A-Za-z0-9]{1,6}\b/g)) {
+    if (ASSET_EXT.has(extname(m[0]).toLowerCase())) out.push(m[0]);
+  }
+  return out;
+};
+
+const renderClosure = (entry) => {
+  const seen = new Set();
+  const queue = [resolve(entry)];
+  while (queue.length) {
+    const f = queue.shift();
+    // The rendered HTML is the product of the closure, never a member of it. Admitting
+    // it would make the deck newer than itself and the guard would never fire.
+    if (seen.has(f) || f === htmlPath || !existsSync(f)) continue;
+    let st;
+    try { st = statSync(f); } catch { continue; }
+    if (!st.isFile()) continue;
+    seen.add(f);
+    if (!SCANNABLE.has(extname(f).toLowerCase()) || st.size > SCAN_LIMIT) continue;
+    let text;
+    try { text = readFileSync(f, "utf8"); } catch { continue; }
+    // Paths resolve against the directory of the file that names them, which is what
+    // Quarto does for includes and what the browser does for CSS `url()`.
+    for (const cand of candidatePaths(text, extname(f).toLowerCase())) {
+      if (!isRemote(cand)) queue.push(resolve(dirname(f), cand));
+    }
+  }
+  return [...seen].sort();
+};
+
+const closure = existsSync(sourcePath) ? renderClosure(sourcePath) : [];
+const rel = (p) => relative(DECK_DIR, p) || basename(p);
+
+if (flag("--list-deps")) {
+  // Makes the derived set inspectable. A closure nobody can read is a closure nobody
+  // can tell is wrong.
+  console.log(`RENDER CLOSURE  ${rel(sourcePath)}  ${closure.length} files`);
+  for (const p of closure) console.log(`  ${rel(p)}`);
+  process.exit(0);
+}
+
+// ---------------------------------------------------------------------------
 // Staleness guard
 //
 // WHY. A gate that certifies a stale render certifies nothing. The failure mode is
@@ -71,19 +196,9 @@ if (!existsSync(htmlPath)) die(`no rendered HTML at ${htmlPath}. Run quarto rend
 // ---------------------------------------------------------------------------
 if (!flag("--allow-stale")) {
   const htmlAge = statSync(htmlPath).mtimeMs;
-  const sources = [sourcePath];
-  if (existsSync(sourcePath)) {
-    // The theme list in the qmd front matter names the stylesheets that set the
-    // geometry, so a CSS edit is a source edit for this purpose.
-    const qmd = readFileSync(sourcePath, "utf8");
-    for (const m of qmd.matchAll(/([\w.-]+\.(?:css|scss))/g)) {
-      const p = join(dirname(sourcePath), m[1]);
-      if (existsSync(p)) sources.push(p);
-    }
-  }
-  const stale = sources.filter((p) => existsSync(p) && statSync(p).mtimeMs > htmlAge);
+  const stale = closure.filter((p) => statSync(p).mtimeMs > htmlAge);
   if (stale.length) {
-    die(`the rendered HTML predates ${stale.map((p) => basename(p)).join(", ")}. `
+    die(`the rendered HTML predates ${stale.map(rel).join(", ")}. `
       + `Run quarto render, or pass --allow-stale to measure it anyway.`);
   }
 }
@@ -277,7 +392,7 @@ try {
   const offenders = rows.filter((r) => r.bottom > boundary);
 
   if (asJson) {
-    console.log(JSON.stringify({ boundary, canvas, projectionMargin, obstructions, slides: rows, offenders: offenders.map((o) => o.number) }, null, 2));
+    console.log(JSON.stringify({ boundary, canvas, projectionMargin, obstructions, closure: closure.map(rel), slides: rows, offenders: offenders.map((o) => o.number) }, null, 2));
   } else {
     console.log(`VIEWPORT PREFLIGHT  ${basename(htmlPath)}`);
     console.log(`  canvas                 ${canvas.w} x ${canvas.h} slide-local px`);
@@ -289,6 +404,9 @@ try {
     console.log(`  projection margin      ${projectionMargin}  (1 percent of ${canvas.h}, rounded up)`);
     console.log(`  SAFE CONTENT BOUNDARY  ${boundary}   = min(${canvasFloor}, ${lowestChromeTop}) - ${projectionMargin}`);
     console.log(`  slides measured        ${rows.length}`);
+    // Printed so the staleness guard's scope is visible on every run. A closure that
+    // silently lost a figure would otherwise look exactly like one that never had it.
+    console.log(`  render closure         ${closure.length} source files checked for staleness`);
     console.log("");
     if (offenders.length === 0) {
       console.log(`PASS. All ${rows.length} slides clear the boundary.`);

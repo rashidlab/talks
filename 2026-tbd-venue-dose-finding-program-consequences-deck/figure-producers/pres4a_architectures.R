@@ -187,10 +187,98 @@ sch_plots <- list(single = p_single, parallel = p_parallel,
 stopifnot("panel order must follow the canonical architecture vocabulary" =
             identical(names(sch_plots), names(ARCH_TITLE)))
 
+PANEL_Y <- 0.17
+PANEL_H <- 0.77
 for (i in seq_len(n_sch)) {
-  full <- full + cowplot::draw_plot(sch_plots[[i]], x = sch_x0[i], y = 0.08,
-                                     width = panel_w, height = 0.86)
+  full <- full + cowplot::draw_plot(sch_plots[[i]], x = sch_x0[i], y = PANEL_Y,
+                                     width = panel_w, height = PANEL_H)
 }
+
+# =================================================================================================
+# THE KEY, DRAWN INSIDE THE ARTWORK.
+#
+# WHY IT EXISTS. The schematics carried four encodings and no key at all, so a viewer had to infer
+# from context that blue and orange mean opposite things and had no way at all to read the green
+# circle, which is drawn in exactly one of the four panels.
+#
+# EACH ENTRY IS READ OFF THE DRAWING CODE ABOVE, not off an assumption about what the colors
+# usually mean in this deck.
+#   blue   PAL$retained,  every geom_segment that continues to a filled endpoint. theme.R's own
+#          role for this color is "information retained / evidence that carries forward", and both
+#          uses here match it, the branch that is not dropped and the confirmation segment.
+#   orange PAL$discarded, two uses that share one meaning. The branch that ends in deadend_layer's
+#          cross bar, and, in panel 3 only, the fading stub on the RETAINED path, which is that
+#          dose's earlier evidence not surviving the boundary. So the entry is worded as "does not
+#          carry forward" rather than "dose dropped", because the second use is not a dropped dose.
+#   green  PAL$accent, node_layer(open = TRUE). Drawn ONCE, at SEAM_X + 0.02 in panel 3, which is
+#          the first point AFTER the boundary on the path whose earlier evidence just faded out.
+#          It therefore marks confirmation beginning with nothing carried in. It does NOT mark
+#          selection. Panels 1 and 4 also select a single dose and carry no green circle, and
+#          panel 4 differs from panel 3 only in that its evidence does carry forward.
+#   dotted PAL$ink at linetype "22", seam_df, drawn in panels 3 and 4, the phase boundary.
+# The black filled nodes are deliberately not keyed. They are the start and end points of a path
+# and read as such without help, and a fifth entry costs the four real ones their legible size.
+# =================================================================================================
+
+KEY_TEXT_SIZE <- 5.8
+KEY_MARK_W    <- 0.040
+KEY_GAP       <- 0.013
+KEY_COL1_X    <- 0.02
+KEY_COL2_X    <- 0.53
+KEY_ROW_HI    <- 0.70
+KEY_ROW_LO    <- 0.26
+
+key_entries <- data.frame(
+  x     = c(KEY_COL1_X, KEY_COL2_X, KEY_COL1_X, KEY_COL2_X),
+  y     = c(KEY_ROW_HI, KEY_ROW_HI, KEY_ROW_LO, KEY_ROW_LO),
+  mark  = c("retained", "discarded", "restart", "boundary"),
+  label = c("kept, carries forward",
+            "dropped, does not carry forward",
+            "confirmation starts with no earlier evidence",
+            "phase boundary"),
+  stringsAsFactors = FALSE
+)
+
+# OVERFLOW IS ASSERTED, NOT EYEBALLED. ggplot text `size` is in mm and converts to points by the
+# .pt constant, and a mean lowercase advance runs near half the point size. That gives a per
+# character width in inches, which divided by the key's own drawn width is a width in the key's
+# 0..1 x units. The bound is deliberately crude and deliberately conservative.
+KEY_PLOT_W_IN <- (0.98 - 0.02) * 13.333
+key_char_w <- (KEY_TEXT_SIZE * .pt * 0.5 / 72) / KEY_PLOT_W_IN
+key_entries$right <- key_entries$x + KEY_MARK_W + KEY_GAP +
+  nchar(key_entries$label) * key_char_w
+col1 <- key_entries$x == KEY_COL1_X
+stopifnot("column one of the key must not run into column two" =
+            all(key_entries$right[col1] < KEY_COL2_X),
+          "column two of the key must not run off the canvas" =
+            all(key_entries$right[!col1] < 1))
+
+key_text_x <- key_entries$x + KEY_MARK_W + KEY_GAP
+seg <- function(i) key_entries[i, ]
+
+p_key <- ggplot() +
+  coord_cartesian(xlim = c(0, 1), ylim = c(0, 1), expand = FALSE, clip = "off") +
+  theme_void() +
+  # Blue, retained. Same color, linewidth and alpha as the confirmation segments above.
+  geom_segment(aes(x = seg(1)$x, xend = seg(1)$x + KEY_MARK_W, y = seg(1)$y, yend = seg(1)$y),
+               color = PAL$retained, linewidth = 1.9, alpha = CONCEPT_ALPHA) +
+  # Orange, discarded, drawn with deadend_layer's own cross bar so the entry shows the whole mark.
+  geom_segment(aes(x = seg(2)$x, xend = seg(2)$x + KEY_MARK_W, y = seg(2)$y, yend = seg(2)$y),
+               color = PAL$discarded, linewidth = 1.9, alpha = CONCEPT_ALPHA) +
+  geom_segment(aes(x = seg(2)$x + KEY_MARK_W, xend = seg(2)$x + KEY_MARK_W,
+                   y = seg(2)$y - 0.13, yend = seg(2)$y + 0.13),
+               color = PAL$discarded, linewidth = 1.8, lineend = "butt") +
+  # Green open circle, identical parameters to node_layer(open = TRUE).
+  geom_point(aes(x = seg(3)$x + KEY_MARK_W / 2, y = seg(3)$y), shape = 21, size = 5.2,
+             stroke = 1.6, fill = PAL$paper, color = PAL$accent) +
+  # Dotted phase boundary, identical parameters to seam_df's segment.
+  geom_segment(aes(x = seg(4)$x + KEY_MARK_W / 2, xend = seg(4)$x + KEY_MARK_W / 2,
+                   y = seg(4)$y - 0.20, yend = seg(4)$y + 0.20),
+               color = PAL$ink, linewidth = 1.0, linetype = "22") +
+  annotate("text", x = key_text_x, y = key_entries$y, label = key_entries$label,
+           hjust = 0, size = KEY_TEXT_SIZE, color = "#3A3A3A")
+
+full <- full + cowplot::draw_plot(p_key, x = 0.02, y = 0.015, width = 0.96, height = 0.145)
 
 # Captions, one per column, drawn ONCE at the composed level and confined to their own column's
 # width via an explicit strwrap(), so they cannot bleed into a neighboring panel the way an
@@ -211,7 +299,10 @@ rendered_strings <- c(
     "The chosen dose's earlier evidence carries forward.",
     sep = " | "
   ),
-  stage_labels = "selection | confirmation"
+  stage_labels = "selection | confirmation",
+  # The key is drawn text, so it is checked as drawn text. Omitting it would have left the newest
+  # strings on the figure as the only ones the jargon check could not fail on.
+  key = paste(key_entries$label, collapse = " | ")
 )
 forbidden <- c("PCS", "\\btruth\\b", "\\bcell\\b", "frozen", "locked", "\\bpolic(y|ies)\\b",
                "select_exclude", "select_incorporate", "exp8")

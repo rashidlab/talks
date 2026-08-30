@@ -294,9 +294,9 @@ Delivery. Safe stopping was established everywhere it was nominated. The unresol
 
 ## Feasibility is not uniform and that is informative
 
-Same design-space dimension and coordinate ranges. What changes is the truth convention and declared scenario set.
+We searched the same kinds of designs over the same ranges. What changed was what counted as the correct dose and which situations the design had to handle.
 
-![](m2_feasibility_structure.png){fig-align="center" height="320"}
+![](m2_feasibility_structure.png){fig-align="center" height="274"}
 
 ::: {.fragment style="text-align:center;"}
 We offer **no mechanism** for the study that establishes none. The campaign as run does not isolate one.
@@ -393,13 +393,17 @@ Q&A pocket. *Does the correction change your conclusions?* We do not claim it do
 A strategy can score better at dose selection and worse after confirmation.
 
 ::: {.r-stack}
-![](pres3_step1_pcs_only.png){fig-align="center" height="450"}
+![](pres3_step1_pcs_only.png){fig-align="center" height="426"}
 
-![](pres3_pcs_wrong_policy.png){.fragment fig-align="center" height="450"}
+![](pres3_pcs_wrong_policy.png){.fragment fig-align="center" height="426"}
 :::
+
+<div class="microcaption">The ordering is the claim here. The small vertical gaps are not interpreted as effect sizes.</div>
 
 ::: {.notes}
 Delivery. Pause on the first frame. Ask the room which they would choose. Then reveal.
+
+Q&A pocket. *Are those differences real?* The plotted quantities are point estimates and the source object carries no interval for them, so I claim the ordering and the one reversal the persistence check supports, and I claim nothing about the size of the small gaps. The reversal I do claim is the one the callout names, and it is the pair that persists on all six alternative later-stage assumptions.
 
 Vocabulary. Always the qualifier. Dose-selection PCS can rank policies differently from program-level success once confirmation is included. Never the bare "PCS misranks designs".
 :::

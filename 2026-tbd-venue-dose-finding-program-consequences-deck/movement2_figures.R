@@ -11,8 +11,40 @@
 
 suppressPackageStartupMessages({ library(ggplot2); library(grid) })
 
-rp <- function(...) file.path(Sys.getenv("BATOND_PAPER_REPO", "."), ...)
+# THE REPOSITORY ROOT IS RESOLVED BEFORE ANYTHING IS READ, and every path below hangs off it.
+# The previous default was ".", which made the reader, the artifacts and the output directory all
+# depend on the launch directory, and depend on it silently: run from anywhere but the repository
+# root and `source` failed, while run from a sibling checkout it would have read the wrong
+# repository's results. `BATOND_PAPER_REPO` is honoured because it is the statement that this IS
+# the paper repository, and the fallback walks up for `globals.yml` rather than assuming the
+# working directory, matching what `R/globals.R` and `R/metrics.R` already do.
+rp <- local({
+  env <- Sys.getenv("BATOND_PAPER_REPO", "")
+  root <- if (nzchar(trimws(env))) path.expand(trimws(env)) else {
+    d <- normalizePath(getwd(), winslash = "/", mustWork = FALSE)
+    repeat {
+      if (file.exists(file.path(d, "globals.yml"))) break
+      p <- dirname(d)
+      if (identical(p, d)) stop("movement2_figures: no `globals.yml` at or above `", getwd(),
+                                "`. Set BATOND_PAPER_REPO or run from inside the repository.",
+                                call. = FALSE)
+      d <- p
+    }
+    d
+  }
+  if (!dir.exists(root)) stop("movement2_figures: `", root, "` is not a directory.", call. = FALSE)
+  root <- normalizePath(root, winslash = "/", mustWork = FALSE)
+  function(...) file.path(root, ...)
+})
 source(rp("R", "metrics.R"))
+
+# ONE ROOT, ASSERTED. This script resolved a root in order to find the reader, and the reader
+# resolves one of its own to find the artifacts. If those two ever disagree the figure would be
+# drawn from one repository and labelled with another's provenance, which is the two-authorities
+# defect in its most expensive form. It costs one comparison to make that impossible.
+stopifnot("the script's root and the metrics reader's root must be the same repository" =
+            identical(normalizePath(rp(), winslash = "/", mustWork = FALSE),
+                      normalizePath(batond_root(), winslash = "/", mustWork = FALSE)))
 
 OUT <- rp("figures", "conference_deck")
 dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
@@ -68,9 +100,9 @@ p_funnel <- ggplot(fun, aes(stage, n)) +
   geom_col(fill = fun$fill, width = 0.62) +
   geom_text(aes(label = n), vjust = -0.55, colour = NAVY, fontface = "bold", size = 5.6) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.18))) +
-  labs(x = NULL, y = "Cells",
+  labs(x = NULL, y = "Calibration problems",
        title = "Search nominates. Verification decides.",
-       subtitle = "No nominated cell verified infeasible on any constraint") +
+       subtitle = "No nominated calibration problem verified infeasible on any constraint") +
   base_thm
 save_slide(p_funnel, "m2_funnel")
 
@@ -102,7 +134,7 @@ p_state <- ggplot(cdf, aes(constraint, n, fill = state)) +
   annotate("text", x = 3.34, y = con$select$unresolved + con$select$feasible / 2,
            label = "verified\nfeasible", colour = CARD, fontface = "bold", size = 4.2, hjust = 0) +
   coord_cartesian(xlim = c(0.5, 3.9), clip = "off") +
-  labs(x = NULL, y = "Nominated cells",
+  labs(x = NULL, y = "Nominated calibration problems",
        title = "Every verdict is three-valued",
        subtitle = paste("Nothing was refuted. Unresolved is not almost feasible and it is not",
                         "failure, it is what the verification evidence licenses")) +
@@ -128,33 +160,74 @@ sdf <- data.frame(study = names(fbs),
                   stringsAsFactors = FALSE)
 slab <- c(simulation = "Prespecified simulation", application = "Application",
           boin12 = "Published benchmark")
-sdf$label <- ifelse(sdf$study %in% names(slab), slab[sdf$study], sdf$study)
+# PROVENANCE SUBTITLES ARE QUOTED, NOT WRITTEN HERE. Each string is the paper's own clause
+# describing what distinguishes the study, manuscript/paper_skeleton.qmd lines 2177-2182
+# (identically in the rendered manuscript/paper_skeleton.tex lines 1565-1568). A cancer
+# researcher seeing the row label once needs the paper's own account of the study, not an
+# improvised gloss that could drift from what the paper says.
+sprov <- c(
+  simulation  = "scenarios drawn from the published two-stage utility evaluation",
+  application = "scenarios built on the motivating trial's own thresholds",
+  boin12      = "scenarios drawn from the rank-based utility design's published evaluation")
+sdf$label    <- ifelse(sdf$study %in% names(slab), slab[sdf$study], sdf$study)
+sdf$subtitle <- ifelse(sdf$study %in% names(sprov), sprov[sdf$study], "")
 sdf$rest <- sdf$total - sdf$feasible
 sdf <- sdf[order(-sdf$feasible / sdf$total), ]
-sdf$label <- factor(sdf$label, levels = rev(sdf$label))
+# ROW LABEL IS TWO LINES, the study name on the first and the paper's provenance clause
+# underneath it on the second. Plain "\n" rather than a richtext element, because ggtext's
+# element_markdown silently failed to parse when merged with theme_minimal() under the
+# installed ggplot2 (4.0.3), rendering the raw markup instead of formatted text. Verified by
+# direct reproduction before this fallback was chosen, not assumed.
+sdf$rowlabel <- paste0(sdf$label, "\n", sdf$subtitle)
+sdf$rowlabel <- factor(sdf$rowlabel, levels = rev(sdf$rowlabel))
+# THE INTERIOR LABEL IS THE FEASIBLE FRACTION, computed from the same feasible/total this
+# script already derives, never typed. Guarded against division by a zero-row study so an
+# empty denominator produces NA rather than a silently wrong percentage.
+stopifnot("every study needs a positive denominator" = all(sdf$total > 0))
+# BOTH DENOMINATORS ON THE MARK. The count is what the campaign census reports and the percent
+# is what the eye compares across rows of different size, so the bar carries both rather than
+# forcing the reader to divide.
+sdf$bar_label <- sprintf("%d of %d, %.0f%%", sdf$feasible, sdf$total,
+                         100 * sdf$feasible / sdf$total)
 
 long <- rbind(
-  data.frame(label = sdf$label, part = "Verified feasible", n = sdf$feasible),
-  data.frame(label = sdf$label, part = "Not established",   n = sdf$rest))
+  data.frame(label = sdf$rowlabel, part = "Verified feasible", n = sdf$feasible),
+  data.frame(label = sdf$rowlabel, part = "Not established",   n = sdf$rest))
 long$part <- factor(long$part, levels = c("Verified feasible", "Not established"))
 
 p_struct <- ggplot(long, aes(label, n, fill = part)) +
   geom_col(width = 0.58) +
   scale_fill_manual(values = c("Verified feasible" = STATE[["feasible"]],
                                "Not established" = MIST)) +
-  geom_text(data = long[long$part == "Verified feasible" & long$n > 0, ],
-            aes(label = n), position = position_stack(vjust = 0.5),
-            colour = "white", fontface = "bold", size = 5) +
-  geom_text(data = sdf, aes(x = label, y = total, label = paste0("of ", total)),
-            inherit.aes = FALSE, hjust = -0.18, colour = GRAPH, size = 4.2) +
+  # THE FRACTION SITS ON THE BLUE PORTION ITSELF, not beside the bar, because the feasible
+  # share is the number the slide exists to show. White space inside the blue segment is
+  # ample for both studies where any cell is feasible at all.
+  geom_text(data = sdf[sdf$feasible > 0, ],
+            aes(x = rowlabel, y = rest + feasible / 2, label = bar_label),
+            inherit.aes = FALSE, colour = "white", fontface = "bold", size = 5.2) +
+  # THE ZERO ROW GETS ITS COUNT OUTSIDE THE BAR, because it has no blue segment to carry one and
+  # a row silently showing nothing is the study whose result the slide is most interested in.
+  # Rows with a blue segment already state both denominators on the mark, so no exterior label.
+  geom_text(data = sdf[sdf$feasible == 0, ],
+            aes(x = rowlabel, y = total, label = bar_label),
+            inherit.aes = FALSE, hjust = -0.12, colour = GRAPH, fontface = "bold", size = 4.6) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.14))) +
   coord_flip() +
-  labs(x = NULL, y = "Cells",
+  labs(x = NULL, y = "Calibration problems",
        title = "Feasibility is not uniform, and the pattern is informative",
        subtitle = paste("Same design-space dimension and the same coordinate ranges.",
                         "They differ in the truth convention and the scenarios declared")) +
-  base_thm
-save_slide(p_struct, "m2_feasibility_structure", h = 4.6)
+  base_thm +
+  # ROW LABELS ENLARGED FOR ROOM DISTANCE. Study name and provenance clause share one text
+  # element (two lines via "\n"), so both scale together rather than the subtitle vanishing
+  # at slide-projection size.
+  theme(axis.text.y = element_text(colour = NAVY, size = 12.5, lineheight = 0.95, hjust = 1),
+        # THE WIDE TWO-LINE LABELS SHRINK THE PANEL, and the default plot.title.position
+        # ("panel") anchors the title to the panel's left edge, which then pushed the title
+        # past the right edge of the canvas. Anchoring to "plot" ties the title to the whole
+        # image's left margin instead, independent of how much room the row labels take.
+        plot.title.position = "plot")
+save_slide(p_struct, "m2_feasibility_structure", h = 5.0, w = 13)
 
 # ------------------------------------------------------- the deliverable card
 # A PROTOCOL EXCERPT, NOT A RESULTS TABLE. Every coordinate is an output of the calibration.
@@ -216,7 +289,11 @@ card_html <- c(
   '  <div class="row"><span class="label">Verification verdict</span>',
   '    <span class="value verdict-cell">',
   sprintf('      <span class="verdict-badge %s">%s</span>', verdict_class, html_esc(verdict_label)),
-  sprintf('      <span class="verdict-detail">%s claims, familywise %s</span>', DEL$m, DEL$familywise),
+  # PLAIN ENGLISH ON THE CARD, EXACT TERM IN THE NOTES. "familywise 0.05" is precise and
+  # unreadable in one pass to a scientist who is not a statistician, and this card exists to show
+  # a trial team what it receives.
+  sprintf('      <span class="verdict-detail">%s%% error control across the %s requirements checked together</span>',
+          format(100 * as.numeric(DEL$familywise), trim = TRUE), DEL$m),
   '    </span>',
   '  </div>',
   sprintf('  <div class="row"><span class="label">Tuning vector</span><span class="value">%d calibrated settings supplied with the protocol</span></div>',
