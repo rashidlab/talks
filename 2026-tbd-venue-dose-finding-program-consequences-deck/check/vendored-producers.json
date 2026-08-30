@@ -170,6 +170,14 @@
       "snapshot_sha256": "4492537231a61b676964ce83c37b67c23996a834270460c935a00e5a5383f6f2"
     },
     {
+      "vendored": "figure-producers/pres_scenario_vocabulary.R",
+      "source_path": "scripts/figures/conference_deck/pres_scenario_vocabulary.R",
+      "source_commit": "74b62de7df5cc3371f29cc110ec073eeb1583e9f",
+      "source_state": "uncommitted",
+      "source_sha256": "93fa9f9907290c98c9b5555303f00e5175c786580724f987cbb8719d6303bbfb",
+      "snapshot_sha256": "93fa9f9907290c98c9b5555303f00e5175c786580724f987cbb8719d6303bbfb"
+    },
+    {
       "vendored": "figure-producers/talk_architecture.R",
       "source_path": "scripts/figures/conference_deck/talk_architecture.R",
       "source_commit": "47d73be07d8087af133942fc1d1610fd5ed778dc",

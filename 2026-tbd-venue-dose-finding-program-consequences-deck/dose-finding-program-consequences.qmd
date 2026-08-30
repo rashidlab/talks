@@ -34,13 +34,21 @@ execute:
   message: false
 ---
 
-## The two ends are already in the literature
+## The first end is that phase III comes in weaker than planned
 
-**Phase III comes in weaker than planned.** 82 of 143 primary or coprimary survival endpoints, across 111 phase III oncology trials, had observed hazard ratios weaker than those assumed in the power calculations [@jnci2025expected].
+82 of 143 primary or coprimary survival endpoints, across 111 phase III oncology trials, had observed hazard ratios weaker than those assumed in the power calculations [@jnci2025expected].
 
-::: {.fragment}
-**Dose questions outlive approval.** 24 dose-optimization postmarketing requirements were issued for 21 of 138 newly approved oncology drugs. Among requirements that had resolved, the median time from issuance to fulfillment or release was 6 years [@fda2023pmranalysis].
+::: {.notes}
+Delivery. Two published findings sit at the two ends of a development program, and this is the far end. Do not preview the second one, it lands better as its own slide.
+
+Guardrail. Do not imply that dose finding explains phase III failure. This is one mechanism by which early decisions can create late-visible problems.
+
+Pull-from-if-needed. These are observed hazard ratios against the ones assumed in the power calculations, so the comparison is against each trial's own design assumption rather than against a common benchmark.
 :::
+
+## The second end is that dose questions outlive approval
+
+24 dose-optimization postmarketing requirements were issued for 21 of 138 newly approved oncology drugs. Among requirements that had resolved, the median time from issuance to fulfillment or release was 6 years [@fda2023pmranalysis].
 
 ::: {.fragment}
 Our work identifies one mechanism by which early decisions can create problems that surface later.
@@ -49,9 +57,9 @@ Our work identifies one mechanism by which early decisions can create problems t
 ::: {.notes}
 Q&A pocket. *Is the six-year figure current?* A later FDA and AACR presentation carries a higher number on the same fulfil-or-release estimand. I use the published abstract vintage deliberately.
 
-Guardrail. Do not imply that dose finding explains phase III failure. This is one mechanism by which early decisions can create late-visible problems.
+Delivery. Say fulfillment OR RELEASE. It is not a median time to fulfil, and someone in this room will know the difference. Then name the pair out loud, one end is the confirmatory readout and the other is the dose question that survives approval, because the two slides are one observation.
 
-Delivery. Say fulfillment OR RELEASE. It is not a median time to fulfil, and someone in this room will know the difference.
+Guardrail. Same as the previous slide. One mechanism, never a cause.
 :::
 ## The thesis
 
@@ -96,12 +104,12 @@ Delivery. This slide is insurance. The epidemiology I just showed invites a caus
   <div class="pathway-arrow">&rarr;</div>
   <div class="pathway-stage"><strong>Confirm efficacy</strong>Can we establish that it works?</div>
   <div class="pathway-arrow">&rarr;</div>
-  <div class="pathway-stage muted"><strong>Approval</strong>And the dose question does not always end here.</div>
+  <div class="pathway-stage muted"><strong>Approval</strong>The dose question does not always end here.</div>
 </div>
 
 
 ::: {.fragment}
-**Phase boundary.** The point where one development stage ends and the next begins.
+**Phase boundary.** Where one development stage ends and the next begins.
 :::
 
 ::: {.fragment}
@@ -111,7 +119,7 @@ Delivery. This slide is insurance. The epidemiology I just showed invites a caus
 ::: {.notes}
 Delivery. Thirty seconds, no more. Everyone in the room knows this, but not everyone holds it as a sequence of transitions rather than a sequence of trials, and the whole talk is about the transitions. Point at each arrow as you say the question.
 
-Pull-from-if-needed. Confirm means establish efficacy at the end of the middle stage.
+Pull-from-if-needed. Confirm means establish efficacy at the end of the middle stage. A phase boundary is the point where one stage ends and the next begins, and the reason it matters is that the transition is where evidence stops being available, not merely where a trial stops.
 :::
 
 # If a design's name does not determine its behaviour, what does? {.center background-color="#13294B"}
@@ -136,19 +144,44 @@ Pull-from-if-needed. We started with established dose-finding designs, calibrate
 Delivery. Land the asymmetry. Almost every dose-finding paper answers the left question and stops.
 :::
 
-## Terms used throughout {.smaller}
+## What the design never knows {.smaller}
 
-**Clinical scenario.** An assumed truth about the drug, the true toxicity and efficacy probability at every dose. The prespecified set spans efficacy increasing with dose, efficacy plateauing, a best dose adjacent to a sharply worse one, an inactive drug, and an overly toxic drug.
-
+:::: {.columns}
+::: {.column width="49%"}
+**Clinical scenario.** An assumed truth about the drug, the true toxicity and efficacy probability at every dose.
+:::
+::: {.column width="49%"}
 **Correct dose.** The dose with the best true benefit-risk tradeoff. Known to the simulation because the scenario specifies it. Never known to the design.
+:::
+::::
+
+![](pres_scenario_vocabulary.png){fig-align="center" height="365"}
+
+<div class="microcaption">The scenarios the calibration ran on, drawn from the frozen definitions rather than redrawn by hand. Solid line and filled circles, true toxicity. Dashed line and open circles, true efficacy. Shaded, the acceptable doses.</div>
+
+::: {.notes}
+Delivery. Walk the three panels left to right and say the one sentence that makes the whole talk necessary. In the first panel the correct dose is not the highest tolerable one. That is the case conventional dose finding was not built to find, and it is why Project Optimus exists.
+
+Pull-from-if-needed. The scenario shapes were taken from the dose-response biology of the agent classes these designs name in their own titles, targeted and immune therapies, rather than from arbitrary curves. The downstream study adds further shapes to this set, including a best dose adjacent to a sharply worse one and a drug whose efficacy declines from the lowest dose.
+
+Q&A pocket. *Why only three?* These are the frozen scenarios the calibration itself ran on. The later study widens the set, and the figure does not claim to be the whole grid.
+
+Vocabulary. The diamond is the quantity the paper calls the optimal biological dose and the square is the maximum tolerated dose. The figure draws both in plain words on purpose, so say them in plain words too and let the room supply the abbreviations if it wants them.
+:::
+
+## What calibrated means here
 
 **Calibrated.** Tuning parameters and sample size searched against prespecified operating requirements. A candidate is then locked and independently re-verified on a fresh simulation stream. **The verdict is three-valued**, feasible, infeasible, or unresolved, and the next question is about why.
 
 **Design strategy.** A design family, BOIN, BOIN12 or U-BOIN, together with its calibrated settings.
 
-**The phase II design used later in development.** A standard two-stage design, stop early if too few responses, with a toxicity monitor.
+::: {.notes}
+Delivery. This is the term the whole second movement is built on, so plant it now and do not explain it yet. Three-valued is the word that should stick.
 
-**Confirm.** Declare efficacy at the end of that phase II design.
+Pull-from-if-needed. Two more terms the later slides use. The phase II design used later in development is a standard two-stage design, stop early if too few responses, with a toxicity monitor. Confirm means declare efficacy at the end of that phase II design. Neither needs to be on a slide, both need to be said once before Question 3.
+
+Q&A pocket. *Calibrated to what?* To requirements stated before the search ran, not to whatever the search happened to find. That distinction is the entire content of the next movement.
+:::
 
 ## How to read the next result
 
@@ -237,11 +270,28 @@ Delivery. This is the whole motivation in three sentences. It indicts the logic 
 ::: {.incremental}
 - **What value was required.** A reader sees the target selected in roughly half of trials. Required is not stated.
 - **What else was available.** The tuning parameters define a space of alternatives. The table describes one point in it.
-- **Whether the number is optimism.** When the same simulations tune and report the design, a favourable number carries optimism the table cannot show.
+:::
+
+::: {.notes}
+Delivery. Two gaps here and a third, worse one on the next slide. Both of these are about the space the table does not show, the number reported and the alternatives it was chosen from.
+
+Q&A pocket. *Is roughly half not a normal number?* It is entirely normal. That is the point. Nothing on the page says whether it was the requirement, and normal is not the same as adequate.
+:::
+
+## The table also cannot show its own optimism
+
+::: {.fragment}
+**Whether the number is optimism.** When the same simulations tune and report the design, a favourable number carries optimism the table cannot show.
 :::
 
 ::: {.fragment}
 So the question becomes: what evidence would actually **establish** that a design meets its requirements?
+:::
+
+::: {.notes}
+Delivery. This is the gap that motivates everything after it, and it is different in kind from the two before. The first two are about what the table omits. This one is about what the number itself contains.
+
+Pull-from-if-needed. Tuning and reporting on the same simulations is selection on the same noise the report then presents as performance. Nothing on the page distinguishes a design that is good from a design that was lucky on the stream it was tuned on.
 :::
 
 ## Search nominates. Verification decides.
@@ -262,16 +312,26 @@ Delivery. Do not rush to the drop. Let them see the two stages are different pro
 
 ::: {.fragment style="margin-top:0.5em;"}
 Search selects on **point estimates**. Verification decides on an **interval**.
-
-A nominated candidate whose remaining uncertainty still crosses the requirement is neither established feasible nor refuted on the evidence collected.
 :::
 
-::: {.fragment}
+::: {.notes}
+Delivery. This is the intellectual centre of the talk. Slow down. If one sentence survives the hour, it is the callout on this slide.
+
+Pull-from-if-needed. Search and verification run on disjoint random streams, so the interval verification decides on is not the interval search was selecting against.
+:::
+
+## Unresolved is neither established nor refuted
+
+A nominated candidate whose remaining uncertainty still crosses the requirement is neither established feasible nor refuted on the evidence collected.
+
+::: {.fragment style="margin-top:0.8em;"}
 Reporting it as feasible would be exactly the selection-induced optimism the procedure exists to prevent.
 :::
 
 ::: {.notes}
-Delivery. This is the intellectual centre of the talk. Slow down. If one sentence survives the hour, it is this one.
+Delivery. Say the two negatives separately and do not soften either one. Not established. Not refuted. The temptation the room will feel is to hear this as a polite way of saying it failed, and it is not.
+
+Q&A pocket. *So what do you do with an unresolved cell?* Report it as unresolved and say what would resolve it, which is more verification replicates or a different requirement. What you do not do is round it toward whichever of the two verdicts you preferred.
 :::
 
 ## Every verdict is three-valued
@@ -320,12 +380,20 @@ Feasibility varied materially across sets of situations chosen in advance at a *
 Locked designs re-scored on further scientifically plausible scenarios could cross constrained safety limits.
 :::
 
-::: {.fragment}
-Verification on a prespecified scenario set does not establish robustness outside it. This is why the calibration specification is frozen and published with the design.
+::: {.notes}
+Delivery. This slide is what keeps the movement from sounding triumphalist. Two pieces of evidence that the conditionality is real, then the obligation it creates on the next slide.
+
+Guardrail. Scientifically plausible, not adversarial. These were not scenarios built to break the designs, which is what makes the crossing worth reporting.
 :::
 
+## What that conditionality obliges us to publish
+
+Verification on a prespecified scenario set does not establish robustness outside it. This is why the calibration specification is frozen and published with the design.
+
 ::: {.notes}
-Delivery. This slide is what keeps the movement from sounding triumphalist, and it earns the deliverable that follows.
+Delivery. This is the bridge into the deliverable. A conditional verdict is only usable by someone else if the condition travels with it, and the condition is the specification.
+
+Pull-from-if-needed. Frozen means the scenario set, the requirements and the search domain are fixed before the search runs and are reported whatever the verdict turns out to be. A specification chosen after seeing the verdicts would carry the same optimism the verification stage exists to remove.
 :::
 
 ## What a trial team receives
@@ -366,7 +434,7 @@ Delivery. Close the movement here. Then pivot, because everything so far still s
 Question 3 of 4
 :::
 
-## How to read the next result {.smaller}
+## How to read the next result
 
 **What changes?** Nothing about the designs. Only how we score them.
 
@@ -374,18 +442,26 @@ Question 3 of 4
 
 **Readout.** The two rankings, compared against each other.
 
-::: {.fragment}
+::: {.notes}
+Delivery. Short slide. The designs and the simulated patients are held fixed, and the only thing that moves is the scoring rule, which is what makes any difference attributable to the metric rather than to the design.
+
+Delivery. Do not stop here. The next slide holds our own analysis to the standard the last movement just taught, and skipping it is what this room would notice.
+:::
+
+## The nine analysis cases behind the next result {.smaller}
+
 **And the standard applies to us.**
 
 - We fixed these **nine analysis cases** before asking the downstream question.
 - We later corrected how the simultaneous verification requirements were counted. Under that corrected rule, **seven remain verified feasible** and **two are unresolved**.
 - We keep all nine, because dropping two after seeing the downstream results would change the analysis set after the fact.
-:::
 
 ::: {.notes}
-Delivery. Do not skip the second half. Teaching a standard of evidence for thirteen slides and then exempting your own downstream work from it is what this room will notice.
+Delivery. Teaching a standard of evidence for thirteen slides and then exempting your own downstream work from it is what this room will notice. Say all three bullets, including the one that costs us something.
 
 Q&A pocket. *Does the correction change your conclusions?* We do not claim it does not. The two cells may contribute to averages over the set. A seven-cell post-correction sensitivity is deferred and labelled, not folded into the primary.
+
+Q&A pocket. *Why not just drop the two?* Because the set was fixed before the downstream question was asked, and dropping cells after seeing the answer is the same after-the-fact selection the second movement spent thirteen slides refusing.
 :::
 
 ## Locally best need not be globally best
@@ -428,7 +504,7 @@ Delivery. The mechanism of the reversal. A strategy can raise its selection scor
 Delivery. The mechanism of the reversal. A strategy can raise its selection score by turning neighbouring-dose selections into no selection at all, and correct-selection probability cannot tell those apart.
 :::
 
-## The second geometry bounds this result
+## Only one design family was eligible on the second geometry
 
 That result is established on **one** truth. We repeated the question under a second response geometry, where efficacy plateaus instead of rising toward the target.
 
@@ -436,16 +512,24 @@ That result is established on **one** truth. We repeated the question under a se
 Only one design family produced enough eligible strategies to compare there. The families that carried the original inversion were not eligible on that geometry.
 :::
 
-::: {.fragment}
-Within the eligible set, **the rank reversal did not recur**.
+::: {.notes}
+Delivery. Say the eligibility limitation before the outcome, in that order. The cross-family question was not answerable on this geometry, and a room that hears the outcome first will read the limitation as an excuse for it.
+
+Guardrail. Not eligible means they produced too few qualifying strategies to compare, not that they performed badly. Do not let the two be heard as the same statement.
 :::
 
-::: {.fragment}
+## The second geometry bounds this result
+
+Within the eligible set, **the rank reversal did not recur**.
+
+::: {.fragment style="margin-top:0.8em;"}
 So the second geometry does not confirm the discordance result. It bounds it.
 :::
 
 ::: {.notes}
 Delivery. The gate outcome was declared in advance to be itself a geometry-dependence finding. Say that it was prospective, because otherwise this reads as a rescue.
+
+Guardrail. Bounds, never disproves. The absence of recurrence inside the one eligible family is a statement about where the result has been shown to hold, not evidence that it fails elsewhere.
 :::
 
 # What does a phase boundary actually decide? {.center background-color="#13294B"}
@@ -456,17 +540,19 @@ Question 4 of 4
 
 ## A phase boundary determines what information survives
 
-![](pres4a_architectures.png){fig-align="center" height="540"}
+![](pres4a_architectures.png){fig-align="center" height="390"}
+
+**Four strategies.** Commit early. Keep both through confirmation. Select one, then restart evidence. Select one, then reuse evidence.
 
 ::: {.notes}
-Delivery. From here we are no longer comparing named dose-finding methods. Same underlying selection problem, different things done after or around it.
+Delivery. From here we are no longer comparing named dose-finding methods. Same underlying selection problem, different things done after or around it. Read the four names off the panels as you say them, because these are the names every later slide uses and the room needs them attached to the pictures rather than to a list.
+
+Guardrail. The open circle marks confirmation starting with no earlier evidence carried in. It does not mark selection. Anyone who reads it as selection will misread the third and fourth panels as the same architecture.
 :::
 
 ## How to read the next result
 
 **What changes?** Only what the program does after dose selection. The selections themselves are identical.
-
-**The four strategies.** Commit early. Keep both through confirmation. Select one, then restart evidence. Select one, then reuse evidence.
 
 **Why?** Project Optimus, FDA's dose-optimization initiative, encourages sponsors to compare more than one dose later in development.
 
@@ -500,12 +586,22 @@ Delivery. Read top to bottom. Keep both, transfers and strengthens. The two sele
 Using response data to choose between the two doses helps when efficacy separates the carried doses. When efficacy is flat across them, it no longer resolves the decision and can reverse direction.
 :::
 
-::: {.fragment style="margin-top:0.8em;"}
-[So the transferable lesson is not "retain two doses". It is retain uncertainty in a form the next evidence can actually resolve.]{style="color:#4B9CD3; font-weight:700;"}
+::: {.notes}
+Delivery. Do not say re-selection "does nothing" on the plateau. It loses its benefit and reverses direction, even though that negative contrast is not supported. And do not say the doses differ "only in toxicity", say efficacy does not separate them.
+
+Delivery. Hold the lesson back. The next slide is the one sentence you want them to leave with, and it lands harder after the mechanism has been stated plainly.
+:::
+
+## What actually transfers
+
+::: {style="margin-top:0.4em;"}
+[So the transferable lesson is not "retain two doses". It is retain uncertainty in a form the next evidence can actually resolve.]{style="color:#4B9CD3; font-weight:700; font-size:1.2em;"}
 :::
 
 ::: {.notes}
-Delivery. Do not say re-selection "does nothing" on the plateau. It loses its benefit and reverses direction, even though that negative contrast is not supported. And do not say the doses differ "only in toxicity", say efficacy does not separate them.
+Delivery. One sentence, one slide, and a pause. This is the sentence a methodologist in the room can take back to a protocol that has nothing to do with dose finding.
+
+Guardrail. Retaining two doses is a mechanism, not the lesson. The room that leaves with "keep two doses" has taken the thing the previous slide just refused, and that is exactly the misreading this deck has already had to correct once.
 :::
 
 ## Some uncertainty can be bought back. Some information is gone.
@@ -574,14 +670,24 @@ We have been treating dose finding, phase II efficacy evaluation, and confirmati
 They are not separate. A dose-finding design's output is a dose **and the evidence and options it leaves behind**, and that state determines what the rest of development is able, and required, to prove.
 :::
 
-::: {.fragment style="margin-top:1em;"}
-[Calibrate the design. Decompose what drives it. Then follow those components through the development program.]{style="color:#13294B; font-weight:700; font-size:1.15em;"}
-:::
-
 ::: {.notes}
 Delivery. The first sentence is the opening thesis, word for word. Let the recognition land before the fragment.
 
+Delivery. Do not rush onto the last slide. This one is the argument closing, the next one is the instruction, and they need a beat between them.
+:::
+
+## What to do differently
+
+::: {style="text-align:center; margin-top:1.4em;"}
+[Calibrate the design. Decompose what drives it. Then follow those components through the development program.]{style="color:#13294B; font-weight:700; font-size:1.35em;"}
+:::
+
+::: {.notes}
+Delivery. Three imperatives, said slowly, and nothing else on the slide. This is what the room writes down.
+
 Then stop. Do NOT put the closing question on a slide. Say it into Q&A: "So the question I will leave for discussion is, if we knew at the start what evidence the eventual regulatory claim required, would we still design phase I, phase II and phase III as three separately optimized experiments?" Then take questions.
+
+Pull-from-if-needed. Decompose means the component swaps from the first movement, the ranking rule and the evidence summary, not a sensitivity analysis over tuning parameters.
 :::
 
 ## Acknowledgments {.smaller}
