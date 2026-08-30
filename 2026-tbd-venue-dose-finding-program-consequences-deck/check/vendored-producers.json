@@ -172,10 +172,10 @@
     {
       "vendored": "figure-producers/pres_scenario_vocabulary.R",
       "source_path": "scripts/figures/conference_deck/pres_scenario_vocabulary.R",
-      "source_commit": "74b62de7df5cc3371f29cc110ec073eeb1583e9f",
+      "source_commit": "d5cf7460aa1a01a129ae042764eae91736d239fc",
       "source_state": "uncommitted",
-      "source_sha256": "93fa9f9907290c98c9b5555303f00e5175c786580724f987cbb8719d6303bbfb",
-      "snapshot_sha256": "93fa9f9907290c98c9b5555303f00e5175c786580724f987cbb8719d6303bbfb"
+      "source_sha256": "5e1b2325e6d2ba1282adb63b95b07dbced00f7598c1c1289b5bcb730fa9129fb",
+      "snapshot_sha256": "5e1b2325e6d2ba1282adb63b95b07dbced00f7598c1c1289b5bcb730fa9129fb"
     },
     {
       "vendored": "figure-producers/talk_architecture.R",

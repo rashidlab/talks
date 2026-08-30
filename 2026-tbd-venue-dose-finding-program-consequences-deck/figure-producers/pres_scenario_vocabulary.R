@@ -147,16 +147,38 @@ panel <- function(nm) {
 
 draw <- function() {
   op <- par(mfrow = c(1, 3), mar = c(4.2, 3.0, 4.0, 1.4), mgp = c(2.5, 0.6, 0),
-            oma = c(0.2, 1.6, 0.2, 0.2), family = "sans")
+            oma = c(2.6, 1.6, 0.2, 0.2), family = "sans")
   on.exit(par(op))
   for (nm in ORDER) panel(nm)
   mtext("true probability", side = 2, outer = TRUE, line = 0.1, cex = 0.92, col = INK)
+  # THE KEY GOES INSIDE THE ARTWORK, NOT IN THE CAPTION. Solid against dashed is this figure's
+  # primary encoding, and a caption states it in the smallest type on the slide, which is
+  # unreadable at room distance. The same correction was already made to the architecture
+  # diagram's colour key. Three mappings only, because a fourth would need its own explanation
+  # and a figure that costs more setup than the sentence it replaces is a loss.
+  par(fig = c(0, 1, 0, 1), oma = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), new = TRUE)
+  plot.new(); plot.window(c(0, 1), c(0, 1))
+  ky <- 0.028
+  points(0.300, ky, pch = 16, cex = 1.5, col = INK)
+  lines(c(0.316, 0.352), c(ky, ky), lwd = 2.6, col = INK)
+  text(0.360, ky, "toxicity", adj = 0, cex = 1.02, col = INK)
+  points(0.470, ky, pch = 1, cex = 1.5, lwd = 2.2, col = INK)
+  lines(c(0.486, 0.522), c(ky, ky), lwd = 2.6, lty = 2, col = INK)
+  text(0.530, ky, "efficacy", adj = 0, cex = 1.02, col = INK)
+  rect(0.640, ky - 0.020, 0.676, ky + 0.020, col = SHADE, border = NA)
+  text(0.686, ky, "acceptable doses", adj = 0, cex = 1.02, col = INK)
+  # ASSERTED, NOT EYEBALLED. The key must sit below every panel's plotting region or it lands
+  # on the data. A future height change to the device is exactly how that would happen quietly.
+  # The panels' own x-axis title sits at oma-relative height, so the test is against the band
+  # reserved for the key rather than against the plotting region. A first version asserted the
+  # panel region and passed while the key sat on top of every "dose level" label.
+  stopifnot("the key must sit inside the reserved bottom band" = ky + 0.020 < 0.052)
 }
 
 OUT <- file.path("figures", "conference_deck")
 dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
 grDevices::png(file.path(OUT, "pres_scenario_vocabulary.png"),
-               width = 12.0, height = 4.0, units = "in", res = 220, type = "cairo",
+               width = 12.0, height = 4.35, units = "in", res = 220, type = "cairo",
                bg = "white")
 draw(); grDevices::dev.off()
 

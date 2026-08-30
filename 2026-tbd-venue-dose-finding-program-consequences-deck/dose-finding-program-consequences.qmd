@@ -157,7 +157,7 @@ Delivery. Land the asymmetry. Almost every dose-finding paper answers the left q
 
 ![](pres_scenario_vocabulary.png){fig-align="center" height="365"}
 
-<div class="microcaption">The scenarios the calibration ran on, drawn from the frozen definitions rather than redrawn by hand. Solid line and filled circles, true toxicity. Dashed line and open circles, true efficacy. Shaded, the acceptable doses.</div>
+<div class="microcaption">The scenarios the calibration ran on, drawn from the frozen definitions rather than redrawn by hand.</div>
 
 ::: {.notes}
 Delivery. Walk the three panels left to right and say the one sentence that makes the whole talk necessary. In the first panel the correct dose is not the highest tolerable one. That is the case conventional dose finding was not built to find, and it is why Project Optimus exists.
