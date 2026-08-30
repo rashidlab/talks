@@ -122,19 +122,39 @@ verify_banner(
   observed = sprintf("gate passed, budget=%.6f", budget)
 )
 
+# ONE VOCABULARY FOR THE FOUR ARCHITECTURES, matching pres4a_architectures.R and
+# scripts/figures/conference_deck/talk_architecture.R verbatim.
+#
+# WHY THIS CHANGED. These four architectures previously carried a different name in each of the
+# three figures that show them, and the room left with a takeaway the deck's own mechanism slide
+# refuses. The names below are the deck's canonical set and are guarded by the deck repo's
+# check/vocabulary_check.R, which reads the string literals of every producer the deck embeds.
+#
+# The line breaks are placement, not content. Axis category labels have roughly a quarter of a
+# half-canvas each, so every name wraps to three lines and no line runs past twelve characters.
+# The check normalises whitespace before comparing.
 ARCH_LABELS <- c(
-  single              = "Commit to\none dose",
-  parallel             = "Confirm\nboth doses",
-  select_exclude       = "Fresh-\nconfirmation",
-  select_incorporate   = "Evidence-\nreuse"
+  single              = "Commit\nearly",
+  parallel             = "Keep both\nthrough\nconfirmation",
+  select_exclude       = "Select one,\nthen restart\nevidence",
+  select_incorporate   = "Select one,\nthen reuse\nevidence"
 )
+
+# THE PANEL ORDER IS READ FROM THE ARTIFACT, NOT TYPED TWICE. `design_stage` carries the
+# architectures in EXP8_ARCH_TREE's structural order, dose count then presence of a selection
+# stage then permeability of the boundary, and that order encodes no ranking. Deriving both
+# panels from it is what makes them agree, rather than two hand-typed vectors that agreed until
+# one of them was edited.
+ARCH_ORDER <- ds$arch
+stopifnot("the artifact must carry exactly the four named architectures, once each" =
+            setequal(ARCH_ORDER, names(ARCH_LABELS)) && !anyDuplicated(ARCH_ORDER))
 
 # ================================================================================================
 # PANEL A. "Without a common budget." Orange reference line, plainly labeled, no sentence
 # overlay.
 # ================================================================================================
 
-panel_a_arch_order <- c("single", "parallel", "select_exclude", "select_incorporate")
+panel_a_arch_order <- ARCH_ORDER
 panel_a_data <- data.frame(
   arch = factor(ds$arch, levels = panel_a_arch_order, labels = ARCH_LABELS[panel_a_arch_order]),
   e_n_ii_alt = ds$e_n_ii_alt
@@ -159,11 +179,22 @@ panel_a <- ggplot(panel_a_data, aes(x = arch, y = e_n_ii_alt)) +
   )
 
 # ================================================================================================
-# PANEL B. "With the same 36-patient budget." Fixed order (select_exclude, select_incorporate,
-# parallel), no sort by attained value, no emphasis color, identical to fig6.
+# PANEL B. "With the same 36-patient budget."
+#
+# ORDER NOW MATCHES PANEL A, which is a change from fig6. The two panels ranked the same
+# strategies differently, so a viewer could not follow one strategy from the left panel to the
+# right one and had to re-read the category labels twice. Panel B carries the three strategies
+# that spend the budget, which is panel A's order with the budget donor removed, and it is
+# derived from ARCH_ORDER rather than typed so the two panels cannot drift apart.
+#
+# WHAT IS UNCHANGED FROM fig6, and must stay unchanged. No sort by attained value and no
+# emphasis color on the largest value. The declared order encodes no ranking, and sorting the
+# bars by outcome would assert one.
 # ================================================================================================
 
-arch_order <- c("select_exclude", "select_incorporate", "parallel")
+arch_order <- ARCH_ORDER[ARCH_ORDER != "single"]
+stopifnot("panel B must be panel A's order with the budget donor removed" =
+            length(arch_order) == 3L && !("single" %in% arch_order))
 attained_power <- c(
   select_exclude     = stress$select_results$select_exclude$reported$e2_attained_power,
   select_incorporate = stress$select_results$select_incorporate$reported$e2_attained_power,
@@ -179,6 +210,27 @@ panel_b_data <- data.frame(
 
 panel_b_title <- sprintf("With the same %d-patient budget", round(budget))
 
+# THE KEY IS DRAWN INSIDE THE ARTWORK, and it is drawn because the open markers were unexplained.
+# Every one of them sits near 0.90, close enough that a viewer reads them as a nominal power
+# target the panel is asserting rather than as three separate designed operating points. They are
+# each strategy's own power at its own unconstrained spend, which is what makes the drop below
+# them a cost rather than a shortfall against an external standard.
+#
+# The key rows carry the marks themselves and not just words, so the panel stays readable
+# detached from any caption and survives a greyscale print.
+KEY_Y_UNC <- 1.15
+KEY_Y_ATT <- 1.05
+KEY_TOP <- 1.24
+KEY_X_MARK <- 0.50
+KEY_X_TEXT <- 0.62
+KEY_UNC_TEXT <- "Power at each strategy's own unconstrained spend"
+KEY_ATT_TEXT <- "Power on the shared budget"
+# Headroom is asserted rather than eyeballed. The key must clear the tallest mark the data draws,
+# which is the open marker and the number printed above it.
+stopifnot("the key must sit above every plotted marker" =
+            KEY_Y_ATT > max(panel_b_data$unconstrained) + 0.06,
+          KEY_TOP > KEY_Y_UNC)
+
 panel_b <- ggplot(panel_b_data, aes(x = arch)) +
   geom_segment(aes(xend = arch, y = unconstrained, yend = attained),
                color = PAL$comparator, linewidth = 3.4, lineend = "round", alpha = 0.55) +
@@ -189,8 +241,16 @@ panel_b <- ggplot(panel_b_data, aes(x = arch)) +
             vjust = -0.7, size = 6.0, color = PAL$ink, fontface = "bold") +
   geom_text(aes(y = unconstrained, label = sprintf("%.2f", unconstrained)),
             vjust = -1.1, size = 4.4, color = PAL$comparator) +
-  scale_y_continuous(limits = c(0, 1.0), breaks = seq(0, 1, 0.2),
-                      expand = expansion(mult = c(0, 0.05))) +
+  annotate("point", x = KEY_X_MARK, y = KEY_Y_UNC, shape = 21, size = 5.0, stroke = 1.2,
+           fill = PAL$paper, color = PAL$comparator, alpha = 0.55) +
+  annotate("text", x = KEY_X_TEXT, y = KEY_Y_UNC, label = KEY_UNC_TEXT, hjust = 0,
+           size = 4.6, color = PAL$comparator) +
+  annotate("rect", xmin = KEY_X_MARK - 0.055, xmax = KEY_X_MARK + 0.055,
+           ymin = KEY_Y_ATT - 0.028, ymax = KEY_Y_ATT + 0.028, fill = PAL$retained) +
+  annotate("text", x = KEY_X_TEXT, y = KEY_Y_ATT, label = KEY_ATT_TEXT, hjust = 0,
+           size = 4.6, color = PAL$ink) +
+  scale_y_continuous(limits = c(0, KEY_TOP), breaks = seq(0, 1, 0.2),
+                      expand = expansion(mult = c(0, 0.02))) +
   labs(title = panel_b_title, x = NULL, y = "Confirmatory power") +
   theme_arpa(base_size = 20) +
   theme(
@@ -213,6 +273,8 @@ rendered_text <- c(
   sprintf("%.1f", panel_a_data$e_n_ii_alt),
   panel_b_title,
   as.character(panel_b_data$arch),
+  KEY_UNC_TEXT,
+  KEY_ATT_TEXT,
   "Confirmatory power",
   sprintf("%.3f", panel_b_data$attained),
   sprintf("%.2f", panel_b_data$unconstrained)

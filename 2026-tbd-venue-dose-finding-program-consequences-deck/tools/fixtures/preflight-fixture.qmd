@@ -1,0 +1,50 @@
+---
+title: "Viewport preflight fixture"
+format:
+  revealjs:
+    theme: [default, ../../custom.css, ../../title-slide.css, ../../content-slides.css]
+    logo: ../../RLlogoA.png
+    footer: "Rashid Lab · UNC Lineberger · VENUE PLACEHOLDER 2026"
+    slide-number: c/t
+    width: 1280
+    height: 720
+    incremental: false
+    embed-resources: true
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+      data-state: "hide-footer"
+execute:
+  echo: false
+---
+
+## Deliberately safe by construction
+
+<!--
+NEGATIVE AND POSITIVE CONTROL FOR tools/viewport-preflight.mjs
+
+WHY this file exists. A gate that has only ever seen passing input is not a gate.
+This fixture renders through the same quarto invocation, the same three stylesheets,
+the same footer and logo and the same 1280x720 canvas as the real deck. Slide 2 is
+built to be comfortably clear of the boundary and slide 3 is built to overflow it.
+
+The gate is run against it with --expect-fail 3, which passes only when the flagged
+set is exactly {3}. That fails loudly in both directions, if the gate stops
+detecting overflow and if it starts flagging content that fits.
+
+The block height on slide 3 is expressed in slide-local pixels so the control does
+not depend on font metrics or on anything the real deck may later change.
+
+Keep any prose comment INSIDE a slide. Markdown ahead of the first heading becomes
+its own untitled slide and shifts every number this fixture asserts.
+-->
+
+This slide holds two short lines and nothing else.
+
+Its content bottom sits far above the footer band, so the gate must not flag it.
+
+## Deliberately overfilled by construction
+
+<div style="height:700px; background:#DEE2E6; border:2px solid #13294B;">
+A 700 pixel block under a one line heading. Heading plus block exceeds the canvas,
+so the bottom of this box is below the footer and off the screen in the room.
+</div>

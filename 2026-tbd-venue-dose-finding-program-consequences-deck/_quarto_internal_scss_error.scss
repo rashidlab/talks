@@ -3328,5 +3328,20 @@ body.hide-footer .footer-default {
 .pathway-stage.muted { background:#ffffff; border-style:dashed; }
 .pathway-arrow { display:flex; align-items:center; color:#4B9CD3; font-size:2em; font-weight:700; }
 
+/* Figures are block-level, so a figure occupies exactly the height of its image.
+   WHY. Quarto emits a bare <img> inside a <p>, which makes the image an INLINE box.
+   An inline box sits on a text baseline, so the line box adds 12px of leading above
+   the image and 28px of descender space below it. That 40px is invisible in the
+   source and in the qmd's height attribute, and on eight slides of this deck it was
+   the difference between a figure that fits the canvas and one that runs under the
+   footer band. Measured with tools/viewport-preflight.mjs, before 726.4 and after
+   686.4 on the same slide. Centering is preserved by the auto margins. */
+.reveal .quarto-figure img,
+.reveal figure > p > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 // quarto-scss-analysis-annotation { "origin": null }

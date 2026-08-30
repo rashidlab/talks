@@ -80,8 +80,33 @@ stage_labels <- function() {
   )
 }
 
-# --- Panel 1: COMMIT EARLY -----------------------------------------------------------------
-p_single <- schematic_base("Commit early", "One dose moves forward, the other is dropped.") +
+# ONE VOCABULARY FOR THE FOUR ARCHITECTURES, DRAWN FROM R/exp8_arch.R's EXP8_ARCH_TREE.
+#
+# WHY THESE EXACT STRINGS AND WHY THEY ARE REPEATED VERBATIM IN THE OTHER TWO PRODUCERS. This
+# schematic, scripts/figures/conference_deck/talk_architecture.R and pres6_no_free_optionality.R
+# each named the same four architectures differently, and the room carried away a takeaway the
+# deck's own mechanism slide refuses. The names below are the deck's canonical set. They are
+# guarded by the deck repo's check/vocabulary_check.R, which reads the string literals of every
+# producer the deck embeds and fails on a divergence, so agreement is enforced rather than
+# remembered.
+#
+# THE ARCHITECTURE EACH NAME DENOTES, keyed on EXP8_ARCH_TREE's own rows.
+#   single             one dose forwarded                                   Commit early
+#   parallel           two doses forwarded, both confirmed                  Keep both through confirmation
+#   select_exclude     selection stage, HARD boundary, fresh data only      Select one, then restart evidence
+#   select_incorporate selection stage, PERMEABLE boundary, stage one reused  Select one, then reuse evidence
+#
+# The line breaks are placement, not content. Every title wraps to two lines so the four panel
+# bodies start at the same height, and the check normalises whitespace before comparing.
+ARCH_TITLE <- c(
+  single             = "Commit\nearly",
+  parallel           = "Keep both through\nconfirmation",
+  select_exclude     = "Select one, then\nrestart evidence",
+  select_incorporate = "Select one, then\nreuse evidence"
+)
+
+# --- Panel 1: single, COMMIT EARLY -------------------------------------------------------------
+p_single <- schematic_base(ARCH_TITLE[["single"]], "One dose moves forward, the other is dropped.") +
   geom_segment(aes(x = SEL_X0, xend = SEL_X1, y = 0.5, yend = 0.65),
                color = PAL$retained, linewidth = 1.4, alpha = CONCEPT_ALPHA) +
   geom_segment(aes(x = SEL_X0, xend = SEL_X1, y = 0.5, yend = 0.35),
@@ -92,8 +117,8 @@ p_single <- schematic_base("Commit early", "One dose moves forward, the other is
   node_layer(SEL_X0, 0.5) + node_layer(CONF_X1, 0.65) +
   stage_labels()
 
-# --- Panel 2: KEEP BOTH OPTIONS --------------------------------------------------------------
-p_parallel <- schematic_base("Keep both options", "Both doses continue into confirmation.") +
+# --- Panel 2: parallel, KEEP BOTH THROUGH CONFIRMATION -----------------------------------------
+p_parallel <- schematic_base(ARCH_TITLE[["parallel"]], "Both doses continue into confirmation.") +
   geom_segment(aes(x = SEL_X0, xend = SEL_X1, y = 0.5, yend = 0.65),
                color = PAL$retained, linewidth = 1.4, alpha = CONCEPT_ALPHA) +
   geom_segment(aes(x = SEL_X0, xend = SEL_X1, y = 0.5, yend = 0.35),
@@ -105,12 +130,12 @@ p_parallel <- schematic_base("Keep both options", "Both doses continue into conf
   node_layer(SEL_X0, 0.5) + node_layer(CONF_X1, 0.65) + node_layer(CONF_X1, 0.35) +
   stage_labels()
 
-# --- Panel 3: SELECT, THEN RESTART ------------------------------------------------------------
+# --- Panel 3: select_exclude, SELECT ONE THEN RESTART EVIDENCE ----------------------------------
 seam_df <- data.frame(x = SEAM_X, y1 = 0.02, y2 = 0.90)
 fade_df <- data.frame(x = seq(SEL_X1, SEAM_X, length.out = 30), y = 0.65)
 fade_df$a <- seq(1, 0.05, length.out = 30) * CONCEPT_ALPHA
 
-p_hard <- schematic_base("Select, then restart", "The chosen dose's earlier evidence does not carry forward.") +
+p_hard <- schematic_base(ARCH_TITLE[["select_exclude"]], "The chosen dose's earlier evidence does not carry forward.") +
   geom_segment(aes(x = SEL_X0, xend = SEL_X1, y = 0.5, yend = 0.65),
                color = PAL$retained, linewidth = 1.4, alpha = CONCEPT_ALPHA) +
   geom_segment(aes(x = SEL_X0, xend = SEL_X1, y = 0.5, yend = 0.35),
@@ -126,8 +151,8 @@ p_hard <- schematic_base("Select, then restart", "The chosen dose's earlier evid
   node_layer(SEL_X0, 0.5) + node_layer(SEAM_X + 0.02, 0.65, open = TRUE) + node_layer(CONF_X1, 0.65) +
   stage_labels()
 
-# --- Panel 4: SELECT, THEN REUSE ---------------------------------------------------------------
-p_permeable <- schematic_base("Select, then reuse", "The chosen dose's earlier evidence carries forward.") +
+# --- Panel 4: select_incorporate, SELECT ONE THEN REUSE EVIDENCE -------------------------------
+p_permeable <- schematic_base(ARCH_TITLE[["select_incorporate"]], "The chosen dose's earlier evidence carries forward.") +
   geom_segment(aes(x = SEL_X0, xend = SEL_X1, y = 0.5, yend = 0.65),
                color = PAL$retained, linewidth = 1.4, alpha = CONCEPT_ALPHA) +
   geom_segment(aes(x = SEL_X0, xend = SEL_X1, y = 0.5, yend = 0.35),
@@ -154,7 +179,13 @@ gap_sch <- 0.025
 x0 <- 0.03; x1 <- 0.97
 panel_w <- (x1 - x0 - (n_sch - 1) * gap_sch) / n_sch
 sch_x0 <- x0 + (0:(n_sch - 1)) * (panel_w + gap_sch)
-sch_plots <- list(p_single, p_parallel, p_hard, p_permeable)
+# Left to right in EXP8_ARCH_TREE's structural order, dose count then selection stage then
+# boundary permeability. That order carries no ranking and is the same order pres6 uses, so a
+# viewer who has seen one figure reads the other in the same sequence.
+sch_plots <- list(single = p_single, parallel = p_parallel,
+                  select_exclude = p_hard, select_incorporate = p_permeable)
+stopifnot("panel order must follow the canonical architecture vocabulary" =
+            identical(names(sch_plots), names(ARCH_TITLE)))
 
 for (i in seq_len(n_sch)) {
   full <- full + cowplot::draw_plot(sch_plots[[i]], x = sch_x0[i], y = 0.08,
@@ -172,7 +203,7 @@ print(out)
 
 rendered_strings <- c(
   title = "A phase boundary determines what information survives",
-  panel_titles = "Commit early | Keep both options | Select, then restart | Select, then reuse",
+  panel_titles = paste(gsub("\n", " ", unname(ARCH_TITLE)), collapse = " | "),
   panel_notes = paste(
     "One dose moves forward, the other is dropped.",
     "Both doses continue into confirmation.",

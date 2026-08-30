@@ -1,0 +1,7 @@
+# Quarto render byproducts. The deck uses embed-resources, so the sidecar directory
+# holds nothing the repository needs.
+*_files/
+_quarto_internal_scss_error.scss
+
+# The preflight control fixture is source. Its render is not.
+tools/fixtures/preflight-fixture.html

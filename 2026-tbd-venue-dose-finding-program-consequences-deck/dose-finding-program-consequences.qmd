@@ -101,13 +101,17 @@ Delivery. This slide is insurance. The epidemiology I just showed invites a caus
 
 
 ::: {.fragment}
+**Phase boundary.** The point where one development stage ends and the next begins.
+:::
+
+::: {.fragment}
 <div class="callout-plain">Each transition fixes decisions and changes what evidence is still available later.</div>
 :::
 
 ::: {.notes}
 Delivery. Thirty seconds, no more. Everyone in the room knows this, but not everyone holds it as a sequence of transitions rather than a sequence of trials, and the whole talk is about the transitions. Point at each arrow as you say the question.
 
-Pull-from-if-needed. The point where one stage ends and the next begins is what I will call a phase boundary for the rest of the talk. Confirm means establish efficacy at the end of the middle stage.
+Pull-from-if-needed. Confirm means establish efficacy at the end of the middle stage.
 :::
 
 # If a design's name does not determine its behaviour, what does? {.center background-color="#13294B"}
@@ -160,9 +164,11 @@ Pull-from-if-needed. Evidence-summary effects are several times smaller than the
 Delivery. The sign flip across scenarios is the point, not the magnitude.
 :::
 
-## What the design does matters more than what it is called
+## What a design does matters more than its name
 
-![](pres2a_component_dotplots.png){fig-align="center" height="540"}
+We swapped how doses are ranked, then how the data are summarized, one at a time.
+
+![](pres2a_component_dotplots.png){fig-align="center" height="480"}
 
 ::: {.notes}
 Pull-from-if-needed. Evidence-summary effects are several times smaller than the ranking-rule effects. Never say an order of magnitude, the true ratio is well under ten.
@@ -250,11 +256,11 @@ Delivery. Do not rush to the drop. Let them see the two stages are different pro
 
 ## The distance is the framework working
 
-::: {style="text-align:center; margin-top:0.8em;"}
+::: {style="text-align:center; margin-top:0.2em;"}
 [The distance between what search nominates and what verification establishes is the framework operating as specified, not a loss.]{style="color:#13294B; font-weight:700; font-size:1.2em;"}
 :::
 
-::: {.fragment style="margin-top:1.2em;"}
+::: {.fragment style="margin-top:0.5em;"}
 Search selects on **point estimates**. Verification decides on an **interval**.
 
 A nominated candidate whose remaining uncertainty still crosses the requirement is neither established feasible nor refuted on the evidence collected.
@@ -276,9 +282,9 @@ Delivery. This is the intellectual centre of the talk. Slow down. If one sentenc
   <div class="state-card infeasible"><strong>Verified infeasible</strong>Evidence establishes that at least one requirement is missed.</div>
 </div>
 
-![](m2_three_state.png){fig-align="center" height="355"}
+![](m2_three_state.png){fig-align="center" height="300"}
 
-<div class="microcaption">Actual nominated designs occupied the feasible and unresolved states; none was refuted by verification.</div>
+<div class="microcaption">Actual nominated designs occupied the feasible and unresolved states. None was refuted by verification.</div>
 
 ::: {.notes}
 Q&A pocket. *Why not just report a point estimate and a p-value?* Because a two-state report forces every unresolved cell into one of two claims the evidence does not support. Unresolved is not almost feasible and it is not failure.
@@ -286,11 +292,11 @@ Q&A pocket. *Why not just report a point estimate and a p-value?* Because a two-
 Delivery. Safe stopping was established everywhere it was nominated. The unresolved verdicts concentrate on exposure and on selection.
 :::
 
-## Feasibility is not uniform, and the pattern is informative
+## Feasibility is not uniform and that is informative
 
 Same design-space dimension and coordinate ranges. What changes is the truth convention and declared scenario set.
 
-![](m2_feasibility_structure.png){fig-align="center" height="430"}
+![](m2_feasibility_structure.png){fig-align="center" height="320"}
 
 ::: {.fragment style="text-align:center;"}
 We offer **no mechanism** for the study that establishes none. The campaign as run does not isolate one.
@@ -360,7 +366,7 @@ Delivery. Close the movement here. Then pivot, because everything so far still s
 Question 3 of 4
 :::
 
-## How to read the next result
+## How to read the next result {.smaller}
 
 **What changes?** Nothing about the designs. Only how we score them.
 
@@ -371,9 +377,9 @@ Question 3 of 4
 ::: {.fragment}
 **And the standard applies to us.**
 
-- Frozen downstream analysis set: **9 cells**.
-- Corrected verification status: **7 verified feasible**, **2 unresolved**.
-- We keep all 9, because changing the denominator after seeing the result would be changing the rules after seeing the results.
+- We fixed these **nine analysis cases** before asking the downstream question.
+- We later corrected how the simultaneous verification requirements were counted. Under that corrected rule, **seven remain verified feasible** and **two are unresolved**.
+- We keep all nine, because dropping two after seeing the downstream results would change the analysis set after the fact.
 :::
 
 ::: {.notes}
@@ -382,14 +388,14 @@ Delivery. Do not skip the second half. Teaching a standard of evidence for thirt
 Q&A pocket. *Does the correction change your conclusions?* We do not claim it does not. The two cells may contribute to averages over the set. A seven-cell post-correction sensitivity is deferred and labelled, not folded into the primary.
 :::
 
-## The locally best strategy need not be the globally best one
+## Locally best need not be globally best
 
 A strategy can score better at dose selection and worse after confirmation.
 
 ::: {.r-stack}
-![](pres3_step1_pcs_only.png){fig-align="center" height="540"}
+![](pres3_step1_pcs_only.png){fig-align="center" height="450"}
 
-![](pres3_pcs_wrong_policy.png){.fragment fig-align="center" height="540"}
+![](pres3_pcs_wrong_policy.png){.fragment fig-align="center" height="450"}
 :::
 
 ::: {.notes}
@@ -456,7 +462,9 @@ Delivery. From here we are no longer comparing named dose-finding methods. Same 
 
 **What changes?** Only what the program does after dose selection. The selections themselves are identical.
 
-**Why?** FDA's Project Optimus encourages sponsors to compare more than one dose later in development.
+**The four strategies.** Commit early. Keep both through confirmation. Select one, then restart evidence. Select one, then reuse evidence.
+
+**Why?** Project Optimus, FDA's dose-optimization initiative, encourages sponsors to compare more than one dose later in development.
 
 **Readout.** Whether the correct final dose is supported after confirmation.
 
@@ -504,11 +512,11 @@ Delivery. Do not say re-selection "does nothing" on the plateau. It loses its be
 Delivery. This is what I mean by information debt, evidence the program has to generate later because of an earlier decision.
 :::
 
-## Sotorasib shows what buying the answer later looks like
+## Sotorasib bought its dose answer after approval
 
 <div class="microcaption">An approved lung-cancer drug whose 960 mg dose was compared against 240 mg only after approval. The original dose was not shown to be wrong. The dose question simply stayed open.</div>
 
-![](pres5b_sotorasib.png){fig-align="center" height="540"}
+![](pres5b_sotorasib.png){fig-align="center" height="510"}
 
 ::: {.notes}
 Delivery. Not a wrong dose. The randomized evidence supported retaining the approved dose. The problem is that the pivotal program had already committed before the dose question was settled, so resolving it became a separate post-approval experiment.
@@ -520,7 +528,7 @@ Guardrail. This cuts FOR randomized comparison, never against the approved dose.
 
 **What changes?** Every strategy now gets the same patient budget.
 
-**Why?** The obvious objection is that keeping two doses only helps because it spends more patients.
+**Why?** The obvious objection is that *keep both through confirmation* only wins because it spends more patients.
 
 **Readout.** What each strategy can still achieve on that budget.
 
