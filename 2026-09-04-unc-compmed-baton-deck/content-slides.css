@@ -1,0 +1,268 @@
+/*-- scss:rules --*/
+/* ==========================================================================
+   content-slides.css — deck-local utility classes
+   Deck: BATON, UNC Computational Medicine Seminar, 2026-09-04
+   Visual register: hairlines only, no gradients, no decorative tints,
+   no shadows, no hover lifts.
+   ========================================================================== */
+
+/* --- Slide furniture ----------------------------------------------------- */
+
+/* Base size tuned for this deck's content density at 1280x720. Quarto's
+   default presentation size assumes sparser slides; without this, tables and
+   landing lines fall off the bottom edge. */
+.reveal { font-size: 30px; }
+
+.reveal h2 {
+  margin-bottom: 0.45em;
+  padding-bottom: 0.18em;
+  line-height: 1.15;
+}
+
+.reveal .slides section {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Footer: navy bar, white text. Quarto's default is a light bar that renders
+   the white slide number invisible, so both are restated here. */
+.reveal .footer,
+.reveal .footer.footer-default {
+  display: block !important;
+  background: var(--rl-navy) !important;
+  color: #fff !important;
+  position: absolute;
+  bottom: 0; left: 0; width: 100%;
+  margin: 0;
+  padding: 9px 64px;
+  font-family: var(--rl-font-mono);
+  font-size: 0.42em;
+  letter-spacing: 0.06em;
+  box-sizing: border-box;
+  text-align: left;
+  z-index: 15;
+}
+.reveal .footer p,
+.reveal .footer a { color: #fff !important; margin: 0; }
+
+.reveal .slide-number {
+  z-index: 30 !important;
+  background: var(--rl-navy) !important;
+  color: #fff !important;
+  font-family: var(--rl-font-mono);
+  font-size: 15px !important;
+  font-weight: 500;
+  padding: 8px 14px !important;
+  top: auto !important;
+  height: auto !important;
+  bottom: 0 !important;
+  right: 0 !important;
+}
+.reveal .slide-number a { color: #fff !important; }
+
+/* --- Landing lines -------------------------------------------------------
+   Two levels, and the distinction is intentional:
+     .landing       carolina bold, a takeaway for THIS slide
+     .thesis-line   navy bold, a synthesis line for the whole talk
+   Carolina on white is only 3.2:1, so .landing is never set below 18px. */
+
+.reveal .landing {
+  color: var(--rl-carolina-deep);
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.92em;
+  margin-top: 0.5em;
+}
+
+.reveal .thesis-line {
+  color: var(--rl-navy);
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.0em;
+  line-height: 1.35;
+  margin: 0.4em auto;
+  max-width: 86%;
+}
+
+.reveal .muted {
+  color: var(--rl-graphite);
+  font-size: 0.8em;
+}
+
+/* Pandoc wraps bare div text in <p>, and the template's `.reveal p` color rule
+   overrides inheritance; these classes must restate color on their p children. */
+.reveal .landing p,
+.reveal .thesis-line p,
+.reveal .muted p { color: inherit; margin: 0; }
+
+
+/* --- Boxes ---------------------------------------------------------------
+   Hairline left rule, no fill beyond the faintest fog. */
+
+.reveal .note-box {
+  border-left: 1px solid var(--rl-carolina);
+  background: var(--rl-fog);
+  padding: 0.6em 1.0em;
+  margin: 0.5em 0;
+  font-size: 0.85em;
+}
+
+.reveal .frame-box {
+  border: 1px solid var(--rl-mist);
+  padding: 0.7em 1.0em;
+  margin: 0.4em 0;
+}
+
+/* The "what I am not arguing" slide: three parallel disclaimers, hairline
+   separated, deliberately unemphatic. */
+.reveal .disclaimer {
+  border-top: 1px solid var(--rl-mist);
+  padding: 0.55em 0 0.15em 0;
+  font-size: 0.88em;
+}
+.reveal .disclaimer strong { color: var(--rl-navy); }
+
+/* --- Tables --------------------------------------------------------------
+   Hairlines and a mono uppercase navy header row. Never a filled navy header
+   bar with white text. */
+
+.reveal table {
+  border-collapse: collapse;
+  font-size: 0.82em;
+  margin: 0.3em 0;
+}
+.reveal table th {
+  font-family: var(--rl-font-mono);
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rl-navy);
+  font-weight: 600;
+  background: none;
+  border-bottom: 1px solid var(--rl-navy);
+  padding: 0.45em 0.7em;
+}
+.reveal table td {
+  border-bottom: 1px solid var(--rl-mist);
+  padding: 0.42em 0.7em;
+  color: var(--rl-ink);
+}
+.reveal table tr:last-child td { border-bottom: none; }
+
+/* Row highlight for the design under discussion: left hairline, not a fill. */
+.reveal table tr.row-mark td:first-child {
+  border-left: 2px solid var(--rl-carolina);
+  padding-left: 0.55em;
+}
+
+/* --- Figures -------------------------------------------------------------
+   Most result slides are a single figure sized by viewport height so the
+   caption and landing line always clear the footer. */
+
+.reveal .fig-tall  { height: 432px; display: block; margin: 0 auto; }
+.reveal .fig-mid   { height: 374px; display: block; margin: 0 auto; }
+.reveal .fig-short { height: 302px; display: block; margin: 0 auto; }
+
+/* Full-bleed: break a wide schematic out of the section side padding. */
+.reveal .slides section img.bleed-fig {
+  width: 97vw !important;
+  max-width: 97vw !important;
+  height: auto !important;
+  margin-left: calc(50% - 48.5vw);
+  display: block;
+}
+
+/* --- Extension cards ------------------------------------------------------
+   Three in-progress projects, equal weight, hairline framed. Status is mono
+   and muted so an in-progress label never reads as a result. */
+
+.reveal .ext-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1em;
+  margin-top: 0.6em;
+}
+.reveal .ext-card {
+  border: 1px solid var(--rl-mist);
+  border-top: 2px solid var(--rl-carolina);
+  padding: 0.8em 0.9em;
+  font-size: 0.8em;
+}
+.reveal .ext-card h4 {
+  margin: 0 0 0.15em 0;
+  font-size: 1.05em;
+  color: var(--rl-navy);
+}
+.reveal .ext-card .ext-status {
+  font-family: var(--rl-font-mono);
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rl-graphite);
+  display: block;
+  margin-bottom: 0.6em;
+}
+
+/* --- Acknowledgments ------------------------------------------------------ */
+
+.reveal .ack-grid {
+  display: grid;
+  grid-template-columns: 34% 33% 33%;
+  gap: 1.4em;
+  font-size: 0.78em;
+  margin-top: 0.5em;
+}
+.reveal .ack-grid h4 {
+  font-family: var(--rl-font-mono);
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rl-navy);
+  border-bottom: 1px solid var(--rl-mist);
+  padding-bottom: 0.35em;
+  margin-bottom: 0.5em;
+}
+.reveal .ack-grid ul { margin: 0; padding-left: 1.1em; }
+.reveal .ack-grid li { margin-bottom: 0.3em; line-height: 1.35; }
+
+/* --- Backup slides -------------------------------------------------------- */
+
+.reveal .backup-slide { font-size: 0.85em; }
+.reveal .backup-slide h2 { font-size: 1.12em; }
+.reveal .backup-slide table { font-size: 0.78em; }
+
+/* Slides carrying data-state="hide-footer" (title, section dividers): reveal
+   promotes the state to a viewport/body class; the footer is a fixed sibling,
+   unreachable from inside the section. */
+body.hide-footer .footer,
+.reveal-viewport.hide-footer .footer { display: none !important; }
+
+/* The lab logo is a transparent PNG whose navy strokes vanish on navy grounds;
+   a white card behind it keeps it legible everywhere. */
+
+/* The lab logo is a wide wordmark. Floating it over the slide body occluded
+   long landing lines on seven slides, so it lives INSIDE the footer bar, to
+   the left of the slide-number pill, where it can never touch content. */
+.reveal .slide-logo {
+  max-height: 24px !important;
+  max-width: 130px !important;
+  height: auto !important;
+  bottom: 5px !important;
+  right: 92px !important;
+  z-index: 40;
+}
+
+/* Two-column slides had no gutter: pandoc columns are flex children whose
+   widths sum to 100%, so a gap property would overflow. Inner padding with
+   border-box creates the gutter without changing total width. */
+.reveal .columns .column { box-sizing: border-box; }
+.reveal .columns .column + .column { padding-left: 1.1em; }
+
+/* v3 (2026-09-04): the caption band (.landing) is anchored to a fixed baseline just
+   above the footer on every slide, so body content fills the space above it. */
+.reveal .slides section .landing {
+  position: absolute;
+  left: 40px; right: 40px; bottom: 46px;
+  margin: 0;
+}
+.reveal .fullwidth-table table { width: 100%; }

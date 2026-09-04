@@ -1,0 +1,4 @@
+qa/
+Rplots.pdf
+*.fdb_latexmk
+*.log

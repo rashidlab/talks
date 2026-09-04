@@ -1,0 +1,1111 @@
+---
+pagetitle: "BATON: Computational Medicine Seminar"
+format:
+  revealjs:
+    theme: [default, custom.css, title-slide.css, content-slides.css]
+    footer: '<img src="RLlogoA-dark.png" alt="" style="height: 20px; vertical-align: middle; margin: -8px 16px -8px 0;"/>UNC Lineberger · Computational Medicine Seminar 2026'
+    slide-number: c/t
+    transition: fade
+    width: 1280
+    height: 720
+    incremental: false
+    embed-resources: true
+    center: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+      data-state: "hide-footer"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## {.title-slide-custom data-menu-title="Title" data-state="hide-footer"}
+
+::: {style="text-align: center; margin-top: 1.2em;"}
+
+<img src="images/baton_hex_official.png" class="ts-logo" style="height: 130px;" alt="Official BATON package hex sticker."/>
+
+<h1 class="ts-title">Planning under uncertainty</h1>
+
+<p class="ts-subtitle">AI-guided design of efficient clinical trials with BATON</p>
+
+<p class="ts-author">Naim Rashid</p>
+<p class="ts-affil">Department of Biostatistics · Lineberger Comprehensive Cancer Center · UNC Chapel Hill</p>
+
+<p class="ts-meta">Computational Medicine Seminar · September 4, 2026</p>
+
+<img src="images/unc_combined_logos.png" style="height: 34px; margin-top: 1.4em;" alt="UNC, Lineberger, and TBCRC logos."/>
+
+:::
+
+::: {.notes}
+**Delivery:** No lab intro. Open on the program. Say here, not later: "By AI-guided I mean model-guided search: a statistical model chooses which candidate design is worth simulating next. It does not make the clinical decisions. We do."
+:::
+
+
+## Overview {data-menu-title="Overview"}
+
+```{=html}
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2em; margin-top: 3em;">
+  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.1em 1.2em; min-height: 6.4em;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.62em; letter-spacing: 0.08em; color: #2E6A9F; text-transform: uppercase;">Section 1</div>
+    <div style="font-weight: 700; color: #13294B; font-size: 0.95em; margin: 0.25em 0 0.6em 0;">The problem</div>
+    <div style="color: #1A202C; font-size: 0.78em; line-height: 1.4;">Complex adaptive design becomes a search problem.</div>
+  </div>
+  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.1em 1.2em; min-height: 6.4em;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.62em; letter-spacing: 0.08em; color: #2E6A9F; text-transform: uppercase;">Section 2</div>
+    <div style="font-weight: 700; color: #13294B; font-size: 0.95em; margin: 0.25em 0 0.6em 0;">BATON</div>
+    <div style="color: #1A202C; font-size: 0.78em; line-height: 1.4;">A search over a trial simulator.</div>
+  </div>
+  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.1em 1.2em; min-height: 6.4em;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.62em; letter-spacing: 0.08em; color: #2E6A9F; text-transform: uppercase;">Section 3</div>
+    <div style="font-weight: 700; color: #13294B; font-size: 0.95em; margin: 0.25em 0 0.6em 0;">Does it work, and what did it change?</div>
+    
+  </div>
+</div>
+```
+
+::: {.notes}
+**Delivery:** 30 seconds, spoken over the cards rather than read from them. Section 3 is the destination; say it as a promise, not a spoiler.
+:::
+
+
+## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 1: The problem"}
+
+::: {.divider-inner}
+::: {.divider-kicker}
+Section 1
+:::
+::: {.divider-rule}
+:::
+::: {.divider-title}
+The problem
+:::
+::: {.divider-question}
+Why isn't simulation alone enough?
+:::
+:::
+
+
+## A clinical trial is an experiment built for a decision {data-menu-title="What a trial is"}
+
+::: {.columns style="margin-top: 2.2em;"}
+::: {.column width="33%"}
+::: {.frame-box style="min-height: 9em; font-size: 0.8em;"}
+**The question**<br/>Does the treatment beat a benchmark or a control?
+:::
+:::
+::: {.column width="33%" .fragment}
+::: {.frame-box style="min-height: 9em; font-size: 0.8em;"}
+**How patients are used**<br/>Single-arm (everyone gets the treatment) or randomized (treatment versus control).
+:::
+:::
+::: {.column width="33%" .fragment}
+::: {.frame-box style="min-height: 9em; font-size: 0.8em;"}
+**Two errors**<br/>Advance a treatment that fails, or drop one that works.
+:::
+:::
+:::
+
+::: {.landing .fragment}
+Two choices dominate: how many patients, and which rule decides.
+:::
+
+::: {.notes}
+**Say aloud (moved off the slide for the 60-word cap):** "Traditional development is organized in phases: choose a dose, look for a signal, then confirm it. Each phase is a trial with its own rule for go or stop." Then the caption: for the calibration problems in this talk, two choices dominate.
+
+**Glosses at first use:** single-arm (everyone gets the study treatment; we compare with a prespecified benchmark), randomized (patients are assigned to treatment or control), objective (the quantity we try to make small, here patients). PFS, when it comes up: "time until the cancer worsens or the patient dies."
+
+**Delivery:** 90 seconds. Slow. This is the slide a genomicist needs.
+:::
+
+
+## Bayesian adaptive trials decide as they go. Each rule adds settings. {data-menu-title="Bayesian adaptive knobs"}
+
+<img src="images/fig_fixed_vs_adaptive.png" style="max-width: 1180px; max-height: 380px; width: auto; height: auto; display: block; margin: 0 auto;" alt="Two schematic timelines. A traditional trial enrolls all patients then analyzes once. An adaptive trial enrolls in blocks separated by interim looks that can stop the trial early for futility, ending in a final go-or-stop analysis."/>
+
+::: {.landing .fragment}
+Maximum N, look timing, futility and efficacy thresholds, priors, margins: **8 to 13 interacting choices**, and every one changes how the trial behaves.
+:::
+
+::: {.notes}
+**Say aloud:** "The design is Bayesian because those decisions rest on posterior probabilities under a model and a prior." Gloss "futility" (the treatment looks unlikely to work) and "interim" (a look before the end).
+
+**Pull-from-if-needed:** The precise contrast, per the paper: unlike classical group-sequential designs (Jennison and Turnbull), complex Bayesian adaptive trials generally lack closed-form operating characteristics (Berry 2010; Thall and Simon 1994). The flexibility comes from posterior-probability monitoring; the cost is that neither formulas nor enumeration reach the behavior.
+
+**Q&A pocket:** *Bayesian rule, frequentist error rates?* The monitoring rule is Bayesian (posterior probabilities drive stopping); regulators require frequentist behavior demonstrated by simulation. Calibration is the job of making one satisfy the other.
+:::
+
+
+## Feasible designs meet prespecified error-rate and power targets {data-menu-title="Feasibility"}
+
+::: {.columns}
+::: {.column width="50%"}
+::: {.frame-box style="font-size: 0.78em; min-height: 5.2em; border-color: #E07C24;"}
+**Type I error (false go)**<br/>
+Share of simulated trials declaring efficacy under the null. Cap: **0.10**.
+:::
+:::
+::: {.column width="50%"}
+::: {.frame-box style="font-size: 0.78em; min-height: 5.2em; border-color: #2E6A9F;"}
+**Power (true go)**<br/>
+Share declaring efficacy when the treatment works as hypothesized. Floor: **0.80**.
+:::
+:::
+:::
+
+::: {.fullwidth-table .fragment style="margin-top: 1.2em;"}
+|  | Typical trial | EVOLVE |
+|:--|:--|:--|
+| Designs needed | One | Many subtrials |
+| Design parameters | Few | Many, interacting |
+| Power and type I error | Often closed-form | Simulation only |
+:::
+
+::: {.notes}
+**Say aloud:** a design meeting both targets is feasible; "in the examples that follow, feasible means power at least 0.80 and type I error at most 0.10." Define the two terms in one breath on the boxes: "power is the chance the trial correctly advances a treatment that works; type I error is the false-go rate when it does not." The table's last row is the point: for these designs, power and type I error come only from simulation. (Timing row dropped for the word cap; say it: "and we had to design repeatedly, on a clock.")
+
+**Q&A pocket:** *Why 0.10 here?* Non-registrational screening subtrials; a confirmatory trial carries a confirmatory ceiling (0.05 is the confirmatory convention).
+:::
+
+
+## Simulation tells us how one candidate behaves. It does not tell us which candidate to try next. {data-menu-title="Count them"}
+
+
+<img src="images/fig_tally_strip.png" style="max-width: 1200px; max-height: 400px; width: auto; height: auto; display: block; margin: 1.2em auto 0 auto;" alt="One candidate design simulated ten thousand times under two truths. When the alternative is true, 8,630 of 10,000 simulated trials declare efficacy, so power is 0.86. When the null is true, only 13 declare efficacy, so type I error is 13 in 10,000, with average enrollment under the null of 11.7 patients."/>
+
+
+::: {.notes}
+**Gloss aloud:** "null" means the treatment does no better than the benchmark; "alternative" means the improvement we want the power to detect. Point at the two rows: they are exactly these two simulations.
+
+**Delivery:** The title is the conclusion; say it twice if needed. It is the talk's central turn: we know how to evaluate a design, we do not know what to try next.
+
+**Pull-from-if-needed:** FDA's 2019 adaptive-designs guidance treats simulation-demonstrated error control as the expectation for complex designs, not a workaround; the two scenario simulations (null, alternative) are run separately with independent randomness.
+:::
+
+
+## EVOLVE: one master protocol, 10 to 15 cohorts opened over time, each needing its own design {data-menu-title="10-15 subtrials"}
+
+[ARPA-H ADAPT platform trial. ~700 patients, 15 TBCRC sites.]{.muted style="display:block; text-align:center; font-size: 0.8em; margin-bottom: 0.2em;"}
+
+<img src="images/fig_A_evolve_platform_v3.png" style="max-height: 345px; display: block; margin: 0 auto;" alt="Schematic of the EVOLVE platform with cohorts tagged single-arm, randomized, and seamless: a master protocol spine spawning a sequence of biomarker-defined subtrials over time, each carrying its own design and calibration task."/>
+
+::: {.landing .fragment}
+Not one calibration problem. Ten to fifteen of them, each with its own design, opened on a short clock.
+:::
+
+::: {.notes}
+**Define aloud:** platform (one protocol, many treatment cohorts), cohort (a subtrial with its own design), and why each opens "on a clock": cohorts open as biomarkers are discovered, and the design has to be ready when the cohort is.
+
+**Q&A pocket:** *Why not calibrate once and reuse?* Each cohort differs in prevalence, endpoint behavior, and available control data; a design calibrated for one routinely violates the requirements in another.
+:::
+
+
+## One subtrial became a two-week search {data-menu-title="Two weeks"}
+
+<br/><br/>
+
+::: {style="text-align: center; font-size: 1.5em; color: #13294B; font-weight: 700;"}
+2 weeks
+:::
+
+::: {style="text-align: center; color: #5B6670;"}
+manual tuning of one subtrial's design<br/>
+**8 interacting settings**
+:::
+
+<br/>
+
+::: {.fragment style="text-align: center; font-size: 1.2em; color: #E07C24; font-weight: 700;"}
+power stalled at 0.78 with 39.2 expected patients when the treatment is inactive
+:::
+
+<br/>
+
+::: {.landing .fragment}
+Several more subtrials were waiting. And even if you find a feasible design, is it efficient under the objective you actually care about?
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** An illustrative single comparison, documented in the paper's web appendix, not a controlled benchmark across analysts. 0.78 is within Monte Carlo noise of the floor; the precise statement is "no design I could certify as feasible."
+
+**Delivery:** First person. This is the credibility beat: BATON exists because the workflow was failing, not because manual tuning was philosophically unsatisfying.
+:::
+
+
+## This is not just EVOLVE: simulation-calibration recurs across adaptive trial designs {data-menu-title="Not unique"}
+
+::: {.columns style="margin-top: 3em;"}
+::: {.column width="33%"}
+::: {.frame-box style="min-height: 7.4em; text-align: center; font-size: 0.85em;"}
+**Phase I dose-finding**<br/>escalation and safety rules tuned by simulation
+:::
+:::
+::: {.column width="33%"}
+::: {.frame-box style="min-height: 7.4em; text-align: center; font-size: 0.85em;"}
+**Phase II Bayesian designs**<br/>posterior thresholds and interim looks tuned by simulation
+:::
+:::
+::: {.column width="33%"}
+::: {.frame-box style="min-height: 7.4em; text-align: center; font-size: 0.85em;"}
+**Platform trials**<br/>every added feature adds settings that interact
+:::
+:::
+:::
+
+::: {.landing .fragment}
+Same shape every time: many interacting settings, operating characteristics evaluated by simulation, and calibration that still requires search.
+:::
+
+::: {.notes}
+**Delivery:** First person. "I hit exactly this designing phase I and phase II trials with the standard tools, for the same reasons. The more ambitious the design, the worse it gets."
+
+**Pull-from-if-needed:** The paper's own generality claim (Discussion): the calibration challenge "arises across simulation-calibrated Bayesian adaptive designs, including basket, umbrella, response-adaptive, and enrichment designs" (Berry et al. 2010; Woodcock and LaVange 2017 master protocols; Golchi 2022); thresholds cannot be tuned in isolation (Granholm et al. 2025). Existing Bayesian phase II calibrators (BOP2 and successors) search posterior-probability thresholds by grid or particle swarm and return one design under one criterion. The phase I claim on the slide is my own experience, not a citation from the paper.
+:::
+
+
+## Grid search scales poorly; random search wastes evaluations in our benchmark {data-menu-title="Alternatives fail"}
+
+::: {.columns style="align-items: center;"}
+::: {.column width="50%"}
+<img src="images/fig_search_grid.png" class="fig-tall" alt="Heatmap of a fictional two-dimensional design-space slice, darker meaning better, covered by a uniform lattice of one hundred evaluation dots, most sitting in light low-quality regions."/>
+:::
+::: {.column width="50%" .fragment}
+<img src="images/fig_search_random.png" class="fig-tall" alt="The same heatmap with one hundred evaluation dots scattered uniformly at random; most again land in light low-quality regions."/>
+:::
+:::
+
+::: {.landing .fragment}
+In two dimensions a grid is easy. As dimensions grow, the number of combinations explodes. Random search spent 93% of its 2,000 evaluations on designs that fail. (Darker = better design.)
+:::
+
+::: {.notes}
+**[TODO: confirm]** which design dimension the 2,000-evaluation random-search benchmark used before quoting it as a dimension; the slide states only the count and the 93% / 6.8% result.
+
+**Q&A pocket:** *Didn't random search find a better value than BATON somewhere?* Different design class and an unvalidated selection minimum over 2,000 noisy estimates; the commensurable internal comparison is on the benchmark slide later.
+
+**Delivery:** If the meme slide follows, this is its setup; one beat only.
+:::
+
+
+## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 2: BATON"}
+
+::: {.divider-inner}
+::: {.divider-kicker}
+Section 2
+:::
+::: {.divider-rule}
+:::
+::: {.divider-title}
+BATON
+:::
+::: {.divider-question}
+What should we simulate next?
+:::
+:::
+
+
+## This is a familiar computational problem {data-menu-title="ML bridge"}
+
+::: {.columns style="margin-top: 4.5em;"}
+::: {.column width="50%"}
+::: {.frame-box style="text-align: center;"}
+**Machine learning**<br/><br/>
+hyperparameters<br/>↓<br/>expensive training run<br/>↓<br/>validation performance
+:::
+:::
+::: {.column width="50%" .fragment}
+::: {.frame-box style="text-align: center;"}
+**Trial design**<br/><br/>
+design parameters<br/>↓<br/>expensive Monte Carlo simulation<br/>↓<br/>power, type I error, enrollment
+:::
+:::
+:::
+
+::: {.landing .fragment}
+The same computational shape as hyperparameter tuning, except feasibility is defined by hard statistical constraints.
+:::
+
+::: {.notes}
+**Delivery:** This is where the room recognizes the problem as theirs. One sentence on the difference, then advance to the method.
+:::
+
+
+## BATON needs a simulator, not a formula {data-menu-title="BATON + loop"}
+
+::: {.columns style="align-items: center;"}
+::: {.column width="38%"}
+::: {.frame-box style="font-size: 0.74em;"}
+**BATON**: Bayesian Adaptive Trial OptimizatioN
+
+**Constrained Bayesian optimization**: surrogates learn power, type I error, and enrollment; they choose the next candidate.
+
+**You specify**: a power floor, a type I error cap, what to minimize.
+
+**Your simulator**: settings and scenarios in, operating characteristics out.
+:::
+:::
+::: {.column width="62%" .fragment}
+<img src="images/fig_loop_plain.png" style="width: 100%;" alt="Four-box cycle: propose a design, simulate trials via the trial simulator, learn from everything seen via a surrogate model, choose the next design worth trying, and repeat."/>
+:::
+:::
+
+::: {.landing .fragment}
+A closed loop: simulate, learn, choose, repeat.
+:::
+
+::: {.notes}
+**Spoken, not on the slide (and for the word cap):** what to minimize means expected N, maximum N, or a mix; the surrogates are Gaussian processes fit to the simulations already run. "We do not need a formula that maps thirteen design parameters to power, type I error, and enrollment. We need to be able to simulate a design." Do not say "black box" aloud; to this room it means opaque AI.
+
+**Pull-from-if-needed:** Formal names: Monte Carlo simulator, Gaussian-process surrogate, feasibility-aware acquisition (expected improvement times probability of feasibility), multi-seed verification.
+:::
+
+
+## A surrogate predicts designs we have not paid to simulate {data-menu-title="Surrogate map"}
+
+::: {.r-stack}
+<img src="images/fig_map_points.png" class="fig-tall" alt="Scatter of nine simulated designs along one design setting, each with a Monte Carlo error bar on its estimated power."/>
+
+<img src="images/fig_map_model.png" class="fig-tall fragment" alt="The same nine points with a smooth fitted curve and an uncertainty band through them, labeled as the model's prediction for designs never simulated."/>
+:::
+
+::: {.landing .fragment}
+Design settings in, trial behavior out, and the model says how sure it is.
+:::
+
+::: {.notes}
+**Delivery, ~20 seconds:** Open with "You do not need to read this plot." Then: "Every simulation becomes a point. BATON fits a flexible surface through those points, including uncertainty. Near a constraint boundary that uncertainty matters, because we do not yet know which side of the line a candidate really lies on." Then move on.
+
+**Pull-from-if-needed:** The part that is not off-the-shelf constrained BO: the Monte Carlo noise itself varies across the design space (early-stopping designs give noisier estimates), and the surrogate models that noise rather than assuming it constant, with the constraints' Monte Carlo standard errors feeding the model. Full technical treatment in backup B1.
+:::
+
+
+## The next simulation goes where it has the greatest expected value for improving the feasible design {data-menu-title="Acquisition"}
+
+<img src="images/fig_acquisition_regions.png" style="max-height: 370px; display: block; margin: 0 auto;" alt="Schematic two-dimensional design space with a probably-infeasible region, a probably-feasible region containing a low-predicted-enrollment area, an uncertainty band along the feasibility boundary, and a single next-simulation candidate marked on that boundary near the low-enrollment area."/>
+
+::: {.landing .fragment}
+Balance the potential improvement in the objective against the probability that the design satisfies the constraints.
+:::
+
+::: {.notes}
+**Name it once here if asked:** this is expected constrained improvement; backup B1 has the formula.
+
+**Q&A pocket:** *Acquisition details?* Expected improvement against the best posterior mean among observed-feasible designs, multiplied by the modeled probability of meeting every constraint. Backup B1 has the code-verified specifics.
+:::
+
+
+## The seed sketches the map. Then BATON proposes each batch. {data-menu-title="Seed then search"}
+
+::: {.columns style="align-items: center; margin-top: 1.5em;"}
+::: {.column width="50%"}
+<img src="images/fig_search_init.png" class="fig-tall" alt="Heatmap of a fictional design-space slice, darker meaning better, with fifteen scattered space-filling evaluation dots and no lattice."/>
+:::
+::: {.column width="50%" .fragment}
+<img src="images/fig_search_guided.png" class="fig-tall" alt="The same surface with thirty model-guided evaluations clustering on the dark high-quality basin; repeated cells overlap. No connecting lines."/>
+:::
+:::
+
+::: {.notes}
+**Delivery:** "Step one is not clever: scatter a small sample so the model has something to learn from. After that, every batch is placed by the model." One beat per panel.
+
+**Pull-from-if-needed:** Production runs seed with a 60-point Latin-hypercube design at low fidelity, then hand over to model-guided selection in batches of 3. Points here are illustrative (synthetic surface), not real design coordinates.
+:::
+
+
+## Spend precision where it matters {data-menu-title="Fidelity ladder"}
+
+<img src="images/fig_funnel_plain.png" style="max-height: 400px; display: block; margin: 0.4em auto 0 auto;" alt="Ladder of four stages with one large sublabel under each box: Explore, 3,000 trials each; Validate, 10,000 each; Escalate only if needed, 5,000 then 10,000; Verify, 5 seeds x 10,000, all must pass. Original description: Explore: many candidate designs at 3,000 simulated trials each, seeded space-filling then model-guided. Validate: the top feasible designs re-simulated at 10,000 each; if enough survive, the search skips straight to verification. Escalate, drawn dashed because it runs only if validation fails: a narrowed search box at 5,000 then 10,000. Verify: the one reported design at five independent seeds of 10,000, all of which must pass. Bar width shows designs narrowing; a right-hand arrow shows precision per design growing."/>
+
+::: {.landing .fragment}
+Cheap screening for the many, expensive re-checks for the few, multi-seed verification for the one design you report.
+:::
+
+::: {.notes}
+**What the code actually does (verified against the driver 2026-09-03):** Stage 1 searches at 3,000 replications; the top 3 feasible designs, then 2 more, are re-simulated at 10,000. If at least 30% of them survive, stages 2 and 3 are skipped and the best validated design goes to verification. Only if validation fails does the search escalate with narrowed bounds at 5,000 and then 10,000. In the production runs behind the paper's tables, validation succeeded after Stage 1 in essentially every run, so the escalation stage is drawn dashed. Do not describe it as "three rounds of increasing fidelity" out loud.
+
+**Pull-from-if-needed:** Name the failure mode if asked: selection-induced optimism, the winner of a noisy search looks better than it is precisely because it won. The verification stage exists to remove it: independent multi-seed re-simulation at high fidelity, reporting means and an upper confidence bound on type I error (worst seamless mean 0.084, bound near 0.087 against 0.10; 100% strict feasibility across seeds). Reported numbers come from verification, never from the search.
+:::
+
+
+## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 3: Evidence"}
+
+::: {.divider-inner}
+::: {.divider-kicker}
+Section 3
+:::
+::: {.divider-rule}
+:::
+::: {.divider-title}
+The evidence
+:::
+::: {.divider-question}
+Feasibility, efficiency, and richer designs
+:::
+:::
+
+
+## On a problem with a known answer, BATON recovers the optimum or a near-neighbor {data-menu-title="Simon unit test"}
+
+[Simon's two-stage design: enroll n1, stop if too few responses, otherwise enroll to n. Every candidate in this design class can be enumerated, so the exact constrained optimum is known.]{.muted style="display:block; font-size: 0.85em;"}
+
+<img src="images/fig_sample_efficiency.png" class="fig-mid" style="max-height: 400px;" alt="Best feasible expected sample size against cumulative design evaluations for ten seeded runs: the space-filling phase plateaus near 19.7, then the model-guided phase drops onto Simon's exact optimum at 17.74, where eight of ten runs terminate."/>
+
+::: {.landing .fragment}
+10 random starts: 8 return Simon's exact optimal design; 2 land 0.15 patients away.
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** Ten repeats of one scenario (response rates 0.20 vs 0.40). The two remaining runs land on the next admissible design, 0.15 patients away. Evaluations 1 to 100 are the Latin hypercube phase: internal, exactly commensurable random search.
+:::
+
+
+## Across 12 benchmarks: feasible in all 12, median objective gap 2.5% {data-menu-title="Benchmark table"}
+
+[One run per scenario; ratio = BATON's expected null enrollment / Simon's exact optimum.]{.muted style="display:block; font-size: 0.85em; margin-bottom: 0.4em;"}
+
+::: {.fullwidth-table style="font-size: 1.15em;"}
+| Claim | Value |
+|:--|:-:|
+| Feasible design returned | 12 / 12 |
+| Exact Simon design returned | 4 / 12 |
+| Median ratio, BATON / Simon | 1.025 |
+| Worst-case ratio | 1.135 |
+| Best-case ratio | 1.000 |
+:::
+
+::: {.landing .fragment}
+Feasibility is verified directly. Objective optimization remains approximate.
+:::
+
+::: {.notes}
+**Say the full sentence:** across 12 benchmark scenarios BATON returned a feasible design in all 12; the median objective gap was 2.5%.
+
+**Pull-from-if-needed:** The worst case (ratio 1.135) is a single-seed result; reseeding the 0.20 scenario returns the exact optimum in 8 of 10 runs (previous slide). Never compress this to "recovers the optimum" in every scenario: exact match in 4 of 12, median gap 2.5%, worst 13.5%. The scatter plot is backup B2.
+:::
+
+
+## In EVOLVE, BATON found a feasible design where manual tuning had stalled {data-menu-title="Manual vs BATON"}
+
+::: {.columns style="margin-top: 3.2em;"}
+::: {.column width="50%"}
+::: {.frame-box style="text-align: center; font-size: 1.05em; line-height: 1.55; border-color: #E07C24;"}
+**MANUAL**<br/>2 weeks<br/>power 0.78<br/>**39.2 expected patients if inactive**<br/>infeasible
+:::
+:::
+::: {.column width="50%" .fragment}
+::: {.frame-box style="text-align: center; font-size: 1.05em; line-height: 1.55; border-color: #2E6A9F;"}
+**BATON**<br/>~4-hour workflow<br/>power 0.86<br/>**11.7 expected patients if inactive**<br/>feasible
+:::
+:::
+:::
+
+[Illustrative comparison, not a controlled benchmark across analysts. Same simulator, same constraints.]{.muted style="display:block; text-align:center; font-size: 0.72em; margin-top: 0.8em;"}
+
+::: {.notes}
+**Delivery:** The callback to the two-week slide. Same simulator, same constraints; a single illustrative comparison documented in the paper's web appendix.
+:::
+
+
+## Same requirements, different trials {data-menu-title="Two designs"}
+
+::: {.thesis-line style="margin-top: 0.8em;"}
+Many designs meet power ≥ 0.80 and type I error ≤ 0.10. Which should we optimize for?
+:::
+
+::: {.fragment}
+[EVOLVE's TNBC cohort, different objectives:]{.muted style="display:block; margin: 0.9em 0 0.3em 0;"}
+
+::: {.fullwidth-table}
+|  | Design A | Design B |
+|:--|:-:|:-:|
+| Maximum patients | **47** | **30** |
+| Expected patients, inactive treatment | **11.7** | **22.8** |
+| Power | 0.86 | 0.94 |
+| Type I error | 0.001 | 0.021 |
+:::
+:::
+
+::: {.landing .fragment}
+One quits losers quickly; one caps the worst case. Neither is better.
+:::
+
+::: {.notes}
+**Say the full title aloud:** two designs meet the same statistical requirements and produce very different trials. Build 1 is the hinge from machinery to science; let it sit, then reveal the table. Say plainly that these two arise under different objectives; they are not two outputs of one feasibility run. Caption, spoken in full: "Neither is universally better."
+
+**Pull-from-if-needed:** Scenario A, the platform's TNBC cohort, futility-only stopping. Verified values from the philosophy comparison file.
+
+**Q&A pocket:** *Why care about expected N when the treatment is inactive?* Most experimental oncology drugs do not work; the ethical cost center is patients enrolled onto an ineffective therapy.
+:::
+
+
+## The objective should reflect the trial you want {data-menu-title="Philosophies"}
+
+```{=html}
+<div class="ext-grid" style="margin-top: 0.5em;">
+<div class="ext-card fragment">
+<h4>H0-Optimal (quit losers quickly)</h4>
+<span class="ext-status">H0: no better than the benchmark</span>
+<p>Minimize expected N under the null; larger maximum N.</p>
+</div>
+<div class="ext-card fragment">
+<h4>Minimax (cap the worst case)</h4>
+<p>Minimize maximum N; more patients under the null.</p>
+</div>
+<div class="ext-card fragment">
+<h4>Admissible (the compromise)</h4>
+<p>A weighted blend, explicit.</p>
+</div>
+</div>
+```
+
+::: {.landing .fragment}
+Two-stage designs made these tradeoffs explicit for decades; BATON does so at scale.
+:::
+
+::: {.notes}
+**Spoken (moved off the slide):** "A feasibility criterion tells us whether a design is acceptable. It does not encode which acceptable design we prefer." Full caption: "Frequentist two-stage designs made these tradeoffs explicit for decades. BATON makes the same tradeoffs explicit when exhaustive enumeration is impractical."
+
+**Say once, here:** "From here on, when I say efficient, I mean efficient in patients, not faster computation."
+
+**Delivery, spoken transition into this slide:** "So far I have pretended there is one objective. There is not. Power and type I error tell us whether a design is acceptable; they do not tell us which acceptable trial we would rather run." Clinician anchor: "this is really a choice between how many patients we expose to an inactive treatment and how much worst-case capacity the network must reserve."
+
+**Pull-from-if-needed:** Simon (1989); Jung's admissible designs. The claim is transport, not "first to notice tradeoffs." BATON takes the weighting as input: explicit, on the record, before any data. And because we model the whole response surface, we can begin to see which design parameters drive these tradeoffs.
+
+**Q&A pocket:** *When is this locked?* At design time, in the protocol, before data are seen, like a Simon optimal-versus-minimax choice.
+
+**Q&A pocket:** *Why not multi-objective BO for the whole front?* Fair alternative; named scalarizations keep constraint handling direct and give a steering committee a legible, pre-registrable objective.
+:::
+
+
+## EVOLVE's TNBC cohort: three objectives, three designs {data-menu-title="Frontier: single-arm"}
+
+::: {.columns style="align-items: center;"}
+::: {.column width="55%"}
+<img src="images/fig_R1_singlearm_v3.png" style="width: 100%; height: auto;" alt="Trade-off plane for the TNBC single-arm cohort: H0-Optimal at maximum 47 and expected 11.7 under the null; Admissible at 31 and 11.9; Minimax at 30 and 22.8; a dashed frontier connects them."/>
+:::
+::: {.column width="45%"}
+
+**The platform's TNBC cohort**
+
+- H0-Optimal: 47 max, **11.7** if the treatment is inactive
+- Admissible: 31 max, **11.9**
+- Minimax: 30 max, **22.8**
+
+:::
+:::
+
+::: {.landing .fragment}
+Allowing one more patient in the maximum saves about eleven patients on average when the treatment is inactive. That is why we preferred the Admissible design.
+:::
+
+::: {.notes}
+**[TODO: confirm]** whether this exact Admissible TNBC design is the one implemented in the protocol. If yes, say "That is the design we ran"; otherwise keep the caption's wording.
+
+**Q&A pocket:** *Type I 0.001 against a 0.10 ceiling?* The binding constraint is power; aggressive futility stopping suppresses false positives as a byproduct. N_max box was [30, 120]; 47 is interior.
+
+**Delivery:** Speak the randomized-cohort line here: "the same price schedule appears in the randomized doublet-versus-triplet cohort; backup has the figure." Then move to seamless.
+:::
+
+
+## Search makes a 13-parameter seamless design practical to calibrate {data-menu-title="Seamless"}
+
+<img src="images/fig_B_design_types_v3.png" style="max-height: 385px; display: block; margin: 0.3em auto 0 auto;" alt="Three trial architectures with rising parameter counts, ending in a seamless design that begins single-arm and converts to a randomized comparison at an interim gate: thirteen parameters."/>
+
+::: {.landing .fragment}
+Screen first with a single-arm stage, then demand randomized evidence from the cohorts that earn it. Thirteen interacting parameters, calibrated by automated search.
+:::
+
+::: {.notes}
+**Say aloud:** "This is the kind of design we can now seriously consider, because calibration is tractable." And: "The first stage lets us screen with fewer patients before committing to randomized evidence."
+:::
+
+
+## Two philosophies converged on the same 13-parameter design {data-menu-title="Collapse"}
+
+<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 385px; display: block; margin: 0 auto;" alt="Seamless trade-off plane: H0-Optimal and the collapsed Minimax equals Admissible point in color, two other objectives grayed and labeled other objective; while Minimax and Admissible land on one identical point at maximum 108 and expected 87.6, circled."/>
+
+::: {.landing .fragment}
+Minimax and Admissible calibrated to the identical design. That is not a coincidence, and the next slide shows why.
+:::
+
+::: {.notes}
+**Q&A pocket:** *Optimizer artifact?* Identical vectors, identical 5-seed high-fidelity verification, and the mechanism (next slide) predicts the degeneracy.
+:::
+
+
+## The gate rarely opens when the treatment is inactive, so the two objectives collapse {data-menu-title="Gate"}
+
+<img src="images/fig_R4_conversion_gate_v3.png" class="fig-mid" style="max-height: 330px;" alt="Bar chart of conversion probability to the randomized stage: about four percent of trials convert under the null versus about sixty percent under the alternative, for every philosophy."/>
+
+::: {.landing .fragment}
+When the treatment is inactive, only ~4% of trials reach stage 2. Expected enrollment therefore changes very little with stage-2 size, so the maximum-enrollment component drives the Admissible solution toward Minimax. H0-Optimal can tolerate a larger stage 2 because its objective never penalizes maximum N.
+:::
+
+::: {.notes}
+**Say:** "In this design region the two objectives effectively align." **Close with:** "The search became an instrument for understanding the design."
+:::
+
+
+## BATON informed EVOLVE's operational decisions {data-menu-title="Operational impact"}
+
+::: {.columns style="margin-top: 1.4em;"}
+::: {.column width="50%"}
+::: {.frame-box .fragment style="min-height: 5.6em; font-size: 0.88em;"}
+**Capacity**: maximum N locked 3 months before first enrollment, from the frontier.
+:::
+::: {.frame-box .fragment style="min-height: 5.6em; font-size: 0.88em; margin-top: 0.5em;"}
+**Program planning**: enrollment and timeline projections for 10 to 15 subtrials.
+:::
+:::
+::: {.column width="50%"}
+::: {.frame-box .fragment style="min-height: 5.6em; font-size: 0.88em;"}
+**Interim calendar**: look spacing set the safety board's schedule.
+:::
+::: {.frame-box .fragment style="min-height: 5.6em; font-size: 0.88em; margin-top: 0.5em;"}
+**Turnaround**: a feasible design in under 45 minutes; workflow about 4 hours.
+:::
+:::
+:::
+
+::: {.landing .fragment}
+We generally chose Admissible designs: efficient enrollment, early stopping, bounded capacity.
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** The turnaround case: same simulator, same constraints; an illustrative single comparison, not a controlled benchmark (backup B6 has the full numbers).
+
+**Delivery:** Land the Admissible line, then advance. Speak the bridge on the next slide: "BATON solved the problem in front of us. But working on it raised a more uncomfortable question: what if the trial is not the right unit to optimize?"
+:::
+
+
+## BATON is designed as a general framework, not an EVOLVE-specific tool {data-menu-title="Framework"}
+
+::: {.columns style="align-items: center; margin-top: 0.6em;"}
+::: {.column width="60%"}
+<img src="images/jasa_titlecrop.png" style="width: 100%; border: 1px solid #E6EAEF;" alt="Cropped title block of the BATON manuscript: Constrained Bayesian Optimization for Calibration of Bayesian Adaptive Clinical Trials, under review."/>
+:::
+::: {.column width="40%"}
+<img src="images/baton_hex_official.png" style="height: 170px; display: block; margin: 0 auto 0.6em auto;" alt="Official BATON package hex sticker."/>
+
+::: {style="text-align: center; font-size: 0.9em; line-height: 1.6; color: #13294B;"}
+**Manuscript under review at JASA**<br/>
+**Open-source R package**<br/>
+**Bring your own trial simulator**
+:::
+:::
+:::
+
+::: {.notes}
+**Delivery:** 20 seconds: "It is written up, under review, and the package is open source; bring your own simulator." Then speak the bridge: "BATON solved the problem in front of us. But working on it raised a more uncomfortable question. What if the trial is not actually the right unit to optimize?" Advance on the question.
+:::
+
+
+## Early decisions become downstream commitments {data-menu-title="Sotorasib"}
+
+<br/>
+
+::: {.frame-box style="max-width: 60%; margin: 0 auto; text-align: center; font-size: 0.9em;"}
+**Sotorasib (KRAS G12C)**<br/><br/>
+**960 mg**: highest phase I dose tested<br/>
+<span style="color:#5B6670;">↓ carried forward</span><br/>
+selected, developed, approved<br/>
+<span style="color:#5B6670;">↓ after approval</span><br/>
+FDA required a **240 vs 960 mg** comparison<br/>
+<span style="color:#E07C24;">↓</span><br/>
+**median PFS was similar at 240 mg and 960 mg** [TODO: confirm]{style="color:#E07C24; font-size: 0.7em;"}
+:::
+
+::: {.landing .fragment}
+The optimal-dose question remained unresolved until after approval.
+:::
+
+[Source: FDA ODAC, sotorasib dosing and CodeBreaK 200, Oct 2023]{.muted style="display:block; text-align:center; font-size:0.62em; margin-top:0.5em;"}
+
+::: {.notes}
+**[TODO: confirm]** the exact PFS medians and the ORR/OS direction from the ODAC materials. Do not say "similar efficacy": ORR and OS trended toward 960 mg. Gloss PFS aloud: "time until the cancer worsens or the patient dies."
+
+**Pull-from-if-needed:** FDA Oncologic Drugs Advisory Committee review of sotorasib dosing and CodeBreaK 200, October 2023; the design lesson (the highest tolerated dose was not the best one) is drawn in our RAS-era trial-design commentary. Be fair to the program: the early trial did its local job and the drug is approved and effective; the point is that a fundamental early decision stayed unresolved enough to require post-approval revisiting.
+
+**Delivery:** Human-scale information debt. Walk the chain, land the sentence, and say this distinction aloud: "Nothing here means the Phase I trial was incorrectly analyzed. It means the question it was optimized to answer was narrower than the decision the rest of the development program ultimately needed." Then move to the extensions.
+:::
+
+
+## We optimize the trial. The program is what succeeds. {data-menu-title="Development programs"}
+
+```{=html}
+<div class="fragment semi-fade-out" data-fragment-index="1" style="display:flex; align-items:center; justify-content:center; gap:0.6em; margin: 0.7em auto 0.2em auto; max-width: 92%;">
+<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center; min-height: 4.6em; display:flex; flex-direction:column; justify-content:center;"><strong style="color:#13294B;">Phase I</strong><br/><span style="color:#5B6670;">choose dose</span></div>
+<div style="text-align:center; color:#5B6670; font-size:0.75em;">choice carries forward<br/><span style="font-size:1.6em; color:#4B9CD3;">&rarr;</span></div>
+<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center; min-height: 4.6em; display:flex; flex-direction:column; justify-content:center;"><strong style="color:#13294B;">Phase II</strong><br/><span style="color:#5B6670;">choose population, signal</span></div>
+<div style="text-align:center; color:#5B6670; font-size:0.75em;">uncertainty carries forward<br/><span style="font-size:1.6em; color:#4B9CD3;">&rarr;</span></div>
+<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center; min-height: 4.6em; display:flex; flex-direction:column; justify-content:center;"><strong style="color:#13294B;">Confirmatory trial</strong><br/><span style="color:#5B6670;">must resolve remaining uncertainty</span></div>
+</div>
+```
+
+::: {.fragment style="max-width: 70%; margin: 0.3em auto 0 auto; border: 2px solid #2E6A9F; background: #FFFFFF; text-align: center; padding: 0.45em 0.8em; font-size: 0.8em;" fragment-index="1"}
+**What if we reverse the logic?**<br/>
+**final therapeutic claim** + its evidentiary requirements<br/>
+<span style="color:#4B9CD3; font-size: 1.2em;">↓</span><br/>
+simulate alternative development architectures<br/>
+<span style="color:#4B9CD3; font-size: 1.2em;">↓</span><br/>
+phased&ensp;·&ensp;seamless&ensp;·&ensp;**potentially fewer phases**
+:::
+
+::: {.landing .fragment}
+Long-term idea: phase structure becomes a design variable.
+:::
+
+::: {.notes}
+**Q&A pocket:** *Isn't this seamless designs again?* Seamless merges adjacent phases operationally. This changes what each stage is optimized for, and ultimately whether the partitions are assumptions at all.
+
+**Delivery:** Narrate the build: "We behave as if these are separate optimization problems. But Phase I chooses a dose that Phase II inherits; Phase II chooses a population and signal the confirmatory trial inherits. Errors do not disappear at the phase boundary." Reveal the reversal: "Start from the evidence the final claim requires, then derive the fastest architecture that produces it reliably. Sometimes that still looks like Phase I, II, III. Sometimes seamless. Sometimes fewer boundaries." Then say the clarification: "Fewer phases does not mean evidence-less or confirmation-less. It means the Phase I, II, III boundaries stop being assumptions and become design choices. Some programs may still need all three; others may support the same reliable claim with fewer separations or no distinct selection-confirmation boundary." Then the payoff: "The goal is not to weaken evidence by removing phases. It is to stop paying automatically for boundaries that may not be necessary." Slowest delivery in the talk. Deeper point if pressed: some information lost through earlier selection is expensive or impossible to recover downstream, which is exactly why the program, not the trial, is the right unit of design.
+
+**Pull-from-if-needed, the economic chain:** wrong early choice, larger downstream trial, failed confirmatory study, repeat development: years, patients, cost. Versus: optimize the program, better upstream choices, reuse accumulating evidence, fewer redundant transitions: faster, smaller development.
+:::
+
+
+## Extending the same search logic across development {data-menu-title="Extensions"}
+
+<br/>
+
+```{=html}
+<div class="ext-grid">
+<div class="ext-card fragment">
+<h4>Across possible futures</h4>
+<span class="ext-status">BATON-C &middot; in progress, with Amber Young</span>
+<p>Optimize over a <em>prespecified family</em> of plausible truths, not one.</p>
+</div>
+<div class="ext-card fragment">
+<h4>Earlier in development</h4>
+<span class="ext-status">BATON-D &middot; in progress</span>
+<p>Optimize dose-finding rules for safety <em>and</em> for what later trials inherit.</p>
+</div>
+<div class="ext-card fragment">
+<h4>Across trials</h4>
+<span class="ext-status">long-term goal</span>
+<p>Optimize dose, population, interim, and confirmatory decisions as <em>one linked program</em>.</p>
+</div>
+</div>
+```
+
+
+::: {.notes}
+**Pull-from-if-needed:** BATON-C: robust optimization over a disclosed scenario family (demonstrable capability, validation ongoing). BATON-D: phase I and I/II, constraints on overdose risk and correct-dose selection; working name. Translation effort is underway to make simulation-guided design usable beyond one academic program: one sentence, disclose the commercial relationship verbally if asked.
+
+**Q&A pocket:** *Does fewer phases mean abandoning evidentiary standards?* No: the statistical requirements stay explicit; what changes is that the Phase I/II/III partitions become design choices rather than fixed assumptions about how development must be organized.
+
+**Delivery:** Translation line is one sentence; disclose the commercial relationship verbally if asked. Do not name it from the slide.
+:::
+
+
+## What I hope you remember {data-menu-title="Summary"}
+
+<br/>
+
+::: {.incremental}
+1. For complex adaptive trials, simulation tells us how a candidate behaves; design is the search for what to try next.
+
+2. BATON searches the simulator for feasible, efficient designs and makes the patient-use tradeoffs explicit.
+
+3. Tractable calibration lets us consider richer adaptive trials; the same search logic extends to other decisions across development.
+:::
+
+::: {.notes}
+**Delivery (the cut not-arguing slide, in one spoken line):** "The point is not to replace statistical judgment; it is to automate the search that supports it." Reassurance line worth speaking before the close: "Optimization replaces the grid-search part of a statistician's month, not the judgment part." Add "and lower development cost" verbally to point 3. The spoken final close: "BATON started because we needed to design one unusually complicated trial. But the larger problem it points to is that we design drug development one trial at a time. The unit we optimize is the trial; the unit that ultimately succeeds or fails is the development program. If we can design that program as a whole, phase structure itself becomes something we can optimize." Then stop.
+:::
+
+
+## Acknowledgments {data-menu-title="Acknowledgments"}
+
+```{=html}
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.6em; font-size: 0.72em;">
+<div class="ack-col">
+<h4>EVOLVE / ADAPT</h4>
+<ul>
+<li>MPIs: Lisa Carey (UNC), Ian Krop (Yale), Chuck Perou (UNC), Eric Winer (Yale), Antonio Wolff (Hopkins)</li>
+<li>EVOLVE steering committee and site investigators across 15 TBCRC sites</li>
+<li>ARPA-H ADAPT program leadership</li>
+</ul>
+</div>
+<div class="ack-col">
+<h4>Statistics / BATON</h4>
+<ul>
+<li><strong>Amber Young</strong> (UNC), who led BATON's design and validation, and co-leads BATON-C</li>
+<li><strong>Didong Li</strong> (UNC) · <strong>Dinelka Nanayakkara</strong> (ARPA-H statistics group)</li>
+<li>Statistical working group: Ruizhe Chen (Hopkins), Sue Hilsenbeck (Baylor), Nabihah Tayob (DFCI)</li>
+<li>Rashid Lab</li>
+</ul>
+</div>
+</div>
+<p style="font-family: var(--rl-font-mono); font-size: 0.5em; letter-spacing: 0.05em; color: #5B6670; border-top: 1px solid #E6EAEF; padding-top: 0.8em; margin-top: 1.2em; text-align: center;">FUNDING&ensp;·&ensp;ARPA-H 140D042590009&ensp;·&ensp;NCI P50-CA257911 (UNC SToP SPORE)&ensp;·&ensp;DOD HT9425241103100121&ensp;·&ensp;NCI U01-CA274298</p>
+```
+
+
+## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Questions"}
+
+::: {.divider-inner}
+::: {.divider-kicker}
+Thank you
+:::
+::: {.divider-rule}
+:::
+::: {.divider-title}
+Questions
+:::
+::: {.divider-question}
+naim@unc.edu · rashidlab.github.io<br/>
+BATON R package: github.com/naimurashid/BATON · manuscript under review at JASA
+:::
+:::
+
+::: {.notes}
+**Q&A routing index:**
+- *Why 0.05 / 0.80, conventions* -> one-equation slide pocket.
+- *Bayesian vs frequentist hybrid* -> adaptive-knobs pocket.
+- *Random search "beat" you* -> alternatives-fail pocket; Simon slide.
+- *GP, acquisition, correlated constraints, CRN* -> backup B1 (code-verified answers).
+- *Simon seed accounting, worst case* -> benchmark pocket; backup B2.
+- *Collapse an artifact?* -> collapse pocket.
+- *Unspent alpha at 0.001, search-box edges* -> single-arm frontier pocket.
+- *Multi-objective BO; when is the philosophy locked* -> loss and philosophies pockets.
+- *Two-weeks story detail* -> backup B6.
+- *Company / translation* -> disclose relationship verbally; keep to one sentence.
+:::
+
+
+## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Backup"}
+
+::: {.divider-inner}
+::: {.divider-kicker}
+Backup
+:::
+::: {.divider-rule}
+:::
+::: {.divider-title}
+Reference slides
+:::
+:::
+
+
+## Backup: the surrogate and the acquisition {.backup-slide data-menu-title="B1: GP + ECI"}
+
+::: {.columns style="align-items: center;"}
+::: {.column width="55%"}
+<img src="images/fig_F_hetgp_eci.png" class="fig-tall" alt="Two-panel schematic. Left: a Gaussian process posterior over one design dimension with wider credible bands in regions of higher Monte Carlo noise, illustrating the heteroskedastic variance model. Right: the acquisition surface formed by multiplying expected improvement by the modeled probability of feasibility, peaking near the constraint boundary."/>
+:::
+::: {.column width="45%"}
+
+- One GP surrogate per behavior metric (power, type I, expected enrollments).
+- **Heteroskedastic** noise model: Monte Carlo variance differs across the space (early-stopping designs give noisier estimates per replication), and hetGP models it rather than assuming it constant.
+- Acquisition: **expected constrained improvement**, expected objective gain multiplied by the modeled probability that *every* constraint is satisfied.
+- Batched proposals; constraint estimates carry their Monte Carlo standard errors into the model.
+
+:::
+:::
+
+::: {.notes}
+All three answers below are verified against the BATON source (v0.4.0, the release behind the paper's results; unchanged in v0.8.0 unless noted).
+
+**Q&A pocket:** *How is the incumbent defined under noise?* Best posterior mean, not best observed value: take the evaluated designs whose observed metrics satisfy the constraints, predict the objective surrogate's posterior mean at each, and use the minimum. Feasibility classification is a plug-in on the simulated metrics; the objective value is de-noised through the surrogate. This is the plug-in form of Picheny (2013), and the manuscript states it that way. A best-observed option exists in the code but is not the default and was not used.
+
+**Q&A pocket:** *Constrained EI multiplies marginal feasibility probabilities; power and type I come from the same evaluation. Independence?* Independent surrogates and a product of marginals, deliberately. The noise justification: power and type I are simulated under disjoint scenarios from non-overlapping segments of the RNG stream, so their Monte Carlo errors are independent even though they share an evaluation call. The latent surfaces can still be correlated as functions of the design, the paper says so, and the approximation affects only the search: every reported design is verified by direct simulation, never through the product. (Wording caveat: the supplement says "distinct random seeds"; the code uses consecutive segments of one stream. Independent either way.)
+
+**Q&A pocket:** *Common random numbers?* Not during the search: every evaluation gets its own seed (base seed plus evaluation index), so candidate comparisons carry full independent Monte Carlo noise, and higher-fidelity re-evaluations are independent replicates, which is what the heteroskedastic surrogate's replicate structure wants. The five-seed verification stage does use a shared seed set, so those cross-design comparisons are paired. If pressed on why no CRN in the loop: it was never implemented, not evaluated and rejected; variance control comes from the fidelity ladder and the noise model instead.
+
+**Q&A pocket:** *Isn't plug-in feasibility for the incumbent inconsistent with a smoothed objective?* A real asymmetry, concede it: feasibility of the incumbent set uses observed metrics while its value uses the surrogate mean. Mitigations: the search applies a buffered (tightened) constraint threshold, and no design is reported without high-fidelity multi-seed verification.
+:::
+
+
+## Backup: the 12-benchmark scatter {.backup-slide data-menu-title="B2: Benchmark scatter"}
+
+<img src="images/fig4_benchmark_efficiency.png" style="max-height: 320px; display: block; margin: 0 auto;" alt="Per-scenario ratio of BATON to the Simon optimum plotted against effect size; most scenarios sit inside a plus-or-minus five percent band around one, the worst near 1.14."/>
+
+::: {.landing}
+Always feasible: **12 of 12**. Exact optimum in **4 of 12**; median within **2.5%**; worst case **13.5%**.
+:::
+
+[Primary target: verified feasibility. Objective optimization is approximate in an expensive, noisy, discrete space.]{.muted style="display:block; text-align:center;"}
+
+::: {.notes}
+**Pull-from-if-needed:** One calibration per scenario; the worst case is a single-seed result, and reseeding the 0.20 scenario returns the exact optimum in 8 of 10 runs. Do not compress this to "recovers the optimum."
+:::
+
+
+## Backup: what the constraints and parameters actually are {.backup-slide data-menu-title="B3: Parameters"}
+
+::: {.columns}
+::: {.column width="50%"}
+
+**Calibrated (searched) parameters, single-arm:**
+
+- maximum enrollment; interim spacing; minimum-events gate before decisions count
+- posterior futility threshold; posterior efficacy threshold
+- decision margin over the historical benchmark
+- analysis-prior concentration; hazard-model resolution (piecewise intervals)
+
+Seamless adds conversion-gate thresholds and second-stage sample-size and stopping parameters (13 total).
+
+:::
+::: {.column width="50%"}
+
+**Constraints (headline scenarios):**
+
+- type I error at most the ceiling (0.10 in the scenarios shown)
+- power at least the floor (0.80)
+- seamless designs add gate-behavior constraints (null conversion rate bounded, alternative conversion rate floored)
+
+**Objectives, by philosophy:** expected null enrollment (H0-Optimal), maximum enrollment (Minimax), weighted blends (Admissible family), expected alternative enrollment (H1-Optimal).
+
+::: {.muted}
+Scenario A truths: null median 3.8 months, alternative 9 (hazard ratio 0.42), Weibull shape 1.3, accrual 2 per month; maximum enrollment searched in [30, 120]. Two Simon scenarios use a 0.05 ceiling with 0.90 power.
+:::
+
+:::
+:::
+
+
+## Backup: related work and what BATON adds {.backup-slide data-menu-title="B5: Related work"}
+
+::: {.columns}
+::: {.column width="50%"}
+
+**Existing approaches**
+
+- **BOP2 / GBOP2** (Zhou; Zhao): grid or particle-swarm search over posterior-probability stopping thresholds; return one design under one criterion.
+- **Operating-characteristic acceleration** (Golchi 2022): speeds the estimation, does not optimize the design.
+- **Single-objective BO for trial design** (Richter 2022): one objective, without multi-constraint feasibility.
+- **gsDesign / rpact / BATSS**: group-sequential and frequentist tooling.
+
+:::
+::: {.column width="50%"}
+
+**What BATON adds, jointly in one framework**
+
+1. finds **feasible** designs under **multiple noisy** behavior constraints;
+2. models **heteroskedastic** Monte Carlo error;
+3. optimizes under **philosophy-specific** sample-size objectives.
+
+It exposes the trade-off surface, and reveals **when philosophies coincide and why**.
+
+:::
+:::
+
+
+## Backup: known failure modes and limits {.backup-slide data-menu-title="B10: Limitations"}
+
+- **Budget exhaustion**: 3 of 10 reproducibility runs used the full 300-evaluation budget rather than stopping early; quote evaluations used, not "convergence."
+- **Approximate optimization**: worst benchmark gap 13.5% from the enumerated optimum (single seed); the guarantee is high-fidelity feasibility, not exact optimality.
+- **Correlated constraints**: the acquisition multiplies marginal feasibility probabilities; latent surfaces for power and type I error can be correlated. Affects the search only; reported designs are verified directly.
+- **No common random numbers in the loop**: candidate comparisons carry full independent Monte Carlo noise; verification uses a shared seed set.
+- **One assumed truth per calibration**: every current result conditions on an assumed clinical scenario; robustness across scenarios is BATON-C, in progress.
+
+
+## Backup: bidirectional stopping variants {.backup-slide data-menu-title="B4: Bidirectional"}
+
+The single-arm and between-arm headline scenarios use futility-only interim stopping (interims can stop for futility; efficacy is decided at the end). The seamless design is calibrated with bidirectional stopping throughout, because its conversion gate is efficacy-driven. The paper's supplement repeats the single-arm and between-arm calibrations with **bidirectional** stopping, where interims may also stop early for efficacy.
+
+- The frontier structure persists, but the philosophies compress: under bidirectional stopping in Scenario A, H0-Optimal and Admissible calibrate to the same maximum enrollment (31), separating only in thresholds.
+- Expected enrollment under the alternative drops substantially (early efficacy stopping pays off exactly when the drug works).
+- The choice between stopping structures is itself a design decision upstream of the philosophy choice.
+
+
+## Backup: ten seeds, one design {.backup-slide data-menu-title="B8: Reproducibility"}
+
+::: {.columns style="align-items: center;"}
+::: {.column width="50%"}
+
+The whole pipeline, rerun end to end at ten independent random seeds:
+
+| | |
+|:--|:-:|
+| Runs returning a feasible design | **10 / 10** |
+| Runs returning Simon's exact optimal design | **8 / 10** |
+| Expected null enrollment, mean (spread) | **17.77** (0.06) |
+| Evaluations used, median | 250 of a 300 budget |
+
+:::
+::: {.column width="50%"}
+
+::: {.note-box .fragment}
+The other two seeds return a near-neighbor design (capacity 29 instead of 25) whose expected enrollment differs by 0.15 patients. What reproduces is the design's behavior, and usually the design itself.
+:::
+
+::: {.landing}
+For a method meant to sit inside regulatory submissions, this is not a nicety. That is the bar for a design going into a regulatory submission.
+:::
+
+:::
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** Expected null enrollment takes two values across the ten seeds: 17.74 in eight runs and 17.89 in two. Simon's exact optimum for this scenario (response rates 0.20 versus 0.40) is 17.74, so the modal BATON design IS the Simon optimum, a 0.2% simulated gap. Three of ten runs used the full 300-evaluation budget; quote evaluations used, never "convergence." Continuous thresholds vary across seeds (futility 0.09 to 0.26) while mapping onto the same integer stopping boundaries: the behavior surface is piecewise constant in the thresholds, which is why behavior reproduces exactly.
+
+**Q&A pocket:** *Do all ten seeds return the identical parameter vector?* No, and say so plainly: eight of ten return the identical vector, which is Simon's optimum; two return capacity 29 instead of 25. The design vector is the contract with sites and budget, so the honest claim is "one of two designs, the modal one exactly optimal," not "one design, always."
+
+**Delivery:** Fast slide. The 8-of-10-exactly-Simon line is the only number to say aloud.
+:::
+
+
+## Backup: the randomized-cohort frontier {.backup-slide data-menu-title="B9: Randomized frontier"}
+
+<img src="images/fig_R2_betweenarm.png" style="max-height: 380px; display: block; margin: 0 auto;" alt="Trade-off plane for the ER-positive doublet-versus-triplet cohort: maximum 124 at expected 65, 104 at 73, and 99 at 82, steepening toward the Minimax end."/>
+
+::: {.landing}
+Cutting the worst-case cap from 124 to 104 costs about 8 extra patients on average when the treatment does not help; the next 5 cost about 9 more.
+:::
+
+
+## Backup: the ARPA-H ask and the N-of-1 addition {.backup-slide data-menu-title="B9: ARPA-H ask"}
+
+```{=html}
+<!-- Full requirements list in vector text (viewer-proof), quoting the user's
+     own program-solicitation excerpts; length of the list is the point. The
+     two highlighted lines carry the eye. Meme stays as the only image. -->
+<div style="max-width: 1170px; margin: 0.2em auto 0 auto;">
+<div style="display:flex; gap: 1.3em; align-items: flex-start;">
+<div style="flex: 56 0 0;">
+<div style="border: 1px solid #E6EAEF; border-left: 3px solid #4B9CD3; padding: 0.5em 0.9em; background: #fff; font-family: Georgia, serif; font-size: 0.5em; line-height: 1.45;">
+<em>(ii) Clinical trial characteristics:</em>
+<ol style="margin: 0.3em 0 0.3em 1.4em; padding: 0;">
+<li>Clinical trial for metastatic cancer patients.</li>
+<li>Clinical trial that includes multiple lines of therapy under a single protocol.</li>
+<li style="background: #EAF2FA; font-weight: 600;">Flexible clinical trial protocol that enables changes in design (e.g., randomized, adaptive, etc.).</li>
+<li>Strong capability to collect tumor and blood-based measurements.</li>
+<li>Possess a treatment line with a Progression Free Survival (PFS) rate of &lt;9 months average.</li>
+<li>Mechanisms for biomarker evaluation.</li>
+<li style="background: #EAF2FA; font-weight: 600;">Modular clinical trial design enabling rapid dissemination and protocol uptake by different sites.</li>
+</ol>
+<em>(iii) General characteristics:</em> key clinical needs; evolutionary design examples and rapid-enrollment plans; treatment lines; biomarker testing and integration plans.
+</div>
+<div class="fragment" data-fragment-index="1" style="border: 1px solid #E6EAEF; border-left: 3px solid #E07C24; padding: 0.45em 0.9em; background: #fff; margin-top: 0.6em; font-size: 0.6em;"><strong style="color:#13294B;">New ask</strong> (program-manager email): integrate an "N-of-1" trial component.</div>
+<p style="color: #5B6670; font-size: 0.48em; margin-top: 0.5em;">excerpts from the ARPA-H solicitation and program-manager correspondence</p>
+</div>
+<div style="flex: 44 0 0;">
+<div class="fragment" data-fragment-index="2" style="font-size: 0.76em; font-weight: 700; color: #13294B; line-height: 1.35;">The ask: design an <span style="color:#2E6A9F;">adaptive multi-line</span> trial to <span style="color:#2E6A9F;">discover, evaluate, and implement novel biomarkers</span>, with an additional <span style="color:#2E6A9F;">N-of-1 subcomponent</span></div>
+<img src="images/req_meme.gif" class="fragment" data-fragment-index="3" style="width: 70%; display: block; margin: 0.7em auto 0 auto;" alt="Animated this-is-fine cartoon from the original slide."/>
+</div>
+</div>
+</div>
+```
+
+::: {.notes}
+**Delivery:** Three keypresses, one element at a time, in the spirit of the original PowerPoint build: solicitation excerpts, then the new-ask line, then the summary ask, then the meme as the punchline. Let each be read, not read aloud. If asked, the full source slides (complete requirement list and program-manager email) are in the pptx decks.
+:::
+
+
+## Backup: ADAPT technical areas and the EVOLVE team {.backup-slide data-menu-title="B10: ADAPT + team"}
+
+::: {.columns style="align-items: flex-start;"}
+::: {.column width="50%"}
+<img src="images/harvest_components_crop.png" style="width: 100%;" alt="Cropped official ADAPT technical-areas graphic: three circles for TA1 therapy recommendation, TA2 evolutionary clinical trial, and TA3 cancer treatment and analysis platform, with their sub-bullets; source slide number, footer, and highlight box removed."/>
+:::
+::: {.column width="50%"}
+<img src="images/harvest_team26.png" style="width: 100%;" alt="Official Meet the Team slide: MPI photographs and roles beside tables for the steering committee, fifteen participating TBCRC sites, and the working groups."/>
+:::
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** For questions about the program: three technical areas (our team leads the clinical-trial component), metastatic breast cancer, master protocol, biomarker-defined subtrials, TBCRC network.
+:::
