@@ -6,7 +6,7 @@ format:
     fontsize: 8.5pt
 ---
 
-Planned 38:15 to Questions (the not-arguing slide was cut); delivered runs ~12% over (~43 min). Checkpoints in bold.
+Planned 38:15 to Questions; delivered runs ~12% over (~43 min). Reach slide 30 by ~32 min. Checkpoints in bold.
 
 | # | Slide | Plan (s) | Cum. |
 |--:|:--|--:|--:|
@@ -40,15 +40,16 @@ Planned 38:15 to Questions (the not-arguing slide was cut); delivered runs ~12% 
 | 28 | The gate rarely opens | 90 | 31:30 |
 | 29 | Operational decisions | 75 | 32:45 |
 | **30** | **General framework (checkpoint ~37 min; past 39, skip 31)** | 30 | 33:15 |
-| 31 | Sotorasib | 60 | 34:15 |
-| 32 | We optimize the trial; the program succeeds | 75 | 35:30 |
-| 33 | Extending the search logic | 60 | 36:30 |
-| **34** | **What I hope you remember (checkpoint 42 to 43 min)** | 60 | 37:30 |
-| 35 | Acknowledgments | 20 | 37:50 |
+| 31 | Problems emerge late (54% of 640; 25 s) | 25 | 33:40 |
+| 32 | Sotorasib | 60 | 34:40 |
+| 33 | We optimize the trial; the program succeeds (climax, slowest) | 75 | 35:55 |
+| 34 | Extending the search logic | 60 | 36:55 |
+| **35** | **What I hope you remember (checkpoint 42 to 43 min)** | 60 | 37:55 |
+| 36 | Acknowledgments | 20 | 38:15 |
 | Q | **Questions (44 to 45 min)** | | |
 
-**If running long, cut in order:** 31 (60 s), 30 (30 s), 15 (60 s), fold 27 into 28 (60 s). Never cut 27 and 28 early.
+**If running long, cut in order:** Section 1 valve: slide 10 (say it in one sentence, 60 s). Then 32 sotorasib (60 s), 30 (30 s), 15 (60 s), fold 27 into 28 (60 s). Never cut 27, 28, 31, or 33.
 
 **Backups:** B1 GP + acquisition · B2 benchmark scatter · B3 parameters · B4 related work · B5 limits · B6 bidirectional · B7 ten seeds · B8 randomized frontier · B9 ARPA-H ask · B10 ADAPT + team.
 
-**Confirm before the room:** NEW 11 random-search dimension (notes) · NEW 25 implemented design (notes) · NEW 31 PFS medians and ORR/OS direction (visible marker).
+**Confirmed:** random-search benchmark (notes, slide 11) and sotorasib numbers (notes, slide 32). **Your call on slide 25:** say "that is the design we ran" only if the Admissible TNBC design is the protocol's.

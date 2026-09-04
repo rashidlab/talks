@@ -24,7 +24,7 @@
 
 ## v3 build result (2026-09-04)
 - `python3 build_v3.py` regenerates `baton-compmed-v3.qmd` from v2 + `baton-compmed-reordered-outline.md`;
-  `quarto render baton-compmed-v3.qmd`; decktape export → `baton-compmed-v3.pdf`, 47 pages
-  (35 main + Questions + backup divider + B1..B10; "What I am not arguing" cut on the day), title order verified against the outline.
+  `quarto render baton-compmed-v3.qmd`; decktape export → `baton-compmed-v3.pdf`, 48 pages
+  (36 main + Questions + backup divider + B1..B10; "What I am not arguing" cut and the sourced late-failure slide restored on the day), title order verified against the outline.
 - Regenerated figure scripts live in the deck root (`make_fig_*.R`); manuscript-figure relabels were
   run from edited copies of `scripts/defense_figures/*.R` (scratch) writing `images/*_v3.png`.

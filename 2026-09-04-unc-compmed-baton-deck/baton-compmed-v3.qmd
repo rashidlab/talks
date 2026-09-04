@@ -187,9 +187,7 @@ Share declaring efficacy when the treatment works as hypothesized. Floor: **0.80
 
 ## EVOLVE: one master protocol, 10 to 15 cohorts opened over time, each needing its own design {data-menu-title="10-15 subtrials"}
 
-[ARPA-H ADAPT platform trial. ~700 patients, 15 TBCRC sites.]{.muted style="display:block; text-align:center; font-size: 0.8em; margin-bottom: 0.2em;"}
-
-<img src="images/fig_A_evolve_platform_v3.png" style="max-height: 345px; display: block; margin: 0 auto;" alt="Schematic of the EVOLVE platform with cohorts tagged single-arm, randomized, and seamless: a master protocol spine spawning a sequence of biomarker-defined subtrials over time, each carrying its own design and calibration task."/>
+<img src="images/fig_A_evolve_platform_v3.png" style="max-height: 415px; display: block; margin: 0.2em auto 0 auto;" alt="Schematic of the EVOLVE platform with cohorts tagged single-arm, randomized, and seamless: a master protocol spine spawning a sequence of biomarker-defined subtrials over time, each carrying its own design and calibration task."/>
 
 ::: {.landing .fragment}
 Not one calibration problem. Ten to fifteen of them, each with its own design, opened on a short clock.
@@ -281,7 +279,7 @@ In two dimensions a grid is easy. As dimensions grow, the number of combinations
 :::
 
 ::: {.notes}
-**Confirmed 2026-09-04 (scripts/run_random_search_analysis.R, results/validation/random_search_summary.csv):** the random-search benchmark drew 2,000 configurations uniformly over the binary two-stage (Simon-type) design space, same bounds BATON used (stage sizes and stopping thresholds), 2,000 simulations each; 136 feasible (6.8%); best random design expected null N 17.75 in 9.3 minutes. If asked which dimension: the Simon-type parameters, not the 8- or 13-parameter EVOLVE designs.
+**Confirmed 2026-09-04 (scripts/run_random_search_analysis.R, results/validation/random_search_summary.csv):** the random-search benchmark drew 2,000 configurations uniformly over the binary two-stage (Simon-type) design space, the same parameter family as the Simon benchmark (efficacy and futility thresholds, stage-1 size, total size) over its own search box, 2,000 simulations each; not commensurable with the ten-seed reproducibility run; 136 feasible (6.8%); best random design expected null N 17.75 in 9.3 minutes. If asked which dimension: the Simon-type parameters, not the 8- or 13-parameter EVOLVE designs.
 
 **Q&A pocket:** *Didn't random search find a better value than BATON somewhere?* Different design class and an unvalidated selection minimum over 2,000 noisy estimates; the commensurable internal comparison is on the benchmark slide later.
 
@@ -405,6 +403,10 @@ Balance the potential improvement in the objective against the probability that 
 ::: {.column width="50%" .fragment}
 <img src="images/fig_search_guided.png" class="fig-tall" alt="The same surface with thirty model-guided evaluations clustering on the dark high-quality basin; repeated cells overlap. No connecting lines."/>
 :::
+:::
+
+::: {.landing .fragment}
+Initial points learn broadly; later points concentrate where the answer may improve.
 :::
 
 ::: {.notes}
@@ -597,11 +599,11 @@ Two-stage designs made these tradeoffs explicit for decades; BATON does so at sc
 :::
 
 ::: {.landing .fragment}
-Allowing one more patient in the maximum saves about eleven patients on average when the treatment is inactive. That is why we preferred the Admissible design.
+For one additional patient of maximum capacity, Admissible saves about eleven patients on average when the treatment is inactive. That made the compromise especially attractive.
 :::
 
 ::: {.notes}
-**Speaker check (not verifiable from the repo):** if this exact Admissible TNBC design is the one in the protocol, say "That is the design we ran"; otherwise keep the caption wording ("we preferred"), which is what the slide says.
+**Speaker check (not verifiable from the repo):** if this exact Admissible TNBC design is the one in the protocol, say "That is the design we ran"; otherwise keep the caption wording ("especially attractive"); slide 29 gives the fuller operational choice.
 
 **Q&A pocket:** *Type I 0.001 against a 0.10 ceiling?* The binding constraint is power; aggressive futility stopping suppresses false positives as a byproduct. N_max box was [30, 120]; 47 is interior.
 
@@ -624,7 +626,7 @@ Screen first with a single-arm stage, then demand randomized evidence from the c
 
 ## Two philosophies converged on the same 13-parameter design {data-menu-title="Collapse"}
 
-<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 385px; display: block; margin: 0 auto;" alt="Seamless trade-off plane: H0-Optimal and the collapsed Minimax equals Admissible point in color, two other objectives grayed and labeled other objective; while Minimax and Admissible land on one identical point at maximum 108 and expected 87.6, circled."/>
+<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 420px; display: block; margin: 0 auto;" alt="Seamless trade-off plane with three philosophies: H0-Optimal at maximum 150, and Minimax and Admissible landing on one identical point at maximum 108 and expected 87.6, circled."/>
 
 ::: {.landing .fragment}
 Minimax and Admissible calibrated to the identical design. That is not a coincidence, and the next slide shows why.
@@ -637,7 +639,7 @@ Minimax and Admissible calibrated to the identical design. That is not a coincid
 
 ## The gate rarely opens when the treatment is inactive, so the two objectives collapse {data-menu-title="Gate"}
 
-<img src="images/fig_R4_conversion_gate_v3.png" class="fig-mid" style="max-height: 330px;" alt="Bar chart of conversion probability to the randomized stage: about four percent of trials convert under the null versus about sixty percent under the alternative, for every philosophy."/>
+<img src="images/fig_R4_conversion_gate_v3.png" class="fig-mid" style="max-height: 390px;" alt="Bar chart of conversion probability to the randomized stage: about four percent of trials convert under the null versus about sixty percent under the alternative, for each of the three philosophies shown."/>
 
 ::: {.landing .fragment}
 When the treatment is inactive, only ~4% of trials reach stage 2. Expected enrollment therefore changes very little with stage-2 size, so the maximum-enrollment component drives the Admissible solution toward Minimax. H0-Optimal can tolerate a larger stage 2 because its objective never penalizes maximum N.
@@ -702,6 +704,26 @@ We generally chose Admissible designs: efficient enrollment, early stopping, bou
 :::
 
 
+## Problems often emerge late {data-menu-title="Late failure"}
+
+::: {style="text-align: center; margin-top: 2.2em;"}
+<span style="font-size: 3.6em; font-weight: 800; color: #13294B; line-height: 1;">54%</span><br/>
+[of 640 therapeutics reaching phase 3 or pivotal trials **failed in late-stage development**; 57% of failures for inadequate efficacy]{style="display:block; max-width: 70%; margin: 0.4em auto 0 auto; font-size: 0.8em; color: #5B6670;"}
+:::
+
+::: {.landing .fragment}
+Locally reasonable decisions can leave problems that only become visible downstream.
+:::
+
+[Hwang et al., JAMA Internal Medicine 2016]{.muted style="display:block; text-align:center; font-size:0.62em; margin-top: 1.2em;"}
+
+::: {.notes}
+**Delivery:** 20 to 30 seconds. Say the denominator precisely (640 novel therapeutics reaching phase 3 or pivotal trials, 1998 to 2008; PMID 27723879), never "half of drugs fail phase III." Then, spoken only: "And dose questions persist after approval: FDA's own postmarketing-requirement records, as we have compiled them, show dose-optimization requirements on a meaningful share of oncology approvals, taking years to fulfill." No number on that; the primary analysis is not yet traced. Then sotorasib gives the human-scale example.
+
+**Honesty line:** "These late-stage failures are a different problem from the one I just showed you solved. They are the problem this machinery might reach."
+:::
+
+
 ## Early decisions become downstream commitments {data-menu-title="Sotorasib"}
 
 <br/>
@@ -721,7 +743,7 @@ FDA required a **240 vs 960 mg** comparison<br/>
 The optimal-dose question remained unresolved until after approval.
 :::
 
-[Source: CodeBreaK 100 dose comparison (Ann Oncol 2023; Eur J Cancer 2024); FDA ODAC Oct 2023]{.muted style="display:block; text-align:center; font-size:0.62em; margin-top:0.5em;"}
+[Source: CodeBreaK 100 dose comparison; Ann Oncol 2023, Eur J Cancer 2024]{.muted style="display:block; text-align:center; font-size:0.62em; margin-top:0.5em;"}
 
 ::: {.notes}
 **Confirmed 2026-09-04 (CodeBreaK 100 randomized dose comparison, 960 vs 240 mg, n = 209; Ann Oncol 2023 VP4, Eur J Cancer 2024):** median PFS 5.4 vs 5.6 months (HR 0.95, 95% CI 0.67 to 1.35); ORR 32.7% vs 24.8%; median OS 13.0 vs 11.7 months (HR 0.75, 95% CI 0.53 to 1.07). FDA considered the postmarketing requirement fulfilled in December 2023 and 960 mg remains the labeled dose. Do not say "similar efficacy": ORR and OS trended toward 960 mg; PFS is the endpoint that was similar. Gloss PFS aloud: "time until the cancer worsens or the patient dies."
@@ -735,32 +757,32 @@ The optimal-dose question remained unresolved until after approval.
 ## We optimize the trial. The program is what succeeds. {data-menu-title="Development programs"}
 
 ```{=html}
-<div class="fragment semi-fade-out" data-fragment-index="1" style="display:flex; align-items:center; justify-content:center; gap:0.6em; margin: 0.7em auto 0.2em auto; max-width: 92%;">
-<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center; min-height: 4.6em; display:flex; flex-direction:column; justify-content:center;"><strong style="color:#13294B;">Phase I</strong><br/><span style="color:#5B6670;">choose dose</span></div>
+<div class="fragment semi-fade-out" data-fragment-index="1" style="display:flex; align-items:center; justify-content:center; gap:0.6em; margin: 0.2em auto 0.1em auto; max-width: 92%;">
+<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.45em 0.9em; text-align:center; min-height: 3.8em; display:flex; flex-direction:column; justify-content:center; font-size: 0.9em;"><strong style="color:#13294B;">Phase I</strong><br/><span style="color:#5B6670;">choose dose</span></div>
 <div style="text-align:center; color:#5B6670; font-size:0.75em;">choice carries forward<br/><span style="font-size:1.6em; color:#4B9CD3;">&rarr;</span></div>
-<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center; min-height: 4.6em; display:flex; flex-direction:column; justify-content:center;"><strong style="color:#13294B;">Phase II</strong><br/><span style="color:#5B6670;">choose population, signal</span></div>
+<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.45em 0.9em; text-align:center; min-height: 3.8em; display:flex; flex-direction:column; justify-content:center; font-size: 0.9em;"><strong style="color:#13294B;">Phase II</strong><br/><span style="color:#5B6670;">choose population, signal</span></div>
 <div style="text-align:center; color:#5B6670; font-size:0.75em;">uncertainty carries forward<br/><span style="font-size:1.6em; color:#4B9CD3;">&rarr;</span></div>
-<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center; min-height: 4.6em; display:flex; flex-direction:column; justify-content:center;"><strong style="color:#13294B;">Confirmatory trial</strong><br/><span style="color:#5B6670;">must resolve remaining uncertainty</span></div>
+<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.45em 0.9em; text-align:center; min-height: 3.8em; display:flex; flex-direction:column; justify-content:center; font-size: 0.9em;"><strong style="color:#13294B;">Confirmatory trial</strong><br/><span style="color:#5B6670;">must resolve remaining uncertainty</span></div>
 </div>
 ```
 
-::: {.fragment style="max-width: 70%; margin: 0.3em auto 0 auto; border: 2px solid #2E6A9F; background: #FFFFFF; text-align: center; padding: 0.45em 0.8em; font-size: 0.8em;" fragment-index="1"}
+::: {.fragment style="max-width: 78%; margin: 0.35em auto 0 auto; border: 2px solid #2E6A9F; background: #FFFFFF; text-align: center; padding: 0.45em 1em; font-size: 0.88em; line-height: 1.35;" fragment-index="1"}
 **What if we reverse the logic?**<br/>
 **final therapeutic claim** + its evidentiary requirements<br/>
 <span style="color:#4B9CD3; font-size: 1.2em;">↓</span><br/>
 simulate alternative development architectures<br/>
 <span style="color:#4B9CD3; font-size: 1.2em;">↓</span><br/>
-phased&ensp;·&ensp;seamless&ensp;·&ensp;**potentially fewer phases**
+phased&ensp;·&ensp;seamless&ensp;·&ensp;**potentially phaseless**
 :::
 
-::: {.landing .fragment}
-Long-term idea: phase structure becomes a design variable.
+::: {.landing .fragment style="font-size: 1.25em;"}
+Phase structure becomes a design variable.
 :::
 
 ::: {.notes}
 **Q&A pocket:** *Isn't this seamless designs again?* Seamless merges adjacent phases operationally. This changes what each stage is optimized for, and ultimately whether the partitions are assumptions at all.
 
-**Delivery:** Narrate the build: "We behave as if these are separate optimization problems. But Phase I chooses a dose that Phase II inherits; Phase II chooses a population and signal the confirmatory trial inherits. Errors do not disappear at the phase boundary." Reveal the reversal: "Start from the evidence the final claim requires, then derive the fastest architecture that produces it reliably. Sometimes that still looks like Phase I, II, III. Sometimes seamless. Sometimes fewer boundaries." Then say the clarification: "Fewer phases does not mean evidence-less or confirmation-less. It means the Phase I, II, III boundaries stop being assumptions and become design choices. Some programs may still need all three; others may support the same reliable claim with fewer separations or no distinct selection-confirmation boundary." Then the payoff: "The goal is not to weaken evidence by removing phases. It is to stop paying automatically for boundaries that may not be necessary." Slowest delivery in the talk. Deeper point if pressed: some information lost through earlier selection is expensive or impossible to recover downstream, which is exactly why the program, not the trial, is the right unit of design.
+**Delivery:** Narrate the build: "We behave as if these are separate optimization problems. But Phase I chooses a dose that Phase II inherits; Phase II chooses a population and signal the confirmatory trial inherits. Errors do not disappear at the phase boundary." Reveal the reversal: "Start from the evidence the final claim requires, then derive the fastest architecture that produces it reliably. Sometimes that still looks like Phase I, II, III. Sometimes seamless. Sometimes fewer boundaries." Then say the clarification, aloud and explicitly: "Phaseless does not mean confirmation-less. It means phase boundaries are design choices rather than assumptions." "Phaseless does not mean evidence-less or confirmation-less. It means the Phase I, II, III boundaries stop being assumptions and become design choices. Some programs may still need all three; others may support the same reliable claim with fewer separations or no distinct selection-confirmation boundary." Then the payoff: "The goal is not to weaken evidence by removing phases. It is to stop paying automatically for boundaries that may not be necessary." Slowest delivery in the talk. Deeper point if pressed: some information lost through earlier selection is expensive or impossible to recover downstream, which is exactly why the program, not the trial, is the right unit of design.
 
 **Pull-from-if-needed, the economic chain:** wrong early choice, larger downstream trial, failed confirmatory study, repeat development: years, patients, cost. Versus: optimize the program, better upstream choices, reuse accumulating evidence, fewer redundant transitions: faster, smaller development.
 :::
@@ -784,8 +806,8 @@ Long-term idea: phase structure becomes a design variable.
 </div>
 <div class="ext-card fragment">
 <h4>Across trials</h4>
-<span class="ext-status">long-term goal</span>
-<p>Optimize dose, population, interim, and confirmatory decisions as <em>one linked program</em>.</p>
+<span class="ext-status">Phaseless / whole-program design &middot; long-term goal</span>
+<p>Optimize dose, population, interim, and confirmatory decisions as <em>one program</em>.</p>
 </div>
 </div>
 ```
@@ -794,7 +816,7 @@ Long-term idea: phase structure becomes a design variable.
 ::: {.notes}
 **Pull-from-if-needed:** BATON-C: robust optimization over a disclosed scenario family (demonstrable capability, validation ongoing). BATON-D: phase I and I/II, constraints on overdose risk and correct-dose selection; working name. Translation effort is underway to make simulation-guided design usable beyond one academic program: one sentence, disclose the commercial relationship verbally if asked.
 
-**Q&A pocket:** *Does fewer phases mean abandoning evidentiary standards?* No: the statistical requirements stay explicit; what changes is that the Phase I/II/III partitions become design choices rather than fixed assumptions about how development must be organized.
+**Q&A pocket:** *Does phaseless mean abandoning evidentiary standards?* No: the statistical requirements stay explicit; what changes is that the Phase I/II/III partitions become design choices rather than fixed assumptions about how development must be organized.
 
 **Delivery:** Translation line is one sentence; disclose the commercial relationship verbally if asked. Do not name it from the slide.
 :::

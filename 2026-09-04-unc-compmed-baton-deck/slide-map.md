@@ -1,4 +1,4 @@
-# Slide map: baton-compmed-v2.pdf (old, 54) to baton-compmed-v3 (new, 47)
+# Slide map: baton-compmed-v2.pdf (old, 54) to baton-compmed-v3 (new, 48)
 
 Actions: keep / retitle / rewrite text / merge / split source / rebuild native / new / cut / move.
 "Figure" names the asset actually referenced in v3 (`images/`).
@@ -31,28 +31,29 @@ Actions: keep / retitle / rewrite text / merge / split source / rebuild native /
 | 24 | old 27 | card titles = unified labels; H0 gloss; caption | none |
 | 25 | old 31 | retitle; x-axis relabeled; bullets relabeled; caption | fig_R1_singlearm_v3.png (regenerated) |
 | 26 | old 32 | retitle; posterior Pr labels removed, italics enlarged; caption | fig_B_design_types_v3.png (regenerated) |
-| 27 | old 33 | retitle; two series grayed as "other objective"; axis relabel; caption | fig_R3_seamless_pareto_v3.png (regenerated) |
-| 28 | old 34 | retitle; two axis labels grayed to match 27; caption | fig_R4_conversion_gate_v3.png (regenerated) |
+| 27 | old 33 | retitle; Balanced-EN and H1-Optimal dropped (outline's "or drop them"); axis relabel; caption | fig_R3_seamless_pareto_v3.png (regenerated) |
+| 28 | old 34 | retitle; same two philosophies dropped to match 27; caption | fig_R4_conversion_gate_v3.png (regenerated) |
 | 29 | old 35 | retitle; four boxes rewritten; caption | none |
 | 30 | old 36 | title per outline; JASA title-page crop KEPT per speaker instruction; hex + three bold lines | jasa_titlecrop.png, baton_hex_official.png |
-| 31 | old 38 | last line replaced + [TODO: confirm]; source line 0.62em; caption | none |
-| 32 | old 40 | arrows and confirmatory box relabeled; "phaseless" removed; caption | none |
-| 33 | old 39 | retitle; three cards rewritten; landing removed | none |
+| 31 | new (restores the sourced half of old 37) | big-number slide: 54% of 640 (Hwang 2016); caption | none |
+| 32 | old 38 | sotorasib line confirmed (CodeBreaK 100 dose comparison); caption | none |
+| 33 | old 40 | arrows and confirmatory box relabeled; "potentially phaseless" restored per speaker; climax styling | none |
+| 34 | old 39 | retitle; three cards rewritten; third card names phaseless / whole-program design | none |
 | (34, deleted) | old 52 | CUT per speaker instruction 2026-09-04 ("What I am not arguing"); its content is spoken from the summary slide's notes | none |
-| 34 | old 41 | three takeaways rewritten | none |
-| 35 | old 42 | keep | none |
-| Q (36) | old 43 | keep | none |
-| divider (37) | old 44 | keep | none |
-| B1 (38) | old 45 | keep (raster; label sizing not possible, see report) | fig_F_hetgp_eci.png |
-| B2 (39) | old 30 | move to backup; retitle; class .backup-slide | fig4_benchmark_efficiency.png |
-| B3 (40) | old 48 | keep | none |
-| B4 (41) | old 49 | keep | none |
-| B5 (42) | old 50 | keep | none |
-| B6 (43) | old 51 | keep | none |
-| B7 (44) | old 53 | wording edit (regulatory-submission line) | none |
-| B8 (45) | old 54 | keep | fig_R2_betweenarm.png |
-| B9 (46) | old 8 | move to backup; retitle; class .backup-slide | req_meme.gif |
-| B10 (47) | old 6 + old 7 | merge; old 6 cropped (slide number, footer, red box removed) | harvest_components_crop.png, harvest_team26.png |
+| 35 | old 41 | three takeaways rewritten | none |
+| 36 | old 42 | keep | none |
+| Q (37) | old 43 | keep | none |
+| divider (38) | old 44 | keep | none |
+| B1 (39) | old 45 | keep (raster; label sizing not possible, see report) | fig_F_hetgp_eci.png |
+| B2 (40) | old 30 | move to backup; retitle; class .backup-slide | fig4_benchmark_efficiency.png |
+| B3 (41) | old 48 | keep | none |
+| B4 (42) | old 49 | keep | none |
+| B5 (43) | old 50 | keep | none |
+| B6 (44) | old 51 | keep | none |
+| B7 (45) | old 53 | wording edit (regulatory-submission line) | none |
+| B8 (46) | old 54 | keep | fig_R2_betweenarm.png |
+| B9 (47) | old 8 | move to backup; retitle; class .backup-slide | req_meme.gif |
+| B10 (48) | old 6 + old 7 | merge; old 6 cropped (slide number, footer, red box removed) | harvest_components_crop.png, harvest_team26.png |
 
 ## Old slides cut entirely
 
@@ -61,7 +62,7 @@ Actions: keep / retitle / rewrite text / merge / split source / rebuild native /
 | 4 | ARPA-H ADAPT: the challenge (website screenshot) | cut |
 | 5 | The future state (longitudinal figure) | cut |
 | 10 | Frequentist trial designs have a convenient property | cut (content is the last row of NEW 6) |
-| 37 | A trial can succeed locally while the program fails (54%, 21 of 138) | cut |
+| 37 | A trial can succeed locally while the program fails (54%, 21 of 138) | cut, then the sourced 54% half restored as NEW 31 per speaker |
 
 ## Old slides moved into the main deck from backup
 
@@ -69,4 +70,4 @@ old 46 → NEW 21; old 47 → NEW 22 (old 52 was promoted to NEW 34 in the outli
 
 ## Accounting
 
-54 old = 32 kept in place (with edits) + 3 split sources (old 12, 20, 23; each also used once more) + 2 promoted from backup (old 46, 47; old 52 promoted then cut) + 3 moved to backup (old 30, 8, 6/7 merged) + 4 cut. New slides: NEW 4 (new), NEW 17 (merge), NEW 23 (merge), NEW 30 (rebuilt, JASA screenshot retained per speaker). NEW 34 deleted per speaker. Total 35 + 1 + 1 + 10 = 47.
+54 old = 32 kept in place (with edits) + 3 split sources (old 12, 20, 23; each also used once more) + 2 promoted from backup (old 46, 47; old 52 promoted then cut) + 3 moved to backup (old 30, 8, 6/7 merged) + 4 cut. New slides: NEW 4 (new), NEW 17 (merge), NEW 23 (merge), NEW 30 (rebuilt, JASA screenshot retained per speaker). NEW 34 deleted per speaker. NEW 31 (late failure) restored per speaker. Total 36 + 1 + 1 + 10 = 48.

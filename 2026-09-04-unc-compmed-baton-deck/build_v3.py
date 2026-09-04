@@ -140,7 +140,7 @@ N[7] = c
 # NEW 8 (old 15) --------------------------------------------------------------
 c = S[15]
 c = title(c, "EVOLVE: one master protocol, 10 to 15 cohorts opened over time, each needing its own design")
-c = rep(c, '<img src="images/fig_A_evolve_platform.png" class="fig-mid"', '[ARPA-H ADAPT platform trial. ~700 patients, 15 TBCRC sites.]{.muted style="display:block; text-align:center; font-size: 0.8em; margin-bottom: 0.2em;"}\n\n<img src="images/fig_A_evolve_platform_v3.png" style="max-height: 345px; display: block; margin: 0 auto;"', "n8img")
+c = rep(c, '<img src="images/fig_A_evolve_platform.png" class="fig-mid"', '<img src="images/fig_A_evolve_platform_v3.png" style="max-height: 415px; display: block; margin: 0.2em auto 0 auto;"', "n8img")
 c = c.replace('alt="Schematic of the EVOLVE platform:', 'alt="Schematic of the EVOLVE platform with cohorts tagged single-arm, randomized, and seamless:')
 c = set_landing(c, "Not one calibration problem. Ten to fifteen of them, each with its own design, opened on a short clock.", "n8", fragment=True)
 c = rep(c, "::: {.notes}\n", '::: {.notes}\n**Define aloud:** platform (one protocol, many treatment cohorts), cohort (a subtrial with its own design), and why each opens "on a clock": cohorts open as biomarkers are discovered, and the design has to be ready when the cohort is.\n\n', "n8notes")
@@ -163,7 +163,7 @@ N[10] = c
 # NEW 11 (old 14) -------------------------------------------------------------
 c = title(S[14], "Grid search scales poorly; random search wastes evaluations in our benchmark")
 c = set_landing(c, "In two dimensions a grid is easy. As dimensions grow, the number of combinations explodes. Random search spent 93% of its 2,000 evaluations on designs that fail. (Darker = better design.)", "n11", fragment=True)
-c = rep(c, "::: {.notes}\n", "::: {.notes}\n**Confirmed 2026-09-04 (scripts/run_random_search_analysis.R, results/validation/random_search_summary.csv):** the random-search benchmark drew 2,000 configurations uniformly over the binary two-stage (Simon-type) design space, same bounds BATON used (stage sizes and stopping thresholds), 2,000 simulations each; 136 feasible (6.8%); best random design expected null N 17.75 in 9.3 minutes. If asked which dimension: the Simon-type parameters, not the 8- or 13-parameter EVOLVE designs.\n\n", "n11notes")
+c = rep(c, "::: {.notes}\n", "::: {.notes}\n**Confirmed 2026-09-04 (scripts/run_random_search_analysis.R, results/validation/random_search_summary.csv):** the random-search benchmark drew 2,000 configurations uniformly over the binary two-stage (Simon-type) design space, the same parameter family as the Simon benchmark (efficacy and futility thresholds, stage-1 size, total size) over its own search box, 2,000 simulations each; not commensurable with the ten-seed reproducibility run; 136 feasible (6.8%); best random design expected null N 17.75 in 9.3 minutes. If asked which dimension: the Simon-type parameters, not the 8- or 13-parameter EVOLVE designs.\n\n", "n11notes")
 N[11] = c
 
 # NEW 12 -----------------------------------------------------------------------
@@ -219,6 +219,10 @@ N[17] = '''## The seed sketches the map. Then BATON proposes each batch. {data-m
 ::: {.column width="50%" .fragment}
 <img src="images/fig_search_guided.png" class="fig-tall" alt="The same surface with thirty model-guided evaluations clustering on the dark high-quality basin; repeated cells overlap. No connecting lines."/>
 :::
+:::
+
+::: {.landing .fragment}
+Initial points learn broadly; later points concentrate where the answer may improve.
 :::
 
 ::: {.notes}
@@ -307,8 +311,8 @@ c = rep(c, '<img src="images/fig_R1_singlearm.png" class="fig-tall"', '<img src=
 c = rep(c, "- quit losers quickly: 47 max, **11.7** if inactive\n- the compromise: 31 max, **11.9**\n- cap the worst case: 30 max, **22.8**",
         "- H0-Optimal: 47 max, **11.7** if the treatment is inactive\n- Admissible: 31 max, **11.9**\n- Minimax: 30 max, **22.8**", "n25bul")
 c = rep(c, "::: {.landing .fragment}\nThe compromise keeps almost all of H0-Optimal's efficiency at almost Minimax's cap.\n:::\n\n:::\n:::\n",
-        ":::\n:::\n\n::: {.landing .fragment}\nAllowing one more patient in the maximum saves about eleven patients on average when the treatment is inactive. That is why we preferred the Admissible design.\n:::\n", "n25land")
-c = rep(c, "::: {.notes}\n", "::: {.notes}\n**Speaker check (not verifiable from the repo):** if this exact Admissible TNBC design is the one in the protocol, say \"That is the design we ran\"; otherwise keep the caption wording (\"we preferred\"), which is what the slide says.\n\n", "n25notes")
+        ":::\n:::\n\n::: {.landing .fragment}\nFor one additional patient of maximum capacity, Admissible saves about eleven patients on average when the treatment is inactive. That made the compromise especially attractive.\n:::\n", "n25land")
+c = rep(c, "::: {.notes}\n", "::: {.notes}\n**Speaker check (not verifiable from the repo):** if this exact Admissible TNBC design is the one in the protocol, say \"That is the design we ran\"; otherwise keep the caption wording (\"especially attractive\"); slide 29 gives the fuller operational choice.\n\n", "n25notes")
 N[25] = c
 
 # NEW 26 (old 32) --------------------------------------------------------------
@@ -320,16 +324,18 @@ N[26] = c
 
 # NEW 27 (old 33) --------------------------------------------------------------
 c = title(S[33], "Two philosophies converged on the same 13-parameter design")
-c = rep(c, '<img src="images/fig_R3_seamless_pareto.png" class="fig-mid"', '<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 385px; display: block; margin: 0 auto;"', "n27img")
-c = c.replace('alt="Seamless trade-off plane with five philosophies: three occupy distinct points', 'alt="Seamless trade-off plane: H0-Optimal and the collapsed Minimax equals Admissible point in color, two other objectives grayed and labeled other objective;')
+c = c.replace("Seamless trade-off plane with five philosophies: three occupy distinct points while Minimax and Admissible land on one identical point at maximum 108 and expected 87.6, circled.", "Seamless trade-off plane with three philosophies: H0-Optimal at maximum 150, and Minimax and Admissible landing on one identical point at maximum 108 and expected 87.6, circled.")
+c = rep(c, '<img src="images/fig_R3_seamless_pareto.png" class="fig-mid"', '<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 420px; display: block; margin: 0 auto;"', "n27img")
+c = c.replace('alt="Seamless trade-off plane with five philosophies: three occupy distinct points', 'alt="Seamless trade-off plane with three philosophies: H0-Optimal, and the collapsed Minimax equals Admissible point, circled;')
 c = set_landing(c, "Minimax and Admissible calibrated to the identical design. That is not a coincidence, and the next slide shows why.", "n27", fragment=True)
 N[27] = c
 
 # NEW 28 (old 34) --------------------------------------------------------------
 c = title(S[34], "The gate rarely opens when the treatment is inactive, so the two objectives collapse")
+c = c.replace("for every philosophy.", "for each of the three philosophies shown.")
 c = rep(c, 'src="images/fig_R4_conversion_gate.png"', 'src="images/fig_R4_conversion_gate_v3.png"', "n28img")
 c = set_landing(c, "When the treatment is inactive, only ~4% of trials reach stage 2. Expected enrollment therefore changes very little with stage-2 size, so the maximum-enrollment component drives the Admissible solution toward Minimax. H0-Optimal can tolerate a larger stage 2 because its objective never penalizes maximum N.", "n28", fragment=True)
-c = c.replace('class="fig-mid" alt="Bar chart', 'class="fig-mid" style="max-height: 330px;" alt="Bar chart')
+c = c.replace('class="fig-mid" alt="Bar chart', 'class="fig-mid" style="max-height: 390px;" alt="Bar chart')
 c = c.rstrip("\n") + '\n\n::: {.notes}\n**Say:** "In this design region the two objectives effectively align." **Close with:** "The search became an instrument for understanding the design."\n:::\n'
 N[28] = c
 
@@ -369,27 +375,50 @@ N[30] = '''## BATON is designed as a general framework, not an EVOLVE-specific t
 :::
 '''
 
+# NEW 30b (restored, sourced number only) ---------------------------------------
+N["30b"] = '''## Problems often emerge late {data-menu-title="Late failure"}
+
+::: {style="text-align: center; margin-top: 2.2em;"}
+<span style="font-size: 3.6em; font-weight: 800; color: #13294B; line-height: 1;">54%</span><br/>
+[of 640 therapeutics reaching phase 3 or pivotal trials **failed in late-stage development**; 57% of failures for inadequate efficacy]{style="display:block; max-width: 70%; margin: 0.4em auto 0 auto; font-size: 0.8em; color: #5B6670;"}
+:::
+
+::: {.landing .fragment}
+Locally reasonable decisions can leave problems that only become visible downstream.
+:::
+
+[Hwang et al., JAMA Internal Medicine 2016]{.muted style="display:block; text-align:center; font-size:0.62em; margin-top: 1.2em;"}
+
+::: {.notes}
+**Delivery:** 20 to 30 seconds. Say the denominator precisely (640 novel therapeutics reaching phase 3 or pivotal trials, 1998 to 2008; PMID 27723879), never "half of drugs fail phase III." Then, spoken only: "And dose questions persist after approval: FDA\'s own postmarketing-requirement records, as we have compiled them, show dose-optimization requirements on a meaningful share of oncology approvals, taking years to fulfill." No number on that; the primary analysis is not yet traced. Then sotorasib gives the human-scale example.
+
+**Honesty line:** "These late-stage failures are a different problem from the one I just showed you solved. They are the problem this machinery might reach."
+:::
+'''
+
 # NEW 31 (old 38) --------------------------------------------------------------
 c = S[38]
 c = rep(c, "**similar progression-free survival at one-quarter the dose**", "**median PFS was similar at 240 mg and 960 mg**", "n31line")
 c = set_landing(c, "The optimal-dose question remained unresolved until after approval.", "n31", fragment=True)
 c = c.replace("selected for development, then approval<br/>", "selected, developed, approved<br/>").replace("**960 mg**: highest dose tested in phase I<br/>", "**960 mg**: highest phase I dose tested<br/>")
 c = rep(c, "[FDA Oncologic Drugs Advisory Committee review of sotorasib dosing and CodeBreaK 200, October 2023]{.muted style=\"display:block; text-align:center; font-size:0.55em; margin-top:0.4em;\"}",
-        "[Source: CodeBreaK 100 dose comparison (Ann Oncol 2023; Eur J Cancer 2024); FDA ODAC Oct 2023]{.muted style=\"display:block; text-align:center; font-size:0.62em; margin-top:0.5em;\"}", "n31src")
+        "[Source: CodeBreaK 100 dose comparison; Ann Oncol 2023, Eur J Cancer 2024]{.muted style=\"display:block; text-align:center; font-size:0.62em; margin-top:0.5em;\"}", "n31src")
 c = c.replace('::: {.frame-box style="max-width: 56%; margin: 0 auto; text-align: center; font-size: 0.95em;"}', '::: {.frame-box style="max-width: 60%; margin: 0 auto; text-align: center; font-size: 0.9em;"}')
 c = rep(c, "**Pull-from-if-needed:**", "**Confirmed 2026-09-04 (CodeBreaK 100 randomized dose comparison, 960 vs 240 mg, n = 209; Ann Oncol 2023 VP4, Eur J Cancer 2024):** median PFS 5.4 vs 5.6 months (HR 0.95, 95% CI 0.67 to 1.35); ORR 32.7% vs 24.8%; median OS 13.0 vs 11.7 months (HR 0.75, 95% CI 0.53 to 1.07). FDA considered the postmarketing requirement fulfilled in December 2023 and 960 mg remains the labeled dose. Do not say \"similar efficacy\": ORR and OS trended toward 960 mg; PFS is the endpoint that was similar. Gloss PFS aloud: \"time until the cancer worsens or the patient dies.\"\n\n**Pull-from-if-needed:**", "n31notes")
 N[31] = c
 
 # NEW 32 (old 40) --------------------------------------------------------------
 c = S[40]
-c = c.replace('<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center;">', '<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center; min-height: 4.6em; display:flex; flex-direction:column; justify-content:center;">')
+c = c.replace('<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.7em 1.0em; text-align:center;">', '<div style="border:1px solid #13294B; background:#F4F6F8; padding:0.45em 0.9em; text-align:center; min-height: 3.8em; display:flex; flex-direction:column; justify-content:center; font-size: 0.9em;">')
+c = c.replace('gap:0.6em; margin: 0.7em auto 0.2em auto; max-width: 92%;', 'gap:0.6em; margin: 0.2em auto 0.1em auto; max-width: 92%;')
 c = rep(c, "selection inherited<br/>", "choice carries forward<br/>", "n32a")
 c = rep(c, "debt accumulates<br/>", "uncertainty carries forward<br/>", "n32b")
 c = rep(c, "must repay remaining debt", "must resolve remaining uncertainty", "n32c")
-c = rep(c, "phased&ensp;·&ensp;seamless&ensp;·&ensp;**potentially phaseless**", "phased&ensp;·&ensp;seamless&ensp;·&ensp;**potentially fewer phases**", "n32d")
-c = set_landing(c, "Long-term idea: phase structure becomes a design variable.", "n32", fragment=True)
-c = c.replace("Phaseless does not mean evidence-less or confirmation-less.", "Fewer phases does not mean evidence-less or confirmation-less.")
-c = c.replace("phaseless", "fewer-phase").replace("Phaseless", "Fewer-phase")
+c = rep(c, "phased&ensp;·&ensp;seamless&ensp;·&ensp;**potentially phaseless**", "phased&ensp;·&ensp;seamless&ensp;·&ensp;**potentially phaseless**", "n32d")
+c = set_landing(c, "Phase structure becomes a design variable.", "n32", fragment=True)
+c = c.replace('::: {.landing .fragment}\nPhase structure becomes a design variable.\n:::', '::: {.landing .fragment style="font-size: 1.25em;"}\nPhase structure becomes a design variable.\n:::')
+c = c.replace('::: {.fragment style="max-width: 70%; margin: 0.3em auto 0 auto; border: 2px solid #2E6A9F; background: #FFFFFF; text-align: center; padding: 0.45em 0.8em; font-size: 0.8em;" fragment-index="1"}', '::: {.fragment style="max-width: 78%; margin: 0.35em auto 0 auto; border: 2px solid #2E6A9F; background: #FFFFFF; text-align: center; padding: 0.45em 1em; font-size: 0.88em; line-height: 1.35;" fragment-index="1"}')
+c = c.replace("Then say the clarification:", "Then say the clarification, aloud and explicitly: \"Phaseless does not mean confirmation-less. It means phase boundaries are design choices rather than assumptions.\"")
 N[32] = c
 
 # NEW 33 (old 39) --------------------------------------------------------------
@@ -398,10 +427,9 @@ c = rep(c, '<span class="ext-status">BATON-C &middot; in progress, with Amber Yo
         '<span class="ext-status">BATON-C &middot; in progress, with Amber Young</span>\n<p>Optimize over a <em>prespecified family</em> of plausible truths, not one.</p>', "n33a")
 c = rep(c, '<span class="ext-status">BATON-D &middot; in progress, working name</span>\n<p>Optimize dose-finding rules for safety <em>and</em> what every later trial inherits.</p>',
         '<span class="ext-status">BATON-D &middot; in progress</span>\n<p>Optimize dose-finding rules for safety <em>and</em> for what later trials inherit.</p>', "n33b")
-c = rep(c, '<span class="ext-status">phaseless development &middot; long-term goal</span>', '<span class="ext-status">long-term goal</span>', "n33c")
+c = rep(c, '<span class="ext-status">phaseless development &middot; long-term goal</span>', '<span class="ext-status">Phaseless / whole-program design &middot; long-term goal</span>', "n33c")
+c = c.replace("as <em>one linked program</em>.", "as <em>one program</em>.")
 c = set_landing(c, None, "n33")
-c = c.replace("*Does phaseless mean abandoning evidentiary standards?*", "*Does fewer phases mean abandoning evidentiary standards?*")
-c = c.replace("phaseless", "fewer-phase").replace("Phaseless", "Fewer-phase")
 N[33] = c
 
 # NEW 34 (old 52 promoted) -----------------------------------------------------
@@ -490,8 +518,8 @@ N[29] = N[29].replace("(backup B6 has the full numbers)", "(slide 22 has the ful
 assert "backup B6" not in N[29]
 
 # Assemble ---------------------------------------------------------------------
-order = [N[i] for i in range(1, 37) if i != 34] + [Q, BD] + [B[i] for i in range(1, 11)]  # NEW 34 deleted per speaker, 2026-09-04
+order = [N[i] for i in range(1, 31)] + [N['30b']] + [N[i] for i in range(31, 37) if i != 34] + [Q, BD] + [B[i] for i in range(1, 11)]  # NEW 34 deleted per speaker, 2026-09-04
 out = header + "\n" + "\n\n".join(x.rstrip("\n") + "\n" for x in order)
-assert out.count("\n## ") == 47, out.count("\n## ")
+assert out.count("\n## ") == 48, out.count("\n## ")
 (HERE / "baton-compmed-v3.qmd").write_text(out)
 print("wrote baton-compmed-v3.qmd with", out.count("\n## "), "slides")
