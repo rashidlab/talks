@@ -123,7 +123,7 @@ Two choices dominate: how many patients, and which rule decides.
 
 ## Bayesian adaptive trials decide as they go. Each rule adds settings. {data-menu-title="Bayesian adaptive knobs"}
 
-<img src="images/fig_fixed_vs_adaptive.png" style="max-width: 1180px; max-height: 380px; width: auto; height: auto; display: block; margin: 0 auto;" alt="Two schematic timelines. A traditional trial enrolls all patients then analyzes once. An adaptive trial enrolls in blocks separated by interim looks that can stop the trial early for futility, ending in a final go-or-stop analysis."/>
+<img src="images/fig_fixed_vs_adaptive.png" style="width: 1150px !important; max-width: 1150px !important; max-height: 420px !important; height: auto !important; width: auto; height: auto; display: block; margin: 0 auto;" alt="Two schematic timelines. A traditional trial enrolls all patients then analyzes once. An adaptive trial enrolls in blocks separated by interim looks that can stop the trial early for futility, ending in a final go-or-stop analysis."/>
 
 ::: {.landing .fragment}
 Maximum N, look timing, futility and efficacy thresholds, priors, margins: **8 to 13 interacting choices**, and every one changes how the trial behaves.
@@ -173,7 +173,7 @@ Share declaring efficacy when the treatment works as hypothesized. Floor: **0.80
 ## Simulation tells us how one candidate behaves. It does not tell us which candidate to try next. {data-menu-title="Count them"}
 
 
-<img src="images/fig_tally_strip.png" style="max-width: 1200px; max-height: 400px; width: auto; height: auto; display: block; margin: 1.2em auto 0 auto;" alt="One candidate design simulated ten thousand times under two truths. When the alternative is true, 8,630 of 10,000 simulated trials declare efficacy, so power is 0.86. When the null is true, only 13 declare efficacy, so type I error is 13 in 10,000, with average enrollment under the null of 11.7 patients."/>
+<img src="images/fig_tally_strip.png" style="width: 1160px !important; max-width: 1160px !important; height: auto !important; max-height: none !important; display: block; margin: 1.6em auto 0 auto;" alt="One candidate design simulated ten thousand times under two truths. When the alternative is true, 8,630 of 10,000 simulated trials declare efficacy, so power is 0.86. When the null is true, only 13 declare efficacy, so type I error is 13 in 10,000, with average enrollment under the null of 11.7 patients."/>
 
 
 ::: {.notes}
@@ -265,14 +265,12 @@ Same shape every time: many interacting settings, operating characteristics eval
 
 ## Grid search scales poorly; random search wastes evaluations in our benchmark {data-menu-title="Alternatives fail"}
 
-::: {.columns style="align-items: center;"}
-::: {.column width="50%"}
-<img src="images/fig_search_grid.png" class="fig-tall" alt="Heatmap of a fictional two-dimensional design-space slice, darker meaning better, covered by a uniform lattice of one hundred evaluation dots, most sitting in light low-quality regions."/>
-:::
-::: {.column width="50%" .fragment}
-<img src="images/fig_search_random.png" class="fig-tall" alt="The same heatmap with one hundred evaluation dots scattered uniformly at random; most again land in light low-quality regions."/>
-:::
-:::
+```{=html}
+<div style="display: flex; justify-content: center; align-items: center; gap: 2.5em; margin-top: 0.2em;">
+<img src="images/fig_search_grid.png" style="height: 395px;" alt="Heatmap of a fictional two-dimensional design-space slice, darker meaning better, covered by a uniform lattice of one hundred evaluation dots, most sitting in light low-quality regions."/>
+<img src="images/fig_search_random.png" class="fragment" style="height: 395px;" alt="The same heatmap with one hundred evaluation dots scattered uniformly at random; most again land in light low-quality regions."/>
+</div>
+```
 
 ::: {.landing .fragment}
 In two dimensions a grid is easy. As dimensions grow, the number of combinations explodes. Random search spent 93% of its 2,000 evaluations on designs that fail. (Darker = better design.)
@@ -363,9 +361,9 @@ A closed loop: simulate, learn, choose, repeat.
 ## A surrogate predicts designs we have not paid to simulate {data-menu-title="Surrogate map"}
 
 ::: {.r-stack}
-<img src="images/fig_map_points.png" class="fig-tall" alt="Scatter of nine simulated designs along one design setting, each with a Monte Carlo error bar on its estimated power."/>
+<img src="images/fig_map_points.png" class="fig-tall" style="height: 470px;" alt="Scatter of nine simulated designs along one design setting, each with a Monte Carlo error bar on its estimated power."/>
 
-<img src="images/fig_map_model.png" class="fig-tall fragment" alt="The same nine points with a smooth fitted curve and an uncertainty band through them, labeled as the model's prediction for designs never simulated."/>
+<img src="images/fig_map_model.png" class="fig-tall fragment" style="height: 470px;" alt="The same nine points with a smooth fitted curve and an uncertainty band through them, labeled as the model's prediction for designs never simulated."/>
 :::
 
 ::: {.landing .fragment}
@@ -381,7 +379,7 @@ Design settings in, trial behavior out, and the model says how sure it is.
 
 ## The next simulation goes where it has the greatest expected value for improving the feasible design {data-menu-title="Acquisition"}
 
-<img src="images/fig_acquisition_regions.png" style="max-height: 370px; display: block; margin: 0 auto;" alt="Schematic two-dimensional design space with a probably-infeasible region, a probably-feasible region containing a low-predicted-enrollment area, an uncertainty band along the feasibility boundary, and a single next-simulation candidate marked on that boundary near the low-enrollment area."/>
+<img src="images/fig_acquisition_regions.png" style="max-height: 400px; display: block; margin: 0 auto;" alt="Schematic two-dimensional design space with a probably-infeasible region, a probably-feasible region containing a low-predicted-enrollment area, an uncertainty band along the feasibility boundary, and a single next-simulation candidate marked on that boundary near the low-enrollment area."/>
 
 ::: {.landing .fragment}
 Balance the potential improvement in the objective against the probability that the design satisfies the constraints.
@@ -396,14 +394,12 @@ Balance the potential improvement in the objective against the probability that 
 
 ## The seed sketches the map. Then BATON proposes each batch. {data-menu-title="Seed then search"}
 
-::: {.columns style="align-items: center; margin-top: 1.5em;"}
-::: {.column width="50%"}
-<img src="images/fig_search_init.png" class="fig-tall" alt="Heatmap of a fictional design-space slice, darker meaning better, with fifteen scattered space-filling evaluation dots and no lattice."/>
-:::
-::: {.column width="50%" .fragment}
-<img src="images/fig_search_guided.png" class="fig-tall" alt="The same surface with thirty model-guided evaluations clustering on the dark high-quality basin; repeated cells overlap. No connecting lines."/>
-:::
-:::
+```{=html}
+<div style="display: flex; justify-content: center; align-items: center; gap: 2.5em; margin-top: 0.6em;">
+<img src="images/fig_search_init.png" style="height: 470px;" alt="Heatmap of a fictional design-space slice, darker meaning better, with fifteen scattered space-filling evaluation dots and no lattice."/>
+<img src="images/fig_search_guided.png" class="fragment" style="height: 470px;" alt="The same surface with thirty model-guided evaluations clustering on the dark high-quality basin; repeated cells overlap. No connecting lines."/>
+</div>
+```
 
 ::: {.landing .fragment}
 Initial points learn broadly; later points concentrate where the answer may improve.
@@ -418,7 +414,7 @@ Initial points learn broadly; later points concentrate where the answer may impr
 
 ## Spend precision where it matters {data-menu-title="Fidelity ladder"}
 
-<img src="images/fig_funnel_plain.png" style="max-height: 400px; display: block; margin: 0.4em auto 0 auto;" alt="Ladder of four stages with one large sublabel under each box: Explore, 3,000 trials each; Validate, 10,000 each; Escalate only if needed, 5,000 then 10,000; Verify, 5 seeds x 10,000, all must pass. Original description: Explore: many candidate designs at 3,000 simulated trials each, seeded space-filling then model-guided. Validate: the top feasible designs re-simulated at 10,000 each; if enough survive, the search skips straight to verification. Escalate, drawn dashed because it runs only if validation fails: a narrowed search box at 5,000 then 10,000. Verify: the one reported design at five independent seeds of 10,000, all of which must pass. Bar width shows designs narrowing; a right-hand arrow shows precision per design growing."/>
+<img src="images/fig_funnel_plain.png" style="max-height: 435px; display: block; margin: 0.3em auto 0 auto;" alt="Ladder of four stages with one large sublabel under each box: Explore, 3,000 trials each; Validate, 10,000 each; Escalate only if needed, 5,000 then 10,000; Verify, 5 seeds x 10,000, all must pass. Original description: Explore: many candidate designs at 3,000 simulated trials each, seeded space-filling then model-guided. Validate: the top feasible designs re-simulated at 10,000 each; if enough survive, the search skips straight to verification. Escalate, drawn dashed because it runs only if validation fails: a narrowed search box at 5,000 then 10,000. Verify: the one reported design at five independent seeds of 10,000, all of which must pass. Bar width shows designs narrowing; a right-hand arrow shows precision per design growing."/>
 
 ::: {.landing .fragment}
 Cheap screening for the many, expensive re-checks for the few, multi-seed verification for the one design you report.
@@ -452,7 +448,7 @@ Feasibility, efficiency, and richer designs
 
 [Simon's two-stage design: enroll n1, stop if too few responses, otherwise enroll to n. Every candidate in this design class can be enumerated, so the exact constrained optimum is known.]{.muted style="display:block; font-size: 0.85em;"}
 
-<img src="images/fig_sample_efficiency.png" class="fig-mid" style="max-height: 400px;" alt="Best feasible expected sample size against cumulative design evaluations for ten seeded runs: the space-filling phase plateaus near 19.7, then the model-guided phase drops onto Simon's exact optimum at 17.74, where eight of ten runs terminate."/>
+<img src="images/fig_sample_efficiency.png" class="fig-mid" style="max-height: 400px; height: auto; width: auto; max-width: 1180px;" alt="Best feasible expected sample size against cumulative design evaluations for ten seeded runs: the space-filling phase plateaus near 19.7, then the model-guided phase drops onto Simon's exact optimum at 17.74, where eight of ten runs terminate."/>
 
 ::: {.landing .fragment}
 10 random starts: 8 return Simon's exact optimal design; 2 land 0.15 patients away.
@@ -613,7 +609,7 @@ For one additional patient of maximum capacity, Admissible saves about eleven pa
 
 ## Search makes a 13-parameter seamless design practical to calibrate {data-menu-title="Seamless"}
 
-<img src="images/fig_B_design_types_v3.png" style="max-height: 385px; display: block; margin: 0.3em auto 0 auto;" alt="Three trial architectures with rising parameter counts, ending in a seamless design that begins single-arm and converts to a randomized comparison at an interim gate: thirteen parameters."/>
+<img src="images/fig_B_design_types_v3.png" style="width: 1000px; max-width: 1000px; height: auto; display: block; margin: 0.2em auto 0 auto;" alt="Three trial architectures with rising parameter counts, ending in a seamless design that begins single-arm and converts to a randomized comparison at an interim gate: thirteen parameters."/>
 
 ::: {.landing .fragment}
 Screen first with a single-arm stage, then demand randomized evidence from the cohorts that earn it. Thirteen interacting parameters, calibrated by automated search.
@@ -626,7 +622,7 @@ Screen first with a single-arm stage, then demand randomized evidence from the c
 
 ## Two philosophies converged on the same 13-parameter design {data-menu-title="Collapse"}
 
-<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 420px; display: block; margin: 0 auto;" alt="Seamless trade-off plane with three philosophies: H0-Optimal at maximum 150, and Minimax and Admissible landing on one identical point at maximum 108 and expected 87.6, circled."/>
+<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 435px; display: block; margin: 0 auto;" alt="Seamless trade-off plane with three philosophies: H0-Optimal at maximum 150, and Minimax and Admissible landing on one identical point at maximum 108 and expected 87.6, circled."/>
 
 ::: {.landing .fragment}
 Minimax and Admissible calibrated to the identical design. That is not a coincidence, and the next slide shows why.
@@ -944,7 +940,7 @@ All three answers below are verified against the BATON source (v0.4.0, the relea
 
 ## Backup: the 12-benchmark scatter {.backup-slide data-menu-title="B2: Benchmark scatter"}
 
-<img src="images/fig4_benchmark_efficiency.png" style="max-height: 320px; display: block; margin: 0 auto;" alt="Per-scenario ratio of BATON to the Simon optimum plotted against effect size; most scenarios sit inside a plus-or-minus five percent band around one, the worst near 1.14."/>
+<img src="images/fig4_benchmark_efficiency.png" style="max-height: 390px; display: block; margin: 0 auto;" alt="Per-scenario ratio of BATON to the Simon optimum plotted against effect size; most scenarios sit inside a plus-or-minus five percent band around one, the worst near 1.14."/>
 
 ::: {.landing}
 Always feasible: **12 of 12**. Exact optimum in **4 of 12**; median within **2.5%**; worst case **13.5%**.
@@ -1074,7 +1070,7 @@ For a method meant to sit inside regulatory submissions, this is not a nicety. T
 
 ## Backup: the randomized-cohort frontier {.backup-slide data-menu-title="B8: Randomized frontier"}
 
-<img src="images/fig_R2_betweenarm.png" style="max-height: 380px; display: block; margin: 0 auto;" alt="Trade-off plane for the ER-positive doublet-versus-triplet cohort: maximum 124 at expected 65, 104 at 73, and 99 at 82, steepening toward the Minimax end."/>
+<img src="images/fig_R2_betweenarm.png" style="max-height: 440px; display: block; margin: 0 auto;" alt="Trade-off plane for the ER-positive doublet-versus-triplet cohort: maximum 124 at expected 65, 104 at 73, and 99 at 82, steepening toward the Minimax end."/>
 
 ::: {.landing}
 Cutting the worst-case cap from 124 to 104 costs about 8 extra patients on average when the treatment does not help; the next 5 cost about 9 more.

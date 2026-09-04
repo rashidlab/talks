@@ -5,6 +5,9 @@ Each talk lives in its own dated subdirectory and is published via GitHub Pages.
 
 ## Current talks
 
+- **[Planning under uncertainty: AI-guided design of efficient clinical trials with BATON](https://rashidlab.github.io/talks/2026-09-04-unc-compmed-baton-deck/baton-compmed-v3.html)**
+  Naim Rashid · UNC Computational Medicine Seminar · September 4, 2026
+
 - **[Adaptive Trial Design for the RAS-Inhibitor Era: Combinations, Resistance, and Biomarker-Guided Therapy](https://rashidlab.github.io/talks/2026-gispore-ras-trials-deck/ras-era-adaptive-trials.html)**
   Naim Rashid · NCI GI SPORE Meeting · June 2026
 

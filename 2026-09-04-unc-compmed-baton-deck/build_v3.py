@@ -109,7 +109,7 @@ Two choices dominate: how many patients, and which rule decides.
 # NEW 5 (old 11) --------------------------------------------------------------
 c = S[11]
 c = set_landing(c, "Maximum N, look timing, futility and efficacy thresholds, priors, margins: **8 to 13 interacting choices**, and every one changes how the trial behaves.", "n5", fragment=True)
-c = rep(c, '<img src="images/fig_fixed_vs_adaptive.png" style="max-width: 1150px; max-height: 330px;', '<img src="images/fig_fixed_vs_adaptive.png" style="max-width: 1180px; max-height: 380px;', "n5img")
+c = rep(c, '<img src="images/fig_fixed_vs_adaptive.png" style="max-width: 1150px; max-height: 330px;', '<img src="images/fig_fixed_vs_adaptive.png" style="width: 1150px !important; max-width: 1150px !important; max-height: 420px !important; height: auto !important;', "n5img")
 c = rep(c, "::: {.notes}\n", '::: {.notes}\n**Say aloud:** "The design is Bayesian because those decisions rest on posterior probabilities under a model and a prior." Gloss "futility" (the treatment looks unlikely to work) and "interim" (a look before the end).\n\n', "n5notes")
 N[5] = c
 
@@ -127,7 +127,7 @@ c = S[12]
 c = title(c, "Simulation tells us how one candidate behaves. It does not tell us which candidate to try next.")
 c = rep(c, '[FDA typically wants **power of at least 0.80** and **type I error of at most 0.05 to 0.10**.]{.muted style="display:block; text-align:center; margin-bottom: 0.4em;"}\n\n', "", "n7fda")
 c = c.replace(boxes, "")
-c = rep(c, 'style="max-width: 1150px; max-height: 250px; width: auto; height: auto; display: block; margin: 0.3em auto 0 auto;"', 'style="max-width: 1200px; max-height: 400px; width: auto; height: auto; display: block; margin: 1.2em auto 0 auto;"', "n7img")
+c = rep(c, 'style="max-width: 1150px; max-height: 250px; width: auto; height: auto; display: block; margin: 0.3em auto 0 auto;"', 'style="width: 1160px !important; max-width: 1160px !important; height: auto !important; max-height: none !important; display: block; margin: 1.6em auto 0 auto;"', "n7img")
 c = rep(c, '[A design meeting your prespecified targets is **feasible**.]{.muted style="display:block; text-align:center;"}\n\n', "", "n7feas")
 c = set_landing(c, None, "n7")
 c = set_notes(c, """**Gloss aloud:** "null" means the treatment does no better than the benchmark; "alternative" means the improvement we want the power to detect. Point at the two rows: they are exactly these two simulations.
@@ -162,6 +162,21 @@ N[10] = c
 
 # NEW 11 (old 14) -------------------------------------------------------------
 c = title(S[14], "Grid search scales poorly; random search wastes evaluations in our benchmark")
+c = rep(c, '''::: {.columns style="align-items: center;"}
+::: {.column width="50%"}
+<img src="images/fig_search_grid.png" class="fig-tall" alt="Heatmap of a fictional two-dimensional design-space slice, darker meaning better, covered by a uniform lattice of one hundred evaluation dots, most sitting in light low-quality regions."/>
+:::
+::: {.column width="50%" .fragment}
+<img src="images/fig_search_random.png" class="fig-tall" alt="The same heatmap with one hundred evaluation dots scattered uniformly at random; most again land in light low-quality regions."/>
+:::
+:::
+''', '''```{=html}
+<div style="display: flex; justify-content: center; align-items: center; gap: 2.5em; margin-top: 0.2em;">
+<img src="images/fig_search_grid.png" style="height: 395px;" alt="Heatmap of a fictional two-dimensional design-space slice, darker meaning better, covered by a uniform lattice of one hundred evaluation dots, most sitting in light low-quality regions."/>
+<img src="images/fig_search_random.png" class="fragment" style="height: 395px;" alt="The same heatmap with one hundred evaluation dots scattered uniformly at random; most again land in light low-quality regions."/>
+</div>
+```
+''', "n11row")
 c = set_landing(c, "In two dimensions a grid is easy. As dimensions grow, the number of combinations explodes. Random search spent 93% of its 2,000 evaluations on designs that fail. (Darker = better design.)", "n11", fragment=True)
 c = rep(c, "::: {.notes}\n", "::: {.notes}\n**Confirmed 2026-09-04 (scripts/run_random_search_analysis.R, results/validation/random_search_summary.csv):** the random-search benchmark drew 2,000 configurations uniformly over the binary two-stage (Simon-type) design space, the same parameter family as the Simon benchmark (efficacy and futility thresholds, stage-1 size, total size) over its own search box, 2,000 simulations each; not commensurable with the ten-seed reproducibility run; 136 feasible (6.8%); best random design expected null N 17.75 in 9.3 minutes. If asked which dimension: the Simon-type parameters, not the 8- or 13-parameter EVOLVE designs.\n\n", "n11notes")
 N[11] = c
@@ -206,20 +221,18 @@ N[15] = c
 c = title(S[22], "The next simulation goes where it has the greatest expected value for improving the feasible design")
 c = set_landing(c, "Balance the potential improvement in the objective against the probability that the design satisfies the constraints.", "n16", fragment=True)
 c = rep(c, "**Q&A pocket:** *Acquisition details?*", "**Name it once here if asked:** this is expected constrained improvement; backup B1 has the formula.\n\n**Q&A pocket:** *Acquisition details?*", "n16notes")
-c = c.replace('<img src="images/fig_acquisition_regions.png" class="fig-mid"', '<img src="images/fig_acquisition_regions.png" style="max-height: 370px; display: block; margin: 0 auto;"')
+c = c.replace('<img src="images/fig_acquisition_regions.png" class="fig-mid"', '<img src="images/fig_acquisition_regions.png" style="max-height: 400px; display: block; margin: 0 auto;"')
 N[16] = c
 
 # NEW 17 (old 20 + old 23) -----------------------------------------------------
 N[17] = '''## The seed sketches the map. Then BATON proposes each batch. {data-menu-title="Seed then search"}
 
-::: {.columns style="align-items: center; margin-top: 1.5em;"}
-::: {.column width="50%"}
-<img src="images/fig_search_init.png" class="fig-tall" alt="Heatmap of a fictional design-space slice, darker meaning better, with fifteen scattered space-filling evaluation dots and no lattice."/>
-:::
-::: {.column width="50%" .fragment}
-<img src="images/fig_search_guided.png" class="fig-tall" alt="The same surface with thirty model-guided evaluations clustering on the dark high-quality basin; repeated cells overlap. No connecting lines."/>
-:::
-:::
+```{=html}
+<div style="display: flex; justify-content: center; align-items: center; gap: 2.5em; margin-top: 0.6em;">
+<img src="images/fig_search_init.png" style="height: 470px;" alt="Heatmap of a fictional design-space slice, darker meaning better, with fifteen scattered space-filling evaluation dots and no lattice."/>
+<img src="images/fig_search_guided.png" class="fragment" style="height: 470px;" alt="The same surface with thirty model-guided evaluations clustering on the dark high-quality basin; repeated cells overlap. No connecting lines."/>
+</div>
+```
 
 ::: {.landing .fragment}
 Initial points learn broadly; later points concentrate where the answer may improve.
@@ -236,7 +249,7 @@ Initial points learn broadly; later points concentrate where the answer may impr
 c = S[24]
 c = rep(c, 'alt="Ladder of four stages.', 'alt="Ladder of four stages with one large sublabel under each box: Explore, 3,000 trials each; Validate, 10,000 each; Escalate only if needed, 5,000 then 10,000; Verify, 5 seeds x 10,000, all must pass. Original description:', "n18alt")
 c = set_landing(c, "Cheap screening for the many, expensive re-checks for the few, multi-seed verification for the one design you report.", "n18", fragment=True)
-c = c.replace('<img src="images/fig_funnel_plain.png" class="fig-mid"', '<img src="images/fig_funnel_plain.png" style="max-height: 400px; display: block; margin: 0.4em auto 0 auto;"')
+c = c.replace('<img src="images/fig_funnel_plain.png" class="fig-mid"', '<img src="images/fig_funnel_plain.png" style="max-height: 435px; display: block; margin: 0.3em auto 0 auto;"')
 N[18] = c
 
 # NEW 19 -----------------------------------------------------------------------
@@ -317,7 +330,7 @@ N[25] = c
 
 # NEW 26 (old 32) --------------------------------------------------------------
 c = title(S[32], "Search makes a 13-parameter seamless design practical to calibrate")
-c = rep(c, '<img src="images/fig_B_design_types.png" class="fig-mid"', '<img src="images/fig_B_design_types_v3.png" style="max-height: 385px; display: block; margin: 0.3em auto 0 auto;"', "n26img")
+c = rep(c, '<img src="images/fig_B_design_types.png" class="fig-mid"', '<img src="images/fig_B_design_types_v3.png" style="width: 1000px; max-width: 1000px; height: auto; display: block; margin: 0.2em auto 0 auto;"', "n26img")
 c = set_landing(c, "Screen first with a single-arm stage, then demand randomized evidence from the cohorts that earn it. Thirteen interacting parameters, calibrated by automated search.", "n26", fragment=True)
 c = c.rstrip("\n") + '\n\n::: {.notes}\n**Say aloud:** "This is the kind of design we can now seriously consider, because calibration is tractable." And: "The first stage lets us screen with fewer patients before committing to randomized evidence."\n:::\n'
 N[26] = c
@@ -325,7 +338,7 @@ N[26] = c
 # NEW 27 (old 33) --------------------------------------------------------------
 c = title(S[33], "Two philosophies converged on the same 13-parameter design")
 c = c.replace("Seamless trade-off plane with five philosophies: three occupy distinct points while Minimax and Admissible land on one identical point at maximum 108 and expected 87.6, circled.", "Seamless trade-off plane with three philosophies: H0-Optimal at maximum 150, and Minimax and Admissible landing on one identical point at maximum 108 and expected 87.6, circled.")
-c = rep(c, '<img src="images/fig_R3_seamless_pareto.png" class="fig-mid"', '<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 420px; display: block; margin: 0 auto;"', "n27img")
+c = rep(c, '<img src="images/fig_R3_seamless_pareto.png" class="fig-mid"', '<img src="images/fig_R3_seamless_pareto_v3.png" style="max-height: 435px; display: block; margin: 0 auto;"', "n27img")
 c = c.replace('alt="Seamless trade-off plane with five philosophies: three occupy distinct points', 'alt="Seamless trade-off plane with three philosophies: H0-Optimal, and the collapsed Minimax equals Admissible point, circled;')
 c = set_landing(c, "Minimax and Admissible calibrated to the identical design. That is not a coincidence, and the next slide shows why.", "n27", fragment=True)
 N[27] = c
@@ -466,14 +479,14 @@ BD = S[44]
 # Backups -----------------------------------------------------------------------
 B = {}
 B[1] = S[45]
-B[2] = S[30].replace('<img src="images/fig4_benchmark_efficiency.png" class="fig-mid"', '<img src="images/fig4_benchmark_efficiency.png" style="max-height: 320px; display: block; margin: 0 auto;"').replace("## Across 12 different benchmark scenarios {data-menu-title=\"Benchmark\"}", "## Backup: the 12-benchmark scatter {.backup-slide data-menu-title=\"B2: Benchmark scatter\"}")
+B[2] = S[30].replace('<img src="images/fig4_benchmark_efficiency.png" class="fig-mid"', '<img src="images/fig4_benchmark_efficiency.png" style="max-height: 390px; display: block; margin: 0 auto;"').replace("## Across 12 different benchmark scenarios {data-menu-title=\"Benchmark\"}", "## Backup: the 12-benchmark scatter {.backup-slide data-menu-title=\"B2: Benchmark scatter\"}")
 B[3] = S[48]
 B[4] = S[49]
 B[5] = S[50]
 B[6] = S[51]
 B[7] = rep(S[53], "For a method meant to sit inside regulatory submissions, this is not a nicety. It is what regulatory credibility requires.",
            "For a method meant to sit inside regulatory submissions, this is not a nicety. That is the bar for a design going into a regulatory submission.", "b7")
-B[8] = S[54].replace('<img src="images/fig_R2_betweenarm.png" class="fig-mid"', '<img src="images/fig_R2_betweenarm.png" style="max-height: 380px; display: block; margin: 0 auto;"')
+B[8] = S[54].replace('<img src="images/fig_R2_betweenarm.png" class="fig-mid"', '<img src="images/fig_R2_betweenarm.png" style="max-height: 440px; display: block; margin: 0 auto;"')
 B[9] = S[8].replace("## The trial had to learn while the program was running {data-menu-title=\"What ARPA-H asked\"}", "## Backup: the ARPA-H ask and the N-of-1 addition {.backup-slide data-menu-title=\"B9: ARPA-H ask\"}")
 B[10] = '''## Backup: ADAPT technical areas and the EVOLVE team {.backup-slide data-menu-title="B10: ADAPT + team"}
 
@@ -516,6 +529,11 @@ assert "v3 numbering" in Q
 # NEW 29 notes: the full comparison is now main slide 22
 N[29] = N[29].replace("(backup B6 has the full numbers)", "(slide 22 has the full numbers)")
 assert "backup B6" not in N[29]
+
+# Fill the space above the caption band on the two panel slides
+N[15] = N[15].replace('<img src="images/fig_map_points.png" class="fig-tall"', '<img src="images/fig_map_points.png" class="fig-tall" style="height: 470px;"').replace('<img src="images/fig_map_model.png" class="fig-tall fragment"', '<img src="images/fig_map_model.png" class="fig-tall fragment" style="height: 470px;"')
+N[17] = N[17].replace('class="fig-tall" alt="Heatmap of a fictional', 'class="fig-tall" style="height: 470px;" alt="Heatmap of a fictional').replace('class="fig-tall" alt="The same surface with thirty', 'class="fig-tall" style="height: 470px;" alt="The same surface with thirty')
+N[20] = N[20].replace('class="fig-mid" style="max-height: 400px;"', 'class="fig-mid" style="max-height: 400px; height: auto; width: auto; max-width: 1180px;"')
 
 # Assemble ---------------------------------------------------------------------
 order = [N[i] for i in range(1, 31)] + [N['30b']] + [N[i] for i in range(31, 37) if i != 34] + [Q, BD] + [B[i] for i in range(1, 11)]  # NEW 34 deleted per speaker, 2026-09-04
