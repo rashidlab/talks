@@ -108,8 +108,9 @@
 suppressPackageStartupMessages(library(ggplot2))
 
 # ---- paths ------------------------------------------------------------------
-REPO    <- path.expand("~/Downloads/adaptive-trial-bo-paper")
-OUT_DIR <- path.expand("~/rashid-lab-setup/talks/2026-09-04-unc-compmed-baton-deck/images")
+REPO    <- path.expand(Sys.getenv("BATON_PAPER_DIR", "~/Downloads/adaptive-trial-bo-paper"))  # manuscript repo (results/validation/*)
+OUT_DIR <- file.path(dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]), mustWork = FALSE)), "images")  # <deck dir>/images
+if (!dir.exists(OUT_DIR)) OUT_DIR <- "images"
 TRAJ    <- file.path(REPO, "results/validation/reproducibility_trajectories.csv")
 ENDS    <- file.path(REPO, "results/validation/reproducibility_10runs.csv")
 

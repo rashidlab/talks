@@ -163,7 +163,7 @@ N[10] = c
 # NEW 11 (old 14) -------------------------------------------------------------
 c = title(S[14], "Grid search scales poorly; random search wastes evaluations in our benchmark")
 c = set_landing(c, "In two dimensions a grid is easy. As dimensions grow, the number of combinations explodes. Random search spent 93% of its 2,000 evaluations on designs that fail. (Darker = better design.)", "n11", fragment=True)
-c = rep(c, "::: {.notes}\n", "::: {.notes}\n**[TODO: confirm]** which design dimension the 2,000-evaluation random-search benchmark used before quoting it as a dimension; the slide states only the count and the 93% / 6.8% result.\n\n", "n11notes")
+c = rep(c, "::: {.notes}\n", "::: {.notes}\n**Confirmed 2026-09-04 (scripts/run_random_search_analysis.R, results/validation/random_search_summary.csv):** the random-search benchmark drew 2,000 configurations uniformly over the binary two-stage (Simon-type) design space, same bounds BATON used (stage sizes and stopping thresholds), 2,000 simulations each; 136 feasible (6.8%); best random design expected null N 17.75 in 9.3 minutes. If asked which dimension: the Simon-type parameters, not the 8- or 13-parameter EVOLVE designs.\n\n", "n11notes")
 N[11] = c
 
 # NEW 12 -----------------------------------------------------------------------
@@ -308,7 +308,7 @@ c = rep(c, "- quit losers quickly: 47 max, **11.7** if inactive\n- the compromis
         "- H0-Optimal: 47 max, **11.7** if the treatment is inactive\n- Admissible: 31 max, **11.9**\n- Minimax: 30 max, **22.8**", "n25bul")
 c = rep(c, "::: {.landing .fragment}\nThe compromise keeps almost all of H0-Optimal's efficiency at almost Minimax's cap.\n:::\n\n:::\n:::\n",
         ":::\n:::\n\n::: {.landing .fragment}\nAllowing one more patient in the maximum saves about eleven patients on average when the treatment is inactive. That is why we preferred the Admissible design.\n:::\n", "n25land")
-c = rep(c, "::: {.notes}\n", "::: {.notes}\n**[TODO: confirm]** whether this exact Admissible TNBC design is the one implemented in the protocol. If yes, say \"That is the design we ran\"; otherwise keep the caption's wording.\n\n", "n25notes")
+c = rep(c, "::: {.notes}\n", "::: {.notes}\n**Speaker check (not verifiable from the repo):** if this exact Admissible TNBC design is the one in the protocol, say \"That is the design we ran\"; otherwise keep the caption wording (\"we preferred\"), which is what the slide says.\n\n", "n25notes")
 N[25] = c
 
 # NEW 26 (old 32) --------------------------------------------------------------
@@ -371,13 +371,13 @@ N[30] = '''## BATON is designed as a general framework, not an EVOLVE-specific t
 
 # NEW 31 (old 38) --------------------------------------------------------------
 c = S[38]
-c = rep(c, "**similar progression-free survival at one-quarter the dose**", "**median PFS was similar at 240 mg and 960 mg** [TODO: confirm]{style=\"color:#E07C24; font-size: 0.7em;\"}", "n31line")
+c = rep(c, "**similar progression-free survival at one-quarter the dose**", "**median PFS was similar at 240 mg and 960 mg**", "n31line")
 c = set_landing(c, "The optimal-dose question remained unresolved until after approval.", "n31", fragment=True)
 c = c.replace("selected for development, then approval<br/>", "selected, developed, approved<br/>").replace("**960 mg**: highest dose tested in phase I<br/>", "**960 mg**: highest phase I dose tested<br/>")
 c = rep(c, "[FDA Oncologic Drugs Advisory Committee review of sotorasib dosing and CodeBreaK 200, October 2023]{.muted style=\"display:block; text-align:center; font-size:0.55em; margin-top:0.4em;\"}",
-        "[Source: FDA ODAC, sotorasib dosing and CodeBreaK 200, Oct 2023]{.muted style=\"display:block; text-align:center; font-size:0.62em; margin-top:0.5em;\"}", "n31src")
+        "[Source: CodeBreaK 100 dose comparison (Ann Oncol 2023; Eur J Cancer 2024); FDA ODAC Oct 2023]{.muted style=\"display:block; text-align:center; font-size:0.62em; margin-top:0.5em;\"}", "n31src")
 c = c.replace('::: {.frame-box style="max-width: 56%; margin: 0 auto; text-align: center; font-size: 0.95em;"}', '::: {.frame-box style="max-width: 60%; margin: 0 auto; text-align: center; font-size: 0.9em;"}')
-c = rep(c, "**Pull-from-if-needed:**", "**[TODO: confirm]** the exact PFS medians and the ORR/OS direction from the ODAC materials. Do not say \"similar efficacy\": ORR and OS trended toward 960 mg. Gloss PFS aloud: \"time until the cancer worsens or the patient dies.\"\n\n**Pull-from-if-needed:**", "n31notes")
+c = rep(c, "**Pull-from-if-needed:**", "**Confirmed 2026-09-04 (CodeBreaK 100 randomized dose comparison, 960 vs 240 mg, n = 209; Ann Oncol 2023 VP4, Eur J Cancer 2024):** median PFS 5.4 vs 5.6 months (HR 0.95, 95% CI 0.67 to 1.35); ORR 32.7% vs 24.8%; median OS 13.0 vs 11.7 months (HR 0.75, 95% CI 0.53 to 1.07). FDA considered the postmarketing requirement fulfilled in December 2023 and 960 mg remains the labeled dose. Do not say \"similar efficacy\": ORR and OS trended toward 960 mg; PFS is the endpoint that was similar. Gloss PFS aloud: \"time until the cancer worsens or the patient dies.\"\n\n**Pull-from-if-needed:**", "n31notes")
 N[31] = c
 
 # NEW 32 (old 40) --------------------------------------------------------------
@@ -462,6 +462,32 @@ B[10] = '''## Backup: ADAPT technical areas and the EVOLVE team {.backup-slide d
 **Pull-from-if-needed:** For questions about the program: three technical areas (our team leads the clinical-trial component), metastatic breast cancer, master protocol, biomarker-defined subtrials, TBCRC network.
 :::
 '''
+
+# Backup menu titles in outline order (B1..B10); stale v2 letters removed
+import re as _re
+_labels = {1: "GP + ECI", 2: "Benchmark scatter", 3: "Parameters", 4: "Related work", 5: "Limitations",
+           6: "Bidirectional", 7: "Reproducibility", 8: "Randomized frontier", 9: "ARPA-H ask", 10: "ADAPT + team"}
+for _k in B:
+    B[_k] = _re.sub(r'data-menu-title="B\d+: [^"]*"', f'data-menu-title="B{_k}: {_labels[_k]}"', B[_k], count=1)
+# Q&A routing index rewritten for v3 numbering
+Q = _re.sub(r"\*\*Q&A routing index:\*\*.*?\n:::", """**Q&A routing index (v3 numbering):**
+- *Why 0.10 / 0.80, conventions* -> slide 6 notes.
+- *Bayesian vs frequentist hybrid* -> slide 5 notes.
+- *Random search "beat" you* -> slide 11 notes; slides 20 to 21.
+- *GP, acquisition, correlated constraints, CRN* -> backup B1 (code-verified answers).
+- *Simon seed accounting, worst case* -> slide 21 notes; backup B2 (scatter), B7 (ten seeds).
+- *Collapse an artifact?* -> slide 27 notes; slide 28.
+- *Unspent alpha at 0.001, search-box edges* -> slide 25 notes; backup B3.
+- *Multi-objective BO; when is the philosophy locked* -> slide 24 notes.
+- *Two-weeks story detail* -> slide 22 (manual vs BATON).
+- *Limits, failure modes* -> backup B5. *Bidirectional stopping* -> B6. *Randomized cohort* -> B8.
+- *ARPA-H requirements, the program* -> backups B9, B10.
+- *Company / translation* -> disclose relationship verbally; keep to one sentence.
+:::""", Q, count=1, flags=_re.S)
+assert "v3 numbering" in Q
+# NEW 29 notes: the full comparison is now main slide 22
+N[29] = N[29].replace("(backup B6 has the full numbers)", "(slide 22 has the full numbers)")
+assert "backup B6" not in N[29]
 
 # Assemble ---------------------------------------------------------------------
 order = [N[i] for i in range(1, 37) if i != 34] + [Q, BD] + [B[i] for i in range(1, 11)]  # NEW 34 deleted per speaker, 2026-09-04
