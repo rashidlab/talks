@@ -81,12 +81,17 @@ elif _footer_hits < n / 2:
 else:
     print(f"footer lines excluded from the counts: {_footer_hits} across {n} pages")
 print("main-deck slides over the word cap:", over or "none")
+# EVERY RENDERED PAGE IS SWEPT, not only the ones inside the word cap's bound. `--main` marks
+# where the backups begin so acknowledgments and backups are exempt from the CAP, which is the
+# talk skill's rule. It was also silently bounding the banned-vocabulary sweep, which has no such
+# exemption, so two rendered main-deck slides and every backup went unchecked.
 for s in PROHIBITED:
-    hits = [i + 1 for i, p in enumerate(pg) if s in p and (i + 1) <= main_n]
+    hits = [i + 1 for i, p in enumerate(pg[:n]) if s in p]
     if hits: print(f"PROHIBITED {s!r} on pages {hits}")
 for s, ok in TITLE_ONLY_OK.items():
-    hits = [i + 1 for i, p in enumerate(pg) if s in p and (i + 1) <= main_n and (i + 1) != ok]
+    hits = [i + 1 for i, p in enumerate(pg[:n]) if s in p and (i + 1) != ok]
     if hits: print(f"PROHIBITED (outside page {ok}) {s!r} on pages {hits}")
+print(f"banned-vocabulary sweep covered all {n} pages, cap applied to the first {main_n}")
 
 qmd = base + ".qmd"
 if os.path.exists(qmd):

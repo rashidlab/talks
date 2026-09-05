@@ -40,7 +40,23 @@ png2 <- function(file, w = 1920, h = 1080, res = 150) {
 ## best dose. Truths come through BATOND's own `truth()` derivation, and the marked targets are
 ## asserted, exactly as `scripts/fig_scenario_truths.R` does it, so a moved scenario stops the
 ## build rather than mislabelling a slide.
-suppressMessages(pkgload::load_all(file.path("~", "research", "BATOND"), quiet = TRUE))
+# THE PACKAGE ROOT IS CONFIGURABLE AND ITS ABSENCE IS LOUD. This line previously read a literal
+# `~/research/BATOND`, so a configured BATOND_PAPER_REPO could be paired with whatever package
+# checkout happened to sit at that path, and on a machine without it `pkgload` failed with an
+# error naming neither variable. That is the same defect that BATOND_PAPER_REPO was introduced to
+# close, surviving one line further down. BATOND_PKG overrides, the sibling of the paper repo is
+# tried next, and the historical path last.
+BATOND_PKG <- local({
+  cand <- c(Sys.getenv("BATOND_PKG", ""),
+            file.path(dirname(dirname(BATOND_REPO)), "BATOND"),
+            path.expand("~/research/BATOND"))
+  cand <- cand[nzchar(cand)]
+  hit <- cand[file.exists(file.path(cand, "DESCRIPTION"))]
+  if (!length(hit)) stop("deck_figs: no BATOND package found. Set BATOND_PKG. Tried, in order, ",
+                         paste(cand, collapse = ", "), ".", call. = FALSE)
+  normalizePath(hit[1], winslash = "/", mustWork = TRUE)
+})
+suppressMessages(pkgload::load_all(BATOND_PKG, quiet = TRUE))
 .src <- readLines(file.path(BATOND_REPO, "scripts", "phase_d_families.R"))
 .end <- grep('^beat\\("starting"\\)$', .src)
 stopifnot(length(.end) == 1L)

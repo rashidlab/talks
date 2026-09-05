@@ -1397,6 +1397,8 @@ naim@unc.edu · rashidlab.github.io
 :::
 
 ::: {.notes}
+**Numbers below are printed page numbers, so re-check them after any slide is added or split.**
+
 **Q&A routing index. Renumbered 2026-09-04 when three slides were added at 26, 28 and 29, and
 checked again 2026-09-05 when slides 34 and 35 traded places and the discordance slide became a
 two-build slide.**
@@ -1407,11 +1409,11 @@ two-build slide.**
 - *Known limits, failure modes, search reliability* -> backup B5, slide 26.
 - *Why 0.10 for overexposure, does the conclusion move* -> backup B6, slide 25 notes.
 - *Would a wider set of situations change it* -> backup B7, slide 24 notes.
-- *Does independence between the endpoints matter* -> backup B8, slide 38 notes.
+- *Does independence between the endpoints matter* -> backup B8, slide 39 notes.
 - *What did you compare against* -> slide 26. Random search at an equal budget, and on slide 27 an exhaustive listing where the true best design is known. There is no hand-tuning arm and no grid-search arm, and neither is claimed.
 - *Is the older design really worse* -> slide 32 notes. Answer with the portfolio, not with reputation.
-- *What is worth carrying across the phase boundary* -> slide 34 states it plainly and slide 35 is the evidence. The fourth contrast on 35 compares two re-pick rules and is not a fourth architecture.
-- *Did you show the approved sotorasib dose was wrong* -> no. Slide 36 notes carry the exact wording.
+- *What is worth carrying across the phase boundary* -> slide 35 states it plainly and slide 36 is the evidence. The fourth contrast on 36 compares two re-pick rules and is not a fourth architecture.
+- *Did you show the approved sotorasib dose was wrong* -> no. Slide 37 notes carry the exact wording.
 :::
 
 
