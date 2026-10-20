@@ -333,30 +333,30 @@ The first encounter should be designed, not defaulted. A student who outsources 
 
 ## If AI can do it, why teach it? {.smaller}
 
-A view I hear from colleagues outside statistics, and inside it:
+A view I increasingly hear, including within statistics:
 
-::: {style="margin-top: 0.6em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-style: italic; color: #5B6670; font-size: 0.92em;"}
-"Some of what we teach and test no longer needs to be taught or tested. AI can take it over."
+::: {style="margin-top: 0.4em; padding: 0.45em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-style: italic; color: #5B6670; font-size: 0.88em;"}
+"If AI can perform the tasks we teach and test, why do students still need to learn them?"
 :::
 
-::: {.fragment style="text-align: center; margin: 0.7em 0 0.2em; font-size: 1.3em; color: #13294B; font-weight: 600; line-height: 1.4;"}
-Then who will know when the AI is wrong?
+::: {.fragment style="margin-top: 0.6em; font-size: 0.92em;"}
+[But who will know when AI is wrong?]{style="color: #13294B; font-weight: 600;"} When it chooses an inappropriate method, overlooks a critical assumption, or produces a convincing but misleading conclusion?
 :::
 
-::: {.fragment style="text-align: center; font-size: 0.92em; color: #5B6670;"}
-Or when it proposes an approach that is suboptimal, or incorrect?
+::: {.fragment style="text-align: center; margin: 0.55em 0; font-size: 1.55em; color: #13294B; font-weight: 700; line-height: 1.25;"}
+We cannot evaluate what we do not understand.
 :::
 
-::: {.fragment style="margin-top: 0.7em; font-size: 0.92em;"}
-Building intuition and judgment is what makes our training **more rigorous**, not less, in an era when institutions lean on AI to do more for us.
+::: {.fragment style="font-size: 0.92em;"}
+As AI takes over more of the execution, the statistical intuition and judgment we develop through rigorous training become more important, not less.
 :::
 
-::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
-When the work is impactful and the stakes are high, someone has to be able to **provide assurance** that the recommended approach is correct.
+::: {.fragment style="margin-top: 0.5em; padding: 0.45em 1em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em;"}
+When the stakes are high, someone must be able to provide assurance that the approach is sound and the conclusions justified.
 :::
 
-::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;"}
-Otherwise, everyone is dangerously running blind.
+::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.6em; text-align: center; font-size: 0.95em;"}
+The more we rely on AI, the more essential it becomes to know when not to trust it.
 :::
 
 
@@ -588,15 +588,11 @@ The work isn't to remove AI. It's to design assignments and reviews where unders
 
 ## Evidence that design matters {.smaller}
 
-Bastani et al., *PNAS* 2025. Field experiment, ~1,000 high-school math students.
-
-::: {style="margin-top: 0.5em; text-align: center; font-size: 0.92em; color: #5B6670; font-style: italic;"}
-Three randomized groups: vanilla GPT, tutor-prompted GPT, no-AI control. Same underlying model, different instructional design.
-:::
+Bastani et al., *PNAS* 2025. ~1,000 high-school math students randomized to vanilla GPT, tutor-prompted GPT, or no AI. [Same model, different instructional design.]{style="color: #5B6670; font-style: italic;"}
 
 <div class="comparison-grid">
-<div class="comparison-box neutral"><div class="comparison-label">Vanilla GPT</div><div class="comparison-text"><div style="font-style: italic; margin-bottom: 0.5em; color: #5B6670;">Gave direct answers on request.</div>During practice: better than no-AI controls.<br>Post-test (no AI): <strong style="color: #C95E55;">17% worse</strong> than no-AI controls.</div></div>
-<div class="comparison-box highlighted"><div class="comparison-label">Tutor-prompted GPT</div><div class="comparison-text"><div style="font-style: italic; margin-bottom: 0.5em; color: #5B6670;">Asked guiding questions; gave hints instead of answers.</div>During practice: better than no-AI controls.<br>Post-test (no AI): <strong style="color: #5CA77C;">no detectable underperformance</strong>.</div></div>
+<div class="comparison-box neutral"><div class="comparison-label">Vanilla GPT</div><div class="comparison-text"><div style="font-style: italic; margin-bottom: 0.5em; color: #5B6670;">Gave direct answers on request.</div>During practice: better than no-AI controls.<br>Exam without AI: <strong style="color: #C95E55;">17% worse</strong> than no-AI controls.</div></div>
+<div class="comparison-box highlighted"><div class="comparison-label">Tutor-prompted GPT</div><div class="comparison-text"><div style="font-style: italic; margin-bottom: 0.5em; color: #5B6670;">Asked guiding questions; gave hints instead of answers.</div>During practice: better than no-AI controls.<br>Exam without AI: <strong style="color: #5CA77C;">no detectable underperformance</strong>, but no better than controls.</div></div>
 </div>
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
@@ -604,7 +600,7 @@ One study, one population, one subject. Suggestive of a broader pattern; not yet
 :::
 
 ::: {.fragment style="margin-top: 0.8em; text-align: center; font-size: 1.15em; color: #13294B; font-weight: 600;"}
-The same tool can have very different learning consequences depending on design.
+Better performance with AI is not necessarily evidence of better learning.
 :::
 
 
@@ -750,6 +746,7 @@ Can you still answer the<br>
 ::: {.fragment style="margin: 0.8em 1.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.6;"}
 - What is the estimand or target of inference?
 - What assumptions make this method answer that question?
+- What alternatives did you consider?
 - What diagnostic or sensitivity analysis would make me distrust the result?
 - If this piece fails, what breaks downstream?
 :::
