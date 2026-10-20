@@ -27,7 +27,7 @@ format:
       data-state: "hide-footer"
 ---
 
-# What's at Stake {.center background-color="#13294B"}
+# What's at Stake {.center background-color="#13294B" data-state="hide-footer"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
 *What's the worry, and is it new?*
@@ -183,7 +183,7 @@ Where the line sits - what has to stay yours - is what comes next.
 
 
 
-# What Stays Yours {.center background-color="#13294B"}
+# What Stays Yours {.center background-color="#13294B" data-state="hide-footer"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
 *What must each of us actually hold onto, and why?*
@@ -258,7 +258,7 @@ Here's what "plausibly wrong output" often looks like in statistics: a model tha
 |---|---|---|
 | Regression code | What estimand the question requires | Correct model, wrong question |
 | Covariate-adjusted regression | Which covariates are pre- vs. post-treatment | Adjusted away the treatment effect by conditioning on a mediator |
-| Imputation code | Which missingness mechanism is plausible (MCAR / MAR / MNAR) | Imputed under MCAR when MAR/MNAR is more credible; inference understates uncertainty |
+| Imputation code | Which missingness mechanism is plausible (MCAR / MAR / MNAR) | Imputed under MCAR when MAR/MNAR is more credible; estimates can be biased |
 | Simulation | What data-generating process matters | Simulation validates the wrong world |
 :::
 
@@ -378,7 +378,7 @@ The line between them moves over time. The distinction does not.
 
 
 
-# How We Keep It {.center background-color="#13294B"}
+# How We Keep It {.center background-color="#13294B" data-state="hide-footer"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
 *What does keeping understanding alive look like in practice?*
@@ -481,7 +481,7 @@ The diff is the lesson.
 ## 2026-03-15: Switched simulator optimizer from BFGS to L-BFGS-B
 
 Reason: BFGS hit memory limits for n_params > 5000.
-Trade-off: ~10× memory reduction; slower per-iteration; needs warm start.
+Trade-off: ~10× memory reduction; convergence and sensitivity to stopping criteria need checking.
 Affected: src/optim.R, sim/runner.R, methods Section 3.2.
 ```
 
@@ -561,7 +561,7 @@ AI removes friction indiscriminately - the discipline is preserving the kind tha
 
 
 
-# Across Our Roles {.center background-color="#13294B"}
+# Across Our Roles {.center background-color="#13294B" data-state="hide-footer"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
 *How does the line differ between our research, our trainees, and our students?*
@@ -588,11 +588,11 @@ The work isn't to remove AI. It's to design assignments and reviews where unders
 
 ## Evidence that design matters {.smaller}
 
-Bastani et al., *PNAS* 2025. ~1,000 high-school math students randomized to vanilla GPT, tutor-prompted GPT, or no AI. [Same model, different instructional design.]{style="color: #5B6670; font-style: italic;"}
+Bastani et al., *PNAS* 2025. ~1,000 high-school math students; classrooms randomized to vanilla GPT, tutor-prompted GPT, or no AI. [Same model, different instructional design.]{style="color: #5B6670; font-style: italic;"}
 
 <div class="comparison-grid">
 <div class="comparison-box neutral"><div class="comparison-label">Vanilla GPT</div><div class="comparison-text"><div style="font-style: italic; margin-bottom: 0.5em; color: #5B6670;">Gave direct answers on request.</div>During practice: better than no-AI controls.<br>Exam without AI: <strong style="color: #C95E55;">17% worse</strong> than no-AI controls.</div></div>
-<div class="comparison-box highlighted"><div class="comparison-label">Tutor-prompted GPT</div><div class="comparison-text"><div style="font-style: italic; margin-bottom: 0.5em; color: #5B6670;">Asked guiding questions; gave hints instead of answers.</div>During practice: better than no-AI controls.<br>Exam without AI: <strong style="color: #5CA77C;">no detectable underperformance</strong>, but no better than controls.</div></div>
+<div class="comparison-box highlighted"><div class="comparison-label">Tutor-prompted GPT</div><div class="comparison-text"><div style="font-style: italic; margin-bottom: 0.5em; color: #5B6670;">Teacher-provided solutions and common mistakes; hints, not answers.</div>During practice: better than no-AI controls.<br>Exam without AI: <strong style="color: #5CA77C;">no detectable underperformance</strong>, but no better than controls.</div></div>
 </div>
 
 ::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 0.78em; color: #5B6670; font-style: italic;"}
@@ -774,7 +774,7 @@ From the source guide.
 
 
 
-# Stay in the Driver's Seat {.center .closing-slide background-color="#13294B"}
+# Stay in the Driver's Seat {.center .closing-slide background-color="#13294B" data-state="hide-footer"}
 
 ::: {style="color: #FFFFFF; font-size: 0.78em; line-height: 1.6; max-width: 80%; margin: 1.6em auto 1.8em; font-style: italic; font-weight: 300;"}
 not because we don't trust the GPS,<br>
