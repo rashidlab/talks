@@ -38,7 +38,7 @@ format:
 ## A failure mode {.smaller}
 
 ::: {.fragment .fade-up}
-Imagine a new hire - three months in - presenting their first analysis to senior leadership. They've used AI to help build it, reviewed every line, and can defend the strategy fully.
+Imagine a new hire - three months in - presenting their first analysis to senior leadership. They've used AI to help build it, reviewed every line, and feel confident defending the results.
 :::
 
 ::: {.fragment .fade-up}
@@ -482,7 +482,7 @@ The diff is the lesson.
 
 Reason: BFGS hit memory limits for n_params > 5000.
 Trade-off: ~10× memory reduction; slower per-iteration; needs warm start.
-Affected: src/optim.R, sim/runner.R, methods section §3.2.
+Affected: src/optim.R, sim/runner.R, methods Section 3.2.
 ```
 
 ::: {.fragment style="margin-top: 0.6em;"}
