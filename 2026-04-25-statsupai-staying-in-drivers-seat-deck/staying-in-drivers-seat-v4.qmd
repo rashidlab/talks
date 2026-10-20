@@ -331,6 +331,36 @@ The first encounter should be designed, not defaulted. A student who outsources 
 
 
 
+## If AI can do it, why teach it? {.smaller}
+
+A view I hear from colleagues outside statistics, and inside it:
+
+::: {style="margin-top: 0.6em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #5B6670; font-style: italic; color: #5B6670; font-size: 0.92em;"}
+"Some of what we teach and test no longer needs to be taught or tested. AI can take it over."
+:::
+
+::: {.fragment style="text-align: center; margin: 0.7em 0 0.2em; font-size: 1.3em; color: #13294B; font-weight: 600; line-height: 1.4;"}
+Then who will know when the AI is wrong?
+:::
+
+::: {.fragment style="text-align: center; font-size: 0.92em; color: #5B6670;"}
+Or when it proposes an approach that is suboptimal, or incorrect?
+:::
+
+::: {.fragment style="margin-top: 0.7em; font-size: 0.92em;"}
+Building intuition and judgment is what makes our training **more rigorous**, not less, in an era when institutions lean on AI to do more for us.
+:::
+
+::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.92em;"}
+When the work is impactful and the stakes are high, someone has to be able to **provide assurance** that the recommended approach is correct.
+:::
+
+::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;"}
+Otherwise, everyone is dangerously running blind.
+:::
+
+
+
 ## Execution moves. Responsibility doesn't. {.smaller}
 
 <div class="comparison-grid">
