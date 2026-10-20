@@ -757,52 +757,6 @@ Where you can still answer - without the model open - is where you're still in t
 
 
 
-## Calibration questions {.smaller}
-
-Now your turn. You are also someone whose intuition and judgment have to be maintained.
-
-::: {.fragment style="margin: 0.5em 1.5em 0; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em;"}
-**As advisor / senior researcher:**
-
-- ☐ Could you explain how your last analysis works without AI assistance?
-- ☐ Are you still learning new methods, or has AI handled what you don't fully understand?
-- ☐ Have you seen your trainees work without AI on a substantive task this term?
-- ☐ Can they walk you through *why* their AI-assisted choices were the right ones?
-- ☐ Have you asked them how they actually use AI before judging the workflow?
-:::
-
-::: {.fragment style="margin-top: 0.7em; padding: 0.5em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.8em;"}
-Diagnostic, not judgmental. If anything gets a "no" - the next slide is where to start.
-:::
-
-
-
-## A place to start {.smaller}
-
-If something on the previous slide got a "no" - start here, in order.
-
-::: {.fragment style="margin: 0.8em 0; padding: 0.7em 1.1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.9em;"}
-1. Open a `DECISIONS.md` in your active project this week.
-2. Before your next prompt, write your own approach first.
-3. Schedule one 90-minute unplugged session.
-4. Line-by-line review on the next AI-generated chunk.
-5. Explain-it-back on the last thing you built with AI help.
-:::
-
-::: {.fragment style="margin-top: 0.9em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-Adopt one. Add the next when the first feels routine.
-:::
-
-::: {.fragment style="margin-top: 0.6em; text-align: center; color: #4B9CD3; font-size: 0.88em; font-style: italic;"}
-A year in: you can defend your work without your notes; your trainees can defend theirs.
-:::
-
-::: {.fragment style="margin-top: 0.5em; text-align: center; color: #5B6670; font-size: 0.78em; font-style: italic;"}
-From the source guide's quick-start checklist, lightly reordered.
-:::
-
-
-
 ## Still knowing where you are {.smaller}
 
 ::: {style="font-size: 1.05em; line-height: 1.6; margin-top: 0.4em;"}
