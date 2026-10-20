@@ -161,6 +161,28 @@ Designing around them is drawing the line.
 
 
 
+## The quieter cost {.smaller}
+
+By now, the surface concerns are familiar to most of us.
+
+::: {.fragment}
+LLMs hallucinate, their benchmarks rarely report uncertainty or deployment shift, and fabricated citations can survive expert review.
+:::
+
+::: {.fragment style="margin-top: 1.2em;"}
+**The quieter risks** are different across our roles:
+
+- For **research** - rigor can become harder to verify.
+- For **trainees** - judgment may be practiced less often.
+- For **students** - statistical literacy can become more fragile.
+:::
+
+::: {.fragment style="margin-top: 1em; text-align: center; font-style: italic; color: #4B9CD3; font-size: 0.95em;"}
+Where the line sits - what has to stay yours - is what comes next.
+:::
+
+
+
 # What Stays Yours {.center background-color="#13294B"}
 
 ::: {style="color: #FFFFFF; font-size: 0.7em; margin-top: 1em;"}
@@ -248,7 +270,7 @@ The middle column is where the chain of judgment lives.
 
 ## In doctoral training {.smaller}
 
-The part you don't outsource is the **productive struggle.**
+The part you don't outsource is the **productive struggle** - the struggle that builds judgment.
 
 ::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 0.88em;"}
 The struggle preserves four kinds of effort that distinguish learning that lasts:
@@ -282,14 +304,14 @@ Sources: Bjork & Bjork 2011 (desirable difficulties); Shea & Morgan 1979 (varied
 :::
 
 ::: {.fragment style="margin-top: 0.5em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-Default AI use can bypass all four. Each one needs deliberate preservation.
+Default AI use can bypass all four. Each one needs deliberate preservation, because that is where judgment gets built.
 :::
 
 
 
 ## In classroom teaching {.smaller}
 
-The part you don't outsource - as faculty or as a student - is the **first encounter** with a concept.
+The part you don't outsource - as faculty or as a student - is the **first encounter** with a concept, where intuition starts to form.
 
 ::: {.fragment style="margin-top: 1em; font-size: 1.05em;"}
 The first encounter strongly shapes the schema students build.
@@ -304,7 +326,7 @@ Concept formation is:
 :::
 
 ::: {.fragment style="color: #4B9CD3; font-weight: 600; margin-top: 0.8em; text-align: center;"}
-The first encounter should be designed, not defaulted. A student who outsources it may retain the answer without the schema. A course that lets generic AI output introduce the concept risks building the wrong schema before the instructor ever sees it.
+The first encounter should be designed, not defaulted. A student who outsources it may retain the answer without the schema or the intuition. A course that lets generic AI output introduce the concept risks building the wrong schema before the instructor ever sees it.
 :::
 
 
@@ -477,7 +499,6 @@ The thinking required to explain is the point.
 
 ::: {.fragment style="margin: 0.6em 0; padding: 0.7em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.88em;"}
 - What estimand did this actually answer?
-- What assumptions make this method answer that question?
 - What diagnostic would make me distrust this?
 - What did the AI not suggest?
 - What would I do if the result were reversed?
@@ -682,37 +703,36 @@ The line between "hands-off" and "hands-on" shifts along three dimensions.
 :::
 
 ::: {.fragment style="margin-top: 0.9em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600;"}
-Where you can still answer the fundamental questions about your own work - without the model open - is where you're still in the driver's seat.
+Three dials. Adjust them for your actual situation.
 :::
 
 
 
-## What this looks like in regulated work {.smaller}
+## The fundamental questions {.smaller}
 
-For sponsor-reviewable analyses, the practices become artifacts.
+When in doubt about where the line should sit, ask:
 
-::: {.fragment style="margin-top: 0.7em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.55;"}
-**AI-use disclosure** in methods sections or protocols:
-
-*"AI tools assisted with [code, drafts, literature triage]; methodological choices, estimands, assumptions, and result interpretation remain the analyst's responsibility."*
+::: {.fragment style="text-align: center; margin: 1.2em 0 0.7em; font-size: 1.35em; color: #13294B; font-weight: 600; line-height: 1.5;"}
+Can you still answer the<br>
+[fundamental questions]{style="color: #4B9CD3;"} about your own work?
 :::
 
-::: {.fragment style="margin-top: 0.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.55;"}
-**Decision log alongside the protocol** - choices tried, accepted, rejected, with AI-assisted steps flagged. Audit-trail evidence that judgment was applied, not delegated.
+::: {.fragment style="margin: 0.8em 1.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.6;"}
+- What is the estimand or target of inference?
+- What assumptions make this method answer that question?
+- What diagnostic or sensitivity analysis would make me distrust the result?
+- If this piece fails, what breaks downstream?
 :::
 
-::: {.fragment style="margin-top: 0.5em; padding: 0.6em 1em; background-color: #F8F9FA; border-left: 4px solid #4B9CD3; font-size: 0.82em; line-height: 1.55;"}
-**Sponsor-reviewable red-team**: estimand specified before AI was consulted; pre- vs. post-treatment covariates verified; missingness mechanism named independently; simulation DGP validated.
+::: {.fragment style="margin-top: 0.7em; text-align: center; font-size: 0.95em; color: #4B9CD3; font-weight: 600;"}
+Where you can still answer - without the model open - is where you're still in the driver's seat.
 :::
 
-::: {.fragment style="margin-top: 0.8em; text-align: center; font-size: 1.0em; color: #13294B; font-weight: 600; line-height: 1.5;"}
-In regulated work the line isn't just where you draw it - it's what you can show you drew.
-:::
 
 
 ## Calibration questions {.smaller}
 
-Now your turn.
+Now your turn. You are also someone whose intuition and judgment have to be maintained.
 
 ::: {.fragment style="margin: 0.5em 1.5em 0; padding: 0.6em 0.9em; background-color: #F8F9FA; border-left: 3px solid #4B9CD3; font-size: 0.88em;"}
 **As advisor / senior researcher:**
@@ -775,12 +795,7 @@ From the source guide.
 
 # Stay in the Driver's Seat {.center .closing-slide background-color="#13294B"}
 
-::: {style="color: #4B9CD3; font-size: 0.92em; line-height: 1.5; max-width: 80%; margin: 1.6em auto 1.4em; font-weight: 500;"}
-**This week** - pick one place where AI has made your work smoother.<br>
-Add back one piece of *deliberate friction.*
-:::
-
-::: {style="color: #FFFFFF; font-size: 0.78em; line-height: 1.6; max-width: 80%; margin: 0 auto 1.8em; font-style: italic; font-weight: 300;"}
+::: {style="color: #FFFFFF; font-size: 0.78em; line-height: 1.6; max-width: 80%; margin: 1.6em auto 1.8em; font-style: italic; font-weight: 300;"}
 not because we don't trust the GPS,<br>
 but because we still want to know where we are when we arrive.
 :::
