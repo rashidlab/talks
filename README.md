@@ -13,6 +13,7 @@ Each talk lives in its own dated subdirectory and is published via GitHub Pages.
 
 - **[Staying in the Driver's Seat: Calibrating AI Use in Statistical Research, Training, and Practice](https://rashidlab.github.io/talks/2026-04-25-statsupai-staying-in-drivers-seat-deck/staying-in-drivers-seat-v3.html)**
   Naim Rashid · StatsUpAI Webinar (American Statistical Association) · May 26, 2026
+  Department rendition, 38-minute cut: [v4](https://rashidlab.github.io/talks/2026-04-25-statsupai-staying-in-drivers-seat-deck/staying-in-drivers-seat-v4.html) · UNC Biostatistics · October 21, 2026
   Companion resources: [github.com/naimurashid/staying-in-drivers-seat-resources](https://github.com/naimurashid/staying-in-drivers-seat-resources)
 
 - **[When Biomarkers, Assays, and Protocols Co-evolve: Cross-platform Reproducibility, Validation, and Adaptive Design](https://rashidlab.github.io/talks/2026-05-fda-cdrh-osel-coevolve-deck/when-biomarkers-assays-protocols-coevolve.html)**
