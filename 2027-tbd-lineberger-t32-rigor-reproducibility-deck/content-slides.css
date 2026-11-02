@@ -269,10 +269,12 @@ body.hide-footer .footer,
 
 /* --- Fix round 1 (2026-11-02) --------------------------------------------- */
 /* Short code blocks read at Zoom size: 24px mono, darker comments. */
-.reveal .big-code pre { width: 100%; box-shadow: none; }
+.reveal .big-code pre { width: 100%; box-shadow: none; overflow-x: hidden; }
+.reveal .big-code pre code { overflow-x: hidden; }
+.reveal .big-code div.sourceCode { overflow: hidden; }
 .reveal .big-code pre code,
 .reveal .big-code div.sourceCode pre code,
-.reveal .big-code pre.sourceCode code { font-size: 24px !important; line-height: 1.4 !important; max-height: none; }
+.reveal .big-code pre.sourceCode code { font-size: 29px !important; line-height: 1.45 !important; max-height: none; }
 .reveal .big-code code span.co { color: #4A5560; font-style: italic; }
 /* References split across two backup slides at a readable size. */
 .reveal .refs-half { column-count: 2; column-gap: 1.6em; }

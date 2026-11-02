@@ -51,18 +51,22 @@ execute:
 
 ## {data-menu-title="Quote"}
 
-::: {style="margin-top: 4.2em; text-align: center;"}
+::: {style="margin-top: 2.4em; text-align: center;"}
+::: {style="font-size: 1.0em; line-height: 1.5; margin: 0 2.5em 1.0em 2.5em; color: #1A202C;"}
+In 2009 Duke paused its cancer trials after outside statisticians found that a column of sample labels in a spreadsheet had shifted by one row. Duke's review reported that the errors
+:::
+
 ::: {.thesis-line style="font-size: 1.6em;"}
 "... did not affect the findings."
 :::
 
 ::: {.muted}
-Duke, on the review of its data handling errors that restarted the trials, as reported in 2010 [@naturemed2010]
+Duke, as reported in 2010 [@naturemed2010]
 :::
 :::
 
 ::: {.landing .fragment}
-The trials were stopped and the papers were retracted.
+The trials restarted.
 :::
 
 ::: {.notes}
@@ -70,7 +74,7 @@ The trials were stopped and the papers were retracted.
 
 **Q&A pockets:** *Was this fraud?* In November 2015 the federal Office of Research Integrity found that Potti had engaged in research misconduct [@ori2015], but the first problems anyone could see were bookkeeping errors, and those are errors any lab can make.
 
-**Delivery:** Read the quote, pause, then click. No context yet, the next section supplies it.
+**Delivery:** Read the setup line in a level voice, then the quote, pause, then click. Stop there. What happened after the restart is told in the Duke sequence, slides 6 to 10.
 :::
 
 
@@ -102,21 +106,21 @@ and getting that right pays you back when you write the paper.
 ## Overview {data-menu-title="Overview"}
 
 ```{=html}
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2em; margin-top: 2.6em;">
-  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.2em 1.3em; min-height: 8.6em;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2em; margin-top: 3.4em;">
+  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.4em 1.3em; min-height: 9.8em;">
     <div style="font-weight: 700; color: #13294B; font-size: 0.95em; margin: 0 0 0.6em 0;">What goes wrong</div>
     <div style="color: #1A202C; font-size: 0.86em; line-height: 1.45;">Duke, a cancer biology replication project, and Excel.</div>
   </div>
-  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.2em 1.3em; min-height: 8.6em;">
+  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.4em 1.3em; min-height: 9.8em;">
     <div style="font-weight: 700; color: #13294B; font-size: 0.95em; margin: 0 0 0.6em 0;">What you hand off</div>
     <div style="color: #1A202C; font-size: 0.86em; line-height: 1.45;">Four things, to the analyst and to yourself.</div>
   </div>
-  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.2em 1.3em; min-height: 8.6em;">
+  <div style="border: 1px solid #E6EAEF; background: #F4F6F8; padding: 1.4em 1.3em; min-height: 9.8em;">
     <div style="font-weight: 700; color: #13294B; font-size: 0.95em; margin: 0 0 0.6em 0;">How you make the analysis rerunnable</div>
     <div style="color: #1A202C; font-size: 0.86em; line-height: 1.45;">Four ways, easiest first.</div>
   </div>
 </div>
-<div style="margin: 1.4em 0 0 0; border: 1px solid #E6EAEF; padding: 0.9em 1.2em; text-align: center;">
+<div style="margin: 1.6em 0 0 0; border: 1px solid #E6EAEF; padding: 1.0em 1.2em; text-align: center;">
   <div style="font-weight: 700; color: #2E6A9F; font-size: 0.95em; white-space: nowrap;">What changes when an AI writes the code</div>
 </div>
 ```
@@ -139,16 +143,54 @@ Is this still happening?
 :::
 
 
+## A signature that promised to pick the chemotherapy {data-menu-title="The promise"}
+
+::: {style="margin: 1.8em 1em 0 1em; font-size: 1.12em; line-height: 1.55;"}
+In 2006 a Duke group reported gene expression signatures, built from cell lines, said to predict which chemotherapy a patient's tumor would respond to [@potti2006].
+
+::: {.fragment style="margin-top: 1.2em;"}
+From 2007, Duke clinical trials assigned patients to chemotherapy by the signatures.
+:::
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** The signatures came from in vitro drug sensitivity data on the NCI-60 cell lines paired with Affymetrix expression data, validated on independent cell line sets, then applied to patient cohorts [@potti2006]. The paper was retracted in January 2011 [@potti2011retraction]. The three Duke trials on ClinicalTrials.gov (NCT00509366, NCT00545948, NCT00636441) list start dates of May 2007, December 2007 and April 2008, and all three are marked terminated for reproducibility issues with the prediction model. This is the paper the old version of the talk showed as a screenshot of the abstract.
+
+**Q&A pockets:** *Was the idea itself wrong?* The idea of predicting drug response from expression is still pursued. The problem here was that nobody outside Duke could rebuild the published result, and the trials went ahead anyway.
+
+**Delivery:** Give the promise its due before the fall. Say that this looked like exactly the kind of result a cancer center wants.
+:::
+
+
+## Two statisticians tried to rebuild it from the public data {data-menu-title="The reconstruction"}
+
+::: {style="margin: 1.8em 1em 0 1em; font-size: 1.12em; line-height: 1.55;"}
+Keith Baggerly and Kevin Coombes at MD Anderson tried to reproduce the signatures from the posted data, and could not [@baggerly2009].
+
+::: {.fragment style="margin-top: 1.2em;"}
+The errors they found were simple, and they wrote that the trials "may be putting patients at risk".
+:::
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** They looked because MD Anderson clinicians asked whether to use the signatures. Baggerly and Coombes called the work "forensic bioinformatics", since the processing was not described well enough to reproduce and they had to infer the methods from the data and the reported results. Their abstract: "Patients in clinical trials are currently being allocated to treatment arms on the basis of these results. However, we show in five case studies that the results incorporate several simple errors that may be putting patients at risk" [@baggerly2009]. They reported spending on the order of fifteen hundred hours on the reconstruction. The paper appeared in the Annals of Applied Statistics in 2009.
+
+**Q&A pockets:** *Why did it take statisticians to find this?* It did not take statisticians, it took people who tried to rerun it. Nobody at the journal or at Duke had.
+
+**Delivery:** Read the quoted phrase slowly. The next slide is the whole arc on one strip, then what the errors actually were.
+:::
+
+
 ## What happened at Duke, 2006 to 2011 {data-menu-title="Duke timeline"}
 
-<img src="images/fig_duke_timeline.png" style="height: 355px; display: block; margin: 1.2em auto 0 auto;" alt="A horizontal timeline from 2006 to 2011 with four labeled points. In 2006 the Nature Medicine paper reports genomic signatures said to predict response to chemotherapy. In 2009 Baggerly and Coombes at MD Anderson publish their reconstruction of the analysis, and Duke suspends the clinical trials that assigned patients using the signatures. In 2010 a Duke review finds that the errors did not affect the findings, and the trials restart. In 2011 Nature Medicine retracts the 2006 paper."/>
+<img src="images/fig_duke_timeline.png" style="height: 355px; display: block; margin: 1.2em auto 0 auto;" alt="A horizontal strip of six evenly spaced events, not to scale. 2006, the Nature Medicine paper reports genomic signatures said to predict response to chemotherapy. October 2009, Baggerly and Coombes at MD Anderson publish their reconstruction and Duke suspends the clinical trials that assigned patients using the signatures. February 2010, a Duke review finds that the errors did not affect the findings and the trials restart. July 2010, the trials are suspended again. November 2010, the trials are terminated. January 2011, Nature Medicine retracts the 2006 paper."/>
 
 ::: {.landing .fragment}
 Patients were assigned to treatment using results nobody could rebuild.
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** One source per point. In 2006 Potti and colleagues published the chemotherapy sensitivity signatures in Nature Medicine [@potti2006]. In 2009 Baggerly and Coombes, who could not reproduce them from the public data, published their reconstruction, and Duke suspended the three trials [@baggerly2009; @naturemed2010]. In 2010 Duke reported that a review had found the errors did not affect the findings, and the trials restarted [@naturemed2010]. The trials were stopped for good later in 2010 [@iom2012]. In January 2011 Nature Medicine retracted the 2006 paper (Nature Medicine 17, 135) [@potti2011retraction]. The Excel label offset is in the Nature Medicine news item [@naturemed2010], and The Cancer Letter's 2015 reporting covers the later events [@cancerletter2015].
+**Pull-from-if-needed:** Dates checked 2026-11-02 against the IOM report, Appendix B [@iom2012]: trials suspended early October 2009 (October 6 and 19), external review report dated December 22, 2009, trials resumed February 11 and 12, 2010, suspended again July 23, 2010 after The Cancer Letter reported that the Rhodes Scholar claim on Potti's CV was false, two trials terminated November 4, 2010 and the third February 3, 2011, Nature Medicine retraction January 7, 2011. The strip is evenly spaced by event, not by year. One source per point. In 2006 Potti and colleagues published the chemotherapy sensitivity signatures in Nature Medicine [@potti2006]. In 2009 Baggerly and Coombes, who could not reproduce them from the public data, published their reconstruction, and Duke suspended the three trials [@baggerly2009; @naturemed2010]. In 2010 Duke reported that a review had found the errors did not affect the findings, and the trials restarted [@naturemed2010]. The trials were stopped for good later in 2010 [@iom2012]. In January 2011 Nature Medicine retracted the 2006 paper (Nature Medicine 17, 135) [@potti2011retraction]. The Excel label offset is in the Nature Medicine news item [@naturemed2010], and The Cancer Letter's 2015 reporting covers the later events [@cancerletter2015].
 
 **Q&A pockets:** *Why did it take so long?* The raw data and the code were not available with the papers, so outside statisticians had to work backward from the published results, which they called forensic bioinformatics.
 
@@ -193,8 +235,8 @@ Samples duplicated
 
 ## Hope they don't ask for the original data {data-menu-title="The email"}
 
-::: {style="margin: 2.6em 2em 0 2em; text-align: center;"}
-::: {.thesis-line style="font-size: 1.45em; max-width: 100%;"}
+::: {style="margin: 4.0em 2em 0 2em; text-align: center;"}
+::: {.thesis-line style="font-size: 1.5em; max-width: 100%;"}
 "I can just hope they don't ask for original data"
 :::
 
@@ -263,7 +305,7 @@ And for 68 percent of the planned experiments, the original data could not be ob
 
 ## Excel is still changing gene names {data-menu-title="Excel and genes"}
 
-::: {style="margin-top: 1.0em; font-size: 1.12em; line-height: 1.5;"}
+::: {style="margin-top: 1.8em; font-size: 1.22em; line-height: 1.55;"}
 SEPT2 becomes 2-Sep.
 
 ::: {.fragment}
@@ -275,7 +317,7 @@ The fix is to import gene columns as text, or turn off automatic date conversion
 :::
 :::
 
-<p style="margin-top: 1.6em;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; letter-spacing: 0.1em; color: #2E6A9F; border: 1px solid #4B9CD3; padding: 0.15em 0.5em;">POLL</span> <span style="font-size: 0.9em; color: #13294B;">Have you ever opened a gene list in Excel?</span></p>
+<p style="margin-top: 2.8em;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; letter-spacing: 0.1em; color: #2E6A9F; border: 1px solid #4B9CD3; padding: 0.15em 0.5em;">POLL</span> <span style="font-size: 0.9em; color: #13294B;">Have you ever opened a gene list in Excel?</span></p>
 
 ::: {.notes}
 **Pull-from-if-needed:** Abeysooriya and colleagues found gene name errors in 3,436 of 11,117 PubMed Central articles (30.9 percent) with supplementary Excel gene lists from 2014 to 2020 [@abeysooriya2021]. The 2016 warning was Ziemann and colleagues in Genome Biology. In 2020 the HGNC renamed SEPT and MARCH genes (SEPT1 to SEPTIN1) partly for this reason. Microsoft added a setting in October 2023 under File, Options, Data, "Convert continuous letters and numbers to a date".
@@ -396,7 +438,7 @@ The analyst might be a core, a labmate, or you in a year.
 - Kept in a read-only folder
 - Nothing processed, summarized or deleted
 
-For patient data, a dated read-only export from REDCap or the registry is the raw file.
+For patient data, the raw file is a dated read-only REDCap or registry export.
 :::
 
 ::: {.note-box .fragment style="margin-top: 1.2em;"}
@@ -435,7 +477,7 @@ This layout is called tidy data, and most analysis software expects it [@wickham
 
 ```{=html}
 <div style="display: flex; flex-direction: column; gap: 0.5em; align-items: center;">
-<img src="images/fig_messy_sheet.png" style="width: 1100px; height: auto;" alt="A spreadsheet of tumor volumes for seven mice. The header spans two merged rows. The row for mouse M04 is shaded yellow with no legend, and one Day 7 cell is shaded green. Volumes carry the unit inside the cell as text, and one value has no unit. Some cells are blank for different reasons. Dates appear in three formats. The marker gene SEPT2 has become the date 2-Sep. A row of means sits in the middle of the data."/>
+<img src="images/fig_messy_sheet.png" style="width: 1040px; height: auto;" alt="A spreadsheet of tumor volumes for seven mice. The header spans two merged rows. The row for mouse M04 is shaded yellow with no legend, and one Day 7 cell is shaded green. Volumes carry the unit inside the cell as text, and one value has no unit. Some cells are blank for different reasons. Dates appear in three formats. The marker gene SEPT2 has become the date 2-Sep. A row of means sits in the middle of the data."/>
 <div class="fragment" style="font-size: 0.62em; line-height: 1.4; color: #13294B; text-align: center;">
 Two merged header rows · Color carries meaning · Units typed in cells · Blanks mean different things · Three date formats · SEPT2 became a date · A mean row inside the data
 </div>
@@ -490,11 +532,11 @@ Broman and Woo, 2018 [@broman2018]
 :::
 
 ::: {.fragment style="margin-top: 1em; font-size: 0.9em;"}
-Also record quirks of the design, such as batch, plate and run date.
+Also record batch, plate and run date.
 :::
 
 ::: {.landing .fragment}
-A template is in the resources repo.
+Template in the resources repo.
 :::
 
 ::: {.notes}
@@ -508,7 +550,7 @@ A template is in the resources repo.
 
 ## The recipe, from raw to tidy with nothing done by hand {data-menu-title="Recipe"}
 
-::: {.big-code style="margin-top: 1.2em;"}
+::: {.big-code style="margin-top: 2.6em;"}
 ```r
 raw <- read.csv("raw/plate_2027-01-15.csv")
 # Drop well B7, bubble noted in the lab notebook
@@ -535,16 +577,13 @@ Every exclusion, recode and model choice goes in the script, with the N before a
 ::: {style="font-size: 0.82em; margin-top: 0.6em;"}
 | | |
 |---|---|
-| NIH data sharing (DMS) policy | since January 2023 |
-| Shorter plan | since May 2026 |
-| Progress in the annual report (RPPR) | from October 2026 |
+| NIH data sharing (DMS) policy | January 2023 |
+| Shorter plan | May 2026 |
+| Progress reported in the RPPR | from October 2026 |
 | Repository | GEO, SRA or GDC, then Zenodo, Dryad or Figshare |
-| Patient-level data | controlled access or none, in the plan, sent through the core, not email |
+| Patient-level data | controlled access or none |
 :::
 
-::: {.landing .fragment}
-The four things are the deliverable.
-:::
 
 ::: {.notes}
 **Pull-from-if-needed:** The policy is NOT-OD-21-013 and applies to applications due on or after January 25 2023 [@nih_dms_2021]. The new plan format is NOT-OD-26-046, required for due dates on or after May 25 2026 [@nih_dms_format_2026]. NOT-OD-26-100 moves DMS progress into the RPPR from October 1 2026 [@nih_rppr_2026]. NIH prefers a domain repository first. GEO holds gene expression data, SRA holds sequencing reads, and GDC is the NCI Genomic Data Commons. Generalist repositories come after. K awards no longer need a DMS plan (NOT-OD-26-120, October 2026).
@@ -553,7 +592,7 @@ Patient-level data are shared through controlled access or not at all, which the
 
 **Q&A pockets:** *Which repository for my RNA-seq?* GEO for the processed counts and SRA for the reads, submitted together through GEO. Controlled-access human data go through dbGaP or GDC.
 
-**Delivery:** Gloss the repositories aloud (GEO for gene expression, SRA for sequencing reads, GDC for cancer genomics). Then say that this applies to the research grants your PI holds, since K awards and training awards are exempt, and each of those grants now carries a written promise about its data.
+**Delivery:** Say the landing line aloud: the four things are the deliverable. Patient-level data goes through the core, not by email. Gloss the repositories aloud (GEO for gene expression, SRA for sequencing reads, GDC for cancer genomics). Then say that this applies to the research grants your PI holds, since K awards and training awards are exempt, and each of those grants now carries a written promise about its data.
 :::
 
 
@@ -639,20 +678,20 @@ tidy <- read.csv("tidy-sheet.csv")
 boxplot(tumor_volume ~ group, data = tidy)
 ```
 
-Treated tumors grew less.
+Figure 1 shows tumor volume by group.
 ````
 :::
 ::: {.column width="42%"}
 ::: {style="font-size: 0.82em; margin-top: 1.2em;"}
-Quarto, the successor to R Markdown, turns this file into a report [@quarto2022].
+Quarto turns this file into a report [@quarto2022]. A Jupyter notebook also works, run from a clean start.
 
-A Jupyter notebook also works, if run top to bottom from a clean start.
+The sentence under the figure describes it. Any test of the difference is another code chunk.
 :::
 :::
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** A report like this reruns the code every time it is rendered, so the figure is redrawn from the data each time, and any number in the text can be pulled from the code too. A typed sentence such as "Treated tumors grew less" is not checked, so it can still drift from the figure. Quarto renders one file to HTML, PDF or Word, for R and Python. Posit announced it in July 2022 as the next generation of R Markdown [@quarto2022]. Positron, Posit's newer editor for R and Python, is an alternative to RStudio. The full example is `examples/report.qmd` in the resources repo. Google Colab notebooks follow the same rule as Jupyter.
+**Pull-from-if-needed:** A report like this reruns the code every time it is rendered, so the figure is redrawn from the data each time, and any number in the text can be pulled from the code too. A typed sentence is not checked, so it can still drift from the figure, and a boxplot by itself shows the distributions, not whether the groups differ. The comparison, if the design supports one, is a model fit in another chunk with its output pulled into the text. Quarto renders one file to HTML, PDF or Word, for R and Python. Posit announced it in July 2022 as the next generation of R Markdown [@quarto2022]. Positron, Posit's newer editor for R and Python, is an alternative to RStudio. The full example is `examples/report.qmd` in the resources repo. Google Colab notebooks follow the same rule as Jupyter.
 
 **Q&A pockets:** *Do old R Markdown files still work?* Yes, Quarto renders them.
 
@@ -809,10 +848,10 @@ What changes when an AI writes the code?
 
 ## Same prompt, different answers {data-menu-title="Same prompt"}
 
-::: {style="margin: 1.6em 1em 0 1em; font-size: 1.15em; line-height: 1.5;"}
+::: {style="margin: 2.6em 1em 0 1em; font-size: 1.25em; line-height: 1.55;"}
 One analysis task was run **480** times, across six models, two prompting styles and four temperature settings, ten runs each.
 
-::: {.fragment style="margin-top: 1em;"}
+::: {.fragment style="margin-top: 1.4em;"}
 The analytical results varied considerably, even within one configuration [@cui2026].
 :::
 :::
@@ -846,17 +885,17 @@ Rerunning the prompt gives different code, so the code is what gets saved.
 ```
 
 ::: {.muted style="text-align: center; margin-top: 0.8em;"}
-Averages across 16 code models, and lower bounds [@spracklen2025]
+Averages over 16 code models, lower bounds [@spracklen2025]
 :::
 
 ::: {.landing .fragment}
-CRAN and Bioconductor are curated and PyPI is not. For Python, check the package page, its author and its history before installing.
+Check that a package exists, who maintains it and for how long. CRAN and Bioconductor review submissions, PyPI does not, and none guarantees safety.
 :::
 
 ::: {.notes}
 **Pull-from-if-needed:** Spracklen and colleagues tested 16 code models on 576,000 code samples, USENIX Security 2025 (arXiv 2406.10279) [@spracklen2025]. The abstract says "the average percentage of hallucinated packages is at least 5.2% for commercial models and 21.7% for open-source models", so the numbers are shares of package names, not shares of code samples. Someone can register an invented package name and put harmful code under it, so an install command copied from a chat can install malware. Do not quote the "19.7 percent overall" figure, which is secondary. In statistics the same failure is often conceptual rather than a missing package, output that runs and looks right but rests on a false premise.
 
-**Q&A pockets:** *How do I check a package?* A package on CRAN or Bioconductor has passed a review. A name on PyPI proves nothing by itself, because invented names get registered by attackers, so look at the package page, who maintains it, how long it has existed and how often it is downloaded.
+**Q&A pockets:** *How do I check a package?* A package on CRAN or Bioconductor has passed a submission check, which is a check that it builds and documents, not a security audit, and malicious packages have reached CRAN too. A name on PyPI proves nothing by itself, because invented names get registered by attackers, so look at the package page, who maintains it, how long it has existed and how often it is downloaded, and whether it does what you need.
 
 **Delivery:** Two numbers, then the rule. Under a minute.
 :::
@@ -867,13 +906,13 @@ CRAN and Bioconductor are curated and PyPI is not. For Python, check the package
 ::: {style="font-size: 0.82em; margin-top: 0.8em;"}
 | | |
 |---|---|
-| Nature, Science | disclose AI use, AI cannot be an author [@nature2023llm] |
-| NIH peer review | no generative AI, since 2023 [@nih_ai_review_2023] |
-| NIH applications | applications substantially developed by AI are not considered original, 2025 [@nih_ai_apps_2025] |
+| Nature, Science | no AI authors, and AI use disclosed in the paper [@nature2023llm] |
+| NIH peer review | reviewers may not use generative AI, since June 2023 [@nih_ai_review_2023] |
+| NIH applications | applications substantially developed by AI are not treated as original, from September 2025 [@nih_ai_apps_2025] |
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** Nature's January 2023 editorial says no language model can be an author and use must be documented in the methods or acknowledgements [@nature2023llm]. Science revised its policy in November 2023 to allow AI use with disclosure, and AI cannot be an author (a paraphrase of the science.org editorial policies, which block automated fetching, so check the current wording before delivery). NOT-OD-23-149 (June 2023) bars reviewers from using generative AI, because it breaks confidentiality [@nih_ai_review_2023]. NOT-OD-25-132 (July 2025) says applications substantially developed by AI are not the applicant's original ideas [@nih_ai_apps_2025]. Smith and colleagues give ten rules for using language models in science [@smith2024].
+**Pull-from-if-needed:** Checked against the official pages on 2026-11-02. Science's editorial policies: AI-assisted technologies "do not meet the Science journals' criteria for authorship and therefore may not be listed as authors or coauthors", and authors who use them "should note this in the cover letter and in the methods section or acknowledgments section". Nature's January 2023 editorial said no language model can be an author and use must be documented in the methods or acknowledgements [@nature2023llm]; the Nature Portfolio AI policy page now frames this as a risk framework, with assigning authorship or accountability to AI, and using an LLM to generate core research reasoning without disclosure, listed as prohibited. NOT-OD-23-149, released June 23, 2023, bars NIH peer reviewers from using generative AI to analyze or write critiques of applications, and from uploading application content to such tools, on confidentiality grounds [@nih_ai_review_2023]. NOT-OD-25-132, released July 17, 2025 and effective for the September 25, 2025 receipt date onward, says applications substantially developed by AI will not be treated as the applicant's original ideas, caps new, renewal, resubmission and revision applications at six per PI per calendar year, permits limited AI use in preparation, and does not require disclosure [@nih_ai_apps_2025]. Three different things: reviewers are prohibited, applicants are policed for originality, journals require disclosure.
 
 **Q&A pockets:** *Can I use ChatGPT to write my methods section?* Check the journal's policy, disclose the use, and check every claim and citation it writes. You are the author, so the text is yours to defend.
 
@@ -891,7 +930,7 @@ CRAN and Bioconductor are curated and PyPI is not. For Python, check the package
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** A clean start means a fresh R or Python session, with the package versions pinned in a lockfile (slide 29), so the second run cannot lean on anything left over from the first. The driver's seat talk puts the reading habit as treating AI output like work "from a capable collaborator who is not accountable for the final product". Where you get stuck explaining it is where your understanding has gaps.
+**Pull-from-if-needed:** A clean start means a fresh R or Python session, with the package versions pinned in a lockfile (slide 31), so the second run cannot lean on anything left over from the first. The driver's seat talk puts the reading habit as treating AI output like work "from a capable collaborator who is not accountable for the final product". Where you get stuck explaining it is where your understanding has gaps.
 
 **Q&A pockets:** *What if the two runs differ?* Then you have learned something about the analysis, and it is a question for the analyst before it is a result.
 
@@ -899,24 +938,47 @@ CRAN and Bioconductor are curated and PyPI is not. For Python, check the package
 :::
 
 
-## Reproducible research can still be wrong {data-menu-title="Still wrong"}
+## We cannot evaluate what we do not understand {data-menu-title="Judgment"}
 
-::: {style="margin-top: 1.2em; font-size: 0.95em;"}
-A rerunnable analysis of a badly designed study is still wrong.
+::: {style="margin: 1.8em 1em 0 1em; font-size: 1.12em; line-height: 1.55;"}
+But who will know when AI is wrong?
 
-::: {.fragment style="margin-top: 0.8em;"}
-Leek and Peng argue for prevention, which is training in data analysis before the paper, over medication, which is review after it [@leek2015].
+::: {.fragment style="margin-top: 1.2em;"}
+As AI takes over more of the execution, the statistical intuition and judgment we develop through rigorous training become more important, not less.
 :::
 :::
 
 ::: {.landing .fragment}
-Four short NIH training modules cover design, randomization, blinding and sample size.
+The more we rely on AI, the more essential it becomes to know when not to trust it.
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** The lines are from my October 2026 talk to the biostatistics department. The fuller version of the question: who will know when AI chooses an inappropriate method, overlooks a critical assumption, or produces a convincing but misleading conclusion? When the stakes are high, someone must be able to provide assurance that the approach is sound and the conclusions justified. AI is not a substitute for judgment, or for asking for help when you are not sure, because someone still has to decide whether the output is correct, and that takes the training.
+
+**Q&A pockets:** *So should trainees not use it?* Use it. Keep the training that lets you check it, and keep the people who can. The four habits on the previous slide are how you stay able to check.
+
+**Delivery:** Say the title, then the question, pause, then click. The When to ask slide, two on, is the other half: when you are not sure, ask.
+:::
+
+
+## Reproducible research can still be wrong {data-menu-title="Still wrong"}
+
+::: {style="margin-top: 1.2em; font-size: 0.95em;"}
+Reproducible: same data and code, same result. Replicable: a new experiment, the same answer [@patil2016]. Neither means correct.
+
+::: {.fragment style="margin-top: 0.8em;"}
+A rerunnable analysis of a badly designed study is still wrong. Leek and Peng argue for training before the paper over review after it [@leek2015].
+:::
+:::
+
+::: {.landing .fragment}
+Four NIH modules cover design, randomization, blinding and sample size.
 :::
 
 ::: {.notes}
 **Pull-from-if-needed:** Leek and Peng (PNAS 2015) argue for prevention, meaning education and evidence-based data analysis, over medication, meaning checks after publication [@leek2015]. Design, randomization, blinding and sample size come from the NIGMS modules, not from that paper. The NIGMS modules are on lack of transparency, blinding and randomization, sample size, outliers and exclusions, and biological and technical replicates, at grants.nih.gov under reproducibility training. NIH has required rigor training in T32 programs since NOT-OD-16-034 [@nih_t32_rigor_2016]. Freedman and colleagues estimated irreproducible preclinical research costs about 28 billion dollars a year in the United States [@freedman2015].
 
-**Q&A pockets:** *Is reproducible the same as replicable?* No. Reproducible means the same data and code give the same result. Replicable means a new experiment gives a consistent answer.
+**Q&A pockets:** *Is reproducible the same as replicable?* No. Patil, Peng and Leek lay the research process out as a chain, population, question, hypothesis, design, experimenter, data, analysis plan, analyst, code, estimate, claim, and define reproducibility as fixing everything from the data onward and replicability as repeating from the population onward [@patil2016]. The old version of this talk used their figure as its spine. Statistical modeling is one link in that chain, which is why the analyst belongs at the design stage, slide 25.
 
 **Delivery:** One minute. This turns from the analysis back to the experiment.
 :::
@@ -1020,17 +1082,17 @@ naim@unc.edu · naimurashid.github.io
 ::: {.notes}
 **Q&A routing index (rendered slide numbers, which count the four dividers):**
 
-- My PI uses Prism, what do I do? Slide 26.
-- Is GitHub safe for patient data? Slide 28.
-- Which repository for my RNA-seq? Slide 22.
-- Can I use ChatGPT to write my methods section? Slide 36.
-- I do not code at all. Slides 15 and 21.
-- Was Duke fraud? Slides 2 and 7.
-- Excel or Google Sheets and gene names. Slide 11.
-- How to record why a value is missing. Slides 18 and 20.
-- Docker, Apptainer, pipelines. Slide 29.
-- Is reproducible the same as replicable, or as correct? Slide 38.
-- Survey and cost numbers. Notes on slides 38 and 41.
+- My PI uses Prism, what do I do? Slide 28.
+- Is GitHub safe for patient data? Slide 30.
+- Which repository for my RNA-seq? Slide 24.
+- Can I use ChatGPT to write my methods section? Slide 38.
+- I do not code at all. Slides 17 and 23.
+- Was Duke fraud? Slides 2 and 9.
+- Excel or Google Sheets and gene names. Slide 13.
+- How to record why a value is missing. Slides 20 and 22.
+- Docker, Apptainer, pipelines. Slide 31.
+- Is reproducible the same as replicable, or as correct? Slide 41.
+- Survey and cost numbers. Notes on slides 41 and 44.
 :::
 
 
