@@ -145,11 +145,19 @@ Is this still happening?
 
 ## A signature that promised to pick the chemotherapy {data-menu-title="The promise"}
 
-::: {style="margin: 1.8em 1em 0 1em; font-size: 1.12em; line-height: 1.55;"}
+::: {.columns style="margin-top: 1.4em;"}
+::: {.column width="50%"}
+::: {style="font-size: 1.0em; line-height: 1.55; padding-right: 0.8em;"}
 In 2006 a Duke group reported gene expression signatures, built from cell lines, said to predict which chemotherapy a patient's tumor would respond to [@potti2006].
 
 ::: {.fragment style="margin-top: 1.2em;"}
 From 2007, Duke clinical trials assigned patients to chemotherapy by the signatures.
+:::
+:::
+:::
+::: {.column width="50%"}
+<img src="images/crop_potti2006.png" style="width: 100%; border: 1px solid #E6EAEF; padding: 10px; background: white;" alt="Screenshot of the title and author list of the 2006 Nature Medicine paper, Genomic signatures to guide the use of chemotherapeutics, by Anil Potti, Holly Dressman and sixteen coauthors ending with Joseph Nevins."/>
+<p class="muted" style="margin-top: 0.4em; text-align: center;">Nature Medicine, November 2006</p>
 :::
 :::
 
@@ -171,6 +179,9 @@ Keith Baggerly and Kevin Coombes at MD Anderson tried to reproduce the signature
 The errors they found were simple, and they wrote that the trials "may be putting patients at risk".
 :::
 :::
+
+<div style="margin: 0.8em auto 0 auto; width: 700px; border: 1px solid #E6EAEF; padding: 10px; background: white;"><img src="images/crop_baggerly2009.png" style="width: 100%; display: block;" alt="Screenshot of the title and byline of the 2009 Annals of Applied Statistics paper, Deriving chemosensitivity from cell lines: forensic bioinformatics and reproducible research in high-throughput biology, by Keith A. Baggerly and Kevin R. Coombes, University of Texas."/></div>
+<p class="muted" style="text-align: center; margin-top: 0.3em;">Annals of Applied Statistics, 2009</p>
 
 ::: {.notes}
 **Pull-from-if-needed:** They looked because MD Anderson clinicians asked whether to use the signatures. Baggerly and Coombes called the work "forensic bioinformatics", since the processing was not described well enough to reproduce and they had to infer the methods from the data and the reported results. Their abstract: "Patients in clinical trials are currently being allocated to treatment arms on the basis of these results. However, we show in five case studies that the results incorporate several simple errors that may be putting patients at risk" [@baggerly2009]. They reported spending on the order of fifteen hundred hours on the reconstruction. The paper appeared in the Annals of Applied Statistics in 2009.
@@ -275,7 +286,7 @@ Reproducibility Project: Cancer Biology, 2021 [@errington2021challenges]
 :::
 
 
-## The results that could be rerun got smaller {data-menu-title="Effects shrank"}
+## The results that could be replicated got smaller {data-menu-title="Effects shrank"}
 
 ```{=html}
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.4em; margin: 2.2em 4em 0 4em; text-align: center;">
@@ -442,7 +453,7 @@ For patient data, the raw file is a dated read-only REDCap or registry export.
 :::
 
 ::: {.note-box .fragment style="margin-top: 1.2em;"}
-For sequencing data, keep the checksum, a short code computed from the file that changes if even one byte does.
+For sequencing data, keep the checksum (a short code computed from the file), which in practice changes whenever the file does.
 :::
 
 ::: {.notes}
@@ -500,7 +511,7 @@ Two merged header rows · Color carries meaning · Units typed in cells · Blank
 - Be consistent
 - One header row
 - No color as data
-- No empty cells
+- Document missing values consistently
 :::
 ::: {.column width="50%"}
 - Dates as YYYY-MM-DD
@@ -509,12 +520,14 @@ Two merged header rows · Color carries meaning · Units typed in cells · Blank
 :::
 :::
 
+<div style="margin: 0.8em auto 0 auto; width: 620px; border: 1px solid #E6EAEF; padding: 10px; background: white;"><img src="images/crop_bromanwoo2018.png" style="width: 100%; display: block;" alt="Screenshot of the title and authors of the 2018 American Statistician paper Data Organization in Spreadsheets by Karl W. Broman and Kara H. Woo."/></div>
+
 ::: {.landing}
 Broman and Woo, 2018 [@broman2018]
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** Broman and Woo also recommend one thing per cell, a data dictionary (the codebook), and making backups [@broman2018]. "No empty cells" means writing NA or a code for missing, and recording what the code means. YYYY-MM-DD is the ISO date format, which sorts correctly and cannot be read two ways. CSV is plain text and keeps no formatting, so nothing hides in it.
+**Pull-from-if-needed:** Broman and Woo also recommend one thing per cell, a data dictionary (the codebook), and making backups [@broman2018]. "Document missing values consistently" is Broman and Woo's "no empty cells" rule, which means writing NA or a code for missing, and recording what the code means. YYYY-MM-DD is the ISO date format, which sorts correctly and cannot be read two ways. CSV is plain text and keeps no formatting, so nothing hides in it.
 
 **Q&A pockets:** *My lab template breaks half of these.* Keep typing into it, and let the recipe produce the tidy table. Change the template next time it is revised.
 
@@ -607,7 +620,7 @@ Before samples are collected, agree on the design, the sample size and the struc
 :::
 
 ::: {.fragment style="margin-top: 1em; font-size: 0.85em;"}
-At UNC, the Lineberger Biostatistics Core and the Lineberger Bioinformatics Core.
+At UNC, ask the Lineberger Biostatistics Core or Bioinformatics Core.
 :::
 
 ::: {.notes}
@@ -683,9 +696,9 @@ Figure 1 shows tumor volume by group.
 :::
 ::: {.column width="42%"}
 ::: {style="font-size: 0.82em; margin-top: 1.2em;"}
-Quarto turns this file into a report [@quarto2022]. A Jupyter notebook also works, run from a clean start.
+Quarto turns this file into a report [@quarto2022], as does a Jupyter notebook run from a clean start.
 
-The sentence under the figure describes it. Any test of the difference is another code chunk.
+The sentence describes the figure, and any test of the difference is another block of code.
 :::
 :::
 :::
@@ -708,7 +721,7 @@ The sentence under the figure describes it. Any test of the difference is anothe
 :::
 
 ::: {.landing .fragment}
-Code goes in Git. Patient data does not.
+Git is for code, not patient data.
 :::
 
 ::: {.notes}
@@ -780,11 +793,11 @@ source("paper_glmmPen_FA/Replication/replication.R")
 :::
 
 ::: {.landing}
-Anyone who reads the paper can rebuild its tables.
+The README gives the commands that rebuild the paper's tables from the saved results.
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** The paper-materials repository is github.com/hheiling/paper_glmmPen_FA, for the Biometrics paper on the glmmPen_FA method [@heiling_glmmpen2]. Its README says to install glmmPen from CRAN and then source `Replication/replication.R`, which rebuilds the paper's tables from saved summary results of the simulations and the case study. The simulations themselves are in the `Simulations` folder with the cluster commands to rerun them, which takes days on Longleaf. The glmmPen package paper is in The R Journal [@heiling_glmmpen]. glmmPen fits penalized generalized linear mixed models.
+**Pull-from-if-needed:** The paper-materials repository is github.com/hheiling/paper_glmmPen_FA, for the Biometrics paper on the glmmPen_FA method [@heiling_glmmpen2]. Its README says to install glmmPen from CRAN and then source `Replication/replication.R`, which rebuilds the paper's tables from saved summary results of the simulations and the case study. The simulations themselves are in the `Simulations` folder with the cluster commands to rerun them, which takes days on Longleaf and, per the README, a few manual path edits. Checked 2026-11-02: the README on GitHub says to install glmmPen from CRAN, set a path to the Replication folder and source replication.R. I have not rerun it myself, so the claim on the slide is what the README says, not a result I have reproduced. The glmmPen package paper is in The R Journal [@heiling_glmmpen]. glmmPen fits penalized generalized linear mixed models.
 
 **Q&A pockets:** *My project has no package.* The same parts apply to any paper folder, a README, the scripts, the saved results, and one command that reruns them. The lab template linked from the resources page shows that layout.
 
@@ -849,7 +862,7 @@ What changes when an AI writes the code?
 ## Same prompt, different answers {data-menu-title="Same prompt"}
 
 ::: {style="margin: 2.6em 1em 0 1em; font-size: 1.25em; line-height: 1.55;"}
-One analysis task was run **480** times, across six models, two prompting styles and four temperature settings, ten runs each.
+One task was run **480** times, ten per combination of six models, two prompt styles and four temperature (randomness) settings.
 
 ::: {.fragment style="margin-top: 1.4em;"}
 The analytical results varied considerably, even within one configuration [@cui2026].
@@ -889,7 +902,7 @@ Averages over 16 code models, lower bounds [@spracklen2025]
 :::
 
 ::: {.landing .fragment}
-Check that a package exists, who maintains it and for how long. CRAN and Bioconductor review submissions, PyPI does not, and none guarantees safety.
+Check that a package exists, who maintains it and for how long. CRAN and Bioconductor review submissions (PyPI does not), but none guarantees safety.
 :::
 
 ::: {.notes}
@@ -963,16 +976,24 @@ The more we rely on AI, the more essential it becomes to know when not to trust 
 
 ## Reproducible research can still be wrong {data-menu-title="Still wrong"}
 
-::: {style="margin-top: 1.2em; font-size: 0.95em;"}
-Reproducible: same data and code, same result. Replicable: a new experiment, the same answer [@patil2016]. Neither means correct.
+::: {.columns style="margin-top: 1.2em;"}
+::: {.column width="54%"}
+::: {style="font-size: 0.95em; padding-right: 0.8em;"}
+Reproducible means the same data and code give the same result, replicable that a new experiment does [@patil2016]. Neither means correct.
 
 ::: {.fragment style="margin-top: 0.8em;"}
-A rerunnable analysis of a badly designed study is still wrong. Leek and Peng argue for training before the paper over review after it [@leek2015].
+A rerunnable analysis of a bad design is still wrong. Leek and Peng argue for training before the paper, not review after [@leek2015].
+:::
+:::
+:::
+::: {.column width="46%"}
+<img src="images/crop_leekpeng2015.png" style="width: 100%; border: 1px solid #E6EAEF; padding: 8px; background: white;" alt="Screenshot of the title and authors of the 2015 PNAS paper by Jeffrey T. Leek and Roger D. Peng on reproducible research and the prevention of statistical problems."/>
+<p class="muted" style="margin-top: 0.4em; text-align: center;">PNAS, 2015</p>
 :::
 :::
 
 ::: {.landing .fragment}
-Four NIH modules cover design, randomization, blinding and sample size.
+NIH modules cover design, randomization, blinding, sample size.
 :::
 
 ::: {.notes}
@@ -987,7 +1008,6 @@ Four NIH modules cover design, randomization, blinding and sample size.
 ## When to talk to a statistician {data-menu-title="When to ask"}
 
 ::: {style="margin: 1.2em 3em 0 3em; font-size: 1.0em;"}
-Ask for a statistician's help in any of these three cases.
 
 ::: {.disclaimer}
 When you are not sure.

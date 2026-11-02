@@ -14,7 +14,7 @@ ev <- data.frame(x = 1:6,
            "Baggerly and Coombes publish\ntheir reconstruction,\ntrials suspended",
            "Duke review finds the errors\ndid not affect the findings,\ntrials restart",
            "Trials suspended\nagain",
-           "Trials terminated",
+           "Two trials terminated,\nthe third in Feb 2011",
            "Nature Medicine paper\nretracted"),
   up = c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE))
 ev$s <- ifelse(ev$up, 1, -1)
