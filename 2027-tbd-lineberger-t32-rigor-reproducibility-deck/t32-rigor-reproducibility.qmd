@@ -3,7 +3,7 @@ pagetitle: "Analyzing the Data to Ensure Reproducibility: UNC Lineberger T32"
 format:
   revealjs:
     theme: [default, custom.css, title-slide.css, content-slides.css]
-    footer: '<img src="RLlogoA-dark.png" alt="" style="height: 20px; vertical-align: middle; margin: -8px 16px -8px 0;"/>UNC Lineberger · T32 Rigor and Reproducibility 2027'
+    footer: '<img src="RLlogoA-dark.png" alt="" style="height: 20px; vertical-align: middle; margin: -8px 16px -8px 0;"/>UNC Lineberger · T32 Rigor and Reproducibility 2026'
     slide-number: c/t
     transition: fade
     width: 1280
@@ -33,7 +33,7 @@ execute:
 <p class="ts-author">Naim Rashid</p>
 <p class="ts-affil">Department of Biostatistics · Lineberger Comprehensive Cancer Center · UNC</p>
 
-<p class="ts-meta">T32 Rigor and Reproducibility seminar · 2027 (date to be set)</p>
+<p class="ts-meta">T32 Rigor and Reproducibility seminar · November 2, 2026</p>
 
 <p style="font-size: 20px; color: #13294B; margin: 0.6em 0 0.2em 0;">Slides, checklist and templates at <span style="white-space: nowrap;">github.com/naimurashid/rigor-reproducibility-resources</span></p>
 <img src="resources-qr.png" alt="QR code for the resources repository" style="width: 160px; height: 160px; margin-top: 0.1em;"/>
