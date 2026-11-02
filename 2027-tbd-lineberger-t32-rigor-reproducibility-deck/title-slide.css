@@ -1,0 +1,136 @@
+/*-- scss:rules --*/
+/* ==========================================================================
+   title-slide.css — title slide and section dividers
+   Deck: BATON, UNC Computational Medicine Seminar, 2026-09-04
+   ========================================================================== */
+
+/* --- Title slide ---------------------------------------------------------
+   Serif is used here and nowhere else in the deck. The rest of the slides run
+   sans, because serif loses at projector distance; the title slide is the one
+   place the reader is not decoding at speed. */
+
+#title-slide,
+.reveal .title-slide-custom {
+  text-align: center;
+}
+
+/* The auto-generated date is suppressed in favor of an inline mono date set
+   inside the institute block, so the whole line stays under one rule. */
+#title-slide .date { display: none; }
+
+.reveal .ts-logo {
+  height: 200px;
+  display: block;
+  margin: 0 auto 0.5em auto;
+}
+
+.reveal .ts-title {
+  font-family: var(--rl-font-sans);
+  font-size: 2.35em;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--rl-navy);
+  margin: 0.2em 0 0.15em 0;
+  border-bottom: none;
+}
+
+.reveal .ts-subtitle {
+  font-family: var(--rl-font-sans);
+  font-size: 1.05em;
+  font-weight: 400;
+  color: var(--rl-carolina-deep);
+  margin: 0 0 1.1em 0;
+}
+
+.reveal .ts-author {
+  font-family: var(--rl-font-sans);
+  font-size: 0.86em;
+  font-weight: 600;
+  color: var(--rl-ink);
+  margin: 0;
+}
+
+.reveal .ts-affil {
+  font-family: var(--rl-font-sans);
+  font-size: 0.62em;
+  color: var(--rl-graphite);
+  line-height: 1.5;
+  margin: 0.3em 0 0 0;
+}
+
+.reveal .ts-meta {
+  font-family: var(--rl-font-mono);
+  font-size: 0.52em;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--rl-graphite);
+  margin-top: 1.0em;
+  padding-top: 0.7em;
+  border-top: 1px solid var(--rl-mist);
+  display: inline-block;
+}
+
+/* --- Section dividers ----------------------------------------------------
+   Full-bleed navy. The heading element itself is hidden: the visible text is
+   inside .divider-inner so the vertical centering is not fighting reveal's
+   heading margins. Subtitle is always an italic question. */
+
+.reveal .section-divider h2 { display: none; }
+
+.reveal .section-divider .divider-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 672px;
+  text-align: center;
+  color: #fff;
+}
+
+.reveal .section-divider .divider-kicker {
+  font-family: var(--rl-font-mono);
+  font-weight: 600;
+  font-size: 0.68em;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--rl-carolina);
+  margin-bottom: 1.1em;
+}
+
+.reveal .section-divider .divider-rule {
+  width: 100px;
+  height: 3px;
+  background: var(--rl-carolina);
+  margin-bottom: 1.4em;
+}
+
+.reveal .section-divider .divider-title {
+  font-family: var(--rl-font-sans);
+  font-size: 1.9em;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
+}
+
+/* Same p-wrapping issue as content-slides.css: divider text sits in <p>
+   elements that the template's `.reveal p` rule colors ink; restate. */
+.reveal .section-divider .divider-kicker p,
+.reveal .section-divider .divider-title p,
+.reveal .section-divider .divider-question p { color: inherit; margin: 0; }
+
+.reveal .section-divider .divider-question {
+  font-family: var(--rl-font-sans);
+  font-style: italic;
+  font-size: 0.82em;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 1.2em;
+  max-width: 60%;
+}
+
+/* Footer and slide number are suppressed on navy grounds: the lab logo is a
+   transparent PNG whose navy elements vanish against navy, and the footer bar
+   reads as a seam across an otherwise full-bleed slide. */
+.reveal .section-divider .footer,
+.reveal .title-slide-custom .footer { display: none !important; }
