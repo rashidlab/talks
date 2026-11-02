@@ -142,6 +142,9 @@ Is this still happening?
 :::
 :::
 
+::: {.notes}
+**Delivery:** Clock: about 3 minutes in, on the 51-minute estimate. Read the question, then move.
+:::
 
 ## A signature that promised to pick the chemotherapy {data-menu-title="The promise"}
 
@@ -265,7 +268,7 @@ Someone will ask.
 
 **Q&A pockets:** *Is it ever fine not to share the raw data?* Patient privacy can limit who gets it, through controlled access, but the data still have to exist in a form someone could check.
 
-**Delivery:** Read the quote slowly, then click. Say "Someone will ask" as the person who will be asked, whether that is a reviewer, a coauthor or you a year later.
+**Delivery:** Read the quote slowly, then click. Say "Someone will ask" as the person who will be asked, whether that is a reviewer, a coauthor or you a year later. Bridge to the next slide: that was one lab, and the next two slides ask how common it is.
 :::
 
 
@@ -278,7 +281,7 @@ Reproducibility Project: Cancer Biology, 2021 [@errington2021challenges]
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** 193 experiments were planned from 53 papers published from 2010 to 2012, and 50 experiments from 23 papers were completed [@errington2021]. The data needed to compute effect sizes were public for 4 of the 193, and could not be obtained for 68 percent of experiments even after the original authors were contacted [@errington2021challenges]. The overview editorial is [@errington2021editorial]. Do not use the "54 percent failed" framing from press coverage, which is derived.
+**Pull-from-if-needed:** 193 experiments were planned from 53 papers published from 2010 to 2013, and 51 experiments from 23 papers were completed [@errington2021]. The data needed to compute effect sizes were public for 4 of the 193, and could not be obtained for 68 percent of experiments even after the original authors were contacted [@errington2021challenges]. The overview editorial is [@errington2021editorial]. Do not use the "54 percent failed" framing from press coverage, which is derived.
 
 **Q&A pockets:** *Were the original authors unhelpful?* Some were very helpful. For about a third of experiments the authors were not helpful or did not answer. The usual obstacle was that the data or protocols could not be obtained [@errington2021challenges].
 
@@ -306,7 +309,7 @@ And for 68 percent of the planned experiments, the original data could not be ob
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** Both numbers are for original effects that were positive. The median replication effect was 85 percent smaller than the original, and 39 of 97 positive effects (40 percent) succeeded on three or more of five criteria [@errington2021]. 97 percent of the replication effects were smaller than the original [@errington2021]. Data for computing effect sizes were public for 4 of the 193 planned experiments, and could not be obtained for 68 percent even after the original authors were asked [@errington2021challenges].
+**Pull-from-if-needed:** Both numbers are for original effects that were positive. The median replication effect was 85 percent smaller than the original, and 40 of 97 positive effects (40 percent) succeeded on three or more of five criteria [@errington2021]. 97 percent of the replication effects were smaller than the original [@errington2021]. Data for computing effect sizes were public for 4 of the 193 planned experiments, and could not be obtained for 68 percent even after the original authors were asked [@errington2021challenges].
 
 **Q&A pockets:** *Does a smaller effect mean the original was wrong?* Not necessarily. It means the original estimate cannot be trusted as stated, and without the original data nobody can say why.
 
@@ -320,7 +323,7 @@ And for 68 percent of the planned experiments, the original data could not be ob
 SEPT2 becomes 2-Sep.
 
 ::: {.fragment}
-**31%** of papers with supplementary Excel gene lists, 2014 to 2020, had errors, with no decline after a 2016 warning [@abeysooriya2021].
+**31%** of papers with supplementary Excel gene lists, 2014 to 2021, had errors, with no decline after a 2016 warning [@abeysooriya2021].
 :::
 
 ::: {.fragment}
@@ -331,7 +334,7 @@ The fix is to import gene columns as text, or turn off automatic date conversion
 <p style="margin-top: 2.8em;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; letter-spacing: 0.1em; color: #2E6A9F; border: 1px solid #4B9CD3; padding: 0.15em 0.5em;">POLL</span> <span style="font-size: 0.9em; color: #13294B;">Have you ever opened a gene list in Excel?</span></p>
 
 ::: {.notes}
-**Pull-from-if-needed:** Abeysooriya and colleagues found gene name errors in 3,436 of 11,117 PubMed Central articles (30.9 percent) with supplementary Excel gene lists from 2014 to 2020 [@abeysooriya2021]. The 2016 warning was Ziemann and colleagues in Genome Biology. In 2020 the HGNC renamed SEPT and MARCH genes (SEPT1 to SEPTIN1) partly for this reason. Microsoft added a setting in October 2023 under File, Options, Data, "Convert continuous letters and numbers to a date".
+**Pull-from-if-needed:** Abeysooriya and colleagues found gene name errors in 3,436 of 11,117 PubMed Central articles (30.9 percent) with supplementary Excel gene lists from 2014 to 2021 [@abeysooriya2021]. The 2016 warning was Ziemann and colleagues in Genome Biology. In 2020 the HGNC renamed SEPT and MARCH genes (SEPT1 to SEPTIN1) partly for this reason. Microsoft added a setting in October 2023 under File, Options, Data, "Convert continuous letters and numbers to a date".
 
 **Q&A pockets:** *I use Google Sheets.* It converts some of the same names, so the same fix applies, import the column as plain text. *Bioinformatics people:* read gene lists with code, never through a spreadsheet.
 
@@ -349,7 +352,7 @@ The fix is to import gene columns as text, or turn off automatic date conversion
 :::
 ::: {.column width="33%" .fragment}
 ::: {.frame-box style="min-height: 8em; font-size: 0.8em;"}
-**Coauthors**<br/>In 2024 Dana-Farber asked for six retractions and 31 corrections after reports of duplicated images [@dfci2024].
+**Coauthors**<br/>In 2024 Dana-Farber asked for six retractions and 32 corrections after reports of duplicated images [@dfci2024].
 :::
 :::
 ::: {.column width="33%" .fragment}
@@ -360,11 +363,11 @@ The fix is to import gene columns as text, or turn off automatic date conversion
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** After a January 2024 blog post reported duplicated and altered images, Dana-Farber acknowledged errors and requested six retractions and corrections to 31 more papers (NBC News, April 2024) [@dfci2024]. Whether any of it was deliberate is unresolved, so make no claim about intent. The Lesné Alzheimer's paper in Nature was retracted on June 24 2024 [@lesne2024retraction], if a non-cancer example is wanted. Do not call it "the most cited paper ever retracted".
+**Pull-from-if-needed:** After a January 2024 blog post reported duplicated and altered images, Dana-Farber acknowledged errors and requested six retractions and corrections to 32 more papers (NBC News, April 2024) [@dfci2024]. Whether any of it was deliberate is unresolved, so make no claim about intent. The Lesné Alzheimer's paper in Nature was retracted on June 24 2024 [@lesne2024retraction], if a non-cancer example is wanted. Do not call it "the most cited paper ever retracted".
 
 **Q&A pockets:** *Do retractions really end careers?* In my experience a retraction follows everyone on the author list, including people who never touched the data. That is the coauthor column.
 
-**Delivery:** One column per click. Keep it to one sentence each, these are not new stories.
+**Delivery:** One column per click. Keep it to one sentence each, these are not new stories. Answer the divider's question aloud before leaving: yes, it is still happening, and it costs the people in this room.
 :::
 
 
@@ -399,6 +402,9 @@ What do you hand to the analyst, and to yourself next year?
 :::
 :::
 
+::: {.notes}
+**Delivery:** Clock: about 17 minutes in, on the 51-minute estimate. Read the question, then move.
+:::
 
 ## Four things, every time {data-menu-title="Four things"}
 
@@ -438,18 +444,18 @@ The analyst might be a core, a labmate, or you in a year.
 
 **Q&A pockets:** *I do not code at all.* Three of the four need no code. The recipe can start as a numbered list of what you did, in order, with the reasons, and someone can turn it into a script later.
 
-**Delivery:** Name the four, then the caption. The next four slides take them one at a time.
+**Delivery:** Name the four, then the caption. The next seven slides take them one at a time, with the exercise in the middle.
 :::
 
 
 ## The raw data stays raw {data-menu-title="Raw data"}
 
 ::: {style="margin-top: 1.2em; font-size: 0.95em;"}
-- The file the instrument or export produced
+- The file as produced, by instrument, export or hand
 - Kept in a read-only folder
 - Nothing processed, summarized or deleted
 
-For patient data, the raw file is a dated read-only REDCap or registry export.
+For patient data, a dated read-only REDCap or registry export.
 :::
 
 ::: {.note-box .fragment style="margin-top: 1.2em;"}
@@ -458,6 +464,8 @@ For sequencing data, keep the checksum (a short code computed from the file), wh
 
 ::: {.notes}
 **Pull-from-if-needed:** Read-only means the operating system will not let you save over it. On Longleaf, `chmod -R a-w` on the folder. Large files go on lab storage with a link, not in email or in Git.
+
+**Q&A pockets:** *Imaging and flow cytometry?* The raw file is the microscope or cytometer export, the .czi, .nd2 or .fcs file, kept read-only, with the segmentation or gating settings saved as a file beside it. The Dana-Farber case on the Who it costs slide was about images.
 
 **Q&A pockets:** *What if the raw data have a mistake in them?* Fix it in the recipe, with a comment saying why, and leave the raw file as it was. *Bioinformatics people:* md5 or sha256 sums travel with the FASTQ files.
 
@@ -489,9 +497,6 @@ This layout is called tidy data, and most analysis software expects it [@wickham
 ```{=html}
 <div style="display: flex; flex-direction: column; gap: 0.5em; align-items: center;">
 <img src="images/fig_messy_sheet.png" style="width: 1040px; height: auto;" alt="A spreadsheet of tumor volumes for seven mice. The header spans two merged rows. The row for mouse M04 is shaded yellow with no legend, and one Day 7 cell is shaded green. Volumes carry the unit inside the cell as text, and one value has no unit. Some cells are blank for different reasons. Dates appear in three formats. The marker gene SEPT2 has become the date 2-Sep. A row of means sits in the middle of the data."/>
-<div class="fragment" style="font-size: 0.62em; line-height: 1.4; color: #13294B; text-align: center;">
-Two merged header rows · Color carries meaning · Units typed in cells · Blanks mean different things · Three date formats · SEPT2 became a date · A mean row inside the data
-</div>
 </div>
 ```
 
@@ -500,9 +505,29 @@ Two merged header rows · Color carries meaning · Units typed in cells · Blank
 
 **Q&A pockets:** *How do I record why a value is blank?* A separate column for the reason, with codes listed in the codebook.
 
-**Delivery:** Start a three-minute timer. Read a few chat answers aloud, then click to show the list. Seven problems are on the sheet and all seven are shown.
+**Delivery:** Start a three-minute timer. Read a few chat answers aloud, then advance to the next slide for the list. Nothing on this slide gives the answers away.
 :::
 
+## What is wrong with this sheet? {data-menu-title="Exercise answers"}
+
+<p style="margin: 0 0 0.4em 0;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.6em; letter-spacing: 0.1em; color: #2E6A9F; border: 1px solid #4B9CD3; padding: 0.15em 0.5em;">ANSWERS</span> <span style="font-size: 0.75em; color: #5B6670;">Seven problems.</span></p>
+
+```{=html}
+<div style="display: flex; flex-direction: column; gap: 0.5em; align-items: center;">
+<img src="images/fig_messy_sheet.png" style="width: 1040px; height: auto;" alt="A spreadsheet of tumor volumes for seven mice. The header spans two merged rows. The row for mouse M04 is shaded yellow with no legend, and one Day 7 cell is shaded green. Volumes carry the unit inside the cell as text, and one value has no unit. Some cells are blank for different reasons. Dates appear in three formats. The marker gene SEPT2 has become the date 2-Sep. A row of means sits in the middle of the data."/>
+<div style="font-size: 0.62em; line-height: 1.4; color: #13294B; text-align: center;">
+Two merged header rows · Color carries meaning · Units typed in cells · Blanks mean different things · Three date formats · SEPT2 became a date · A mean row inside the data
+</div>
+</div>
+```
+
+::: {.notes}
+**Pull-from-if-needed:** The answers, in order. The header spans two rows, so no single row names the columns. M04 is yellow (excluded, but the sheet never says so) and one Day 7 cell is green (re-measured). "mm3" is typed into most cells and missing from one. Blanks in the Day 0 and Day 14 columns mean dead, not measured, or not yet entered, and nothing says which. Dates appear in three formats. SEPT2 has become 2-Sep. The mean row sits inside the data, so any sort or import carries it along.
+
+**Q&A pockets:** *How do I record why a value is blank?* A separate column for the reason, with codes listed in the codebook.
+
+**Delivery:** Same image as the exercise. Read the seven down, pointing at each on the sheet, then move to the rules.
+:::
 
 ## Rules for the sheet you type into {data-menu-title="Spreadsheet rules"}
 
@@ -535,7 +560,7 @@ Broman and Woo, 2018 [@broman2018]
 :::
 
 
-## The codebook, which nobody writes {data-menu-title="Codebook"}
+## The codebook, the part most often skipped {data-menu-title="Codebook"}
 
 ::: {style="font-size: 0.72em; margin-top: 1.2em;"}
 | Variable | Description | Units | Allowed values | Missing |
@@ -545,7 +570,7 @@ Broman and Woo, 2018 [@broman2018]
 :::
 
 ::: {.fragment style="margin-top: 1em; font-size: 0.9em;"}
-Also record batch, plate and run date.
+Also record batch, plate, run date.
 :::
 
 ::: {.landing .fragment}
@@ -581,7 +606,7 @@ Every exclusion, recode and model choice goes in the script, with the N before a
 
 **Q&A pockets:** *I do not code.* Start with a numbered list in a text file, step by step, with the reasons. That list is already a recipe, and anyone can turn it into a script. *What about exclusions decided after seeing the data?* Write them down with the date and the reason, and report them.
 
-**Delivery:** Read the comment line aloud, since the reason for each step is written there rather than remembered. Say that the recipe continues past the tidy table into the analysis, and that it can begin as a numbered list of steps in a text file.
+**Delivery:** The script drops well B7 by its ID, not by its row number, which is the fix for the shifted column at Duke. Read the comment line aloud, since the reason for each step is written there rather than remembered. Say that the recipe continues past the tidy table into the analysis, and that it can begin as a numbered list of steps in a text file.
 :::
 
 
@@ -592,20 +617,21 @@ Every exclusion, recode and model choice goes in the script, with the N before a
 |---|---|
 | NIH data sharing (DMS) policy | January 2023 |
 | Shorter plan | May 2026 |
-| Progress reported in the RPPR | from October 2026 |
-| Repository | GEO, SRA or GDC, then Zenodo, Dryad or Figshare |
-| Patient-level data | controlled access or none |
+| Progress in the RPPR | October 2026 |
+| Data repository | GEO, SRA or GDC, then Zenodo or Dryad |
+| Code | GitHub, archived with a DOI |
+| Patient data | controlled access or none |
 :::
 
 
 ::: {.notes}
-**Pull-from-if-needed:** The policy is NOT-OD-21-013 and applies to applications due on or after January 25 2023 [@nih_dms_2021]. The new plan format is NOT-OD-26-046, required for due dates on or after May 25 2026 [@nih_dms_format_2026]. NOT-OD-26-100 moves DMS progress into the RPPR from October 1 2026 [@nih_rppr_2026]. NIH prefers a domain repository first. GEO holds gene expression data, SRA holds sequencing reads, and GDC is the NCI Genomic Data Commons. Generalist repositories come after. K awards no longer need a DMS plan (NOT-OD-26-120, October 2026).
+**Pull-from-if-needed:** The policy is NOT-OD-21-013 and applies to applications due on or after January 25 2023 [@nih_dms_2021]. The new plan format is NOT-OD-26-046, required for due dates on or after May 25 2026 [@nih_dms_format_2026]. NOT-OD-26-100 moves DMS progress into the RPPR from October 1 2026 [@nih_rppr_2026]. GitHub is not a data archive, since a repository can be edited or deleted and has no persistent identifier, so the plan names GitHub for code with a Zenodo DOI for the archived release, which is slide 32. NIH prefers a domain repository first. GEO holds gene expression data, SRA holds sequencing reads, and GDC is the NCI Genomic Data Commons. Generalist repositories come after. K awards no longer need a DMS plan (NOT-OD-26-120, October 2026).
 
 Patient-level data are shared through controlled access or not at all, which the plan says in advance, and they move by the core's transfer route, not by email.
 
 **Q&A pockets:** *Which repository for my RNA-seq?* GEO for the processed counts and SRA for the reads, submitted together through GEO. Controlled-access human data go through dbGaP or GDC.
 
-**Delivery:** Say the landing line aloud: the four things are the deliverable. Patient-level data goes through the core, not by email. Gloss the repositories aloud (GEO for gene expression, SRA for sequencing reads, GDC for cancer genomics). Then say that this applies to the research grants your PI holds, since K awards and training awards are exempt, and each of those grants now carries a written promise about its data.
+**Delivery:** Say aloud that the four things are the deliverable. Patient-level data goes through the core, not by email. Gloss the repositories aloud (GEO for gene expression, SRA for sequencing reads, GDC for cancer genomics). Then say that this applies to the research grants your PI holds, since K awards and training awards are exempt, and each of those grants now carries a written promise about its data.
 :::
 
 
@@ -628,7 +654,7 @@ At UNC, ask the Lineberger Biostatistics Core or Bioinformatics Core.
 
 **Q&A pockets:** *The core is booked for months.* Ask anyway, early, and bring the four things. A fifteen-minute conversation at design time saves weeks at analysis time.
 
-**Delivery:** About a minute. This closes the hand-off section.
+**Delivery:** About a minute. This closes the hand-off section: the four things are what you bring to that meeting.
 :::
 
 
@@ -640,6 +666,9 @@ How do you make the analysis itself rerunnable?
 :::
 :::
 
+::: {.notes}
+**Delivery:** Clock: about 31 minutes in, on the 51-minute estimate. Read the question, then move.
+:::
 
 ## Four ways to make an analysis rerunnable, from easiest to hardest {data-menu-title="Four ways"}
 
@@ -832,6 +861,9 @@ What changes when an AI writes the code?
 :::
 :::
 
+::: {.notes}
+**Delivery:** Clock: about 40 minutes in, 12 minutes of content left before the close, on the 51-minute estimate. Read the question, then move.
+:::
 
 ## AI can do the execution, the responsibility stays with you {data-menu-title="Responsibility"}
 
@@ -855,7 +887,7 @@ What changes when an AI writes the code?
 
 **Q&A pockets:** *My PI says not to use it.* Follow the lab's rule. If it is allowed, the next four slides are how to keep the work rerunnable.
 
-**Delivery:** Launch the poll first, then read the two boxes while it runs.
+**Delivery:** Bridge from the previous section: everything so far assumed you wrote the code, now suppose an AI did. Launch the poll first, then read the two boxes while it runs.
 :::
 
 
@@ -870,7 +902,7 @@ The analytical results varied considerably, even within one configuration [@cui2
 :::
 
 ::: {.landing .fragment style="font-size: 1.05em;"}
-Rerunning the prompt gives different code, so the code is what gets saved.
+Rerunning the prompt gives different code, so save the code, not the prompt.
 :::
 
 ::: {.notes}
@@ -882,7 +914,7 @@ Rerunning the prompt gives different code, so the code is what gets saved.
 :::
 
 
-## It will make up a package {data-menu-title="Made-up packages"}
+## It will invent a package name {data-menu-title="Made-up packages"}
 
 ```{=html}
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.4em; margin: 1.6em 4em 0 4em; text-align: center;">
@@ -906,7 +938,7 @@ Check that a package exists, who maintains it and for how long. CRAN and Biocond
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** Spracklen and colleagues tested 16 code models on 576,000 code samples, USENIX Security 2025 (arXiv 2406.10279) [@spracklen2025]. The abstract says "the average percentage of hallucinated packages is at least 5.2% for commercial models and 21.7% for open-source models", so the numbers are shares of package names, not shares of code samples. Someone can register an invented package name and put harmful code under it, so an install command copied from a chat can install malware. Do not quote the "19.7 percent overall" figure, which is secondary. In statistics the same failure is often conceptual rather than a missing package, output that runs and looks right but rests on a false premise.
+**Pull-from-if-needed:** Spracklen and colleagues tested 16 code models on 576,000 code samples, USENIX Security 2025 (arXiv 2406.10279) [@spracklen2025]. The abstract says "the average percentage of hallucinated packages is at least 5.2% for commercial models and 22.7% for open-source models", so the numbers are shares of package names, not shares of code samples. Someone can register an invented package name and put harmful code under it, so an install command copied from a chat can install malware. Do not quote the "19.7 percent overall" figure, which is secondary. In statistics the same failure is often conceptual rather than a missing package, output that runs and looks right but rests on a false premise.
 
 **Q&A pockets:** *How do I check a package?* A package on CRAN or Bioconductor has passed a submission check, which is a check that it builds and documents, not a security audit, and malicious packages have reached CRAN too. A name on PyPI proves nothing by itself, because invented names get registered by attackers, so look at the package page, who maintains it, how long it has existed and how often it is downloaded, and whether it does what you need.
 
@@ -929,36 +961,32 @@ Check that a package exists, who maintains it and for how long. CRAN and Biocond
 
 **Q&A pockets:** *Can I use ChatGPT to write my methods section?* Check the journal's policy, disclose the use, and check every claim and citation it writes. You are the author, so the text is yours to defend.
 
-**Delivery:** Read the table across. Do not editorialize.
+**Delivery:** Bridge: those were the risks, these are the rules. Read the table across. Do not editorialize.
 :::
 
 
 ## How to use it and still be able to rerun your work {data-menu-title="Four habits"}
 
 ::: {style="margin-top: 1em; font-size: 0.92em;"}
-1. Keep the generated code with the paper, noting which model and version wrote it.
+1. Keep the generated code with the paper, noting the model and version.
 2. Run the saved code twice from a clean start and compare.
-3. Read it as you would a labmate's draft.
-4. Be able to explain it with the tool closed.
+3. Read the code as you would a labmate's draft.
+4. Be able to explain the code with the AI tool closed.
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** A clean start means a fresh R or Python session, with the package versions pinned in a lockfile (slide 31), so the second run cannot lean on anything left over from the first. The driver's seat talk puts the reading habit as treating AI output like work "from a capable collaborator who is not accountable for the final product". Where you get stuck explaining it is where your understanding has gaps.
+**Pull-from-if-needed:** A clean start means a fresh R or Python session, with the package versions pinned in a lockfile (slide 32), so the second run cannot lean on anything left over from the first. The driver's seat talk puts the reading habit as treating AI output like work "from a capable collaborator who is not accountable for the final product". Where you get stuck explaining it is where your understanding has gaps.
 
 **Q&A pockets:** *What if the two runs differ?* Then you have learned something about the analysis, and it is a question for the analyst before it is a result.
 
-**Delivery:** Four lines, one breath each. This ends the AI section.
+**Delivery:** Four lines, one breath each. Habit two is the test from the script slide, applied to generated code. Two AI slides follow, judgment and then the turn to the close.
 :::
 
 
 ## We cannot evaluate what we do not understand {data-menu-title="Judgment"}
 
 ::: {style="margin: 1.8em 1em 0 1em; font-size: 1.12em; line-height: 1.55;"}
-But who will know when AI is wrong?
-
-::: {.fragment style="margin-top: 1.2em;"}
-As AI takes over more of the execution, the statistical intuition and judgment we develop through rigorous training become more important, not less.
-:::
+As AI takes over more of the execution, the intuition and judgment we develop through rigorous training become more important, not less.
 :::
 
 ::: {.landing .fragment}
@@ -970,7 +998,7 @@ The more we rely on AI, the more essential it becomes to know when not to trust 
 
 **Q&A pockets:** *So should trainees not use it?* Use it. Keep the training that lets you check it, and keep the people who can. The four habits on the previous slide are how you stay able to check.
 
-**Delivery:** Say the title, then the question, pause, then click. The When to ask slide, two on, is the other half: when you are not sure, ask.
+**Delivery:** Say the title, then ask the room: but who will know when AI is wrong? Pause, read the sentence, then click. The When to ask slide, two on, is the other half: when you are not sure, ask.
 :::
 
 
@@ -999,15 +1027,17 @@ NIH modules cover design, randomization, blinding, sample size.
 ::: {.notes}
 **Pull-from-if-needed:** Leek and Peng (PNAS 2015) argue for prevention, meaning education and evidence-based data analysis, over medication, meaning checks after publication [@leek2015]. Design, randomization, blinding and sample size come from the NIGMS modules, not from that paper. The NIGMS modules are on lack of transparency, blinding and randomization, sample size, outliers and exclusions, and biological and technical replicates, at grants.nih.gov under reproducibility training. NIH has required rigor training in T32 programs since NOT-OD-16-034 [@nih_t32_rigor_2016]. Freedman and colleagues estimated irreproducible preclinical research costs about 28 billion dollars a year in the United States [@freedman2015].
 
-**Q&A pockets:** *Is reproducible the same as replicable?* No. Patil, Peng and Leek lay the research process out as a chain, population, question, hypothesis, design, experimenter, data, analysis plan, analyst, code, estimate, claim, and define reproducibility as fixing everything from the data onward and replicability as repeating from the population onward [@patil2016]. The old version of this talk used their figure as its spine. Statistical modeling is one link in that chain, which is why the analyst belongs at the design stage, slide 25.
+**Q&A pockets:** *Is reproducible the same as replicable?* No. Patil, Peng and Leek lay the research process out as a chain, population, question, hypothesis, design, experimenter, data, analysis plan, analyst, code, estimate, claim, and define reproducibility as fixing everything from the data onward and replicability as repeating from the population onward [@patil2016]. The old version of this talk used their figure as its spine. Statistical modeling is one link in that chain, which is why the analyst belongs at the design stage, slide 26.
 
-**Delivery:** One minute. This turns from the analysis back to the experiment.
+**Delivery:** One minute. Turn here, out of AI and into the close: whatever wrote the code, the study still has to be right.
 :::
 
 
 ## When to talk to a statistician {data-menu-title="When to ask"}
 
 ::: {style="margin: 1.2em 3em 0 3em; font-size: 1.0em;"}
+When you are not sure, turn to someone who has the training and expertise.
+
 
 ::: {.disclaimer}
 When you are not sure.
@@ -1029,7 +1059,7 @@ Bring the four things, the raw data, the tidy table, the codebook and the recipe
 
 **Q&A pockets:** *What does "too sure" mean?* A p-value that looks too good, an effect much larger than anyone expected, or a result that depends on one excluded sample.
 
-**Delivery:** Warm, not a sales pitch. Then go straight to the sentence.
+**Delivery:** This is the other half of the judgment slide: the training that lets you check the output, and the people who have it when you do not. Warm, not a sales pitch. Then go straight to the sentence.
 :::
 
 
@@ -1046,7 +1076,7 @@ Most of reproducibility is what you hand off, the raw data, a clean table, a cod
 
 **Q&A pockets:** *What is the single first step?* Make a read-only copy of your raw data this week, and start a codebook beside it.
 
-**Delivery:** Read it once, slowly, and stop talking.
+**Delivery:** Read it once, slowly. Then the callback: Duke said the errors did not affect the findings, and nobody could check, because none of these four things had been handed off. Stop talking.
 :::
 
 
@@ -1082,7 +1112,7 @@ Most of reproducibility is what you hand off, the raw data, a clean table, a cod
 
 **Q&A pockets:** *Where do I start if I have one hour?* The handoff checklist.
 
-**Delivery:** Leave this up while questions start.
+**Delivery:** Before questions, say the Monday action: make a read-only copy of your raw data and start a codebook beside it. Then leave this up while questions start.
 :::
 
 
@@ -1102,17 +1132,17 @@ naim@unc.edu · naimurashid.github.io
 ::: {.notes}
 **Q&A routing index (rendered slide numbers, which count the four dividers):**
 
-- My PI uses Prism, what do I do? Slide 28.
-- Is GitHub safe for patient data? Slide 30.
-- Which repository for my RNA-seq? Slide 24.
-- Can I use ChatGPT to write my methods section? Slide 38.
-- I do not code at all. Slides 17 and 23.
+- My PI uses Prism, what do I do? Slide 29.
+- Is GitHub safe for patient data? Slide 31.
+- Which repository for my RNA-seq? Slide 25.
+- Can I use ChatGPT to write my methods section? Slide 39.
+- I do not code at all. Slides 17 and 24.
 - Was Duke fraud? Slides 2 and 9.
 - Excel or Google Sheets and gene names. Slide 13.
-- How to record why a value is missing. Slides 20 and 22.
-- Docker, Apptainer, pipelines. Slide 31.
-- Is reproducible the same as replicable, or as correct? Slide 41.
-- Survey and cost numbers. Notes on slides 41 and 44.
+- How to record why a value is missing. Slides 20 and 23.
+- Docker, Apptainer, pipelines. Slide 32.
+- Is reproducible the same as replicable, or as correct? Slide 42.
+- Survey and cost numbers. Notes on slides 42 and 45.
 :::
 
 
