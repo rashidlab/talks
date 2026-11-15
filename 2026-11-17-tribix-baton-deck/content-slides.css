@@ -1,0 +1,770 @@
+/*-- scss:rules --*/
+/* ==========================================================================
+   content-slides.css — deck-local utility classes
+   Deck: BATON, UNC Computational Medicine Seminar, 2026-09-04
+   Visual register: hairlines only, no gradients, no decorative tints,
+   no shadows, no hover lifts.
+   ========================================================================== */
+
+/* --- Slide furniture ----------------------------------------------------- */
+
+/* Base size tuned for this deck's content density at 1280x720. Quarto's
+   default presentation size assumes sparser slides; without this, tables and
+   landing lines fall off the bottom edge. */
+.reveal { font-size: 30px; }
+
+.reveal h2 {
+  margin-bottom: 0.45em;
+  padding-bottom: 0.18em;
+  line-height: 1.15;
+}
+
+.reveal .slides section {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Footer: navy bar, white text. Quarto's default is a light bar that renders
+   the white slide number invisible, so both are restated here. */
+.reveal .footer,
+.reveal .footer.footer-default {
+  display: block !important;
+  background: var(--rl-navy) !important;
+  color: #fff !important;
+  position: absolute;
+  bottom: 0; left: 0; width: 100%;
+  margin: 0;
+  padding: 9px 64px;
+  font-family: var(--rl-font-mono);
+  font-size: 0.42em;
+  letter-spacing: 0.06em;
+  box-sizing: border-box;
+  text-align: left;
+  z-index: 15;
+}
+.reveal .footer p,
+.reveal .footer a { color: #fff !important; margin: 0; }
+
+.reveal .slide-number {
+  z-index: 30 !important;
+  background: var(--rl-navy) !important;
+  color: #fff !important;
+  font-family: var(--rl-font-mono);
+  font-size: 15px !important;
+  font-weight: 500;
+  padding: 8px 14px !important;
+  top: auto !important;
+  height: auto !important;
+  bottom: 0 !important;
+  right: 0 !important;
+}
+.reveal .slide-number a { color: #fff !important; }
+
+/* --- Landing lines -------------------------------------------------------
+   Two levels, and the distinction is intentional:
+     .landing       carolina bold, a takeaway for THIS slide
+     .thesis-line   navy bold, a synthesis line for the whole talk
+   Carolina on white is only 3.2:1, so .landing is never set below 18px. */
+
+.reveal .landing {
+  color: var(--rl-carolina-deep);
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.92em;
+  margin-top: 0.5em;
+}
+
+.reveal .thesis-line {
+  color: var(--rl-navy);
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.0em;
+  line-height: 1.35;
+  margin: 0.4em auto;
+  max-width: 86%;
+}
+
+.reveal .muted {
+  color: var(--rl-graphite);
+  font-size: 0.8em;
+}
+
+/* Pandoc wraps bare div text in <p>, and the template's `.reveal p` color rule
+   overrides inheritance; these classes must restate color on their p children. */
+.reveal .landing p,
+.reveal .thesis-line p,
+.reveal .muted p { color: inherit; margin: 0; }
+
+
+/* --- Boxes ---------------------------------------------------------------
+   Hairline left rule, no fill beyond the faintest fog. */
+
+.reveal .note-box {
+  border-left: 1px solid var(--rl-carolina);
+  background: var(--rl-fog);
+  padding: 0.6em 1.0em;
+  margin: 0.5em 0;
+  font-size: 0.85em;
+}
+
+.reveal .frame-box {
+  border: 1px solid var(--rl-mist);
+  padding: 0.7em 1.0em;
+  margin: 0.4em 0;
+}
+
+/* The "what I am not arguing" slide: three parallel disclaimers, hairline
+   separated, deliberately unemphatic. */
+.reveal .disclaimer {
+  border-top: 1px solid var(--rl-mist);
+  padding: 0.55em 0 0.15em 0;
+  font-size: 0.88em;
+}
+.reveal .disclaimer strong { color: var(--rl-navy); }
+
+/* --- Tables --------------------------------------------------------------
+   Hairlines and a mono uppercase navy header row. Never a filled navy header
+   bar with white text. */
+
+.reveal table {
+  border-collapse: collapse;
+  font-size: 0.82em;
+  margin: 0.3em 0;
+}
+.reveal table th {
+  font-family: var(--rl-font-mono);
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rl-navy);
+  font-weight: 600;
+  background: none;
+  border-bottom: 1px solid var(--rl-navy);
+  padding: 0.45em 0.7em;
+}
+.reveal table td {
+  border-bottom: 1px solid var(--rl-mist);
+  padding: 0.42em 0.7em;
+  color: var(--rl-ink);
+}
+.reveal table tr:last-child td { border-bottom: none; }
+
+/* Row highlight for the design under discussion: left hairline, not a fill. */
+.reveal table tr.row-mark td:first-child {
+  border-left: 2px solid var(--rl-carolina);
+  padding-left: 0.55em;
+}
+
+/* --- Figures -------------------------------------------------------------
+   Most result slides are a single figure sized by viewport height so the
+   caption and landing line always clear the footer. */
+
+.reveal .fig-tall  { height: 432px; display: block; margin: 0 auto; }
+.reveal .fig-mid   { height: 374px; display: block; margin: 0 auto; }
+.reveal .fig-short { height: 302px; display: block; margin: 0 auto; }
+
+/* Full-bleed: break a wide schematic out of the section side padding. */
+.reveal .slides section img.bleed-fig {
+  width: 97vw !important;
+  max-width: 97vw !important;
+  height: auto !important;
+  margin-left: calc(50% - 48.5vw);
+  display: block;
+}
+
+/* --- Extension cards ------------------------------------------------------
+   Three in-progress projects, equal weight, hairline framed. Status is mono
+   and muted so an in-progress label never reads as a result. */
+
+.reveal .ext-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1em;
+  margin-top: 0.6em;
+}
+.reveal .ext-card {
+  border: 1px solid var(--rl-mist);
+  border-top: 2px solid var(--rl-carolina);
+  padding: 0.8em 0.9em;
+  font-size: 0.8em;
+}
+.reveal .ext-card h4 {
+  margin: 0 0 0.15em 0;
+  font-size: 1.05em;
+  color: var(--rl-navy);
+}
+.reveal .ext-card .ext-status {
+  font-family: var(--rl-font-mono);
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rl-graphite);
+  display: block;
+  margin-bottom: 0.6em;
+}
+
+/* --- Acknowledgments ------------------------------------------------------ */
+
+.reveal .ack-grid {
+  display: grid;
+  grid-template-columns: 34% 33% 33%;
+  gap: 1.4em;
+  font-size: 0.78em;
+  margin-top: 0.5em;
+}
+.reveal .ack-grid h4 {
+  font-family: var(--rl-font-mono);
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rl-navy);
+  border-bottom: 1px solid var(--rl-mist);
+  padding-bottom: 0.35em;
+  margin-bottom: 0.5em;
+}
+.reveal .ack-grid ul { margin: 0; padding-left: 1.1em; }
+.reveal .ack-grid li { margin-bottom: 0.3em; line-height: 1.35; }
+
+/* --- Backup slides -------------------------------------------------------- */
+
+.reveal .backup-slide { font-size: 0.85em; }
+.reveal .backup-slide h2 { font-size: 1.12em; }
+.reveal .backup-slide table { font-size: 0.78em; }
+
+/* Slides carrying data-state="hide-footer" (title, section dividers): reveal
+   promotes the state to a viewport/body class; the footer is a fixed sibling,
+   unreachable from inside the section. */
+body.hide-footer .footer,
+.reveal-viewport.hide-footer .footer { display: none !important; }
+
+/* The lab logo is a transparent PNG whose navy strokes vanish on navy grounds;
+   a white card behind it keeps it legible everywhere. */
+
+/* The lab logo is a wide wordmark. Floating it over the slide body occluded
+   long landing lines on seven slides, so it lives INSIDE the footer bar, to
+   the left of the slide-number pill, where it can never touch content. */
+.reveal .slide-logo {
+  max-height: 24px !important;
+  max-width: 130px !important;
+  height: auto !important;
+  bottom: 5px !important;
+  right: 92px !important;
+  z-index: 40;
+}
+
+/* Two-column slides had no gutter: pandoc columns are flex children whose
+   widths sum to 100%, so a gap property would overflow. Inner padding with
+   border-box creates the gutter without changing total width. */
+.reveal .columns .column { box-sizing: border-box; }
+.reveal .columns .column + .column { padding-left: 1.1em; }
+
+/* Put gutters between objects so parallel panels have equal content widths. */
+.reveal .columns.balanced-panels,
+.reveal .columns.media-pair {
+  display: flex;
+  gap: 1.1em;
+}
+.reveal .columns.balanced-panels { align-items: stretch; }
+.reveal .columns.balanced-panels > .column {
+  flex: 1 1 0;
+  width: auto !important;
+  min-width: 0;
+  display: flex;
+  padding: 0;
+}
+.reveal .balanced-panels .frame-box {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  padding-inline: 0.95em;
+}
+.reveal .columns.media-pair > .column { min-width: 0; padding: 0; }
+.reveal .columns.media-pair > .column + .column { margin-left: auto; }
+
+
+/* v3 (2026-09-04): the caption band (.landing) is anchored to a fixed baseline just
+   above the footer on every slide, so body content fills the space above it. */
+.reveal .slides section .landing {
+  position: absolute;
+  left: 40px; right: 40px; bottom: 46px;
+  margin: 0;
+}
+.reveal .fullwidth-table table { width: 100%; }
+
+.reveal .slides section.judgment-slide h2 {
+  max-width: 980px;
+  margin: 165px auto 0;
+  text-align: center;
+  font-size: 1.65em;
+  line-height: 1.15;
+}
+
+/* Diagrams shared by the opening examples and their later callbacks. */
+.reveal .story-intro {
+  margin: 1.2em auto 0.75em;
+  text-align: center;
+  font-weight: 700;
+  color: var(--rl-navy);
+}
+.reveal .story-flow { display: grid; align-items: stretch; }
+.reveal .story-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.32em;
+  padding: 0.74em 0.85em;
+  border: 1px solid var(--rl-mist);
+  background: #F4F6F8;
+}
+.reveal .story-card strong,
+.reveal .story-question { color: var(--rl-navy); }
+.reveal .story-card small { font-size: 0.81em; }
+.reveal .story-result { border-color: var(--rl-carolina-deep); }
+.reveal .story-arrow {
+  align-self: center;
+  color: var(--rl-carolina-deep);
+  font-weight: 700;
+}
+.reveal .story-question {
+  max-width: 1000px;
+  margin: 0.8em auto 0;
+  text-align: center;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+.reveal .dose-selected,
+.reveal .dose-comparator {
+  display: inline-block;
+  align-self: center;
+  padding: 0.12em 0.48em;
+  border: 1px solid currentColor;
+  color: var(--rl-navy);
+  background: #E4F0F8;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.reveal .dose-comparator { color: #934516; background: #FFF0E6; }
+.reveal .dose-timeline {
+  grid-template-columns: 1fr auto 1fr auto 1.15fr;
+  max-width: 1060px;
+  gap: 0.65em;
+  margin: 1.4em auto 0;
+  text-align: center;
+}
+.reveal .dose-question {
+  grid-template-columns: repeat(6, auto);
+  justify-content: center;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0.6em auto 0.65em;
+  font-size: 0.87em;
+}
+.reveal .dose-timeline .story-card { min-height: 4.8em; }
+.reveal .dose-comparison { font-size: 0.83em; white-space: nowrap; }
+.reveal .dose-timeline-with-results { margin-top: 0.55em; }
+.reveal .dose-timeline-with-results .story-card { min-height: 3.3em; padding: 0.56em 0.75em; }
+.reveal .dose-results {
+  max-width: 1040px;
+  margin: 0.68em auto 0;
+  color: var(--rl-navy);
+  font-size: 0.87em;
+}
+.reveal .dose-results table { width: 100%; }
+.reveal .dose-results th,
+.reveal .dose-results td { padding: 0.48em 0.58em; }
+.reveal .dose-results tr > :not(:first-child) { width: 18%; text-align: center; }
+.reveal .dose-results thead th:nth-child(2) { background: #E4F0F8; }
+.reveal .dose-results thead th:nth-child(3) { background: #FFF0E6; color: #934516; }
+.reveal .dose-results-note {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6em;
+  margin-top: 0.46em;
+  color: var(--rl-graphite);
+  font-size: 0.83em;
+}
+
+.reveal .evolve-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.52fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.1em;
+  margin: 1.1em auto 0;
+}
+.reveal .evolve-platform {
+  margin: 0;
+  text-align: center;
+}
+.reveal .platform-protocol {
+  padding: 0.65em;
+  background: var(--rl-navy);
+  color: white;
+}
+.reveal .platform-protocol strong { color: inherit; }
+.reveal .platform-protocol span { display: block; font-size: 0.8em; }
+.reveal .platform-branch {
+  margin: 0.5em 0;
+  color: var(--rl-navy);
+  font-weight: 700;
+  font-size: 0.85em;
+}
+.reveal .platform-branch::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 0.6em;
+  margin: 0.25em auto 0;
+  background: var(--rl-carolina-deep);
+}
+.reveal .platform-cohorts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.35em;
+}
+.reveal .platform-cohorts div {
+  padding: 0.55em 0.16em;
+  border-top: 2px solid var(--rl-carolina-deep);
+  background: #EDF5FA;
+  color: var(--rl-navy);
+  font-size: 0.81em;
+  font-weight: 700;
+}
+.reveal .evolve-platform p {
+  margin: 0.72em auto 0;
+  color: var(--rl-graphite);
+  font-size: 0.84em;
+}
+.reveal .specimen-callout {
+  padding-left: 0.95em;
+  border-left: 1px solid var(--rl-mist);
+}
+.reveal .specimen-vertical {
+  display: grid;
+  gap: 0.16em;
+  margin: 0.45em auto 0;
+  text-align: center;
+  font-size: 0.85em;
+}
+.reveal .specimen-vertical strong {
+  padding: 0.46em 0.52em;
+  border-bottom: 2px solid var(--rl-carolina);
+  background: #EDF5FA;
+  color: var(--rl-navy);
+}
+.reveal .specimen-vertical span {
+  color: var(--rl-carolina-deep);
+  line-height: 0.92;
+}
+.reveal .program-label,
+.reveal .specimen-label {
+  color: var(--rl-carolina-deep);
+  font-size: 0.65em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.reveal .specimen-label { text-align: center; }
+.reveal .specimen-callout .story-question { margin-top: 0.7em; font-size: 0.8em; }
+
+.reveal .biomarker-scenarios {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1em;
+  max-width: 1080px;
+  margin: 1.35em auto 0;
+}
+.reveal .biomarker-scenarios .story-card {
+  min-height: 5.4em;
+  padding: 0.9em 1.05em;
+}
+.reveal .biomarker-scenarios .story-card span { font-size: 0.91em; }
+.reveal .biomarker-scenarios + .story-question { margin-top: 1.1em; }
+
+/* BATON overview connects the search schematic to one documented use case. */
+.reveal .baton-search-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.88em;
+  max-width: 1152px;
+  margin: 1.2em auto 0;
+}
+.reveal .baton-search-panels {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.3em;
+}
+.reveal .baton-search-map {
+  display: grid;
+  justify-items: center;
+  gap: 0.23em;
+  color: var(--rl-navy);
+  text-align: center;
+}
+.reveal .baton-search-map strong { font-size: 0.91em; }
+.reveal .baton-search-map img {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+.reveal .baton-search-arrow {
+  display: grid;
+  justify-items: center;
+  gap: 0.05em;
+  color: var(--rl-carolina-deep);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.reveal .baton-search-arrow span:first-child { font-size: 0.63em; }
+.reveal .baton-map-caption {
+  margin: 0.52em auto 0.15em;
+  text-align: center;
+  color: var(--rl-navy);
+  font-size: 0.7em;
+}
+.reveal .baton-map-key {
+  display: flex;
+  justify-content: center;
+  gap: 1.2em;
+  color: var(--rl-navy);
+  font-size: 0.66em;
+}
+.reveal .baton-map-key span::before {
+  content: "";
+  display: inline-block;
+  width: 0.65em;
+  height: 0.65em;
+  margin-right: 0.4em;
+  background: #5DB573;
+  border: 1px solid var(--rl-navy);
+}
+.reveal .baton-map-key span + span::before {
+  transform: rotate(45deg);
+  background: #E07C24;
+}
+.reveal .baton-search-example {
+  display: grid;
+  gap: 0.57em;
+  padding: 0.52em 0 0.52em 0.86em;
+  border-left: 2px solid var(--rl-carolina);
+  color: var(--rl-navy);
+}
+.reveal .baton-search-example strong { font-size: 0.78em; }
+.reveal .baton-search-example b,
+.reveal .baton-search-example span { display: block; }
+.reveal .baton-search-example b { font-size: 1.32em; line-height: 1.15; }
+.reveal .baton-search-example span { margin-top: 0.18em; font-size: 0.68em; }
+.reveal .grid-benchmark {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--rl-mist);
+}
+.reveal .baton-grid-reference {
+  border-top: 1px solid var(--rl-mist);
+  padding-top: 0.34em;
+}
+.reveal .baton-grid-reference b { margin-top: 0.15em; }
+
+/* Inputs and verification bracket an explicit return from selection to testing. */
+.reveal .baton-workflow {
+  max-width: 1140px;
+  margin: 1.35em auto 0;
+  color: var(--rl-navy);
+  text-align: center;
+}
+.reveal .baton-workflow-inputs { border-bottom: 1px solid var(--rl-mist); padding-bottom: 0.6em; }
+.reveal .baton-workflow-inputs div { margin-top: 0.28em; font-size: 0.9em; }
+.reveal .baton-workflow-inputs span { padding: 0 0.28em; color: var(--rl-carolina-deep); }
+.reveal .baton-workflow-search { margin-top: 0.78em; }
+.reveal .baton-workflow-steps {
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0.52em;
+}
+.reveal .baton-workflow-steps .story-card { min-height: 4.25em; padding: 0.75em; }
+.reveal .baton-workflow-steps .story-card span { font-size: 0.93em; }
+.reveal .baton-workflow-repeat {
+  position: relative;
+  width: 70%;
+  height: 1.05em;
+  margin: 0 auto;
+  border: 2px solid var(--rl-carolina-deep);
+  border-top: 0;
+  box-sizing: border-box;
+}
+.reveal .baton-workflow-repeat::before {
+  content: "";
+  position: absolute;
+  left: -0.23em;
+  top: 0;
+  border-bottom: 0.33em solid var(--rl-carolina-deep);
+  border-right: 0.2em solid transparent;
+  border-left: 0.2em solid transparent;
+}
+.reveal .baton-workflow-repeat span {
+  position: relative;
+  top: 0.64em;
+  padding: 0 0.65em;
+  background: white;
+  color: var(--rl-carolina-deep);
+  font-size: 0.76em;
+  font-weight: 700;
+}
+.reveal .baton-workflow-check {
+  max-width: 720px;
+  margin: 1.1em auto 0;
+  padding: 0.52em 0.7em;
+  border: 1px solid var(--rl-carolina-deep);
+  background: #EDF5FA;
+  font-size: 0.87em;
+}
+
+.reveal .design-choice {
+  width: 91%;
+  margin: 0.68em auto 0;
+  font-size: 0.97em;
+}
+.reveal .design-choice th,
+.reveal .design-choice td { padding: 0.52em 0.7em; }
+.reveal .design-choice tr > :not(:first-child) { text-align: center; }
+.reveal .design-choice tbody tr:nth-child(-n+2) { background: #EDF5FA; }
+
+/* Whole-program examples and proposed calibration workflow. */
+.reveal .program-handoff-example,
+.reveal .partner-example,
+.reveal .program-close {
+  max-width: 1080px;
+  margin: 1.65em auto 0;
+}
+.reveal .late-failure-callback {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  padding: 0.5em 0.85em;
+  border-left: 4px solid var(--rl-carolina-deep);
+  background: #E4F0F8;
+  color: var(--rl-navy);
+}
+.reveal .late-failure-callback > strong { font-size: 2em; line-height: 1; }
+.reveal .late-failure-callback span { display: block; font-size: 0.82em; }
+.reveal .program-handoff-row {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.83em;
+  margin-top: 0.72em;
+  text-align: center;
+}
+.reveal .program-handoff-row .story-card { min-height: 3.65em; }
+.reveal .program-handoff-row span,
+.reveal .program-decisions span { font-size: 0.92em; }
+.reveal .program-handoff-example .story-question { margin-top: 0.75em; }
+.reveal .program-source { margin: 0.7em 0 0; font-size: 0.64em; text-align: center; }
+
+.reveal .program-decisions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.86em;
+  max-width: 1110px;
+  margin: 1.05em auto 0;
+}
+.reveal .program-decisions .story-card { min-height: 5em; }
+.reveal .program-decisions + .story-question { margin-top: 1.15em; }
+
+.reveal .partner-example { margin-top: 1.15em; text-align: center; }
+.reveal .partner-path {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) auto minmax(0, 1fr);
+  gap: 0.39em 0.72em;
+  margin-top: 0.72em;
+  color: var(--rl-navy);
+  font-size: 0.9em;
+}
+.reveal .partner-path > span:not(.story-arrow):not(:empty) {
+  padding: 0.58em 0.7em;
+  background: #F4F6F8;
+}
+.reveal .partner-path > span.partner-selected { background: #E4F0F8; font-weight: 700; }
+.reveal .partner-path > span.partner-dropped { color: var(--rl-graphite); }
+.reveal .partner-example .story-question { margin-top: 1em; }
+.reveal .partner-source { margin-top: 0.62em; font-size: 0.68em; }
+
+.reveal .program-section-label { margin: 1.15em auto 0; text-align: center; }
+.reveal .program-search-flow {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.58em;
+  max-width: 1120px;
+  margin: 1.05em auto 0;
+}
+.reveal .program-search-flow .story-card { min-height: 5.8em; }
+.reveal .program-search-flow .story-card span { font-size: 0.88em; }
+
+.reveal .program-criteria {
+  display: grid;
+  grid-template-columns: minmax(0, 1.17fr) minmax(0, 1fr);
+  gap: 0.9em;
+  max-width: 1100px;
+  margin: 0.7em auto 0;
+}
+.reveal .program-criteria .story-card { padding: 0.88em 1em; }
+.reveal .program-criteria ul { margin: 0.18em 0 0 1.18em; padding: 0; font-size: 0.89em; }
+.reveal .program-criteria li + li { margin-top: 0.28em; }
+.reveal .program-criteria .story-result span { font-weight: 700; color: var(--rl-navy); }
+.reveal .program-criteria .story-result small { margin-top: 0.33em; }
+.reveal .program-close {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75em;
+  margin-top: 2.05em;
+}
+.reveal .program-close .story-card { justify-content: flex-start; padding: 0.88em; min-height: 6.8em; }
+.reveal .program-close .story-card span { font-size: 0.91em; }
+.reveal .program-close .story-card small { margin-top: 0.2em; }
+.reveal .program-close + .story-question { margin-top: 1.1em; }
+
+/* An illustrative pair of early dose rules. */
+.reveal .confirmation-teaser {
+  max-width: 1040px;
+  margin: 1.15em auto 0;
+  text-align: center;
+}
+.reveal .confirmation-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8em;
+  margin: 0.9em auto 0;
+}
+.reveal .confirmation-paths .story-card { min-height: 3em; text-align: left; }
+.reveal .confirmation-teaser .story-question { margin-top: 1.1em; }
+
+/* Shared start, screening decision, and two labeled outcomes. */
+.reveal .seamless-flow {
+  max-width: 1060px;
+  margin: 1.05em auto 0;
+  text-align: center;
+}
+.reveal .seamless-start {
+  padding: 0.48em 0.7em;
+  background: var(--rl-navy);
+  color: white;
+  font-size: 0.92em;
+  font-weight: 700;
+}
+.reveal .seamless-screen,
+.reveal .seamless-paths {
+  display: grid;
+  gap: 0.55em;
+  margin: 0.62em auto 0;
+}
+.reveal .seamless-screen { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+.reveal .seamless-paths { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.reveal .seamless-paths .story-card { border-top: 3px solid var(--rl-graphite); }
+.reveal .seamless-paths .story-result { border-top-color: var(--rl-carolina-deep); }
+.reveal .seamless-flow .story-card { padding: 0.5em 0.65em; }
+.reveal .seamless-flow .story-card span { font-size: 0.88em; }
+.reveal .seamless-flow + .landing { margin-top: 1.25em; }
+.reveal .backup-seamless { max-width: 970px; text-align: left; }
+
+/* Larger tables and labels use the space available on the sparser slides. */
+.reveal .roomy-table th,
+.reveal .roomy-table td { padding: 0.74em 0.7em; }
+.reveal .slides section.backup-explainer { font-size: 1.1em; }
+.reveal .backup-explainer > p:first-of-type { margin-top: 1.8em; }
+.reveal .backup-detail { margin-top: 1.1em; font-size: 1.06em; }
+.reveal .backup-detail table td { padding-top: 0.5em; padding-bottom: 0.5em; }

@@ -2,6 +2,16 @@
 # These contain candid pre-publication discussion and should not be public
 *-design.md
 **/audience-review.md
+**/review-*.md
+**/pi-decisions.md
+**/build-report.md
+**/fix-report.md
+**/align-report.md
+**/baton-revision-results.md
+**/phaseless-teaser-candidates.md
+**/tribix-opening-facts.md
+**/HANDOFF-*.md
+**/qa/
 
 # Editor / OS noise
 .DS_Store
