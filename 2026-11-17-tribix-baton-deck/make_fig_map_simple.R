@@ -45,8 +45,8 @@ base <- function() {
 }
 target <- list(
   geom_hline(yintercept = 0.80, colour = deep, linetype = "22", linewidth = 0.65),
-  annotate("text", x = 0.03, y = 0.817, label = "80% power target",
-           hjust = 0, size = 4.2, colour = deep, fontface = "bold")
+  annotate("text", x = 0.03, y = 0.816, label = "80% power target",
+           hjust = 0, vjust = 0, size = 4.2, colour = deep, fontface = "bold")
 )
 pts <- list(
   geom_errorbar(data = obs, aes(x = x, ymin = lo, ymax = hi),
@@ -67,7 +67,7 @@ p2 <- ggplot() +
   target + pts +
   annotate("label", x = 0.72, y = 0.50, label = "model’s prediction\nfor designs never simulated",
            size = 5.0, colour = deep, fontface = "bold", fill = "white") +
-  annotate("label", x = 0.30, y = 0.91, label = "wider band =\nless certain",
+  annotate("label", x = 0.44, y = 0.91, label = "wider band =\nless certain",
            size = 5.2, colour = graph, fill = "white") +
   labs(title = "Fit a prediction model through them",
        subtitle = "The curve predicts power between tested settings",

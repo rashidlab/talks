@@ -44,6 +44,6 @@ plane(c("R01", "R02", "R03"), c("H0-Optimal", "Admissible", "Minimax"),
       xlim = c(9, 24), ylim = c(27.5, 34), out = "images/fig_tradeoff_tnbc_040.png",
       values = FALSE, highlight = "Admissible", y_label = "Enrollment cap")  # slide 27 lists the values beside the figure
 plane(c("R23", "R24", "R25"), c("H0-Optimal", "Admissible", "Minimax"),
-      nudge = rbind(c(1, -1.5), c(1, 2.8), c(-12, -2.5)),
+      nudge = rbind(c(1, 0.2), c(1, 2.8), c(-10.4, -2.3)),
       xlim = c(56, 76), ylim = c(82, 106), out = "images/fig_tradeoff_betweenarm_040.png",
       y_label = "Enrollment cap")
