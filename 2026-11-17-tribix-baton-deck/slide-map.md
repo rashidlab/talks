@@ -1,68 +1,66 @@
 # Slide map for the current TriBix keynote
 
-The current deck has 43 main slides through Questions, a backup divider, and 13 backup slides. The prior TriBix numbers refer to the 54-slide PDF in the handoff. The historical CompMed map below uses those prior numbers.
+Updated 2026-11-16 for the published deck. It has 39 main slides through Questions, a references slide, a backup divider, and 14 backup slides (55 pages). The sections below this table are historical. Their slide numbers refer to earlier versions of the deck and no longer match.
 
-| Current | Prior TriBix | Topic |
-|--:|--:|:--|
-| 1 | 1 | Title |
-| 2 | 2 | Overview |
-| 3 | 3 | Section 1: The stakes |
-| 4 | 5 | Phases |
-| 5 | 6 | Operation TrialBlazer |
-| 6 | 4 | Time and cost |
-| 7 | 7 | Late failure |
-| 8 | 8 | Sotorasib |
-| 9 | 9 | The open question |
-| 10 | 10 | The turn |
-| 11 | 11 | Section 2: The design problem |
-| 12 | 12 | What a trial is |
-| 13 | 13 | Fixed versus adaptive |
-| 14 | 14 | Feasibility |
-| 15 | 15 | Count them |
-| 16 | 16 | 10-15 subtrials |
-| 17 | 17 | Manual tuning |
-| 18 | 18 | Alternatives fail |
-| 19 | 19 | Section 3: BATON |
-| 20 | 21 | BATON in one picture |
-| 21 | 22 | BATON + loop |
-| 22 | 23 | Fitting the prediction model |
-| 23 | Split from 23 | Choosing the next design |
-| 24 | 25 | Fidelity ladder |
-| 25 | 26 | Section 4: Evidence and limits |
-| 26 | 27 | Known answer and 12 benchmarks |
-| 27 | 32 | Operational impact |
-| 28 | 29 | Two designs |
-| 29 | 30 | Objectives and frontier |
-| 30 | New | Seamless design example |
-| 31 | 34 | Where it falls short |
-| 32 | 33 | StatsUpAI pros and cons |
-| 33 | New | Judgment stays with you |
-| 34 | 35 | Section 5: Whole-program calibration |
-| 35 | 37 | What Phase III inherits |
-| 36 | New | Safer and more promising dose choices |
-| 37 | New | Illustrative confirmation paths |
-| 38 | New | PARTNER and reuse of evidence |
-| 39 | 39 | Whole-program search workflow |
-| 40 | New | Program-level targets and enrollment |
-| 41 | 40 | BATON roadmap and closing |
-| 42 | 41 | Acknowledgments |
-| 43 | 42 | Questions |
-| 44 | 43 | Backup |
-| 45 | 44 | B1: GP + ECI |
-| 46 | 45 | B2: Benchmark plot |
-| 47 | 46 | B3: Parameters |
-| 48 | 47 | B4: Related work |
-| 49 | 48 | B5: Limitations |
-| 50 | 49 | B6: Bidirectional |
-| 51 | 50 | B7: Reproducibility |
-| 52 | 51 | B8: Randomized frontier |
-| 53 | 52 | B9: ARPA-H ask |
-| 54 | 53 | B10: ADAPT + team |
-| 55 | 54 | B11: Benchmark table |
-| 56 | 24 | B12: Search initialization |
-| 57 | 31 | B13: Seamless trial |
+| Current | Menu title | Slide title |
+|--:|:--|:--|
+| 1 | Title | (divider) |
+| 2 | Section 1: The stakes | (divider) |
+| 3 | Phases | Drug development usually follows three phases before approval |
+| 4 | Operation TrialBlazer | The U.S. is concerned about its lead in early clinical research |
+| 5 | Time and cost | Developing one new therapy is slow and expensive |
+| 6 | Late failure | Many problems become apparent only in late-stage trials |
+| 7 | Sotorasib | Early decisions become downstream commitments |
+| 8 | The open question | How best to design early trials for later success is not yet clear |
+| 9 | The turn | Better early trials are possible. Designing them is the hard part. |
+| 10 | Section 2: The design problem | (divider) |
+| 11 | What a trial is | A clinical trial is an experiment built for a decision |
+| 12 | Fixed versus adaptive | An adaptive trial can act on an interim result |
+| 13 | Feasibility | A good design has to meet four requirements at once |
+| 14 | Count them | Simulation tests one design in two scenarios |
+| 15 | 10-15 subtrials | One EVOLVE protocol can host 10 to 15 subtrials |
+| 16 | Manual tuning | I could not verify that a hand-tuned design met the power target |
+| 17 | Alternatives fail | A grid search can produce 100 million candidate designs |
+| 18 | Section 3: BATON | (divider) |
+| 19 | BATON in one picture | BATON in one picture |
+| 20 | Fitting the prediction model | A nonlinear model predicts how untested designs might behave |
+| 21 | Choosing the next design | BATON balances potential improvement with feasibility |
+| 22 | Section 4: BATON in practice | (divider) |
+| 23 | Known answer and 12 benchmarks | Sanity check: a known answer tells us how close BATON gets |
+| 24 | Grid contrast | EVOLVE designs have too many settings to try every one |
+| 25 | Operational impact | EVOLVE had to settle each subtrial’s max sample size in advance |
+| 26 | Two designs | Same requirements, different trials |
+| 27 | Objectives and frontier | EVOLVE's TNBC subtrial: three objectives, three designs |
+| 28 | Seamless design example | The same workflow calibrated a more complex trial |
+| 29 | Imperfect biomarkers | What if the trial assumes perfect classification? |
+| 30 | PSA: AI-generated simulations | A public service announcement on AI-written simulations |
+| 31 | Judgment stays with you | You can’t evaluate what you don’t know, and you should never outsource your judgment to an external tool. |
+| 32 | Section 5: Whole-program calibration | (divider) |
+| 33 | What Phase III inherits | What does Phase III inherit? |
+| 34 | Illustrative confirmation paths | An early dose rule can shape Phase III confirmation |
+| 35 | PARTNER and reuse of evidence | How PARTNER counted early patients in the final comparison |
+| 36 | Whole-program search and early evidence | Extend BATON from one trial to the whole program |
+| 37 | BATON roadmap | Where BATON goes next |
+| 38 | Acknowledgments | Acknowledgments |
+| 39 | Questions | (divider) |
+| 40 | References | References |
+| 41 | Backup | (divider) |
+| 42 | B1: GP + ECI | Backup: the surrogate and the acquisition |
+| 43 | B2: Benchmark plot | Backup: ten starts on one Simon benchmark |
+| 44 | B3: Parameters | Backup: what the constraints and parameters actually are |
+| 45 | B4: Related work | Backup: related work and what BATON adds |
+| 46 | B5: Limitations | Backup: known failure modes and limits |
+| 47 | B6: Bidirectional | Backup: bidirectional stopping variants |
+| 48 | B7: Reproducibility | Backup: ten seeds, one design |
+| 49 | B8: Randomized frontier | Backup: the randomized-subtrial frontier |
+| 50 | B9: ARPA-H ask | Backup: the ARPA-H ask and the N-of-1 addition |
+| 51 | B10: ADAPT + team | Backup: ADAPT technical areas and the EVOLVE team |
+| 52 | B11: Benchmark table | Backup: Across 12 benchmarks: feasible in all 12, mean objective gap 3.6% |
+| 53 | B12: Search initialization | Backup: The seed sketches the map. Then BATON proposes each batch. |
+| 54 | B13: Seamless trial | Backup: Calibrating a seamless design |
+| 55 | B14: Verification | Backup: verifying the final design with fresh simulations |
 
-Prior slide 20's hyperparameter analogy is spoken on current slide 20. Prior slide 28's verification result opens current slide 28. Prior slide 36's package and manuscript details appear on Questions. Prior slide 33 was replaced by the StatsUpAI pros-and-cons slide. The judgment slide follows it. Slide 30 shows the seamless decision paths and B13 gives the calibration details.
+Changes on 2026-11-16, in order of the deck. The Overview slide was removed. Slide 9 became the Section 1 close. Slide 13 was rebuilt around four requirements. The BATON picture and workflow slides were merged into slide 19. The verification slide moved to backup B14. Section 4 was renamed BATON in practice and gained the grid contrast slide (24). The two dose slides were merged into slide 34, and the two whole-program slides into slide 36. A references slide was added after Questions.
 
 ## Historical map from CompMed to the prior TriBix deck
 

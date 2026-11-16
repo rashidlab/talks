@@ -524,7 +524,7 @@ Several more subtrials were waiting. How could we search so many settings system
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** Tell this as experience, without numbers. The time spent, the power reached and the expected patients once quoted for the hand-tuned design were removed from the manuscript in the 2026 revision because no run file or dated record backs them (docs/reviews/jasa_round1/manual-calibration-provenance.md). They are listed in pi-decisions.md in case a source turns up.
+**Pull-from-if-needed:** Tell this as experience, without numbers.
 
 **Q&A pocket:** *How long did it take, and how close did you get?* "Long enough that more subtrials were waiting. I did not keep a record I can cite, so I will not give a number."
 
@@ -552,7 +552,7 @@ Which candidate is worth the next simulation?
 
 **Pull-from-if-needed (matched-budget evidence):** BATON 0.4.0 manuscript Table 5. Three Simon scenarios with exact answers, 15 runs per method at matched budgets. Random search’s median relative gap in expected enrollment under the inactive scenario was 16.4%, and it found the exact best in 1 of 15 runs. BATON's side of the same table comes in the notes for slide 23.
 
-**Q&A pocket:** *Didn't the paper once report a random-search tally?* Yes, a count of how many random designs met the targets. It was withdrawn after review because it described the search box, not a method, and the matched-budget comparison above replaced it. *What about a grid at BATON's budget?* Manuscript Section 4.4 and Table 5 give a comparison on Scenario B, a separate between-arm design problem. Slide 24 shows the measured three-level grid and the BATON comparison runs on the same Scenario B task.
+**Q&A pocket:** *Didn't the paper once report a random-search tally?* Yes, a count of how many random designs met the targets. It was dropped because it described the search box, not a method, and the matched-budget comparison above replaced it. *What about a grid at BATON's budget?* Manuscript Section 4.4 and Table 5 give a comparison on Scenario B, a separate between-arm design problem. Slide 24 shows the measured three-level grid and the BATON comparison runs on the same Scenario B task.
 
 **Delivery:** 70 seconds. Haystack first, then the zoom. Call the grid size illustrative. Point to the two axes: the evidence thresholds to declare success or to stop for futility. One cell pairs one value from each axis while the other six settings stay fixed. Green combinations meet both targets. Outlined combinations also have lower expected enrollment. Say “In machine learning, you try a set of hyperparameters and see how it performs. Here the settings are trial rules, such as when to look at the data and how much evidence is enough to stop. Simulate many trials with those rules to see whether the design meets the power and false-go targets.” Land on “Which candidate is worth the next simulation?” Advance to the same map with BATON’s search path.
 :::
@@ -607,7 +607,7 @@ Section 3
 
 **Delivery:** 80 seconds. Point to the starting sample and follow the jumps through steps four and five. The diamond marks a candidate for verification. Reveal the measured grid comparison. Both numbers are allocated compute for the same EVOLVE design task. The grid tried combinations systematically. BATON used what it had already learned to choose which designs to test next.
 
-**Pull-from-if-needed:** BATON stands for Bayesian Adaptive Trial Optimization. A team can start from a known design type or specify its own trial by connecting a simulator, an analysis model, and code for calculating trial performance. EVOLVE took the second route, since no existing calibration tool covered the designs it needed. The planned BATON Workbench described in the ITCR proposal would help teams connect their own designs, reproduce a run, and review how the design was selected and checked.
+**Pull-from-if-needed:** BATON stands for Bayesian Adaptive Trial Optimization. A team can start from a known design type or specify its own trial by connecting a simulator, an analysis model, and code for calculating trial performance. EVOLVE took the second route, since no existing calibration tool covered the designs it needed. The planned BATON Workbench would help teams connect their own designs, reproduce a run, and review how the design was selected and checked.
 
 **Q&A pockets:** *What is the approximation in the diagram?* The surrogate is a prediction model fitted to completed simulations. The team supplies the trial’s analysis model. BATON fits a separate model to guide its search.
 
