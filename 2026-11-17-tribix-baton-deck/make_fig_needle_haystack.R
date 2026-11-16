@@ -13,7 +13,7 @@ pal   <- colorRampPalette(c("#F0D2C6", "#FBF1DC", "#F3E9B8", "#5DB573"))(100)
 top <- 6.35; bot <- 2.75; iw <- top - bot
 
 # Map only (legend drawn separately, so the two figures can place it differently).
-needle_map <- function(ix0, iy0, grid_slice = FALSE) {
+needle_map <- function(ix0, iy0, grid_slice = FALSE, w = iw) {
   f <- function(u, v) {
     ridge <- 1.3 * exp(-(v - (0.30 + 0.50 * u))^2 / 0.003) * exp(-(u - 0.62)^2 / 0.07)
     decoy <- 0.5 * exp(-((u - 0.22)^2 + (v - 0.74)^2) / 0.008) +
@@ -21,7 +21,7 @@ needle_map <- function(ix0, iy0, grid_slice = FALSE) {
     max(ridge, decoy)
   }
   n <- if (grid_slice) 10 else 26
-  cell <- iw / n
+  cell <- w / n
   for (i in seq_len(n)) for (j in seq_len(n)) {
     u <- (i - 0.5) / n
     v <- (j - 0.5) / n
@@ -41,7 +41,7 @@ needle_map <- function(ix0, iy0, grid_slice = FALSE) {
       rect(left, bottom, left + cell, bottom + cell, col = pal[k], border = NA)
     }
   }
-  rect(ix0, iy0, ix0 + iw, iy0 + iw, border = navy, lwd = 2)
+  rect(ix0, iy0, ix0 + w, iy0 + w, border = navy, lwd = 2)
 }
 legend_goals <- function(x, y) {
   rect(x, y - 0.15, x + 0.32, y + 0.15, col = "#87C99A", border = NA)
@@ -58,35 +58,39 @@ header <- function(x, h, s, adj = 0.5) {
 }
 
 # ---- Figure 1: the haystack and the needle (no BATON yet) -----------------------
-png("images/fig_needle_haystack.png", width = 3800, height = 1900, res = 300,
+# 2026-11-16: side legend replaced by one row along the bottom and captions cut to one line,
+# so both panels are about 30% larger at the same rendered height.
+png("images/fig_needle_haystack.png", width = 3237, height = 1900, res = 300,
     type = "cairo", family = "Lato")
 par(mar = c(0, 0, 0, 0), bg = "white")
-plot.new(); plot.window(xlim = c(0.25, 15.6), ylim = c(0.35, 8.1), asp = 1)
+plot.new(); plot.window(xlim = c(0.2, 13.4), ylim = c(0.35, 8.1), asp = 1)
 set.seed(7)
-h0 <- 0.45; hw <- 4.2; hc <- h0 + hw / 2
+ptop <- 6.6; pbot <- 1.9; pw <- ptop - pbot
+h0 <- 0.5; hw <- 5.6; hc <- h0 + hw / 2
 header(hc, "GRID SEARCH", "100,000,000 designs")
-gx <- seq(h0 + 0.06, h0 + hw - 0.06, length.out = 58)
-gy <- seq(bot + 0.06, top - 0.06, length.out = 50)
+gx <- seq(h0 + 0.06, h0 + hw - 0.06, length.out = 76)
+gy <- seq(pbot + 0.06, ptop - 0.06, length.out = 64)
 g <- expand.grid(x = gx, y = gy)
 points(g$x + runif(nrow(g), -0.025, 0.025), g$y + runif(nrow(g), -0.025, 0.025),
-       pch = 16, cex = 0.22, col = "#B7BDC5")
-nx <- h0 + 3.1; ny <- 4.85; zs <- 0.3
+       pch = 16, cex = 0.34, col = "#7C8792")
+nx <- h0 + 0.74 * hw; ny <- pbot + 0.58 * pw; zs <- 0.34
 rect(nx - zs, ny - zs, nx + zs, ny + zs, col = "white", border = navy, lwd = 2)
-points(nx, ny, pch = 21, bg = gold, col = navy, cex = 1.6, lwd = 1.2)
-text(hc, 2.25, "10 options for each of", cex = 1.8, col = muted)
-text(hc, 1.65, "8 design choices, each tested", cex = 1.8, col = muted)
-text(hc, 1.05, "on thousands of simulated trials", cex = 1.8, col = muted)
-ix0 <- 6.0
-segments(nx + zs, ny + zs, ix0, bot + iw, col = navy, lwd = 1.2, lty = 2)
-segments(nx + zs, ny - zs, ix0, bot, col = navy, lwd = 1.2, lty = 2)
-needle_map(ix0, bot, grid_slice = TRUE)
-header(ix0 + iw / 2, "TWO-SETTING SLICE", "One design per cell")
-text(ix0 - 0.34, bot + iw / 2, "Futility threshold", srt = 90,
-     cex = 1.5, col = navy, font = 2)
-text(ix0 + iw / 2, bot - 0.40, "Efficacy threshold", cex = 1.5, col = navy, font = 2)
-text(ix0 + iw / 2, bot - 0.98, "Each cell pairs two values.", cex = 1.5, col = muted)
-text(ix0 + iw / 2, bot - 1.51, "Other six settings held fixed.", cex = 1.5, col = muted)
-legend_goals(ix0 + iw + 0.38, 5.55)
+points(nx, ny, pch = 21, bg = gold, col = navy, cex = 1.7, lwd = 1.2)
+text(hc, pbot - 0.45, "10 options for each of 8 settings", cex = 1.7, col = muted)
+ix0 <- 8.0
+segments(nx + zs, ny + zs, ix0, pbot + pw, col = navy, lwd = 1.2, lty = 2)
+segments(nx + zs, ny - zs, ix0, pbot, col = navy, lwd = 1.2, lty = 2)
+needle_map(ix0, pbot, grid_slice = TRUE, w = pw)
+header(ix0 + pw / 2, "TWO-SETTING SLICE", "One design per cell")
+text(ix0 - 0.36, pbot + pw / 2, "Futility threshold", srt = 90,
+     cex = 1.6, col = navy, font = 2)
+text(ix0 + pw / 2, pbot - 0.45, "Efficacy threshold", cex = 1.6, col = navy, font = 2)
+ly <- 0.72; lx <- 3.6
+rect(lx, ly - 0.16, lx + 0.34, ly + 0.16, col = "#87C99A", border = NA)
+text(lx + 0.5, ly, "Feasible", adj = 0, cex = 1.7, font = 2, col = navy)
+lx <- 6.4
+rect(lx, ly - 0.16, lx + 0.34, ly + 0.16, col = "#87C99A", border = navy, lwd = 3)
+text(lx + 0.5, ly, "Feasible, fewer patients", adj = 0, cex = 1.7, font = 2, col = navy)
 dev.off()
 
 # ---- Figures 2 and 3: same design space, before and after fitting ------------

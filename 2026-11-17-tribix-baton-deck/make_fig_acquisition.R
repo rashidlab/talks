@@ -113,7 +113,7 @@ p <- ggplot() +
   geom_point(data = pred_best, aes(x, y), shape = 23, fill = "white",
              colour = graphite, size = 4.6, stroke = 0.9) +
   geom_text(data = pred_best, aes(x, y - 1.00, label = "predicted best"),
-            colour = graphite, size = 4.7, fontface = "bold") +
+            colour = graphite, size = 5.6, fontface = "bold") +
   # next candidate
   geom_point(data = next_pt, aes(x, y), shape = 21, fill = NA,
              colour = accent, size = 9.0, stroke = 1.0) +
@@ -127,7 +127,7 @@ p <- ggplot() +
   annotate("text", x = 8.55, y = 4.55, label = "low predicted\nenrollment",
            colour = navy, size = 5.8, fontface = "bold", lineheight = 0.95) +
   annotate("text", x = 6.37, y = 7.75, label = "uncertain",
-           colour = graphite, size = 3.9, fontface = "bold") +
+           colour = graphite, size = 5.2, fontface = "bold") +
   # caption tag
   annotate("text", x = 13.85, y = 0.30, label = "Schematic illustration",
            colour = graphite, size = 4.1, fontface = "italic", hjust = 1) +

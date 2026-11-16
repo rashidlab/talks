@@ -46,23 +46,29 @@ save(p7, "fig_late_failure_dots.png", 3.4, 3.4)
 people <- function(x0, y0, nx, ny, step) {
   d <- expand.grid(i = 0:(nx - 1), j = 0:(ny - 1)); data.frame(x = x0 + d$i * step, y = y0 + d$j * step)
 }
-e <- people(5.5, 4.2, 3, 2, 3.4); l <- people(54.5, 2.6, 8, 5, 3.4)
-p9 <- ggplot() + xlim(0, 100) + ylim(-7, 27) +
-  annotate("rect", xmin = 2, xmax = 16.3, ymin = 1.6, ymax = 10.2, fill = fog, colour = navy, linewidth = 0.5) +
+# 2026-11-16: redrawn so the uncertain link runs between the two readouts (the early signal and
+# the later outcome), not between the two trials.
+e <- people(5.5, 19.2, 3, 2, 3.4); l <- people(4.6, 1.4, 8, 3, 3.4)
+p9 <- ggplot() + xlim(0, 100) + ylim(-3.5, 31) +
+  tx(2, 28.6, "Early trial (small)", 6.0, navy, "bold", 0) +
+  annotate("rect", xmin = 2, xmax = 16.3, ymin = 16.6, ymax = 25.2, fill = fog, colour = navy, linewidth = 0.5) +
   geom_point(data = e, aes(x, y), size = 4.6, colour = car) +
-  tx(2, 14.2, "Early trial", 6.2, navy, "bold", 0) + tx(9.2, -2.6, "small", 5.6, graph) +
-  annotate("segment", x = 18, xend = 28, y = 5.9, yend = 5.9, colour = navy, linewidth = 1,
+  annotate("segment", x = 18.5, xend = 46, y = 20.9, yend = 20.9, colour = navy, linewidth = 1,
            arrow = arrow(length = unit(0.22, "cm"), type = "closed")) +
-  tx(23.5, -1.2, "short-term\nsignal", 5.4, navy) +
-  annotate("segment", x = 32.5, xend = 50, y = 5.9, yend = 5.9, colour = graph, linewidth = 1,
-           linetype = "dashed", arrow = arrow(length = unit(0.22, "cm"), type = "closed")) +
-  tx(41.5, 11.6, "?", 12, graph, "bold") + tx(41.5, -1.2, "uncertain\nlink", 5.4, graph) +
-  annotate("rect", xmin = 51.5, xmax = 81.5, ymin = 0, ymax = 19.4, fill = fog, colour = navy, linewidth = 0.5) +
+  tx(32, 23.2, "reads out", 5.0, graph) +
+  tx(48.5, 22.4, "A short-term signal", 6.0, navy, "bold", 0) +
+  tx(48.5, 18.9, "tumor shrinkage, side effects", 5.2, graph, "plain", 0) +
+  tx(2, 12.6, "Later trial (large)", 6.0, navy, "bold", 0) +
+  annotate("rect", xmin = 2, xmax = 31, ymin = -1.2, ymax = 10.8, fill = fog, colour = navy, linewidth = 0.5) +
   geom_point(data = l, aes(x, y), size = 4.6, colour = car) +
-  tx(66.5, 23.6, "Later trial", 6.2, navy, "bold") + tx(66.5, -3.4, "large", 5.6, graph) +
-  annotate("segment", x = 83, xend = 98, y = 9.7, yend = 9.7, colour = navy, linewidth = 1,
+  annotate("segment", x = 33, xend = 46, y = 4.8, yend = 4.8, colour = navy, linewidth = 1,
            arrow = arrow(length = unit(0.22, "cm"), type = "closed")) +
-  tx(91, 16.2, "long-term\noutcome", 5.4, navy) +
+  tx(39.5, 7.1, "reads out", 5.0, graph) +
+  tx(48.5, 6.3, "A long-term outcome", 6.0, navy, "bold", 0) +
+  tx(48.5, 2.8, "survival", 5.2, graph, "plain", 0) +
+  annotate("segment", x = 55, xend = 55, y = 16.6, yend = 9.2, colour = "#934516", linewidth = 1.1,
+           linetype = "dashed", arrow = arrow(length = unit(0.22, "cm"), type = "closed")) +
+  tx(57.5, 12.9, "Does one predict\nthe other?", 5.6, "#934516", "bold", 0) +
   theme_void()
-save(p9, "fig_signal_gap.png", 7.0, 3.3)
+save(p9, "fig_signal_gap.png", 7.0, 3.5)
 cat("wrote slides 6, 7, 9 figures\n")

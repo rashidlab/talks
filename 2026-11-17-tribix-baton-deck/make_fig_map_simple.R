@@ -46,7 +46,7 @@ base <- function() {
 target <- list(
   geom_hline(yintercept = 0.80, colour = deep, linetype = "22", linewidth = 0.65),
   annotate("text", x = 0.03, y = 0.816, label = "80% power target",
-           hjust = 0, vjust = 0, size = 4.2, colour = deep, fontface = "bold")
+           hjust = 0, vjust = 0, size = 5.6, colour = deep, fontface = "bold")
 )
 pts <- list(
   geom_errorbar(data = obs, aes(x = x, ymin = lo, ymax = hi),
