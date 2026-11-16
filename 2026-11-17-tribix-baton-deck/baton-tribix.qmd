@@ -214,7 +214,7 @@ What can we do in the early trials to make a late failure less likely?
     <thead><tr><th scope="col">Phase II results</th><th scope="col">960 mg</th><th scope="col">240 mg</th></tr></thead>
     <tbody>
       <tr><th scope="row">Progression-free survival</th><td>5.4 months</td><td>5.6 months</td></tr>
-      <tr><th scope="row">Serious side effects</th><td>35.6%</td><td>19.2%</td></tr>
+      <tr><th scope="row">Severe side effects (grade 3+)</th><td>35.6%</td><td>19.2%</td></tr>
       <tr><th scope="row">Tumor response</th><td>32.7%</td><td>24.8%</td></tr>
     </tbody>
   </table>
