@@ -873,7 +873,7 @@ Section 4
 <div class="fragment" data-fragment-index="1" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
 <div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">3.6%</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">more patients on average, BATON against Optimal</div></div>
 <div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">4</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">exact matches (dark points)</div></div>
-<div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">All 12</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">met both targets</div></div>
+<div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">All 12</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">test problems met both targets</div></div>
 </div>
 <div style="margin-top: 26px; padding-top: 20px; border-top: 1px solid #C9D1D9; display: flex; flex-direction: column; gap: 16px">
 <div style="text-align: left"><div style="font-size: var(--fs-body); font-weight: 700; color: #13294B">Simon’s two-stage design</div><div style="font-size: var(--fs-label); line-height: 1.35; margin-top: 2px; color: #1A202C">Stop after a first group if too few respond.</div></div>
@@ -1218,6 +1218,36 @@ Section 5
 ```
 :::
 
+## What BATON has shown, and what it has not {data-menu-title="Shown and not yet shown"}
+
+```{=html}
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: stretch; text-align: left; margin-top: 6px">
+<div style="background: #F4F6F8; padding: 22px 26px">
+<div style="font-size: var(--fs-lead); font-weight: 700; color: #2E6A9F; margin-bottom: 14px">Shown in EVOLVE (Phase II)</div>
+<div style="margin: 0 0 12px 0; padding-left: 18px; position: relative; font-size: var(--fs-body); line-height: 1.35; color: #1A202C"><span aria-hidden="true" style="position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #2E6A9F"></span>Designs verified against the power and type I error targets in fresh simulations, where hand tuning could not be verified.</div>
+<div style="margin: 0 0 12px 0; padding-left: 18px; position: relative; font-size: var(--fs-body); line-height: 1.35; color: #1A202C"><span aria-hidden="true" style="position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #2E6A9F"></span>Verified options that let the team weigh max sample size against average enrollment.</div>
+<div style="margin: 0 0 12px 0; padding-left: 18px; position: relative; font-size: var(--fs-body); line-height: 1.35; color: #1A202C"><span aria-hidden="true" style="position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #2E6A9F"></span>A search that took 76 core-hours and beat a grid using about 47 times the computing.</div>
+<div style="margin: 0; padding-left: 18px; position: relative; font-size: var(--fs-body); line-height: 1.35; color: #1A202C"><span aria-hidden="true" style="position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #2E6A9F"></span>The same workflow calibrated a seamless design with 13 settings.</div>
+</div>
+<div class="fragment" data-fragment-index="0" style="background: #FFFFFF; border: 1px solid #934516; padding: 22px 26px">
+<div style="font-size: var(--fs-lead); font-weight: 700; color: var(--rl-accent-text); margin-bottom: 14px">Not yet shown</div>
+<div style="margin: 0 0 12px 0; padding-left: 18px; position: relative; font-size: var(--fs-body); line-height: 1.35; color: #1A202C"><span aria-hidden="true" style="position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #934516"></span>Whether BATON can help with dose finding in Phase I.</div>
+<div style="margin: 0 0 12px 0; padding-left: 18px; position: relative; font-size: var(--fs-body); line-height: 1.35; color: #1A202C"><span aria-hidden="true" style="position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #934516"></span>How choices in Phases I and II affect Phase III.</div>
+<div style="margin: 0; padding-left: 18px; position: relative; font-size: var(--fs-body); line-height: 1.35; color: #1A202C"><span aria-hidden="true" style="position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #934516"></span>Whether calibrating all three phases together reduces the time, patients and cost of a development program.</div>
+</div>
+</div>
+```
+
+::: {.landing .fragment data-fragment-index="1"}
+The rest of this talk is about the second list.
+:::
+
+::: {.notes}
+**Pull-from-if-needed:** Left column sources. Verification in fresh simulations and the hand-tuning story are slides 15, 21 and 26. The trade-off options are slides 26 and 27. The 76 core-hours and the 47 times figure are the grid comparison on slide 24, for one randomized subtrial. The seamless design is slide 28. Everything on the left is a simulation result for EVOLVE designs, before enrollment. Nothing on the right has been demonstrated.
+
+**Delivery:** Read the left column as what EVOLVE got from BATON in Phase II. Click, then read the three open questions slowly. Say that the rest of the talk is about these three, and that they are proposals and work in progress, not results.
+:::
+
 ## What does Phase III inherit? {data-menu-title="What Phase III inherits"}
 
 ```{=html}
@@ -1467,7 +1497,7 @@ Thank you
 Questions
 :::
 ::: {.divider-recap}
-All 12 benchmarks met both targets, averaging 3.6% more patients than the exact optimum.<br/>
+On 12 problems with a known best design, BATON met both targets, 3.6% above the best on average.<br/>
 On one EVOLVE subtrial, BATON beat a grid search that used about 47 times the computing.
 :::
 ::: {.divider-question}
@@ -1480,7 +1510,7 @@ Manuscript in revision
 ::: {.notes}
 **Q&A routing index (TriBix numbering)**
 - *Clinical phases* → slide 3. *Operation TrialBlazer and trials abroad* → B15. *Development time and cost* → slide 4.
-- *Late failure and sotorasib* → slides 5–7 and 33. *PARTNER and early randomized evidence* → slide 35.
+- *Late failure and sotorasib* → slides 5–7 and 34. *PARTNER and early randomized evidence* → slide 36.
 - *Why efficient designs are hard to find* → slides 8 and 12–16.
 - *Fixed versus adaptive and what patients gain* → slides 11 and 26–27.
 - *EVOLVE and the hand-tuning story* → slides 14, 15 and 26.
@@ -1490,7 +1520,7 @@ Manuscript in revision
 - *Choosing among feasible designs* → slides 25–27 and B3. *Seamless design* → slide 28 and B13.
 - *AI, assumptions, and judgment* → slides 29–31 and B5.
 - *Bidirectional stopping* → B6. *TNBC single-arm designs* → B8.
-- *Early dose selection and Phase III confirmation* → slides 34–34. *Whole-program calibration and borrowing* → slides 35–36. *Status of BATON extensions* → slide 37. *ADAPT background* → B9 and B10.
+- *Early dose selection and Phase III confirmation* → slide 35. *Whole-program calibration and borrowing* → slides 36–37. *What is shown and what is not yet shown* → slide 33. *Status of BATON extensions* → slide 38. *ADAPT background* → B9 and B10.
 - *Company or translation* → disclose the relationship verbally in one sentence.
 :::
 
