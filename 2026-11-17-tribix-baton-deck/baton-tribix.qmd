@@ -1005,30 +1005,31 @@ How large should the max sample size be when an early stop could leave part of i
 **Delivery:** Open by contrasting with the sanity check. A Simon design has four settings (the two stage sizes and the two response cutoffs), so every design can be enumerated. An EVOLVE design has the eight settings from slide 15, a progression-free survival outcome and a Bayesian model, so there is no exact answer to compare against. Then lead with the enrollment-max sample size deadline. Explain that sites had to reserve capacity before the cohort opened. The committee used maximum and expected enrollment to weigh those options. These deadlines and the trial designs the team wanted to consider motivated BATON: we needed a faster way to calibrate more ambitious designs. Briefly connect the deadline to planning interim reviews and resources across cohorts. Ask how large the max sample size should be when an early stop could leave part of it unused. The next slide puts numbers on that choice.
 :::
 
-## Would you plan for up to 91 patients or 103? {data-menu-title="Two designs"}
+## Would you plan for up to 86 patients or 103? {data-menu-title="Two designs"}
 
 ```{=html}
 <div class="story-intro">EVOLVE’s ER-positive subtrial, doublet against triplet (patients in both arms)</div>
-<table class="design-choice inset">
-  <thead><tr><th scope="col"> </th><th scope="col">Optimal (fewest patients if ineffective)</th><th scope="col">Admissible (compromise)</th></tr></thead>
+<table class="design-choice compact inset">
+  <thead><tr><th scope="col"> </th><th scope="col">Optimal (fewest patients if ineffective)</th><th scope="col">Minimax (smallest max sample size)</th><th scope="col" class="fragment" data-fragment-index="2">Admissible (compromise)</th></tr></thead>
   <tbody>
-    <tr><th scope="row">Max sample size</th><td><strong>103</strong></td><td><strong>91</strong></td></tr>
-    <tr class="fragment" data-fragment-index="0"><th scope="row">Average enrollment if ineffective</th><td><strong>59.2</strong></td><td><strong>63.9</strong></td></tr>
-    <tr class="fragment" data-fragment-index="1"><th scope="row">Power</th><td>80.4%</td><td>81.0%</td></tr>
-    <tr class="fragment" data-fragment-index="1"><th scope="row">Type I error</th><td>8.2%</td><td>8.6%</td></tr>
+    <tr><th scope="row">Max sample size</th><td><strong>103</strong></td><td><strong>86</strong></td><td class="fragment" data-fragment-index="2"><strong>91</strong></td></tr>
+    <tr class="fragment" data-fragment-index="0"><th scope="row">Average enrollment if ineffective</th><td><strong>59.2</strong></td><td><strong>70.8</strong></td><td class="fragment" data-fragment-index="2"><strong>63.9</strong></td></tr>
+    <tr class="fragment" data-fragment-index="1"><th scope="row">Power</th><td>80.4%</td><td>81.7%</td><td class="fragment" data-fragment-index="2">81.0%</td></tr>
+    <tr class="fragment" data-fragment-index="1"><th scope="row">Type I error</th><td>8.2%</td><td>9.4%</td><td class="fragment" data-fragment-index="2">8.6%</td></tr>
   </tbody>
 </table>
-<div class="story-question fragment" data-fragment-index="0">Planning for 12 fewer patients at most means enrolling about 5 more on average if the treatment is ineffective.</div>
-<div class="story-question design-choice-targets fragment" data-fragment-index="1">Both designs met the power and type I error targets in simulation.</div>
+<div class="story-question fragment" data-fragment-index="0">Planning for 17 fewer patients at most means enrolling about 12 more on average if the treatment is ineffective.</div>
+<div class="story-question design-choice-targets fragment" data-fragment-index="1">Both met the power and type I error targets in simulation.</div>
+<div class="story-question design-choice-targets fragment" data-fragment-index="2">Admissible is the compromise between them, and it met both targets too.</div>
 ```
 
 
 ::: {.notes}
-**Pull-from-if-needed:** BATON 0.4.0 manuscript Table 4. The Optimal design (H0-Optimal in the manuscript) is first shown on this slide. Slide 13 uses illustrative numbers and is not this design. Rows R23 and R24 of final_summary_designs.csv are used for the comparison, with totals across both arms. The TNBC single-arm designs that were shown here before are on backup B8. All three verified designs cleared the 80% power floor and 10% type I error max sample size at five fresh seeds. The hand-tuning experience on slide 15 motivated this work. It was not a controlled comparison.
+**Pull-from-if-needed:** BATON 0.4.0 manuscript Table 4. The Optimal design (H0-Optimal in the manuscript) is first shown on this slide. Slide 13 uses illustrative numbers and is not this design. Rows R23 (Optimal), R25 (Minimax) and R24 (Admissible) of final_summary_designs.csv are used for the comparison, with totals across both arms. The TNBC single-arm designs that were shown here before are on backup B8. All three verified designs cleared the 80% power floor and 10% type I error max sample size at five fresh seeds. The hand-tuning experience on slide 15 motivated this work. It was not a controlled comparison.
 
-**Q&A pockets:** *Why are the expected values fractional?* They average over simulations. Some simulated trials stop early and others run to the max sample size. *Are these designs stable across restarts?* The five restarts behind each design had maximum-size standard deviations of 9.7 for Optimal, 4.1 for Admissible and 1.6 for Minimax (supplement Web Appendix D.3), so the 103 against 91 difference is about the size of the restart spread for Optimal. *Why do powers differ?* All had to clear the same floor. The searches prioritized enrollment under different criteria.
+**Q&A pockets:** *Why are the expected values fractional?* They average over simulations. Some simulated trials stop early and others run to the max sample size. *Are these designs stable across restarts?* The five restarts behind each design had maximum-size standard deviations of 9.7 for Optimal, 4.1 for Admissible and 1.6 for Minimax (supplement Web Appendix D.3), so the 103 against 86 gap is less than twice the restart spread for Optimal. *Why do powers differ?* All had to clear the same floor. The searches prioritized enrollment under different criteria.
 
-**Delivery:** Return to the capacity EVOLVE had to reserve, then introduce the Optimal design. Call the second design a compromise between reducing the max sample size and reducing average enrollment. Give the group a moment to choose whether to lower the max sample size by 12 at the cost of enrolling about five more patients on average if the treatment is inactive. Then reveal the performance rows: both designs passed the same targets in fresh simulations. Use the options to ask how changing the objective gives the team different designs.
+**Delivery:** Return to the capacity EVOLVE had to reserve, then introduce the two extremes. Optimal enrolls the fewest patients on average if the treatment is inactive. Minimax has the smallest max sample size. Give the group a moment to choose whether to lower the max sample size by 17 at the cost of enrolling about 12 more patients on average if the treatment is inactive. Then reveal the performance rows: both passed the same targets in fresh simulations. On the last click, bring in Admissible as the compromise between them, which is the design the steering committee chose (next slide).
 :::
 
 ## Change the objective. Keep the evidence targets. {data-menu-title="Objectives and frontier"}

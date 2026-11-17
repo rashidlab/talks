@@ -777,12 +777,17 @@ body.hide-footer .slide-number,
 .reveal .design-choice th,
 .reveal .design-choice td { padding: 0.52em 0.7em; }
 .reveal .design-choice tr > :not(:first-child) { text-align: center; }
-.reveal .design-choice tbody tr:nth-child(-n+2) { background: #EDF5FA; }
+.reveal .design-choice tbody tr:nth-child(-n+2) > * { background: #EDF5FA; }
+.reveal .design-choice.compact { margin-top: 0.4em; }
+.reveal .design-choice.compact th,
+.reveal .design-choice.compact td { padding: 0.42em 0.7em; }
 .reveal .design-choice tbody th,
 .reveal .design-choice tbody td { border-bottom: 1px solid var(--rl-mist) !important; }
 .reveal .design-choice th { font-family: inherit; text-transform: none; letter-spacing: normal; font-weight: 700; }
 .reveal .design-choice tbody th { white-space: nowrap; }
 .reveal .design-choice thead th { text-wrap: balance; }
+.reveal .design-choice thead th { border-bottom: 2px solid var(--rl-navy) !important; }
+.reveal .design-choice thead tr { border-bottom: 0 !important; }
 /* The prompt that opens slide 35 is a setup line, not the takeaway, so it stays navy. */
 .reveal .story-question.confirmation-prompt { color: var(--rl-navy); }
 
