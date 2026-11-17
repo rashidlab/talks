@@ -58,7 +58,7 @@ Section 1
 ```{=html}
 <div class="divider-outline">
 <div class="ol-row ol-current"><span class="ol-num">1</span><span class="ol-name">The stakes</span></div>
-<div class="ol-q">What do we need to learn before committing?</div>
+<div class="ol-q">How much of a drug’s fate is set in its earliest trials?</div>
 <div class="ol-row"><span class="ol-num">2</span><span class="ol-name">The design problem</span></div>
 <div class="ol-row"><span class="ol-num">3</span><span class="ol-name">BATON</span></div>
 <div class="ol-row"><span class="ol-num">4</span><span class="ol-name">BATON in practice</span></div>
