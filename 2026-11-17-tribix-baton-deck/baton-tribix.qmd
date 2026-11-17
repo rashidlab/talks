@@ -305,7 +305,7 @@ More patients later may not answer what the early trial never asked.
 ```
 
 ::: {.thesis-line .fragment data-fragment-index="1" style="margin-top: 0.9em;"}
-One bottleneck is finding an efficient adaptive design that still meets the evidence requirements. That is a search problem.
+One bottleneck is finding an efficient adaptive design that still meets the evidence requirements. That is a search problem, and it is the piece we solve today. We return to the dose question at the end.
 :::
 
 ::: {.notes}
@@ -512,7 +512,7 @@ One design, held fixed in every simulated trial
 ```
 
 ::: {.landing .fragment}
-One design meets both targets. EVOLVE needed rules for 10 to 15 subtrials.
+One design meets both targets. Now imagine finding one for each of 10 to 15 subtrials.
 :::
 
 ::: {.notes}
@@ -646,7 +646,7 @@ Section 3
 ## BATON in one picture {data-menu-title="BATON in one picture"}
 
 ```{=html}
-<div style="font-size: var(--fs-label); color: #5B6670">BATON stands for Bayesian Adaptive Trial Optimization. It applies Bayesian optimization to trial rules.</div>
+<div style="font-size: var(--fs-label); color: #5B6670">BATON stands for Bayesian Adaptive Trial Optimization. It applies Bayesian optimization, the machine learning method used to tune model hyperparameters, to trial rules.</div>
 <div style="margin-top: 20px; display: grid; grid-template-columns: 286px minmax(0, 1fr); gap: 36px; height: 430px">
 <div style="background: #F4F6F8; padding: 22px 24px; box-sizing: border-box; display: flex; flex-direction: column; text-align: left">
 <div style="font-size: var(--fs-lead); font-weight: 700">You supply</div>
@@ -871,7 +871,7 @@ Section 4
 <div><img src="images/fig_benchmark_paired_040.png" class="fragment" data-fragment-index="0" style="width: 590px !important; height: 490px !important; max-width: 590px !important; max-height: 490px !important; display: block; margin: 0;" alt="Scatter plot of expected enrollment when treatment is inactive, with the exact Simon design on the horizontal axis and BATON on the vertical axis. Both axes use the same scale. Four points sit on the equality line. The largest gap is 1.98 expected patients, or 13.5% above the optimum."/></div>
 <div style="display: flex; flex-direction: column">
 <div class="fragment" data-fragment-index="1" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
-<div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">3.6%</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">more patients on average, BATON against Optimal</div></div>
+<div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">3.6%</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">above the exact best design, on average</div></div>
 <div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">4</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">exact matches (dark points)</div></div>
 <div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">All 12</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">test problems met both targets</div></div>
 </div>
@@ -898,7 +898,7 @@ Section 4
 **Delivery:** Give the context first. A Simon two-stage design has four settings, the size of the first group, the response cutoff for stopping after it, the maximum size, and the final response cutoff. With so few settings we can loop over every possible design and know exactly which is best. Best has three standard meanings. Optimal has the fewest expected patients if the treatment is ineffective, Minimax has the smallest maximum size, and Admissible is a compromise between them. These three names come back on the EVOLVE slides. The comparison here is against the Optimal design. Set up the comparison before revealing the plot. Simon’s two-stage design enrolls a first group and can stop if too few patients respond. In this design family, we can check each candidate by exact calculation and find the one with the lowest expected enrollment under the null that meets both statistical targets. Ask how close BATON gets to that independently known answer. Each point is a scenario. The x-axis is the exact Simon design and the y-axis is BATON, both evaluated under the same null scenario. The dashed line is equality. Four designs match, all 12 meet both targets, and the average relative extra enrollment is 3.6%. The largest gap is about two expected patients. EVOLVE’s more complex designs use fresh simulations for verification. Turn from the benchmark to the decision EVOLVE had to make before the cohort opened.
 :::
 
-## EVOLVE designs have too many settings to try every one {data-menu-title="Grid contrast"}
+## A better EVOLVE design with about 47 times less computing {data-menu-title="Grid contrast"}
 
 ```{=html}
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
@@ -1023,11 +1023,13 @@ How large should the max sample size be when an early stop could leave part of i
 :::
 
 ::: {.landing .fragment}
-Different priorities give the trial team different verified options.
+Different priorities give different verified options. For its first subtrial, EVOLVE’s steering committee chose Admissible, inside the three-month window.
 :::
 
 ::: {.notes}
 **Pull-from-if-needed:** The dashed line guides the eye between the three returned designs. The Optimal criterion (H0-Optimal in the manuscript) minimizes expected enrollment when the treatment is inactive, Minimax minimizes the max sample size, and Admissible weights both. Optimal and Minimax are Simon’s 1989 criteria and Admissible is the compromise of Jung and colleagues. In Simon’s setting each can be found by enumeration, as on slide 23. Here the design is Bayesian and adaptive with a time-to-event outcome, so BATON searches for the design that best meets each criterion by simulation. The original two-stage criteria are in [Simon, 1989](https://pubmed.ncbi.nlm.nih.gov/2702835/) and [Jung et al., 2004](https://pubmed.ncbi.nlm.nih.gov/14755389/). BATON 0.4.0 manuscript Table 4 reports the designs and verification numbers (rows R23 to R25 of final_summary_designs.csv).
+
+**Decision (PI, 2026-11-17):** The steering committee chose the Admissible design, and the choice was made within the three-month window. The slide states this for the first subtrial and does not attach it to the 91-patient design shown.
 
 **Q&A pockets:** *Which design went into this protocol?* The manuscript says the comparison informed the steering committee’s choice for the first subtrial. Confirm this specific protocol before claiming it used the displayed design.
 
@@ -1087,7 +1089,7 @@ Different priorities give the trial team different verified options.
 ```
 
 ::: {.landing .fragment data-fragment-index="1" style="font-size: var(--fs-lead);"}
-Swap in new rules and a simulator. Reuse search and verification.
+BATON calibrated this 13-setting design with the same search and verification.
 :::
 
 ::: {.notes}
@@ -1135,7 +1137,7 @@ Swap in new rules and a simulator. Reuse search and verification.
 <div class="fragment" data-fragment-index="0" style="background: #F4F6F8; padding: 14px 18px; text-align: center; font-size: var(--fs-body); font-weight: 700; color: #13294B">Different test call</div>
 <div class="fragment" data-fragment-index="1" aria-hidden="true" style="text-align: center; font-size: var(--fs-lead); line-height: 1; color: #2E6A9F">&darr;</div>
 <div class="fragment" data-fragment-index="1" style="background: #FFFFFF; border: 1px solid #2E6A9F; padding: 14px 18px; text-align: center; font-size: var(--fs-body); font-weight: 700; color: #13294B">Different subtrial or treatment decision</div>
-<div class="fragment" data-fragment-index="2" style="margin-top: 14px; font-size: var(--fs-body); line-height: 1.35; color: #13294B">With 10% misclassified, power fell by about 8 to 11 points. The false go rate barely moved.</div>
+<div class="fragment" data-fragment-index="2" style="margin-top: 14px; font-size: var(--fs-body); line-height: 1.35; color: #13294B">With 10% misclassified, power fell by about 8 to 11 points. Type I error barely moved.</div>
 </div>
 </div>
 <div class="story-question biomarker-landing fragment" data-fragment-index="3" style="margin-top: 0.5em; max-width: 1100px;">Simulate plausible error rates in BATON. Recheck power and type I error, then recalibrate.</div>
@@ -1185,7 +1187,7 @@ If you cannot explain or defend a choice you made with AI’s help, you may be d
 
 **Q&A pockets:** *Does BATON see patient data?* This use of AI is model-guided search over simulated trials, before enrollment. The StatsUpAI example is a broader lesson about what a researcher needs to judge.
 
-**Delivery:** Keep the tone light, this is a public service announcement and not a warning against using AI. Take the question from the preceding slide. Start with the benefit. An AI coding tool can speed up the implementation, and that makes custom designs practical for teams that could not have built a simulator before. This applies to BATON and to any analysis. It might leave out test errors, and the resulting power estimate can look perfectly plausible. Ask the audience what they would check first. Before trusting the estimate, list what the code assumes. In the biomarker example, that means tracing who the code puts into each subtrial. Point briefly to the StatsUpAI companion resources. Reveal the last line and offer it as a test people can apply to their own work. If you cannot explain or defend a choice you made with AI’s help, you may be delegating too much. Then say “Writing and running the code is one job. Knowing what it has to represent is ours.”
+**Delivery:** Keep the tone light, this is a public service announcement and not a warning against using AI. Take the question from the preceding slide. Start with the benefit. An AI coding tool can speed up the implementation, and that makes custom designs practical for teams that could not have built a simulator before. This applies to BATON and to any analysis. It might leave out test errors, and the resulting power estimate can look perfectly plausible. Ask the audience what they would check first. Before trusting the estimate, list what the code assumes. In the biomarker example, that means tracing who the code puts into each subtrial. Point briefly to the StatsUpAI companion resources. Reveal the last line and offer it as a test people can apply to their own work. If you cannot explain or defend a choice you made with AI’s help, you may be delegating too much. Then say “Writing and running the code is one job. Knowing what it has to represent is ours.” Before leaving the slide say “BATON automates the search, not the judgment. The team still sets the targets and picks among the options.”
 :::
 
 ## You can’t evaluate what you don’t know, and you should never outsource your judgment to an external tool. {.judgment-slide data-menu-title="Judgment stays with you"}
@@ -1295,7 +1297,7 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 ```{=html}
 <div class="confirmation-teaser inset">
   <div class="program-label">Illustrative example</div>
-  <p class="story-question confirmation-prompt">Two doses shrink tumors about equally. The higher dose has more side effects.</p>
+  <p class="story-question confirmation-prompt">Two doses shrink tumors about equally. The higher dose has more side effects, as with sotorasib.</p>
   <div class="confirmation-paths">
     <div class="story-card"><strong>A · Tolerability first</strong><span>Choose the dose by a toxicity limit.</span><span style="display: block; margin-top: 0.45em; padding-top: 0.45em; border-top: 1px solid #C9D1D9; color: #13294B; font-weight: 600;">The higher dose advances. More patients may cut back or stop.</span></div>
     <div class="story-card fragment" data-fragment-index="0"><strong>B · Activity and tolerability</strong><span>Compare the doses on both measures.</span><span style="display: block; margin-top: 0.45em; padding-top: 0.45em; border-top: 1px solid #C9D1D9; color: #13294B; font-weight: 600;">The lower dose advances. It may take more patients early.</span></div>
@@ -1395,7 +1397,7 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 ```
 
 ::: {.notes}
-**Delivery:** Return to the BATON workflow from slide 18. We would replace the single-trial simulator and evaluator with ones that simulate and score the full program. Change the amount of enrollment in each stage, how many doses can remain in play, safety and activity thresholds, and the rule for what earlier data can contribute to confirmation. For each candidate, simulate complete paths under plausible dose–efficacy and toxicity scenarios. The search uses completed results to choose what to test next. Final candidates would be checked on fresh full-program simulations. BATON-D supplies the early dose-selection piece, and BATON-C helps ask which choices hold up across plausible assumptions.
+**Delivery:** Return to the BATON workflow from slide 18. We would replace the single-trial simulator and evaluator with ones that simulate and score the full program. Change the amount of enrollment in each stage, how many doses can remain in play, safety and activity thresholds, and the rule for what earlier data can contribute to confirmation. For each candidate, simulate complete paths under plausible dose–efficacy and toxicity scenarios. The search uses completed results to choose what to test next. Final candidates would be checked on fresh full-program simulations. BATON-D supplies the early dose-selection piece, and BATON-C helps ask which choices hold up across plausible assumptions. Then say “The hard part is the simulator, which must say how early signals relate to survival. We will vary those assumptions, as on slide 29.”
 
 **Delivery (early evidence):** Take overall survival as an example of a Phase III endpoint. An early randomized trial can plan to track survival with standardized follow-up or suitable linked records. Earlier patients start contributing follow-up sooner. If their outcomes are eligible under a prespecified analysis that accounts for selection, some events may already count when Phase III begins. That could reduce new recruitment or the wait for enough events. A separate option uses an early signal such as tumor response to forecast later event accrual and plan enrollment and follow-up. Predictions guide planning. The confirmatory analysis still uses observed outcomes. As in EVOLVE, set a minimum chance of valid confirmation when a safe and effective dose exists, limit false positives, and limit advancement of unsuitable doses. Count all simulated programs from Phase I onward, including those that stop. Compare total enrollment and time only among designs meeting the evidence targets. These are potential gains for the proposed extension to evaluate. See [FDA adaptive design guidance](https://www.fda.gov/media/78495/download) and [Stallard et al. on using early endpoints in interim decisions](https://pubmed.ncbi.nlm.nih.gov/24697322/).
 :::
