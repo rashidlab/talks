@@ -1524,6 +1524,10 @@ Thank you
 ::: {.divider-title}
 Questions
 :::
+::: {.divider-recap}
+All 12 benchmarks met both targets, averaging 3.6% more patients than the exact optimum.<br/>
+On one EVOLVE subtrial, BATON beat a grid search that used about 47 times the computing.
+:::
 ::: {.divider-question}
 naim@unc.edu · rashidlab.github.io<br/>
 BATON R package: <a href="https://github.com/rashidlab/BATON">github.com/rashidlab/BATON</a><br/>

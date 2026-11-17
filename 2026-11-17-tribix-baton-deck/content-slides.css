@@ -987,3 +987,6 @@ body.hide-footer .slide-number,
 /* One style for on-slide source and citation lines. */
 .reveal .source { color: var(--rl-graphite); font-size: 0.6em; }
 .reveal .source a { color: inherit; }
+
+/* Results recap on the Questions slide */
+.reveal .section-divider .divider-recap, .reveal .section-divider .divider-recap p { font-size: var(--fs-lead) !important; font-weight: 600; color: #FFFFFF !important; line-height: 1.45; margin: 0.9em 0 1.1em 0; }
