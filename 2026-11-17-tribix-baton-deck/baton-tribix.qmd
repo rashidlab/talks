@@ -405,7 +405,7 @@ Two choices dominate: how many patients, and what evidence is enough to take the
 <img src="images/fig_fixed_vs_adaptive.png" style="width: 1180px !important; max-width: 1180px !important; height: auto !important; max-height: none !important; display: block; margin: 2.5em auto 0 auto;" alt="Two schematic timelines. A traditional trial enrolls all patients then analyzes once. An adaptive trial enrolls in blocks separated by interim looks that can stop the trial early for futility, ending in a final go-or-stop analysis."/>
 
 ::: {.landing .fragment}
-When should we look, and what evidence is enough to keep enrolling?
+When to look and how much evidence is enough are two choices we must tune. Both change how well the trial performs.
 :::
 
 ::: {.notes}
@@ -445,7 +445,7 @@ When should we look, and what evidence is enough to keep enrolling?
 <div style="margin-top: 10px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px">
 <div class="fragment" data-fragment-index="0" style="background: #FFFFFF; border: 1px solid #8A949E; height: 124px; box-sizing: border-box; padding: 0 26px; display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; column-gap: 16px; text-align: left">
 <div style="font-size: 48px; font-weight: 800; color: #5B6670; line-height: 1">3</div>
-<div style="font-size: var(--fs-sub); font-weight: 700; color: #13294B">Enroll few patients</div>
+<div style="font-size: var(--fs-sub); font-weight: 700; color: #13294B">Keep the sample size small</div>
 </div>
 <div class="fragment" data-fragment-index="0" style="background: #FFFFFF; border: 1px solid #8A949E; height: 124px; box-sizing: border-box; padding: 0 26px; display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; column-gap: 16px; text-align: left">
 <div style="font-size: 48px; font-weight: 800; color: #5B6670; line-height: 1">4</div>
@@ -456,7 +456,7 @@ When should we look, and what evidence is enough to keep enrolling?
 ```
 
 ::: {.landing .fragment data-fragment-index="1"}
-Feasible means meeting 1 and 2. Calibration then improves 3 and 4.
+Calibration tunes the design until it meets 1 and 2. Among designs that do, we then improve 3 and 4.
 :::
 
 ::: {.notes}
@@ -477,11 +477,13 @@ Feasible means meeting 1 and 2. Calibration then improves 3 and 4.
 
 ## Simulation tests one design in two scenarios {data-menu-title="Count them"}
 
-::: {.thesis-line}
-One design, held fixed in every simulated trial
-:::
+[Complex designs usually have no straightforward formula for power or type I error, so we use simulation.]{.muted style="display:block; text-align:center; font-size:var(--fs-body); margin-top: 2px;"}
 
-[Complex adaptive designs have no formula for power or type I error, so we estimate both by simulation.]{.muted style="display:block; text-align:center; font-size:var(--fs-body); margin-top: 6px;"}
+```{=html}
+<div role="group" aria-label="Three steps. Fix the design. Assume the truth. Simulate many trials and count." style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); column-gap: 12px; margin: 12px 0 14px 0">
+<div style="background: #F4F6F8; padding: 10px 16px; text-align: left"><div style="font-size: var(--fs-body); font-weight: 700; color: #13294B"><span style="color: #2E6A9F; margin-right: 8px">1</span>Fix the design</div><div style="font-size: var(--fs-label); color: #5B6670; line-height: 1.3; margin-top: 2px">its settings and decision rules</div></div><div aria-hidden="true" style="align-self: center; font-size: var(--fs-lead); color: #2E6A9F">&rarr;</div><div style="background: #F4F6F8; padding: 10px 16px; text-align: left"><div style="font-size: var(--fs-body); font-weight: 700; color: #13294B"><span style="color: #2E6A9F; margin-right: 8px">2</span>Assume the truth</div><div style="font-size: var(--fs-label); color: #5B6670; line-height: 1.3; margin-top: 2px">treatment effect, enrollment, outcomes</div></div><div aria-hidden="true" style="align-self: center; font-size: var(--fs-lead); color: #2E6A9F">&rarr;</div><div style="background: #F4F6F8; padding: 10px 16px; text-align: left"><div style="font-size: var(--fs-body); font-weight: 700; color: #13294B"><span style="color: #2E6A9F; margin-right: 8px">3</span>Simulate many trials</div><div style="font-size: var(--fs-label); color: #5B6670; line-height: 1.3; margin-top: 2px">count how often the rules say go</div></div>
+</div>
+```
 
 ```{=html}
 <div style="width: 100%;">
@@ -527,7 +529,7 @@ One design meets both targets. Now imagine finding one for each of 10 to 15 subt
 **Delivery:** Say why we simulate. A simple fixed design has a formula for power and type I error. A complex adaptive design with interim looks does not, so we run the trial many times on the computer and count. Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 12. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. Verified EVOLVE designs appear on slide 26.
 :::
 
-## One EVOLVE protocol can host 10 to 15 subtrials {data-menu-title="10-15 subtrials"}
+## ARPA-H ADAPT’s EVOLVE trial can host 10 to 15 subtrials {data-menu-title="10-15 subtrials"}
 
 ```{=html}
 <div class="inset" style="display: grid; grid-template-columns: 568px minmax(0, 1fr); column-gap: 40px; align-items: stretch; margin: 0 auto; text-align: left;">
