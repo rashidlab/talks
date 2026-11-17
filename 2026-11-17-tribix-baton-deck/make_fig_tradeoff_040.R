@@ -47,3 +47,9 @@ plane(c("R23", "R24", "R25"), c("Optimal", "Admissible", "Minimax"),
       nudge = rbind(c(1, 0.2), c(1, 2.8), c(-5.4, -2.6)),
       xlim = c(56, 76), ylim = c(82, 106), out = "images/fig_tradeoff_betweenarm_040.png",
       y_label = "Max sample size")
+# Main-deck version of the between-arm plane (slide 27 since 2026-11-17), Admissible highlighted
+# to match the option the room is asked about on slide 26.
+plane(c("R23", "R24", "R25"), c("Optimal", "Admissible", "Minimax"),
+      nudge = rbind(c(1, 0.2), c(1, 2.8), c(-5.4, -2.6)),
+      xlim = c(56, 76), ylim = c(82, 106), out = "images/fig_tradeoff_betweenarm_main.png",
+      highlight = "Admissible", y_label = "Max sample size")

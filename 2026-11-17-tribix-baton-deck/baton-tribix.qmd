@@ -520,9 +520,9 @@ One design meets both targets. EVOLVE needed rules for 10 to 15 subtrials.
 
 **Q&A pockets:** *Why these two scenarios?* The first estimates how often an inactive treatment would pass. The second estimates how often a treatment with the prespecified benefit would pass. *What does 11.2 mean?* Some simulated trials stop early and some enroll longer, so the average can be fractional.
 
-**Pull-from-if-needed (illustrative numbers, PI 2026-11-16):** The 4.2% and 82% on this slide are illustrative and are labelled so on screen. They are not the EVOLVE design. The verified EVOLVE design appears on slide 26 with 1.4% type I error (703 of 50,000), 82.1% power (41,069 of 50,000) and 11.2 expected patients when ineffective. Do not describe the slide 13 numbers as results.
+**Pull-from-if-needed (illustrative numbers, PI 2026-11-16):** The 4.2% and 82% on this slide are illustrative and are labelled so on screen. They are not the EVOLVE design. The verified TNBC design is on backup B8, with 1.4% type I error (703 of 50,000), 82.1% power (41,069 of 50,000) and 11.2 expected patients when ineffective. Do not describe the slide 13 numbers as results.
 
-**Delivery:** Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 12. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. The verified EVOLVE design appears on slide 26.
+**Delivery:** Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 12. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. Verified EVOLVE designs appear on slide 26.
 :::
 
 ## One EVOLVE protocol can host 10 to 15 subtrials {data-menu-title="10-15 subtrials"}
@@ -939,7 +939,7 @@ A coarse grid does worse. A finer grid costs about 47 times more and still does 
 ## EVOLVE had to settle each subtrial’s max sample size in advance {data-menu-title="Operational impact"}
 
 ::: {.thesis-line style="text-wrap: balance;"}
-In a separate EVOLVE subtrial, the TNBC team needed a max sample size about three months before first enrollment.
+The team needed a max sample size about three months before first enrollment.
 :::
 
 ```{=html}
@@ -974,37 +974,37 @@ How large should the max sample size be when an early stop could leave part of i
 **Delivery:** Open by contrasting with the sanity check. A Simon design has four settings (the two stage sizes and the two response cutoffs), so every design can be enumerated. An EVOLVE design has the eight settings from slide 15, a progression-free survival outcome and a Bayesian model, so there is no exact answer to compare against. Then lead with the enrollment-max sample size deadline. Explain that sites had to reserve capacity before the cohort opened. The committee used maximum and expected enrollment to weigh those options. These deadlines and the trial designs the team wanted to consider motivated BATON: we needed a faster way to calibrate more ambitious designs. Briefly connect the deadline to planning interim reviews and resources across cohorts. Ask how large the max sample size should be when an early stop could leave part of it unused. The next slide puts numbers on that choice.
 :::
 
-## Would you plan for up to 30 patients or 32? {data-menu-title="Two designs"}
+## Would you plan for up to 91 patients or 103? {data-menu-title="Two designs"}
 
 ```{=html}
-<div class="story-intro">EVOLVE’s triple-negative breast cancer (TNBC) subtrial</div>
+<div class="story-intro">EVOLVE’s ER-positive subtrial, doublet against triplet (patients in both arms)</div>
 <table class="design-choice inset">
   <thead><tr><th scope="col"> </th><th scope="col">Optimal (fewest patients if ineffective)</th><th scope="col">Admissible (compromise)</th></tr></thead>
   <tbody>
-    <tr><th scope="row">Max sample size</th><td><strong>32</strong></td><td><strong>30</strong></td></tr>
-    <tr class="fragment" data-fragment-index="0"><th scope="row">Average enrollment if ineffective</th><td><strong>11.2</strong></td><td><strong>13.3</strong></td></tr>
-    <tr class="fragment" data-fragment-index="1"><th scope="row">Power</th><td>82.1%</td><td>86.1%</td></tr>
-    <tr class="fragment" data-fragment-index="1"><th scope="row">Type I error</th><td>1.4%</td><td>1.5%</td></tr>
+    <tr><th scope="row">Max sample size</th><td><strong>103</strong></td><td><strong>91</strong></td></tr>
+    <tr class="fragment" data-fragment-index="0"><th scope="row">Average enrollment if ineffective</th><td><strong>59.2</strong></td><td><strong>63.9</strong></td></tr>
+    <tr class="fragment" data-fragment-index="1"><th scope="row">Power</th><td>80.4%</td><td>81.0%</td></tr>
+    <tr class="fragment" data-fragment-index="1"><th scope="row">Type I error</th><td>8.2%</td><td>8.6%</td></tr>
   </tbody>
 </table>
-<div class="story-question fragment" data-fragment-index="0">Planning for two fewer patients at most means enrolling about two more on average if the treatment is ineffective.</div>
+<div class="story-question fragment" data-fragment-index="0">Planning for 12 fewer patients at most means enrolling about 5 more on average if the treatment is ineffective.</div>
 <div class="story-question design-choice-targets fragment" data-fragment-index="1">Both designs met the power and type I error targets in simulation.</div>
 ```
 
 
 ::: {.notes}
-**Pull-from-if-needed:** BATON 0.4.0 manuscript Table 3 and Section 4.1. The Optimal design (H0-Optimal in the manuscript) is first shown on this slide. Slide 13 uses illustrative numbers and is not this design. Rows R01 and R02 of final_summary_designs.csv are used for the comparison. All three verified designs cleared the 80% power floor and 10% type I error max sample size at five fresh seeds. The hand-tuning experience on slide 15 motivated this work. It was not a controlled comparison.
+**Pull-from-if-needed:** BATON 0.4.0 manuscript Table 4. The Optimal design (H0-Optimal in the manuscript) is first shown on this slide. Slide 13 uses illustrative numbers and is not this design. Rows R23 and R24 of final_summary_designs.csv are used for the comparison, with totals across both arms. The TNBC single-arm designs that were shown here before are on backup B8. All three verified designs cleared the 80% power floor and 10% type I error max sample size at five fresh seeds. The hand-tuning experience on slide 15 motivated this work. It was not a controlled comparison.
 
-**Q&A pockets:** *Why are the expected values fractional?* They average over simulations. Some simulated trials stop early and others run to the max sample size. *Why do powers differ?* All had to clear the same floor. The searches prioritized enrollment under different criteria.
+**Q&A pockets:** *Why are the expected values fractional?* They average over simulations. Some simulated trials stop early and others run to the max sample size. *Are these designs stable across restarts?* The five restarts behind each design had maximum-size standard deviations of 9.7 for Optimal, 4.1 for Admissible and 1.6 for Minimax (supplement Web Appendix D.3), so the 103 against 91 difference is about the size of the restart spread for Optimal. *Why do powers differ?* All had to clear the same floor. The searches prioritized enrollment under different criteria.
 
-**Delivery:** Return to the capacity EVOLVE had to reserve, then introduce the Optimal design. Call the second design a compromise between reducing the max sample size and reducing average enrollment. Give the group a moment to choose whether to lower the max sample size by two at the cost of enrolling about two more patients on average if the treatment is inactive. Then reveal the performance rows: both designs passed the same targets in fresh simulations. Use the options to ask how changing the objective gives the team different designs.
+**Delivery:** Return to the capacity EVOLVE had to reserve, then introduce the Optimal design. Call the second design a compromise between reducing the max sample size and reducing average enrollment. Give the group a moment to choose whether to lower the max sample size by 12 at the cost of enrolling about five more patients on average if the treatment is inactive. Then reveal the performance rows: both designs passed the same targets in fresh simulations. Use the options to ask how changing the objective gives the team different designs.
 :::
 
 ## Change the objective. Keep the evidence targets. {data-menu-title="Objectives and frontier"}
 
 ::: {.columns style="align-items: center;"}
 ::: {.column width="59%"}
-<img src="images/fig_tradeoff_tnbc_040.png" style="width: 100%; height: auto;" alt="Trade-off plane for the TNBC single-arm cohort, most patients the trial can enroll against expected patients if the treatment is ineffective: Optimal at maximum 32 and expected 11.2, Admissible highlighted in orange at 30 and 13.3, and Minimax at 30 and 21.4. The dashed line is a visual guide."/>
+<img src="images/fig_tradeoff_betweenarm_main.png" style="width: 100%; height: auto;" alt="Trade-off plane for the ER-positive doublet-against-triplet subtrial, max sample size across both arms against expected patients if the treatment is ineffective: Optimal at maximum 103 and expected 59.2, Admissible highlighted in orange at 91 and 63.9, and Minimax at 86 and 70.8. The dashed line is a visual guide."/>
 :::
 ::: {.column width="41%"}
 ::: {style="font-size: var(--fs-lead);"}
@@ -1027,11 +1027,11 @@ Different priorities give the trial team different verified options.
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** The dashed line guides the eye between the three returned designs. The Optimal criterion (H0-Optimal in the manuscript) minimizes expected enrollment when the treatment is inactive, Minimax minimizes the max sample size, and Admissible weights both. Optimal and Minimax are Simon’s 1989 criteria and Admissible is the compromise of Jung and colleagues. In Simon’s setting each can be found by enumeration, as on slide 23. Here the design is Bayesian and adaptive with a time-to-event outcome, so BATON searches for the design that best meets each criterion by simulation. The original two-stage criteria are in [Simon, 1989](https://pubmed.ncbi.nlm.nih.gov/2702835/) and [Jung et al., 2004](https://pubmed.ncbi.nlm.nih.gov/14755389/). BATON 0.4.0 manuscript Section 4.1 reports the designs and verification numbers.
+**Pull-from-if-needed:** The dashed line guides the eye between the three returned designs. The Optimal criterion (H0-Optimal in the manuscript) minimizes expected enrollment when the treatment is inactive, Minimax minimizes the max sample size, and Admissible weights both. Optimal and Minimax are Simon’s 1989 criteria and Admissible is the compromise of Jung and colleagues. In Simon’s setting each can be found by enumeration, as on slide 23. Here the design is Bayesian and adaptive with a time-to-event outcome, so BATON searches for the design that best meets each criterion by simulation. The original two-stage criteria are in [Simon, 1989](https://pubmed.ncbi.nlm.nih.gov/2702835/) and [Jung et al., 2004](https://pubmed.ncbi.nlm.nih.gov/14755389/). BATON 0.4.0 manuscript Table 4 reports the designs and verification numbers (rows R23 to R25 of final_summary_designs.csv).
 
-**Q&A pockets:** *Why does Minimax sit to the right of Admissible at the same max sample size?* Minimax required at least eight observed events before an interim decision, which excluded the Admissible design’s four-event rule. The Minimax design also had higher verified power. *Which design went into this protocol?* The manuscript says the comparison informed the steering committee’s choice for the first subtrial. Confirm this specific protocol before claiming it used the displayed design.
+**Q&A pockets:** *Which design went into this protocol?* The manuscript says the comparison informed the steering committee’s choice for the first subtrial. Confirm this specific protocol before claiming it used the displayed design.
 
-**Delivery:** Say that Optimal, Minimax and Admissible were defined for Simon’s two-stage design, where the best design can be enumerated. We carried the same ideas to the wider family of Bayesian adaptive trials by swapping the objective function, with one objective built to mimic each criterion. The impact is that physicians have a choice of design preference. Point to the orange option the room just considered. Hand tuning made it hard to verify even one candidate. BATON gave the team several verified designs to compare before committing to a max sample size. Sites could see what they would gain from a smaller max sample size and what they might give up in expected enrollment. Both Admissible and Minimax reached the search floor of 30 patients. The Admissible option expects 13.3 patients if the treatment is inactive, compared with 11.2 for Optimal. Name the three criteria in plain language: fewer patients on average if the treatment is inactive, the lowest max sample size, and a compromise. Point to the third option and say its search required at least eight outcome events before stopping was considered. Then ask whether the same workflow could handle a different question: screening and comparison in one trial.
+**Delivery:** Say that Optimal, Minimax and Admissible were defined for Simon’s two-stage design, where the best design can be enumerated. We carried the same ideas to the wider family of Bayesian adaptive trials by swapping the objective function, with one objective built to mimic each criterion. The impact is that physicians have a choice of design preference. Point to the orange option the room just considered. Hand tuning made it hard to verify even one candidate. BATON gave the team several verified designs to compare before committing to a max sample size. Sites could see what they would gain from a smaller max sample size and what they might give up in expected enrollment. Going from Optimal to Admissible lowers the max sample size from 103 to 91 and raises expected enrollment if the treatment is inactive from 59.2 to 63.9. Minimax goes further, to 86 and 70.8. Name the three criteria in plain language: fewer patients on average if the treatment is inactive, the lowest max sample size, and a compromise. Then ask whether the same workflow could handle a different question: screening and comparison in one trial.
 :::
 
 ## Same search, different trial rules {data-menu-title="Seamless design example"}
@@ -1410,7 +1410,6 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 **Pull-from-if-needed:** The grid comparison measured computing resources used to find and check designs. The proposed program evaluation would track time to a valid confirmation and time to an early stop separately, starting at first enrollment, along with total enrollment. Compare designs under the same confirmation and error targets. Enrollment and elapsed time both affect the resources a program requires.
 :::
 
-
 ## Acknowledgments {data-menu-title="Acknowledgments"}
 
 ```{=html}
@@ -1490,7 +1489,7 @@ Manuscript in revision
 - *Benchmark and seed details* → slide 23 and B11 for all 12 scenarios, B2 and B7 for ten starts on one scenario.
 - *Choosing among feasible designs* → slides 25–27 and B3. *Seamless design* → slide 28 and B13.
 - *AI, assumptions, and judgment* → slides 29–31 and B5.
-- *Bidirectional stopping* → B6. *Randomized cohort* → B8.
+- *Bidirectional stopping* → B6. *TNBC single-arm designs* → B8.
 - *Early dose selection and Phase III confirmation* → slides 34–34. *Whole-program calibration and borrowing* → slides 35–36. *Status of BATON extensions* → slide 37. *ADAPT background* → B9 and B10.
 - *Company or translation* → disclose the relationship verbally in one sentence.
 :::
@@ -1595,7 +1594,7 @@ All ten runs finished within 1% of the optimum under narrower search bounds. Eig
 Seamless adds conversion and second-stage settings (13 possible, up to 11 active in the reported calibrations).
 
 **Why the TNBC designs tie at 30**<br/>
-On slide 27, Admissible and Minimax both reach the lowest maximum enrollment searched. Minimax also requires at least eight events before an interim decision.
+On backup B8, Admissible and Minimax both reach the lowest maximum enrollment searched. Minimax also requires at least eight events before an interim decision.
 
 :::
 ::: {.column width="50%"}
@@ -1700,20 +1699,20 @@ Rerunning the search shows how much the returned design and its behavior change 
 **Delivery:** Fast slide. Lead with all ten within 1% of the optimum, then 8 of 10 exactly.
 :::
 
-## Backup: the randomized-subtrial frontier {.backup-slide data-menu-title="B8: Randomized frontier"}
+## Backup: the TNBC single-arm frontier {.backup-slide data-menu-title="B8: TNBC frontier"}
 
-<img src="images/fig_tradeoff_betweenarm_040.png" style="max-height: 485px; display: block; margin: 0 auto;" alt="Trade-off plane for the ER-positive doublet-versus-triplet cohort, total patients in both arms: H0-Optimal at maximum 103 and expected 59.2, Admissible at 91 and 63.9, Minimax at 86 and 70.8."/>
+<img src="images/fig_tradeoff_tnbc_040.png" style="max-height: 485px; display: block; margin: 0 auto;" alt="Trade-off plane for the TNBC single-arm cohort, most patients the trial can enroll against expected patients if the treatment is ineffective: Optimal at maximum 32 and expected 11.2, Admissible highlighted in orange at 30 and 13.3, and Minimax at 30 and 21.4. The dashed line is a visual guide."/>
 
 ::: {.landing}
-Cutting the max sample size from 103 to 91 costs about 5 extra patients on average when the treatment does not help. The next 5 cost about 7 more.
+TNBC single-arm subtrial. Optimal: 32 max, 11.2 expected. Admissible: 30 and 13.3. Minimax: 30 and 21.4.
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** BATON 0.4.0 package, manuscript Table 4 (results/retune_xphil/final_summary_designs.csv, rows R23 to R25), totals across both arms, null median 6 months against 9. The caption is arithmetic on those rows (63.9 minus 59.2, 70.8 minus 63.9).
+**Pull-from-if-needed:** BATON 0.4.0 package, manuscript Table 3 and Section 4.1 (results/retune_xphil/final_summary_designs.csv, rows R01 to R03). Verified power and type I error are 82.1% and 1.4% for Optimal, 86.1% and 1.5% for Admissible, and 96.1% and 1.2% for Minimax. The randomized ER-positive designs are on main slides 26 and 27.
 
-**Q&A pocket:** *Are these three restarts stable?* The five restarts behind each design had maximum-size standard deviations of 9.7, 4.1 and 1.6 (supplement Web Appendix D.3).
+**Q&A pocket:** *Why does Minimax sit to the right of Admissible at the same max sample size?* Minimax required at least eight observed events before an interim decision, which excluded the Admissible design’s four-event rule. The Minimax design also had higher verified power.
 
-**Delivery:** Backup for the randomized-cohort question on slide 27.
+**Delivery:** Backup for the single-arm question on slide 27.
 :::
 
 ## Backup: the ARPA-H ask and the N-of-1 addition {.backup-slide data-menu-title="B9: ARPA-H ask"}
