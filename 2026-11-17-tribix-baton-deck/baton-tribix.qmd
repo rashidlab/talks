@@ -47,7 +47,6 @@ execute:
 **Delivery:** Open with “A cancer drug was approved at 960 mg. What would you want to know before deciding whether 240 mg was a better choice?” Pause for a moment. “I’ll come back to that drug. First, let’s look at the choices early trials have to make.”
 :::
 
-
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 1: The stakes"}
 
 ::: {.divider-inner}
@@ -67,7 +66,6 @@ Section 1
 </div>
 ```
 :::
-
 
 ## Drug development usually follows three phases before approval {data-menu-title="Phases"}
 
@@ -101,47 +99,16 @@ Section 1
 ::: {.notes}
 **Say aloud:** "Drug development is commonly organized into three phases before approval. Phase I is the first trials in people. They are small and ask whether the drug is safe and at what dose. Phase II asks whether there is a sign that it works. Phase III typically provides pivotal evidence, the main evidence used to judge whether a treatment works. It also adds information on safety. Approval decisions depend on the total evidence. The phases can overlap or be combined. The design question is what evidence we need before making each decision."
 
-**Pull-from-if-needed:** The 10.5 years on slide 5 runs from the start of phase I to approval. BIO 2021 splits it as 2.3 years in phase I, 3.6 in phase II, 3.3 in phase III and 1.3 in regulatory review (VERIFIED row of tribix-opening-facts.md).
+**Pull-from-if-needed:** The 10.5 years on slide 4 runs from the start of phase I to approval. BIO 2021 splits it as 2.3 years in phase I, 3.6 in phase II, 3.3 in phase III and 1.3 in regulatory review (VERIFIED row of tribix-opening-facts.md).
 
 **Pull-from-if-needed (the gap):** Tufts Center for the Study of Drug Development, reported by [Getz, Applied Clinical Trials, April 2021](https://www.appliedclinicaltrialsonline.com/view/characterizing-white-space-in-the-quest-to-drive-development-speed). Among non-expedited drugs and biologics approved from 2008 to 2018, 82% had a gap between Phase II completion and the start of the pivotal Phase III trial, and that gap averaged 17 months. The other 18% overlapped. The mean was 12 months for 2008 to 2013 and 21.6 months for 2014 to 2018. These are means, no median is reported, and the source is a trade publication. The same analysis could not measure the Phase I to Phase II gap reliably, so the slide gives none.
 
 **Q&A pockets:** *Is it always three separate phases?* [ICH E8(R1), Section 4.3](https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-8-general-considerations-clinical-trials-step-5_en.pdf) describes phases as an organizing convention and explains that they can overlap or be combined. Section 5 returns to how the final claim determines what earlier studies need to learn.
 
-**Pull-from-if-needed (the band):** The narrowing band only says that fewer candidates continue at each step. Its widths carry no proportions. If a rate is wanted, use the BIO 2021 figure in the slide 5 notes.
+**Pull-from-if-needed (the band):** The narrowing band only says that fewer candidates continue at each step. Its widths carry no proportions. If a rate is wanted, use the BIO 2021 figure in the slide 4 notes.
 
-**Delivery:** One beat per box. Then say “Start with Phase I. Where those first trials happen is getting attention right now.”
+**Delivery:** One beat per box. Then say “Zoom out to the full path from the first trial in people to approval.”
 :::
-
-
-## The U.S. is concerned about its lead in early clinical research {data-menu-title="Operation TrialBlazer"}
-
-::: {.columns .media-pair style="align-items: center;"}
-::: {.column width="45%"}
-::: {.frame-box style="font-size: var(--fs-sub);"}
-**U.S. Department of Health and Human Services**
-
-HHS reports that China's global share of Phase I trials first exceeded the U.S. share in 2021.
-
-[[Operation TrialBlazer roadmap, 2026](https://www.hhs.gov/sites/default/files/operation-trialblazer.pdf)]{.source}
-:::
-:::
-::: {.column width="49%"}
-[Australia · adult solid-tumor Phase I trials]{style="display:block; text-align:center; color:#13294B; font-weight:700; font-size:var(--fs-lead); margin-bottom:0.3em;"}
-
-<img src="images/fig_australia_slope.png" style="width: 100%; display: block;" alt="Annual adult solid-tumor Phase I trial counts at Australian sites rose from 18 in 2012 to 75 in 2022. Only endpoints are plotted."/>
-
-[Adult solid-tumor Phase I trials with an Australian site. [Hitchen et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38923830/){style="white-space:nowrap"}]{.source style="display:block; text-align:center; margin:0.25em auto 0;"}
-:::
-:::
-
-::: {.notes}
-**Pull-from-if-needed:** HHS’s Operation TrialBlazer roadmap is the source for the US leadership concern and the relative-share statement. The underlying series has not been independently verified. The Hitchen et al. chart counts adult solid-tumor Phase I trials with an Australian site in two years. See the verified entries in tribix-opening-facts.md. Page 6 of the [HHS roadmap](https://www.hhs.gov/sites/default/files/operation-trialblazer.pdf#page=6) discusses alternative trial designs and recruitment.
-
-**Q&A pockets:** *Why do sponsors go abroad?* Industry testimony to Congress cites cost and speed to a first signal. These slides describe two observations and do not estimate their causes.
-
-**Delivery:** About 35 seconds. Attribute the U.S. concern to HHS and give the Australian counts as a separate observation. Then say “That’s one pressure on the earliest stage. Zoom out to the full path from the first trial in people to approval.”
-:::
-
 
 ## Developing one new therapy is slow and expensive {data-menu-title="Time and cost"}
 
@@ -169,7 +136,6 @@ Each year of development is a year patients wait.
 
 **Delivery:** Say each number with its denominator. Then say “Even after a drug has made it through the early studies, the biggest test can still be ahead.”
 :::
-
 
 ## Many problems become apparent only in late-stage trials {data-menu-title="Late failure"}
 
@@ -199,7 +165,6 @@ What can we do in the early trials to make a late failure less likely?
 
 **Delivery:** Give the historical denominator and the result. Some late failures are the right conclusion. Name the other causes in one sentence (the wrong target, the wrong patients, the wrong dose, an early endpoint that did not predict the later one), then say that early trial design is the one this talk addresses. Now ask “What can we do in the early trials to make a late failure less likely? Let’s go back to the 960 mg decision from the opening.”
 :::
-
 
 ## Early decisions become downstream commitments {data-menu-title="Sotorasib"}
 
@@ -266,7 +231,6 @@ What can we do in the early trials to make a late failure less likely?
 **Delivery:** Name sotorasib as the drug from the opening. Show the Phase I dose and the accelerated approval, which lets FDA approve earlier based on an outcome expected to predict clinical benefit. Ask “What evidence would you want before carrying that dose into a larger trial?” Give the room a moment, then reveal the comparison requirement. Patients would be assigned to the two doses by chance. On the next click, show the study results. On the last click, name the two dose targets and say that the dose a program carries forward may affect what Phase III can show. Define progression-free survival as the time until the cancer worsens or the patient dies. The observed medians were close. The lower dose had fewer severe treatment-related adverse events, and the higher dose had a numerically higher tumor response rate. The study did not establish equivalence. Land on the timing: the balance between activity and side effects was still an open question at approval. Close with “What would we learn about 240 mg by enrolling more patients at 960 mg?” If time permits, state that 78 of 132 novel oncology drugs approved from 2012 to 2022 had a postmarketing requirement to collect additional dosing information.
 :::
 
-
 ## How best to design early trials for later success is not yet clear {data-menu-title="The open question"}
 
 ```{=html}
@@ -328,7 +292,6 @@ More patients later may not answer what the early trial never asked.
 **Delivery:** Start with the question from the previous slide. More patients at 960 mg can improve our estimate for that dose. To learn how it compares with 240 mg, we may need to reopen the comparison. Say that more patients later cannot answer a question the early trial never asked, then say “If we want earlier trials to answer better questions, we need a way to test how their rules will behave before enrolling anyone.”
 :::
 
-
 ## Better early trials are possible. Designing them is the hard part. {data-menu-title="The turn"}
 
 ```{=html}
@@ -359,7 +322,6 @@ One bottleneck is finding an efficient trial design that still meets the evidenc
 **Delivery:** Pause on the search question, then say “Let’s start with one Phase II decision. Has the treatment shown enough promise to continue?”
 :::
 
-
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 2: The design problem"}
 
 ::: {.divider-inner}
@@ -379,7 +341,6 @@ Section 2
 </div>
 ```
 :::
-
 
 ## A clinical trial is an experiment built for a decision {data-menu-title="What a trial is"}
 
@@ -436,9 +397,8 @@ Two choices dominate: how many patients, and what evidence is enough to take the
 
 **Glosses at first use:** benchmark (the response rate the treatment has to beat, fixed before the trial), single-arm (everyone gets the study treatment; we compare with a prespecified benchmark), randomized (patients are assigned to treatment or control), objective (the quantity we try to make small, here patients). PFS, when it comes up: "time until the cancer worsens or the patient dies."
 
-**Delivery:** Start with “Most of the BATON examples today are Phase II screening designs. The decision is whether the treatment has shown enough promise to study further. We’ll follow one EVOLVE breast cancer cohort.” Lead with the two decisions at the bottom. Carry over the example from slide 9. “If we wanted to stop early, how many patients would we enroll before deciding, and what would count as enough evidence to continue?”
+**Delivery:** Start with “Most of the BATON examples today are Phase II screening designs. The decision is whether the treatment has shown enough promise to study further. We’ll follow one EVOLVE breast cancer cohort.” Lead with the two decisions at the bottom. Carry over the example from slide 8. “If we wanted to stop early, how many patients would we enroll before deciding, and what would count as enough evidence to continue?”
 :::
-
 
 ## An adaptive trial can act on an interim result {data-menu-title="Fixed versus adaptive"}
 
@@ -457,13 +417,12 @@ When should we look, and what evidence is enough to keep enrolling?
 
 **Say aloud on the closing line:** "The design is Bayesian because those decisions rest on posterior probabilities under a model and a prior." Then, as the bridge to the next slide: "Maximum N, look timing, futility and efficacy thresholds, priors, margins. Every one is a setting, and every one changes how the trial behaves."
 
-**Pull-from-if-needed:** Where the benefit is counted. Expected patients enrolled when the treatment is inactive, on the EVOLVE objective slides (slides 27 and 28), is this slide's benefit as a number. The 50 and 10 patients in the figure are schematic, not a real design. The precise contrast, per the paper: unlike classical group-sequential designs (Jennison and Turnbull), complex Bayesian adaptive trials generally lack closed-form operating characteristics (Berry 2010; Thall and Simon 1994). The flexibility comes from posterior-probability monitoring, and the cost is that neither formulas nor enumeration reach the behavior.
+**Pull-from-if-needed:** Where the benefit is counted. Expected patients enrolled when the treatment is inactive, on the EVOLVE objective slides (slides 26 and 27), is this slide's benefit as a number. The 50 and 10 patients in the figure are schematic, not a real design. The precise contrast, per the paper: unlike classical group-sequential designs (Jennison and Turnbull), complex Bayesian adaptive trials generally lack closed-form operating characteristics (Berry 2010; Thall and Simon 1994). The flexibility comes from posterior-probability monitoring, and the cost is that neither formulas nor enumeration reach the behavior.
 
 **Q&A pocket:** *Are adaptive designs always better?* No. They help only when the stopping rules are well chosen, which is the design problem this talk is about.
 
 **Delivery:** 85 seconds. Figure first, top row then bottom row. Say that this example has one treatment group and that a look is a planned review of efficacy data. Futility means there is too little evidence of benefit to justify continuing under the rule.
 :::
-
 
 ## A good design has to meet four requirements at once {data-menu-title="Feasibility"}
 
@@ -516,7 +475,6 @@ Feasible means meeting 1 and 2. Calibration then improves 3 and 4.
 **Delivery:** 60 seconds. Do not read the boxes, define the two terms in one breath.
 :::
 
-
 ## Simulation tests one design in two scenarios {data-menu-title="Count them"}
 
 ::: {.thesis-line}
@@ -562,11 +520,10 @@ Both targets met, so this design is feasible.
 
 **Q&A pockets:** *Why these two scenarios?* The first estimates how often an inactive treatment would pass. The second estimates how often a treatment with the prespecified benefit would pass. *What does 11.2 mean?* Some simulated trials stop early and some enroll longer, so the average can be fractional.
 
-**Pull-from-if-needed (illustrative numbers, PI 2026-11-16):** The 4.2% and 82% on this slide are illustrative and are labelled so on screen. They are not the EVOLVE design. The verified EVOLVE design appears on slide 27 with 1.4% type I error (703 of 50,000), 82.1% power (41,069 of 50,000) and 11.2 expected patients when ineffective. Do not describe the slide 14 numbers as results.
+**Pull-from-if-needed (illustrative numbers, PI 2026-11-16):** The 4.2% and 82% on this slide are illustrative and are labelled so on screen. They are not the EVOLVE design. The verified EVOLVE design appears on slide 26 with 1.4% type I error (703 of 50,000), 82.1% power (41,069 of 50,000) and 11.2 expected patients when ineffective. Do not describe the slide 13 numbers as results.
 
-**Delivery:** Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 13. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. The verified EVOLVE design appears on slide 27.
+**Delivery:** Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 12. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. The verified EVOLVE design appears on slide 26.
 :::
-
 
 ## One EVOLVE protocol can host 10 to 15 subtrials {data-menu-title="10-15 subtrials"}
 
@@ -607,45 +564,6 @@ Each subtrial needs its own decision rules, with eight or more interacting setti
 **Delivery:** Say what EVOLVE is before the count. It is one master protocol in metastatic breast cancer, and each biomarker-defined group of patients is studied in its own subtrial. Point to the three design types and the number of settings each one has. Examples of settings are the max sample size, the timing of interim looks, and the thresholds for stopping. Then say “Every one of those subtrials needs its own rules. I started by tuning one of them by hand.”
 :::
 
-
-## The ARPA-H ask and the N-of-1 addition {data-menu-title="ARPA-H ask"}
-
-```{=html}
-<!-- Full requirements list in vector text (viewer-proof), quoting the user's
-     own program-solicitation excerpts; length of the list is the point. The
-     two highlighted lines carry the eye. Meme stays as the only image. -->
-<div style="margin: 0 auto;">
-<div style="display:flex; gap: 1.3em; align-items: flex-start;">
-<div style="flex: 56 0 0;">
-<div style="border: 1px solid #C9D1D9; border-left: 3px solid #2E6A9F; padding: 0.5em 0.9em; background: #fff; font-family: Georgia, serif; font-size: var(--fs-label); line-height: 1.4; text-wrap: pretty;">
-<em>(ii) Clinical trial characteristics:</em>
-<ol style="margin: 0.3em 0 0.3em 1.4em; padding: 0;">
-<li>Clinical trial for metastatic cancer patients.</li>
-<li>Clinical trial that includes multiple lines of therapy under a single protocol.</li>
-<li style="background: #EAF2FA; font-weight: 600;">Flexible clinical trial protocol that enables changes in design (e.g., randomized, adaptive, etc.).</li>
-<li>Strong capability to collect tumor and blood-based measurements.</li>
-<li>Possess a treatment line with a Progression Free Survival (PFS) rate of &lt;9 months average.</li>
-<li>Mechanisms for biomarker evaluation.</li>
-<li style="background: #EAF2FA; font-weight: 600;">Modular clinical trial design enabling rapid dissemination and protocol uptake by different sites.</li>
-</ol>
-<em>(iii) General characteristics:</em> key clinical needs; evolutionary design examples and rapid-enrollment plans; treatment lines; biomarker testing and integration plans.
-</div>
-<p class="source" style="margin-top: 0.5em;">excerpts from the ARPA-H solicitation and program-manager correspondence</p>
-</div>
-<div style="flex: 44 0 0;">
-<div class="fragment" data-fragment-index="1" style="border: 1px solid #C9D1D9; border-left: 3px solid var(--rl-accent); padding: 0.45em 0.9em; background: #fff; margin: 0 0 0.7em 0; font-size: var(--fs-body);"><strong style="color:#13294B;">Follow up</strong> (program-manager email): integrate an "N-of-1" trial component.</div>
-<div class="fragment" data-fragment-index="2" style="font-size: var(--fs-sub); font-weight: 700; color: #13294B; line-height: 1.35;">The ask: design an <span style="color:#2E6A9F;">adaptive multi-line</span> trial to <span style="color:#2E6A9F;">discover, evaluate, and implement novel biomarkers</span>, with an additional <span style="color:#2E6A9F;">N-of-1 subcomponent</span></div>
-<img src="images/req_meme.gif" class="fragment" data-fragment-index="3" style="border: 1px solid #C9D1D9; width: 70%; display: block; margin: 0.7em auto 0 auto;" alt="Animated this-is-fine cartoon from the original slide."/>
-</div>
-</div>
-</div>
-```
-
-::: {.notes}
-**Delivery:** Three keypresses, one element at a time, in the spirit of the original PowerPoint build: solicitation excerpts, then the new-ask line, then the summary ask, then the meme as the punchline. Let each be read, not read aloud. If asked, the full source slides (complete requirement list and program-manager email) are in the pptx decks.
-:::
-
-
 ## I could not verify that a hand-tuned design met the power target {data-menu-title="Manual tuning"}
 
 ```{=html}
@@ -682,7 +600,6 @@ Several more subtrials were waiting. How could we search so many settings system
 **Delivery:** Show the eight interacting settings in the documented EVOLVE calibration example. Name a few that the audience already knows, such as the max sample size, timing of looks, and stopping thresholds. Then tell the manual attempt as a separate recollection: “I started by tuning one subtrial by hand. I couldn’t verify that the design met our power target, and several more subtrials were waiting.” Ask how we could search systematically.
 :::
 
-
 ## A grid search can produce 100 million candidate designs {data-menu-title="Alternatives fail"}
 
 ```{=html}
@@ -699,13 +616,12 @@ Which candidate is worth the next simulation?
 
 **Pull-from-if-needed (grid arithmetic):** With three values per setting, a grid has 9 designs for two settings, 6,561 for eight, and 1,594,323 for thirteen. The haystack and the zoomed map are schematic. Slide 24 shows the measured comparison on an eight-setting EVOLVE between-arm task (Scenario B).
 
-**Pull-from-if-needed (matched-budget evidence):** BATON 0.4.0 manuscript Table 5. Three Simon scenarios with exact answers, 15 runs per method at matched budgets. Random search’s median relative gap in expected enrollment under the inactive scenario was 16.4%, and it found the exact best in 1 of 15 runs. BATON's side of the same table comes in the notes for slide 24.
+**Pull-from-if-needed (matched-budget evidence):** BATON 0.4.0 manuscript Table 5. Three Simon scenarios with exact answers, 15 runs per method at matched budgets. Random search’s median relative gap in expected enrollment under the inactive scenario was 16.4%, and it found the exact best in 1 of 15 runs. BATON's side of the same table comes in the notes for slide 23.
 
 **Q&A pocket:** *Didn't the paper once report a random-search tally?* Yes, a count of how many random designs met the targets. It was dropped because it described the search box, not a method, and the matched-budget comparison above replaced it. *What about a grid at BATON's budget?* Manuscript Section 4.4 and Table 5 give a comparison on Scenario B, a separate between-arm design problem. Slide 24 shows the measured three-level grid and the BATON comparison runs on the same Scenario B task.
 
 **Delivery:** 70 seconds. Haystack first, then the zoom. Call the grid size illustrative. Point to the two axes: the evidence thresholds to declare success or to stop for futility. One cell pairs one value from each axis while the other six settings stay fixed. Green combinations meet both targets. Outlined combinations also have lower expected enrollment. Say “In machine learning, you try a set of hyperparameters and see how it performs. Here the settings are trial rules, such as when to look at the data and how much evidence is enough to stop. Simulate many trials with those rules to see whether the design meets the power and false-go targets.” Land on “Which candidate is worth the next simulation?” Advance to the same map with BATON’s search path.
 :::
-
 
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 3: BATON"}
 
@@ -726,7 +642,6 @@ Section 3
 </div>
 ```
 :::
-
 
 ## BATON in one picture {data-menu-title="BATON in one picture"}
 
@@ -781,7 +696,7 @@ Section 3
 
 **Delivery:** Expand BATON as Bayesian Adaptive Trial Optimization. Say “The team supplies how to simulate the trial, how to analyze each simulated run, and how to measure performance across runs.” Define operating characteristics as how a design behaves when we repeat the trial under specified assumptions. Point to BATON’s prediction model, also called a surrogate. The trial analysis model measures evidence within one simulated trial. BATON’s separate model predicts performance for designs it has yet to try. Point to the space-filling start first. It is the left square from the previous slide and it runs once, before any model is fitted. Then follow the loop. The model learns from every design simulated so far, chooses the next design, and that design is simulated. The return line goes from that test back to the model. At the end of the search, reveal the independent check. The team can review the selected rules and the verification results. Keeping the same inputs and run settings lets the team reproduce the run. If a classifier drives routing or stopping, simulate plausible calls and apply the actual decision rules to them. Before enrollment, BATON chooses which design to simulate next. During enrollment, the trial follows the rules the team approved. One sentence on the planned Workbench if time permits.
 
-**Pull-from-if-needed (verification, from the former verification slide, now backup B14):** Selection-induced optimism occurs when a noisy estimate helped a design win the search. Independent Monte Carlo runs check the selected design under the simulated scenarios. Reported operating characteristics come from verification.
+**Pull-from-if-needed (verification, from the former verification slide, now slide 21):** Selection-induced optimism occurs when a noisy estimate helped a design win the search. Independent Monte Carlo runs check the selected design under the simulated scenarios. Reported operating characteristics come from verification.
 
 **Say aloud on the last click:** “The design that looked best during the search may have benefited from simulation noise. So before BATON reports a design, fresh simulations check that it still meets both targets.”
 :::
@@ -889,7 +804,6 @@ Section 3
 **Delivery:** Show how one row of settings (X) pairs with one row of simulation results (Y). On the first click, reveal the new design. On the second, show the simulation results for that row. On the third, show how the fit predicts power for untested settings, with a band indicating uncertainty. Point to the 80% target. On the fourth, reveal the dashed row. BATON chooses the next design by weighing potential improvement and feasibility. Its outcomes are pending until that design is simulated.
 :::
 
-
 ## BATON balances potential improvement with feasibility {data-menu-title="Choosing the next design"}
 
 ::: {.thesis-line}
@@ -912,6 +826,23 @@ Simulate it, update the predictions, and choose again.
 **Delivery:** About 50 seconds. Move from one setting to two. Say that each axis is a decision threshold: how much evidence is needed to stop for lack of benefit or to declare success. Feasible means meeting both statistical targets. Here the map predicts where those designs might be. Ask “Which would you simulate next, the white diamond or the orange point?” Pause, then reveal the choice. Say “We simulate the new candidate, update the model, and repeat. We’re searching for a feasible design with the smallest value of the objective we chose. When the search meets its stopping rule or uses its budget, we take the best candidate it found to fresh simulations.” In EVOLVE the objective was enrollment. A simulator that reports duration could support a duration objective or a weighted combination.
 :::
 
+## Verifying the final design with fresh simulations {data-menu-title="Verification"}
+
+<img src="images/fig_funnel_plain.png" style="max-height: 490px; display: block; margin: 0.3em auto 0 auto;" alt="Three narrowing stages in the EVOLVE single-arm example: search many designs with 3,000 simulated trials per design, recheck promising designs with 10,000 per design, and verify the selected design with five independent runs of 10,000 per scenario."/>
+
+::: {.landing .fragment}
+Fresh simulations check both targets before BATON reports a design.
+:::
+
+::: {.notes}
+**Selection and certification (BATON 0.4.0, manuscript Methods and Web Appendix D.4):** Re-simulate the 10 lowest-loss designs among those feasible in search. Select by loss among candidates that meet both targets on re-screening. Check the selected candidate at five further seeds with 10,000 simulations per seed as part of selection. Independent certification then uses fresh seeds and 50,000 trials per hypothesis for the single-arm example or 100,000 for the between-arm example. The exact one-sided Clopper–Pearson bounds use a Bonferroni adjustment across the certification family. The seamless designs have a separate family. The figure illustrates the single-arm path.
+
+**Pull-from-if-needed:** Selection-induced optimism occurs when a noisy estimate helped a design win the search. Independent Monte Carlo runs check the selected design under the simulated scenarios. Reported operating characteristics come from verification.
+
+**Q&A pockets:** *Why run fresh simulations?* A design can look good partly because the initial simulations were noisy. Fresh simulations give an independent check against the targets.
+
+**Delivery:** After the search reaches its stopping rule or budget, say “The design that looked best during the search may have benefited from simulation noise. Fresh runs check whether it still meets both targets.” Fresh runs check the design under the assumptions supplied. Then ask how close BATON got when the best answer was known, and what options it gave EVOLVE.
+:::
 
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 4: BATON in practice"}
 
@@ -932,7 +863,6 @@ Section 4
 </div>
 ```
 :::
-
 
 ## Sanity check: a known answer tells us how close BATON gets {data-menu-title="Known answer and 12 benchmarks"}
 
@@ -967,7 +897,6 @@ Section 4
 
 **Delivery:** Give the context first. A Simon two-stage design has four settings, the size of the first group, the response cutoff for stopping after it, the maximum size, and the final response cutoff. With so few settings we can loop over every possible design and know exactly which is best. Best has three standard meanings. Optimal has the fewest expected patients if the treatment is ineffective, Minimax has the smallest maximum size, and Admissible is a compromise between them. These three names come back on the EVOLVE slides. The comparison here is against the Optimal design. Set up the comparison before revealing the plot. Simon’s two-stage design enrolls a first group and can stop if too few patients respond. In this design family, we can check each candidate by exact calculation and find the one with the lowest expected enrollment under the null that meets both statistical targets. Ask how close BATON gets to that independently known answer. Each point is a scenario. The x-axis is the exact Simon design and the y-axis is BATON, both evaluated under the same null scenario. The dashed line is equality. Four designs match, all 12 meet both targets, and the average relative extra enrollment is 3.6%. The largest gap is about two expected patients. EVOLVE’s more complex designs use fresh simulations for verification. Turn from the benchmark to the decision EVOLVE had to make before the cohort opened.
 :::
-
 
 ## EVOLVE designs have too many settings to try every one {data-menu-title="Grid contrast"}
 
@@ -1042,9 +971,8 @@ How many slots should a subtrial reserve when an early stop could leave some unu
 
 **Q&A pockets:** *What if an interim analysis happens at a different time?* The reported operating characteristics apply to the schedule that was simulated. A revised schedule needs a new check.
 
-**Delivery:** Open by contrasting with the sanity check. A Simon design has four settings (the two stage sizes and the two response cutoffs), so every design can be enumerated. An EVOLVE design has the eight settings from slide 17, a progression-free survival outcome and a Bayesian model, so there is no exact answer to compare against. Then lead with the enrollment-max sample size deadline. Explain that sites had to reserve capacity before the cohort opened. The committee used maximum and expected enrollment to weigh those options. These deadlines and the trial designs the team wanted to consider motivated BATON: we needed a faster way to calibrate more ambitious designs. Briefly connect the deadline to planning interim reviews and resources across cohorts. Ask how many slots to reserve when an early stop could leave some unused. The next slide puts numbers on that choice.
+**Delivery:** Open by contrasting with the sanity check. A Simon design has four settings (the two stage sizes and the two response cutoffs), so every design can be enumerated. An EVOLVE design has the eight settings from slide 15, a progression-free survival outcome and a Bayesian model, so there is no exact answer to compare against. Then lead with the enrollment-max sample size deadline. Explain that sites had to reserve capacity before the cohort opened. The committee used maximum and expected enrollment to weigh those options. These deadlines and the trial designs the team wanted to consider motivated BATON: we needed a faster way to calibrate more ambitious designs. Briefly connect the deadline to planning interim reviews and resources across cohorts. Ask how many slots to reserve when an early stop could leave some unused. The next slide puts numbers on that choice.
 :::
-
 
 ## Same requirements, different trials {data-menu-title="Two designs"}
 
@@ -1064,13 +992,12 @@ How many slots should a subtrial reserve when an early stop could leave some unu
 
 
 ::: {.notes}
-**Pull-from-if-needed:** BATON 0.4.0 manuscript Table 3 and Section 4.1. The Optimal design (H0-Optimal in the manuscript) is first shown on this slide. Slide 14 uses illustrative numbers and is not this design. Rows R01 and R02 of final_summary_designs.csv are used for the comparison. All three verified designs cleared the 80% power floor and 10% type I error max sample size at five fresh seeds. The hand-tuning experience on slide 17 motivated this work. It was not a controlled comparison.
+**Pull-from-if-needed:** BATON 0.4.0 manuscript Table 3 and Section 4.1. The Optimal design (H0-Optimal in the manuscript) is first shown on this slide. Slide 13 uses illustrative numbers and is not this design. Rows R01 and R02 of final_summary_designs.csv are used for the comparison. All three verified designs cleared the 80% power floor and 10% type I error max sample size at five fresh seeds. The hand-tuning experience on slide 15 motivated this work. It was not a controlled comparison.
 
 **Q&A pockets:** *Why are the expected values fractional?* They average over simulations. Some simulated trials stop early and others run to the max sample size. *Why do powers differ?* All had to clear the same floor. The searches prioritized enrollment under different criteria.
 
 **Delivery:** Return to the capacity EVOLVE had to reserve, then introduce the Optimal design. Call the second design a compromise between reducing the max sample size and reducing average enrollment. Give the group a moment to choose whether to reserve two fewer slots at the cost of enrolling about two more patients on average if the treatment is inactive. Then reveal the performance rows: both designs passed the same targets in fresh simulations. The third verified design appears on the next slide.
 :::
-
 
 ## EVOLVE's TNBC subtrial: three objectives, three designs {data-menu-title="Objectives and frontier"}
 
@@ -1099,13 +1026,12 @@ Physicians can choose the design that fits their priorities, from verified optio
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** The dashed line guides the eye between the three returned designs. The Optimal criterion (H0-Optimal in the manuscript) minimizes expected enrollment when the treatment is inactive, Minimax minimizes the max sample size, and Admissible weights both. Optimal and Minimax are Simon’s 1989 criteria and Admissible is the compromise of Jung and colleagues. In Simon’s setting each can be found by enumeration, as on slide 24. Here the design is Bayesian and adaptive with a time-to-event outcome, so BATON searches for the design that best meets each criterion by simulation. The original two-stage criteria are in [Simon, 1989](https://pubmed.ncbi.nlm.nih.gov/2702835/) and [Jung et al., 2004](https://pubmed.ncbi.nlm.nih.gov/14755389/). BATON 0.4.0 manuscript Section 4.1 reports the designs and verification numbers.
+**Pull-from-if-needed:** The dashed line guides the eye between the three returned designs. The Optimal criterion (H0-Optimal in the manuscript) minimizes expected enrollment when the treatment is inactive, Minimax minimizes the max sample size, and Admissible weights both. Optimal and Minimax are Simon’s 1989 criteria and Admissible is the compromise of Jung and colleagues. In Simon’s setting each can be found by enumeration, as on slide 23. Here the design is Bayesian and adaptive with a time-to-event outcome, so BATON searches for the design that best meets each criterion by simulation. The original two-stage criteria are in [Simon, 1989](https://pubmed.ncbi.nlm.nih.gov/2702835/) and [Jung et al., 2004](https://pubmed.ncbi.nlm.nih.gov/14755389/). BATON 0.4.0 manuscript Section 4.1 reports the designs and verification numbers.
 
 **Q&A pockets:** *Why does Minimax sit to the right of Admissible at the same max sample size?* Minimax required at least eight observed events before an interim decision, which excluded the Admissible design’s four-event rule. The Minimax design also had higher verified power. *Which design went into this protocol?* The manuscript says the comparison informed the steering committee’s choice for the first subtrial. Confirm this specific protocol before claiming it used the displayed design.
 
 **Delivery:** Say that Optimal, Minimax and Admissible were defined for Simon’s two-stage design, where the best design can be enumerated. We carried the same ideas to the wider family of Bayesian adaptive trials by swapping the objective function, with one objective built to mimic each criterion. The impact is that physicians have a choice of design preference. Point to the orange option the room just considered. Hand tuning made it hard to verify even one candidate. BATON gave the team several verified designs to compare before committing to a max sample size. Sites could see what they would gain in reserved slots and what they might give up in expected enrollment. Both Admissible and Minimax reached the search floor of 30 patients. The Admissible option expects 13.3 patients if the treatment is inactive, compared with 11.2 for Optimal. Name the three criteria in plain language: fewer patients on average if the treatment is inactive, the lowest max sample size, and a compromise. Point to the third option and say its search required at least eight outcome events before stopping was considered. Then ask whether the same workflow could handle a different question: screening and comparison in one trial.
 :::
-
 
 ## The same workflow calibrated a more complex trial {data-menu-title="Seamless design example"}
 
@@ -1171,7 +1097,6 @@ Swap in new rules and a simulator. Reuse search and verification.
 **Delivery:** About 45 seconds. “We wanted to see how far the same workflow could stretch, so we tried a more complicated design. Both groups enroll from the start. We first screen the experimental group against a benchmark, then use a rule to decide whether to proceed to a direct comparison.” Reveal the second stage. “We swapped in the new trial rules, simulator, and targets. The search and verification steps were the same in outline.” Ask what the team needs to get right in the new simulator.
 :::
 
-
 ## What if the trial assumes perfect classification? {data-menu-title="Imperfect biomarkers"}
 
 ```{=html}
@@ -1227,7 +1152,6 @@ Swap in new rules and a simulator. Reuse search and verification.
 **Delivery:** Connect to the preceding slide: the search can reuse the framework as soon as the team supplies a simulator for the new design. Use the example of one specimen that receives a different test call, adapted from the FDA OSEL talk *When Biomarkers, Assays, and Protocols Co-evolve*. If eligibility depends on the biomarker, simulate both kinds of errors using plausible rates. That changes who is enrolled and may change the evidence at the interim review. Check how the same stopping rule behaves under the plausible scenarios, then tune it if needed. Close with “Now imagine asking an AI tool to write that simulator. Which test does it assume?”
 :::
 
-
 ## A public service announcement on AI-written simulations {data-menu-title="PSA: AI-generated simulations"}
 
 ::: {.columns .media-pair style="align-items: center;"}
@@ -1263,7 +1187,6 @@ If you cannot explain or defend a choice you made with AI’s help, you may be d
 **Delivery:** Keep the tone light, this is a public service announcement and not a warning against using AI. Take the question from the preceding slide. Start with the benefit. An AI coding tool can speed up the implementation, and that makes custom designs practical for teams that could not have built a simulator before. This applies to BATON and to any analysis. It might leave out test errors, and the resulting power estimate can look perfectly plausible. Ask the audience what they would check first. Before trusting the estimate, trace who the code puts into each cohort. Point briefly to the StatsUpAI companion resources. Reveal the last line and offer it as a test people can apply to their own work. If you cannot explain or defend a choice you made with AI’s help, you may be delegating too much. Then say “Writing and running the code is one job. Knowing what it has to represent is ours.”
 :::
 
-
 ## You can’t evaluate what you don’t know, and you should never outsource your judgment to an external tool. {.judgment-slide data-menu-title="Judgment stays with you"}
 
 ::: {.notes}
@@ -1273,7 +1196,6 @@ If you cannot explain or defend a choice you made with AI’s help, you may be d
 
 **Delivery:** Having just asked who enters the simulated cohort, read the line once and pause. Then widen the question: “So far we’ve been deciding what one trial needs to learn. What changes when an early trial’s decision shapes what the next one can learn?”
 :::
-
 
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 5: Whole-program calibration"}
 
@@ -1294,7 +1216,6 @@ Section 5
 </div>
 ```
 :::
-
 
 ## What does Phase III inherit? {data-menu-title="What Phase III inherits"}
 
@@ -1333,11 +1254,10 @@ Section 5
 ```
 
 ::: {.notes}
-**Delivery:** Bring back slide 6. Of 640 therapeutics entering Phase III or other pivotal trials in 1998–2008, 344 (54%) failed in late-stage development. Among those 344, about 57% were attributed to inadequate efficacy, 17% to safety, 22% to commercial reasons, and 5% had unknown reasons (rounded). Some failures correctly rule out an ineffective or unsafe option.
+**Delivery:** Bring back slide 5. Of 640 therapeutics entering Phase III or other pivotal trials in 1998–2008, 344 (54%) failed in late-stage development. Among those 344, about 57% were attributed to inadequate efficacy, 17% to safety, 22% to commercial reasons, and 5% had unknown reasons (rounded). Some failures correctly rule out an ineffective or unsafe option.
 
-Phase III inherits both a choice and the uncertainty around it. The FDA reviewed 22 selected cases where Phase III overturned promising Phase II findings. For example, torcetrapib raised HDL cholesterol in Phase II, but patients on the drug had more major cardiac events in Phase III. That is a concrete example of how the choice of what to measure affects the evidence available when deciding to advance. Short follow-up can also leave harms uncertain. These case studies illustrate specific gaps. The share of the historical 54% attributable to earlier design choices is unknown. Point to the left cards first, then reveal the jump in patient and time commitment at Phase III. The labels are FDA’s general drug development ranges. The dots illustrate trials of 50, 200, and 600 participants. Actual designs vary and the ranges overlap. The listed years refer to study duration. On the last click, ask what uncertainty is worth resolving before the larger commitment. Call back to the open question on slide 8, that more patients later may not answer what the early trial never asked. Earlier studies can help choose the dose and population and plan which outcomes to carry forward. That planning can improve the chance of valid confirmation when there is real benefit and help stop weak candidates earlier. Transition: “One decision we can change is which dose we carry forward.”
+Phase III inherits both a choice and the uncertainty around it. The FDA reviewed 22 selected cases where Phase III overturned promising Phase II findings. For example, torcetrapib raised HDL cholesterol in Phase II, but patients on the drug had more major cardiac events in Phase III. That is a concrete example of how the choice of what to measure affects the evidence available when deciding to advance. Short follow-up can also leave harms uncertain. These case studies illustrate specific gaps. The share of the historical 54% attributable to earlier design choices is unknown. Point to the left cards first, then reveal the jump in patient and time commitment at Phase III. The labels are FDA’s general drug development ranges. The dots illustrate trials of 50, 200, and 600 participants. Actual designs vary and the ranges overlap. The listed years refer to study duration. On the last click, ask what uncertainty is worth resolving before the larger commitment. Call back to the open question on slide 7, that more patients later may not answer what the early trial never asked. Earlier studies can help choose the dose and population and plan which outcomes to carry forward. That planning can improve the chance of valid confirmation when there is real benefit and help stop weak candidates earlier. Transition: “One decision we can change is which dose we carry forward.”
 :::
-
 
 ## An early dose rule can shape Phase III confirmation {data-menu-title="Illustrative confirmation paths"}
 
@@ -1406,7 +1326,6 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 **Delivery:** “The dose is one thing we carry forward. The evidence is another.” Blue icons mark patients who were already randomized. On the first click, show the two arms enrolling new patients in stage 3 and the schedule that was dropped. On the second click, trace the blue icons into the final column. Each early patient stays in their original arm and contributes the recorded outcome alongside patients enrolled later. Compare how often surgery found no residual invasive cancer in the retained olaparib arm versus the control arm. The selected schedule did not improve the primary endpoint in this cohort. The icons show inclusion and are schematic. For BATON-Phaseless the proposed question is how much early evidence can count and how many new patients are needed, with an analysis that accounts for selection and protects type I error. See [FDA adaptive design guidance](https://www.fda.gov/media/78495/download).
 :::
 
-
 ## Extend BATON from one trial to the whole program {data-menu-title="Whole-program search and early evidence"}
 
 ```{=html}
@@ -1445,7 +1364,7 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 ```
 
 ::: {.notes}
-**Delivery:** Return to the BATON workflow from slide 20. We would replace the single-trial simulator and evaluator with ones that simulate and score the full program. Change the amount of enrollment in each stage, how many doses can remain in play, safety and activity thresholds, and the rule for what earlier data can contribute to confirmation. For each candidate, simulate complete paths under plausible dose–efficacy and toxicity scenarios. The search uses completed results to choose what to test next. Final candidates would be checked on fresh full-program simulations. BATON-D supplies the early dose-selection piece, and BATON-C helps ask which choices hold up across plausible assumptions.
+**Delivery:** Return to the BATON workflow from slide 18. We would replace the single-trial simulator and evaluator with ones that simulate and score the full program. Change the amount of enrollment in each stage, how many doses can remain in play, safety and activity thresholds, and the rule for what earlier data can contribute to confirmation. For each candidate, simulate complete paths under plausible dose–efficacy and toxicity scenarios. The search uses completed results to choose what to test next. Final candidates would be checked on fresh full-program simulations. BATON-D supplies the early dose-selection piece, and BATON-C helps ask which choices hold up across plausible assumptions.
 
 **Delivery (early evidence):** Take overall survival as an example of a Phase III endpoint. An early randomized trial can plan to track survival with standardized follow-up or suitable linked records. Earlier patients start contributing follow-up sooner. If their outcomes are eligible under a prespecified analysis that accounts for selection, some events may already count when Phase III begins. That could reduce new recruitment or the wait for enough events. A separate option uses an early signal such as tumor response to forecast later event accrual and plan enrollment and follow-up. Predictions guide planning. The confirmatory analysis still uses observed outcomes. As in EVOLVE, set a minimum chance of valid confirmation when a safe and effective dose exists, limit false positives, and limit advancement of unsuitable doses. Count all simulated programs from Phase I onward, including those that stop. Compare total enrollment and time only among designs meeting the evidence targets. These are potential gains for the proposed extension to evaluate. See [FDA adaptive design guidance](https://www.fda.gov/media/78495/download) and [Stallard et al. on using early endpoints in interim decisions](https://pubmed.ncbi.nlm.nih.gov/24697322/).
 :::
@@ -1463,9 +1382,8 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 ```
 
 ::: {.notes}
-**Delivery:** Return to slide 9, where the bottleneck was finding efficient trial rules that still meet the evidence requirements. “The EVOLVE examples showed that BATON could search complex trial designs and verify that the selected rules met prespecified evidence targets in simulation.” Then turn to the roadmap. BATON-D studies early dose-finding decisions, including designs that continue from Phase I into Phase II within one trial. BATON-C asks which rules hold up across plausible scenarios, such as when the treatment effect is smaller or the biomarker classifier is less accurate than assumed. BATON-Phaseless is the proposed extension to calibrate decisions together from Phase I through Phase III, including what earlier evidence can count. Return to the opening dose question. “Before we ask hundreds of patients to join Phase III, what should we learn while we still have choices?” Then end on the slide’s own sentence, “Design early trials around the evidence Phase III will need,” and stop.
+**Delivery:** Return to slide 8, where the bottleneck was finding efficient trial rules that still meet the evidence requirements. “The EVOLVE examples showed that BATON could search complex trial designs and verify that the selected rules met prespecified evidence targets in simulation.” Then turn to the roadmap. BATON-D studies early dose-finding decisions, including designs that continue from Phase I into Phase II within one trial. BATON-C asks which rules hold up across plausible scenarios, such as when the treatment effect is smaller or the biomarker classifier is less accurate than assumed. BATON-Phaseless is the proposed extension to calibrate decisions together from Phase I through Phase III, including what earlier evidence can count. Return to the opening dose question. “Before we ask hundreds of patients to join Phase III, what should we learn while we still have choices?” Then end on the slide’s own sentence, “Design early trials around the evidence Phase III will need,” and stop.
 :::
-
 
 ## Acknowledgments {data-menu-title="Acknowledgments"}
 
@@ -1512,7 +1430,6 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 </div>
 ```
 
-
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Questions"}
 
 ::: {.divider-inner}
@@ -1537,21 +1454,20 @@ Manuscript in revision
 
 ::: {.notes}
 **Q&A routing index (TriBix numbering)**
-- *Clinical phases* → slide 3. *Operation TrialBlazer and trials abroad* → slide 4. *Development time and cost* → slide 5.
-- *Late failure and sotorasib* → slides 6–8 and 34. *PARTNER and early randomized evidence* → slide 36.
-- *Why efficient designs are hard to find* → slides 9 and 13–18.
-- *Fixed versus adaptive and what patients gain* → slides 12 and 27–28.
-- *EVOLVE and the hand-tuning story* → slides 15–17 and 27.
-- *Grid and random search* → slides 18 and 25 and the notes for slide 24. *Other optimizers* → B4.
-- *Surrogate, acquisition, and fresh simulations* → slides 20–22, B14 and B1. *Search initialization* → B12.
-- *Benchmark and seed details* → slide 24 and B11 for all 12 scenarios, B2 and B7 for ten starts on one scenario.
-- *Choosing among feasible designs* → slides 26–28 and B3. *Seamless design* → slide 29 and B13.
-- *AI, assumptions, and judgment* → slides 30–32 and B5.
+- *Clinical phases* → slide 3. *Operation TrialBlazer and trials abroad* → B15. *Development time and cost* → slide 4.
+- *Late failure and sotorasib* → slides 5–7 and 33. *PARTNER and early randomized evidence* → slide 35.
+- *Why efficient designs are hard to find* → slides 8 and 12–16.
+- *Fixed versus adaptive and what patients gain* → slides 11 and 26–27.
+- *EVOLVE and the hand-tuning story* → slides 14, 15 and 26.
+- *Grid and random search* → slides 16 and 24 and the notes for slide 23. *Other optimizers* → B4.
+- *Surrogate, acquisition, and fresh simulations* → slides 18–21 and B1. *Search initialization* → B12.
+- *Benchmark and seed details* → slide 23 and B11 for all 12 scenarios, B2 and B7 for ten starts on one scenario.
+- *Choosing among feasible designs* → slides 25–27 and B3. *Seamless design* → slide 28 and B13.
+- *AI, assumptions, and judgment* → slides 29–31 and B5.
 - *Bidirectional stopping* → B6. *Randomized cohort* → B8.
-- *Early dose selection and Phase III confirmation* → slides 35–35. *Whole-program calibration and borrowing* → slides 36–37. *Status of BATON extensions* → slide 38. *ADAPT background* → slide 16 and B10.
+- *Early dose selection and Phase III confirmation* → slides 34–34. *Whole-program calibration and borrowing* → slides 35–36. *Status of BATON extensions* → slide 37. *ADAPT background* → B9 and B10.
 - *Company or translation* → disclose the relationship verbally in one sentence.
 :::
-
 
 ## References {data-menu-title="References"}
 
@@ -1581,7 +1497,6 @@ Manuscript in revision
 **Delivery:** Leave this up only if someone asks for a source. The entries are in the order the sources appear in the talk, and each links to the source.
 :::
 
-
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Backup"}
 
 ::: {.divider-inner}
@@ -1594,7 +1509,6 @@ Backup
 Reference slides
 :::
 :::
-
 
 ## Backup: the surrogate and the acquisition {.backup-slide data-menu-title="B1: GP + ECI"}
 
@@ -1624,7 +1538,6 @@ Reference slides
 **Q&A pocket:** *Isn't plug-in feasibility for the incumbent inconsistent with a smoothed objective?* A real asymmetry, concede it: feasibility of the incumbent set uses observed metrics while its value uses the surrogate mean. Mitigations: the search applies a buffered (tightened) constraint threshold, and no design is reported without high-fidelity multi-seed verification.
 :::
 
-
 ## Backup: ten starts on one Simon benchmark {.backup-slide data-menu-title="B2: Benchmark plot"}
 
 <img src="images/fig_sample_efficiency.png" class="fig-mid" style="max-height: 390px; height: auto; width: auto; max-width: 1180px; margin-top: 0.35em;" alt="Best feasible expected enrollment against cumulative evaluations for ten seeded runs on one benchmark. Eight runs finished at the known optimum."/>
@@ -1640,7 +1553,6 @@ All ten runs finished within 1% of the optimum under narrower search bounds. Eig
 
 **Delivery:** Point to the guided-search part of the trace and the final distance from the known answer.
 :::
-
 
 ## Backup: what the constraints and parameters actually are {.backup-slide data-menu-title="B3: Parameters"}
 
@@ -1674,7 +1586,6 @@ Scenario A truths: null median 3.8 months, alternative 9 (median ratio 0.42), We
 :::
 :::
 
-
 ## Backup: related work and what BATON adds {.backup-slide data-menu-title="B4: Related work"}
 
 ::: {.columns}
@@ -1701,7 +1612,6 @@ It returns certified designs that can be compared across enrollment objectives.
 :::
 :::
 
-
 ## Backup: known failure modes and limits {.backup-slide data-menu-title="B5: Limitations"}
 
 - **Budget exhaustion**: 3 of 10 reproducibility runs used the full 300-evaluation budget rather than stopping early; quote evaluations used, not "convergence."
@@ -1709,7 +1619,6 @@ It returns certified designs that can be compared across enrollment objectives.
 - **Correlated constraints**: the acquisition multiplies marginal feasibility probabilities; latent surfaces for power and type I error can be correlated. Affects the search only; reported designs are verified directly.
 - **No common random numbers in the loop**: candidate comparisons carry full independent Monte Carlo noise; verification uses a shared seed set.
 - **One assumed truth per calibration**: every current result conditions on an assumed clinical scenario; robustness across scenarios is BATON-C, in progress.
-
 
 ## Backup: bidirectional stopping variants {.backup-slide .backup-explainer data-menu-title="B6: Bidirectional"}
 
@@ -1724,7 +1633,6 @@ The single-arm and between-arm headline scenarios use futility-only interim stop
 
 **Delivery:** Backup. One sentence.
 :::
-
 
 ## Backup: ten seeds, one design {.backup-slide data-menu-title="B7: Reproducibility"}
 
@@ -1763,7 +1671,6 @@ Rerunning the search shows how much the returned design and its behavior change 
 **Delivery:** Fast slide. Lead with all ten within 1% of the optimum, then 8 of 10 exactly.
 :::
 
-
 ## Backup: the randomized-subtrial frontier {.backup-slide data-menu-title="B8: Randomized frontier"}
 
 <img src="images/fig_tradeoff_betweenarm_040.png" style="max-height: 485px; display: block; margin: 0 auto;" alt="Trade-off plane for the ER-positive doublet-versus-triplet cohort, total patients in both arms: H0-Optimal at maximum 103 and expected 59.2, Admissible at 91 and 63.9, Minimax at 86 and 70.8."/>
@@ -1777,9 +1684,45 @@ Cutting the max sample size from 103 to 91 costs about 5 extra patients on avera
 
 **Q&A pocket:** *Are these three restarts stable?* The five restarts behind each design had maximum-size standard deviations of 9.7, 4.1 and 1.6 (supplement Web Appendix D.3).
 
-**Delivery:** Backup for the randomized-cohort question on slide 28.
+**Delivery:** Backup for the randomized-cohort question on slide 27.
 :::
 
+## Backup: the ARPA-H ask and the N-of-1 addition {.backup-slide data-menu-title="B9: ARPA-H ask"}
+
+```{=html}
+<!-- Full requirements list in vector text (viewer-proof), quoting the user's
+     own program-solicitation excerpts; length of the list is the point. The
+     two highlighted lines carry the eye. Meme stays as the only image. -->
+<div style="margin: 0 auto;">
+<div style="display:flex; gap: 1.3em; align-items: flex-start;">
+<div style="flex: 56 0 0;">
+<div style="border: 1px solid #C9D1D9; border-left: 3px solid #2E6A9F; padding: 0.5em 0.9em; background: #fff; font-family: Georgia, serif; font-size: var(--fs-label); line-height: 1.4; text-wrap: pretty;">
+<em>(ii) Clinical trial characteristics:</em>
+<ol style="margin: 0.3em 0 0.3em 1.4em; padding: 0;">
+<li>Clinical trial for metastatic cancer patients.</li>
+<li>Clinical trial that includes multiple lines of therapy under a single protocol.</li>
+<li style="background: #EAF2FA; font-weight: 600;">Flexible clinical trial protocol that enables changes in design (e.g., randomized, adaptive, etc.).</li>
+<li>Strong capability to collect tumor and blood-based measurements.</li>
+<li>Possess a treatment line with a Progression Free Survival (PFS) rate of &lt;9 months average.</li>
+<li>Mechanisms for biomarker evaluation.</li>
+<li style="background: #EAF2FA; font-weight: 600;">Modular clinical trial design enabling rapid dissemination and protocol uptake by different sites.</li>
+</ol>
+<em>(iii) General characteristics:</em> key clinical needs; evolutionary design examples and rapid-enrollment plans; treatment lines; biomarker testing and integration plans.
+</div>
+<p class="source" style="margin-top: 0.5em;">excerpts from the ARPA-H solicitation and program-manager correspondence</p>
+</div>
+<div style="flex: 44 0 0;">
+<div class="fragment" data-fragment-index="1" style="border: 1px solid #C9D1D9; border-left: 3px solid var(--rl-accent); padding: 0.45em 0.9em; background: #fff; margin: 0 0 0.7em 0; font-size: var(--fs-body);"><strong style="color:#13294B;">Follow up</strong> (program-manager email): integrate an "N-of-1" trial component.</div>
+<div class="fragment" data-fragment-index="2" style="font-size: var(--fs-sub); font-weight: 700; color: #13294B; line-height: 1.35;">The ask: design an <span style="color:#2E6A9F;">adaptive multi-line</span> trial to <span style="color:#2E6A9F;">discover, evaluate, and implement novel biomarkers</span>, with an additional <span style="color:#2E6A9F;">N-of-1 subcomponent</span></div>
+<img src="images/req_meme.gif" class="fragment" data-fragment-index="3" style="border: 1px solid #C9D1D9; width: 70%; display: block; margin: 0.7em auto 0 auto;" alt="Animated this-is-fine cartoon from the original slide."/>
+</div>
+</div>
+</div>
+```
+
+::: {.notes}
+**Delivery:** Three keypresses, one element at a time, in the spirit of the original PowerPoint build: solicitation excerpts, then the new-ask line, then the summary ask, then the meme as the punchline. Let each be read, not read aloud. If asked, the full source slides (complete requirement list and program-manager email) are in the pptx decks.
+:::
 
 ## Backup: ADAPT technical areas and the EVOLVE team {.backup-slide data-menu-title="B10: ADAPT + team"}
 
@@ -1795,7 +1738,6 @@ Cutting the max sample size from 103 to 91 costs about 5 extra patients on avera
 ::: {.notes}
 **Pull-from-if-needed:** For questions about the program: three technical areas (our team leads the clinical-trial component), metastatic breast cancer, master protocol, biomarker-defined subtrials, TBCRC network.
 :::
-
 
 ## Backup: Across 12 benchmarks: feasible in all 12, mean objective gap 3.6% {.backup-slide data-menu-title="B11: Benchmark table"}
 
@@ -1825,7 +1767,6 @@ Feasibility is verified directly. Objective optimization remains approximate.
 **Delivery:** Backup. Read the table only if asked.
 :::
 
-
 ## Backup: The seed sketches the map. Then BATON proposes each batch. {.backup-slide data-menu-title="B12: Search initialization"}
 
 ```{=html}
@@ -1844,7 +1785,6 @@ Initial points learn broadly; later points concentrate where the answer may impr
 
 **Pull-from-if-needed:** In the BATON 0.4.0 runs behind the paper's tables, each search starts from 60 or 90 space-filling designs at low fidelity, or from 3 designs carried over from a related search, then hands over to model-guided selection (results/retune_xphil/final_search_selected.csv). Points here are illustrative (synthetic surface), not real design coordinates.
 :::
-
 
 ## Backup: Calibrating a seamless design {.backup-slide data-menu-title="B13: Seamless trial"}
 
@@ -1871,21 +1811,31 @@ The seamless design had 13 possible settings. At most 11 were active in the repo
 **Delivery:** 80 seconds. Title, full figure (single-arm 8, between-arm 8, seamless 13 settings), then reveal the two stages and the scope of the reported calibration. Gloss "interim gate" aloud as the point where the trial decides whether to move to the randomized stage.
 :::
 
+## Backup: the U.S. is concerned about its lead in early clinical research {.backup-slide data-menu-title="B15: Operation TrialBlazer"}
 
-## Backup: verifying the final design with fresh simulations {.backup-slide data-menu-title="B14: Verification"}
+::: {.columns .media-pair style="align-items: center;"}
+::: {.column width="45%"}
+::: {.frame-box style="font-size: var(--fs-sub);"}
+**U.S. Department of Health and Human Services**
 
-<img src="images/fig_funnel_plain.png" style="max-height: 490px; display: block; margin: 0.3em auto 0 auto;" alt="Three narrowing stages in the EVOLVE single-arm example: search many designs with 3,000 simulated trials per design, recheck promising designs with 10,000 per design, and verify the selected design with five independent runs of 10,000 per scenario."/>
+HHS reports that China's global share of Phase I trials first exceeded the U.S. share in 2021.
 
-::: {.landing .fragment}
-Fresh simulations check both targets before BATON reports a design.
+[[Operation TrialBlazer roadmap, 2026](https://www.hhs.gov/sites/default/files/operation-trialblazer.pdf)]{.source}
+:::
+:::
+::: {.column width="49%"}
+[Australia · adult solid-tumor Phase I trials]{style="display:block; text-align:center; color:#13294B; font-weight:700; font-size:var(--fs-lead); margin-bottom:0.3em;"}
+
+<img src="images/fig_australia_slope.png" style="width: 100%; display: block;" alt="Annual adult solid-tumor Phase I trial counts at Australian sites rose from 18 in 2012 to 75 in 2022. Only endpoints are plotted."/>
+
+[Adult solid-tumor Phase I trials with an Australian site. [Hitchen et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38923830/){style="white-space:nowrap"}]{.source style="display:block; text-align:center; margin:0.25em auto 0;"}
+:::
 :::
 
 ::: {.notes}
-**Selection and certification (BATON 0.4.0, manuscript Methods and Web Appendix D.4):** Re-simulate the 10 lowest-loss designs among those feasible in search. Select by loss among candidates that meet both targets on re-screening. Check the selected candidate at five further seeds with 10,000 simulations per seed as part of selection. Independent certification then uses fresh seeds and 50,000 trials per hypothesis for the single-arm example or 100,000 for the between-arm example. The exact one-sided Clopper–Pearson bounds use a Bonferroni adjustment across the certification family. The seamless designs have a separate family. The figure illustrates the single-arm path.
+**Pull-from-if-needed:** HHS’s Operation TrialBlazer roadmap is the source for the US leadership concern and the relative-share statement. The underlying series has not been independently verified. The Hitchen et al. chart counts adult solid-tumor Phase I trials with an Australian site in two years. See the verified entries in tribix-opening-facts.md. Page 6 of the [HHS roadmap](https://www.hhs.gov/sites/default/files/operation-trialblazer.pdf#page=6) discusses alternative trial designs and recruitment.
 
-**Pull-from-if-needed:** Selection-induced optimism occurs when a noisy estimate helped a design win the search. Independent Monte Carlo runs check the selected design under the simulated scenarios. Reported operating characteristics come from verification.
+**Q&A pockets:** *Why do sponsors go abroad?* Industry testimony to Congress cites cost and speed to a first signal. These slides describe two observations and do not estimate their causes.
 
-**Q&A pockets:** *Why run fresh simulations?* A design can look good partly because the initial simulations were noisy. Fresh simulations give an independent check against the targets.
-
-**Delivery:** After the search reaches its stopping rule or budget, say “The design that looked best during the search may have benefited from simulation noise. Fresh runs check whether it still meets both targets.” Fresh runs check the design under the assumptions supplied. Then ask how close BATON got when the best answer was known, and what options it gave EVOLVE.
+**Delivery:** About 35 seconds. Attribute the U.S. concern to HHS and give the Australian counts as a separate observation. Then say “That’s one pressure on the earliest stage. Zoom out to the full path from the first trial in people to approval.”
 :::
