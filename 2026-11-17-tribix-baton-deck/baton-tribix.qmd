@@ -529,7 +529,7 @@ One design meets both targets. How do we find a design like that for a real tria
 **Delivery:** Say why we simulate. A simple fixed design has a formula for power and type I error. A complex adaptive design with interim looks does not, so we run the trial many times on the computer and count. Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 12. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. Verified EVOLVE designs appear on slide 27.
 :::
 
-## ARPA-H ADAPT asked EVOLVE for a complex adaptive design {data-menu-title="10-15 subtrials"}
+## ARPA-H asked us to build complex adaptive features into EVOLVE {data-menu-title="10-15 subtrials"}
 
 ```{=html}
 <div class="inset" style="display: grid; grid-template-columns: 568px minmax(0, 1fr); column-gap: 40px; align-items: stretch; margin: 0 auto; text-align: left;">
@@ -542,7 +542,7 @@ One design meets both targets. How do we find a design like that for a real tria
     <div class="source" style="display: flex; justify-content: space-between; font-size: var(--fs-label); letter-spacing: -0.012em; white-space: nowrap; margin-top: 4px; margin-right: -8px;"><span></span><span style="text-align: right">Graphic: ARPA-H ADAPT Proposers’ Day, approved for public release</span></div>
   </div>
   <div class="fragment" data-fragment-index="0" style="display: flex; flex-direction: column; justify-content: center; gap: 14px;">
-    <div style="text-wrap: balance; font-size: var(--fs-body); font-weight: 700; color: #13294B; line-height: 1.3; text-align: center;">EVOLVE is ADAPT’s breast cancer platform trial. Each biomarker-defined group of patients gets its own subtrial.</div>
+    <div style="text-wrap: balance; font-size: var(--fs-body); font-weight: 700; color: #13294B; line-height: 1.3; text-align: center;">EVOLVE is the breast cancer platform trial we proposed to ADAPT. Each biomarker-defined group of patients gets its own subtrial.</div>
     <div role="group" aria-label="A shared protocol supports three example subtrial designs, with 8, 8 and 13 settings to calibrate" style="display: flex; flex-direction: column; gap: 12px;">
       <div style="background: #13294B; color: #FFFFFF; padding: 22px 16px; text-align: center;"><div style="font-size: var(--fs-sub); font-weight: 700; color: #FFFFFF;">EVOLVE master protocol</div><div style="font-size: var(--fs-body); margin-top: 4px; color: #FFFFFF;">Metastatic breast cancer</div></div>
       <div style="font-size: var(--fs-body); font-weight: 700; color: #13294B; text-align: center;">Three example subtrial designs</div>
@@ -929,7 +929,7 @@ Section 4
 **Delivery:** Give the context first. A Simon two-stage design has four settings, the size of the first group, the response cutoff for stopping after it, the maximum size, and the final response cutoff. With so few settings we can loop over every possible design and know exactly which is best. Best has three standard meanings. Optimal has the fewest expected patients if the treatment is ineffective, Minimax has the smallest maximum size, and Admissible is a compromise between them. These three names come back on the EVOLVE slides. The comparison here is against the Optimal design. Set up the comparison before revealing the plot. Simon’s two-stage design enrolls a first group and can stop if too few patients respond. In this design family, we can check each candidate by exact calculation and find the one with the lowest expected enrollment under the null that meets both statistical targets. Ask how close BATON gets to that independently known answer. Each point is a scenario. The x-axis is the exact Simon design and the y-axis is BATON, both evaluated under the same null scenario. The dashed line is equality. Four designs match, all 12 meet both targets, and the average relative extra enrollment is 3.6%. The largest gap is about two expected patients. EVOLVE’s more complex designs use fresh simulations for verification. Turn from the benchmark to the decision EVOLVE had to make before the cohort opened.
 :::
 
-## A better EVOLVE design with about 47 times less computing {data-menu-title="Grid contrast"}
+## BATON found a better EVOLVE design with less computing time {data-menu-title="Grid contrast"}
 
 ```{=html}
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
@@ -955,7 +955,7 @@ Section 4
 
 
 ::: {.landing style="font-size: var(--fs-lead);"}
-[A coarse grid does worse. A finer grid costs about 47 times more and still does worse.]{.fragment data-fragment-index="1"}<br/>[It is the hyperparameter tuning problem.]{.fragment data-fragment-index="2"}
+[A coarse grid does worse. A finer grid costs about 47 times more and still does worse.]{.fragment data-fragment-index="1"}<br/>[It is the hyperparameter tuning problem.]{.fragment data-fragment-index="2"}<br/>[BATON’s design was then confirmed in separate, independent simulations.]{.fragment data-fragment-index="3"}
 :::
 ::: {.notes}
 **Pull-from-if-needed (source):** BATON 0.4.0 manuscript Section 4.4 and Web Appendix D.5.4. On the Scenario B Admissible between-arm problem, the three-level grid attempted 6,561 evaluations and used 3,593.9 allocated core-hours. BATON comparison runs used a median 76.3 allocated core-hours, including search and certification. The grid selected a certified design with loss 70.45, versus BATON’s mean of 51.28. Core-hours measure allocated computing resources, for example 16 cores for one hour is 16 core-hours. The search pictures are schematic. A randomized, space-filling design supplies the initial sample when eligible prior evaluations are unavailable, and some EVOLVE runs reused earlier evaluations.
