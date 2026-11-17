@@ -1500,7 +1500,7 @@ display:block!important;
 <div style="margin-top: 44px; display: flex; justify-content: space-between; font-size: var(--fs-label); color: #5B6670"><span>Fixed: settings, rules, model and assumptions. Only the treatment effect changes.</span><span>Illustrative numbers</span></div>
 </div>
 <div class="landing fragment">
-<p>One design meets both targets. Now imagine finding one for each of 10 to 15 subtrials.</p>
+<p>One design meets both targets. How do we find a design like that for a real trial?</p>
 </div>
 <aside class="notes">
 <p><strong>Pull-from-if-needed:</strong> This is the H0-Optimal design from EVOLVE’s triple-negative breast cancer example. The BATON 0.4.0 verification file reports 703 and 41,069 go decisions in 50,000 simulations per scenario and 11.22226 expected patients under the inactive scenario. See manuscript Table 3 and results/retune_xphil/final_summary_designs.csv, row R01. The <a href="https://www.fda.gov/media/78495/download#page=22">FDA adaptive-design guidance, section VI.A</a> describes using simulation to check operating characteristics, including error rates and power.</p>
@@ -1544,7 +1544,7 @@ display:block!important;
   </div>
 </div>
 <div class="landing fragment" data-fragment-index="1">
-<p>Each subtrial needs its own decision rules, with eight or more interacting settings.</p>
+<p>ARPA-H asked for a flexible, adaptive protocol. That flexibility gives each subtrial eight or more interacting settings to tune.</p>
 </div>
 <aside class="notes">
 <p><strong>Pull-from-if-needed:</strong> The BATON 0.4.0 manuscript describes plans for 10 to 15 biomarker-defined subtrials. Each cohort is a group of patients studied in its own subtrial. The three cards give examples of trial architecture. The settings counts (8, 8 and 13) are the numbers of design parameters calibrated for each architecture in the BATON 0.4.0 manuscript and supplement, shown in backup B13.</p>

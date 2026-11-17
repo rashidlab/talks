@@ -516,7 +516,7 @@ Calibration tunes the design until it meets 1 and 2. Among designs that do, we t
 ```
 
 ::: {.landing .fragment}
-One design meets both targets. Now imagine finding one for each of 10 to 15 subtrials.
+One design meets both targets. How do we find a design like that for a real trial?
 :::
 
 ::: {.notes}
@@ -557,7 +557,7 @@ One design meets both targets. Now imagine finding one for each of 10 to 15 subt
 ```
 
 ::: {.landing .fragment data-fragment-index="1"}
-Each subtrial needs its own decision rules, with eight or more interacting settings.
+ARPA-H asked for a flexible, adaptive protocol. That flexibility gives each subtrial eight or more interacting settings to tune.
 :::
 
 ::: {.notes}
