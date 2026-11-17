@@ -1444,6 +1444,31 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 **Pull-from-if-needed:** The grid comparison measured computing resources used to find and check designs. The proposed program evaluation would track time to a valid confirmation and time to an early stop separately, starting at first enrollment, along with total enrollment. Compare designs under the same confirmation and error targets. Enrollment and elapsed time both affect the resources a program requires.
 :::
 
+## BATON is designed as a general framework, not an EVOLVE-specific tool {data-menu-title="Framework, manuscript and package"}
+
+::: {.columns style="align-items: center; margin-top: 0.6em;"}
+::: {.column width="60%"}
+<img src="images/jasa_titlecrop.png" style="width: 100%; border: 1px solid #E6EAEF;" alt="Cropped title block of the BATON manuscript: Constrained Bayesian Optimization for Calibration of Bayesian Adaptive Clinical Trials."/>
+:::
+::: {.column width="40%"}
+<img src="images/baton_hex_official.png" style="height: 170px; display: block; margin: 0 auto 0.6em auto;" alt="Official BATON package hex sticker."/>
+
+::: {style="text-align: center; font-size: var(--fs-lead); line-height: 1.6; color: #13294B;"}
+**Manuscript in revision at JASA**<br/>
+**Open-source R package**<br/>
+**Bring your own trial simulator**
+
+[github.com/rashidlab/BATON](https://github.com/rashidlab/BATON){style="font-size: var(--fs-body);"}
+:::
+:::
+:::
+
+::: {.notes}
+**Delivery:** 20 seconds. “It is written up and in revision at JASA, and the package is open source. Bring your own simulator.” Then go to the acknowledgments.
+
+**Pull-from-if-needed:** Ported from the CompMed deck (2026-09-04), with the status changed from under review to in revision.
+:::
+
 ## Acknowledgments {data-menu-title="Acknowledgments"}
 
 ```{=html}
