@@ -1326,7 +1326,7 @@ The rest of this talk is about the second list.
 Phase III inherits both a choice and the uncertainty around it. The FDA reviewed 22 selected cases where Phase III overturned promising Phase II findings. For example, torcetrapib raised HDL cholesterol in Phase II, but patients on the drug had more major cardiac events in Phase III. That is a concrete example of how the choice of what to measure affects the evidence available when deciding to advance. Short follow-up can also leave harms uncertain. These case studies illustrate specific gaps. The share of the historical 54% attributable to earlier design choices is unknown. Point to the left cards first, then reveal the jump in patient and time commitment at Phase III. The labels are FDA’s general drug development ranges. The dots illustrate trials of 50, 200, and 600 participants. Actual designs vary and the ranges overlap. The listed years refer to study duration. On the last click, ask what uncertainty is worth resolving before the larger commitment. Call back to the open question on slide 6, that more patients later may not answer what the early trial never asked. Earlier studies can help choose the dose and population and plan which outcomes to carry forward. That planning can improve the chance of valid confirmation when there is real benefit and help stop weak candidates earlier. Transition: “One decision we can change is which dose we carry forward.”
 :::
 
-## How the dose is chosen in Phase I can shape Phase III {data-menu-title="Illustrative confirmation paths"}
+## The dose chosen in Phase I carries through Phases II and III {data-menu-title="Illustrative confirmation paths"}
 
 ```{=html}
 <div class="confirmation-teaser inset">
