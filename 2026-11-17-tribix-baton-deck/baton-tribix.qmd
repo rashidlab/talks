@@ -417,7 +417,7 @@ When to look and how much evidence is enough are two choices we must tune. Both 
 
 **Say aloud on the closing line:** "The design is Bayesian because those decisions rest on posterior probabilities under a model and a prior." Then, as the bridge to the next slide: "Maximum N, look timing, futility and efficacy thresholds, priors, margins. Every one is a setting, and every one changes how the trial behaves."
 
-**Pull-from-if-needed:** Where the benefit is counted. Expected patients enrolled when the treatment is inactive, on the EVOLVE objective slides (slides 26 and 27), is this slide's benefit as a number. The 50 and 10 patients in the figure are schematic, not a real design. The precise contrast, per the paper: unlike classical group-sequential designs (Jennison and Turnbull), complex Bayesian adaptive trials generally lack closed-form operating characteristics (Berry 2010; Thall and Simon 1994). The flexibility comes from posterior-probability monitoring, and the cost is that neither formulas nor enumeration reach the behavior.
+**Pull-from-if-needed:** Where the benefit is counted. Expected patients enrolled when the treatment is inactive, on the EVOLVE objective slides (slides 27 and 28), is this slide's benefit as a number. The 50 and 10 patients in the figure are schematic, not a real design. The precise contrast, per the paper: unlike classical group-sequential designs (Jennison and Turnbull), complex Bayesian adaptive trials generally lack closed-form operating characteristics (Berry 2010; Thall and Simon 1994). The flexibility comes from posterior-probability monitoring, and the cost is that neither formulas nor enumeration reach the behavior.
 
 **Q&A pocket:** *Are adaptive designs always better?* No. They help only when the stopping rules are well chosen, which is the design problem this talk is about.
 
@@ -526,7 +526,7 @@ One design meets both targets. How do we find a design like that for a real tria
 
 **Pull-from-if-needed (illustrative numbers, PI 2026-11-16):** The 4.2% and 82% on this slide are illustrative and are labelled so on screen. They are not the EVOLVE design. The verified TNBC design is on backup B8, with 1.4% type I error (703 of 50,000), 82.1% power (41,069 of 50,000) and 11.2 expected patients when ineffective. Do not describe the slide 13 numbers as results.
 
-**Delivery:** Say why we simulate. A simple fixed design has a formula for power and type I error. A complex adaptive design with interim looks does not, so we run the trial many times on the computer and count. Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 12. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. Verified EVOLVE designs appear on slide 26.
+**Delivery:** Say why we simulate. A simple fixed design has a formula for power and type I error. A complex adaptive design with interim looks does not, so we run the trial many times on the computer and count. Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 12. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. Verified EVOLVE designs appear on slide 27.
 :::
 
 ## ARPA-H ADAPT’s EVOLVE trial can host 10 to 15 subtrials {data-menu-title="10-15 subtrials"}
@@ -618,13 +618,29 @@ Is there a smarter way to pick the next design to test?
 ::: {.notes}
 **Say aloud:** "Ten options for each of eight settings is already 100 million designs, and each one has to be tested on thousands of simulated trials. Some settings meet both statistical targets. Within that group, we look for designs that enroll fewer patients. A grid has to walk the whole haystack. Random search throws darts at it." Then ask the question at the bottom.
 
-**Pull-from-if-needed (grid arithmetic):** With three values per setting, a grid has 9 designs for two settings, 6,561 for eight, and 1,594,323 for thirteen. The haystack and the zoomed map are schematic. Slide 24 shows the measured comparison on an eight-setting EVOLVE between-arm task (Scenario B).
+**Pull-from-if-needed (grid arithmetic):** With three values per setting, a grid has 9 designs for two settings, 6,561 for eight, and 1,594,323 for thirteen. The haystack and the zoomed map are schematic. Slide 25 shows the measured comparison on an eight-setting EVOLVE between-arm task (Scenario B).
 
-**Pull-from-if-needed (matched-budget evidence):** BATON 0.4.0 manuscript Table 5. Three Simon scenarios with exact answers, 15 runs per method at matched budgets. Random search’s median relative gap in expected enrollment under the inactive scenario was 16.4%, and it found the exact best in 1 of 15 runs. BATON's side of the same table comes in the notes for slide 23.
+**Pull-from-if-needed (matched-budget evidence):** BATON 0.4.0 manuscript Table 5. Three Simon scenarios with exact answers, 15 runs per method at matched budgets. Random search’s median relative gap in expected enrollment under the inactive scenario was 16.4%, and it found the exact best in 1 of 15 runs. BATON's side of the same table comes in the notes for slide 24.
 
-**Q&A pocket:** *Didn't the paper once report a random-search tally?* Yes, a count of how many random designs met the targets. It was dropped because it described the search box, not a method, and the matched-budget comparison above replaced it. *What about a grid at BATON's budget?* Manuscript Section 4.4 and Table 5 give a comparison on Scenario B, a separate between-arm design problem. Slide 24 shows the measured three-level grid and the BATON comparison runs on the same Scenario B task.
+**Q&A pocket:** *Didn't the paper once report a random-search tally?* Yes, a count of how many random designs met the targets. It was dropped because it described the search box, not a method, and the matched-budget comparison above replaced it. *What about a grid at BATON's budget?* Manuscript Section 4.4 and Table 5 give a comparison on Scenario B, a separate between-arm design problem. Slide 25 shows the measured three-level grid and the BATON comparison runs on the same Scenario B task.
 
 **Delivery:** 70 seconds. Haystack first, then the zoom. Call the grid size illustrative. Point to the two axes: the evidence thresholds to declare success or to stop for futility. One cell pairs one value from each axis while the other six settings stay fixed. Green combinations meet both targets. Outlined combinations also have lower expected enrollment. Say “In machine learning, you try a set of hyperparameters and see how it performs. Here the settings are trial rules, such as when to look at the data and how much evidence is enough to stop. Simulate many trials with those rules to see whether the design meets the power and false-go targets.” Land on “Is there a smarter way to pick the next design to test?” Advance to the same map with BATON’s search path.
+:::
+
+## Why finding a good design is hard {data-menu-title="Section 2 summary"}
+
+```{=html}
+<div class="inset" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 26px">
+<div style="background: #F4F6F8; padding: 24px 24px 26px 24px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">1</div><div style="font-size: var(--fs-lead); font-weight: 700; color: #13294B; line-height: 1.2; margin-top: 12px">Many settings that interact</div><div style="font-size: var(--fs-body); color: #5B6670; line-height: 1.35; margin-top: 8px">Eight or more in each EVOLVE subtrial.</div></div><div style="background: #F4F6F8; padding: 24px 24px 26px 24px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">2</div><div style="font-size: var(--fs-lead); font-weight: 700; color: #13294B; line-height: 1.2; margin-top: 12px">No formula</div><div style="font-size: var(--fs-body); color: #5B6670; line-height: 1.35; margin-top: 8px">Each candidate design has to be checked by simulation.</div></div><div style="background: #F4F6F8; padding: 24px 24px 26px 24px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">3</div><div style="font-size: var(--fs-lead); font-weight: 700; color: #13294B; line-height: 1.2; margin-top: 12px">Too many candidates</div><div style="font-size: var(--fs-body); color: #5B6670; line-height: 1.35; margin-top: 8px">A grid over eight settings has 100 million designs.</div></div>
+</div>
+```
+
+::: {.landing}
+We need a search that learns which designs are worth simulating.
+:::
+
+::: {.notes}
+**Delivery:** About 20 seconds. Read the three headings, one breath each. They are the three things Section 2 showed (slides 14 and 15, slide 13, slide 16). Then say “So we need a search that learns which designs are worth simulating. That is BATON.”
 :::
 
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 3: BATON"}
@@ -647,10 +663,10 @@ Section 3
 ```
 :::
 
-## BATON in one picture {data-menu-title="BATON in one picture"}
+## Our solution: BATON, Bayesian Adaptive Trial Optimization {data-menu-title="BATON in one picture"}
 
 ```{=html}
-<div style="font-size: var(--fs-label); color: #5B6670">BATON stands for Bayesian Adaptive Trial Optimization. It applies Bayesian optimization, the machine learning method used to tune model hyperparameters, to trial rules.</div>
+<div style="font-size: var(--fs-label); color: #5B6670">BATON applies Bayesian optimization, the machine learning method used to tune model hyperparameters, to trial rules.</div>
 <div style="margin-top: 20px; display: grid; grid-template-columns: 286px minmax(0, 1fr); gap: 36px; height: 430px">
 <div style="background: #F4F6F8; padding: 22px 24px; box-sizing: border-box; display: flex; flex-direction: column; text-align: left">
 <div style="font-size: var(--fs-lead); font-weight: 700">You supply</div>
@@ -700,7 +716,7 @@ Section 3
 
 **Delivery:** Expand BATON as Bayesian Adaptive Trial Optimization. Say “The team supplies how to simulate the trial, how to analyze each simulated run, and how to measure performance across runs.” Define operating characteristics as how a design behaves when we repeat the trial under specified assumptions. Point to BATON’s prediction model, also called a surrogate. The trial analysis model measures evidence within one simulated trial. BATON’s separate model predicts performance for designs it has yet to try. Point to the space-filling start first. It is the left square from the previous slide and it runs once, before any model is fitted. Then follow the loop. The model learns from every design simulated so far, chooses the next design, and that design is simulated. The return line goes from that test back to the model. At the end of the search, reveal the independent check. The team can review the selected rules and the verification results. Keeping the same inputs and run settings lets the team reproduce the run. If a classifier drives routing or stopping, simulate plausible calls and apply the actual decision rules to them. Before enrollment, BATON chooses which design to simulate next. During enrollment, the trial follows the rules the team approved. One sentence on the planned Workbench if time permits.
 
-**Pull-from-if-needed (verification, from the former verification slide, now slide 21):** Selection-induced optimism occurs when a noisy estimate helped a design win the search. Independent Monte Carlo runs check the selected design under the simulated scenarios. Reported operating characteristics come from verification.
+**Pull-from-if-needed (verification, from the former verification slide, now slide 22):** Selection-induced optimism occurs when a noisy estimate helped a design win the search. Independent Monte Carlo runs check the selected design under the simulated scenarios. Reported operating characteristics come from verification.
 
 **Say aloud on the last click:** “The design that looked best during the search may have benefited from simulation noise. So before BATON reports a design, fresh simulations check that it still meets both targets.”
 :::
@@ -874,14 +890,25 @@ Section 4
 <div style="width: 100%; display: grid; grid-template-columns: 590px minmax(0, 1fr); column-gap: 36px; align-items: start">
 <div><img src="images/fig_benchmark_paired_040.png" class="fragment" data-fragment-index="0" style="width: 590px !important; height: 490px !important; max-width: 590px !important; max-height: 490px !important; display: block; margin: 0;" alt="Scatter plot of expected enrollment when treatment is inactive, with the exact Simon design on the horizontal axis and BATON on the vertical axis. Both axes use the same scale. Four points sit on the equality line. The largest gap is 1.98 expected patients, or 13.5% above the optimum."/></div>
 <div style="display: flex; flex-direction: column">
+<div style="text-align: left; margin-bottom: 16px"><div style="font-size: var(--fs-body); font-weight: 700; color: #13294B; margin-bottom: 6px">Simon’s two-stage design</div>
+<svg viewBox="0 0 526 112" role="img" aria-label="Simon two-stage design. Stage 1 enrolls n1 patients and stops if r1 or fewer respond. Otherwise stage 2 enrolls up to n patients in total and the treatment goes forward if more than r respond. The four settings are n1, r1, n and r." style="width: 100%; height: auto; display: block; font-family: 'Archivo', sans-serif;">
+<rect x="0.5" y="4.5" width="214" height="66" fill="#F4F6F8" stroke="#13294B" stroke-width="1"></rect>
+<rect x="265.5" y="4.5" width="260" height="66" fill="#F4F6F8" stroke="#13294B" stroke-width="1"></rect>
+<text x="107" y="31" text-anchor="middle" font-size="18" font-weight="700" fill="#13294B">Stage 1</text>
+<text x="107" y="56" text-anchor="middle" font-size="18" fill="#1A202C">enroll <tspan font-weight="700" font-style="italic" fill="#934516">n₁</tspan> patients</text>
+<text x="395" y="31" text-anchor="middle" font-size="18" font-weight="700" fill="#13294B">Stage 2</text>
+<text x="395" y="56" text-anchor="middle" font-size="18" fill="#1A202C">enroll up to <tspan font-weight="700" font-style="italic" fill="#934516">n</tspan> patients</text>
+<line x1="220" y1="37" x2="252" y2="37" stroke="#2E6A9F" stroke-width="2"></line><polygon points="252,31 262,37 252,43" fill="#2E6A9F"></polygon>
+<text x="107" y="100" text-anchor="middle" font-size="18" fill="#5B6670">stop if ≤ <tspan font-weight="700" font-style="italic" fill="#934516">r₁</tspan> respond</text>
+<text x="395" y="100" text-anchor="middle" font-size="18" fill="#5B6670">go if &gt; <tspan font-weight="700" font-style="italic" fill="#934516">r</tspan> respond</text>
+</svg>
+<div style="font-size: var(--fs-label); line-height: 1.35; margin-top: 6px; color: #1A202C">Only four settings, so every possible design can be listed and the best is known exactly.</div></div>
 <div class="fragment" data-fragment-index="1" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
 <div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">3.6%</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">above the exact best design, on average</div></div>
 <div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">4</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">exact matches (dark points)</div></div>
 <div style="background: #E6F0F8; padding: 16px 16px 18px 16px; text-align: left"><div style="font-size: 46px; font-weight: 800; color: #2E6A9F; line-height: 1">All 12</div><div style="font-size: var(--fs-label); line-height: 1.3; margin-top: 8px; color: #1A202C">test problems met both targets</div></div>
 </div>
 <div style="margin-top: 26px; padding-top: 20px; border-top: 1px solid #C9D1D9; display: flex; flex-direction: column; gap: 16px">
-<div style="text-align: left"><div style="font-size: var(--fs-body); font-weight: 700; color: #13294B">Simon’s two-stage design</div><div style="font-size: var(--fs-label); line-height: 1.35; margin-top: 2px; color: #1A202C">Stop after a first group if too few respond.</div></div>
-<div style="text-align: left"><div style="font-size: var(--fs-body); font-weight: 700; color: #13294B">Only four settings</div><div style="font-size: var(--fs-label); line-height: 1.35; margin-top: 2px; color: #1A202C">Every possible design can be listed, so the best is known exactly.</div></div>
 <div style="text-align: left"><div style="font-size: var(--fs-body); font-weight: 700; color: #13294B">Three ways to define best</div>
 <div style="margin-top: 6px; display: grid; grid-template-columns: 116px minmax(0, 1fr); row-gap: 4px; font-size: var(--fs-label); line-height: 1.35; color: #1A202C">
 <div style="font-weight: 700">Optimal</div><div>fewest patients on average</div>
@@ -971,7 +998,7 @@ How large should the max sample size be when an early stop could leave part of i
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** BATON 0.4.0 manuscript Section 5. The steering committee used the trade-off displays to weigh maximum and expected enrollment when choosing a design for the first subtrial. Slide 24 gives the measured compute comparison on the randomized cohort.
+**Pull-from-if-needed:** BATON 0.4.0 manuscript Section 5. The steering committee used the trade-off displays to weigh maximum and expected enrollment when choosing a design for the first subtrial. Slide 25 gives the measured compute comparison on the randomized cohort.
 
 **Q&A pockets:** *What if an interim analysis happens at a different time?* The reported operating characteristics apply to the schedule that was simulated. A revised schedule needs a new check.
 
@@ -1031,7 +1058,7 @@ Different priorities give different verified options. For its first subtrial, EV
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** The dashed line guides the eye between the three returned designs. The Optimal criterion (H0-Optimal in the manuscript) minimizes expected enrollment when the treatment is inactive, Minimax minimizes the max sample size, and Admissible weights both. Optimal and Minimax are Simon’s 1989 criteria and Admissible is the compromise of Jung and colleagues. In Simon’s setting each can be found by enumeration, as on slide 23. Here the design is Bayesian and adaptive with a time-to-event outcome, so BATON searches for the design that best meets each criterion by simulation. The original two-stage criteria are in [Simon, 1989](https://pubmed.ncbi.nlm.nih.gov/2702835/) and [Jung et al., 2004](https://pubmed.ncbi.nlm.nih.gov/14755389/). BATON 0.4.0 manuscript Table 4 reports the designs and verification numbers (rows R23 to R25 of final_summary_designs.csv).
+**Pull-from-if-needed:** The dashed line guides the eye between the three returned designs. The Optimal criterion (H0-Optimal in the manuscript) minimizes expected enrollment when the treatment is inactive, Minimax minimizes the max sample size, and Admissible weights both. Optimal and Minimax are Simon’s 1989 criteria and Admissible is the compromise of Jung and colleagues. In Simon’s setting each can be found by enumeration, as on slide 24. Here the design is Bayesian and adaptive with a time-to-event outcome, so BATON searches for the design that best meets each criterion by simulation. The original two-stage criteria are in [Simon, 1989](https://pubmed.ncbi.nlm.nih.gov/2702835/) and [Jung et al., 2004](https://pubmed.ncbi.nlm.nih.gov/14755389/). BATON 0.4.0 manuscript Table 4 reports the designs and verification numbers (rows R23 to R25 of final_summary_designs.csv).
 
 **Decision (PI, 2026-11-17):** The steering committee chose the Admissible design, and the choice was made within the three-month window. The slide states this for the first subtrial and does not attach it to the 91-patient design shown.
 
@@ -1249,7 +1276,7 @@ The rest of this talk is about the second list.
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** Left column sources. Verification in fresh simulations and the hand-tuning story are slides 15, 21 and 26. The trade-off options are slides 26 and 27. The 76 core-hours and the 47 times figure are the grid comparison on slide 24, for one randomized subtrial. The seamless design is slide 28. Everything on the left is a simulation result for EVOLVE designs, before enrollment. Nothing on the right has been demonstrated.
+**Pull-from-if-needed:** Left column sources. Verification in fresh simulations and the hand-tuning story are slides 15, 22 and 27. The trade-off options are slides 27 and 28. The 76 core-hours and the 47 times figure are the grid comparison on slide 25, for one randomized subtrial. The seamless design is slide 29. Everything on the left is a simulation result for EVOLVE designs, before enrollment. Nothing on the right has been demonstrated.
 
 **Delivery:** Read the left column as what EVOLVE got from BATON in Phase II. Click, then read the three open questions slowly. Say that the rest of the talk is about these three, and that they are proposals and work in progress, not results.
 :::
@@ -1401,7 +1428,7 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 ```
 
 ::: {.notes}
-**Delivery:** Return to the BATON workflow from slide 18. We would replace the single-trial simulator and evaluator with ones that simulate and score the full program. Change the amount of enrollment in each stage, how many doses can remain in play, safety and activity thresholds, and the rule for what earlier data can contribute to confirmation. For each candidate, simulate complete paths under plausible dose–efficacy and toxicity scenarios. The search uses completed results to choose what to test next. Final candidates would be checked on fresh full-program simulations. BATON-D supplies the early dose-selection piece, and BATON-C helps ask which choices hold up across plausible assumptions. Then say “The hard part is the simulator, which must say how early signals relate to survival. We will vary those assumptions, as on slide 29.”
+**Delivery:** Return to the BATON workflow from slide 19. We would replace the single-trial simulator and evaluator with ones that simulate and score the full program. Change the amount of enrollment in each stage, how many doses can remain in play, safety and activity thresholds, and the rule for what earlier data can contribute to confirmation. For each candidate, simulate complete paths under plausible dose–efficacy and toxicity scenarios. The search uses completed results to choose what to test next. Final candidates would be checked on fresh full-program simulations. BATON-D supplies the early dose-selection piece, and BATON-C helps ask which choices hold up across plausible assumptions. Then say “The hard part is the simulator, which must say how early signals relate to survival. We will vary those assumptions, as on slide 30.”
 
 **Delivery (early evidence):** Take overall survival as an example of a Phase III endpoint. An early randomized trial can plan to track survival with standardized follow-up or suitable linked records. Earlier patients start contributing follow-up sooner. If their outcomes are eligible under a prespecified analysis that accounts for selection, some events may already count when Phase III begins. That could reduce new recruitment or the wait for enough events. A separate option uses an early signal such as tumor response to forecast later event accrual and plan enrollment and follow-up. Predictions guide planning. The confirmatory analysis still uses observed outcomes. As in EVOLVE, set a minimum chance of valid confirmation when a safe and effective dose exists, limit false positives, and limit advancement of unsuitable doses. Count all simulated programs from Phase I onward, including those that stop. Compare total enrollment and time only among designs meeting the evidence targets. These are potential gains for the proposed extension to evaluate. See [FDA adaptive design guidance](https://www.fda.gov/media/78495/download) and [Stallard et al. on using early endpoints in interim decisions](https://pubmed.ncbi.nlm.nih.gov/24697322/).
 :::
@@ -1541,17 +1568,17 @@ Manuscript in revision
 ::: {.notes}
 **Q&A routing index (TriBix numbering)**
 - *Clinical phases* → slide 3. *Operation TrialBlazer and trials abroad* → B15. *Development time and cost* → slide 4.
-- *Late failure and sotorasib* → slides 5–7 and 34. *PARTNER and early randomized evidence* → slide 36.
+- *Late failure and sotorasib* → slides 5–7 and 35. *PARTNER and early randomized evidence* → slide 37.
 - *Why efficient designs are hard to find* → slides 8 and 12–16.
-- *Fixed versus adaptive and what patients gain* → slides 11 and 26–27.
-- *EVOLVE and the hand-tuning story* → slides 14, 15 and 26.
-- *Grid and random search* → slides 16 and 24 and the notes for slide 23. *Other optimizers* → B4.
-- *Surrogate, acquisition, and fresh simulations* → slides 18–21 and B1. *Search initialization* → B12.
-- *Benchmark and seed details* → slide 23 and B11 for all 12 scenarios, B2 and B7 for ten starts on one scenario.
-- *Choosing among feasible designs* → slides 25–27 and B3. *Seamless design* → slide 28 and B13.
-- *AI, assumptions, and judgment* → slides 29–31 and B5.
+- *Fixed versus adaptive and what patients gain* → slides 11 and 27–28.
+- *EVOLVE and the hand-tuning story* → slides 14, 15 and 27.
+- *Grid and random search* → slides 16 and 25 and the notes for slide 24. *Other optimizers* → B4.
+- *Surrogate, acquisition, and fresh simulations* → slides 19–22 and B1. *Search initialization* → B12.
+- *Benchmark and seed details* → slide 24 and B11 for all 12 scenarios, B2 and B7 for ten starts on one scenario.
+- *Choosing among feasible designs* → slides 26–28 and B3. *Seamless design* → slide 29 and B13.
+- *AI, assumptions, and judgment* → slides 30–32 and B5.
 - *Bidirectional stopping* → B6. *TNBC single-arm designs* → B8.
-- *Early dose selection and Phase III confirmation* → slide 35. *Whole-program calibration and borrowing* → slides 36–37. *What is shown and what is not yet shown* → slide 33. *Status of BATON extensions* → slide 38. *ADAPT background* → B9 and B10.
+- *Early dose selection and Phase III confirmation* → slide 36. *Whole-program calibration and borrowing* → slides 37–38. *What is shown and what is not yet shown* → slide 34. *Status of BATON extensions* → slide 39. *ADAPT background* → B9 and B10.
 - *Company or translation* → disclose the relationship verbally in one sentence.
 :::
 
@@ -1769,11 +1796,11 @@ TNBC single-arm subtrial. Optimal: 32 max, 11.2 expected. Admissible: 30 and 13.
 :::
 
 ::: {.notes}
-**Pull-from-if-needed:** BATON 0.4.0 package, manuscript Table 3 and Section 4.1 (results/retune_xphil/final_summary_designs.csv, rows R01 to R03). Verified power and type I error are 82.1% and 1.4% for Optimal, 86.1% and 1.5% for Admissible, and 96.1% and 1.2% for Minimax. The randomized ER-positive designs are on main slides 26 and 27.
+**Pull-from-if-needed:** BATON 0.4.0 package, manuscript Table 3 and Section 4.1 (results/retune_xphil/final_summary_designs.csv, rows R01 to R03). Verified power and type I error are 82.1% and 1.4% for Optimal, 86.1% and 1.5% for Admissible, and 96.1% and 1.2% for Minimax. The randomized ER-positive designs are on main slides 27 and 28.
 
 **Q&A pocket:** *Why does Minimax sit to the right of Admissible at the same max sample size?* Minimax required at least eight observed events before an interim decision, which excluded the Admissible design’s four-event rule. The Minimax design also had higher verified power.
 
-**Delivery:** Backup for the single-arm question on slide 27.
+**Delivery:** Backup for the single-arm question on slide 28.
 :::
 
 ## Backup: the ARPA-H ask and the N-of-1 addition {.backup-slide data-menu-title="B9: ARPA-H ask"}
