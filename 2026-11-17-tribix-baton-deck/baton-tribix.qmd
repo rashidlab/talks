@@ -736,7 +736,7 @@ Section 3
       <div class="fragment" data-fragment-index="1" aria-hidden="true" style="width: 36px; text-align: center; font-size: var(--fs-lead); color: #2E6A9F;">&rarr;</div>
       <div class="fragment" data-fragment-index="1" style="width: 188px; height: 50px; box-sizing: border-box; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; text-align: center; font-size: var(--fs-body); font-weight: 700; background: #A6C9E4; border: 1px solid #13294B;"><span>82%</span><span>8%</span><span>15.1</span></div>
     </div>
-    <div class="fragment" data-fragment-index="3" style="display: flex; align-items: center; height: 50px; margin-top: 18px;">
+    <div class="fragment" data-fragment-index="4" style="display: flex; align-items: center; height: 50px; margin-top: 18px;">
       <div style="width: 84px; font-size: var(--fs-label); line-height: 1.15; color: var(--rl-accent-text); font-weight: 700;">Next<br/>design</div>
       <div style="width: 184px; height: 50px; box-sizing: border-box; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; text-align: center; font-size: var(--fs-body); color: var(--rl-accent-text); border: 1px dashed var(--rl-accent-text);"><span>.3</span><span>.8</span><span>31</span><span>5</span></div>
       <div style="width: 36px;"></div>
@@ -749,9 +749,9 @@ Section 3
       <div style="width: 188px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; font-size: var(--fs-label); line-height: 1.2;"><span>Power</span><span>Type I<br/>error</span><span>Expected<br/>enrollment</span></div>
     </div>
   </div>
-  <svg role="img" aria-label="Illustrative plot. Power estimates for nine tested settings with error bars and a dashed line at the 80 percent power target. A bracket joins the blue rows of X and Y to a nonlinear regression curve with an uncertainty band. An orange diamond marks the point on the curve chosen as the next design, and an orange arrow carries it back to the next design row." viewBox="0 0 660 400" width="660" height="400" style="display: block; font-family: 'Archivo', sans-serif;">
+  <svg class="fragment" data-fragment-index="2" role="img" aria-label="Illustrative plot. Power estimates for nine tested settings with error bars and a dashed line at the 80 percent power target. A bracket joins the blue rows of X and Y to a nonlinear regression curve with an uncertainty band. An orange diamond marks the point on the curve chosen as the next design, and an orange arrow carries it back to the next design row." viewBox="0 0 660 400" width="660" height="400" style="display: block; font-family: 'Archivo', sans-serif;">
     <text x="110" y="20" font-size="20" font-weight="700" fill="#13294B">Nonlinear regression of Y on X, fit to the blue rows</text>
-    <text class="fragment" data-fragment-index="2" x="110" y="42" font-size="18" fill="#5B6670">The curve predicts power between tested settings</text>
+    <text class="fragment" data-fragment-index="3" x="110" y="42" font-size="18" fill="#5B6670">The curve predicts power between tested settings</text>
     <line x1="110" y1="60" x2="640" y2="60" stroke="#E3E8ED" stroke-width="1"></line>
     <line x1="110" y1="161" x2="640" y2="161" stroke="#E3E8ED" stroke-width="1"></line>
     <line x1="110" y1="211.5" x2="640" y2="211.5" stroke="#E3E8ED" stroke-width="1"></line>
@@ -763,7 +763,7 @@ Section 3
     <text x="102" y="268" text-anchor="end" font-size="18" fill="#5B6670">0.2</text>
     <text x="66" y="161" text-anchor="middle" font-size="18" font-weight="700" fill="#13294B" transform="rotate(-90 66 161)">Power</text>
     <text x="375" y="283" text-anchor="middle" font-size="18" font-weight="700" fill="#13294B">One design setting</text>
-    <g class="fragment" data-fragment-index="2">
+    <g class="fragment" data-fragment-index="3">
       <path d="M12,64 L4,64 M12,276 L4,276 M12,64 L12,276 M12,170 L32,170" fill="none" stroke="#2E6A9F" stroke-width="3"></path>
       <polygon points="43,170 31,163 31,177" fill="#2E6A9F"></polygon>
       <text x="19" y="160" font-size="18" font-weight="700" fill="#2E6A9F">fit</text>
@@ -771,7 +771,7 @@ Section 3
     </g>
     <line x1="110" y1="110.5" x2="640" y2="110.5" stroke="#2E6A9F" stroke-width="2" stroke-dasharray="7 6"></line>
     <text x="118" y="102" font-size="18" font-weight="700" fill="#2E6A9F">80% power target</text>
-    <g class="fragment" data-fragment-index="2">
+    <g class="fragment" data-fragment-index="3">
       <path d="M110,164 C145,175 180,184 216,184 S290,175 322,161 S390,134 428,123 S500,102 534,98 S610,90 640,90" fill="none" stroke="#2E6A9F" stroke-width="3.5"></path>
       <text x="336" y="218" font-size="18" font-weight="600" fill="#2E6A9F">model’s prediction for</text>
       <text x="336" y="238" font-size="18" font-weight="600" fill="#2E6A9F">designs never simulated</text>
@@ -783,7 +783,7 @@ Section 3
     <g fill="#13294B">
       <circle cx="142" cy="171" r="5.5"></circle><circle cx="195" cy="178.5" r="5.5"></circle><circle cx="253" cy="194" r="5.5"></circle><circle cx="301" cy="161" r="5.5"></circle><circle cx="359" cy="143.5" r="5.5"></circle><circle cx="417" cy="126" r="5.5"></circle><circle cx="460" cy="116" r="5.5"></circle><circle cx="523" cy="95.5" r="5.5"></circle><circle cx="587" cy="75.5" r="5.5"></circle>
     </g>
-    <g class="fragment" data-fragment-index="3">
+    <g class="fragment" data-fragment-index="4">
       <path d="M556,108 L556,319 L12,319" fill="none" stroke="#E07C24" stroke-width="3" stroke-dasharray="8 6"></path>
       <polygon points="0,319 14,311 14,327" fill="#E07C24"></polygon>
       <polygon points="556,84 567,95 556,106 545,95" fill="#E07C24" stroke="#13294B" stroke-width="1.5"></polygon>
@@ -792,7 +792,7 @@ Section 3
     </g>
   </svg>
 </div>
-<div style="text-align: center; color: #2E6A9F; font-weight: 700; font-size: var(--fs-lead); margin-top: 0.7em;"><span class="fragment" data-fragment-index="1">Simulate</span><span class="fragment" data-fragment-index="2"> &rarr; Fit <i>Y</i> from <i>X</i></span><span class="fragment" data-fragment-index="3"> &rarr; Choose</span></div>
+<div style="text-align: center; color: #2E6A9F; font-weight: 700; font-size: var(--fs-lead); margin-top: 0.7em;"><span class="fragment" data-fragment-index="1">Simulate</span><span class="fragment" data-fragment-index="3"> &rarr; Fit <i>Y</i> from <i>X</i></span><span class="fragment" data-fragment-index="4"> &rarr; Choose</span></div>
 <div class="source" style="text-align: center; margin-top: 0.3em;">Illustrative values</div>
 ```
 
@@ -801,7 +801,7 @@ Section 3
 
 **Q&A pockets:** *What are operating characteristics?* They describe how the trial behaves when repeated under specified assumptions. Power, type I error, and expected enrollment are examples.
 
-**Delivery:** Show how one row of settings (X) pairs with one row of simulation results (Y). On the first click, reveal the new design. On the second, show the simulation results for that row. On the third, show how the fit predicts power for untested settings, with a band indicating uncertainty. Point to the 80% target. On the fourth, reveal the dashed row. BATON chooses the next design by weighing potential improvement and feasibility. Its outcomes are pending until that design is simulated.
+**Delivery:** Show how one row of settings (X) pairs with one row of simulation results (Y). On the first click, reveal the new design. On the second, show the simulation results for that row. On the third, bring in the plot of simulated power for the tested settings. On the fourth, show how the fit predicts power for untested settings, with a band indicating uncertainty. Point to the 80% target. On the fifth, reveal the dashed row. BATON chooses the next design by weighing potential improvement and feasibility. Its outcomes are pending until that design is simulated.
 :::
 
 ## BATON balances potential improvement with feasibility {data-menu-title="Choosing the next design"}
@@ -905,8 +905,8 @@ Section 4
 <div style="background: #F4F6F8; padding: 14px 20px; font-size: var(--fs-body); line-height: 1.35"><div style="font-weight: 700">Simon</div><div>4 settings. Every design can be listed.</div></div>
 <div style="background: #F4F6F8; padding: 14px 20px; font-size: var(--fs-body); line-height: 1.35"><div><span style="font-weight: 700">EVOLVE</span> (the breast cancer platform trial)</div><div>8 to 13 settings. Listing every design is not possible.</div></div>
 </div>
-<div style="margin-top: 22px; font-size: var(--fs-label); color: #5B6670">One randomized EVOLVE subtrial, 8 settings. The score blends max sample size and expected enrollment.</div>
-<div role="group" aria-label="Score by search method. BATON 51.3 with 76 core-hours. Grid with the same effort 101.3. Finer grid 70.5 with 3,594 core-hours. Lower is better." style="margin-top: 10px; display: grid; grid-template-columns: 300px minmax(0, 1fr) 190px; column-gap: 20px; align-items: center; font-variant-numeric: tabular-nums">
+<div class="fragment" data-fragment-index="0" style="margin-top: 22px; font-size: var(--fs-label); color: #5B6670">One randomized EVOLVE subtrial, 8 settings. The score blends max sample size and expected enrollment.</div>
+<div class="fragment" data-fragment-index="0" role="group" aria-label="Score by search method. BATON 51.3 with 76 core-hours. Grid with the same effort 101.3. Finer grid 70.5 with 3,594 core-hours. Lower is better." style="margin-top: 10px; display: grid; grid-template-columns: 300px minmax(0, 1fr) 190px; column-gap: 20px; align-items: center; font-variant-numeric: tabular-nums">
 <div style="padding-bottom: 8px; border-bottom: 2px solid #13294B"></div>
 <div style="padding-bottom: 8px; border-bottom: 2px solid #13294B; font-size: var(--fs-label); font-weight: 700">Score <span style="font-weight: 700; color: var(--rl-accent-text)">(lower is better)</span></div>
 <div style="padding-bottom: 8px; border-bottom: 2px solid #13294B; font-size: var(--fs-label); font-weight: 700; text-align: right">Computing</div>
@@ -923,8 +923,8 @@ Section 4
 ```
 
 
-::: {.landing .fragment style="font-size: var(--fs-lead);"}
-A coarse grid does worse. A finer grid costs about 47 times more and still does worse.<br/>It is the hyperparameter tuning problem.
+::: {.landing style="font-size: var(--fs-lead);"}
+[A coarse grid does worse. A finer grid costs about 47 times more and still does worse.]{.fragment data-fragment-index="1"}<br/>[It is the hyperparameter tuning problem.]{.fragment data-fragment-index="2"}
 :::
 ::: {.notes}
 **Pull-from-if-needed (source):** BATON 0.4.0 manuscript Section 4.4 and Web Appendix D.5.4. On the Scenario B Admissible between-arm problem, the three-level grid attempted 6,561 evaluations and used 3,593.9 allocated core-hours. BATON comparison runs used a median 76.3 allocated core-hours, including search and certification. The grid selected a certified design with loss 70.45, versus BATON’s mean of 51.28. Core-hours measure allocated computing resources, for example 16 cores for one hour is 16 core-hours. The search pictures are schematic. A randomized, space-filling design supplies the initial sample when eligible prior evaluations are unavailable, and some EVOLVE runs reused earlier evaluations.
@@ -1038,13 +1038,13 @@ Different priorities give the trial team different verified options.
 
 ```{=html}
 <div class="seamless-flow inset" style="font-size: var(--fs-lead);" role="group" aria-label="Stage one screens the experimental arm. A go decision leads to the randomized comparison. A no-go or ambiguous decision follows the prespecified stage-one rules.">
-  <div class="seamless-start">Randomize patients from the start</div>
-  <div class="seamless-screen">
+  <div class="seamless-start fragment" data-fragment-index="0">Randomize patients from the start</div>
+  <div class="seamless-screen fragment" data-fragment-index="0">
     <div class="story-card"><strong>Stage 1</strong><span>Screen the experimental arm against a historical benchmark.</span></div>
     <span class="story-arrow" aria-hidden="true">&rarr;</span>
     <div class="story-card"><strong>Decision to proceed</strong><span>Apply the planned rule.</span></div>
   </div>
-  <div class="seamless-paths fragment" data-fragment-index="0">
+  <div class="seamless-paths fragment" data-fragment-index="1">
     <div class="story-card"><strong>No-go or ambiguous</strong><span>Resolve under Stage 1 rules.</span></div>
     <span class="story-arrow" aria-hidden="true" style="visibility: hidden">&rarr;</span>
     <div class="story-card story-result"><strong>Go to Stage 2</strong><span>Compare experimental and reference arms.</span></div>
@@ -1086,7 +1086,7 @@ Different priorities give the trial team different verified options.
 </div>
 ```
 
-::: {.landing .fragment data-fragment-index="0" style="font-size: var(--fs-lead);"}
+::: {.landing .fragment data-fragment-index="1" style="font-size: var(--fs-lead);"}
 Swap in new rules and a simulator. Reuse search and verification.
 :::
 
@@ -1095,7 +1095,7 @@ Swap in new rules and a simulator. Reuse search and verification.
 
 **Q&A pockets:** *What does this demonstrate?* The framework can accept a different trial design and use the same basic calibration workflow. In the calibrated examples the randomized stage stopped at its first look in every run. Backup B13 has more detail. *Does the team alter the rules after seeing data?* The rule for proceeding is chosen and calibrated before enrollment.
 
-**Delivery:** About 45 seconds. “We wanted to see how far the same workflow could stretch, so we tried a more complicated design. Both groups enroll from the start. We first screen the experimental group against a benchmark, then use a rule to decide whether to proceed to a direct comparison.” Reveal the second stage. “We swapped in the new trial rules, simulator, and targets. The search and verification steps were the same in outline.” Ask what the team needs to get right in the new simulator.
+**Delivery:** About 45 seconds. The slide opens on the schematic alone. The first click brings in the summary boxes above it, and the second reveals the two paths. “We wanted to see how far the same workflow could stretch, so we tried a more complicated design. Both groups enroll from the start. We first screen the experimental group against a benchmark, then use a rule to decide whether to proceed to a direct comparison.” Reveal the second stage. “We swapped in the new trial rules, simulator, and targets. The search and verification steps were the same in outline.” Ask what the team needs to get right in the new simulator.
 :::
 
 ## What if the simulator assumes perfect classification? {data-menu-title="Imperfect biomarkers"}
@@ -1153,16 +1153,16 @@ Swap in new rules and a simulator. Reuse search and verification.
 **Delivery:** Connect to the preceding slide: the search can reuse the framework as soon as the team supplies a simulator for the new design. Use the example of one specimen that receives a different test call, adapted from the FDA OSEL talk *When Biomarkers, Assays, and Protocols Co-evolve*. If eligibility depends on the biomarker, simulate both kinds of errors using plausible rates. That changes who is enrolled and may change the evidence at the interim review. Check how the same stopping rule behaves under the plausible scenarios, then tune it if needed. Close with “Now imagine asking an AI tool to write that simulator. Which test does it assume?”
 :::
 
-## A public service announcement on AI-written simulations {data-menu-title="PSA: AI-generated simulations"}
+## A public service announcement on AI-written code {data-menu-title="PSA: AI-written code"}
 
 ::: {.columns .media-pair style="align-items: center;"}
 ::: {.column width="65%"}
 ::: {.frame-box style="font-size: var(--fs-sub);"}
-**The help:** AI can write a trial simulator quickly, including a custom one for BATON.
+**The help:** AI can write analysis code quickly, including a custom trial simulator for BATON.
 
-**The danger:** The code runs and the results look plausible, yet it may assume every biomarker call is correct.
+**The danger:** The code runs and the results look plausible, yet it can answer a different question than the one you asked.
 
-**The check:** Which patients does the code actually put in the subtrial?
+**The check:** Can you say what the code assumes, and would you defend each assumption?
 :::
 :::
 ::: {.column width="28%"}
@@ -1185,7 +1185,7 @@ If you cannot explain or defend a choice you made with AI’s help, you may be d
 
 **Q&A pockets:** *Does BATON see patient data?* This use of AI is model-guided search over simulated trials, before enrollment. The StatsUpAI example is a broader lesson about what a researcher needs to judge.
 
-**Delivery:** Keep the tone light, this is a public service announcement and not a warning against using AI. Take the question from the preceding slide. Start with the benefit. An AI coding tool can speed up the implementation, and that makes custom designs practical for teams that could not have built a simulator before. This applies to BATON and to any analysis. It might leave out test errors, and the resulting power estimate can look perfectly plausible. Ask the audience what they would check first. Before trusting the estimate, trace who the code puts into each cohort. Point briefly to the StatsUpAI companion resources. Reveal the last line and offer it as a test people can apply to their own work. If you cannot explain or defend a choice you made with AI’s help, you may be delegating too much. Then say “Writing and running the code is one job. Knowing what it has to represent is ours.”
+**Delivery:** Keep the tone light, this is a public service announcement and not a warning against using AI. Take the question from the preceding slide. Start with the benefit. An AI coding tool can speed up the implementation, and that makes custom designs practical for teams that could not have built a simulator before. This applies to BATON and to any analysis. It might leave out test errors, and the resulting power estimate can look perfectly plausible. Ask the audience what they would check first. Before trusting the estimate, list what the code assumes. In the biomarker example, that means tracing who the code puts into each subtrial. Point briefly to the StatsUpAI companion resources. Reveal the last line and offer it as a test people can apply to their own work. If you cannot explain or defend a choice you made with AI’s help, you may be delegating too much. Then say “Writing and running the code is one job. Knowing what it has to represent is ours.”
 :::
 
 ## You can’t evaluate what you don’t know, and you should never outsource your judgment to an external tool. {.judgment-slide data-menu-title="Judgment stays with you"}
@@ -1195,7 +1195,7 @@ If you cannot explain or defend a choice you made with AI’s help, you may be d
 
 **Q&A pockets:** *What can we delegate?* BATON can propose which design to evaluate next. The team judges whether the problem and assumptions are appropriate and reviews the result.
 
-**Delivery:** Having just asked who enters the simulated cohort, read the line once and pause. Then widen the question: “So far we’ve been deciding what one trial needs to learn. What changes when an early trial’s decision shapes what the next one can learn?”
+**Delivery:** Having just asked what the code assumes, read the line once and pause. Then widen the question: “So far we’ve been deciding what one trial needs to learn. What changes when an early trial’s decision shapes what the next one can learn?”
 :::
 
 ## {.section-divider data-state="hide-footer" data-background-color="#13294B" data-menu-title="Section 5: Whole-program calibration"}
