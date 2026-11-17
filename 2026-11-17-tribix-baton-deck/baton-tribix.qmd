@@ -1282,13 +1282,15 @@ The rest of this talk is about the second list.
 **Delivery:** Read the left column as what EVOLVE got from BATON in Phase II. Click, then read the three open questions slowly. Say that the rest of the talk is about these three, and that they are proposals and work in progress, not results.
 :::
 
-## What does Phase III inherit? {data-menu-title="What Phase III inherits"}
+## Phases are planned one at a time, and the costs add up {data-menu-title="What Phase III inherits"}
 
 ```{=html}
 <div class="program-handoff-example inset">
   <div class="late-failure-callback">
-    <strong>54%</strong>
-    <div><b>of 640 therapeutics failed in late-stage development</b></div>
+    <strong style="white-space: nowrap">10.5 years</strong>
+    <div><b>from Phase I to approval</b></div>
+    <strong style="margin-left: 0.6em">54%</strong>
+    <div><b>failed in late-stage development</b></div>
   </div>
   <div class="story-flow program-handoff-row">
     <div class="story-card">
@@ -1313,18 +1315,18 @@ The rest of this talk is about the second list.
     </div>
   </div>
   <div class="phase-scale-key">Typical enrollment. One dot is 25 participants.</div>
-  <div class="story-question fragment" data-fragment-index="1">What should earlier trials learn to help Phase III confirm real benefit?</div>
+  <div class="story-question fragment" data-fragment-index="1">Could we design the phases together, to reach a reliable answer sooner, with fewer patients and lower cost?</div>
   <p class="program-source source"><a href="https://www.fda.gov/patients/drug-development-process/step-3-clinical-research">FDA trial sizes</a> &middot; <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2565686">Hwang et al. (2016)</a> &middot; <a href="https://www.fda.gov/about-fda/reports/22-case-studies-where-phase-2-and-phase-3-trials-had-divergent-results">FDA case studies (2017)</a></p>
 </div>
 ```
 
 ::: {.notes}
-**Delivery:** Bring back slide 5. Of 640 therapeutics entering Phase III or other pivotal trials in 1998–2008, 344 (54%) failed in late-stage development. Among those 344, about 57% were attributed to inadequate efficacy, 17% to safety, 22% to commercial reasons, and 5% had unknown reasons (rounded). Some failures correctly rule out an ineffective or unsafe option.
+**Delivery:** Say “Today each phase is designed on its own, and Phase III inherits whatever the earlier trials happened to learn. That is slow and expensive, and many candidates still fail late.” Then reveal the question. Bring back slide 5. Of 640 therapeutics entering Phase III or other pivotal trials in 1998–2008, 344 (54%) failed in late-stage development. Among those 344, about 57% were attributed to inadequate efficacy, 17% to safety, 22% to commercial reasons, and 5% had unknown reasons (rounded). Some failures correctly rule out an ineffective or unsafe option.
 
 Phase III inherits both a choice and the uncertainty around it. The FDA reviewed 22 selected cases where Phase III overturned promising Phase II findings. For example, torcetrapib raised HDL cholesterol in Phase II, but patients on the drug had more major cardiac events in Phase III. That is a concrete example of how the choice of what to measure affects the evidence available when deciding to advance. Short follow-up can also leave harms uncertain. These case studies illustrate specific gaps. The share of the historical 54% attributable to earlier design choices is unknown. Point to the left cards first, then reveal the jump in patient and time commitment at Phase III. The labels are FDA’s general drug development ranges. The dots illustrate trials of 50, 200, and 600 participants. Actual designs vary and the ranges overlap. The listed years refer to study duration. On the last click, ask what uncertainty is worth resolving before the larger commitment. Call back to the open question on slide 6, that more patients later may not answer what the early trial never asked. Earlier studies can help choose the dose and population and plan which outcomes to carry forward. That planning can improve the chance of valid confirmation when there is real benefit and help stop weak candidates earlier. Transition: “One decision we can change is which dose we carry forward.”
 :::
 
-## An early dose rule can shape Phase III confirmation {data-menu-title="Illustrative confirmation paths"}
+## How the dose is chosen in Phase I can shape Phase III {data-menu-title="Illustrative confirmation paths"}
 
 ```{=html}
 <div class="confirmation-teaser inset">
@@ -1334,7 +1336,7 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
     <div class="story-card"><strong>A · Tolerability first</strong><span>Choose the dose by a toxicity limit.</span><span style="display: block; margin-top: 0.45em; padding-top: 0.45em; border-top: 1px solid #C9D1D9; color: #13294B; font-weight: 600;">The higher dose advances. More patients may cut back or stop.</span></div>
     <div class="story-card fragment" data-fragment-index="0"><strong>B · Activity and tolerability</strong><span>Compare the doses on both measures.</span><span style="display: block; margin-top: 0.45em; padding-top: 0.45em; border-top: 1px solid #C9D1D9; color: #13294B; font-weight: 600;">The lower dose advances. It may take more patients early.</span></div>
   </div>
-  <div class="story-question fragment" data-fragment-index="1"><span style="display: block; font-size: var(--fs-label); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #2E6A9F; margin-bottom: 0.3em;">To test in simulation</span>From Phase I onward, how often does each rule yield valid Phase III confirmation, and with how many patients?</div>
+  <div class="story-question fragment" data-fragment-index="1"><span style="display: block; font-size: var(--fs-label); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #2E6A9F; margin-bottom: 0.3em;">To test in simulation</span>For each way of choosing the dose, how often does Phase III confirm benefit, and with how many patients?</div>
 </div>
 ```
 
@@ -1344,11 +1346,11 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 **Delivery (the example):** Use a hypothetical example inspired by the opening dose question. Both doses meet the early safety limit. Early tumor shrinkage looks similar and the higher dose causes more side effects. Here, a tolerability-led escalation rule advances the higher dose. More interruptions or discontinuations in a longer trial could change the observed benefit. A strategy comparing early activity and tolerability could advance the lower dose and might need more early participants. The simulation would compare the trade-off. Count from Phase I, include programs that stop early in the denominator, and tally patients across all phases. Pause on those two outcomes before moving to PARTNER.
 :::
 
-## What else carries forward besides the dose? {data-menu-title="PARTNER and reuse of evidence"}
+## Reusing earlier patients could save time. How much should count? {data-menu-title="PARTNER and reuse of evidence"}
 
 ```{=html}
 <div class="partner-example inset">
-  <div class="program-label">PARTNER · Early randomized outcomes counted in the final comparison</div>
+  <div class="program-label">PARTNER · A rare trial that counted earlier patients in its final comparison</div>
   <div class="partner-flow" role="group" aria-label="Outcomes from early and later patients are combined within each retained randomized arm for the final comparison.">
     <div class="partner-flow-row partner-flow-header">
       <strong>Treatment arm</strong>
@@ -1388,7 +1390,7 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 ::: {.notes}
 **Source:** Abraham et al., [PARTNER trial, Nature 2024](https://www.nature.com/articles/s41586-024-07384-2), Methods and results. In the reported germline BRCA wild-type cohort of this Phase II–III breast cancer trial, an independent committee used prespecified criteria to select the schedule that started olaparib 48 hours after carboplatin–paclitaxel. The primary comparison included patients assigned to the control or selected schedule in stages 1 and 2 alongside those assigned in stage 3. The primary endpoint was pathologic complete response at surgery. The observed rates were 52% with chemotherapy alone and 51% with the selected olaparib schedule.
 
-**Delivery:** “The dose is one thing we carry forward. The evidence is another.” Blue icons mark patients who were already randomized. On the first click, show the two arms enrolling new patients in stage 3 and the schedule that was dropped. On the second click, trace the blue icons into the final column. Each early patient stays in their original arm and contributes the recorded outcome alongside patients enrolled later. Compare how often surgery found no residual invasive cancer in the retained olaparib arm versus the control arm. The selected schedule did not improve the primary endpoint in this cohort. The icons show inclusion and are schematic. For BATON-Phaseless the proposed question is how much early evidence can count and how many new patients are needed, with an analysis that accounts for selection and protects type I error. See [FDA adaptive design guidance](https://www.fda.gov/media/78495/download).
+**Delivery:** Say plainly that this is not standard practice. PARTNER planned it within one trial. Across phases, nobody yet knows how much earlier evidence should count, how to size each phase around it, or what that does to type I error and power. “The dose is one thing we carry forward. The evidence is another.” Blue icons mark patients who were already randomized. On the first click, show the two arms enrolling new patients in stage 3 and the schedule that was dropped. On the second click, trace the blue icons into the final column. Each early patient stays in their original arm and contributes the recorded outcome alongside patients enrolled later. Compare how often surgery found no residual invasive cancer in the retained olaparib arm versus the control arm. The selected schedule did not improve the primary endpoint in this cohort. The icons show inclusion and are schematic. For BATON-Phaseless the proposed question is how much early evidence can count and how many new patients are needed, with an analysis that accounts for selection and protects type I error. See [FDA adaptive design guidance](https://www.fda.gov/media/78495/download).
 :::
 
 ## Extend BATON from one trial to the whole program {data-menu-title="Whole-program search and early evidence"}
