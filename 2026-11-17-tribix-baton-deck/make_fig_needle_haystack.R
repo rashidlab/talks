@@ -61,7 +61,7 @@ header <- function(x, h, s, adj = 0.5) {
 # 2026-11-16: side legend replaced by one row along the bottom and captions cut to one line,
 # so both panels are about 30% larger at the same rendered height.
 png("images/fig_needle_haystack.png", width = 3237, height = 1900, res = 300,
-    type = "cairo", family = "Lato")
+    type = "cairo", family = "Archivo")
 par(mar = c(0, 0, 0, 0), bg = "white")
 plot.new(); plot.window(xlim = c(0.2, 13.4), ylim = c(0.35, 8.1), asp = 1)
 set.seed(7)
@@ -96,7 +96,7 @@ dev.off()
 # ---- Figures 2 and 3: same design space, before and after fitting ------------
 start_panel <- function(filename) {
   png(filename, width = 1380, height = 1380, res = 300,
-      type = "cairo", family = "Lato")
+      type = "cairo", family = "Archivo")
   par(mar = c(0, 0, 0, 0), bg = "white", xaxs = "i", yaxs = "i")
   plot.new()
   plot.window(xlim = c(-0.07, iw + 0.07), ylim = c(-0.07, iw + 0.07), asp = 1)

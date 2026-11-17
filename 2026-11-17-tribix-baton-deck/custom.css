@@ -49,6 +49,8 @@ $presentation-font:          "Archivo", -apple-system, BlinkMacSystemFont, sans-
   --rl-navy-deep:     #0B1D3A;
   --rl-carolina:      #4B9CD3;
   --rl-carolina-deep: #2E6A9F;
+  --rl-accent:        #E07C24;  /* warm accent for marks: fills, markers, lines */
+  --rl-accent-text:   #934516;  /* warm accent for text and outlines */
   --rl-graphite:      #5B6670;
   --rl-ink:           #1A202C;
   --rl-fog:           #F4F6F8;

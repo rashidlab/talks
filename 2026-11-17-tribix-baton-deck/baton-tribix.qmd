@@ -78,22 +78,22 @@ Section 1
 <div style="position: absolute; left: 0; top: 0; width: 100%; height: 300px; display: grid; grid-template-columns: 215fr 160fr 215fr 160fr 215fr 40fr 110fr; align-items: center">
 <div style="height: 240px; box-sizing: border-box; background: #FFFFFF; border: 1.5px solid #13294B; padding: 18px 14px; display: flex; flex-direction: column; justify-content: center; gap: 10px; text-align: center"><div style="font-size: 30px; font-weight: 800; color: #13294B">Phase I</div><div style="font-size: 20px; line-height: 1.35; color: #13294B">First trials in people. Is it safe, and at what dose?</div></div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 10px; text-align: center">
-<div style="font-size: 26px; font-weight: 800; color: #934516; line-height: 1.05">3 to 9 months</div>
-<div style="align-self: stretch; display: flex; align-items: center"><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-right: 10px solid #934516"></div><div style="flex: 1 1 auto; height: 0; border-top: 3px dashed #934516"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #934516"></div></div>
-<div style="font-size: 19px; line-height: 1.25; color: #934516; font-weight: 600">typical gap in oncology</div>
+<div style="font-size: 26px; font-weight: 800; color: var(--rl-accent-text); line-height: 1.05">3 to 9 months</div>
+<div style="align-self: stretch; display: flex; align-items: center"><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-right: 10px solid var(--rl-accent-text)"></div><div style="flex: 1 1 auto; height: 0; border-top: 3px dashed var(--rl-accent-text)"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid var(--rl-accent-text)"></div></div>
+<div style="font-size: 19px; line-height: 1.25; color: var(--rl-accent-text); font-weight: 600">typical gap in oncology</div>
 </div>
 <div style="height: 200px; box-sizing: border-box; background: #FFFFFF; border: 1.5px solid #13294B; padding: 16px 14px; display: flex; flex-direction: column; justify-content: center; gap: 10px; text-align: center"><div style="font-size: 30px; font-weight: 800; color: #13294B">Phase II</div><div style="font-size: 21px; line-height: 1.35; color: #13294B">Is there a sign that it works?</div></div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 10px; text-align: center">
-<div style="font-size: 28px; font-weight: 800; color: #934516; line-height: 1.05">17 months</div>
-<div style="align-self: stretch; display: flex; align-items: center"><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-right: 10px solid #934516"></div><div style="flex: 1 1 auto; height: 0; border-top: 3px dashed #934516"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #934516"></div></div>
-<div style="font-size: 18px; line-height: 1.25; color: #934516; font-weight: 600; text-wrap: balance">average gap, where a <span style="white-space: nowrap">Phase II–III</span> gap exists</div>
+<div style="font-size: 28px; font-weight: 800; color: var(--rl-accent-text); line-height: 1.05">17 months</div>
+<div style="align-self: stretch; display: flex; align-items: center"><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-right: 10px solid var(--rl-accent-text)"></div><div style="flex: 1 1 auto; height: 0; border-top: 3px dashed var(--rl-accent-text)"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid var(--rl-accent-text)"></div></div>
+<div style="font-size: 18px; line-height: 1.25; color: var(--rl-accent-text); font-weight: 600; text-wrap: balance">average gap, where a <span style="white-space: nowrap">Phase II–III</span> gap exists</div>
 </div>
 <div style="height: 160px; box-sizing: border-box; background: #FFFFFF; border: 1.5px solid #13294B; padding: 8px 12px; display: flex; flex-direction: column; justify-content: center; gap: 4px; text-align: center"><div style="font-size: 28px; font-weight: 800; color: #13294B; line-height: 1.1">Phase III</div><div style="font-size: 18px; line-height: 1.25; color: #13294B">Often the pivotal trial. Is there convincing evidence of benefit?</div></div>
 <div aria-hidden="true" style="text-align: center; font-size: 30px; color: #2E6A9F">&rarr;</div>
 <div style="box-sizing: border-box; background: #2E6A9F; color: #FFFFFF; font-size: 22px; font-weight: 700; padding: 14px 0; text-align: center">Approval</div>
 </div>
 </div>
-<div style="margin-top: 10px; display: flex; justify-content: space-between; font-size: 18px; color: #5B6670"><span>Fewer candidates continue. Schematic.</span><span>17 months: Tufts CSDD · non-expedited approvals, 2008 to 2018 (Getz 2021)</span></div>
+<div class="source" style="margin-top: 10px; display: flex; justify-content: space-between;"><span>Fewer candidates continue. Schematic.</span><span>17 months: Tufts CSDD · non-expedited approvals, 2008 to 2018 (Getz 2021)</span></div>
 <div class="story-question" style="margin-top: 44px;">Phases can overlap or be combined.</div>
 </div>
 ```
@@ -122,7 +122,7 @@ Section 1
 
 HHS reports that China's global share of Phase I trials first exceeded the U.S. share in 2021.
 
-[Operation TrialBlazer roadmap, 2026](https://www.hhs.gov/sites/default/files/operation-trialblazer.pdf)
+[[Operation TrialBlazer roadmap, 2026](https://www.hhs.gov/sites/default/files/operation-trialblazer.pdf)]{.source}
 :::
 :::
 ::: {.column width="49%"}
@@ -130,7 +130,7 @@ HHS reports that China's global share of Phase I trials first exceeded the U.S. 
 
 <img src="images/fig_australia_slope.png" style="width: 100%; display: block;" alt="Annual adult solid-tumor Phase I trial counts at Australian sites rose from 18 in 2012 to 75 in 2022. Only endpoints are plotted."/>
 
-[Adult solid-tumor Phase I trials with an Australian site. [Hitchen et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38923830/){style="white-space:nowrap"}]{style="display:block; text-align:center; font-size:0.75em; color:#5B6670; margin:0.25em auto 0;"}
+[Adult solid-tumor Phase I trials with an Australian site. [Hitchen et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38923830/){style="white-space:nowrap"}]{.source style="display:block; text-align:center; margin:0.25em auto 0;"}
 :::
 :::
 
@@ -156,7 +156,7 @@ HHS reports that China's global share of Phase I trials first exceeded the U.S. 
 Each year of development is a year patients wait.
 :::
 
-[BIO, Informa, QLS Advisors 2021 · Wouters, McKee, Luyten, JAMA 2020, corrected 2022]{.muted style="display:block; text-align:center; font-size:0.62em; margin-top: 1.2em;"}
+[BIO, Informa, QLS Advisors 2021 · Wouters, McKee, Luyten, JAMA 2020, corrected 2022]{.muted .source style="display:block; text-align:center; margin-top: 1.2em;"}
 
 ::: {.notes}
 **Sources (VERIFIED rows of tribix-opening-facts.md):** (1) Biotechnology Innovation Organization, Informa Pharma Intelligence, QLS Advisors. Clinical Development Success Rates and Contributing Factors 2011 to 2020. February 2021. https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf. Mean 10.5 years from phase I to approval, based on 6,151 successful phase transitions, 2011 to 2020 (2.3 years phase I, 3.6 phase II, 3.3 phase III, 1.3 regulatory). Oncology 10.3 years. Trade-association report, not peer reviewed. (2) Wouters OJ, McKee M, Luyten J. Estimated Research and Development Investment Needed to Bring a New Medicine to Market, 2009-2018. JAMA. 2020;323(9):844-853. doi:10.1001/jama.2020.1166, corrected 20 September 2022 (JAMA. 2022;328(11):1110). Median capitalized R&D investment $1141.7 million (95% CI 888.1 to 1480.8), 2018 dollars, failed trials included, 63 of 355 drugs approved 2009 to 2018 with public R&D data.
@@ -180,7 +180,7 @@ Each year of development is a year patients wait.
 <span style="font-size: 3.6em; font-weight: 800; color: #13294B; line-height: 1;">54%</span><br/>
 <span style="display: block; margin-top: 0.4em; font-size: 0.95em; color: #5B6670; text-wrap: balance;">failed in late-stage development<br/>640 therapeutics that entered<br/>pivotal trials in <span style="white-space: nowrap">1998–2008</span></span>
 <span style="display: block; margin-top: 0.5em; font-size: 0.8em; color: #13294B; font-weight: 600; text-wrap: balance;">Most often the drug did not show enough benefit (57% of failures).</span>
-<span style="display: block; margin-top: 0.5em; font-size: 0.62em; color: #5B6670;">Hwang et al., JAMA Internal Medicine 2016</span>
+<span class="source" style="display: block; margin-top: 0.5em;">Hwang et al., JAMA Internal Medicine 2016</span>
 </div>
 </div>
 ```
@@ -189,7 +189,7 @@ Each year of development is a year patients wait.
 What can we do in the early trials to make a late failure less likely?
 :::
 
-[Late failures have many causes. Earlier-phase trials can also affect later-phase trials in ways that are hard to predict.]{.fragment fragment-index="0" style="display:block; max-width: 74%; margin: 1.3em auto 0 auto; padding: 0.45em 0.9em; text-align:center; font-size: 0.8em; color: #13294B; font-weight: 600; border-left: 4px solid #4B9CD3; background: #F4F6F8;"}
+[Late failures have many causes. Earlier-phase trials can also affect later-phase trials in ways that are hard to predict.]{.fragment fragment-index="0" style="display:block; max-width: 74%; margin: 1.3em auto 0 auto; padding: 0.45em 0.9em; text-align:center; font-size: 0.8em; color: #13294B; font-weight: 600; border-left: 3px solid #2E6A9F; background: #F4F6F8;"}
 
 
 ::: {.notes}
@@ -218,7 +218,7 @@ What can we do in the early trials to make a late failure less likely?
 <div class="fragment" data-fragment-index="0" aria-hidden="true" style="align-self: center; font-size: 28px; color: #2E6A9F">&rarr;</div>
 <div class="fragment" data-fragment-index="0" style="flex: 1.25 1 0; background: #FFFFFF; border: 1.5px solid #2E6A9F; padding: 14px 18px; display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 20px; font-weight: 700">Postapproval comparison</div>
-<div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 22px; font-weight: 700; padding: 2px 10px; border: 1.5px solid #13294B; background: #E6F0F8">960 mg</span><span style="font-size: 18px">vs</span><span style="font-size: 22px; font-weight: 700; padding: 2px 10px; border: 1.5px solid #934516; background: #FCEEE2; color: #934516">240 mg</span><span style="font-size: 18px; color: #5B6670">FDA-required</span></div>
+<div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 22px; font-weight: 700; padding: 2px 10px; border: 1.5px solid #13294B; background: #E6F0F8">960 mg</span><span style="font-size: 18px">vs</span><span style="font-size: 22px; font-weight: 700; padding: 2px 10px; border: 1.5px solid var(--rl-accent-text); background: #FCEEE2; color: var(--rl-accent-text)">240 mg</span><span style="font-size: 18px; color: #5B6670">FDA-required</span></div>
 </div>
 </div>
 ```
@@ -230,30 +230,30 @@ What can we do in the early trials to make a late failure less likely?
 <tr>
 <th scope="col" style="text-transform: none !important; font-family: inherit !important; letter-spacing: normal !important; text-align: left; padding: 0 0 10px 0; font-size: 18px; font-weight: 600; color: #5B6670; border-bottom: 2px solid #13294B">Phase II results</th>
 <th scope="col" style="text-transform: none !important; font-family: inherit !important; letter-spacing: normal !important; width: 230px; text-align: right; padding: 0 24px 10px 0; font-size: 22px; font-weight: 700; color: #13294B; border-bottom: 2px solid #13294B">960 mg</th>
-<th scope="col" style="text-transform: none !important; font-family: inherit !important; letter-spacing: normal !important; width: 230px; text-align: right; padding: 0 24px 10px 0; font-size: 22px; font-weight: 700; color: #934516; border-bottom: 2px solid #13294B">240 mg</th>
+<th scope="col" style="text-transform: none !important; font-family: inherit !important; letter-spacing: normal !important; width: 230px; text-align: right; padding: 0 24px 10px 0; font-size: 22px; font-weight: 700; color: var(--rl-accent-text); border-bottom: 2px solid #13294B">240 mg</th>
 </tr>
 </thead>
 <tbody>
       <tr>
       <th scope="row" style="text-transform: none !important; font-family: inherit !important; letter-spacing: normal !important; text-align: left; padding: 12px 0; font-size: 24px; font-weight: 500; border-bottom: 1px solid #C9D1D9">Progression-free survival</th>
       <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; border-bottom: 1px solid #C9D1D9">5.4 <span style="font-size: 20px; font-weight: 500">months</span></td>
-      <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; color: #934516; border-bottom: 1px solid #C9D1D9">5.6 <span style="font-size: 20px; font-weight: 500">months</span></td>
+      <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; color: var(--rl-accent-text); border-bottom: 1px solid #C9D1D9">5.6 <span style="font-size: 20px; font-weight: 500">months</span></td>
       </tr>
       <tr>
       <th scope="row" style="text-transform: none !important; font-family: inherit !important; letter-spacing: normal !important; text-align: left; padding: 12px 0; font-size: 24px; font-weight: 500; border-bottom: 1px solid #C9D1D9">Severe side effects (grade 3+)</th>
       <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; border-bottom: 1px solid #C9D1D9">35.6%</td>
-      <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; color: #934516; border-bottom: 1px solid #C9D1D9">19.2%</td>
+      <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; color: var(--rl-accent-text); border-bottom: 1px solid #C9D1D9">19.2%</td>
       </tr>
       <tr>
       <th scope="row" style="text-transform: none !important; font-family: inherit !important; letter-spacing: normal !important; text-align: left; padding: 12px 0; font-size: 24px; font-weight: 500; border-bottom: 1px solid #C9D1D9">Tumor response</th>
       <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; border-bottom: 1px solid #C9D1D9">32.7%</td>
-      <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; color: #934516; border-bottom: 1px solid #C9D1D9">24.8%</td>
+      <td style="text-align: right; padding: 12px 24px 12px 0; font-size: 32px; font-weight: 700; color: var(--rl-accent-text); border-bottom: 1px solid #C9D1D9">24.8%</td>
       </tr>
 </tbody>
 </table>
-<div style="margin-top: 8px; display: flex; justify-content: space-between; font-size: 18px; color: #5B6670"><span>Descriptive comparison</span><span><a href="https://pubmed.ncbi.nlm.nih.gov/39029295/">Trial</a> · <a href="https://www.fda.gov/media/172698/download" title="FDA advisory committee briefing, Table 29">FDA</a></span></div>
+<div class="source" style="margin-top: 8px; display: flex; justify-content: space-between;"><span>Descriptive comparison</span><span><a href="https://pubmed.ncbi.nlm.nih.gov/39029295/">Trial</a> · <a href="https://www.fda.gov/media/172698/download" title="FDA advisory committee briefing, Table 29">FDA</a></span></div>
 </div>
-<div class="fragment" data-fragment-index="2" style="max-width: 1040px; margin: 0.7em auto 0 auto; text-align: center; color: #13294B; font-size: 0.78em; font-weight: 600; line-height: 1.35;">The highest dose patients tolerate, or the lowest dose with full benefit?</div>
+<div class="fragment" data-fragment-index="2" style="max-width: 1080px; margin: 0.7em auto 0 auto; text-align: center; color: #13294B; font-size: 0.78em; font-weight: 600; line-height: 1.35;">The highest dose patients tolerate, or the lowest dose with full benefit?</div>
 ```
 
 ::: {.notes}
@@ -270,7 +270,7 @@ What can we do in the early trials to make a late failure less likely?
 ## How best to design early trials for later success is not yet clear {data-menu-title="The open question"}
 
 ```{=html}
-<div style="margin-top: 16px; font-size: 24px; line-height: 1.5">More patients at <span style="font-weight: 700; padding: 2px 10px; border: 1.5px solid #13294B; background: #E6F0F8">960 mg</span> cannot show how <span style="font-weight: 700; padding: 2px 10px; border: 1.5px solid #934516; background: #FCEEE2; color: #934516">240 mg</span> compares.</div>
+<div style="margin-top: 16px; font-size: 24px; line-height: 1.5">More patients at <span style="font-weight: 700; padding: 2px 10px; border: 1.5px solid #13294B; background: #E6F0F8">960 mg</span> cannot show how <span style="font-weight: 700; padding: 2px 10px; border: 1.5px solid var(--rl-accent-text); background: #FCEEE2; color: var(--rl-accent-text)">240 mg</span> compares.</div>
 <div style="margin-top: 62px; display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 20px; height: 356px">
 <div style="background: #F4F6F8; padding: 22px 26px; box-sizing: border-box; display: flex; flex-direction: column">
 <div style="display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 500; color: #2E6A9F">1</span><span style="font-size: 24px; font-weight: 700">Different measures</span></div>
@@ -279,7 +279,7 @@ What can we do in the early trials to make a late failure less likely?
 <div style="font-size: 18px; font-weight: 600">Early trial (small)</div>
 <div style="width: 70px; padding: 9px; background: #FFFFFF; border: 1.5px solid #13294B; display: flex; flex-wrap: wrap; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span></div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 4px; align-self: end; padding-bottom: 26px"><div style="font-size: 16px; color: #5B6670; text-align: center">reads out</div><div style="display: flex; align-items: center"><div style="flex: 1 1 auto; height: 2px; background: #13294B"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #13294B"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 4px; align-self: end; padding-bottom: 26px"><div style="font-size: 18px; color: #5B6670; text-align: center">reads out</div><div style="display: flex; align-items: center"><div style="flex: 1 1 auto; height: 2px; background: #13294B"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #13294B"></div></div></div>
 <div style="align-self: end; padding-bottom: 6px">
 <div style="font-size: 23px; font-weight: 700">A short-term signal</div>
 <div style="font-size: 19px; color: #5B6670">tumor shrinkage, side effects</div>
@@ -287,14 +287,14 @@ What can we do in the early trials to make a late failure less likely?
 <div></div>
 <div></div>
 <div style="display: flex; align-items: center; gap: 12px; align-self: stretch; padding: 6px 0">
-<div style="align-self: stretch; display: flex; flex-direction: column; align-items: center; margin-left: 8px"><div style="flex: 1 1 auto; width: 0; border-left: 3px dashed #934516"></div><div style="width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid #934516"></div></div>
-<div style="font-size: 21px; font-weight: 700; color: #934516">Does one predict the other?</div>
+<div style="align-self: stretch; display: flex; flex-direction: column; align-items: center; margin-left: 8px"><div style="flex: 1 1 auto; width: 0; border-left: 3px dashed var(--rl-accent-text)"></div><div style="width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid var(--rl-accent-text)"></div></div>
+<div style="font-size: 21px; font-weight: 700; color: var(--rl-accent-text)">Does one predict the other?</div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 18px; font-weight: 600">Later trial (large)</div>
 <div style="width: 184px; padding: 9px; background: #FFFFFF; border: 1.5px solid #13294B; display: flex; flex-wrap: wrap; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span><span style="width: 16px; height: 16px; border-radius: 50%; background: #4B9CD3"></span></div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 4px; align-self: end; padding-bottom: 36px"><div style="font-size: 16px; color: #5B6670; text-align: center">reads out</div><div style="display: flex; align-items: center"><div style="flex: 1 1 auto; height: 2px; background: #13294B"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #13294B"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 4px; align-self: end; padding-bottom: 36px"><div style="font-size: 18px; color: #5B6670; text-align: center">reads out</div><div style="display: flex; align-items: center"><div style="flex: 1 1 auto; height: 2px; background: #13294B"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #13294B"></div></div></div>
 <div style="align-self: end; padding-bottom: 16px">
 <div style="font-size: 23px; font-weight: 700">A long-term outcome</div>
 <div style="font-size: 19px; color: #5B6670">survival</div>
@@ -393,8 +393,8 @@ Section 2
 <rect x="186" y="40" width="70" height="92" fill="#4B9CD3"></rect>
 <line x1="58" y1="72" x2="274" y2="72" stroke="#5B6670" stroke-width="2" stroke-dasharray="6 5"></line>
 <text x="221" y="30" text-anchor="middle" font-size="28" font-weight="800" fill="#13294B">?</text>
-<text x="111" y="156" text-anchor="middle" font-size="17" fill="#5B6670">Benchmark</text>
-<text x="221" y="156" text-anchor="middle" font-size="17" font-weight="700" fill="#13294B">Treatment</text>
+<text x="111" y="156" text-anchor="middle" font-size="18" fill="#5B6670">Benchmark</text>
+<text x="221" y="156" text-anchor="middle" font-size="18" font-weight="700" fill="#13294B">Treatment</text>
 </svg>
 <div style="font-size: 20px; line-height: 1.35; color: #1A202C">Does the treatment beat a benchmark or a control?</div>
 </div>
@@ -403,12 +403,12 @@ Section 2
 <svg viewBox="0 0 330 170" role="img" aria-label="Two rows of six patients. In the single-arm row all six get the treatment. In the randomized row three get the treatment and three get the control." style="width: 100%; height: 170px; display: block; background: #FFFFFF; font-family: inherit">
 <text x="14" y="46" font-size="17" font-weight="700" fill="#13294B">Single-arm</text>
 <g fill="#4B9CD3"><circle cx="138" cy="40" r="11"></circle><circle cx="168" cy="40" r="11"></circle><circle cx="198" cy="40" r="11"></circle><circle cx="228" cy="40" r="11"></circle><circle cx="258" cy="40" r="11"></circle><circle cx="288" cy="40" r="11"></circle></g>
-<text x="213" y="72" text-anchor="middle" font-size="16" fill="#5B6670">all get the treatment</text>
+<text x="213" y="72" text-anchor="middle" font-size="18" fill="#5B6670">all get the treatment</text>
 <text x="14" y="122" font-size="17" font-weight="700" fill="#13294B">Randomized</text>
 <g fill="#4B9CD3"><circle cx="138" cy="116" r="11"></circle><circle cx="168" cy="116" r="11"></circle><circle cx="198" cy="116" r="11"></circle></g>
 <g fill="#B7BDC5"><circle cx="228" cy="116" r="11"></circle><circle cx="258" cy="116" r="11"></circle><circle cx="288" cy="116" r="11"></circle></g>
-<text x="168" y="148" text-anchor="middle" font-size="16" fill="#2E6A9F">treatment</text>
-<text x="258" y="148" text-anchor="middle" font-size="16" fill="#5B6670">control</text>
+<text x="168" y="148" text-anchor="middle" font-size="18" fill="#2E6A9F">treatment</text>
+<text x="258" y="148" text-anchor="middle" font-size="18" fill="#5B6670">control</text>
 </svg>
 <div style="font-size: 20px; line-height: 1.35; color: #1A202C">Everyone gets the treatment, or patients are assigned to treatment or control.</div>
 </div>
@@ -417,10 +417,10 @@ Section 2
 <div role="group" aria-label="Two wrong calls. A treatment that does not work gets a go decision. A treatment that works gets a stop decision." style="height: 170px; box-sizing: border-box; background: #FFFFFF; padding: 0 18px; display: grid; grid-template-columns: minmax(0, 1fr) 60px 96px; grid-template-rows: repeat(2, minmax(0, 1fr)); align-items: center">
 <div style="font-size: 19px; font-weight: 600; color: #13294B">Does not work</div>
 <div aria-hidden="true" style="display: flex; align-items: center; padding: 0 8px"><div style="flex: 1 1 auto; height: 2px; background: #13294B"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #13294B"></div></div>
-<div style="height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #FCEEE2; border: 2px solid #934516; color: #934516; font-size: 20px; font-weight: 800">GO</div>
+<div style="height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #FCEEE2; border: 2px solid var(--rl-accent-text); color: var(--rl-accent-text); font-size: 20px; font-weight: 800">GO</div>
 <div style="font-size: 19px; font-weight: 600; color: #13294B">Works</div>
 <div aria-hidden="true" style="display: flex; align-items: center; padding: 0 8px"><div style="flex: 1 1 auto; height: 2px; background: #13294B"></div><div style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #13294B"></div></div>
-<div style="height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #FCEEE2; border: 2px solid #934516; color: #934516; font-size: 20px; font-weight: 800">STOP</div>
+<div style="height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #FCEEE2; border: 2px solid var(--rl-accent-text); color: var(--rl-accent-text); font-size: 20px; font-weight: 800">STOP</div>
 </div>
 <div style="font-size: 20px; line-height: 1.35; color: #1A202C">Advance a treatment that fails, or drop one that works.</div>
 </div>
@@ -472,9 +472,9 @@ When should we look, and what evidence is enough to keep enrolling?
 <div style="margin-top: 14px; font-size: 23px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #13294B">Must meet</div>
 <div style="margin-top: 10px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px">
 <div style="background: #FCEEE2; height: 196px; box-sizing: border-box; padding: 0 26px; display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; column-gap: 16px; text-align: left">
-<div style="font-size: 56px; font-weight: 800; color: #934516; line-height: 1">1</div>
-<div><div style="font-size: 29px; font-weight: 700; line-height: 1.2; color: #13294B">Rarely advance a treatment that fails</div><div style="font-size: 22px; color: #934516; font-weight: 600; margin-top: 6px">Type I error at most</div></div>
-<div style="font-size: 80px; font-weight: 800; color: #934516; line-height: 1">10%</div>
+<div style="font-size: 56px; font-weight: 800; color: var(--rl-accent-text); line-height: 1">1</div>
+<div><div style="font-size: 29px; font-weight: 700; line-height: 1.2; color: #13294B">Rarely advance a treatment that fails</div><div style="font-size: 22px; color: var(--rl-accent-text); font-weight: 600; margin-top: 6px">Type I error at most</div></div>
+<div style="font-size: 80px; font-weight: 800; color: var(--rl-accent-text); line-height: 1">10%</div>
 </div>
 <div style="background: #E6F0F8; height: 196px; box-sizing: border-box; padding: 0 26px; display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; column-gap: 16px; text-align: left">
 <div style="font-size: 56px; font-weight: 800; color: #2E6A9F; line-height: 1">2</div>
@@ -527,15 +527,15 @@ One design, held fixed in every simulated trial
 <div style="width: 100%;">
 <div role="img" aria-label="Two bars, each showing the share of 50,000 simulated trials that reach a go decision. Illustrative numbers. If the treatment is ineffective, 2,100 trials say go, a type I error of 4.2 percent, under the dashed target line at 10 percent. If the treatment is effective, 41,000 trials say go, a power of 82 percent, just past the dashed target line at 80 percent." style="margin-top: 48px; display: flex; flex-direction: column; gap: 56px">
 <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr) 330px; column-gap: 24px; align-items: end">
-<div style="text-align: right; color: #934516; font-weight: 700; font-size: 24px; line-height: 1.2; padding-bottom: 8px">Ineffective<br>(null)</div>
+<div style="text-align: right; color: var(--rl-accent-text); font-weight: 700; font-size: 24px; line-height: 1.2; padding-bottom: 8px">Ineffective<br>(null)</div>
 <div>
 <div style="position: relative; height: 28px; font-size: 19px; color: #13294B; text-align: left"><span style="position: absolute; left: 10%; margin-left: 8px; white-space: nowrap; bottom: 6px">target: at most 10%</span></div>
 <div style="position: relative; height: 68px; background: #E6EAEF">
-<div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4.2%; background: #934516"></div>
+<div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4.2%; background: var(--rl-accent-text)"></div>
 <div style="position: absolute; left: 10%; top: -28px; bottom: -8px; border-left: 3px dashed #13294B"></div>
 </div>
 </div>
-<div style="color: #934516; line-height: 1.05; text-align: left"><div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 60px; font-weight: 800">4.2%</span><span style="font-size: 22px; font-weight: 700">type I error</span></div><div style="font-size: 19px; color: #5B6670; margin-top: 4px">2,100 of 50,000 say go</div></div>
+<div style="color: var(--rl-accent-text); line-height: 1.05; text-align: left"><div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 60px; font-weight: 800">4.2%</span><span style="font-size: 22px; font-weight: 700">type I error</span></div><div style="font-size: 19px; color: #5B6670; margin-top: 4px">2,100 of 50,000 say go</div></div>
 </div>
 <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr) 330px; column-gap: 24px; align-items: end">
 <div style="text-align: right; color: #2E6A9F; font-weight: 700; font-size: 24px; line-height: 1.2; padding-bottom: 8px">Effective<br>(alternative)</div>
@@ -577,8 +577,8 @@ Both targets met, so this design is feasible.
       <div style="font-size: 21px; font-weight: 700; color: #13294B; line-height: 1.25;">ADAPT is an ARPA-H program to identify and target changes in metastatic cancers.</div>
       <img src="images/arpah_logo.png" alt="ARPA-H logo." style="height: 34px !important; width: auto !important; max-height: none !important; margin: 0 !important; flex: 0 0 auto;"/>
     </div>
-    <div style="position: relative; margin-top: 8px;"><div style="position: absolute; left: 4px; top: 2px; font-size: 16px; font-weight: 700; color: #13294B;">Current state</div><div style="position: absolute; left: 4px; top: 190px; font-size: 16px; font-weight: 700; color: #2E6A9F;">ADAPT’s “future state”</div><img src="images/adapt_goal_diagram.png" alt="Official ARPA-H ADAPT schematic in two rows. Top, the current state: the tumor changes and grows through successive treatments. Bottom, the ADAPT future state: treatment changes as the tumor changes, and the tumor shrinks." style="width: 526px !important; max-width: 526px !important; height: auto !important; max-height: none !important; display: block; margin: 0 !important;"/></div>
-    <div style="display: flex; justify-content: space-between; font-size: 16px; color: #5B6670; margin-top: 4px;"><span></span><span style="text-align: right">Graphic: ARPA-H ADAPT Proposers’ Day, approved for public release</span></div>
+    <div style="position: relative; margin-top: 8px;"><div style="position: absolute; left: 4px; top: 2px; font-size: 18px; font-weight: 700; color: #13294B;">Current state</div><div style="position: absolute; left: 4px; top: 190px; font-size: 18px; font-weight: 700; color: #2E6A9F;">ADAPT’s “future state”</div><img src="images/adapt_goal_diagram.png" alt="Official ARPA-H ADAPT schematic in two rows. Top, the current state: the tumor changes and grows through successive treatments. Bottom, the ADAPT future state: treatment changes as the tumor changes, and the tumor shrinks." style="width: 526px !important; max-width: 526px !important; height: auto !important; max-height: none !important; display: block; margin: 0 !important;"/></div>
+    <div class="source" style="display: flex; justify-content: space-between; font-size: 16px; margin-top: 4px;"><span></span><span style="text-align: right">Graphic: ARPA-H ADAPT Proposers’ Day, approved for public release</span></div>
   </div>
   <div style="display: flex; flex-direction: column; justify-content: center; gap: 14px;">
     <div style="text-wrap: balance; font-size: 21px; font-weight: 700; color: #13294B; line-height: 1.3; text-align: center;">EVOLVE is ADAPT’s breast cancer platform trial. Each biomarker-defined group of patients gets its own subtrial.</div>
@@ -617,7 +617,7 @@ Each subtrial needs its own decision rules, with eight or more interacting setti
 <div style="max-width: 1170px; margin: 0.5em auto 0 auto;">
 <div style="display:flex; gap: 1.3em; align-items: flex-start;">
 <div style="flex: 56 0 0;">
-<div style="border: 1px solid #E6EAEF; border-left: 3px solid #4B9CD3; padding: 0.5em 0.9em; background: #fff; font-family: Georgia, serif; font-size: 0.64em; line-height: 1.4; text-wrap: pretty;">
+<div style="border: 1px solid #C9D1D9; border-left: 3px solid #2E6A9F; padding: 0.5em 0.9em; background: #fff; font-family: Georgia, serif; font-size: 0.64em; line-height: 1.4; text-wrap: pretty;">
 <em>(ii) Clinical trial characteristics:</em>
 <ol style="margin: 0.3em 0 0.3em 1.4em; padding: 0;">
 <li>Clinical trial for metastatic cancer patients.</li>
@@ -630,10 +630,10 @@ Each subtrial needs its own decision rules, with eight or more interacting setti
 </ol>
 <em>(iii) General characteristics:</em> key clinical needs; evolutionary design examples and rapid-enrollment plans; treatment lines; biomarker testing and integration plans.
 </div>
-<p style="color: #5B6670; font-size: 0.55em; margin-top: 0.5em;">excerpts from the ARPA-H solicitation and program-manager correspondence</p>
+<p class="source" style="margin-top: 0.5em;">excerpts from the ARPA-H solicitation and program-manager correspondence</p>
 </div>
 <div style="flex: 44 0 0;">
-<div class="fragment" data-fragment-index="1" style="border: 1px solid #E6EAEF; border-left: 3px solid #E07C24; padding: 0.45em 0.9em; background: #fff; margin: 0 0 0.7em 0; font-size: 0.7em;"><strong style="color:#13294B;">Follow up</strong> (program-manager email): integrate an "N-of-1" trial component.</div>
+<div class="fragment" data-fragment-index="1" style="border: 1px solid #C9D1D9; border-left: 3px solid var(--rl-accent); padding: 0.45em 0.9em; background: #fff; margin: 0 0 0.7em 0; font-size: 0.7em;"><strong style="color:#13294B;">Follow up</strong> (program-manager email): integrate an "N-of-1" trial component.</div>
 <div class="fragment" data-fragment-index="2" style="font-size: 0.92em; font-weight: 700; color: #13294B; line-height: 1.35;">The ask: design an <span style="color:#2E6A9F;">adaptive multi-line</span> trial to <span style="color:#2E6A9F;">discover, evaluate, and implement novel biomarkers</span>, with an additional <span style="color:#2E6A9F;">N-of-1 subcomponent</span></div>
 <img src="images/req_meme.gif" class="fragment" data-fragment-index="3" style="border: 1px solid #C9D1D9; width: 70%; display: block; margin: 0.7em auto 0 auto;" alt="Animated this-is-fine cartoon from the original slide."/>
 </div>
@@ -664,7 +664,7 @@ Each subtrial needs its own decision rules, with eight or more interacting setti
 <div style="text-align: center; color: #13294B; font-weight: 700; font-size: 0.95em; margin-top: 0.9em;">Changing one setting can change which values work for the others.</div>
 ```
 
-::: {.fragment style="text-align: center; font-size: 1.2em; color: #934516; font-weight: 700; margin-top: 0.6em;"}
+::: {.fragment style="text-align: center; font-size: 1.2em; color: var(--rl-accent-text); font-weight: 700; margin-top: 0.6em;"}
 Target power: at least 80%
 :::
 
@@ -763,7 +763,7 @@ Section 3
 </div>
 <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 18px">
 <span>Two settings shown. Each dot is one design tested in many simulated trials.</span>
-<span class="fragment" data-fragment-index="0" style="display: flex; align-items: center; gap: 18px; white-space: nowrap"><span style="display: flex; align-items: center; gap: 7px"><span style="width: 15px; height: 15px; background: #5DB573; border: 1px solid #13294B; box-sizing: border-box"></span>Meets both targets</span><span style="display: flex; align-items: center; gap: 9px"><span style="width: 13px; height: 13px; background: #E07C24; border: 1px solid #13294B; box-sizing: border-box; transform: rotate(45deg)"></span>Candidate to verify</span></span>
+<span class="fragment" data-fragment-index="0" style="display: flex; align-items: center; gap: 18px; white-space: nowrap"><span style="display: flex; align-items: center; gap: 7px"><span style="width: 15px; height: 15px; background: #5DB573; border: 1px solid #13294B; box-sizing: border-box"></span>Meets both targets</span><span style="display: flex; align-items: center; gap: 9px"><span style="width: 13px; height: 13px; background: var(--rl-accent); border: 1px solid #13294B; box-sizing: border-box; transform: rotate(45deg)"></span>Candidate to verify</span></span>
 </div>
 </div>
 </div>
@@ -798,7 +798,7 @@ Section 3
       <div style="width: 188px; text-align: center;"><div style="font-size: 24px; font-weight: 700; color: #2E6A9F; line-height: 1.1;">Y</div><div style="font-size: 18px; font-weight: 700; line-height: 1.2;">Simulated outcomes</div></div>
     </div>
     <div style="display: flex; align-items: center; height: 50px; margin-top: 6px;">
-      <div style="width: 84px; font-size: 17px; line-height: 1.15; color: #5B6670; transform: translateY(27px);">Initial<br/>sample</div>
+      <div style="width: 84px; font-size: 18px; line-height: 1.15; color: #5B6670; transform: translateY(27px);">Initial<br/>sample</div>
       <div style="width: 184px; height: 50px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 20px; background: #DCE9F4;"><span>.3</span><span>.9</span><span>32</span><span>6</span></div>
       <div style="width: 36px;"></div>
       <div style="width: 188px; height: 50px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 20px; background: #DCE9F4;"><span>72%</span><span>3%</span><span>16.2</span></div>
@@ -810,7 +810,7 @@ Section 3
       <div style="width: 188px; height: 50px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 20px; background: #DCE9F4;"><span>88%</span><span>13%</span><span>19.5</span></div>
     </div>
     <div style="display: flex; align-items: center; height: 50px; margin-top: 4px;">
-      <div style="width: 84px; font-size: 17px; line-height: 1.15; color: #2E6A9F; font-weight: 600; transform: translateY(27px);">Guided<br/>search</div>
+      <div style="width: 84px; font-size: 18px; line-height: 1.15; color: #2E6A9F; font-weight: 600; transform: translateY(27px);">Guided<br/>search</div>
       <div style="width: 184px; height: 50px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 20px; background: #C3DAEC;"><span>.3</span><span>.8</span><span>30</span><span>5</span></div>
       <div style="width: 36px;"></div>
       <div style="width: 188px; height: 50px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 20px; background: #C3DAEC;"><span>77%</span><span>8%</span><span>14.6</span></div>
@@ -822,45 +822,45 @@ Section 3
       <div class="fragment" data-fragment-index="1" style="width: 188px; height: 50px; box-sizing: border-box; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 20px; font-weight: 700; background: #A6C9E4; border: 2px solid #13294B;"><span>82%</span><span>8%</span><span>15.1</span></div>
     </div>
     <div class="fragment" data-fragment-index="3" style="display: flex; align-items: center; height: 50px; margin-top: 18px;">
-      <div style="width: 84px; font-size: 17px; line-height: 1.15; color: #934516; font-weight: 700;">Next<br/>design</div>
-      <div style="width: 184px; height: 50px; box-sizing: border-box; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 20px; color: #934516; border: 2px dashed #934516;"><span>.3</span><span>.8</span><span>31</span><span>5</span></div>
+      <div style="width: 84px; font-size: 18px; line-height: 1.15; color: var(--rl-accent-text); font-weight: 700;">Next<br/>design</div>
+      <div style="width: 184px; height: 50px; box-sizing: border-box; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 20px; color: var(--rl-accent-text); border: 2px dashed var(--rl-accent-text);"><span>.3</span><span>.8</span><span>31</span><span>5</span></div>
       <div style="width: 36px;"></div>
-      <div style="width: 188px; height: 50px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #934516; border: 2px dashed #934516;">Pending</div>
+      <div style="width: 188px; height: 50px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--rl-accent-text); border: 2px dashed var(--rl-accent-text);">Pending</div>
     </div>
     <div style="display: flex; align-items: flex-start; margin-top: 6px; color: #5B6670;">
       <div style="width: 84px;"></div>
-      <div style="width: 184px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); text-align: center; font-size: 17px; font-style: italic;"><span>x<sub>1</sub></span><span>x<sub>2</sub></span><span>x<sub>3</sub></span><span>x<sub>4</sub></span></div>
+      <div style="width: 184px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); text-align: center; font-size: 18px; font-style: italic;"><span>x<sub>1</sub></span><span>x<sub>2</sub></span><span>x<sub>3</sub></span><span>x<sub>4</sub></span></div>
       <div style="width: 36px;"></div>
-      <div style="width: 188px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; font-size: 17px; line-height: 1.2;"><span>Power</span><span>Type I<br/>error</span><span>Expected<br/>enrollment</span></div>
+      <div style="width: 188px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; font-size: 18px; line-height: 1.2;"><span>Power</span><span>Type I<br/>error</span><span>Expected<br/>enrollment</span></div>
     </div>
   </div>
   <svg role="img" aria-label="Illustrative plot. Power estimates for nine tested settings with error bars and a dashed line at the 80 percent power target. A bracket joins the blue rows of X and Y to a nonlinear regression curve with an uncertainty band. An orange diamond marks the point on the curve chosen as the next design, and an orange arrow carries it back to the next design row." viewBox="0 0 660 400" width="660" height="400" style="display: block; font-family: 'Archivo', sans-serif;">
     <text x="110" y="20" font-size="20" font-weight="700" fill="#13294B">Nonlinear regression of Y on X, fit to the blue rows</text>
-    <text class="fragment" data-fragment-index="2" x="110" y="42" font-size="16" fill="#5B6670">The curve predicts power between tested settings</text>
+    <text class="fragment" data-fragment-index="2" x="110" y="42" font-size="18" fill="#5B6670">The curve predicts power between tested settings</text>
     <line x1="110" y1="60" x2="640" y2="60" stroke="#E3E8ED" stroke-width="1"></line>
     <line x1="110" y1="161" x2="640" y2="161" stroke="#E3E8ED" stroke-width="1"></line>
     <line x1="110" y1="211.5" x2="640" y2="211.5" stroke="#E3E8ED" stroke-width="1"></line>
     <line x1="110" y1="262" x2="640" y2="262" stroke="#C9D1D9" stroke-width="1"></line>
-    <text x="102" y="66" text-anchor="end" font-size="16" fill="#5B6670">1.0</text>
-    <text x="102" y="116" text-anchor="end" font-size="16" fill="#5B6670">0.8</text>
-    <text x="102" y="167" text-anchor="end" font-size="16" fill="#5B6670">0.6</text>
-    <text x="102" y="217" text-anchor="end" font-size="16" fill="#5B6670">0.4</text>
-    <text x="102" y="268" text-anchor="end" font-size="16" fill="#5B6670">0.2</text>
-    <text x="66" y="161" text-anchor="middle" font-size="17" font-weight="700" fill="#13294B" transform="rotate(-90 66 161)">Power</text>
-    <text x="375" y="283" text-anchor="middle" font-size="17" font-weight="700" fill="#13294B">One design setting</text>
+    <text x="102" y="66" text-anchor="end" font-size="18" fill="#5B6670">1.0</text>
+    <text x="102" y="116" text-anchor="end" font-size="18" fill="#5B6670">0.8</text>
+    <text x="102" y="167" text-anchor="end" font-size="18" fill="#5B6670">0.6</text>
+    <text x="102" y="217" text-anchor="end" font-size="18" fill="#5B6670">0.4</text>
+    <text x="102" y="268" text-anchor="end" font-size="18" fill="#5B6670">0.2</text>
+    <text x="66" y="161" text-anchor="middle" font-size="18" font-weight="700" fill="#13294B" transform="rotate(-90 66 161)">Power</text>
+    <text x="375" y="283" text-anchor="middle" font-size="18" font-weight="700" fill="#13294B">One design setting</text>
     <g class="fragment" data-fragment-index="2">
       <path d="M12,64 L4,64 M12,276 L4,276 M12,64 L12,276 M12,170 L32,170" fill="none" stroke="#2E6A9F" stroke-width="3"></path>
       <polygon points="43,170 31,163 31,177" fill="#2E6A9F"></polygon>
-      <text x="19" y="160" font-size="17" font-weight="700" fill="#2E6A9F">fit</text>
+      <text x="19" y="160" font-size="18" font-weight="700" fill="#2E6A9F">fit</text>
       <path d="M110,164 C145,175 180,184 216,184 S290,175 322,161 S390,134 428,123 S500,102 534,98 S610,90 640,90" fill="none" stroke="#CFE2F3" stroke-width="40"></path>
     </g>
     <line x1="110" y1="110.5" x2="640" y2="110.5" stroke="#2E6A9F" stroke-width="2" stroke-dasharray="7 6"></line>
-    <text x="118" y="102" font-size="17" font-weight="700" fill="#2E6A9F">80% power target</text>
+    <text x="118" y="102" font-size="18" font-weight="700" fill="#2E6A9F">80% power target</text>
     <g class="fragment" data-fragment-index="2">
       <path d="M110,164 C145,175 180,184 216,184 S290,175 322,161 S390,134 428,123 S500,102 534,98 S610,90 640,90" fill="none" stroke="#2E6A9F" stroke-width="3.5"></path>
-      <text x="336" y="218" font-size="16" font-weight="600" fill="#2E6A9F">model’s prediction for</text>
-      <text x="336" y="238" font-size="16" font-weight="600" fill="#2E6A9F">designs never simulated</text>
-      <text x="118" y="240" font-size="16" fill="#5B6670">wider band = less certain</text>
+      <text x="336" y="218" font-size="18" font-weight="600" fill="#2E6A9F">model’s prediction for</text>
+      <text x="336" y="238" font-size="18" font-weight="600" fill="#2E6A9F">designs never simulated</text>
+      <text x="118" y="240" font-size="18" fill="#5B6670">wider band = less certain</text>
     </g>
     <g stroke="#13294B" stroke-width="2">
       <line x1="142" y1="156" x2="142" y2="186"></line><line x1="195" y1="163.5" x2="195" y2="193.5"></line><line x1="253" y1="179" x2="253" y2="209"></line><line x1="301" y1="146" x2="301" y2="176"></line><line x1="359" y1="128.5" x2="359" y2="158.5"></line><line x1="417" y1="111" x2="417" y2="141"></line><line x1="460" y1="101" x2="460" y2="131"></line><line x1="523" y1="80.5" x2="523" y2="110.5"></line><line x1="587" y1="62" x2="587" y2="90"></line>
@@ -873,12 +873,12 @@ Section 3
       <polygon points="0,319 14,311 14,327" fill="#E07C24"></polygon>
       <polygon points="556,84 567,95 556,106 545,95" fill="#E07C24" stroke="#13294B" stroke-width="1.5"></polygon>
       <text x="30" y="309" font-size="19" font-weight="700" fill="#934516">The model picks the next design</text>
-      <text x="30" y="343" font-size="17" fill="#934516">highest potential improvement, likely to be feasible</text>
+      <text x="30" y="343" font-size="18" fill="#934516">highest potential improvement, likely to be feasible</text>
     </g>
   </svg>
 </div>
 <div style="text-align: center; color: #2E6A9F; font-weight: 700; font-size: 0.9em; margin-top: 0.7em;"><span class="fragment" data-fragment-index="1">Simulate</span><span class="fragment" data-fragment-index="2"> &rarr; Fit <i>Y</i> from <i>X</i></span><span class="fragment" data-fragment-index="3"> &rarr; Choose</span></div>
-<div style="text-align: center; color: #5B6670; font-size: 0.65em; margin-top: 0.3em;">Illustrative values</div>
+<div class="source" style="text-align: center; margin-top: 0.3em;">Illustrative values</div>
 ```
 
 ::: {.notes}
@@ -979,15 +979,15 @@ Section 4
 <div style="margin-top: 22px; font-size: 18px; color: #5B6670">One randomized EVOLVE subtrial, 8 settings. The score blends max sample size and expected enrollment.</div>
 <div role="group" aria-label="Score by search method. BATON 51.3 with 76 core-hours. Grid with the same effort 101.3. Finer grid 70.5 with 3,594 core-hours. Lower is better." style="margin-top: 10px; display: grid; grid-template-columns: 300px minmax(0, 1fr) 190px; column-gap: 20px; align-items: center; font-variant-numeric: tabular-nums">
 <div style="padding-bottom: 8px; border-bottom: 2px solid #13294B"></div>
-<div style="padding-bottom: 8px; border-bottom: 2px solid #13294B; font-size: 18px; font-weight: 700">Score <span style="font-weight: 700; color: #934516">(lower is better)</span></div>
+<div style="padding-bottom: 8px; border-bottom: 2px solid #13294B; font-size: 18px; font-weight: 700">Score <span style="font-weight: 700; color: var(--rl-accent-text)">(lower is better)</span></div>
 <div style="padding-bottom: 8px; border-bottom: 2px solid #13294B; font-size: 18px; font-weight: 700; text-align: right">Computing</div>
-<div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch"><div style="font-size: 24px; font-weight: 700; color: #2E6A9F">BATON</div><div style="font-size: 17px; color: #5B6670">model-guided search</div></div>
+<div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch"><div style="font-size: 24px; font-weight: 700; color: #2E6A9F">BATON</div><div style="font-size: 18px; color: #5B6670">model-guided search</div></div>
 <div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch; display: flex; align-items: center; gap: 14px"><div style="width: 258px; height: 40px; background: #2E6A9F"></div><div style="font-size: 34px; font-weight: 800; color: #2E6A9F">51.3</div></div>
 <div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch; display: flex; align-items: center; justify-content: flex-end; font-size: 21px; font-weight: 600">76 core-hours</div>
-<div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch"><div style="font-size: 24px; font-weight: 700">Grid, same effort</div><div style="font-size: 17px; color: #5B6670">2 values per setting, 256 designs</div></div>
+<div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch"><div style="font-size: 24px; font-weight: 700">Grid, same effort</div><div style="font-size: 18px; color: #5B6670">2 values per setting, 256 designs</div></div>
 <div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch; display: flex; align-items: center; gap: 14px"><div style="width: 510px; height: 40px; background: #8A949E"></div><div style="font-size: 34px; font-weight: 800">101.3</div></div>
 <div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch; display: flex; align-items: center; justify-content: flex-end; font-size: 21px; font-weight: 600">matched to BATON</div>
-<div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch"><div style="font-size: 24px; font-weight: 700">Grid, finer</div><div style="font-size: 17px; color: #5B6670">3 values per setting, 6,561 designs</div></div>
+<div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch"><div style="font-size: 24px; font-weight: 700">Grid, finer</div><div style="font-size: 18px; color: #5B6670">3 values per setting, 6,561 designs</div></div>
 <div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch; display: flex; align-items: center; gap: 14px"><div style="width: 355px; height: 40px; background: #8A949E"></div><div style="font-size: 34px; font-weight: 800">70.5</div></div>
 <div style="padding: 13px 0; border-bottom: 1px solid #C9D1D9; align-self: stretch; display: flex; align-items: center; justify-content: flex-end; font-size: 21px; font-weight: 600">3,594 core-hours</div>
 </div>
@@ -1015,10 +1015,10 @@ The team needed a max sample size about three months before first enrollment.
 
 ```{=html}
 <div role="img" aria-label="Timeline. The max sample size is needed about three months before first enrollment." style="margin: 26px auto 0 auto; width: 920px; display: grid; grid-template-columns: 260px minmax(0, 1fr) 260px; align-items: center; row-gap: 10px">
-<div style="justify-self: center; width: 26px; height: 26px; border-radius: 50%; background: #934516"></div>
+<div style="justify-self: center; width: 26px; height: 26px; border-radius: 50%; background: var(--rl-accent-text)"></div>
 <div style="display: flex; align-items: center; margin: 0 -117px"><div style="flex: 1 1 auto; height: 4px; background: #13294B"></div><div style="width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 13px solid #13294B"></div></div>
 <div style="justify-self: center; width: 26px; height: 26px; border-radius: 50%; background: #2E6A9F; position: relative"></div>
-<div style="text-align: center; font-size: 21px; font-weight: 700; color: #934516">Max sample size needed</div>
+<div style="text-align: center; font-size: 21px; font-weight: 700; color: var(--rl-accent-text)">Max sample size needed</div>
 <div style="text-align: center; font-size: 21px; font-weight: 600; color: #5B6670">about three months</div>
 <div style="text-align: center; font-size: 21px; font-weight: 700; color: #2E6A9F">First enrollment</div>
 </div>
@@ -1149,10 +1149,10 @@ Swap in new rules and a simulator. Reuse search and verification.
 <div class="story-intro biomarker-intro" style="margin-top: 0.15em; max-width: 1100px;">Trial calculations usually assume the biomarker test classifies every patient correctly.</div>
 <div style="display: grid; grid-template-columns: 560px minmax(0, 1fr); align-items: center; column-gap: 1.6em; max-width: 1120px; margin: 1.3em auto 0 auto;">
 <div style="text-align: center;"><div style="font-weight: 700; color: #13294B; font-size: 0.8em; margin-bottom: 0.25em;">Power lost as the test misclassifies more patients</div><svg viewBox="0 0 620 290" role="img" aria-label="Bar chart of the change in power in simulated screening trials when a biomarker test misclassifies 5, 10 or 15 percent of patients, for three trial outcomes. Power falls by about 4 to 6 points at 5 percent, 8 to 11 points at 10 percent, and 13 to 15 points at 15 percent." style="width: 100%; height: auto; display: block; margin: 4px auto 0 auto; font-family: 'Archivo', sans-serif;">
-<text x="92" y="20" font-size="17" fill="#5B6670" text-anchor="start">Patients misclassified by the test</text>
-<text x="230" y="46" text-anchor="middle" font-size="20" font-weight="700" fill="#13294B">5%</text>
-<text x="390" y="46" text-anchor="middle" font-size="20" font-weight="700" fill="#13294B">10%</text>
-<text x="550" y="46" text-anchor="middle" font-size="20" font-weight="700" fill="#13294B">15%</text>
+<text x="92" y="20" font-size="22" fill="#5B6670" text-anchor="start">Patients misclassified by the test</text>
+<text x="230" y="46" text-anchor="middle" font-size="22" font-weight="700" fill="#13294B">5%</text>
+<text x="390" y="46" text-anchor="middle" font-size="22" font-weight="700" fill="#13294B">10%</text>
+<text x="550" y="46" text-anchor="middle" font-size="22" font-weight="700" fill="#13294B">15%</text>
 <line x1="92" y1="117" x2="620" y2="117" stroke="#E3E8ED" stroke-width="1"></line>
 <line x1="92" y1="178" x2="620" y2="178" stroke="#E3E8ED" stroke-width="1"></line>
 <line x1="92" y1="239" x2="620" y2="239" stroke="#E3E8ED" stroke-width="1"></line>
@@ -1169,9 +1169,9 @@ Swap in new rules and a simulator. Reuse search and verification.
 <line x1="274" y1="94" x2="274" y2="110"></line><line x1="434" y1="145" x2="434" y2="170"></line><line x1="594" y1="194" x2="594" y2="230"></line>
 </g>
 <line x1="92" y1="56" x2="620" y2="56" stroke="#13294B" stroke-width="2"></line>
-<text font-size="18" font-weight="700" fill="#FFFFFF" transform="translate(501 66) rotate(90)">survival</text>
-<text font-size="18" font-weight="700" fill="#FFFFFF" transform="translate(545 66) rotate(90)">response</text>
-<text font-size="18" font-weight="700" fill="#13294B" transform="translate(589 66) rotate(90)">blood marker</text>
+<text font-size="21" font-weight="700" fill="#FFFFFF" transform="translate(501 66) rotate(90)">survival</text>
+<text font-size="21" font-weight="700" fill="#FFFFFF" transform="translate(545 66) rotate(90)">response</text>
+<text font-size="21" font-weight="700" fill="#13294B" transform="translate(589 66) rotate(90)">blood marker</text>
 </svg><div style="color: #5B6670; font-size: 0.7em; margin-top: 0.2em;">Bars are labelled by trial outcome. Lines show uncertainty.</div></div>
 <div style="display: flex; flex-direction: column; gap: 8px; text-align: left">
 <div style="background: #F4F6F8; padding: 14px 18px; text-align: center; font-size: 22px; font-weight: 700; color: #13294B">Same specimen</div>
@@ -1298,7 +1298,7 @@ Section 5
   </div>
   <div class="phase-scale-key">Typical enrollment. One dot is 25 participants.</div>
   <div class="story-question fragment" data-fragment-index="1">What should earlier trials learn to help Phase III confirm real benefit?</div>
-  <p class="program-source"><a href="https://www.fda.gov/patients/drug-development-process/step-3-clinical-research">FDA trial sizes</a> &middot; <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2565686">Hwang et al. (2016)</a> &middot; <a href="https://www.fda.gov/about-fda/reports/22-case-studies-where-phase-2-and-phase-3-trials-had-divergent-results">FDA case studies (2017)</a></p>
+  <p class="program-source source"><a href="https://www.fda.gov/patients/drug-development-process/step-3-clinical-research">FDA trial sizes</a> &middot; <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2565686">Hwang et al. (2016)</a> &middot; <a href="https://www.fda.gov/about-fda/reports/22-case-studies-where-phase-2-and-phase-3-trials-had-divergent-results">FDA case studies (2017)</a></p>
 </div>
 ```
 
@@ -1319,7 +1319,7 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
     <div class="story-card"><strong>A · Tolerability first</strong><span>Choose the dose by a toxicity limit.</span><span style="display: block; margin-top: 0.45em; padding-top: 0.45em; border-top: 1px solid #C9D1D9; color: #13294B; font-weight: 600;">The higher dose advances. More patients may cut back or stop.</span></div>
     <div class="story-card fragment" data-fragment-index="0"><strong>B · Activity and tolerability</strong><span>Compare the doses on both measures.</span><span style="display: block; margin-top: 0.45em; padding-top: 0.45em; border-top: 1px solid #C9D1D9; color: #13294B; font-weight: 600;">The lower dose advances. It may take more patients early.</span></div>
   </div>
-  <div class="story-question fragment" data-fragment-index="1"><span style="display: block; font-size: 0.62em; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #2E6A9F; margin-bottom: 0.3em;">To test in simulation</span>From Phase I onward, how often does each rule yield valid Phase III confirmation, and with how many patients?</div>
+  <div class="story-question fragment" data-fragment-index="1"><span style="display: block; font-size: 0.71em; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #2E6A9F; margin-bottom: 0.3em;">To test in simulation</span>From Phase I onward, how often does each rule yield valid Phase III confirmation, and with how many patients?</div>
 </div>
 ```
 
@@ -1366,7 +1366,7 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
     </div>
   </div>
   <div class="story-question fragment" data-fragment-index="1">Compare how often pathology found no invasive cancer at surgery (pathologic complete response).</div>
-  <div class="partner-source"><a href="https://www.nature.com/articles/s41586-024-07384-2">Abraham et al., Nature 2024</a> &middot; Dots are schematic. Orange marks earlier patients, blue marks new ones.</div>
+  <div class="partner-source source"><a href="https://www.nature.com/articles/s41586-024-07384-2">Abraham et al., Nature 2024</a> &middot; Dots are schematic. Orange marks earlier patients, blue marks new ones.</div>
 </div>
 ```
 
@@ -1384,25 +1384,25 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 <div role="group" aria-label="Three phases shown as boxes of patient dots. Orange dots are patients from Phase I and Phase II. In Phase III, orange dots appear beside the blue dots for new patients, showing that outcomes from earlier patients count in the final analysis." style="margin-top: 14px; display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr) 40px minmax(0, 1.5fr); row-gap: 6px; align-items: stretch">
 <div style="background: #F4F6F8; padding: 18px 16px; height: 168px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: space-between">
 <div style="font-size: 26px; font-weight: 700">Phase I</div>
-<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(2, 14px); gap: 6px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span></div>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(2, 14px); gap: 6px"><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span></div>
 <div style="font-size: 21px">Choose the dose</div>
 </div>
 <div aria-hidden="true" style="display: flex; align-items: center; justify-content: center; font-size: 28px; color: #2E6A9F">&rarr;</div>
 <div style="background: #F4F6F8; padding: 18px 16px; height: 168px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: space-between">
 <div style="font-size: 26px; font-weight: 700">Phase II</div>
-<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(8, 14px); gap: 6px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span></div>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(8, 14px); gap: 6px"><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span></div>
 <div style="font-size: 21px">Test for activity</div>
 </div>
 <div aria-hidden="true" style="display: flex; align-items: center; justify-content: center; font-size: 28px; color: #2E6A9F">&rarr;</div>
 <div style="background: #FFFFFF; border: 2px solid #2E6A9F; padding: 16px 16px; height: 168px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: space-between">
 <div style="font-size: 26px; font-weight: 700">Phase III</div>
-<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(12, 14px); gap: 6px"><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: #E07C24"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span></div>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(12, 14px); gap: 6px"><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span class="fragment" data-fragment-index="0" style="width: 14px; height: 14px; border-radius: 50%; background: var(--rl-accent)"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span><span style="width: 14px; height: 14px; border-radius: 50%; background: #2E6A9F"></span></div>
 <div style="font-size: 21px">Confirm benefit</div>
 </div>
-<div class="fragment" data-fragment-index="0" style="grid-column: 1 / span 3; height: 16px; box-sizing: border-box; border: 3px solid #E07C24; border-top: none"></div>
+<div class="fragment" data-fragment-index="0" style="grid-column: 1 / span 3; height: 16px; box-sizing: border-box; border: 3px solid var(--rl-accent); border-top: none"></div>
 <div></div>
-<div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; color: #5B6670; white-space: nowrap"><span style="width: 12px; height: 12px; border-radius: 50%; background: #E07C24"></span>earlier patients<span style="width: 12px; height: 12px; border-radius: 50%; background: #2E6A9F; margin-left: 12px"></span>new Phase III patients · dots are schematic</div>
-<div class="fragment" data-fragment-index="0" style="grid-column: 1 / span 3; text-align: center; font-size: 21px; font-weight: 700; color: #934516">Outcomes from earlier patients count in the final analysis</div>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 18px; color: #5B6670; white-space: nowrap"><span style="width: 12px; height: 12px; border-radius: 50%; background: var(--rl-accent)"></span>earlier patients<span style="width: 12px; height: 12px; border-radius: 50%; background: #2E6A9F; margin-left: 12px"></span>new Phase III patients · dots are schematic</div>
+<div class="fragment" data-fragment-index="0" style="grid-column: 1 / span 3; text-align: center; font-size: 21px; font-weight: 700; color: var(--rl-accent-text)">Outcomes from earlier patients count in the final analysis</div>
 </div>
 <div style="margin-top: 22px; display: grid; grid-template-columns: 225px repeat(3, minmax(0, 1fr)); gap: 14px; align-items: stretch">
 <div style="font-size: 22px; font-weight: 700; align-self: center; text-align: left">BATON would vary</div>
@@ -1472,8 +1472,8 @@ Phase III inherits both a choice and the uncertainty around it. The FDA reviewed
 </ul>
 </div>
 </div>
-<div style="margin-top: 30px; padding: 18px 24px 20px 24px; background: #F4F6F8; display: grid; grid-template-columns: 150px minmax(0, 1fr); column-gap: 20px; font-size: 16px; line-height: 1.55; color: #5B6670; text-align: left">
-<div style="font-size: 17px; font-weight: 700; color: #13294B">BATON funding</div>
+<div style="margin-top: 30px; padding: 18px 24px 20px 24px; background: #F4F6F8; display: grid; grid-template-columns: 150px minmax(0, 1fr); column-gap: 20px; font-size: 18px; line-height: 1.55; color: #5B6670; text-align: left">
+<div style="font-size: 18px; font-weight: 700; color: #13294B">BATON funding</div>
 <div>
 <div>ARPA-H ADAPT (ARPA-H-MAI-24-01-03, award 140D042590009) · DoD HT9425241103100121</div>
 <div>NIH/NCI U01 CA274298, P50 CA257911, T32 CA106209, P30 CA016086, and P50 CA058223</div>

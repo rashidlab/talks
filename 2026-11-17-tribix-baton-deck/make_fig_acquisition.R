@@ -113,7 +113,7 @@ p <- ggplot() +
   geom_point(data = pred_best, aes(x, y), shape = 23, fill = "white",
              colour = graphite, size = 4.6, stroke = 0.9) +
   geom_text(data = pred_best, aes(x, y - 1.00, label = "predicted best"),
-            colour = graphite, size = 5.6, fontface = "bold") +
+            colour = graphite, size = 5.6, fontface = "bold", family = "Archivo") +
   # next candidate
   geom_point(data = next_pt, aes(x, y), shape = 21, fill = NA,
              colour = accent, size = 9.0, stroke = 1.0) +
@@ -121,20 +121,24 @@ p <- ggplot() +
              colour = "white", size = 4.6, stroke = 0.9) +
   # region labels
   annotate("text", x = 1.95, y = 5.85, label = "probably\ninfeasible",
-           colour = graphite, size = 5.8, fontface = "bold", lineheight = 0.95) +
+           colour = graphite, size = 5.8, fontface = "bold", lineheight = 0.95,
+           family = "Archivo") +
   annotate("text", x = 12.15, y = 7.45, label = "probably\nfeasible",
-           colour = cdeep, size = 5.8, fontface = "bold", lineheight = 0.95) +
+           colour = cdeep, size = 5.8, fontface = "bold", lineheight = 0.95,
+           family = "Archivo") +
   annotate("text", x = 8.55, y = 4.55, label = "low predicted\nenrollment",
-           colour = navy, size = 5.8, fontface = "bold", lineheight = 0.95) +
+           colour = navy, size = 5.8, fontface = "bold", lineheight = 0.95,
+           family = "Archivo") +
   annotate("text", x = 6.37, y = 7.75, label = "uncertain",
-           colour = graphite, size = 5.2, fontface = "bold") +
+           colour = graphite, size = 5.2, fontface = "bold", family = "Archivo") +
   # caption tag
   annotate("text", x = 13.85, y = 0.30, label = "Schematic illustration",
-           colour = graphite, size = 4.1, fontface = "italic", hjust = 1) +
+           colour = graphite, size = 4.1, fontface = "italic", hjust = 1,
+           family = "Archivo") +
   scale_x_continuous(limits = xlim, expand = c(0, 0)) +
   scale_y_continuous(limits = ylim, expand = c(0, 0)) +
   labs(x = "Efficacy threshold", y = "Futility threshold") +
-  theme_minimal(base_size = 12) +
+  theme_minimal(base_size = 12, base_family = "Archivo") +
   theme(
     axis.title  = element_text(size = 12, face = "bold", colour = navy),
     axis.text   = element_blank(),
@@ -146,5 +150,6 @@ p <- ggplot() +
 
 if (!dir.exists("images")) dir.create("images", showWarnings = FALSE)
 ggsave("images/fig_acquisition_regions.png", p,
-       width = 8.6, height = 4.7, dpi = 300, bg = "white")
+       width = 8.6, height = 4.7, dpi = 300, bg = "white",
+       device = ragg::agg_png)
 cat("written: images/fig_acquisition_regions.png\n")

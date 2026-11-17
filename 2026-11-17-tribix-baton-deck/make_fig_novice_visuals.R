@@ -15,12 +15,12 @@ library(ggplot2)
 navy <- "#13294B"; car <- "#4B9CD3"; deep <- "#2E6A9F"
 graph <- "#5B6670"; fog <- "#F4F6F8"; mist <- "#E6EAEF"; orange <- "#E07C24"
 
-th <- theme_void() + theme(plot.margin = margin(6, 10, 6, 10))
+th <- theme_void(base_family = "Archivo") + theme(plot.margin = margin(6, 10, 6, 10))
 
 # ---------- 1. Fixed vs adaptive timeline ----------
 lab <- function(x, y, l, size = 4.6, col = navy, face = "bold", hj = 0.5)
   annotate("text", x = x, y = y, label = l, size = size, colour = col,
-           fontface = face, hjust = hj, lineheight = 0.95)
+           fontface = face, hjust = hj, lineheight = 0.95, family = "Archivo")
 
 p1 <- ggplot() + xlim(0, 100) + ylim(0, 10) +
   # Row 1: traditional
@@ -51,7 +51,8 @@ p1 <- ggplot() + xlim(0, 100) + ylim(0, 10) +
   lab(14, 1.6, "At an interim look we update the probability of benefit using the data so far.", 4.6, navy, "plain", 0) +
   lab(14, 0.6, "Prespecified rules can stop early for futility and, in some designs, for efficacy.", 4.6, navy, "plain", 0) +
   th
-ggsave("images/fig_fixed_vs_adaptive.png", p1, width = 10.5, height = 3.4, dpi = 300, bg = "white")
+ggsave("images/fig_fixed_vs_adaptive.png", p1, width = 10.5, height = 3.4, dpi = 300, bg = "white",
+       device = ragg::agg_png)
 
 # ---------- 2. One design -> 10,000 draws -> behavior ----------
 set.seed(7)
