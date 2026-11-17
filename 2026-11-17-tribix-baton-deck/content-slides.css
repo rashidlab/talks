@@ -13,6 +13,20 @@
    landing lines fall off the bottom edge. */
 .reveal { font-size: 30px; }
 
+/* Type scale (stage 2, 2026-11-16). Five steps at the 1280 width; nothing on a
+   main slide is set below --fs-label except the footer. Inline sizes and class
+   sizes point at these tokens rather than at raw px or em values. */
+:root {
+  --fs-title: 42px;
+  --fs-sub: 30px;
+  --fs-lead: 24px;
+  --fs-body: 21px;
+  --fs-label: 18px;
+}
+
+/* Two content widths: full (the h2 box) and inset (1080px, centered). */
+.reveal .inset { max-width: 1080px; margin-left: auto; margin-right: auto; }
+
 .reveal h2 {
   margin-bottom: 0.45em;
   padding-bottom: 0.18em;
@@ -70,9 +84,11 @@
   color: var(--rl-carolina-deep);
   font-weight: 700;
   text-align: center;
-  font-size: 0.92em;
+  font-size: var(--fs-sub);
   margin-top: 0.5em;
+  text-wrap: balance;
 }
+.reveal .backup-slide .landing { font-size: var(--fs-lead); }
 
 .reveal .thesis-line {
   color: var(--rl-navy);
@@ -302,7 +318,7 @@ body.hide-footer .slide-number,
 
 /* Diagrams shared by the opening examples and their later callbacks. */
 .reveal .story-intro {
-  margin: 1.2em auto 0.75em;
+  margin: 0 auto 0.75em;
   text-align: center;
   font-weight: 700;
   color: var(--rl-navy);
@@ -330,7 +346,7 @@ body.hide-footer .slide-number,
   max-width: 1000px;
   margin: 0.8em auto 0;
   text-align: center;
-  font-size: 0.85em;
+  font-size: var(--fs-lead);
   font-weight: 700;
 }
 .reveal .dose-selected,
@@ -452,7 +468,7 @@ body.hide-footer .slide-number,
 .reveal .program-label,
 .reveal .specimen-label {
   color: var(--rl-carolina-deep);
-  font-size: 0.65em;
+  font-size: var(--fs-label);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -460,8 +476,8 @@ body.hide-footer .slide-number,
 .reveal .specimen-label { text-align: center; }
 .reveal .specimen-callout .story-question { margin-top: 0.7em; font-size: 0.8em; }
 
-.reveal .biomarker-status { margin: 1.2em auto 0; text-align: center; }
-.reveal .biomarker-intro { max-width: 880px; margin: 0.5em auto 0; font-size: 0.9em; }
+.reveal .biomarker-status { margin: 0 auto; text-align: center; }
+.reveal .biomarker-intro { max-width: 880px; margin: 0.5em auto 0; font-size: var(--fs-lead); }
 .reveal .biomarker-call-flow {
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1.22fr);
   gap: 0.7em;
@@ -753,10 +769,11 @@ body.hide-footer .slide-number,
 }
 
 .reveal .design-choice {
-  width: 91%;
+  width: 100%;
   margin: 0.68em auto 0;
-  font-size: 0.97em;
+  font-size: var(--fs-sub);
 }
+.reveal .design-choice th { font-size: var(--fs-lead); }
 .reveal .design-choice th,
 .reveal .design-choice td { padding: 0.52em 0.7em; }
 .reveal .design-choice tr > :not(:first-child) { text-align: center; }
@@ -773,8 +790,7 @@ body.hide-footer .slide-number,
 .reveal .program-handoff-example,
 .reveal .partner-example,
 .reveal .program-close {
-  max-width: 1080px;
-  margin: 1.65em auto 0;
+  margin: 0 auto;
 }
 .reveal .late-failure-callback {
   display: flex;
@@ -794,7 +810,7 @@ body.hide-footer .slide-number,
   text-align: center;
 }
 .reveal .program-handoff-row .story-card { gap: 0.18em; padding: 0.52em 0.62em; }
-.reveal .phase-enrollment { font-size: 0.88em; font-weight: 700; color: var(--rl-navy); }
+.reveal .phase-enrollment { font-size: var(--fs-lead); font-weight: 700; color: var(--rl-navy); }
 .reveal .program-handoff-row .story-card small { font-size: 0.71em; color: var(--rl-graphite); }
 .reveal .phase-dots {
   display: flex;
@@ -808,16 +824,16 @@ body.hide-footer .slide-number,
   margin: 0.35em 0 0.28em;
 }
 .reveal .phase-dots i { flex: 0 0 0.4em; height: 0.4em; border-radius: 50%; background: var(--rl-carolina-deep); }
-.reveal .phase-role { font-size: 0.76em; }
+.reveal .phase-role { font-size: var(--fs-lead); }
 .reveal .phase-scale-key { margin-top: 0.55em; color: var(--rl-graphite); font-size: 0.8em; text-align: center; }
-.reveal .confirmation-paths span { font-size: 0.92em; }
+.reveal .confirmation-paths span { font-size: var(--fs-sub); }
 .reveal .program-handoff-example .story-question { margin-top: 0.75em; }
 .reveal .program-source { margin: 0.7em 0 0; font-size: 0.64em; text-align: center; }
 .reveal .program-handoff-row .story-card,
 .reveal .confirmation-paths .story-card,
 .reveal .program-search-flow .story-card { justify-content: flex-start; }
 
-.reveal .partner-example { margin-top: 1.15em; text-align: center; }
+.reveal .partner-example { text-align: center; }
 .reveal .partner-flow {
   display: grid;
   gap: 0.38em;
@@ -831,10 +847,10 @@ body.hide-footer .slide-number,
   gap: 0.28em;
   color: var(--rl-navy);
 }
-.reveal .partner-flow-header { align-items: end; font-size: 0.77em; }
+.reveal .partner-flow-header { align-items: end; font-size: var(--fs-lead); }
 .reveal .partner-flow-header > :first-child { text-align: left; padding-left: 0.45em; }
 .reveal .partner-flow-header small,
-.reveal .partner-arm small { display: block; color: var(--rl-graphite); font-size: 0.88em; font-weight: 400; }
+.reveal .partner-arm small { display: block; color: var(--rl-graphite); font-size: var(--fs-body); font-weight: 400; }
 .reveal .partner-arm {
   display: flex;
   flex-direction: column;
@@ -842,7 +858,7 @@ body.hide-footer .slide-number,
   padding: 0.42em 0.5em;
   background: #F4F6F8;
   text-align: left;
-  font-size: 0.78em;
+  font-size: var(--fs-lead);
 }
 .reveal .partner-cohort {
   display: flex;
@@ -873,7 +889,7 @@ body.hide-footer .slide-number,
   align-self: center;
   padding-left: 0.8em;
   color: var(--rl-graphite);
-  font-size: 0.72em;
+  font-size: var(--fs-body);
   text-align: left;
 }
 .reveal .partner-example .story-question { margin-top: 1em; }
@@ -910,14 +926,13 @@ body.hide-footer .slide-number,
   margin-top: 2.05em;
 }
 .reveal .program-close .story-card { justify-content: flex-start; padding: 0.88em; min-height: 6.8em; }
-.reveal .program-close .story-card span { font-size: 0.91em; }
-.reveal .program-close .story-card small { margin-top: 0.2em; }
+.reveal .program-close .story-card span { font-size: var(--fs-sub); }
+.reveal .program-close .story-card small { margin-top: 0.2em; font-size: var(--fs-lead); }
 .reveal .program-close + .story-question { margin-top: 1.1em; }
 
 /* An illustrative pair of early dose rules. */
 .reveal .confirmation-teaser {
-  max-width: 1120px;
-  margin: 1.15em auto 0;
+  margin: 0 auto;
   text-align: center;
 }
 .reveal .confirmation-paths {
@@ -936,15 +951,14 @@ body.hide-footer .slide-number,
 
 /* Shared start, screening decision, and two labeled outcomes. */
 .reveal .seamless-flow {
-  max-width: 1060px;
-  margin: 1.05em auto 0;
+  margin: 0 auto;
   text-align: center;
 }
 .reveal .seamless-start {
   padding: 0.48em 0.7em;
   background: var(--rl-navy);
   color: white;
-  font-size: 0.92em;
+  font-size: var(--fs-body);
   font-weight: 700;
 }
 .reveal .seamless-screen,
@@ -958,7 +972,7 @@ body.hide-footer .slide-number,
 .reveal .seamless-paths .story-card { border-top: 3px solid var(--rl-graphite); }
 .reveal .seamless-paths .story-result { border-top-color: var(--rl-carolina-deep); }
 .reveal .seamless-flow .story-card { padding: 0.5em 0.65em; }
-.reveal .seamless-flow .story-card span { font-size: 0.88em; }
+.reveal .seamless-flow .story-card span { font-size: var(--fs-body); }
 .reveal .seamless-caption { margin: 0.8em auto 0; text-align: center; }
 .reveal .backup-seamless { max-width: 970px; text-align: left; }
 
