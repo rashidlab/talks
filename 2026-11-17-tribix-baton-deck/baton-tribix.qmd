@@ -1514,7 +1514,7 @@ Manuscript in revision
 - *Choosing among feasible designs* → slides 26–28 and B3. *Seamless design* → slide 29 and B13.
 - *AI, assumptions, and judgment* → slides 30–32 and B5.
 - *Bidirectional stopping* → B6. *Randomized cohort* → B8.
-- *Early dose selection and Phase III confirmation* → slides 35–35. *Whole-program calibration and borrowing* → slides 36–37. *Status of BATON extensions* → slide 38. *ADAPT background* → B9–B10.
+- *Early dose selection and Phase III confirmation* → slides 35–35. *Whole-program calibration and borrowing* → slides 36–37. *Status of BATON extensions* → slide 38. *ADAPT background* → slide 16 and B10.
 - *Company or translation* → disclose the relationship verbally in one sentence.
 :::
 
