@@ -271,8 +271,8 @@ What can we do in the early trials to make a late failure less likely?
 <div style="font-size: var(--fs-body); line-height: 1.35; padding-left: 23px">Each phase has its own targets.</div>
 </div>
 <div class="fragment" data-fragment-index="0" style="background: #F4F6F8; padding: 22px 26px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 8px">
-<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: var(--fs-label); font-weight: 500; color: #2E6A9F">3</span><span style="font-size: var(--fs-lead); font-weight: 700">Too many possible plans</span></div>
-<div style="font-size: var(--fs-body); line-height: 1.35; padding-left: 23px">Patients per phase, and when to move on.</div>
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: var(--fs-label); font-weight: 500; color: #2E6A9F">3</span><span style="font-size: var(--fs-lead); font-weight: 700">Too many combinations</span></div>
+<div style="font-size: var(--fs-body); line-height: 1.35; padding-left: 23px">How many patients in each phase, and what result moves a treatment forward.</div>
 </div>
 </div>
 </div>
