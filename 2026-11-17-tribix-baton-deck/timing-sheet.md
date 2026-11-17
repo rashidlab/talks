@@ -6,31 +6,31 @@ format:
     fontsize: 8.5pt
 ---
 
-Keynote 5:10 to 6:00 PM, November 17, 2026. The talk has 45 minutes and Q&A has 5 minutes. The current rehearsal estimate reaches Questions at **40:28**. The PDF has 39 main slides, a backup divider, and 14 reference slides.
+Keynote 5:10 to 6:00 PM, November 17, 2026. The talk has 45 minutes and Q&A has 5 minutes. The current rehearsal estimate reaches Questions at **41:08**. The PDF has 40 slides through Questions, a References slide, a backup divider, and 14 backup slides.
 
 | Slide | Topic | Plan (s) | Elapsed |
 |--:|:--|--:|--:|
 | 1 | Title | 38 | 0:38 |
 | 2 | Section 1: The stakes | 5 | 0:43 |
 | 3 | Phases | 35 | 1:18 |
-| 4 | Operation TrialBlazer | 35 | 1:53 |
-| 5 | Time and cost | 45 | 2:38 |
-| 6 | Late failure | 60 | 3:38 |
-| 7 | Sotorasib | 130 | 5:48 |
-| 8 | The open question | 60 | 6:48 |
-| 9 | **The turn** | 85 | 8:13 |
-| 10 | Section 2: The design problem | 10 | 8:23 |
-| 11 | What a trial is | 90 | 9:53 |
-| 12 | Fixed versus adaptive | 85 | 11:18 |
-| 13 | Feasibility | 75 | 12:33 |
-| 14 | Count them | 85 | 13:58 |
-| 15 | 10-15 subtrials | 85 | 15:23 |
-| 16 | Manual tuning | 60 | 16:23 |
-| 17 | **Alternatives fail** | 70 | 17:33 |
-| 18 | Section 3: BATON | 10 | 17:43 |
-| 19 | BATON in one picture (merged with the workflow) | 115 | 19:38 |
-| 20 | Fitting the prediction model | 45 | 20:23 |
-| 21 | Choosing the next design | 50 | 21:13 |
+| 4 | Time and cost | 45 | 2:03 |
+| 5 | Late failure | 60 | 3:03 |
+| 6 | Sotorasib | 130 | 5:13 |
+| 7 | The open question | 60 | 6:13 |
+| 8 | **The turn** | 85 | 7:38 |
+| 9 | Section 2: The design problem | 10 | 7:48 |
+| 10 | What a trial is | 90 | 9:18 |
+| 11 | Fixed versus adaptive | 85 | 10:43 |
+| 12 | Feasibility | 75 | 11:58 |
+| 13 | Count them | 85 | 13:23 |
+| 14 | 10-15 subtrials | 85 | 14:48 |
+| 15 | Manual tuning | 60 | 15:48 |
+| 16 | **Alternatives fail** | 70 | 16:58 |
+| 17 | Section 3: BATON | 10 | 17:08 |
+| 18 | BATON in one picture and workflow | 95 | 18:43 |
+| 19 | Fitting the prediction model | 45 | 19:28 |
+| 20 | Choosing the next design | 50 | 20:18 |
+| 21 | Verification with fresh simulations | 55 | 21:13 |
 | 22 | Section 4: BATON in practice | 10 | 21:23 |
 | 23 | Known answer and 12 benchmarks | 115 | 23:18 |
 | 24 | Grid contrast | 60 | 24:18 |
@@ -46,15 +46,16 @@ Keynote 5:10 to 6:00 PM, November 17, 2026. The talk has 45 minutes and Q&A has 
 | 34 | Illustrative confirmation paths | 85 | 36:03 |
 | 35 | PARTNER and reuse of evidence | 75 | 37:18 |
 | 36 | Whole-program search and early evidence | 110 | 39:08 |
-| 37 | **BATON roadmap and closing** | 60 | 40:08 |
-| 38 | Acknowledgments | 20 | 40:28 |
-| 39 | **Questions** |  | 40:28 |
+| 37 | BATON roadmap | 55 | 40:03 |
+| 38 | **Conclusion** | 45 | 40:48 |
+| 39 | Acknowledgments | 20 | 41:08 |
+| 40 | **Questions** |  | 41:08 |
 
-**Section checkpoints** are 8:13 at slide 9, 17:33 at slide 17, 21:13 at slide 21, 32:48 at slide 31, 40:08 at slide 37, 40:28 at slide 39.
+**Section checkpoints** are 7:38 at slide 8, 16:58 at slide 16, 21:13 at slide 21, 32:48 at slide 31, 40:48 at slide 38, 41:08 at slide 40.
 
 **Short delivery route**
 
-Use these presenter shortcuts if you are running late. Together they save **2:45**, reaching Questions at about **37:43** from the full rehearsal estimate.
+Use these presenter shortcuts if you are running late. Together they save **2:45**, reaching Questions at about **38:23** from the full rehearsal estimate.
 
 1. **Slide 26 (75 seconds).** Show how two designs can meet the same targets with different max sample sizes and expected enrollment. Skip the audience vote and detailed rows.
 2. **Slide 27 (60 seconds).** Point out the shared design names and name the three objectives. Save the reason the two designs share a max sample size for Q&A.
@@ -62,4 +63,4 @@ Use these presenter shortcuts if you are running late. Together they save **2:45
 
 If you need more time, give only the headline benchmark result on slide 23 and explain slide 36 as one pass from program rules to simulation to verification.
 
-Protect the early-design question on slide 8, the hand-tuning story on slide 16, the judgment line on slide 31, and the connection from early decisions to Phase III on slides 33–37.
+Protect the early-design question on slide 7, the hand-tuning story on slide 15, the judgment line on slide 31, and the connection from early decisions to Phase III on slides 33–38.

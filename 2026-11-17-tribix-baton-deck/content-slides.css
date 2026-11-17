@@ -896,6 +896,24 @@ body.hide-footer .slide-number,
 .reveal .partner-source { margin-top: 0.62em; font-size: 0.68em; }
 
 .reveal .program-section-label { margin: 1.15em auto 0; text-align: center; }
+.reveal .program-bridge {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  color: var(--rl-navy);
+  font-size: 0.74em;
+}
+.reveal .program-bridge strong {
+  color: var(--rl-carolina-deep);
+  font-size: 0.88em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.reveal .design-choice-targets {
+  margin-top: 0.45em;
+  color: var(--rl-carolina-deep);
+  font-size: 0.76em;
+}
 .reveal .program-search-flow {
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 0.58em;
@@ -929,6 +947,32 @@ body.hide-footer .slide-number,
 .reveal .program-close .story-card span { font-size: var(--fs-sub); }
 .reveal .program-close .story-card small { margin-top: 0.2em; font-size: var(--fs-lead); }
 .reveal .program-close + .story-question { margin-top: 1.1em; }
+
+.reveal .tribix-conclusion {
+  display: grid;
+  gap: 0.65em;
+  max-width: 1080px;
+  margin: 1.35em auto 0;
+}
+.reveal .tribix-conclusion-row {
+  display: grid;
+  grid-template-columns: 5.9em minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.65em;
+  padding: 0.64em 0.78em;
+  background: #F4F6F8;
+  border-left: 3px solid var(--rl-mist);
+  color: var(--rl-navy);
+}
+.reveal .tribix-conclusion-row strong {
+  color: var(--rl-carolina-deep);
+  font-size: 0.76em;
+}
+.reveal .tribix-conclusion-next {
+  background: #EAF3FA;
+  border-left-color: var(--rl-carolina-deep);
+  font-weight: 700;
+}
 
 /* An illustrative pair of early dose rules. */
 .reveal .confirmation-teaser {
