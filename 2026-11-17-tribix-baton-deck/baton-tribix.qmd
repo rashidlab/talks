@@ -529,7 +529,7 @@ One design meets both targets. How do we find a design like that for a real tria
 **Delivery:** Say why we simulate. A simple fixed design has a formula for power and type I error. A complex adaptive design with interim looks does not, so we run the trial many times on the computer and count. Say what is held fixed before reading the bars. The candidate design, its decision rules, the analysis model and the trial assumptions (accrual, the outcome distribution, the benchmark) do not change. We run 50,000 simulated trials under the null, where the treatment is ineffective, and 50,000 under the alternative, where it has the prespecified benefit. Each bar is the share of 50,000 simulated trials that end in a go decision, and the dashed line is the target. After the bottom line, say “Now repeat this for every subtrial and every rule we might try.” Return to the EVOLVE Phase II cohort introduced at the start of the section. Use the same two scenarios from slide 12. Read the ineffective row first, then the effective row. Point out that the simulation assumes the effect in each row and estimates how often the trial reaches a go decision. Explain that this is one candidate, with a rule fixed before simulation. Reveal the enrollment outcome and ask whether another acceptable design might enroll fewer patients. Use the next slide to show why EVOLVE had to repeat this exercise. Verified EVOLVE designs appear on slide 27.
 :::
 
-## ARPA-H ADAPT’s EVOLVE trial can host 10 to 15 subtrials {data-menu-title="10-15 subtrials"}
+## ARPA-H ADAPT asked EVOLVE for a complex adaptive design {data-menu-title="10-15 subtrials"}
 
 ```{=html}
 <div class="inset" style="display: grid; grid-template-columns: 568px minmax(0, 1fr); column-gap: 40px; align-items: stretch; margin: 0 auto; text-align: left;">
@@ -557,7 +557,7 @@ One design meets both targets. How do we find a design like that for a real tria
 ```
 
 ::: {.landing .fragment data-fragment-index="1"}
-ARPA-H asked for a flexible, adaptive protocol. That flexibility gives each subtrial eight or more interacting settings to tune.
+One protocol hosts 10 to 15 subtrials, and each has eight or more interacting settings to tune.
 :::
 
 ::: {.notes}
