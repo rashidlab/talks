@@ -305,7 +305,7 @@ More patients later may not answer what the early trial never asked.
 ```
 
 ::: {.thesis-line .fragment data-fragment-index="1" style="margin-top: 0.9em;"}
-One bottleneck is finding an efficient adaptive design that still meets the evidence requirements. That is a search problem, and it is the piece we solve today. We return to the dose question at the end.
+One bottleneck is finding an efficient adaptive design that still meets the evidence requirements. That is a search problem, and it is the piece we focus on today. We return to the dose question at the end.
 :::
 
 ::: {.notes}
