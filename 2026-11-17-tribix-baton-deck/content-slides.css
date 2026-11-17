@@ -236,6 +236,8 @@
    unreachable from inside the section. */
 body.hide-footer .footer,
 .reveal-viewport.hide-footer .footer { display: none !important; }
+body.hide-footer .slide-number,
+.reveal-viewport.hide-footer .slide-number { display: none !important; }
 
 /* The lab logo is a transparent PNG whose navy strokes vanish on navy grounds;
    a white card behind it keeps it legible everywhere. */
@@ -292,7 +294,7 @@ body.hide-footer .footer,
 
 .reveal .slides section.judgment-slide h2 {
   max-width: 980px;
-  margin: 165px auto 0;
+  margin: 215px auto 0;
   text-align: center;
   font-size: 1.65em;
   line-height: 1.15;
@@ -315,8 +317,8 @@ body.hide-footer .footer,
   border: 1px solid var(--rl-mist);
   background: #F4F6F8;
 }
-.reveal .story-card strong,
-.reveal .story-question { color: var(--rl-navy); }
+.reveal .story-card strong { color: var(--rl-navy); }
+.reveal .story-question { color: var(--rl-carolina-deep); }
 .reveal .story-card small { font-size: 0.81em; }
 .reveal .story-result { border-color: var(--rl-carolina-deep); }
 .reveal .story-arrow {
@@ -761,6 +763,11 @@ body.hide-footer .footer,
 .reveal .design-choice tbody tr:nth-child(-n+2) { background: #EDF5FA; }
 .reveal .design-choice tbody th,
 .reveal .design-choice tbody td { border-bottom: 1px solid var(--rl-mist) !important; }
+.reveal .design-choice th { font-family: inherit; text-transform: none; letter-spacing: normal; font-weight: 700; }
+.reveal .design-choice tbody th { white-space: nowrap; }
+.reveal .design-choice thead th { text-wrap: balance; }
+/* The prompt that opens slide 35 is a setup line, not the takeaway, so it stays navy. */
+.reveal .story-question.confirmation-prompt { color: var(--rl-navy); }
 
 /* Whole-program examples and proposed calibration workflow. */
 .reveal .program-handoff-example,
@@ -802,7 +809,7 @@ body.hide-footer .footer,
 }
 .reveal .phase-dots i { flex: 0 0 0.4em; height: 0.4em; border-radius: 50%; background: var(--rl-carolina-deep); }
 .reveal .phase-role { font-size: 0.76em; }
-.reveal .phase-scale-key { margin-top: 0.55em; color: var(--rl-graphite); font-size: 0.66em; text-align: center; }
+.reveal .phase-scale-key { margin-top: 0.55em; color: var(--rl-graphite); font-size: 0.8em; text-align: center; }
 .reveal .confirmation-paths span { font-size: 0.92em; }
 .reveal .program-handoff-example .story-question { margin-top: 0.75em; }
 .reveal .program-source { margin: 0.7em 0 0; font-size: 0.64em; text-align: center; }
@@ -827,7 +834,7 @@ body.hide-footer .footer,
 .reveal .partner-flow-header { align-items: end; font-size: 0.77em; }
 .reveal .partner-flow-header > :first-child { text-align: left; padding-left: 0.45em; }
 .reveal .partner-flow-header small,
-.reveal .partner-arm small { display: block; color: var(--rl-graphite); font-size: 0.78em; font-weight: 400; }
+.reveal .partner-arm small { display: block; color: var(--rl-graphite); font-size: 0.88em; font-weight: 400; }
 .reveal .partner-arm {
   display: flex;
   flex-direction: column;
@@ -909,7 +916,7 @@ body.hide-footer .footer,
 
 /* An illustrative pair of early dose rules. */
 .reveal .confirmation-teaser {
-  max-width: 1040px;
+  max-width: 1120px;
   margin: 1.15em auto 0;
   text-align: center;
 }
@@ -947,7 +954,7 @@ body.hide-footer .footer,
   margin: 0.62em auto 0;
 }
 .reveal .seamless-screen { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
-.reveal .seamless-paths { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.reveal .seamless-paths { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
 .reveal .seamless-paths .story-card { border-top: 3px solid var(--rl-graphite); }
 .reveal .seamless-paths .story-result { border-top-color: var(--rl-carolina-deep); }
 .reveal .seamless-flow .story-card { padding: 0.5em 0.65em; }
