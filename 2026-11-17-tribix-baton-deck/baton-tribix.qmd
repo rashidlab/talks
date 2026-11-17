@@ -567,7 +567,7 @@ Each subtrial needs its own decision rules, with eight or more interacting setti
 ## I could not verify that a hand-tuned design met the power target {data-menu-title="Manual tuning"}
 
 ```{=html}
-<div class="story-intro">Eight settings in the EVOLVE calibration example</div>
+<div class="story-intro">Eight design parameters (settings) in the EVOLVE calibration example</div>
 <div style="text-align: center; color: #5B6670; font-size: var(--fs-lead); margin-top: 0.35em;">The outcome is progression-free survival, analyzed with a Bayesian piecewise exponential model. Interim reviews can stop the trial if benefit looks unlikely.</div>
 <div class="inset" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55em; font-size: var(--fs-body); margin: 1.1em auto 0 auto;">
 <div style="border: 1px solid #13294B; background: #F4F6F8; padding: 0.55em 0.5em; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 600; color: #13294B;">Max sample size</div>
@@ -708,7 +708,7 @@ Section 3
   <div role="group" aria-label="Illustrative numeric matrices X and Y. Each design settings row in X aligns with its simulated outcomes in Y. The results for the next design are pending." style="font-variant-numeric: tabular-nums;">
     <div style="display: flex; align-items: flex-end; height: 58px;">
       <div style="width: 84px;"></div>
-      <div style="width: 184px; text-align: center;"><div style="font-size: var(--fs-lead); font-weight: 700; color: #2E6A9F; line-height: 1.1;">X</div><div style="font-size: var(--fs-label); font-weight: 700; line-height: 1.2;">Design settings</div></div>
+      <div style="width: 184px; text-align: center;"><div style="font-size: var(--fs-lead); font-weight: 700; color: #2E6A9F; line-height: 1.1;">X</div><div style="font-size: var(--fs-label); font-weight: 700; line-height: 1.2;">Design parameters</div></div>
       <div style="width: 36px;"></div>
       <div style="width: 188px; text-align: center;"><div style="font-size: var(--fs-lead); font-weight: 700; color: #2E6A9F; line-height: 1.1;">Y</div><div style="font-size: var(--fs-label); font-weight: 700; line-height: 1.2;">Simulated outcomes</div></div>
     </div>
@@ -939,7 +939,7 @@ A coarse grid does worse. A finer grid costs about 47 times more and still does 
 ## EVOLVE had to settle each subtrial’s max sample size in advance {data-menu-title="Operational impact"}
 
 ::: {.thesis-line style="text-wrap: balance;"}
-In a separate EVOLVE subtrial, the TNBC team had to reserve slots.
+In a separate EVOLVE subtrial, the TNBC team needed a max sample size about three months before first enrollment.
 :::
 
 ```{=html}
@@ -963,7 +963,7 @@ In a separate EVOLVE subtrial, the TNBC team had to reserve slots.
 ```
 
 ::: {.landing .fragment}
-How many slots should a subtrial reserve when an early stop could leave some unused?
+How large should the max sample size be when an early stop could leave part of it unused?
 :::
 
 ::: {.notes}
@@ -971,23 +971,23 @@ How many slots should a subtrial reserve when an early stop could leave some unu
 
 **Q&A pockets:** *What if an interim analysis happens at a different time?* The reported operating characteristics apply to the schedule that was simulated. A revised schedule needs a new check.
 
-**Delivery:** Open by contrasting with the sanity check. A Simon design has four settings (the two stage sizes and the two response cutoffs), so every design can be enumerated. An EVOLVE design has the eight settings from slide 15, a progression-free survival outcome and a Bayesian model, so there is no exact answer to compare against. Then lead with the enrollment-max sample size deadline. Explain that sites had to reserve capacity before the cohort opened. The committee used maximum and expected enrollment to weigh those options. These deadlines and the trial designs the team wanted to consider motivated BATON: we needed a faster way to calibrate more ambitious designs. Briefly connect the deadline to planning interim reviews and resources across cohorts. Ask how many slots to reserve when an early stop could leave some unused. The next slide puts numbers on that choice.
+**Delivery:** Open by contrasting with the sanity check. A Simon design has four settings (the two stage sizes and the two response cutoffs), so every design can be enumerated. An EVOLVE design has the eight settings from slide 15, a progression-free survival outcome and a Bayesian model, so there is no exact answer to compare against. Then lead with the enrollment-max sample size deadline. Explain that sites had to reserve capacity before the cohort opened. The committee used maximum and expected enrollment to weigh those options. These deadlines and the trial designs the team wanted to consider motivated BATON: we needed a faster way to calibrate more ambitious designs. Briefly connect the deadline to planning interim reviews and resources across cohorts. Ask how large the max sample size should be when an early stop could leave part of it unused. The next slide puts numbers on that choice.
 :::
 
-## Would you reserve 30 slots or 32? {data-menu-title="Two designs"}
+## Would you plan for up to 30 patients or 32? {data-menu-title="Two designs"}
 
 ```{=html}
 <div class="story-intro">EVOLVE’s triple-negative breast cancer (TNBC) subtrial</div>
 <table class="design-choice inset">
   <thead><tr><th scope="col"> </th><th scope="col">Optimal (fewest patients if ineffective)</th><th scope="col">Admissible (compromise)</th></tr></thead>
   <tbody>
-    <tr><th scope="row">Max sample size (slots reserved)</th><td><strong>32</strong></td><td><strong>30</strong></td></tr>
+    <tr><th scope="row">Max sample size</th><td><strong>32</strong></td><td><strong>30</strong></td></tr>
     <tr class="fragment" data-fragment-index="0"><th scope="row">Average enrollment if ineffective</th><td><strong>11.2</strong></td><td><strong>13.3</strong></td></tr>
     <tr class="fragment" data-fragment-index="1"><th scope="row">Power</th><td>82.1%</td><td>86.1%</td></tr>
     <tr class="fragment" data-fragment-index="1"><th scope="row">Type I error</th><td>1.4%</td><td>1.5%</td></tr>
   </tbody>
 </table>
-<div class="story-question fragment" data-fragment-index="0">Reserving two fewer slots means enrolling about two more patients on average if the treatment is ineffective.</div>
+<div class="story-question fragment" data-fragment-index="0">Planning for two fewer patients at most means enrolling about two more on average if the treatment is ineffective.</div>
 <div class="story-question design-choice-targets fragment" data-fragment-index="1">Both designs met the power and type I error targets in simulation.</div>
 ```
 
@@ -997,7 +997,7 @@ How many slots should a subtrial reserve when an early stop could leave some unu
 
 **Q&A pockets:** *Why are the expected values fractional?* They average over simulations. Some simulated trials stop early and others run to the max sample size. *Why do powers differ?* All had to clear the same floor. The searches prioritized enrollment under different criteria.
 
-**Delivery:** Return to the capacity EVOLVE had to reserve, then introduce the Optimal design. Call the second design a compromise between reducing the max sample size and reducing average enrollment. Give the group a moment to choose whether to reserve two fewer slots at the cost of enrolling about two more patients on average if the treatment is inactive. Then reveal the performance rows: both designs passed the same targets in fresh simulations. Use the options to ask how changing the objective gives the team different designs.
+**Delivery:** Return to the capacity EVOLVE had to reserve, then introduce the Optimal design. Call the second design a compromise between reducing the max sample size and reducing average enrollment. Give the group a moment to choose whether to lower the max sample size by two at the cost of enrolling about two more patients on average if the treatment is inactive. Then reveal the performance rows: both designs passed the same targets in fresh simulations. Use the options to ask how changing the objective gives the team different designs.
 :::
 
 ## Change the objective. Keep the evidence targets. {data-menu-title="Objectives and frontier"}
@@ -1031,7 +1031,7 @@ Different priorities give the trial team different verified options.
 
 **Q&A pockets:** *Why does Minimax sit to the right of Admissible at the same max sample size?* Minimax required at least eight observed events before an interim decision, which excluded the Admissible design’s four-event rule. The Minimax design also had higher verified power. *Which design went into this protocol?* The manuscript says the comparison informed the steering committee’s choice for the first subtrial. Confirm this specific protocol before claiming it used the displayed design.
 
-**Delivery:** Say that Optimal, Minimax and Admissible were defined for Simon’s two-stage design, where the best design can be enumerated. We carried the same ideas to the wider family of Bayesian adaptive trials by swapping the objective function, with one objective built to mimic each criterion. The impact is that physicians have a choice of design preference. Point to the orange option the room just considered. Hand tuning made it hard to verify even one candidate. BATON gave the team several verified designs to compare before committing to a max sample size. Sites could see what they would gain in reserved slots and what they might give up in expected enrollment. Both Admissible and Minimax reached the search floor of 30 patients. The Admissible option expects 13.3 patients if the treatment is inactive, compared with 11.2 for Optimal. Name the three criteria in plain language: fewer patients on average if the treatment is inactive, the lowest max sample size, and a compromise. Point to the third option and say its search required at least eight outcome events before stopping was considered. Then ask whether the same workflow could handle a different question: screening and comparison in one trial.
+**Delivery:** Say that Optimal, Minimax and Admissible were defined for Simon’s two-stage design, where the best design can be enumerated. We carried the same ideas to the wider family of Bayesian adaptive trials by swapping the objective function, with one objective built to mimic each criterion. The impact is that physicians have a choice of design preference. Point to the orange option the room just considered. Hand tuning made it hard to verify even one candidate. BATON gave the team several verified designs to compare before committing to a max sample size. Sites could see what they would gain from a smaller max sample size and what they might give up in expected enrollment. Both Admissible and Minimax reached the search floor of 30 patients. The Admissible option expects 13.3 patients if the treatment is inactive, compared with 11.2 for Optimal. Name the three criteria in plain language: fewer patients on average if the treatment is inactive, the lowest max sample size, and a compromise. Point to the third option and say its search required at least eight outcome events before stopping was considered. Then ask whether the same workflow could handle a different question: screening and comparison in one trial.
 :::
 
 ## Same search, different trial rules {data-menu-title="Seamless design example"}
